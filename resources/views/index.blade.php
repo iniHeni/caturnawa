@@ -16,8 +16,8 @@
 	   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="css/navmenu.css">
-      <link rel="stylesheet" href="css/homepage.css">
+      <link rel="stylesheet" href="../public/css/navmenu.css">
+      <link rel="stylesheet" href="../public/css/homepage.css">
 
       <title>Caturnawa</title>
    </head>
