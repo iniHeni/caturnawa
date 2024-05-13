@@ -20,7 +20,7 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/edc_eng') }}" class="nav__logo" style="margin-left: -10rem"></a>
+         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc_eng') }}" class="nav__logo" style="margin-left: -10rem"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 20rem" class="nav__item">
