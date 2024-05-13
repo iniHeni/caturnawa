@@ -163,9 +163,9 @@
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   max-width: 1250px;
-  margin: 150px auto;
+  margin: 0 auto;
   padding: 20px;
   gap: 20px;
 }
@@ -196,7 +196,7 @@
     padding: 8px 15px;
     font-size: 1rem;
     border-radius: 50px;
-    font-weight: 800;
+    font-weight: 600;
   }
   .card-list .developer {
     background-color: #F7DFF5; 
@@ -246,6 +246,7 @@
   @media screen and (max-width: 980px) {
     .card-list {
         margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     }
   }
 

@@ -17,8 +17,8 @@
       <!--=============== SWIPER CSS ===============-->
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../public/css/navmenu.css">
-      <link rel="stylesheet" href="../css/app.css">
+      <link rel="stylesheet" href="css/navmenu.css">
+      <link rel="stylesheet" href="css/app.css">
       <title>Caturnawa - English</title>
    </head>
    <body>
