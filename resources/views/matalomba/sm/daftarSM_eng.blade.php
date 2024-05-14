@@ -387,8 +387,8 @@
                             <input type="file" accept="pdf/*" require>
                         </div>
                     <div class="input-field">
-                            <label>Link Video With PDF</label>
-                            <input type="file" accept="pdf/*" require>
+                            <label>Link Video Youtube</label>
+                            <input type="text" require>
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">

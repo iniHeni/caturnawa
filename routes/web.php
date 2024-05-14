@@ -1,11 +1,16 @@
 <?php
 
+use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
 // index indo dan eng
 Route::get('/', function () {
     return view('index');
 });
+
+// change Language
+
+Route::get('locale/{lang}',[LocaleController::class,'setLocale']);
 
 Route::get('/index_eng', function () {
     return view('index_eng');
