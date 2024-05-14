@@ -27,7 +27,7 @@
          <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" style="margin-left: -7rem"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 16rem" class="nav__item">
+        <div style="margin-right: 15rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -40,7 +40,7 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">@lang('messages.score')</a>
+                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">

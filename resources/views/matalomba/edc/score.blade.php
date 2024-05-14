@@ -1,7 +1,4 @@
 
-<?php
-include '../db.php';
-?>
 <html lang="en">
    <head>
       <meta charset="UTF-8">
@@ -23,32 +20,32 @@ include '../db.php';
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" style="margin-left: -10rem"></a>
+         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" style="margin-left: -9rem"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 20rem" class="nav__item">
-						<li><a href="#" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/scoreEDC_eng') }}" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
-                  <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Home</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Peserta</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Skor</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Babak</a>
-                  </li>
-                  
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Juri</a>
-                  </li>
+               <li class="nav__item">
+                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
+               </li>
+               
+               <li class="nav__item">
+                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.juri')</a>
+               </li>
                </ul>
 
                <!-- Close button -->
@@ -72,28 +69,6 @@ include '../db.php';
     <div class="section">
 		<div class="container">
 			<h1>Choose day you want a see</h1>
-			<div class="col-12">
-				<div class="box box-grid">
-					<?php
-					$kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id ASC");
-					if (mysqli_num_rows($kategori) > 0) {
-						while ($k = mysqli_fetch_array($kategori)) {
-					?>
-							<a href="detailskor.php?kat=<?php echo $k['category_id'] ?>">
-								<div class="">
-									<img src="img/logokdbi.jpeg" width="50px" style="margin-bottom:5px;">
-									<p>
-										<?php echo $k['category_name'] ?>
-									</p>
-								</div>
-							</a>
-						<?php }
-					} else { ?>
-						<p>Kategori tidak ada</p>
-					<?php } ?>
-
-				</div>
-			</div>
 		</div>
 	</div>
     </section>

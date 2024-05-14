@@ -25,28 +25,28 @@
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 20rem" class="nav__item">
-						<li><a href="#" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/detailpesertaSPC') }}" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
-                  <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Home</a>
-                  </li>
+          <li class="nav__item">
+            <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+         </li>
 
-                  <li class="nav__item">
-                     <a href="#peserta" class="nav__link">Peserta</a>
-                  </li>
+         <li class="nav__item">
+            <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.peserta')</a>
+         </li>
 
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreLKTI') }}') }}" class="nav__link">Skor</a>
-                  </li>
+         <li class="nav__item">
+            <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">@lang('messages.score')</a>
+         </li>
 
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">Round</a>
-                  </li>
-                  
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">Juri</a>
-                  </li>
+         <li class="nav__item">
+            <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.round')</a>
+         </li>
+         
+         <li class="nav__item">
+            <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.juri')</a>
+         </li>
                </ul>
 
                <!-- Close button -->

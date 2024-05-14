@@ -6,6 +6,7 @@ return [
     'beranda' =>'Home',
     'jenislomba' =>'Competition',
     'kontakkami' =>'Contact',
+    'peserta' => 'Participant',
     'score' => 'Score',
     'round' => 'Round',
     'juri' => 'Jury',
@@ -24,16 +25,15 @@ return [
     'count' =>'Coundtdown',
     // Home End 
     // Page Start Lomba
-    'teks' => 'dalam Memeriahkan Dies Natalies Universitas Nasional ke-75, 
-    UNAS FEST membuka pendaftaran kompetisi dengan tema',
-    'teks1' => 'Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global',
-    'peserta' => 'Participant',
+    'teks' => 'in Enlivening the 75th National University Dies Natalies, 
+    UNAS FEST opens registration for the competition with the theme',
+    'teks1' => 'Unearthing the potential of renewable energy through technological innovation to achieve green momentum globally',
+    'pesertalomba' => 'Participant Competition',
     'babak' => 'Round',
     'penyisihan' => 'Elimination',
-    'semifinal' => 'Semifinal',
-    'final' => 'Final',
     'dilaksanakan' => 'Held On',
     'jury' => 'Our Jury',
+    'view' => 'View More',
     // Page End Lomba
     // Form Start
     'pendaftaran' => 'Register',
@@ -72,5 +72,8 @@ return [
     'link' => 'Link Video Youtube',
     'bio' => 'Bio Participant',
     // Form End
+    // placeholder start
+    'place' => 'Enter',
+    // place holder end
 ]
 ?>

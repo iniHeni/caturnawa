@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="img/uf1.png">
+      <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -20,30 +20,29 @@
          <img src="../../img/smcaja.png" width="165" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" style="margin-left: -10rem"></a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 20rem" class="nav__item">
-						<li><a href="{{url('#') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/scoreSM_eng') }}" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 13rem" class="nav__item">
+						<li><a href="{{url('../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="{{url('../locale/en') }}" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
-                  <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Beranda</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/shortmovie') }}" class="nav__link">Peserta</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreSM') }}" class="nav__link">Skor</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/shortmovie') }}" class="nav__link">Babak</a>
-                  </li>
-
-                  
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/shortmovie') }}" class="nav__link">Juri</a>
-                  </li>
+               <li class="nav__item">
+                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/scoreSM') }}" class="nav__link">@lang('messages.score')</a>
+               </li>
+      
+               <li class="nav__item">
+                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
+               </li>
+               
+               <li class="nav__item">
+                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
+               </li>
                </ul>
 
                <!-- Close button -->
