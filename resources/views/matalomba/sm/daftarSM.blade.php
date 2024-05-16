@@ -24,10 +24,10 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/smcaja.png" width="165" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" style="margin-left: -9rem"></a>
+         <img src="../../img/smcaja.png" width="175" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 13rem" class="nav__item">
+        <div style="margin-right: 10rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>

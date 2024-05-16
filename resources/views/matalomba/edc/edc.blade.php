@@ -23,10 +23,10 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" style="margin-left: -7rem"></a>
+         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 16rem" class="nav__item">
+        <div style="margin-right: 15rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -237,16 +237,18 @@
         <div class="card_container">
 
             <div class="card">
-                <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
+                    <img src="../../img/JuriEDC.jpg" alt="">
                 </div>
 
                 <div class="user_content">
-                    <h5 class="name">Carry Johnshon</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+                    <h5 class="name">Aldifikri Kevin Marvel</h5>
+                    <p class="post">@lang('messages.juriposisi1')</p>
+                    <p class="about">@lang('messages.juribio1')</p>
+                    <a href="https://www.linkedin.com/in/marvelkevin" class="icon facebook">
+                        <span><i class="fa-brands fa-linkedin"></i></span>
+                     </a>
                 </div>
             </div>
 
@@ -254,13 +256,16 @@
                 <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
+                    <img src="../../img/JuriEDC2.jpg" alt="">
                 </div>
 
                 <div class="user_content">
-                    <h5 class="name">John Doe</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+                    <h5 class="name">Ahmad Kushay</h5>
+                    <p class="post">@lang('messages.juriposisi2')</p>
+                    <p class="about">@lang('messages.juribio2')</p>
+                    <a href="https://www.linkedin.com/in/ahmad-kushay-9a57a8104/?jobid=1234" class="icon facebook">
+                        <span><i class="fa-brands fa-linkedin"></i></span>
+                     </a>
                 </div>
             </div>
 
@@ -268,30 +273,18 @@
                 <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
+                    <img src="../../img/JuriEDC3.jpg" alt="">
                 </div>
 
                 <div class="user_content">
-                    <h5 class="name">Alex Carry</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+                    <h5 class="name">Muhammad Aditya <br>Muchtar</h5>
+                    <p class="post">@lang('messages.juriposisi3')</p>
+                    <p class="about">@lang('messages.juribio3')</p>
+                    <a href="https://www.linkedin.com/in/muchaditya/?jobid=1234" class="icon facebook">
+                        <span><i class="fa-brands fa-linkedin"></i></span>
+                     </a>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Stiven Smith</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>

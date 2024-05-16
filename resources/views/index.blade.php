@@ -26,8 +26,8 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="img/uf2.png" width="145" class="nav_gmbar">
-            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -4rem">Caturnawa</a></h2>
+         <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
+            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
@@ -139,9 +139,15 @@
 				<div class="col-md-12">
 					<div class="owl-carousel owl-theme clients-carousel">
 						<div class="item box"><img alt="client logo" class="client-img" src="img/uf2024.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" style="width: 160" src="img/sariroti.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" style="width: 135" src="img/bumiaksara.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" style="width: 160" src="img/goodday.png"></div>
+						<div class="item box">
+                     <a href="https://sariroti.com/id">
+                        <img alt="client logo" class="client-img" style="width: 160" src="img/sariroti.png"></a></div>
+						<div class="item box">
+                     <a href="https://www.bumiaksara.com/">
+                        <img alt="client logo" class="client-img" style="width: 135" src="img/bumiaksara.png"></a></div>
+						<div class="item box">
+                     <a href="https://www.hidupbanyakrasa.com/">
+                        <img alt="client logo" class="client-img" style="width: 160" src="img/goodday.png"></a></div>
 					</div>
 				</div>
 			</div>
@@ -203,7 +209,7 @@
 <!--=============== Social Media ===============-->
 <h2 class="socialmedia">@lang('messages.follow')</h2>
 <div class="wrapper">
-         <a href="" class="icon facebook">
+         <a href="https://id.linkedin.com/company/universitas-nasional-festival-unas-fest" class="icon facebook">
             <div class="tooltip">
                linkedin
             </div>

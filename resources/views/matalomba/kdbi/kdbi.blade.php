@@ -23,12 +23,12 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" style="margin-left: -9rem"></a>
+         <img src="../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 16rem" class="nav__item">
+        <div style="margin-right: 13rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../locale/en" width="20px"><img src="../../img/eng.png" /></a></li>
 					</div>
                     <li class="nav__item">
                         <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -230,71 +230,65 @@
     </div>
 </section>
 <!--==================== Juri ====================-->
-<section>
-<div class="main">
-        <div class="title" id="juri">@lang('messages.jury')</div>
-
-        <div class="card_container">
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
+<!--==================== Juri ====================-->
+<section id="juri">
+    <div class="main">
+            <div class="title">@lang('messages.jury')</div>
+    
+            <div class="card_container">
+    
+                <div class="card">
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurikdbi.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Leonardus Hans, S.T.</h5>
+                        <p class="post">@lang('messages.jurikdbiposisi1')</p>
+                        <p class="about">@lang('messages.jurikdbibio1')</p>
+                        <a href="https://www.linkedin.com/in/leonardus-hans-sebastian/?jobid=1234" class="icon facebook">
+                            <span><i class="fa-brands fa-linkedin"></i></span>
+                         </a>
+                    </div>
                 </div>
-
-                <div class="user_content">
-                    <h5 class="name">Carry Johnshon</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurikdbi2.JPG" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Prof. Dr.Wahyu <br>Wibowo</h5>
+                        <p class="post">@lang('messages.jurikdbiposisi2')</p>
+                        <p class="about">@lang('messages.jurikdbibio2')</p>
+                        <a href="https://menuliswahyuwibowo.wordpress.com/" class="icon facebook">
+                            <span><i class="fa-brands fa-blogger"></i></span>
+                         </a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">John Doe</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Alex Carry</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Stiven Smith</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurikdbi3.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Purwo Besari, S.Pd.</h5>
+                        <p class="post">@lang('messages.jurikdbiposisi3')</p>
+                        <p class="about">@lang('messages.jurikdbibio3')</p>
+                        <a href="https://www.linkedin.com/in/purwobesari/?jobid=1234" class="icon facebook">
+                            <span><i class="fa-brands fa-linkedin"></i></span>
+                         </a>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 
