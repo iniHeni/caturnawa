@@ -23,32 +23,32 @@
       <!--==================== Navbar ====================-->
        <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/spcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" style="margin-left: -10rem"></a>
+         <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 19rem" class="nav__item">
-						<li><a href="#" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/lkti_eng') }}" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 12rem" class="nav__item">
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
-                  <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Beranda</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="#peserta" class="nav__link">Peserta</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">Skor</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="#rank" class="nav__link">Babak</a>
-                  </li>
-                  
-                  <li class="nav__item">
-                     <a href="#juri" class="nav__link">Juri</a>
-                  </li>
+                    <li class="nav__item">
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">@lang('messages.score')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#rank" class="nav__link">@lang('messages.round')</a>
+                     </li>
+                     
+                     <li class="nav__item">
+                        <a href="#juri" class="nav__link">@lang('messages.juri')</a>
+                     </li>
                </ul>
 
                <!-- Close button -->
@@ -68,12 +68,12 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-    <h1 class="judul">Kompetisi Karya Tulis Ilmiah</h1>
-      <p class="testing1">Dalam Memeriahkan Dies Natalies Universitas Nasional ke-75 UNAS FEST membuka pendaftaran kompetisi dengan tema<br>  
-                        "Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global"</p>
+    <h1 class="judul">@lang('messages.lkti')</h1>
+      <p class="testing1">@lang('messages.teks')<br>  
+        @lang('messages.teks1')</p>
  <!--==================== Participant ====================-->
       <section id="peserta">
-      <h1 class="judul">Peserta Kompetisi</h1>
+      <h1 class="judul">@lang('messages.pesertalomba')</h1>
       <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
@@ -201,12 +201,12 @@
 </section>
       <!--==================== Round ====================-->
 <section id="rank">
-<h1 class="judul">Pilih Babak</h1>
+<h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
         <a href="#" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
-            <span class="developer">Penyisihan</span>
-            <h3>Dilaksanakan Pada Tanggal</h3>
+            <span class="developer">@lang('messages.penyisihan')</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -214,7 +214,7 @@
         <a href="#" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="designer">Semifinal</span>
-            <h3>Dilaksanakan Pada Tanggal</h3>
+            <h3>@lang('messages.dilaksanakan')</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -222,7 +222,7 @@
         <a href="#" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="editor">Final</span>
-            <h3>Dilaksanakan Pada Tanggal</h3>
+            <h3>@lang('messages.dilaksanakan')</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -231,70 +231,68 @@
 </section>
 <!--==================== Jury ====================-->
 <section id="juri">
-<div class="main">
-        <div class="title">Para Juri</div>
-
-        <div class="card_container">
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
+    <div class="main">
+            <div class="title">@lang('messages.jury')</div>
+    
+            <div class="card_container">
+    
+                <div class="card">
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc1.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Efriza, S.I.P., M.Si.</h5>
+                        <p class="post">@lang('messages.jurispcposisi1')</p>
+                        <p class="about">@lang('messages.jurispcbio1')</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc2.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Fajar Harry <br>Sampurno, MBA, Ph.D.</h5>
+                        <p class="post">@lang('messages.jurispcposisi2')</p>
+                        <p class="about">@lang('messages.jurispcbio2')</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc3.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Prof. Dr. Eng. Eniya <br>Listiani Dewi</h5>
+                        <p class="post">@lang('messages.jurispcposisi3')</p>
+                        <p class="about">@lang('messages.jurispcbio3')</p>
+                    </div>
                 </div>
 
-                <div class="user_content">
-                    <h5 class="name">Carry Johnshon</h5>
-                    <p class="post">Posisi Saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispcsiswi.jpeg" alt="">
+                    </div>
+    
+                    <div class="user_content">
+                        <h5 class="name">Desfara Anggraeni</h5>
+                        <p class="post">@lang('messages.jurispcposisi4')</p>
+                        <p class="about">@lang('messages.jurispcbio4')</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">John Doe</h5>
-                    <p class="post">Posisi Saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Alex Carry</h5>
-                    <p class="post">Posisi Saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Stiven Smith</h5>
-                    <p class="post">Posisi Saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 

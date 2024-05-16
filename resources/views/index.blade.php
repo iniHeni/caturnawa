@@ -26,25 +26,25 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="img/uf2.png" width="145" class="nav_gmbar">
-            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -4rem">Caturnawa</a></h2>
+         <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
+            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                <div style="margin-right: 7rem" class="nav__item">
-						<li><a href="{{url('/') }}"><img src="img/ind.png"  /></a></li>
-						<li><a href="{{url('index_eng') }}"><img src="img/eng.png" /></a></li>
+						<li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
+						<li><a href="locale/en"><img src="img/eng.png" /></a></li>
 					</div>
                   <li class="nav__item">
-                     <a href="#" class="nav__link">Beranda</a>
+                     <a href="#" class="nav__link">@lang('messages.beranda')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="#matalomba" class="nav__link">Jenis Lomba</a>
+                     <a href="#matalomba" class="nav__link">@lang('messages.jenislomba')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="#kontak" class="nav__link">Kontak Kami</a>
+                     <a href="#kontak" class="nav__link">@lang('messages.kontakkami')</a>
                   </li>
                </ul>
 
@@ -69,7 +69,7 @@
       <section class="homepage" id="home">
       <div class="content">
         <div class="text">
-          <h3 class="texthome">Selamat Datang, Daftar Sekarang dan jadilah Pemenang!</h3>
+          <h3 class="texthome">@lang('messages.welcome')</h3>
           <p>
           Caturnawa UNAS FEST</p>
         </div>
@@ -77,7 +77,7 @@
     </section>
       <!--==================== Countdown ====================-->
 <div class="waktu">
-<h1>COUNT DOWN<p>UNAS FEST 2024
+<h1>@lang('messages.count')<p>UNAS FEST 2024
 </p>
 </h1>
 <div id="time">
@@ -86,38 +86,38 @@
     <div id="minutes"></div>
     <div id="seconds"></div>
 </div>
-<h4>Pendaftaran Dibuka Pada
+<h4>@lang('messages.buka')
    <span>31 Mei</span></h4>
 <div id="firework-container"></div>
 </div>
 
       <!--==================== Mata Lomba ====================-->
       <section id="matalomba" class="container">
-      <h5 class="judullomba">Jenis Kompetisi</h5>
+      <h5 class="judullomba">@lang('messages.jenislomba')</h5>
 <div class="card-list">
         <div class="card-item">
             <img src="img/kdbi2.png" alt="Card Image">
-            <h3>Kompetisi Debat Bahasa Indonesia</h3>
-            <a href="{{url('matalomba/daftarKDBI') }}" class="card-icon">Daftar Sekarang</a>
-            <a href="{{url('matalomba/kdbi') }}" class="card-icon">Masuk Website</a>
+            <h3>@lang('messages.kdbi')</h3>
+            <a href="{{url('matalomba/daftarKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/sm1.png" alt="Card Image">
-            <h3>Kompetisi Short Movie</h3>
-            <a href="{{url('matalomba/daftarSM') }}" class="card-icon">Daftar Sekarang</a>
-            <a href="{{url('matalomba/shortmovie') }}" class="card-icon">Masuk Website</a>
+            <h3>@lang('messages.sm')</h3>
+            <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/shortmovie') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/spc.png" alt="Card Image">
-            <h3>Kompetisi Karya Tulis Ilmiah</h3>
-            <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">Daftar Sekarang</a>
-            <a href="{{url('matalomba/lkti') }}" class="card-icon">Masuk Website</a>
+            <h3>@lang('messages.lkti')</h3>
+            <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/lkti') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/edc.png" alt="Card Image">
-            <h3>English Debate Competition</h3>
-            <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">Daftar Sekarang</a>
-            <a href="{{url('matalomba/edc') }}" class="card-icon">Masuk Website</a>
+            <h3>@lang('messages.edc')</h3>
+            <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
     </div>
       </section>
@@ -131,21 +131,23 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="sec-heading">
-						<h2>Sponsor Kami</h2>
+						<h2>@lang('messages.sponsor')</h2>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="owl-carousel owl-theme clients-carousel">
-						<div class="item box"><img alt="client logo" class="client-img" src="img/kdbi2.png"></div>
 						<div class="item box"><img alt="client logo" class="client-img" src="img/uf2024.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/is.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/sm.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/edc.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/spc.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/uf1.png"></div>
-						<div class="item box"><img alt="client logo" class="client-img" src="img/ind.png"></div>
+						<div class="item box">
+                     <a href="https://sariroti.com/id">
+                        <img alt="client logo" class="client-img" style="width: 160" src="img/sariroti.png"></a></div>
+						<div class="item box">
+                     <a href="https://www.bumiaksara.com/">
+                        <img alt="client logo" class="client-img" style="width: 135" src="img/bumiaksara.png"></a></div>
+						<div class="item box">
+                     <a href="https://www.hidupbanyakrasa.com/">
+                        <img alt="client logo" class="client-img" style="width: 160" src="img/goodday.png"></a></div>
 					</div>
 				</div>
 			</div>
@@ -159,7 +161,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h5>Kontak Kami</h5>
+              <h5>@lang('messages.kontakkami')</h5>
             </div>
           </div>
           <div class="col-md-6">
@@ -173,7 +175,7 @@
                   <div class="col-xs-12">
                      <div class="styled-input wide">
                         <input name="name" type="text" id="name" required />
-                        <label>Nama Lengkap</label> 
+                        <label>@lang('messages.Name')</label> 
                      </div>
                   </div>
                   <div class="col-md-6 col-sm-12">
@@ -185,17 +187,17 @@
                   <div class="col-md-6 col-sm-12">
                      <div class="styled-input" style="float:right;">
                         <input name="subject" type="text" id="subject" required />
-                        <label>Nomor Whatssapp</label> 
+                        <label>@lang('messages.Nomor')</label> 
                      </div>
                   </div>
                   <div class="col-xs-12">
                      <div class="styled-input wide">
                         <textarea name="message" id="message" required></textarea>
-                        <label>Pesan</label>
+                        <label>@lang('messages.Pesan')</label>
                      </div>
                   </div>
                   <div class="col-xs-12">
-                     <button type="submit" id="form-submit" class="btn-lrg submit-btn">Kirim Pesan</button>
+                     <button type="submit" id="form-submit" class="btn-lrg submit-btn">@lang('messages.Send')</button>
                   </div>
             </div>
          </div>
@@ -205,9 +207,9 @@
     </div>
 </section>
 <!--=============== Social Media ===============-->
-<h2 class="socialmedia">Ikuti kami di media Sosial!</h2>
+<h2 class="socialmedia">@lang('messages.follow')</h2>
 <div class="wrapper">
-         <a href="" class="icon facebook">
+         <a href="https://id.linkedin.com/company/universitas-nasional-festival-unas-fest" class="icon facebook">
             <div class="tooltip">
                linkedin
             </div>
