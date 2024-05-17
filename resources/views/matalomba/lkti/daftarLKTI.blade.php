@@ -17,38 +17,38 @@
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../../css/pendaftaranspc.css">
 
-      <title>Caturnawa - Daftar</title>
+      <title>@lang('messages.daftar')</title>
    </head>
    <body>
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/spcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" style="margin-left: -9rem"></a>
+         <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 18rem" class="nav__item">
-						<li><a href="#" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/daftarSPC') }}" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 12rem" class="nav__item">
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
                   <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Beranda</a>
+                     <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="#peserta" class="nav__link">Peserta</a>
+                     <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">Skor</a>
+                     <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">Babak</a>
+                     <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
                   
                   <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">Juri</a>
+                     <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.juri')</a>
                   </li>
                </ul>
 
@@ -71,14 +71,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L120,186.7C240,149,480,75,720,80C960,85,1200,171,1320,213.3L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
       <section>
       <div class="konten">
-        <header>Pendaftaran</header>
+        <header>@lang('messages.pendaftaran')</header>
         <form action="https://app.sandbox.midtrans.com/payment-links/PembayaranUNASFEST2024">
             <div class="form first">
                 <div class="details personal">
-                    <span class="title">Identitas</span>
+                    <span class="title">@lang('messages.identitas')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Lengkap</label>
+                            <label>@lang('messages.Name')</label>
                             <input type="text" placeholder="Masukkan Nama Lengkap" required>
                         </div>
                         <div class="input-field">
@@ -86,11 +86,11 @@
                             <input type="email" placeholder="Masukkan Email Kamu" required>
                         </div>
                         <div class="input-field">
-                            <label>Fakultas</label>
+                            <label>@lang('messages.fakultas')</label>
                             <input type="text" placeholder="Masukkan Fakultas Asal" required>
                         </div>
                         <div class="input-field">
-                            <label>Prodi</label>
+                            <label>@lang('messages.prodi')</label>
                             <input type="text" placeholder="Masukkan Prodi Asal" required>
                         </div>
                         <div class="input-field">
@@ -98,318 +98,291 @@
                             <input type="text" placeholder="Masukkan NPM" required>
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kelamin</label>
+                            <label>@lang('messages.gender')</label>
                             <select required>
-                                <option selected>Pilih</option>
-                                <option>Pria</option>
-                                <option>Wanita</option>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.pria')</option>
+                                <option>@lang('messages.wanita')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Asal Instansi</label>
+                            <label>@lang('messages.instansi')</label>
                             <input type="text" placeholder="Masukkan Asal Instansi" required>
                         </div>
                         <div class="input-field">
-                            <label>Alamat</label>
+                            <label>@lang('messages.alamat')</label>
                             <input type="area" placeholder="Masukkan Alamat" required>
                         </div>
                         <div class="input-field">
-                            <label>No Whatssapp</label>
+                            <label>@lang('messages.Nomor')</label>
                             <input type="Number" placeholder="Masukkan No Whatssapp" required>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Tanda Mahasiswa</label>
+                            <label>@lang('messages.ktm')</label>
                             <input type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Foto Formal Background Merah</label>
+                            <label>@lang('messages.foto')</label>
                             <input type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Rencana Studi</label>
+                            <label>@lang('messages.krs')</label>
                             <input type="file" require>
                         </div>
                         <div class="input-field">
-                            <label>Bukti Follow Sosial Media UnasFest</label>
+                            <label>@lang('messages.bukti')</label>
                             <input type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Surat Delegasi dari Kampus</label>
+                            <label>@lang('messages.surat')</label>
                             <input type="file" accept="pdf/*" require>
                         </div>
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">Capaian Unggulan *Optional</span>
+                    <span class="title">@lang('messages.Capaian') *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan" >
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
+                            <label>@lang('messages.tingkat')</label>
                             <select>
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Sertifikat</label>
+                            <label>@lang('messages.sertif')</label>
                             <input type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">Capaian Unggulan 1 *Optional</span>
+                    <span class="title">@lang('messages.Capaian')2 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*" >
-                        </div>
-                    </div>
-                </div>
-                <div class="details personal">
-                    <span class="title">Capaian Unggulan 2 *Optional</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
-                        </div>
-                        <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*">
-                        </div>
-                    </div>
-                </div>
-                <div class="details personal">
-                    <span class="title">Capaian Unggulan 3 *Optional</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
-                        </div>
-                        <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
+                            <label>@lang('messages.tingkat')</label>
                             <select>
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Sertifikat</label>
+                            <label>@lang('messages.sertif')</label>
                             <input type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">Capaian Unggulan 4 *Optional</span>
+                    <span class="title">@lang('messages.Capaian')3 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*" >
-                        </div>
-                    </div>
-                </div>
-                <div class="details personal">
-                    <span class="title">Capaian Unggulan 5 *Optional</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*" >
-                        </div>
-                    </div>
-                </div>
-                <div class="details personal">
-                    <span class="title">Capaian Unggulan 6 *Optional</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan" >
-                        </div>
-                        <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
-                            </select>
-                        </div>
-                         <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*" >
-                        </div>
-                    </div>
-                </div>
-                <div class="details personal">
-                    <span class="title">Capaian Unggulan 7 *Optional</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan">
-                        </div>
-                        <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
-                        </div>
-                        <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Sertifikat</label>
+                            <label>@lang('messages.sertif')</label>
                             <input type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">Capaian Unggulan 8 *optional</span>
+                    <span class="title">@lang('messages.Capaian')4 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan" >
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select >
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Sertifikat</label>
-                            <input type="file" accept="pdf/*" >
+                            <label>@lang('messages.sertif')</label>
+                            <input type="file" accept="pdf/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="details personal">
+                    <span class="title">@lang('messages.Capaian')5 *Optional</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.sertif')</label>
+                            <input type="file" accept="pdf/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="details personal">
+                    <span class="title">@lang('messages.Capaian')6 *Optional</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.sertif')</label>
+                            <input type="file" accept="pdf/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="details personal">
+                    <span class="title">@lang('messages.Capaian')7 *Optional</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.sertif')</label>
+                            <input type="file" accept="pdf/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="details personal">
+                    <span class="title">@lang('messages.Capaian')8 *Optional</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>@lang('messages.sertif')</label>
+                            <input type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
                 <div class="details ID">
-                    <span class="title">Capaian Unggulan 9 *optional</span>
+                    <span class="title">@lang('messages.Capaian') 9 *optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Nama Kegiatan">
+                            <label>@lang('messages.namakegiatan')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kegiatan</label>
-                            <input type="text" placeholder="Masukkan Jenis Kegiatan">
+                            <label>@lang('messages.jenis')</label>
+                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>Tingkat Kegiatan</label>
-                            <select required>
-                                <option selected>Pilih</option>
-                                <option>Internasional</option>
-                                <option>Regional</option>
-                                <option>Nasional</option>
-                                <option>Provinsi</option>
+                            <label>@lang('messages.tingkat')</label>
+                            <select>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Sertifikat</label>
+                            <label>@lang('messages.sertif')</label>
                             <input type="file" accept="pdf/*">
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Pembayaran</span>
+                        <span class="btnText">@lang('messages.bayar')</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 

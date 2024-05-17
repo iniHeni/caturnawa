@@ -24,33 +24,34 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <img src="../../img/smcaja.png" width="165" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" style="margin-left: -10rem"></a>
+            <img src="../../img/smcaja.png" width="175" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-               <div style="margin-right: auto" class="nav__item">
-						<li><a href="{{url('#') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/shortmovie_eng') }}" height="20"><img src="../../img/eng.png" /></a></li>
+               <div style="margin-right: 10rem" class="nav__item">
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
-                  <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Beranda</a>
-                  </li>
+                    <li class="nav__item">
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="{{url('matalomba/scoreSM') }}" class="nav__link">@lang('messages.score')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#rank" class="nav__link">@lang('messages.round')</a>
+                     </li>
+                     
+                     <li class="nav__item">
+                        <a href="#juri" class="nav__link">@lang('messages.juri')</a>
+                     </li>
 
-                  <li class="nav__item">
-                     <a href="#peserta" class="nav__link">Peserta</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="#skor" class="nav__link">Skor</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="#rank" class="nav__link">Babak</a>
-                  </li>
-                  
-                  <li class="nav__item">
-                     <a href="#juri" class="nav__link">Juri</a>
-                  </li>
                </ul>
 
                <!-- Close button -->
@@ -70,13 +71,12 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-    <h1 class="judul">Kompetisi ShortMovie</h1>
-      <p class="testing1">Dalam Memeriahkan Dies Natalies Universitas Nasional ke-75, 
-                        UNAS FEST membuka pendaftaran kompetisi dengan tema <br> 
-                        "Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global"</p>
+    <h1 class="judul">@lang('messages.sm')</h1>
+      <p class="testing1">@lang('messages.teks') <br> 
+                        "@lang('messages.teks1')"</p>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
-      <h1 class="judul">Para Peserta Lomba</h1>
+      <h1 class="judul">@lang('messages.pesertalomba')</h1>
       <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
@@ -90,7 +90,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 1</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -103,7 +103,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 2</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -116,7 +116,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 3</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -129,7 +129,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 4</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -142,7 +142,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 5</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -155,7 +155,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 6</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -168,7 +168,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 7</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -181,7 +181,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 8</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -194,7 +194,7 @@
                         <div class="card-content">
                             <h2 class="name">Team 9</h2>
                             <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">Masuk Untuk Detail</a></button>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                 </div>
@@ -204,12 +204,12 @@
 </section>
       <!--==================== Babak ====================-->
 <section id="rank">
-<h1 class="judul">Pilih Babak</h1>
+<h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
         <a href="#" class="card-item">
             <img src="../../img/sm.png" alt="Card Image">
             <span class="designer">Semifinal</span>
-            <h3>Dilaksanakan pada tanggal</h3>
+            <h3>@lang('messages.dilaksanakan')</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -217,7 +217,7 @@
         <a href="#" class="card-item">
             <img src="../../img/sm.png" alt="Card Image">
             <span class="editor">Final</span>
-            <h3>Dilaksanakan pada tanggal</h3>
+            <h3>@lang('messages.dilaksanakan')</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -225,71 +225,58 @@
     </div>
 </section>
       <!--==================== Juri ====================-->
-<section id="juri">
-<div class="main">
-        <div class="title">Para Juri</div>
-
-        <div class="card_container">
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Carry Johnshon</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">John Doe</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Alex Carry</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="squareBox"></div>
-                <div class="round_box"></div>
-                <div class="img_box">
-                    <img src="../../img/uf1.png" alt="">
-                </div>
-
-                <div class="user_content">
-                    <h5 class="name">Stiven Smith</h5>
-                    <p class="post">Posisi saat ini</p>
-                    <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, at quos dolorum sit dicta vel non debitis ad vitae, repudiandae eos enim ex quam doloremque, ipsa id beatae delectus! Nobis.</p>
+      <section id="juri">
+        <div class="main">
+                <div class="title">@lang('messages.jury')</div>
+        
+                <div class="card_container">
+        
+                    <div class="card">
+                        <div class="round_box"></div>
+                        <div class="img_box">
+                            <img src="../../img/jurism.jpg" alt="">
+                        </div>
+        
+                        <div class="user_content">
+                            <h5 class="name">Daniel Wisnu Wardhana</h5>
+                            <p class="post">@lang('messages.jurismposisi1')</p>
+                            <p class="about">@lang('messages.jurismbio1')</p>
+                            <a href="https://www.linkedin.com/in/raden-wardana-a737992b9/?jobid=1234" class="icon facebook">
+                                <span><i class="fa-brands fa-linkedin"></i></span>
+                             </a>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="squareBox"></div>
+                        <div class="round_box"></div>
+                        <div class="img_box">
+                            <img src="../../img/jurism1.jpg" alt="">
+                        </div>
+        
+                        <div class="user_content">
+                            <h5 class="name">Kusen Dony Hermansyah</h5>
+                            <p class="post">@lang('messages.jurismposisi2')</p>
+                            <p class="about">@lang('messages.jurismbio2')</p>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="squareBox"></div>
+                        <div class="round_box"></div>
+                        <div class="img_box">
+                            <img src="../../img/jurism3.jpeg" alt="">
+                        </div>
+        
+                        <div class="user_content">
+                            <h5 class="name">Rita Sri Hastuti</h5>
+                            <p class="post">@lang('messages.jurismposisi3')</p>
+                            <p class="about">@lang('messages.jurismbio3')</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
 
 <!--==================== Tabel Skor ====================-->

@@ -17,38 +17,38 @@
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../../css/pendaftaran.css">
 
-      <title>Caturnawa - Daftar</title>
+      <title>@lang('messages.daftar')</title>
    </head>
    <body>
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" style="margin-left: -7rem"></a>
+         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 16rem" class="nav__item">
-						<li><a href="#" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="{{url('matalomba/daftarEDC_eng') }}" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 15rem" class="nav__item">
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
                   <li class="nav__item">
-                     <a href="{{url('/') }}" class="nav__link">Beranda</a>
+                     <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Peserta</a>
+                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">Skor</a>
+                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Babak</a>
+                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
                   
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">Juri</a>
+                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.juri')</a>
                   </li>
                </ul>
 
@@ -71,63 +71,64 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L120,186.7C240,149,480,75,720,80C960,85,1200,171,1320,213.3L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
       <section>
       <div class="konten">
-        <header>Pendaftaran</header>
-        <form action="https://app.sandbox.midtrans.com/payment-links/PembayaranUNASFEST2024">
+        <header>@lang('messages.pendaftaran')</header>
+        <form action="/checkout" method="POST">
+            @csrf
             <div class="form first">
             <div class="details personal">
                     <span class="title">Debater 1</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Lengkap</label>
-                            <input type="text" placeholder="Masukkan Nama Lengkap" required>
+                            <label for="name_1">@lang('messages.Name')</label>
+                            <input type="text" name="name_1" id="name_1"@lang('messages.place') @lang('messages.Name')" required>
                         </div>
                         <div class="input-field">
-                            <label>Email</label>
-                            <input type="email" placeholder="Masukkan Email Kamu" required>
+                            <label for="email_1">Email</label>
+                            <input type="email" name="email_1" id="email_1" placeholder="@lang('messages.place') Email " required>
                         </div>
                         <div class="input-field">
-                            <label>Fakultas</label>
-                            <input type="text" placeholder="Masukkan Fakultas Asal" required>
+                            <label for="fakultas_1" >@lang('messages.fakultas')</label>
+                            <input type="text" name="fakultas_1" id="fakultas_1" placeholder="@lang('messages.place') @lang('messages.fakultas') " required>
                         </div>
                         <div class="input-field">
-                            <label>Prodi</label>
-                            <input type="text" placeholder="Masukkan Prodi Asal" required>
+                            <label for="prodi_1">@lang('messages.prodi')</label>
+                            <input type="text" name="prodi_1" id="prodi_1" placeholder="@lang('messages.place') @lang('messages.prodi')" required>
                         </div>
                         <div class="input-field">
-                            <label>NPM</label>
-                            <input type="text" placeholder="Masukkan NPM" required>
+                            <label for="npm_1">NPM</label>
+                            <input type="text" name="npm_1" id="npm_1" placeholder="@lang('messages.place') NPM" required>
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kelamin</label>
-                            <select required>
-                                <option selected>Pilih</option>
-                                <option>Pria</option>
-                                <option>Wanita</option>
+                            <label for="jeniskelamin_1">@lang('messages.gender')</label>
+                            <select name="jeniskelamin_1" id="jeniskelamin_1" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.pria')</option>
+                                <option>@lang('messages.wanita')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Alamat</label>
-                            <input type="area" placeholder="Masukkan Alamat" required>
+                            <label for="alamatlengkap_1">@lang('messages.alamat')</label>
+                            <input  name="alamatlengkap_1" id="alamatlengkap_1" type="area" placeholder="Masukkan Alamat" required>
                         </div>
                         <div class="input-field">
-                            <label>No Whatssapp</label>
-                            <input type="Number" placeholder="Masukkan No Whatssapp" required>
+                            <label for="nomorhp_1">@lang('messages.Nomor')p</label>
+                            <input  name="nomorhp_1" id="nomorhp_1" type="Number" placeholder="Masukkan No Whatssapp" required>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Tanda Mahasiswa</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="ktm_1">@lang('messages.ktm')</label>
+                            <input name="ktm_1" id="ktm_1" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Foto Formal Background Merah </label>
-                            <input type="file" accept="image/*" require>
+                            <label for="foto_1">@lang('messages.foto')</label>
+                            <input name="foto_1" id="foto_1" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Rencana Studi</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="krs_1">@lang('messages.krs')i</label>
+                            <input name="krs_1" id="krs_1" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Bukti Follow Sosial Media UnasFest</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="buktifollow_1">@lang('messages.bukti')</label>
+                            <input name="buktifollow_1" id="buktifollow_1" type="file" accept="image/*" require>
                         </div>
                     </div>
                 </div>
@@ -135,73 +136,73 @@
                     <span class="title">Debater 2</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Nama Lengkap</label>
-                            <input type="text" placeholder="Masukkan Nama Lengkap" required>
+                            <label for="name_2">@lang('messages.Name')</label>
+                            <input type="text" name="name_2" id="name_2"@lang('messages.place') @lang('messages.Name')" required>
                         </div>
                         <div class="input-field">
-                            <label>Email</label>
-                            <input type="email" placeholder="Masukkan Email Kamu" required>
+                            <label for="email_2">Email</label>
+                            <input type="email" name="email_2" id="email_2" placeholder="@lang('messages.place') Email " required>
                         </div>
                         <div class="input-field">
-                            <label>Fakultas</label>
-                            <input type="text" placeholder="Masukkan Fakultas Asal" required>
+                            <label for="fakultas_2" >@lang('messages.fakultas')</label>
+                            <input type="text" name="fakultas_2" id="fakultas_2" placeholder="@lang('messages.place') @lang('messages.fakultas') " required>
                         </div>
                         <div class="input-field">
-                            <label>Prodi</label>
-                            <input type="text" placeholder="Masukkan Prodi Asal" required>
+                            <label for="prodi_2">@lang('messages.prodi')</label>
+                            <input type="text" name="prodi_2" id="prodi_2" placeholder="@lang('messages.place') @lang('messages.prodi')" required>
                         </div>
                         <div class="input-field">
-                            <label>NPM</label>
-                            <input type="text" placeholder="Masukkan NPM" required>
+                            <label for="npm_2">NPM</label>
+                            <input type="text" name="npm_2" id="npm_2" placeholder="@lang('messages.place') NPM" required>
                         </div>
                         <div class="input-field">
-                            <label>Jenis Kelamin</label>
-                            <select required>
-                                <option selected>Pilih</option>
-                                <option>Pria</option>
-                                <option>Wanita</option>
+                            <label for="jeniskelamin_2">@lang('messages.gender')</label>
+                            <select name="jeniskelamin_2" id="jeniskelamin_2" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.pria')</option>
+                                <option>@lang('messages.wanita')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>Alamat</label>
-                            <input type="area" placeholder="Masukkan Alamat" required>
+                            <label for="alamatlengkap_2">@lang('messages.alamat')</label>
+                            <input  name="alamatlengkap_2" id="alamatlengkap_2" type="area" placeholder="Masukkan Alamat" required>
                         </div>
                         <div class="input-field">
-                            <label>No Whatssapp</label>
-                            <input type="Number" placeholder="Masukkan No Whatssapp" required>
+                            <label for="nomorhp_2">@lang('messages.Nomor')p</label>
+                            <input  name="nomorhp_2" id="nomorhp_2" type="Number" placeholder="Masukkan No Whatssapp" required>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Tanda Mahasiswa</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="ktm_2">@lang('messages.ktm')</label>
+                            <input name="ktm_2" id="ktm_2" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Foto Formal Background Merah</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="foto_2">@lang('messages.foto')</label>
+                            <input name="foto_2" id="foto_2" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Kartu Rencana Studi</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="krs_2">@lang('messages.krs')i</label>
+                            <input name="krs_2" id="krs_2" type="file" accept="image/*" require>
                         </div>
                         <div class="input-field">
-                            <label>Bukti Follow Sosial Media UnasFest</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="buktifollow_2">@lang('messages.bukti')</label>
+                            <input name="buktifollow_2" id="buktifollow_2" type="file" accept="image/*" require>
                         </div>
                     </div>
                 </div>
                 <div class="details ID">
-                    <span class="title">Berkas Team</span>
+                    <span class="title">@lang('messages.team')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Asal Instansi</label>
+                            <label>@lang('messages.instansi')</label>
                             <input type="text" placeholder="Masukkan Asal Instansi" required>
                         </div>
                         <div class="input-field">
-                            <label>Surat Delegasi dari Kampus</label>
+                            <label>@lang('messages.surat')</label>
                             <input type="file" accept="pdf/*" require>
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Pembayaran</span>
+                        <span class="btnText">@lang('messages.bayar')</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 
@@ -210,6 +211,7 @@
     </div>
 
 </section>
+
 
         
     </body>
