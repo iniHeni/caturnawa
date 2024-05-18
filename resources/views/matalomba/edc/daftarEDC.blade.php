@@ -11,12 +11,11 @@
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
       <!--=============== SWIPER CSS ===============-->
-      
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../../css/pendaftaran.css">
-
       <title>@lang('messages.daftar')</title>
    </head>
    <body>
@@ -72,15 +71,15 @@
       <section>
       <div class="konten">
         <header>@lang('messages.pendaftaran')</header>
-        <form action="/checkout" method="POST">
+        <form action="/checkout" method="POST" enctype="multipart/form-data" >
             @csrf
             <div class="form first">
             <div class="details personal">
                     <span class="title">Debater 1</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label for="name_1">@lang('messages.Name')</label>
-                            <input type="text" name="name_1" id="name_1"@lang('messages.place') @lang('messages.Name')" required>
+                            <label for="nama_1">@lang('messages.Name')</label>
+                            <input type="text" name="nama_1" id="nama_1" placeholder="@lang('messages.place') @lang('messages.Name')" required>
                         </div>
                         <div class="input-field">
                             <label for="email_1">Email</label>
@@ -116,19 +115,19 @@
                         </div>
                         <div class="input-field">
                             <label for="ktm_1">@lang('messages.ktm')</label>
-                            <input name="ktm_1" id="ktm_1" type="file" accept="image/*" require>
+                            <input name="ktm_1" id="ktm_1" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="foto_1">@lang('messages.foto')</label>
-                            <input name="foto_1" id="foto_1" type="file" accept="image/*" require>
+                            <input name="foto_1" id="foto_1" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="krs_1">@lang('messages.krs')i</label>
-                            <input name="krs_1" id="krs_1" type="file" accept="image/*" require>
+                            <input name="krs_1" id="krs_1" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="buktifollow_1">@lang('messages.bukti')</label>
-                            <input name="buktifollow_1" id="buktifollow_1" type="file" accept="image/*" require>
+                            <input name="buktifollow_1" id="buktifollow_1" type="file" accept="image/*" required>
                         </div>
                     </div>
                 </div>
@@ -136,8 +135,8 @@
                     <span class="title">Debater 2</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label for="name_2">@lang('messages.Name')</label>
-                            <input type="text" name="name_2" id="name_2"@lang('messages.place') @lang('messages.Name')" required>
+                            <label for="nama_2">@lang('messages.Name')</label>
+                            <input type="text" name="nama_2" id="nama_2" placeholder="@lang('messages.place') @lang('messages.Name')" required>
                         </div>
                         <div class="input-field">
                             <label for="email_2">Email</label>
@@ -173,19 +172,19 @@
                         </div>
                         <div class="input-field">
                             <label for="ktm_2">@lang('messages.ktm')</label>
-                            <input name="ktm_2" id="ktm_2" type="file" accept="image/*" require>
+                            <input name="ktm_2" id="ktm_2" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="foto_2">@lang('messages.foto')</label>
-                            <input name="foto_2" id="foto_2" type="file" accept="image/*" require>
+                            <input name="foto_2" id="foto_2" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="krs_2">@lang('messages.krs')i</label>
-                            <input name="krs_2" id="krs_2" type="file" accept="image/*" require>
+                            <input name="krs_2" id="krs_2" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
                             <label for="buktifollow_2">@lang('messages.bukti')</label>
-                            <input name="buktifollow_2" id="buktifollow_2" type="file" accept="image/*" require>
+                            <input name="buktifollow_2" id="buktifollow_2" type="file" accept="image/*" required>
                         </div>
                     </div>
                 </div>
@@ -193,16 +192,16 @@
                     <span class="title">@lang('messages.team')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.instansi')</label>
-                            <input type="text" placeholder="Masukkan Asal Instansi" required>
+                            <label for="instansi">@lang('messages.instansi')</label>
+                            <input type="text" name="instansi" id="instansi" placeholder="Masukkan Asal Instansi" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.surat')</label>
-                            <input type="file" accept="pdf/*" require>
+                            <label for="surat_delegasi">@lang('messages.surat')</label>
+                            <input type="file" name="surat_delegasi" id="surat_delegasi" accept="pdf/*" required>
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">@lang('messages.bayar')</span>
+                        <span class="btnText">Checkout</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 
@@ -221,13 +220,31 @@
       <script src="../../js/nav.js"></script>
       <script src="../../js/daftarlomba.js"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-      <script>
-            const. submit = document.querySelector('.sumbit');
-            submit.addEventListener('click', function(){
-            Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-            });  
-            })
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script type="text/javascript">
+      $(function() {
+          $(this).bind("contextmenu", function(e) {
+              e.preventDefault();
+          });
+      }); 
       </script>
+      <script type="text/JavaScript"> 
+          function killCopy(e){ return false } 
+          function reEnable(){ return true } 
+          document.onselectstart=new Function ("return false"); 
+          if (window.sidebar)
+          { 
+              document.onmousedown=killCopy; 
+              document.onclick=reEnable; 
+          } 
+      </script>
+      <script type="text/Javascript">
+      $(document).keydown(function(event){
+    if(event.keyCode==123){
+        return false;
+    }
+    else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+             return false;
+    }
+});
+    </script>

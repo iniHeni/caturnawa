@@ -72,70 +72,71 @@
       <section>
       <div class="konten">
         <header>@lang('messages.pendaftaran')</header>
-        <form action="https://app.sandbox.midtrans.com/payment-links/PembayaranUNASFEST2024">
+        <form action="/lkti/checkout" method="POST" enctype="multipart/form-data" >
+            @csrf
             <div class="form first">
                 <div class="details personal">
                     <span class="title">@lang('messages.identitas')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.Name')</label>
-                            <input type="text" placeholder="Masukkan Nama Lengkap" required>
+                            <label for="nama">@lang('messages.Name')</label>
+                            <input type="text" name="nama" id="nama" placeholder="@lang('messages.place') @lang('messages.Name')" required>
                         </div>
                         <div class="input-field">
-                            <label>Email</label>
-                            <input type="email" placeholder="Masukkan Email Kamu" required>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.fakultas')</label>
-                            <input type="text" placeholder="Masukkan Fakultas Asal" required>
+                            <label for="fakultas" >@lang('messages.fakultas')</label>
+                            <input type="text" name="fakultas" id="fakultas" placeholder="@lang('messages.place') @lang('messages.fakultas') " required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.prodi')</label>
-                            <input type="text" placeholder="Masukkan Prodi Asal" required>
+                            <label for="prodi">@lang('messages.prodi')</label>
+                            <input type="text" name="prodi" id="prodi" placeholder="@lang('messages.place') @lang('messages.prodi')" required>
                         </div>
                         <div class="input-field">
-                            <label>NPM</label>
-                            <input type="text" placeholder="Masukkan NPM" required>
+                            <label for="npm">NPM</label>
+                            <input type="text" name="npm" id="npm" placeholder="@lang('messages.place') NPM" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.gender')</label>
-                            <select required>
+                            <label for="jeniskelamin">@lang('messages.gender')</label>
+                            <select name="jeniskelamin" id="jeniskelamin" required>
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.pria')</option>
                                 <option>@lang('messages.wanita')</option>
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.instansi')</label>
-                            <input type="text" placeholder="Masukkan Asal Instansi" required>
+                            <label for="alamatlengkap">@lang('messages.alamat')</label>
+                            <input  name="alamatlengkap" id="alamatlengkap" type="area" placeholder="Masukkan Alamat" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.alamat')</label>
-                            <input type="area" placeholder="Masukkan Alamat" required>
+                            <label for="nomorhp">@lang('messages.Nomor')</label>
+                            <input  name="nomorhp" id="nomorhp" type="Number" placeholder="Masukkan No Whatssapp" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.Nomor')</label>
-                            <input type="Number" placeholder="Masukkan No Whatssapp" required>
+                            <label for="ktm">@lang('messages.ktm')</label>
+                            <input name="ktm" id="ktm" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.ktm')</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="foto">@lang('messages.foto')</label>
+                            <input name="foto" id="foto_1" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.foto')</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="krs">@lang('messages.krs')i</label>
+                            <input name="krs" id="krs" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.krs')</label>
-                            <input type="file" require>
+                            <label for="buktifollow">@lang('messages.bukti')</label>
+                            <input name="buktifollow" id="buktifollow" type="file" accept="image/*" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.bukti')</label>
-                            <input type="file" accept="image/*" require>
+                            <label for="instansi">@lang('messages.instansi')</label>
+                            <input type="text" name="instansi" id="instansi" placeholder="Masukkan Asal Instansi" required>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.surat')</label>
-                            <input type="file" accept="pdf/*" require>
+                            <label for="surat_delegasi">@lang('messages.surat')</label>
+                            <input type="file" name="surat_delegasi" id="surat_delegasi" accept="pdf/*" required>
                         </div>
                     </div>
                 </div>
@@ -143,16 +144,16 @@
                     <span class="title">@lang('messages.Capaian') *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan" id="nama_kegiatan" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan" id="jenis_kegiatan" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan" id="tingkat_kegiatan">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -161,8 +162,35 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat">@lang('messages.sertif')</label>
+                            <input name="sertifikat" id="sertifikat" type="file" accept="pdf/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="details personal">
+                    <span class="title">@lang('messages.Capaian')1 *Optional</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="nama_kegiatan1">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan1" id="nama_kegiatan1" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                        </div>
+                        <div class="input-field">
+                            <label for="jenis_kegiatan1">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan1" id="jenis_kegiatan1" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                        </div>
+                        <div class="input-field">
+                            <label for="tingkat_kegiatan1">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan1" id="tingkat_kegiatan1">
+                                <option selected>@lang('messages.pilih')</option>
+                                <option>@lang('messages.intern')</option>
+                                <option>@lang('messages.regional')</option>
+                                <option>@lang('messages.nasional')</option>
+                                <option>@lang('messages.provinsi')</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="sertifikat1">@lang('messages.sertif')</label>
+                            <input name="sertifikat1" id="sertifikat1" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -170,16 +198,16 @@
                     <span class="title">@lang('messages.Capaian')2 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan2">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan2" id="nama_kegiatan2" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan2">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan2" id="jenis_kegiatan2" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan2">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan2" id="tingkat_kegiatan2">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -188,8 +216,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat2">@lang('messages.sertif')</label>
+                            <input name="sertifikat2" id="sertifikat2" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -197,16 +225,16 @@
                     <span class="title">@lang('messages.Capaian')3 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan3">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan3" id="nama_kegiatan3" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan3">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan3" id="jenis_kegiatan3" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan3">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan3" id="tingkat_kegiatan3">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -215,8 +243,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat3">@lang('messages.sertif')</label>
+                            <input name="sertifikat3" id="sertifikat3" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -224,16 +252,16 @@
                     <span class="title">@lang('messages.Capaian')4 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan4">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan4" id="nama_kegiatan4" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan4">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan4" id="jenis_kegiatan4" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan4">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan4" id="tingkat_kegiatan4">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -242,8 +270,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat4">@lang('messages.sertif')</label>
+                            <input name="sertifikat4" id="sertifikat4" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -251,16 +279,16 @@
                     <span class="title">@lang('messages.Capaian')5 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan5">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan5" id="nama_kegiatan5" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan5">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan5" id="jenis_kegiatan5" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan5">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan5" id="tingkat_kegiatan5">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -269,8 +297,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat5">@lang('messages.sertif')</label>
+                            <input name="sertifikat5" id="sertifikat5" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -278,16 +306,16 @@
                     <span class="title">@lang('messages.Capaian')6 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan6">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan6" id="nama_kegiatan6" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan6">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan6" id="jenis_kegiatan6" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan6">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan6" id="tingkat_kegiatan6">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -296,8 +324,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat6">@lang('messages.sertif')</label>
+                            <input name="sertifikat6" id="sertifikat6" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -305,16 +333,16 @@
                     <span class="title">@lang('messages.Capaian')7 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan7">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan7" id="nama_kegiatan7" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan7">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan7" id="jenis_kegiatan7" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan7">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan7" id="tingkat_kegiatan7">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -323,8 +351,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat7">@lang('messages.sertif')</label>
+                            <input name="sertifikat7" id="sertifikat7" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -332,16 +360,16 @@
                     <span class="title">@lang('messages.Capaian')8 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan8">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan8" id="nama_kegiatan8" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan8">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan8" id="jenis_kegiatan8" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan8">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan8" id="tingkat_kegiatan8">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -350,8 +378,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat8">@lang('messages.sertif')</label>
+                            <input name="sertifikat8" id="sertifikat8" type="file" accept="pdf/*">
                         </div>
                     </div>
                 </div>
@@ -359,16 +387,16 @@
                     <span class="title">@lang('messages.Capaian') 9 *optional</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>@lang('messages.namakegiatan')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
+                            <label for="nama_kegiatan9">@lang('messages.namakegiatan')</label>
+                            <input name="nama_kegiatan9" id="nama_kegiatan9" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" >
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.jenis')</label>
-                            <input type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
+                            <label for="jenis_kegiatan9">@lang('messages.jenis')</label>
+                            <input name="jenis_kegiatan9" id="jenis_kegiatan9" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')">
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.tingkat')</label>
-                            <select>
+                            <label for="tingkat_kegiatan9">@lang('messages.tingkat')</label>
+                            <select name="tingkat_kegiatan9" id="tingkat_kegiatan9">
                                 <option selected>@lang('messages.pilih')</option>
                                 <option>@lang('messages.intern')</option>
                                 <option>@lang('messages.regional')</option>
@@ -377,8 +405,8 @@
                             </select>
                         </div>
                         <div class="input-field">
-                            <label>@lang('messages.sertif')</label>
-                            <input type="file" accept="pdf/*">
+                            <label for="sertifikat9">@lang('messages.sertif')</label>
+                            <input name="sertifikat9" id="sertifikat9" type="file" accept="pdf/*">
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
@@ -400,13 +428,3 @@
       <script src="../../js/main.js"></script>
       <script src="../../js/daftarlomba.js"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-      <script>
-            const. submit = document.querySelector('.submit');
-            submit.addEventListener('click', function(){
-            Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-            });  
-            })
-      </script>
