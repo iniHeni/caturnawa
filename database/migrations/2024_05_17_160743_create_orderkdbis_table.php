@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('orderkdbis', function (Blueprint $table) {
             $table->id();
             $table->string('nama_1');
             $table->string('email_1');
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('buktifollow_2');
             $table->bigInteger('price');
             $table->string('instansi');
-            $table->file('surat_delegasi');
+            $table->string('surat_delegasi');
             $table->enum('status', ['Unpaid', 'Paid']);
             $table->timestamps();
         });
@@ -50,6 +50,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('orderkdbis');
     }
 };

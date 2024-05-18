@@ -282,5 +282,32 @@
 
       <script src="js/homepage.js"></script>
       <script src="js/nav.js"></script>
+      <script type="text/javascript">
+         $(function() {
+             $(this).bind("contextmenu", function(e) {
+                 e.preventDefault();
+             });
+         }); 
+         </script>
+         <script type="text/JavaScript"> 
+             function killCopy(e){ return false } 
+             function reEnable(){ return true } 
+             document.onselectstart=new Function ("return false"); 
+             if (window.sidebar)
+             { 
+                 document.onmousedown=killCopy; 
+                 document.onclick=reEnable; 
+             } 
+         </script>
+         <script type="text/Javascript">
+         $(document).keydown(function(event){
+       if(event.keyCode==123){
+           return false;
+       }
+       else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+                return false;
+       }
+   });
+       </script>
    </body>
 </html>
