@@ -97,7 +97,7 @@ img {
 
 .main {
   position: relative;
-  height: 100vh;
+  height: auto;
 }
 
 .main__bg {
