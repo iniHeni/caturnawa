@@ -360,7 +360,7 @@
 }
 @media screen and (max-width: 1024px) {
   .main {
-      margin-bottom: 50rem;
+      margin-bottom: auto;
   }
   .testing1 {
       margin: 0 150px;
