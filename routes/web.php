@@ -33,6 +33,19 @@ Route::get('/matalomba/scoreEDC', function () {
     return view('matalomba/edc/score');
 });
 
+// score EDC
+Route::get('/matalomba/penyisihanEDC', function () {
+    return view('matalomba/edc/penyisihan');
+});
+
+Route::get('/matalomba/sfinalEDC', function () {
+    return view('matalomba/edc/sfinal');
+});
+
+Route::get('/matalomba/finalEDC', function () {
+    return view('matalomba/edc/final');
+});
+
 
 
 // Matalomba KDBI 
@@ -47,9 +60,17 @@ Route::get('/matalomba/daftarKDBI', function () {
 Route::get('/matalomba/detailpesertaKDBI', function () {
     return view('matalomba/kdbi/detailpeserta');
 });
+// score KDBI
+Route::get('/matalomba/penyisihanKDBI', function () {
+    return view('matalomba/kdbi/penyisihan');
+});
 
-Route::get('/matalomba/scoreKDBI', function () {
-    return view('matalomba/kdbi/score');
+Route::get('/matalomba/sfinalKDBI', function () {
+    return view('matalomba/kdbi/sfinal');
+});
+
+Route::get('/matalomba/finalKDBI', function () {
+    return view('matalomba/kdbi/final');
 });
 
 // Matalomba LKTI 
@@ -69,6 +90,21 @@ Route::get('/matalomba/scoreLKTI', function () {
     return view('matalomba/lkti/score');
 });
 
+// score LKTI
+Route::get('/matalomba/penyisihanLKTI', function () {
+    return view('matalomba/lkti/penyisihan');
+});
+
+Route::get('/matalomba/sfinalLKTI', function () {
+    return view('matalomba/lkti/sfinal');
+});
+
+Route::get('/matalomba/finalLKTI', function () {
+    return view('matalomba/lkti/final');
+});
+
+
+
 // Matalomba SM 
 Route::get('/matalomba/shortmovie', function () {
     return view('matalomba/sm/sm');
@@ -84,4 +120,17 @@ Route::get('/matalomba/detailpesertaSM', function () {
 
 Route::get('/matalomba/scoreSM', function () {
     return view('matalomba/sm/score');
+});
+
+// score SM
+Route::get('/matalomba/penyisihanSM', function () {
+    return view('matalomba/sm/penyisihan');
+});
+
+Route::get('/matalomba/sfinalSM', function () {
+    return view('matalomba/sm/sfinal');
+});
+
+Route::get('/matalomba/finalSM', function () {
+    return view('matalomba/sm/final');
 });

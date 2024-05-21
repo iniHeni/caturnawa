@@ -25,9 +25,9 @@ return [
     'count' =>'Hitung Mundur',
     // Home End 
     // Page Start Lomba
-    'teks' => 'dalam Memeriahkan Dies Natalies Universitas Nasional ke-75, 
-    UNAS FEST membuka pendaftaran kompetisi dengan tema',
-    'teks1' => 'Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global',
+    'teks' => 'Dalam memeriahkan Dies Natalies Universitas Nasional ke-75',
+    'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema',
+    'teks2' => '"Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global"',
     'pesertalomba' => 'Peserta Kompetisi',
     'babak' => 'Pilih Babak',
     'penyisihan' => 'Penyisihan',
