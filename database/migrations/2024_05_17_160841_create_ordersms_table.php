@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('ordersms', function (Blueprint $table) {
             $table->id();
+            $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');
             $table->string('fakultas_1');

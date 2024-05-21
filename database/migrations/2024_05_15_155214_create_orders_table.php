@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');
             $table->string('fakultas_1');
@@ -21,10 +22,10 @@ return new class extends Migration
             $table->string('jeniskelamin_1');
             $table->string('alamatlengkap_1');
             $table->bigInteger('nomorhp_1');
-            $table->string('ktm_1');
-            $table->string('foto_1');
-            $table->string('krs_1');
-            $table->string('buktifollow_1');
+            $table->string('ktm_1')->nullable;
+            $table->string('foto_1')->nullable;
+            $table->string('krs_1')->nullable;
+            $table->string('buktifollow_1')->nullable;
             $table->string('nama_2');
             $table->string('email_2');
             $table->string('fakultas_2');
@@ -39,7 +40,7 @@ return new class extends Migration
             $table->string('buktifollow_2');
             $table->bigInteger('price');
             $table->string('instansi');
-            $table->file('surat_delegasi');
+            $table->string('surat_delegasi')->nullable;
             $table->enum('status', ['Unpaid', 'Paid']);
             $table->timestamps();
         });

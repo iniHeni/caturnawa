@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
       <!--=============== SWIPER CSS ===============-->
       
 
@@ -212,6 +212,9 @@
                             <span class="btnText">@lang('messages.bayar')</span>
                             <i class="uil uil-navigator"></i>
                         </button>
+                        <button type="submit" class="nextBtn" id="pay-button">
+                            <a href="{{url('matalomba/daftarEDC') }}" class="btnText">@lang('messages.kembali')</a>
+                        </button>
                     </div> 
                 </div>
                 </table>
@@ -226,7 +229,7 @@
 </html>
       <script src="../../js/nav.js"></script>
       <script src="../../js/daftarlomba.js"></script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
       <script type="text/javascript">
         // For example trigger on button clicked, or any time you need
         var payButton = document.getElementById('pay-button');

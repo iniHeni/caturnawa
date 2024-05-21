@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
       <!--=============== SWIPER CSS ===============-->
       
 
@@ -83,55 +83,55 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
-                                <input disabled placeholder="{{$order->nama_1}}">
+                                <input disabled placeholder="{{$orderkdbi->nama_1}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
-                                <input disabled placeholder="{{$order->email_1}}">
+                                <input disabled placeholder="{{$orderkdbi->email_1}}">
                             </div>
                             <div class="input-field">
                                 <label  >@lang('messages.fakultas')</label>
-                                <input disabled placeholder="{{$order->fakultas_1}}">
+                                <input disabled placeholder="{{$orderkdbi->fakultas_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.prodi')</label>
-                                <input disabled placeholder="{{$order->prodi_1}}">
+                                <input disabled placeholder="{{$orderkdbi->prodi_1}}">
                             </div>
                             <div class="input-field">
                                 <label>NPM</label>
-                                <input disabled placeholder="{{$order->npm_1}}">
+                                <input disabled placeholder="{{$orderkdbi->npm_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.gender')</label>
                                 <select disabled>
-                                    <option selected>{{$order->jeniskelamin_1}}</option>
+                                    <option selected>{{$orderkdbi->jeniskelamin_1}}</option>
                                     <option>@lang('messages.pria')</option>
                                     <option>@lang('messages.wanita')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.alamat')</label>
-                                <input disabled placeholder="{{$order->alamatlengkap_1}}">
+                                <input disabled placeholder="{{$orderkdbi->alamatlengkap_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.Nomor')p</label>
-                                <input disabled placeholder="{{$order->nomorhp_1}}">
+                                <input disabled placeholder="{{$orderkdbi->nomorhp_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$order->ktm_1}}">
+                                <input disabled placeholder="{{$orderkdbi->ktm_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$order->foto_1}}">
+                                <input disabled placeholder="{{$orderkdbi->foto_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$order->krs_1}}">
+                                <input disabled placeholder="{{$orderkdbi->krs_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$order->buktifollow_1}}">
+                                <input disabled placeholder="{{$orderkdbi->buktifollow_1}}">
                             </div>
                         </div>
                     </div>
@@ -140,55 +140,55 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
-                                <input disabled placeholder="{{$order->nama_2}}">
+                                <input disabled placeholder="{{$orderkdbi->nama_2}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
-                                <input disabled placeholder="{{$order->email_2}}">
+                                <input disabled placeholder="{{$orderkdbi->email_2}}">
                             </div>
                             <div class="input-field">
                                 <label  >@lang('messages.fakultas')</label>
-                                <input disabled placeholder="{{$order->fakultas_2}}">
+                                <input disabled placeholder="{{$orderkdbi->fakultas_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.prodi')</label>
-                                <input disabled placeholder="{{$order->prodi_2}}">
+                                <input disabled placeholder="{{$orderkdbi->prodi_2}}">
                             </div>
                             <div class="input-field">
                                 <label>NPM</label>
-                                <input disabled placeholder="{{$order->npm_2}}">
+                                <input disabled placeholder="{{$orderkdbi->npm_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.gender')</label>
                                 <select disabled>
-                                    <option selected>{{$order->jeniskelamin_2}}</option>
+                                    <option selected>{{$orderkdbi->jeniskelamin_2}}</option>
                                     <option>@lang('messages.pria')</option>
                                     <option>@lang('messages.wanita')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.alamat')</label>
-                                <input disabled placeholder="{{$order->alamatlengkap_2}}">
+                                <input disabled placeholder="{{$orderkdbi->alamatlengkap_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.Nomor')p</label>
-                                <input disabled placeholder="{{$order->nomorhp_2}}">
+                                <input disabled placeholder="{{$orderkdbi->nomorhp_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$order->ktm_2}}">
+                                <input disabled placeholder="{{$orderkdbi->ktm_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$order->foto_2}}">
+                                <input disabled placeholder="{{$orderkdbi->foto_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$order->krs_2}}">
+                                <input disabled placeholder="{{$orderkdbi->krs_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$order->buktifollow_2}}">
+                                <input disabled placeholder="{{$orderkdbi->buktifollow_2}}">
                             </div>
                         </div>
                     </div>
@@ -197,20 +197,23 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
-                                <input disabled placeholder="{{$order->instansi}}" required>
+                                <input disabled placeholder="{{$orderkdbi->instansi}}" required>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>
-                                <input disabled placeholder="{{$order->surat_delegasi}}">
+                                <input disabled placeholder="{{$orderkdbi->surat_delegasi}}">
                             </div>
                             <div class="input-field">
                                 <label>Price</label>
-                                <input disabled placeholder="{{$order->price}}">
+                                <input disabled placeholder="{{$orderkdbi->price}}">
                             </div>
                         </div>
                         <button type="submit" class="nextBtn" id="pay-button">
                             <span class="btnText">@lang('messages.bayar')</span>
                             <i class="uil uil-navigator"></i>
+                        </button>
+                        <button type="submit" class="nextBtn" id="pay-button">
+                            <a href="{{url('matalomba/daftarKDBI') }}" class="btnText">@lang('messages.kembali')</a>
                         </button>
                     </div> 
                 </div>
