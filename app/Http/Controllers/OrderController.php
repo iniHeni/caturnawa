@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +37,7 @@ class OrderController extends Controller
             'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000'
+            'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]);     
         $order = $request->all();
         if($request->hasFile('ktm_1'))
@@ -132,7 +133,7 @@ class OrderController extends Controller
          $additionalData = [
         'price' => 350000,
         'status' => 'Unpaid',
-        'kompetisi' => 'English Debate Competition'
+        'kompetisi' => 'English Debate Competition',
     ];
 
     $order = array_merge($order, $additionalData);
@@ -184,7 +185,7 @@ $params = array(
     ),
     'item_details' => array(
         array(
-        'id' => $order->id,
+        'id' => 'order_id',
         'price' => $order->price,
         'quantity' => 1,
         'name' =>  "English Debat Competition",

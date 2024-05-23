@@ -22,6 +22,7 @@
       <title>Caturnawa</title>
    </head>
    <body>
+   <div class="lds-ripple">
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
@@ -307,6 +308,6 @@
                 return false;
        }
    });
-       </script>
+</script>
    </body>
 </html>

@@ -10,7 +10,7 @@
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/detaillpeserta.css">
 
       <title>Caturnawa - KDBIDetail</title>
@@ -19,14 +19,14 @@
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
-         <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-        <div style="margin-right: 13rem" class="nav__item">
-						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
-					</div>
+        <nav class="nav container">
+        <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
+        <div class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+       <div style="margin-right: 9rem" class="nav__item">
+                       <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+                       <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+                   </div>
           <li class="nav__item">
             <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
          </li>
@@ -268,7 +268,7 @@
 </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-
+<script src="../../js/nav.js"></script>
     </body>
     <!-- JavaScript -->
 </html>

@@ -277,7 +277,7 @@
 
 .card_container .card{
   max-width: 500px;
-  height: 650px;
+  height: 600px;
   margin-top: 5rem;
   border-radius: 25px;
   background: #ffffff;
@@ -286,6 +286,7 @@
   color: #f1f5f9;
   position: relative;
 }
+
 
 .user_content1 .name{
   font-size: 20px;
@@ -389,6 +390,40 @@
   text-align: justify;
 }
 
+.user_content4 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content4 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content4 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content4 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
 .card .round_box{
   position: absolute;
   top: -12%;
@@ -433,7 +468,7 @@
       margin-bottom: 50px;
   }
   .card_container .card{
-    height: 1000px;
+    height: 900px;
   }
   .card .round_box{
     position: absolute;
@@ -466,42 +501,57 @@
       font-size: 17;
   }
 }
+@media screen and (max-width: 430px) {
 
+  .user_content2 {
+    margin-top: 3rem;
+}
+
+}
 @media screen and (max-width: 390px) {
   .user_content1 {
-      margin-top: -33rem;
+      margin-top: -18rem;
   }
   .user_content2 {
-    margin-top: -9rem;
+    margin-top: -8rem;
 }
 .user_content3 {
-  margin-top: -28rem;
+  margin-top: -8rem;
 }
 
+.user_content4 {
+  margin-top: -28rem;
+}
 }
 @media screen and (max-width: 375px) {
   .user_content1 {
-      margin-top: -34rem;
+      margin-top: -15rem;
   }
   .user_content2 {
-    margin-top: -9rem;
+    margin-top: -5rem;
 }
 .user_content3 {
-  margin-top: -26rem;
+  margin-top: -5rem;
 }
 
+.user_content4 {
+  margin-top: -28rem;
+}
 }
 @media screen and (max-width: 344px) {
   .user_content1 {
-      margin-top:  -30rem;
+      margin-top: -5rem;
   }
   .user_content2 {
     margin-top: 3rem;
 }
 .user_content3 {
-  margin-top: -20rem;
+  margin-top: 3rem;
 }
 
+.user_content4 {
+  margin-top: -20rem;
+}
 }
 
 .icon{

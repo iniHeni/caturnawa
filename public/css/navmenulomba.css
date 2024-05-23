@@ -210,23 +210,7 @@ img {
   width: 12%;
   column-gap: .9rem;
 }
-@media screen and (max-width: 1023px) {
-  .nav__menu {
-    position: fixed;
-    top: -100%;
-    margin: 0 auto;
-    background-color: var(--body);
-    width: 100%;
-    padding-block: 4.5rem 4rem;
-    transition: top .4s;
-  }
-  .nav__list > div {
-    width: 15%;
 
-  }
-
-
-}
 
 .gmbar{
   margin-top: -.8rem;
@@ -237,6 +221,31 @@ img {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color .4s;
+}
+@media screen and (max-width: 920px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    text-align: center;
+    align-items: center;
+    background-color: var(--body);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
+  .nav__link{
+    margin-left: -1rem;
+  }
+  .nav__list > div {
+    width: 17%;
+
+  }
+  .nav__item{
+    align-items: center;
+    justify-content: center;
+  }
+
+
 }
 
 .nav__close {

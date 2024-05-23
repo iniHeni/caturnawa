@@ -152,7 +152,7 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="krs">@lang('messages.krs')i</label>
+                            <label for="krs">@lang('messages.krs')</label>
                             <input name="krs" id="krs" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs') is-invalid @enderror required>
                             @error('krs')
                             <div class="text-danger">{{ $message }}</div>
@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')1 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 1 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan1">@lang('messages.namakegiatan')</label>
@@ -236,7 +236,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')2 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 2 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan2">@lang('messages.namakegiatan')</label>
@@ -263,7 +263,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')3 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 3 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan3">@lang('messages.namakegiatan')</label>
@@ -290,7 +290,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')4 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 4 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan4">@lang('messages.namakegiatan')</label>
@@ -317,7 +317,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')5 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 5 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan5">@lang('messages.namakegiatan')</label>
@@ -344,7 +344,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')6 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 6 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan6">@lang('messages.namakegiatan')</label>
@@ -371,7 +371,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')7 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 7 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan7">@lang('messages.namakegiatan')</label>
@@ -398,7 +398,7 @@
                     </div>
                 </div>
                 <div class="details personal">
-                    <span class="title">@lang('messages.Capaian')8 *Optional</span>
+                    <span class="title">@lang('messages.Capaian') 8 *Optional</span>
                     <div class="fields">
                         <div class="input-field">
                             <label for="nama_kegiatan8">@lang('messages.namakegiatan')</label>
@@ -425,8 +425,8 @@
                     </div>
                 </div>
                 <div class="details ID">
-                    <span class="title">@lang('messages.Capaian')9 *optional</span>
-                    <div class="fields">
+                    <span class="title">@lang('messages.Capaian') 9 *optional</span>
+                    <div class="fields"> 
                         <div class="input-field">
                             <label for="nama_kegiatan9">@lang('messages.namakegiatan')</label>
                             <input name="nama_kegiatan9" id="nama_kegiatan9" type="text" placeholder="@lang('messages.place') @lang('messages.namakegiatan')" nullable >
@@ -461,10 +461,12 @@
 
 </section>
 
-        
-    </body>
+    
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/daftarlomba.js"></script>
+   </body>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript">
         $(function() {
@@ -494,5 +496,4 @@
   });
       </script>
 </html>
-      <script src="../../js/daftarlomba.js"></script>
 

@@ -10,6 +10,53 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 class OrderlktiController extends Controller
 {
     public function checkout(Request $request){
+        $orderlkti = $request->validate([
+            'nama' => 'required|string|max:50',
+            'email' => 'required|email',
+            'fakultas' => 'required|string|max:50',
+            'prodi' => 'required|string|max:50',
+            'npm' => 'required|string|max:50',
+            'jeniskelamin' => 'required',
+            'alamatlengkap' => 'required|string|max:150',
+            'nomorhp' => 'required',
+            'instansi' => 'required|string|max:50',
+            'ktm' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'foto' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'krs' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'buktifollow' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'surat_delegasi' => 'required|mimes:pdf|max:5000',
+            'nama_kegiatan' => 'nullable|string|max:50',
+            'jenis_kegiatan' => 'nullable|string|max:50',
+            'nama_kegiatan1' => 'nullable|string|max:50',
+            'jenis_kegiatan1' => 'nullable|string|max:50',
+            'nama_kegiatan2' => 'nullable|string|max:50',
+            'jenis_kegiatan2' => 'nullable|string|max:50',
+            'nama_kegiatan3' => 'nullable|string|max:50',
+            'jenis_kegiatan3' => 'nullable|string|max:50',
+            'nama_kegiatan4' => 'nullable|string|max:50',
+            'jenis_kegiatan4' => 'nullable|string|max:50',
+            'nama_kegiatan5' => 'nullable|string|max:50',
+            'jenis_kegiatan5' => 'nullable|string|max:50',
+            'nama_kegiatan6' => 'nullable|string|max:50',
+            'jenis_kegiatan6' => 'nullable|string|max:50',
+            'nama_kegiatan7' => 'nullable|string|max:50',
+            'jenis_kegiatan7' => 'nullable|string|max:50',
+            'nama_kegiatan8' => 'nullable|string|max:50',
+            'jenis_kegiatan8' => 'nullable|string|max:50',
+            'nama_kegiatan9' => 'nullable|string|max:50',
+            'jenis_kegiatan9' => 'nullable|string|max:50',
+            'sertifikat' => '|mimes:pdf|max:5000',
+            'sertifikat1' => '|mimes:pdf|max:5000',
+            'sertifikat2' => '|mimes:pdf|max:5000',
+            'sertifikat3' => '|mimes:pdf|max:5000',
+            'sertifikat4' => '|mimes:pdf|max:5000',
+            'sertifikat5' => '|mimes:pdf|max:5000',
+            'sertifikat6' => '|mimes:pdf|max:5000',
+            'sertifikat7' => '|mimes:pdf|max:5000',
+            'sertifikat8' => '|mimes:pdf|max:5000',
+            'sertifikat9' => '|mimes:pdf|max:5000',
+            
+        ]); 
         $orderlkti = $request->all();
         if($request->hasFile('ktm'))
         {
@@ -193,7 +240,7 @@ class OrderlktiController extends Controller
          $additionalData = [
         'price' => 250000,
         'status' => 'Unpaid',
-        'kompetisi' => 'Scientific Paper'
+        'kompetisi' => 'Scientific Paper',
     ];
 
     $orderlkti = array_merge($orderlkti, $additionalData);
@@ -215,6 +262,7 @@ class OrderlktiController extends Controller
         $result = $request->file('surat_delegasi')->storeOnCloudinary('caturnawa/lkti/images/surat');
         $result->getFileName();
         $result->getExtension();
+       
 
    // Set your Merchant Server Key
 \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -232,7 +280,7 @@ $params = array(
 ),
 'item_details' => array(
     array(
-    'id' => $orderlkti->id,
+    'id' => 'order_id',
     'price' => $orderlkti->price,
     'quantity' => 1,
     'name' =>  "Scientific Paper Competition",

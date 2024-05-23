@@ -37,7 +37,7 @@ class OrderkdbiController extends Controller
             'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000'
+            'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]); 
 
         
@@ -136,7 +136,7 @@ class OrderkdbiController extends Controller
          $additionalData = [
         'price' => 300000,
         'status' => 'Unpaid',
-        'kompetisi' => 'Debate Bahasa Indonesia Competition'
+        'kompetisi' => 'Debate Bahasa Indonesia Competition',
     ];
 
     $orderkdbi = array_merge($orderkdbi, $additionalData);
@@ -187,7 +187,7 @@ $params = array(
 ),
 'item_details' => array(
     array(
-    'id' => $orderkdbi->id,
+    'id' => 'order_id',
     'price' => $orderkdbi->price,
     'quantity' => 1,
     'name' =>  "Debate Bahasa Indonesia Competition",

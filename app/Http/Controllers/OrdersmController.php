@@ -72,7 +72,7 @@ class OrdersmController extends Controller
             'buktifollow_3' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_4' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_5' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000'
+            'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]);     
         $ordersm = $request->all();
         if($request->hasFile('ktm_1'))
@@ -287,7 +287,7 @@ class OrdersmController extends Controller
          $additionalData = [
         'price' => 250000,
         'status' => 'Unpaid',
-        'kompetisi' => 'ShortMovie Competition'
+        'kompetisi' => 'ShortMovie Competition',
     ];
 
     $ordersm = array_merge($ordersm, $additionalData);
@@ -374,7 +374,7 @@ $params = array(
 ),
 'item_details' => array(
     array(
-    'id' => $ordersm->id,
+    'id' => 'order_id',
     'price' => $ordersm->price,
     'quantity' => 1,
     'name' =>  "ShortMovie Competition",
