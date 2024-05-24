@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 // index indo dan eng
 Route::get('/', function () {
     return view('index');
@@ -134,3 +134,27 @@ Route::get('/matalomba/sfinalSM', function () {
 Route::get('/matalomba/finalSM', function () {
     return view('matalomba/sm/final');
 });
+
+
+// Route Admin
+Route::get('/edc/login', function () {
+    return view('edc/loginadmin');
+});
+
+Route::get('/edc/mainmenu', function () {
+    return view('edc/mainmenu');
+});
+
+
+
+Route::get('edc/loginadmin', [AuthController::class, 'showLogin'])->name('login');
+Route::post('edc/loginadmin', [AuthController::class, 'login']);
+// Route::get('edc/mainmenu', [AuthController::class, 'showMainMenu'])->middleware('auth');
+
+// routes/web.php
+
+Route::get('/edc/mainmenu', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/edc/mainmenu', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
