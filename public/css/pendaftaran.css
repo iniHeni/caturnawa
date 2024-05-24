@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 920px;
+    min-height: 960px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -138,9 +138,11 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
-form input.error,
-form select.error {
-  border-color: #f91919;
+.input-field input[is-invalid] {
+    border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
+}
+.input-field .text-danger {
+    color: red;
 }
 @media (max-width: 750px) {
     .konten form{

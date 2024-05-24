@@ -15,8 +15,8 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../css/navmenu.css">
-      <link rel="stylesheet" href="../css/pagelomba.css">
+      <link rel="stylesheet" href="../../css/navmenulkti.css">
+      <link rel="stylesheet" href="../../css/pagelomba.css">
 
       <title>Caturnawa - KDBI</title>
    </head>
@@ -53,22 +53,22 @@
                      </li>
                </ul>
 
-               <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-line"></i>
-               </div>
-            </div>
+              <!-- Close button -->
+              <div class="nav__close" id="nav-close">
+                 <i class="ri-close-line"></i>
+              </div>
+           </div>
 
-            <div class="nav__actions">
+           <div class="nav__actions">
 
-               <!-- Toggle button -->
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line"></i>
-               </div>
-               
-            </div>
-         </nav>
-      </header>
+              <!-- Toggle button -->
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line"></i>
+              </div>
+              
+           </div>
+        </nav>
+     </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     <h1 class="judul">@lang('messages.kdbi')</h1>
       <p class="testing1">@lang('messages.teks')<br> 
@@ -89,7 +89,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 1</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 2</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 3</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 4</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 5</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')a</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 6</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 7</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 8</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 9</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -246,7 +246,7 @@
                         <img src="../../img/jurikdbi.jpg" alt="">
                     </div>
     
-                    <div class="user_content">
+                    <div class="user_content1">
                         <h5 class="name">Leonardus Hans, S.T.</h5>
                         <p class="post">@lang('messages.jurikdbiposisi1')</p>
                         <p class="about">@lang('messages.jurikdbibio1')</p>
@@ -263,10 +263,10 @@
                         <img src="../../img/jurikdbi2.JPG" alt="">
                     </div>
     
-                    <div class="user_content">
-                        <h5 class="name">Prof. Dr.Wahyu <br>Wibowo</h5>
-                        <p class="post">@lang('messages.jurikdbiposisi2')</p>
-                        <p class="about">@lang('messages.jurikdbibio2')</p>
+                    <div class="user_content2">
+                        <h5 class="name">Prof. Dr.Wahyu Wibowo</h5>
+                        <p class="post">@lang('messages.jurikdbiposisi3')</p>
+                        <p class="about">@lang('messages.jurikdbibio3')</p>
                         <a href="https://menuliswahyuwibowo.wordpress.com/" class="icon facebook">
                             <span><i class="fa-brands fa-blogger"></i></span>
                          </a>
@@ -280,10 +280,10 @@
                         <img src="../../img/jurikdbi3.jpg" alt="">
                     </div>
     
-                    <div class="user_content">
+                    <div class="user_content3">
                         <h5 class="name">Purwo Besari, S.Pd.</h5>
-                        <p class="post">@lang('messages.jurikdbiposisi3')</p>
-                        <p class="about">@lang('messages.jurikdbibio3')</p>
+                        <p class="post">@lang('messages.jurikdbiposisi2')</p>
+                        <p class="about">@lang('messages.jurikdbibio2')</p>
                         <a href="https://www.linkedin.com/in/purwobesari/?jobid=1234" class="icon facebook">
                             <span><i class="fa-brands fa-linkedin"></i></span>
                          </a>
@@ -305,9 +305,32 @@
 
     </body>
     <!-- JavaScript -->
-</html>
-<script src="../../js/swiper.js"></script>
-<script src="../../js/car2.js"></script>
-      <script src="../../js/nav.js"></script>
-   </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        <script type="text/javascript">
+           $(function() {
+               $(this).bind("contextmenu", function(e) {
+                   e.preventDefault();
+               });
+           }); 
+           </script>
+           <script type="text/JavaScript"> 
+               function killCopy(e){ return false } 
+               function reEnable(){ return true } 
+               document.onselectstart=new Function ("return false"); 
+               if (window.sidebar)
+               { 
+                   document.onmousedown=killCopy; 
+                   document.onclick=reEnable; 
+               } 
+           </script>
+           <script type="text/Javascript">
+           $(document).keydown(function(event){
+         if(event.keyCode==123){
+             return false;
+         }
+         else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+                  return false;
+         }
+     });
+         </script>
 </html>

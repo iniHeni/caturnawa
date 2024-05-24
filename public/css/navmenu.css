@@ -213,6 +213,23 @@ img {
     width: 12%;
     column-gap: 0.9rem;
 }
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    margin: 0 auto;
+    background-color: var(--body);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
+  .nav__list > div {
+    width: 15%;
+
+  }
+
+
+}
 
 .gmbar {
     margin-top: -0.8rem;

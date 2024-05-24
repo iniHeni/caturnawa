@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderkdbiController;
+use App\Http\Controllers\OrderlktiController;
+use App\Http\Controllers\OrdersmController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -15,6 +19,9 @@ Route::get('locale/{lang}',[LocaleController::class,'setLocale']);
 // Route Checkout
 
 Route::post('/checkout', [OrderController::class, 'checkout']);
+Route::post('/kdbi/checkout', [OrderkdbiController::class, 'checkout']);
+Route::post('/lkti/checkout', [OrderlktiController::class, 'checkout']);
+Route::post('/sm/checkout', [OrdersmController::class, 'checkout']);
 
 //  Matalomba EDC 
 Route::get('/matalomba/edc', function () {

@@ -15,20 +15,29 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../css/navmenulkti.css">
+      <link rel="stylesheet" href="../../css/pagelombalkti.css">
 
       <title>Caturnawa - KTI</title>
    </head>
    <body>
       
       <!--==================== Navbar ====================-->
+<<<<<<< HEAD
       <header class="header" id="header">
         <nav class="nav container">
         <img src="../../img/spcaja.png" width="140" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
        <div style="margin-right: 15rem" class="nav__item">
+=======
+       <header class="header" id="header">
+         <nav class="nav container">
+         <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
+         <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+        <div style="margin-right: 10rem" class="nav__item">
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -72,9 +81,14 @@
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     <h1 class="judul">@lang('messages.lkti')</h1>
+<<<<<<< HEAD
       <p class="testing1">@lang('messages.teks')<br>  
         @lang('messages.teks1')<br>
         @lang('messages.teks2')</p>
+=======
+      <p class="testing1">@lang('messages.teks')  
+        @lang('messages.teks1')</p>
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
  <!--==================== Participant ====================-->
       <section id="peserta">
       <h1 class="judul">@lang('messages.pesertalomba')</h1>
@@ -90,8 +104,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 1</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -103,8 +117,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 2</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -116,8 +130,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 3</h2>
-                            <p class="description">Informasi Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -129,8 +143,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 4</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -142,8 +156,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 5</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -155,8 +169,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 6</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio').</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -168,8 +182,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 7</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -181,8 +195,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 8</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio').</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -194,8 +208,8 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 9</h2>
-                            <p class="description">Informasi Peserta.</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">View More</a></button>
+                            <p class="description">@lang('messages.bio')</p>
+                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
                 </div>
@@ -234,16 +248,108 @@
     </div>
 </section>
 <!--==================== Jury ====================-->
+<<<<<<< HEAD
 
+=======
+<section id="juri">
+    <div class="main">
+            <div class="title">@lang('messages.jury')</div>
+    
+            <div class="card_container">
+    
+                <div class="card">
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc1.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content1">
+                        <h5 class="name">Efriza, S.I.P., M.Si.</h5>
+                        <p class="post">@lang('messages.jurispcposisi1')</p>
+                        <p class="about">@lang('messages.jurispcbio1')</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc2.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content2">
+                        <h5 class="name">Fajar Harry Sampurno, MBA, Ph.D.</h5>
+                        <p class="post">@lang('messages.jurispcposisi2')</p>
+                        <p class="about">@lang('messages.jurispcbio2')</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispc3.jpg" alt="">
+                    </div>
+    
+                    <div class="user_content3">
+                        <h5 class="name">Prof. Dr. Eng. Eniya<br>Listiani Dewi</h5>
+                        <p class="post">@lang('messages.jurispcposisi3')</p>
+                        <p class="about">@lang('messages.jurispcbio3')</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="squareBox"></div>
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../img/jurispcsiswi.jpeg" alt="">
+                    </div>
+    
+                    <div class="user_content4">
+                        <h5 class="name">Desfara Anggreani</h5>
+                        <p class="post">@lang('messages.jurispcposisi4')</p>
+                        <p class="about">@lang('messages.jurispcbio4')</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 
-    </body>
     <!-- JavaScript -->
-</html>
 <script src="../../js/swiper.js"></script>
 <script src="../../js/car2.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+       $(function() {
+           $(this).bind("contextmenu", function(e) {
+               e.preventDefault();
+           });
+       }); 
+       </script>
+       <script type="text/JavaScript"> 
+           function killCopy(e){ return false } 
+           function reEnable(){ return true } 
+           document.onselectstart=new Function ("return false"); 
+           if (window.sidebar)
+           { 
+               document.onmousedown=killCopy; 
+               document.onclick=reEnable; 
+           } 
+       </script>
+       <script type="text/Javascript">
+       $(document).keydown(function(event){
+     if(event.keyCode==123){
+         return false;
+     }
+     else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+              return false;
+     }
+ });
+     </script>
 </html>

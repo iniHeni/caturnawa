@@ -26,10 +26,11 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/smcaja.png" width="140" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
-         <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-        <div style="margin-right: 15rem" class="nav__item">
+            <img src="../../img/smcaja.png" width="175" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+               <div style="margin-right: 10rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -91,7 +92,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 1</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -104,7 +105,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 2</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -117,7 +118,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 3</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -130,7 +131,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 4</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -143,7 +144,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 5</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -156,7 +157,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 6</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -169,7 +170,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 7</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -182,7 +183,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 8</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -195,7 +196,7 @@
                         </div>
                         <div class="card-content">
                             <h2 class="name">Team 9</h2>
-                            <p class="description">Biodata Peserta</p>
+                            <p class="description">@lang('messages.bio')</p>
                             <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
@@ -239,7 +240,7 @@
                             <img src="../../img/jurism.jpg" alt="">
                         </div>
         
-                        <div class="user_content">
+                        <div class="user_content1">
                             <h5 class="name">Daniel Wisnu Wardhana</h5>
                             <p class="post">@lang('messages.jurismposisi1')</p>
                             <p class="about">@lang('messages.jurismbio1')</p>
@@ -256,7 +257,7 @@
                             <img src="../../img/jurism1.jpg" alt="">
                         </div>
         
-                        <div class="user_content">
+                        <div class="user_content2">
                             <h5 class="name">Kusen Dony Hermansyah</h5>
                             <p class="post">@lang('messages.jurismposisi2')</p>
                             <p class="about">@lang('messages.jurismbio2')</p>
@@ -270,7 +271,7 @@
                             <img src="../../img/jurism3.jpeg" alt="">
                         </div>
         
-                        <div class="user_content">
+                        <div class="user_content3">
                             <h5 class="name">Rita Sri Hastuti</h5>
                             <p class="post">@lang('messages.jurismposisi3')</p>
                             <p class="about">@lang('messages.jurismbio3')</p>
@@ -293,4 +294,33 @@
 <script src="../../js/car2.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/nav.js"></script>
+    <script type="text/javascript">
+       $(function() {
+           $(this).bind("contextmenu", function(e) {
+               e.preventDefault();
+           });
+       }); 
+       </script>
+       <script type="text/JavaScript"> 
+           function killCopy(e){ return false } 
+           function reEnable(){ return true } 
+           document.onselectstart=new Function ("return false"); 
+           if (window.sidebar)
+           { 
+               document.onmousedown=killCopy; 
+               document.onclick=reEnable; 
+           } 
+       </script>
+       <script type="text/Javascript">
+       $(document).keydown(function(event){
+     if(event.keyCode==123){
+         return false;
+     }
+     else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+              return false;
+     }
+ });
+     </script>
 </html>

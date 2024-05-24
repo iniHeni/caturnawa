@@ -17,7 +17,7 @@
 .card{
   border-radius: 25px;
   background-color: #FFF;
-  height: 22rem;
+  height: 24rem;
 }
 .image-content,
 .card-content{
@@ -163,7 +163,7 @@
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   max-width: 1250px;
   margin: 150px auto;
   padding: 20px;
@@ -246,6 +246,8 @@
   @media screen and (max-width: 980px) {
     .card-list {
         margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        
     }
   }
 
@@ -285,11 +287,13 @@
   position: relative;
 }
 
-.user_content .name{
+.user_content1 .name{
   font-size: 20px;
+  color: #000;
+  
 } 
 
-.user_content .post{
+.user_content1 .post{
   font-size: 15px;
   color: #6e77d3;
   margin: 15px 0;
@@ -298,7 +302,7 @@
   left: 16px;
 }
 
-.user_content .post::before{
+.user_content1 .post::before{
   content: "";
   height: 1px;
   width: 15px;
@@ -310,7 +314,75 @@
 
 
 
-.user_content .about{
+.user_content1 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.user_content2 .name{
+  font-size: 18px;
+  color: #000;
+  
+} 
+
+.user_content2 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content2 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content2 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.user_content3 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content3 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content3 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content3 .about{
   color: #000000;
   margin-top: 35px;
   font-size: 15px;
@@ -342,14 +414,7 @@
   padding: 10px;
 }
 
-.card .squareBox{
-  height: 90px;
-  width: 136px;
-  background: #ffffff;
-  position: absolute;
-  top: 0;
-  right: 7%;
-}
+
 .testing1 {
   color: #f6ae31;
   text-align: center;
@@ -367,6 +432,31 @@
       margin-top: 140px;
       margin-bottom: 80px;
   }
+  .card_container .card{
+    height: 1000px;
+  }
+  .card .round_box{
+    position: absolute;
+    top: -8%;
+  
+  }
+  
+  .card .img_box{
+    position: absolute;
+    top: -8%;
+  
+  }
+  
+  .card .img_box img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+
+
+
 }
 @media screen and (max-width: 500px) {
   .testing1 {
@@ -375,6 +465,43 @@
       margin-bottom: 80px;
       font-size: 17;
   }
+}
+
+@media screen and (max-width: 390px) {
+  .user_content1 {
+      margin-top: -33rem;
+  }
+  .user_content2 {
+    margin-top: -9rem;
+}
+.user_content3 {
+  margin-top: -28rem;
+}
+
+}
+@media screen and (max-width: 375px) {
+  .user_content1 {
+      margin-top: -34rem;
+  }
+  .user_content2 {
+    margin-top: -9rem;
+}
+.user_content3 {
+  margin-top: -26rem;
+}
+
+}
+@media screen and (max-width: 344px) {
+  .user_content1 {
+      margin-top:  -30rem;
+  }
+  .user_content2 {
+    margin-top: 3rem;
+}
+.user_content3 {
+  margin-top: -20rem;
+}
+
 }
 
 .icon{
