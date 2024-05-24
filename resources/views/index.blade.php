@@ -32,7 +32,7 @@
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-               <div style="margin-right: 7rem" class="nav__item">
+               <div style="margin-right: 15rem" class="nav__item">
 						<li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
 						<li><a href="locale/en"><img src="img/eng.png" /></a></li>
 					</div>

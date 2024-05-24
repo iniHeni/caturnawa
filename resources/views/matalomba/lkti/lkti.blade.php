@@ -23,12 +23,21 @@
    <body>
       
       <!--==================== Navbar ====================-->
+<<<<<<< HEAD
+      <header class="header" id="header">
+        <nav class="nav container">
+        <img src="../../img/spcaja.png" width="140" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
+        <div class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+       <div style="margin-right: 15rem" class="nav__item">
+=======
        <header class="header" id="header">
          <nav class="nav container">
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 10rem" class="nav__item">
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -41,7 +50,7 @@
                      </li>
             
                      <li class="nav__item">
-                        <a href="{{url('matalomba/scoreLKTI') }}" class="nav__link">@lang('messages.score')</a>
+                        <a href="#rank" class="nav__link">@lang('messages.score')</a>
                      </li>
             
                      <li class="nav__item">
@@ -72,8 +81,14 @@
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     <h1 class="judul">@lang('messages.lkti')</h1>
+<<<<<<< HEAD
+      <p class="testing1">@lang('messages.teks')<br>  
+        @lang('messages.teks1')<br>
+        @lang('messages.teks2')</p>
+=======
       <p class="testing1">@lang('messages.teks')  
         @lang('messages.teks1')</p>
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
  <!--==================== Participant ====================-->
       <section id="peserta">
       <h1 class="judul">@lang('messages.pesertalomba')</h1>
@@ -206,7 +221,7 @@
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/penyisihanLKTI') }}" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="developer">@lang('messages.penyisihan')</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -214,7 +229,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/sfinalLKTI') }}" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="designer">Semifinal</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -222,7 +237,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/finalLKTI') }}" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="editor">Final</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -233,6 +248,9 @@
     </div>
 </section>
 <!--==================== Jury ====================-->
+<<<<<<< HEAD
+
+=======
 <section id="juri">
     <div class="main">
             <div class="title">@lang('messages.jury')</div>
@@ -296,6 +314,7 @@
             </div>
         </div>
     </section>
+>>>>>>> fef80ecad8edc6c766cb3715001f3dec3aea25ff
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>

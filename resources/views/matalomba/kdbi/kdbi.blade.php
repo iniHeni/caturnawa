@@ -24,34 +24,34 @@
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
-        <div class="nav__menu" id="nav-menu">
-       <ul class="nav__list">
-       <div style="margin-right: 9rem" class="nav__item">
-                       <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-                       <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
-                   </div>
-                   <li class="nav__item">
-                       <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
-                    </li>
-  
+         <nav class="nav container">
+         <img src="../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
+         <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+        <div style="margin-right: 15rem" class="nav__item">
+						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="../locale/en" width="20px"><img src="../../img/eng.png" /></a></li>
+					</div>
                     <li class="nav__item">
-                       <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
-                    </li>
-  
-                    <li class="nav__item">
-                       <a href="{{url('matalomba/scoreKDBI') }}" class="nav__link">@lang('messages.score')</a>
-                    </li>
-  
-                    <li class="nav__item">
-                       <a href="#rank" class="nav__link">@lang('messages.round')</a>
-                    </li>
-                    
-                    <li class="nav__item">
-                       <a href="#juri" class="nav__link">@lang('messages.juri')</a>
-                    </li>
-              </ul>
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#rank" class="nav__link">@lang('messages.score')</a>
+                     </li>
+            
+                     <li class="nav__item">
+                        <a href="#rank" class="nav__link">@lang('messages.round')</a>
+                     </li>
+                     
+                     <li class="nav__item">
+                        <a href="#juri" class="nav__link">@lang('messages.juri')</a>
+                     </li>
+               </ul>
 
               <!-- Close button -->
               <div class="nav__close" id="nav-close">
@@ -71,8 +71,9 @@
      </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     <h1 class="judul">@lang('messages.kdbi')</h1>
-      <p class="testing1">@lang('messages.teks') 
-        @lang('messages.teks1')</p>
+      <p class="testing1">@lang('messages.teks')<br> 
+        @lang('messages.teks1')<br> 
+        @lang('messages.teks2')</p>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
       <h1 class="judul">@lang('messages.pesertalomba')</h1>
@@ -205,7 +206,7 @@
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/penyisihanKDBI') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="developer">@lang('messages.penyisihan')</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -213,7 +214,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/sfinalKDBI') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="designer">Semifinal</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -221,7 +222,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="#" class="card-item">
+        <a href="{{url('matalomba/finalKDBI') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="editor">Final</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -291,9 +292,12 @@
             </div>
         </div>
     </section>
-    <script src="../../js/nav.js"></script>
-    <script src="../../js/swiper.js"></script>
-<script src="../../js/car2.js"></script>
+
+<!--==================== Tabel Skor ====================-->
+
+
+
+<!--==================== Tabel Skor ====================-->
 
 
 

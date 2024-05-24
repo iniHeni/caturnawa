@@ -14,8 +14,10 @@
         <link rel="stylesheet" href="../../css/swiper.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../../css/pagelombaSM.css">
+      <link rel="stylesheet" href="../../css/nowrap.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/pagelomba.css">
 
       <title>Caturnawa - ShortMovie</title>
    </head>
@@ -24,7 +26,7 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
+            <img src="../../img/smcaja.png" width="175" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
@@ -41,7 +43,7 @@
                      </li>
             
                      <li class="nav__item">
-                        <a href="{{url('matalomba/scoreSM') }}" class="nav__link">@lang('messages.score')</a>
+                        <a href="#rank" class="nav__link">@lang('messages.score')</a>
                      </li>
             
                      <li class="nav__item">
@@ -72,8 +74,9 @@
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     <h1 class="judul">@lang('messages.sm')</h1>
-      <p class="testing1">@lang('messages.teks') 
-                        "@lang('messages.teks1')"</p>
+      <p class="testing1">@lang('messages.teks') <br> 
+                        @lang('messages.teks1')<br>
+                        @lang('messages.teks2')</p>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
       <h1 class="judul">@lang('messages.pesertalomba')</h1>
@@ -203,27 +206,27 @@
         </div>
 </section>
       <!--==================== Babak ====================-->
-<section id="rank">
-<h1 class="judul">@lang('messages.babak')</h1>
-<div class="card-list">
-        <a href="#" class="card-item">
-            <img src="../../img/sm.png" alt="Card Image">
-            <span class="designer">Semifinal</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fas fa-arrow-right card-icon"></i>
+      <section id="rank">
+        <h1 class="judul">@lang('messages.babak')</h1>
+        <div class="card-list">
+                <a href="{{url('matalomba/sfinalSM') }}" class="card-item">
+                    <img src="../../img/sm.png" alt="Card Image">
+                    <span class="designer">Semifinal</span>
+                    <h3>@lang('messages.dilaksanakan')</h3>
+                    <div class="arrow">
+                        <i class="fas fa-arrow-right card-icon"></i>
+                    </div>
+                </a>
+                <a href="{{url('matalomba/finalSM') }}" class="card-item">
+                    <img src="../../img/sm.png" alt="Card Image">
+                    <span class="editor">Final</span>
+                    <h3>@lang('messages.dilaksanakan')</h3>
+                    <div class="arrow">
+                        <i class="fas fa-arrow-right card-icon"></i>
+                    </div>
+                </a>
             </div>
-        </a>
-        <a href="#" class="card-item">
-            <img src="../../img/sm.png" alt="Card Image">
-            <span class="editor">Final</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fas fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-    </div>
-</section>
+        </section>
       <!--==================== Juri ====================-->
       <section id="juri">
         <div class="main">
@@ -279,7 +282,7 @@
         </section>
 
 
-<!--==================== Tabel Skor ====================-->
+
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
