@@ -12,7 +12,7 @@
 .judul{
   text-align: center;
   color: white;
-  margin-top: 50px;
+  margin-top: 6rem;
 }
 .card{
   border-radius: 25px;
@@ -73,7 +73,7 @@
   padding: 8px 16px;
   background-color: #f6ae31;
   border-radius: 6px;
-  margin: auto;
+  margin: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -103,7 +103,7 @@
   left: 0;
 }
 .swiper-pagination{
-  margin-bottom: 19rem;
+  margin-bottom: 25rem;
 }
 .swiper-pagination-bullet{
   background-color: #6E93f7;
@@ -114,17 +114,17 @@
 }
 @media screen and (max-width: 768px) {
   .swiper-pagination{
-    margin-bottom: 15rem;
+    margin-bottom: 25rem;
   }
 }
 @media screen and (max-width: 540px) {
   .swiper-pagination{
-    margin-bottom: 15rem;
+    margin-bottom: 20rem;
   }
 }
 @media screen and (max-width: 430px) {
   .swiper-pagination{
-    margin-bottom: 15rem;
+    margin-bottom: 30rem;
   }
 }
 @media screen and (max-width: 390px) {
@@ -148,7 +148,7 @@
 }
 @media screen and (max-width: 344px) {
   .swiper-pagination{
-    margin-bottom: 15rem;
+    margin-bottom: 30rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -247,7 +247,6 @@
     .card-list {
         margin: 0 auto;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        
     }
   }
 
@@ -257,7 +256,7 @@
 
 .main{
   margin: 10px;
-  margin-bottom: auto;
+  margin-bottom: 50rem;
 }
 
 .main .title{
@@ -277,7 +276,7 @@
 
 .card_container .card{
   max-width: 500px;
-  height: auto;
+  height: 640px;
   margin-top: 5rem;
   border-radius: 25px;
   background: #ffffff;
@@ -287,10 +286,38 @@
   position: relative;
 }
 
+.user_content .name{
+  font-size: 20px;
+} 
+
+.user_content .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+.user_content .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
 .user_content1 .name{
   font-size: 20px;
-  color: #000;
-  
 } 
 
 .user_content1 .post{
@@ -313,7 +340,6 @@
 }
 
 
-
 .user_content1 .about{
   color: #000000;
   margin-top: 35px;
@@ -322,9 +348,7 @@
 }
 
 .user_content2 .name{
-  font-size: 18px;
-  color: #000;
-  
+  font-size: 20px;
 } 
 
 .user_content2 .post{
@@ -355,43 +379,9 @@
   text-align: justify;
 }
 
-.user_content3 .name{
-  font-size: 20px;
-  color: #000;
-  
-} 
-
-.user_content3 .post{
-  font-size: 15px;
-  color: #6e77d3;
-  margin: 15px 0;
-  font-weight: 400;
-  position: relative;
-  left: 16px;
-}
-
-.user_content3 .post::before{
-  content: "";
-  height: 1px;
-  width: 15px;
-  background: #6c77d3;
-  position: absolute;
-  top: 50%;
-  left: -16px;
-}
-
-
-
-.user_content3 .about{
-  color: #000000;
-  margin-top: 35px;
-  font-size: 15px;
-  text-align: justify;
-}
-
 .card .round_box{
   position: absolute;
-  top: -12%;
+  top: -9%;
   right: 7%;
   background: #ffffff !important;
   width: 130px;
@@ -402,7 +392,7 @@
 
 .card .img_box{
   position: absolute;
-  top: -12%;
+  top: -9%;
   right: 7%;
 
 }
@@ -420,88 +410,57 @@
   text-align: center;
   margin: 0 180px;
   font-size: 25;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 90px;
 }
 @media screen and (max-width: 1024px) {
   .main {
-      margin-bottom: auto;
+      margin-bottom: 50rem;
   }
   .testing1 {
       margin: 0 150px;
-      margin-top: 140px;
-      margin-bottom: 80px;
+      margin-top: 40px;
+      margin-bottom: 50px;
   }
-  .card_container .card{
-    height: 1000px;
-  }
-  .card .round_box{
-    position: absolute;
-    top: -8%;
-  
-  }
-  
-  .card .img_box{
-    position: absolute;
-    top: -8%;
-  
-  }
-  
-  .card .img_box img{
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  
-
-
-
 }
 @media screen and (max-width: 500px) {
   .testing1 {
       margin: 0 20px;
-      margin-top: 150px;
-      margin-bottom: 80px;
+      margin-top: 40px;
+      margin-bottom: 50px;
       font-size: 17;
   }
-}
+  .card_container .card{
+    height: 1000px;
 
+  }
+}
 @media screen and (max-width: 390px) {
-  .user_content1 {
-      margin-top: -33rem;
+  .user_content{
+    margin-top: -32rem;
   }
-  .user_content2 {
-    margin-top: -9rem;
-}
-.user_content3 {
-  margin-top: -28rem;
-}
-
-}
-@media screen and (max-width: 375px) {
-  .user_content1 {
-      margin-top: -34rem;
+  .user_content1{
+    margin-top: -8rem;
   }
-  .user_content2 {
-    margin-top: -9rem;
-}
-.user_content3 {
-  margin-top: -26rem;
-}
-
-}
-@media screen and (max-width: 344px) {
-  .user_content1 {
-      margin-top:  -30rem;
+  .user_content2{
+    margin-top: -30rem;
   }
-  .user_content2 {
-    margin-top: 3rem;
+} 
+@media screen and (max-width: 348px) {
+  .user_content{
+    margin-top: -28rem;
+  }
+  .user_content1{
+    margin-top: -2rem;
+  }
 }
-.user_content3 {
-  margin-top: -20rem;
-}
-
+@media screen and (max-width: 335px) {
+  .user_content1{
+    margin-top: 4rem;
+  }
+  .user_content2{
+    margin-top: -22rem;
+  }
 }
 
 .icon{

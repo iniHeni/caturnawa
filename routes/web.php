@@ -5,17 +5,24 @@ use App\Http\Controllers\OrderkdbiController;
 use App\Http\Controllers\OrderlktiController;
 use App\Http\Controllers\OrdersmController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\uploadlktiController;
+use App\Http\Controllers\uploadsmController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 // index indo dan eng
 Route::get('/', function () {
     return view('index');
-});
+})->name('utama');
 
 // change Language
 
 Route::get('locale/{lang}',[LocaleController::class,'setLocale']);
 
+// Route post
+Route::post('/login', [OrderlktiController::class, 'login']);
+Route::post('/loginsm', [OrdersmController::class, 'loginsm']);
+Route::post('/sm/upload', [OrdersmController::class, 'upload']);
+Route::post('/lkti/upload', [uploadlktiController::class, 'upload']);
 // Route Checkout
 
 Route::post('/checkout', [OrderController::class, 'checkout']);
@@ -64,6 +71,7 @@ Route::get('/matalomba/daftarKDBI', function () {
     return view('matalomba/kdbi/daftarKDBI');
 });
 
+
 Route::get('/matalomba/detailpesertaKDBI', function () {
     return view('matalomba/kdbi/detailpeserta');
 });
@@ -87,6 +95,10 @@ Route::get('/matalomba/lkti', function () {
 
 Route::get('/matalomba/daftarKTI', function () {
     return view('matalomba/lkti/daftarLKTI');
+});
+
+Route::get('/matalomba/loginspc', function () {
+    return view('matalomba/lkti/login');
 });
 
 Route::get('/matalomba/detailpesertaLKTI', function () {
@@ -119,6 +131,14 @@ Route::get('/matalomba/shortmovie', function () {
 
 Route::get('/matalomba/daftarSM', function () {
     return view('matalomba/sm/daftarSM');
+});
+
+Route::get('/matalomba/loginsm', function () {
+    return view('matalomba/sm/login');
+});
+
+Route::get('/matalomba/uploadSM', function () {
+    return view('matalomba/sm/uploadSM');
 });
 
 Route::get('/matalomba/detailpesertaSM', function () {

@@ -17,7 +17,7 @@
 .card{
   border-radius: 25px;
   background-color: #FFF;
-  height: 22rem;
+  height: 24rem;
 }
 .image-content,
 .card-content{
@@ -114,12 +114,12 @@
 }
 @media screen and (max-width: 768px) {
   .swiper-pagination{
-    margin-bottom: 35rem;
+    margin-bottom: 25rem;
   }
 }
 @media screen and (max-width: 540px) {
   .swiper-pagination{
-    margin-bottom: 20rem;
+    margin-bottom: 27rem;
   }
 }
 @media screen and (max-width: 430px) {
@@ -481,44 +481,50 @@
       margin-top: 2rem;
   }
   .user_content2 {
-    margin-top: 2rem;
+    margin-top: -5rem;
 }
 .user_content3 {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .card_container .card{
   height: 750px;
 }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 385px) {
   .user_content1 {
-      margin-top: 3rem;
+      margin-top: -9rem;
   }
   .user_content2 {
-    margin-top: 3rem;
+    margin-top: -23rem;
 }
 .user_content3 {
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 .card_container .card{
-  height: 750px;
+  height: 1000px;
 }
 }
+
+
 @media screen and (max-width: 344px) {
   .user_content1 {
-      margin-top: 3rem;
+      margin-top: -9rem;
   }
   .user_content2 {
-    margin-top: 3rem;
+    margin-top: -23rem;
 }
 .user_content3 {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .user_content4 {
   margin-top: -20rem;
 }
+.card_container .card{
+  height: 1100px;
+}
+
 }
 
 .icon{

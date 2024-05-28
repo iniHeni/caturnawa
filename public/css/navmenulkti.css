@@ -222,7 +222,7 @@ img {
   font-weight: var(--font-semi-bold);
   transition: color .4s;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1020px) {
   .nav__menu {
     position: fixed;
     top: -100%;

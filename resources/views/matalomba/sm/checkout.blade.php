@@ -132,6 +132,11 @@
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$ordersm->buktifollow_1}}">
                             </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$ordersm->twibbon_1}}">
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="details ">
@@ -189,6 +194,11 @@
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$ordersm->buktifollow_2}}">
                             </div>
+
+                            <div class="input-field">
+                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$ordersm->twibbon_2}}">
+                            </div>
                         </div>
                     </div>
                     <div class="details personal">
@@ -196,55 +206,59 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
-                                <input disabled placeholder="{{$ordersm->nama_1}}">
+                                <input disabled placeholder="{{$ordersm->nama_3}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
-                                <input disabled placeholder="{{$ordersm->email_1}}">
+                                <input disabled placeholder="{{$ordersm->email_3}}">
                             </div>
                             <div class="input-field">
                                 <label  >@lang('messages.fakultas')</label>
-                                <input disabled placeholder="{{$ordersm->fakultas_1}}">
+                                <input disabled placeholder="{{$ordersm->fakultas_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.prodi')</label>
-                                <input disabled placeholder="{{$ordersm->prodi_1}}">
+                                <input disabled placeholder="{{$ordersm->prodi_3}}">
                             </div>
                             <div class="input-field">
                                 <label>NPM</label>
-                                <input disabled placeholder="{{$ordersm->npm_1}}">
+                                <input disabled placeholder="{{$ordersm->npm_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.gender')</label>
                                 <select disabled>
-                                    <option selected>{{$ordersm->jeniskelamin_1}}</option>
+                                    <option selected>{{$ordersm->jeniskelamin_3}}</option>
                                     <option>@lang('messages.pria')</option>
                                     <option>@lang('messages.wanita')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.alamat')</label>
-                                <input disabled placeholder="{{$ordersm->alamatlengkap_1}}">
+                                <input disabled placeholder="{{$ordersm->alamatlengkap_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.Nomor')p</label>
-                                <input disabled placeholder="{{$ordersm->nomorhp_1}}">
+                                <input disabled placeholder="{{$ordersm->nomorhp_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$ordersm->ktm_1}}">
+                                <input disabled placeholder="{{$ordersm->ktm_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$ordersm->foto_1}}">
+                                <input disabled placeholder="{{$ordersm->foto_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$ordersm->krs_1}}">
+                                <input disabled placeholder="{{$ordersm->krs_3}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$ordersm->buktifollow_1}}">
+                                <input disabled placeholder="{{$ordersm->buktifollow_3}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$ordersm->twibbon_3}}">
                             </div>
                         </div>
                     </div>
@@ -253,55 +267,59 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
-                                <input disabled placeholder="{{$ordersm->nama_2}}">
+                                <input disabled placeholder="{{$ordersm->nama_4}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
-                                <input disabled placeholder="{{$ordersm->email_2}}">
+                                <input disabled placeholder="{{$ordersm->email_4}}">
                             </div>
                             <div class="input-field">
                                 <label  >@lang('messages.fakultas')</label>
-                                <input disabled placeholder="{{$ordersm->fakultas_2}}">
+                                <input disabled placeholder="{{$ordersm->fakultas_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.prodi')</label>
-                                <input disabled placeholder="{{$ordersm->prodi_2}}">
+                                <input disabled placeholder="{{$ordersm->prodi_4}}">
                             </div>
                             <div class="input-field">
                                 <label>NPM</label>
-                                <input disabled placeholder="{{$ordersm->npm_2}}">
+                                <input disabled placeholder="{{$ordersm->npm_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.gender')</label>
                                 <select disabled>
-                                    <option selected>{{$ordersm->jeniskelamin_2}}</option>
+                                    <option selected>{{$ordersm->jeniskelamin_4}}</option>
                                     <option>@lang('messages.pria')</option>
                                     <option>@lang('messages.wanita')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.alamat')</label>
-                                <input disabled placeholder="{{$ordersm->alamatlengkap_2}}">
+                                <input disabled placeholder="{{$ordersm->alamatlengkap_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.Nomor')p</label>
-                                <input disabled placeholder="{{$ordersm->nomorhp_2}}">
+                                <input disabled placeholder="{{$ordersm->nomorhp_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$ordersm->ktm_2}}">
+                                <input disabled placeholder="{{$ordersm->ktm_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$ordersm->foto_2}}">
+                                <input disabled placeholder="{{$ordersm->foto_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$ordersm->krs_2}}">
+                                <input disabled placeholder="{{$ordersm->krs_4}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$ordersm->buktifollow_2}}">
+                                <input disabled placeholder="{{$ordersm->buktifollow_4}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$ordersm->twibbon_4}}">
                             </div>
                         </div>
                     </div>
@@ -310,47 +328,47 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
-                                <input disabled placeholder="{{$ordersm->nama_2}}">
+                                <input disabled placeholder="{{$ordersm->nama_5}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
-                                <input disabled placeholder="{{$ordersm->email_2}}">
+                                <input disabled placeholder="{{$ordersm->email_5}}">
                             </div>
                             <div class="input-field">
                                 <label  >@lang('messages.fakultas')</label>
-                                <input disabled placeholder="{{$ordersm->fakultas_2}}">
+                                <input disabled placeholder="{{$ordersm->fakultas_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.prodi')</label>
-                                <input disabled placeholder="{{$ordersm->prodi_2}}">
+                                <input disabled placeholder="{{$ordersm->prodi_5}}">
                             </div>
                             <div class="input-field">
                                 <label>NPM</label>
-                                <input disabled placeholder="{{$ordersm->npm_2}}">
+                                <input disabled placeholder="{{$ordersm->npm_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.gender')</label>
                                 <select disabled>
-                                    <option selected>{{$ordersm->jeniskelamin_2}}</option>
+                                    <option selected>{{$ordersm->jeniskelamin_5}}</option>
                                     <option>@lang('messages.pria')</option>
                                     <option>@lang('messages.wanita')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.alamat')</label>
-                                <input disabled placeholder="{{$ordersm->alamatlengkap_2}}">
+                                <input disabled placeholder="{{$ordersm->alamatlengkap_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.Nomor')p</label>
-                                <input disabled placeholder="{{$ordersm->nomorhp_2}}">
+                                <input disabled placeholder="{{$ordersm->nomorhp_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$ordersm->ktm_2}}">
+                                <input disabled placeholder="{{$ordersm->ktm_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$ordersm->foto_2}}">
+                                <input disabled placeholder="{{$ordersm->foto_5}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.krs')i</label>
@@ -358,13 +376,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$ordersm->buktifollow_2}}">
+                                <input disabled placeholder="{{$ordersm->buktifollow_5}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$ordersm->twibbon_5}}">
                             </div>
                         </div>
                     </div>
                     <div class="details ID">
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
+                            <div class="input-field">
+                                <label>Username *untuk form UploadSM</label>
+                                <input disabled placeholder="{{$ordersm->username}}" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Password **untuk form UploadSM</label>
+                                <input disabled placeholder="{{$ordersm->password}}" required>
+                            </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$ordersm->instansi}}" required>

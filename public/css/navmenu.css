@@ -204,7 +204,7 @@ img {
     flex-direction: column;
     row-gap: 2.5rem;
     text-align: center;
-    margin-left: -1rem;
+    margin-left: 1rem;
     margin-top: -0.1rem;
 }
 .nav__list > div {

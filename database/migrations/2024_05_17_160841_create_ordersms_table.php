@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('foto_1');
             $table->string('krs_1');
             $table->string('buktifollow_1');
+            $table->string('twibbon_1');
             $table->string('nama_2');
             $table->string('email_2');
             $table->string('fakultas_2');
@@ -39,6 +40,7 @@ return new class extends Migration
             $table->string('foto_2');
             $table->string('krs_2');
             $table->string('buktifollow_2');
+            $table->string('twibbon_2');
             $table->string('nama_3');
             $table->string('email_3');
             $table->string('fakultas_3');
@@ -51,6 +53,7 @@ return new class extends Migration
             $table->string('foto_3');
             $table->string('krs_3');
             $table->string('buktifollow_3');
+            $table->string('twibbon_3');
             $table->string('nama_4');
             $table->string('email_4');
             $table->string('fakultas_4');
@@ -63,6 +66,7 @@ return new class extends Migration
             $table->string('foto_4');
             $table->string('krs_4');
             $table->string('buktifollow_4');
+            $table->string('twibbon_4');
             $table->string('nama_5');
             $table->string('email_5');
             $table->string('fakultas_5');
@@ -75,7 +79,10 @@ return new class extends Migration
             $table->string('foto_5');
             $table->string('krs_5');
             $table->string('buktifollow_5');
+            $table->string('twibbon_5');
             $table->bigInteger('price');
+            $table->string('username');
+            $table->string('password');
             $table->string('instansi');
             $table->string('linkvidio');
             $table->string('surat_delegasi');

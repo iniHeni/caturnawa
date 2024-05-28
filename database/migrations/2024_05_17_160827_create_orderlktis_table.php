@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('kompetisi');
             $table->string('nama');
+            $table->string('password');
             $table->string('email');
             $table->string('fakultas');
             $table->string('prodi');
@@ -26,13 +27,14 @@ return new class extends Migration
             $table->string('ktm');
             $table->string('foto');
             $table->string('krs');
-            $table->string('buktifollow');
             $table->string('instansi');
+            $table->string('buktifollow');
+            $table->string('twibbon');
             $table->string('surat_delegasi');
-            $table->string('nama_kegiatan')->nullable();
-            $table->string('jenis_kegiatan')->nullable();
-            $table->string('tingkat_kegiatan')->nullable();
-            $table->string('sertifikat')->nullable();
+            $table->string('nama_kegiatan');
+            $table->string('jenis_kegiatan');
+            $table->string('tingkat_kegiatan');
+            $table->string('sertifikat');
             $table->string('nama_kegiatan1')->nullable();
             $table->string('jenis_kegiatan1')->nullable();
             $table->string('tingkat_kegiatan1')->nullable();

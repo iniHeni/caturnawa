@@ -18,14 +18,14 @@
       <title>@lang('messages.daftar')</title>
    </head>
    <body>
-      
+
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
          <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 13rem" class="nav__item">
+            <div style="margin-right: 23rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -35,10 +35,6 @@
 
                   <li class="nav__item">
                      <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
@@ -105,8 +101,8 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="npm_1">NPM</label>
-                            <input type="text" name="npm_1" id="npm_1" placeholder="@lang('messages.place') NPM" @error('npm_1') is-invalid @enderror required>
+                            <label for="npm_1">@lang('messages.npm')</label>
+                            <input type="text" name="npm_1" id="npm_1" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_1') is-invalid @enderror required>
                             @error('npm_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -124,14 +120,14 @@
                         </div>
                         <div class="input-field">
                             <label for="alamatlengkap_1">@lang('messages.alamat')</label>
-                            <input  name="alamatlengkap_1" id="alamatlengkap_1" type="area" placeholder="Masukkan Alamat" @error('alamatlengkap_1') is-invalid @enderror required>
+                            <input  name="alamatlengkap_1" id="alamatlengkap_1" type="area" placeholder="@lang('messages.place') @lang('messages.alamat')" @error('alamatlengkap_1') is-invalid @enderror required>
                             @error('alamatlengkap_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
                             <label for="nomorhp_1">@lang('messages.Nomor')</label>
-                            <input  name="nomorhp_1" id="nomorhp_1" type="Number" placeholder="Masukkan No Whatssapp" @error('nomorhp_1') is-invalid @enderror required>
+                            <input  name="nomorhp_1" id="nomorhp_1" type="Number" placeholder="@lang('messages.place') @lang('messages.Nomor')" @error('nomorhp_1') is-invalid @enderror required>
                             @error('nomorhp_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -161,6 +157,13 @@
                             <label for="buktifollow_1">@lang('messages.bukti')</label>
                             <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_1') is-invalid @enderror required>
                             @error('buktfollow_1')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="input-field">
+                            <label for="twibbon">Upload Twibbon *format:png,jpg maks 5mb</label>
+                            <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
+                            @error('twibbon')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -198,8 +201,8 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="npm_2">NPM</label>
-                            <input type="text" name="npm_2" id="npm_2" placeholder="@lang('messages.place') NPM" @error('npm_2') is-invalid @enderror required>
+                            <label for="npm_2">@lang('messages.npm')</label>
+                            <input type="text" name="npm_2" id="npm_2" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_2') is-invalid @enderror required>
                             @error('npm_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -217,14 +220,14 @@
                         </div>
                         <div class="input-field">
                             <label for="alamatlengkap_2">@lang('messages.alamat')</label>
-                            <input  name="alamatlengkap_2" id="alamatlengkap_2" type="area" @error('alamatlengkap_2') is-invalid @enderror placeholder="Masukkan Alamat" required>
+                            <input  name="alamatlengkap_2" id="alamatlengkap_2" type="area" @error('alamatlengkap_2') is-invalid @enderror placeholder="@lang('messages.place') @lang('messages.alamat')" required>
                             @error('alamatlengkap_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
                             <label for="nomorhp_2">@lang('messages.Nomor')</label>
-                            <input  name="nomorhp_2" id="nomorhp_2" type="Number" placeholder="Masukkan No Whatssapp" @error('nomorhp_2') is-invalid @enderror required>
+                            <input  name="nomorhp_2" id="nomorhp_2" type="Number" placeholder="@lang('messages.place') @lang('messages.Nomor')" @error('nomorhp_2') is-invalid @enderror required>
                             @error('nomorhp_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -252,8 +255,15 @@
                         </div>
                         <div class="input-field">
                             <label for="buktifollow_2">@lang('messages.bukti')</label>
-                            <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_2') is-invalid @enderror required>
+                            <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_2') is-invalid @enderror  required>
                             @error('buktifollow_2')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="input-field">
+                            <label for="twibbon2">Upload Twibbon *format:png,jpg maks 5mb</label>
+                            <input name="twibbon2" id="twibbon2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon2') is-invalid @enderror required>
+                            @error('twibbon2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -264,7 +274,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label for="instansi">@lang('messages.instansi')</label>
-                            <input type="text" name="instansi" id="instansi" placeholder="Masukkan Asal Instansi" @error('instansi') is-invalid @enderror required>
+                            <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
                             @error('instansi')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -288,7 +298,6 @@
     </div>
 
 </section>
-
 <script src="../../js/nav.js"></script>
 <script src="../../js/daftarlomba.js"></script>
         

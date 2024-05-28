@@ -35,8 +35,10 @@ class OrderController extends Controller
             'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
             'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'buktifollow_1' => 'required|multiple|mimes:png,jpeg,jpg|max:5000',
+            'buktifollow_2' => 'required|multiple|mimes:png,jpeg,jpg|max:5000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]);     
         $order = $request->all();
@@ -119,6 +121,26 @@ class OrderController extends Controller
             $order['buktifollow_2'] = $image_name;
 
         }
+        if($request->hasFile('twibbon'))
+        {
+            $destination_path = 'images/edc/twibbon';
+            $image = $request->file('twibbon');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+
+            $order['twibbon'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon2'))
+        {
+            $destination_path = 'images/edc/twibbon2';
+            $image = $request->file('twibbon2');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
+
+            $order['twibbon2'] = $image_name;
+
+        }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'document/edc/surat';
@@ -139,35 +161,7 @@ class OrderController extends Controller
     $order = array_merge($order, $additionalData);
     $order = Order::create($order);
 
-        cloudinary()->uploadApi();
-        $result = $request->file('ktm_1')->storeOnCloudinary('caturnawa/edc/images/ktm_1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_2')->storeOnCloudinary('caturnawa/edc/images/ktm_2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_1')->storeOnCloudinary('caturnawa/edc/images/foto1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_2')->storeOnCloudinary('caturnawa/edc/images/foto2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_1')->storeOnCloudinary('caturnawa/edc/images/krs1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_2')->storeOnCloudinary('caturnawa/edc/images/krs2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_1')->storeOnCloudinary('caturnawa/edc/images/bukti1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_2')->storeOnCloudinary('caturnawa/edc/images/bukti2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('surat_delegasi')->storeOnCloudinary('caturnawa/edc/images/surat');
-        $result->getFileName();
-        $result->getExtension();
-
+      
 
        // Set your Merchant Server Key
 \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -180,15 +174,15 @@ class OrderController extends Controller
 
 $params = array(
     'transaction_details' => array(
-        'order_id' => $order->id,
+        'order_id' => rand(),
         'gross_amount' => $order->price,
     ),
     'item_details' => array(
         array(
-        'id' => 'order_id',
+        'id' => $order->id,
         'price' => $order->price,
         'quantity' => 1,
-        'name' =>  "English Debat Competition",
+        'name' =>  "English Debate Competition",
         ),
     ),
     'customer_details' => array(
@@ -208,7 +202,7 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
         if($hashed == $request->signature_key){
             if($request->status == 'capture' or $request-> status == 'settlement'){
                 $order = Order::find ($request->order_id);
-                $order->update(['status' => 'Paid']);
+                $order->create(['status' => 'Paid']);
             }
         }
     }
