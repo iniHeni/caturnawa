@@ -1,10 +1,4 @@
-<?php
-    session_start();
-    include 'db.php';
-    if($_SESSION['status_login'] != true ){
-    	echo '<script>window.location="loginadmin.php"</script>';
-    }
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,24 +20,15 @@
 		<div class="container">
 			<h3>Data Penilaian</h3>
 			<div class="box">
-					<?php
-					$kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_name ASC");
-					if (mysqli_num_rows($kategori) > 0) {
-						while ($k = mysqli_fetch_array($kategori)) {
-							?>
-							<a href="data-penilaian.php?kat=<?php echo $k['category_id'] ?>">
+							<a href="">
 								<div class="col-5">
 									<img src="img/logokdbi.jpeg" width="50px" style="margin-bottom:5px;">
 									<p>
-										<?php echo $k['category_name'] ?>
+										kategori
 									</p>
 								</div>
 							</a>
-						<?php }
-					} else { ?>
-						<p>Kategori tidak ada</p>
-					<?php } ?>
-
+						
 				</div>
 		</div>
 	</div>

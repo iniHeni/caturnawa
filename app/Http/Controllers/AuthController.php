@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function showLogin()
     {
-        return view('edc/loginadmin');
+        return view('admin/login');
     }
 
     public function login(Request $request)
@@ -33,38 +33,27 @@ class AuthController extends Controller
         }
     }
 
-    public function showMainMenu()
+    public function showMainMenu(Request $request)
     {
-        return view('edc/mainmenu');
+        $page = $request->input('page');
+
+        switch ($page) {
+            case 'KDBI':
+                return view('admin/KDBI/mainmenuKDBI1');
+            case 'SM':
+                return view('admin/SM/mainmenuSM1');
+            case 'LKTI':
+                return view('admin/LKTI/mainmenuLKTI1');
+            default:
+                return view('admin/EDC/mainmenuEDC');
+        }
     }
 
-     public function logout(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('edc/loginadmin'); // Redirect ke halaman login setelah logout
+        return redirect('admin/login'); // Redirect ke halaman login setelah logout
     }
 }
 
 
-//     // Menampilkan form login
-//     public function showLoginForm()
-//     {
-//         return view('edc/mainmenu'); // Pastikan view ini ada
-//     }
-
-//     // Memproses login
-//     public function login(Request $request)
-//     {
-//         $credentials = $request->only('email', 'password');
-
-//         if (Auth::attempt($credentials)) {
-//             // Authentication passed...
-//             return redirect()->intended('dashboard');
-//         }
-
-//         return redirect()->back()->withErrors([
-//             'email' => 'The provided credentials do not match our records.',
-//         ]);
-//     }
-    // Memproses logout
-   
