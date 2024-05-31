@@ -16,13 +16,15 @@
 	   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
 
       <!--=============== CSS ===============-->
+         
       <link rel="stylesheet" href="css/navmenu.css">
       <link rel="stylesheet" href="css/homepage.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
       <title>Caturnawa</title>
    </head>
    <body>
-   <div class="lds-ripple">
       
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
@@ -32,7 +34,7 @@
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-               <div style="margin-right: 15rem" class="nav__item">
+               <div style="margin-right: 10rem" class="nav__item">
 						<li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
 						<li><a href="locale/en"><img src="img/eng.png" /></a></li>
 					</div>
@@ -88,7 +90,7 @@
     <div id="seconds"></div>
 </div>
 <h4>@lang('messages.buka')
-   <span>31 Mei</span></h4>
+   <span>05 June</span></h4>
 <div id="firework-container"></div>
 </div>
 
@@ -99,24 +101,30 @@
         <div class="card-item">
             <img src="img/kdbi2.png" alt="Card Image">
             <h3>@lang('messages.kdbi')</h3>
+            <h2 class="judullomba">Early Bird<br>Rp.300.000</h2>
             <a href="{{url('matalomba/daftarKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/sm1.png" alt="Card Image">
             <h3>@lang('messages.sm')</h3>
+            <h2 class="judullomba">Early Bird<br>Rp.250.000</h2>
             <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/loginsm') }}" class="card-icon" id="uploadBtn">UploadSM</a>
             <a href="{{url('matalomba/shortmovie') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/spc.png" alt="Card Image">
             <h3>@lang('messages.lkti')</h3>
+            <h2 class="judullomba">Early Bird<br>Rp.250.000</h2>
             <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
+            <a href="{{url('matalomba/loginspc') }}" class="card-icon" id="uploadSPCBtn">UploadSPC</a>
             <a href="{{url('matalomba/lkti') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/edc.png" alt="Card Image">
             <h3>@lang('messages.edc')</h3>
+            <h2 class="judullomba">Early Bid<br>Rp.350.000</h2>
             <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
@@ -241,8 +249,38 @@
 <!--=============== SCRIPT ===============-->
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-	</script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+      <script>
+         @if(session('success'))
+             Swal.fire({
+                 icon: 'success',
+                 title: 'File Terkirim',
+                 text: '{{ session('success') }}'
+             });
+         @endif
+         </script>
+   <script type="text/javascript">
+const uploadSMBtn = document.getElementById('');
+const uploadSPCBtn = document.getElementById(''); 
+
+uploadSMBtn.addEventListener('click', () => {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Fitur upload belum tersedia!',
+  });
+});
+
+uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Fitur upload belum tersedia!',
+  });
+});
+   </script>
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
 	</script> 

@@ -21,6 +21,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    </head>
    <body>
       
@@ -30,7 +31,7 @@
          <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 15rem" class="nav__item">
+        <div style="margin-right: 23rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -40,10 +41,6 @@
 
                   <li class="nav__item">
                      <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
@@ -98,7 +95,7 @@
                                 <input disabled placeholder="{{$order->prodi_1}}">
                             </div>
                             <div class="input-field">
-                                <label>NPM</label>
+                                <label>@lang('messages.npm')</label>
                                 <input disabled placeholder="{{$order->npm_1}}">
                             </div>
                             <div class="input-field">
@@ -133,6 +130,10 @@
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$order->buktifollow_1}}">
                             </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$order->twibbon}}">
+                            </div>
                         </div>
                     </div>
                     <div class="details ">
@@ -155,7 +156,7 @@
                                 <input disabled placeholder="{{$order->prodi_2}}">
                             </div>
                             <div class="input-field">
-                                <label>NPM</label>
+                                <label>@lang('messages.npm')</label>
                                 <input disabled placeholder="{{$order->npm_2}}">
                             </div>
                             <div class="input-field">
@@ -189,6 +190,10 @@
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$order->buktifollow_2}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$order->twibbon2}}">
                             </div>
                         </div>
                     </div>
@@ -229,21 +234,41 @@
       // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
       window.snap.pay('{{$snapToken}}', {
         onSuccess: function(result){
-          window.location.href= '/matalomba/edc'
-          alert("payment success!"); console.log(result);
+            Swal.fire({
+    icon: 'success',
+    title: 'Pembayaran Berhasil!',
+    text: 'Anda akan diarahkan ke halaman EDC.',
+    showConfirmButton: false, 
+    timer: 2000,
+  }).then(() => {
+    window.location.href = '/matalomba/edc'; 
+    console.log(result); 
+  });
         },
         onPending: function(result){
           /* You may add your own implementation here */
           alert("wating your payment!"); console.log(result);
         },
         onError: function(result){
-          /* You may add your own implementation here */
-          alert("payment failed!"); console.log(result);
+            Swal.fire({
+    icon: 'info',
+    title: 'Menunggu Pembayaran',
+    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+    showConfirmButton: false, // Tidak menampilkan tombol OK
+    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
+    didOpen: () => {
+      Swal.showLoading(); // Menampilkan animasi loading
+    },
+  });
+  console.log(result); 
           
         },
         onClose: function(){
-          /* You may add your own implementation here */
-          alert('you closed the popup without finishing the payment');
+            Swal.fire({
+    icon: 'warning',
+    title: 'Pembayaran Dibatalkan',
+    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+  });
         }
       })
     });

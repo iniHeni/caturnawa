@@ -17,9 +17,9 @@ return [
     'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
     'buka' =>'Pendaftaran Dibuka Pada',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
-    'sm' =>'Kompetisi Short Movie',
-    'lkti' =>'Kompetisi Karya Tulis Ilmiah',
-    'edc' =>'Kompetisi Debat English',
+    'sm' =>'Short Movie Competition',
+    'lkti' =>'Scientific Paper Competition',
+    'edc' =>'English Debate Competition',
     'sponsor' =>'Sponsor Kami',
     'follow' =>'Ikuti kami di media Sosial!',
     'Daftar' =>'Daftar Sekarang',
@@ -28,8 +28,7 @@ return [
     // Home End 
     // Page Start Lomba
     'teks' => 'Dalam memeriahkan Dies Natalies Universitas Nasional ke-75',
-    'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema',
-    'teks2' => '"Menggali Potensi Energi Terbarukan Melalui Inovasi Teknologi Untuk Mencapai Momentum Hijau Secara Global"',
+    'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema "Mengeksplorasi potensi inovasi teknologi energi terbarukan untuk mencapai momentum hijau global"',
     'pesertalomba' => 'Peserta Kompetisi',
     'babak' => 'Pilih Babak',
     'penyisihan' => 'Penyisihan',
@@ -38,6 +37,7 @@ return [
     'view' => 'Masuk Untuk Detail',
     // Page End Lomba
     // Form Start
+    'npm' => 'NPM (Nomor Pokok Mahasiswa)',
     'pendaftaran' => 'Pendaftaran',
     'identitas' => 'Identitas',
     'Name' =>'Nama Lengkap',

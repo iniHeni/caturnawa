@@ -51,7 +51,10 @@ class OrdersmController extends Controller
             'nomorhp_3'=> 'required',
             'nomorhp_4' => 'required',
             'nomorhp_5'=> 'required',
+            'username' => 'required|string|max:50',
+            'password' => 'required|string|max:50',
             'instansi' => 'required|string|max:50',
+            'linkvidio' => 'required',
             'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
             'ktm_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'ktm_3' => 'required|mimes:png,jpeg,jpg|max:5000',
@@ -72,6 +75,11 @@ class OrdersmController extends Controller
             'buktifollow_3' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_4' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_5' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon_1' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon_2' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon_3' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon_4' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon_5' => 'required|mimes:png,jpeg,jpg|max:5000',
             'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]);     
         $ordersm = $request->all();
@@ -273,6 +281,56 @@ class OrdersmController extends Controller
             $ordersm['buktifollow_5'] = $image_name;
 
         }
+        if($request->hasFile('twibbon_1'))
+        {
+            $destination_path = 'images/sm/twibbon1';
+            $image = $request->file('twibbon_1');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon_1')->storeAS($destination_path,$image_name);
+
+            $ordersm['twibbon_1'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon_2'))
+        {
+            $destination_path = 'images/sm/twibbon2';
+            $image = $request->file('twibbon_2');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon_2')->storeAS($destination_path,$image_name);
+
+            $ordersm['twibbon_2'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon_3'))
+        {
+            $destination_path = 'images/sm/twibbon3';
+            $image = $request->file('twibbon_3');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon_3')->storeAS($destination_path,$image_name);
+
+            $ordersm['twibbon_3'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon_4'))
+        {
+            $destination_path = 'images/sm/twibbon4';
+            $image = $request->file('twibbon_4');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon_4')->storeAS($destination_path,$image_name);
+
+            $ordersm['twibbon_4'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon_5'))
+        {
+            $destination_path = 'images/sm/twibbon5';
+            $image = $request->file('twibbon_5');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon_5')->storeAS($destination_path,$image_name);
+
+            $ordersm['twibbon_5'] = $image_name;
+
+        }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'document/sm/surat';
@@ -293,70 +351,7 @@ class OrdersmController extends Controller
     $ordersm = array_merge($ordersm, $additionalData);
     $ordersm = ordersm::create($ordersm);
 
-        cloudinary()->uploadApi();
-        $result = $request->file('ktm_1')->storeOnCloudinary('caturnawa/sm/images/ktm_1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_2')->storeOnCloudinary('caturnawa/sm/images/ktm_2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_3')->storeOnCloudinary('caturnawa/sm/images/ktm_3');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_4')->storeOnCloudinary('caturnawa/sm/images/ktm_4');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_5')->storeOnCloudinary('caturnawa/sm/images/ktm_5');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_1')->storeOnCloudinary('caturnawa/sm/images/foto1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_2')->storeOnCloudinary('caturnawa/sm/images/foto2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_3')->storeOnCloudinary('caturnawa/sm/images/foto3');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_4')->storeOnCloudinary('caturnawa/sm/images/foto4');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_5')->storeOnCloudinary('caturnawa/sm/images/foto5');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_1')->storeOnCloudinary('caturnawa/sm/images/krs1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_2')->storeOnCloudinary('caturnawa/sm/images/krs2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_3')->storeOnCloudinary('caturnawa/sm/images/krs3');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_4')->storeOnCloudinary('caturnawa/sm/images/krs4');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_5')->storeOnCloudinary('caturnawa/sm/images/krs5');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_1')->storeOnCloudinary('caturnawa/sm/images/bukti1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_2')->storeOnCloudinary('caturnawa/sm/images/bukti2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_3')->storeOnCloudinary('caturnawa/sm/images/bukti3');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_4')->storeOnCloudinary('caturnawa/sm/images/bukti4');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_5')->storeOnCloudinary('caturnawa/sm/images/bukti5');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('surat_delegasi')->storeOnCloudinary('caturnawa/sm/images/surat');
-        $result->getFileName();
-        $result->getExtension();
+       
 
    // Set your Merchant Server Key
 \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -369,12 +364,12 @@ class OrdersmController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => $ordersm->id,
+    'order_id' => rand(),
     'gross_amount' => $ordersm->price,
 ),
 'item_details' => array(
     array(
-    'id' => 'order_id',
+    'id' => $ordersm->id,
     'price' => $ordersm->price,
     'quantity' => 1,
     'name' =>  "ShortMovie Competition",
@@ -397,12 +392,27 @@ public function callback(Request $request){
     if($hashed == $request->signature_key){
         if($request->status == 'capture' or $request-> status == 'settlement'){
             $ordersm = ordersm::find ($request->order_id);
-            $ordersm->update(['status' => 'Paid']);
+            $ordersm->insert(['status' => 'Paid']);
         }
     }
 }
 public function home($id){
     $ordersm = ordersm::find($id);
     return view('/');
+}
+
+public function loginsm(Request $loginsm){
+    $loginsm = $loginsm->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
+    $user = ordersm::where('username', $loginsm->nama)->first();
+
+    if ($user && $loginsm->password === $user->password) {
+        session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
+        return view('matalomba/sm/uploadSM');
+    } else {
+        return back()->withErrors(['error' => 'username atau password salah.']);
+    }
 }
 }

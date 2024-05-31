@@ -6,12 +6,15 @@ use App\Models\orderlkti;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class OrderlktiController extends Controller
 {
     public function checkout(Request $request){
         $orderlkti = $request->validate([
             'nama' => 'required|string|max:50',
+            'password' => 'required|max:50',
             'email' => 'required|email',
             'fakultas' => 'required|string|max:50',
             'prodi' => 'required|string|max:50',
@@ -24,37 +27,48 @@ class OrderlktiController extends Controller
             'foto' => 'required|mimes:png,jpeg,jpg|max:5000',
             'krs' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
             'surat_delegasi' => 'required|mimes:pdf|max:5000',
-            'nama_kegiatan' => 'nullable|string|max:50',
-            'jenis_kegiatan' => 'nullable|string|max:50',
+            'nama_kegiatan' => 'required|string|max:50',
+            'jenis_kegiatan' => 'required|string|max:50',
+            'tingkat_kegiatan' => 'required',
             'nama_kegiatan1' => 'nullable|string|max:50',
             'jenis_kegiatan1' => 'nullable|string|max:50',
+            'tingkat_kegiatan1' => 'nullable',
             'nama_kegiatan2' => 'nullable|string|max:50',
             'jenis_kegiatan2' => 'nullable|string|max:50',
+            'tingkat_kegiatan2' => 'nullable',
             'nama_kegiatan3' => 'nullable|string|max:50',
             'jenis_kegiatan3' => 'nullable|string|max:50',
+            'tingkat_kegiatan3' => 'nullable',
             'nama_kegiatan4' => 'nullable|string|max:50',
             'jenis_kegiatan4' => 'nullable|string|max:50',
+            'tingkat_kegiatan4' => 'nullable',
             'nama_kegiatan5' => 'nullable|string|max:50',
             'jenis_kegiatan5' => 'nullable|string|max:50',
+            'tingkat_kegiatan5' => 'nullable',
             'nama_kegiatan6' => 'nullable|string|max:50',
             'jenis_kegiatan6' => 'nullable|string|max:50',
+            'tingkat_kegiatan6' => 'nullable',
             'nama_kegiatan7' => 'nullable|string|max:50',
             'jenis_kegiatan7' => 'nullable|string|max:50',
+            'tingkat_kegiatan7' => 'nullable',
             'nama_kegiatan8' => 'nullable|string|max:50',
             'jenis_kegiatan8' => 'nullable|string|max:50',
+            'tingkat_kegiatan8' => 'nullable',
             'nama_kegiatan9' => 'nullable|string|max:50',
             'jenis_kegiatan9' => 'nullable|string|max:50',
-            'sertifikat' => '|mimes:pdf|max:5000',
-            'sertifikat1' => '|mimes:pdf|max:5000',
-            'sertifikat2' => '|mimes:pdf|max:5000',
-            'sertifikat3' => '|mimes:pdf|max:5000',
-            'sertifikat4' => '|mimes:pdf|max:5000',
-            'sertifikat5' => '|mimes:pdf|max:5000',
-            'sertifikat6' => '|mimes:pdf|max:5000',
-            'sertifikat7' => '|mimes:pdf|max:5000',
-            'sertifikat8' => '|mimes:pdf|max:5000',
-            'sertifikat9' => '|mimes:pdf|max:5000',
+            'tingkat_kegiatan9' => 'nullable',
+            'sertifikat' => 'required|mimes:pdf|max:5000',
+            'sertifikat1' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat2' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat3' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat4' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat5' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat6' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat7' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat8' => 'nullable|mimes:pdf|max:5000',
+            'sertifikat9' => 'nullable|mimes:pdf|max:5000',
             
         ]); 
         $orderlkti = $request->all();
@@ -98,6 +112,16 @@ class OrderlktiController extends Controller
             $orderlkti['buktifollow'] = $image_name;
 
         }
+        if($request->hasFile('twibbon'))
+        {
+            $destination_path = 'images/lkti/twibbon';
+            $image = $request->file('twibbon');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+
+            $orderlkti['twibbon'] = $image_name;
+
+        }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'document/lkti/surat';
@@ -116,9 +140,6 @@ class OrderlktiController extends Controller
             $path = $request->file('sertifikat')->storeAS($destination_path,$image_name);
             $orderlkti['sertifikat'] = $image_name;
 
-        }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat'] = null; // Atau bisa diatur menjadi string kosong ('')
         }
         if($request->hasFile('sertifikat1'))
         {
@@ -246,22 +267,7 @@ class OrderlktiController extends Controller
     $orderlkti = array_merge($orderlkti, $additionalData);
     $orderlkti = orderlkti::create($orderlkti);
 
-        cloudinary()->uploadApi();
-        $result = $request->file('ktm')->storeOnCloudinary('caturnawa/lkti/images/ktm');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto')->storeOnCloudinary('caturnawa/lkti/images/foto');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs')->storeOnCloudinary('caturnawa/lkti/images/krs');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow')->storeOnCloudinary('caturnawa/lkti/images/buktifollow');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('surat_delegasi')->storeOnCloudinary('caturnawa/lkti/images/surat');
-        $result->getFileName();
-        $result->getExtension();
+        
        
 
    // Set your Merchant Server Key
@@ -275,12 +281,12 @@ class OrderlktiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => $orderlkti->id,
+    'order_id' => rand(),
     'gross_amount' => $orderlkti->price,
 ),
 'item_details' => array(
     array(
-    'id' => 'order_id',
+    'id' => $orderlkti->id,
     'price' => $orderlkti->price,
     'quantity' => 1,
     'name' =>  "Scientific Paper Competition",
@@ -302,13 +308,27 @@ public function callback(Request $request){
     if($hashed == $request->signature_key){
         if($request->status == 'capture' or $request-> status == 'settlement'){
             $orderlkti = orderlkti::find ($request->order_id);
-            $orderlkti->update(['status' => 'Paid']);
+            $orderlkti->array_merge(['status' => 'Paid']);
         }
     }
 }
 public function home($id){
     $orderlkti = orderlkti::find($id);
     return view('/');
+}
+public function login(Request $login){
+    $loginlkti = $login->validate([
+        'nama' => 'required',
+        'password' => 'required',
+    ]);
+    $user = orderlkti::where('nama', $login->nama)->first();
+
+    if ($user && $login->password === $user->password) {
+        session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
+        return view('matalomba/lkti/uploadLKTI');
+    } else {
+        return back()->withErrors(['error' => 'username atau password salah.']);
+    }
 }
 }
 

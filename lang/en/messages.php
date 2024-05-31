@@ -14,7 +14,7 @@ return [
     // Home Start
     'welcome' => 'Welcome To Website, Register Now and Be The Winner!',
     'buka' =>'Registration Will Open on',
-    'kdbi' =>'Debate Indonesia Competition',
+    'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',
     'lkti' =>'Scientific Paper Competition',
     'edc' =>'Debate English Competition',
@@ -25,9 +25,9 @@ return [
     'count' =>'COUNTDOWN',
     // Home End 
     // Page Start Lomba
-    'teks' => 'in Enlivening the 75th National University Dies Natalies, 
+    'teks' => 'in Enlivening the 75th Nasional University Dies Natalies, 
     UNAS FEST opens registration for the competition with the theme',
-    'teks1' => 'Unearthing the potential of renewable energy through technological innovation to achieve green momentum globally',
+    'teks1' => '"Exploring the Potential of Rewable Energy Trough Technology innovation to Achieve Global Green Momentum"',
     'pesertalomba' => 'Participant Competition',
     'babak' => 'Round',
     'penyisihan' => 'Elimination',
@@ -40,9 +40,9 @@ return [
     'identitas' => 'Identity',
     'Name' =>'Full Name',
     'Nomor' =>'Number Whatssapp',
-    'fakultas' => 'Fakultas',
-    'prodi' => 'Prodi',
-    'npm' => 'NPM',
+    'fakultas' => 'Faculty',
+    'prodi' => 'Major',
+    'npm' => 'Student ID Number',
     'gender' => 'Choose Gender',
     'pria' => 'Male',
     'wanita' => 'Female',
@@ -79,7 +79,7 @@ return [
 
     // Data Juri Start
     //EDC
-    'juriposisi1' => 'Diplomat at Ministry of Foreign Affairs of <br> the Republic of Indonesia',
+    'juriposisi1' => 'Diplomat Ministry of Foreign Affairs of the Republic Indonesia',
     'juribio1' => 'Working at Ministry of Foreign Affairs of the Republic of Indonesia
     since February 2019, previously a competitive parliamentary debater
     from Universitas Indonesia who has won national and international

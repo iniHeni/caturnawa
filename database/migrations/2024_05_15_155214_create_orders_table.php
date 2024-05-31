@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('foto_1')->nullable;
             $table->string('krs_1')->nullable;
             $table->string('buktifollow_1')->nullable;
+            $table->string('twibbon')->nullable;
             $table->string('nama_2');
             $table->string('email_2');
             $table->string('fakultas_2');
@@ -39,6 +40,7 @@ return new class extends Migration
             $table->string('foto_2');
             $table->string('krs_2');
             $table->string('buktifollow_2');
+            $table->string('twibbon2')->nullable;
             $table->bigInteger('price');
             $table->string('instansi');
             $table->string('surat_delegasi')->nullable;

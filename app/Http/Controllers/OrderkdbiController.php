@@ -37,6 +37,8 @@ class OrderkdbiController extends Controller
             'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
             'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'surat_delegasi' => 'required|mimes:pdf|max:5000',
         ]); 
 
@@ -122,6 +124,26 @@ class OrderkdbiController extends Controller
             $orderkdbi['buktifollow_2'] = $image_name;
 
         }
+        if($request->hasFile('twibbon'))
+        {
+            $destination_path = 'images/kdbi/twibbon';
+            $image = $request->file('twibbon');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+
+            $orderkdbi['twibbon'] = $image_name;
+
+        }
+        if($request->hasFile('twibbon2'))
+        {
+            $destination_path = 'images/kdbi/twibbon2';
+            $image = $request->file('twibbon2');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
+
+            $orderkdbi['twibbon2'] = $image_name;
+
+        }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'document/kdbi/surat';
@@ -142,34 +164,7 @@ class OrderkdbiController extends Controller
     $orderkdbi = array_merge($orderkdbi, $additionalData);
         $orderkdbi = orderkdbi::create($orderkdbi);
 
-        cloudinary()->uploadApi();
-        $result = $request->file('ktm_1')->storeOnCloudinary('caturnawa/kdbi/images/ktm_1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('ktm_2')->storeOnCloudinary('caturnawa/kdbi/images/ktm_2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_1')->storeOnCloudinary('caturnawa/kdbi/images/foto1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('foto_2')->storeOnCloudinary('caturnawa/kdbi/images/foto2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_1')->storeOnCloudinary('caturnawa/kdbi/images/krs1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('krs_2')->storeOnCloudinary('caturnawa/kdbi/images/krs2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_1')->storeOnCloudinary('caturnawa/kdbi/images/bukti1');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('buktifollow_2')->storeOnCloudinary('caturnawa/kdbi/images/bukti2');
-        $result->getFileName();
-        $result->getExtension();
-        $result = $request->file('surat_delegasi')->storeOnCloudinary('caturnawa/kdbi/images/surat');
-        $result->getFileName();
-        $result->getExtension();
+       
 
    // Set your Merchant Server Key
 \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -182,15 +177,15 @@ class OrderkdbiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => $orderkdbi->id,
+    'order_id' => rand(),
     'gross_amount' => $orderkdbi->price,
 ),
 'item_details' => array(
     array(
-    'id' => 'order_id',
+    'id' => $orderkdbi->id,
     'price' => $orderkdbi->price,
     'quantity' => 1,
-    'name' =>  "Debate Bahasa Indonesia Competition",
+    'name' =>  "Kompetisi Debate Bahasa Indonesia",
     ),
 ),
 'customer_details' => array(

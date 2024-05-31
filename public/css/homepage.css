@@ -28,6 +28,10 @@ h1{
     margin-bottom: 100px;
     position: relative;
 }
+h2{
+  color: #f6ae31;
+  text-align: center; 
+}
 h3{
     margin-bottom: 60px;
 	color: #ffffff;
@@ -427,8 +431,7 @@ textarea {
 /* Start Section list lomba*/
 h5{
     margin-top: 8rem;
-    margin-bottom: 1rem;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     color: #f6ae31;
   }
@@ -437,6 +440,7 @@ h5{
     grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
     max-width: 100%;
     margin: 150px auto;
+    margin-top: 2rem;
     padding: 20px;
     gap: 20px;
   }
@@ -463,7 +467,7 @@ h5{
   .card-list span {
     display: inline-block;
     background: #F7DFF5;
-    margin-top: 32px;
+    margin-top: 312px;
     padding: 8px 15px;
     font-size: 0.75rem;
     border-radius: 50px;

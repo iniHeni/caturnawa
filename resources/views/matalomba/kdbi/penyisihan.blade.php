@@ -3,7 +3,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uflogo.png">
+      <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -14,6 +14,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../css/pagelomba.css">
+      <link rel="stylesheet" href="../css/rank.css">
 
       <title>Caturnawa - KDBIScore</title>
    </head>
@@ -145,10 +146,35 @@
        
    }
 </style>
+<div class="container-wrap">
+	<section id="leaderboard">
+		<nav class="ladder-nav">
+			<div class="ladder-title">
+			<h1>Standings</h1>
+			</div>
+			<div class="ladder-search">
+				<input type="text" id="search-leaderboard" class="live-search-box" placeholder="Search Team, Player..." />
+			</div>
+		</nav>
+		<table id="rankings" class="leaderboard-results" width="100%">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Team</th>
+					<th>Country</th>
+					<th>P1</th>
+					<th>P2</th>
+          <th>Games Played</th>
+					<th>PTS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Load SCRIMcom Leaderboard Ranings -->
+			</tbody>
+		</table>
+	</section>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-    </body>
-    <!-- JavaScript -->
-</html>
-      <script src="../../js/nav.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../js/rank.js"></script>
    </body>
 </html>

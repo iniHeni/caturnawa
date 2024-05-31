@@ -114,12 +114,12 @@
 }
 @media screen and (max-width: 768px) {
   .swiper-pagination{
-    margin-bottom: 35rem;
+    margin-bottom: 25rem;
   }
 }
 @media screen and (max-width: 540px) {
   .swiper-pagination{
-    margin-bottom: 20rem;
+    margin-bottom: 27rem;
   }
 }
 @media screen and (max-width: 430px) {
@@ -472,7 +472,7 @@
 
 @media screen and (max-width: 390px) {
   .user_content1 {
-      margin-top: -8rem;
+      margin-top: 2rem;
   }
   .user_content2 {
     margin-top: -23rem;
@@ -482,27 +482,27 @@
 }
 
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .user_content1 {
-      margin-top: -6rem;
+      margin-top: 4rem;
   }
   .user_content2 {
     margin-top: -26rem;
 }
 .user_content3 {
-  margin-top: -12rem;
+  margin-top: -17rem;
 }
 
 }
 @media screen and (max-width: 344px) {
   .user_content1 {
-      margin-top:  3rem;
+      margin-top:  8rem;
   }
   .user_content2 {
     margin-top: -20rem;
 }
 .user_content3 {
-  margin-top: -5rem;
+  margin-top: -12rem;
 }
 
 }

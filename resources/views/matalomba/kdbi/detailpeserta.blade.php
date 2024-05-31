@@ -23,7 +23,7 @@
         <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 9rem" class="nav__item">
+       <div style="margin-right: 21rem" class="nav__item">
                        <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
                        <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
                    </div>
@@ -33,10 +33,6 @@
 
          <li class="nav__item">
             <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
-         </li>
-
-         <li class="nav__item">
-            <a href="{{url('matalomba/scoreKDBI') }}" class="nav__link">@lang('messages.score')</a>
          </li>
 
          <li class="nav__item">

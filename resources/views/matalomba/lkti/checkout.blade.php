@@ -30,7 +30,7 @@
          <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 15rem" class="nav__item">
+        <div style="margin-right: 22rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -40,10 +40,6 @@
 
                   <li class="nav__item">
                      <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-                  </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
@@ -84,6 +80,10 @@
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
                                 <input disabled placeholder="{{$orderlkti->nama}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input disabled placeholder="{{$orderlkti->password}}">
                             </div>
                             <div class="input-field">
                                 <label >Email</label>
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div class="details personal">
-                        <span class="title">@lang('messages.Capaian') *Optional</span>
+                        <span class="title">@lang('messages.Capaian')</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.namakegiatan')</label>
@@ -160,8 +160,8 @@
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
-                                <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan}}"></option>
+                                <select disabled placeholder="{{$orderlkti->tingkat_kegiatan}}">
+                                    <option selected></option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>

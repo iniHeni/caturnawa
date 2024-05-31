@@ -30,7 +30,7 @@
         <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 9rem" class="nav__item">
+       <div style="margin-right: 21rem" class="nav__item">
                        <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
                        <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
                    </div>
@@ -41,11 +41,7 @@
                   <li class="nav__item">
                      <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
                   </li>
-
-                  <li class="nav__item">
-                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
-                  </li>
-
+                  
                   <li class="nav__item">
                      <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
@@ -98,7 +94,7 @@
                                 <input disabled placeholder="{{$orderkdbi->prodi_1}}">
                             </div>
                             <div class="input-field">
-                                <label>NPM</label>
+                                <label>@lang('messages.npm')</label>
                                 <input disabled placeholder="{{$orderkdbi->npm_1}}">
                             </div>
                             <div class="input-field">
@@ -126,12 +122,16 @@
                                 <input disabled placeholder="{{$orderkdbi->foto_1}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.krs')i</label>
+                                <label>@lang('messages.krs')</label>
                                 <input disabled placeholder="{{$orderkdbi->krs_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$orderkdbi->buktifollow_1}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$orderkdbi->twibbon}}">
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                 <input disabled placeholder="{{$orderkdbi->prodi_2}}">
                             </div>
                             <div class="input-field">
-                                <label>NPM</label>
+                                <label>@lang('messages.npm')</label>
                                 <input disabled placeholder="{{$orderkdbi->npm_2}}">
                             </div>
                             <div class="input-field">
@@ -189,6 +189,10 @@
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
                                 <input disabled placeholder="{{$orderkdbi->buktifollow_2}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <input disabled placeholder="{{$orderkdbi->twibbon2}}">
                             </div>
                         </div>
                     </div>
