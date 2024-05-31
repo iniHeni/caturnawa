@@ -13,6 +13,8 @@ return [
     // Nav End Menu
     // Home Start
     'welcome' => 'Selamat Datang, Daftar Sekarang dan jadilah Pemenang!',
+    'admin' => 'Selamat Datang Juri dan Tabulator!',
+    'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
     'buka' =>'Pendaftaran Dibuka Pada',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',
