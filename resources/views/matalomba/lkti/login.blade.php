@@ -172,7 +172,7 @@
         <header>Login</header>
         <form method="POST" action="/login">
             @csrf
-          <input type="text" name="username" id="username" for="username" placeholder="username" required />
+          <input type="text" name="username" id="username" for="username" placeholder="nama/name" required />
           <input type="password" name="password" id="password" for="password" placeholder="Password" required />
           <input type="submit" value="Login" />
         </form>

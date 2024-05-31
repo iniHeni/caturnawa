@@ -484,25 +484,25 @@
 }
 @media screen and (max-width: 376px) {
   .user_content1 {
-      margin-top: 4rem;
+      margin-top: -2rem;
   }
   .user_content2 {
     margin-top: -26rem;
 }
 .user_content3 {
-  margin-top: -17rem;
+  margin-top: -10rem;
 }
 
 }
 @media screen and (max-width: 344px) {
   .user_content1 {
-      margin-top:  8rem;
+      margin-top:  4rem;
   }
   .user_content2 {
     margin-top: -20rem;
 }
 .user_content3 {
-  margin-top: -12rem;
+  margin-top: -10rem;
 }
 
 }

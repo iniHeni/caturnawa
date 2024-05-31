@@ -69,30 +69,19 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Peserta</th>
-                            <th scope="col">Nama Tim</th>
-                            <th scope="col">Point</th>
-                            <th scope="col">Hello</th>
-                            <th scope="col">Juara</th>
-                            <th scope="col">Extra Column 1</th>
-                            <th scope="col">Extra Column 2</th>
+                            <th scope="col">Kriteria Penilaian</th>
+                            <th scope="col">Skor</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Rank</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Contoh data dummy -->
                         @php
                         $dummyData = [
-                            ['No' => 1, 'Peserta' => 'John Doe', 'Nama Tim' => 'UPN', 'Point' => '80', 'Hello'=> '80', 'Juara'=> '80', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 2, 'Peserta' => 'Jane Smith', 'Nama Tim' => 'UPN', 'Point' => '80', 'Hello'=> '80', 'Juara'=> '80', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 3, 'Peserta' => 'Alice Johnson', 'Nama Tim' => 'UPN', 'Point' => '70', 'Hello'=> '70', 'Juara'=> '70', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 4, 'Peserta' => 'Bob Brown', 'Nama Tim' => 'UNAS', 'Point' => '80', 'Hello'=> '80', 'Juara'=> '80', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 5, 'Peserta' => 'Charlie Davis', 'Nama Tim' => 'UNAS', 'Point' => '90', 'Hello'=> '90', 'Juara'=> '90', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 6, 'Peserta' => 'Dana Evans', 'Nama Tim' => 'UNAS', 'Point' => '30', 'Hello'=> '30', 'Juara'=> '30', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 7, 'Peserta' => 'Evan Fox', 'Nama Tim' => 'BRAWIJAYA', 'Point' => '70', 'Hello'=> '70', 'Juara'=> '70', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 8, 'Peserta' => 'Fiona Green', 'Nama Tim' => 'BRAWIJAYA', 'Point' => '90', 'Hello'=> '90', 'Juara'=> '90', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 9, 'Peserta' => 'George Harris', 'Nama Tim' => 'BRAWIJAYA', 'Point' => '20', 'Hello'=> '20', 'Juara'=> '20', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 10, 'Peserta' => 'Hannah Ivers', 'Nama Tim' => 'UI', 'Point' => '60', 'Hello'=> '60', 'Juara'=> '60', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 11, 'Peserta' => 'Ian Jenkins', 'Nama Tim' => 'UI', 'Point' => '55', 'Hello'=> '55', 'Juara'=> '55', 'Extra1' => 'Data', 'Extra2' => 'Data'],
-                            ['No' => 12, 'Peserta' => 'Jack King', 'Nama Tim' => 'UI', 'Point' => '90', 'Hello'=> '90', 'Juara'=> '90', 'Extra1' => 'Data', 'Extra2' => 'Data'],
+                            ['No' => 1, 'Peserta' => 'John Doe', 'Kriteria Penilaian' => 'UPN', 'Skor' => '80', 'Total'=> '80',  'Rank' => '80',],
+                            ['No' => 1, 'Peserta' => 'John Doe', 'Kriteria Penilaian' => 'UPN', 'Skor' => '80', 'Total'=> '80',  'Rank' => '80',],
+                            ['No' => 1, 'Peserta' => 'John Doe', 'Kriteria Penilaian' => 'UPN', 'Skor' => '80', 'Total'=> '80',  'Rank' => '80',],
                         ];
                         $limitedData = array_slice($dummyData, 0, 10);
                         @endphp
@@ -101,12 +90,10 @@
                         <tr>
                             <td scope="row">{{ $row['No'] }}</td>
                             <td>{{ $row['Peserta'] }}</td>
-                            <td>{{ $row['Nama Tim'] }}</td>
-                            <td>{{ $row['Point'] }}</td>
-                            <td>{{ $row['Hello'] }}</td>
-                            <td>{{ $row['Juara'] }}</td>
-                            <td>{{ $row['Extra1'] }}</td>
-                            <td>{{ $row['Extra2'] }}</td>
+                            <td>{{ $row['Kriteria Penilaian'] }}</td>
+                            <td>{{ $row['Skor'] }}</td>
+                            <td>{{ $row['Total'] }}</td>
+                            <td>{{ $row['Rank'] }}</td>
                         </tr>
                         @empty
                         <tr>
