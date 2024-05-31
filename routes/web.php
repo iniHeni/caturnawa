@@ -163,25 +163,180 @@ Route::get('/matalomba/finalSM', function () {
 });
 
 
-// Route Admin
-Route::get('/edc/login', function () {
-    return view('edc/loginadmin');
+
+
+
+// Route Login
+
+Route::get('/admin/login', function () {
+    return view('admin/loginadmin');
 });
 
-Route::get('/edc/mainmenu', function () {
-    return view('edc/mainmenu');
+// Route Admin EDC
+Route::get('/admin/mainmenuEDC', function () {
+    return view('admin/EDC/mainmenuEDC');
+});
+// Route Beranda
+Route::get('/admin/beranda', function () {
+    return view('admin/EDC/beranda');
 });
 
 
+// Route Data Peserta
+Route::get('/admin/pesertaEDC', function () {
+    return view('admin/EDC/data-pesertaEDC');
+});
 
-Route::get('edc/loginadmin', [AuthController::class, 'showLogin'])->name('login');
-Route::post('edc/loginadmin', [AuthController::class, 'login']);
-// Route::get('edc/mainmenu', [AuthController::class, 'showMainMenu'])->middleware('auth');
+// Route Edit Peserta
 
-// routes/web.php
+Route::get('/admin/edit-peserta', function () {
+    return view('admin/EDC/edit-peserta');
+});
 
-Route::get('/edc/mainmenu', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/edc/mainmenu', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+// Route Data Kategori
+Route::get('/admin/kategoriEDC', function () {
+    return view('admin/EDC/data-kategoriEDC');
+});
+
+
+// Route Data Babak
+Route::get('/admin/babakEDC', function () {
+    return view('admin/EDC/babakEDC');
+});
+
+Route::get('/admin/mainmenuEDC', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+
+
+
+
+
+// Route Admin KDBI
+Route::get('/admin/mainmenuKDBI1', function () {
+    return view('admin/KDBI/mainmenuKDBI');
+});
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/KDBI/beranda');
+});
+
+
+// Route Data Peserta
+Route::get('/admin/pesertaKDBI1', function () {
+    return view('admin/KDBI/data-pesertaKDBI');
+});
+
+// Route Edit Peserta
+
+Route::get('/admin/edit-peserta1', function () {
+    return view('admin/KDBI/edit-peserta');
+});
+
+// Route Data Kategori
+Route::get('/admin/kategoriKDBI1', function () {
+    return view('admin/KDBI/data-kategoriKDBI');
+});
+
+
+// Route Data Babak
+Route::get('/admin/babakKDBI1', function () {
+    return view('admin/KDBI/babakKDBI');
+});
+Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+
+
+
+
+
+
+
+
+// Route Admin LKTI
+Route::get('/admin/mainmenuLKTI1', function () {
+    return view('admin/LKTI/mainmenuLKTI');
+});
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/LKTI/beranda');
+});
+
+
+// Route Data Peserta
+Route::get('/admin/pesertaLKTI1', function () {
+    return view('admin/LKTI/data-pesertaLKTI');
+});
+
+// Route Edit Peserta
+
+Route::get('/admin/edit-peserta1', function () {
+    return view('admin/LKTI/edit-peserta');
+});
+
+// Route Data Kategori
+Route::get('/admin/kategoriLKTI1', function () {
+    return view('admin/LKTI/data-kategoriLKTI');
+});
+
+
+// Route Data Babak
+Route::get('/admin/babakLKTI1', function () {
+    return view('admin/LKTI/babakLKTI');
+});
+Route::get('/admin/mainmenuLKTI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuLKTI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+
+
+
+
+// Route Admin SM
+Route::get('/admin/mainmenuSM1', function () {
+    return view('admin/SM/mainmenuSM');
+});
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/SM/beranda');
+});
+
+
+// Route Data Peserta
+Route::get('/admin/pesertaSM1', function () {
+    return view('admin/SM/data-pesertaSM');
+});
+
+// Route Edit Peserta
+
+Route::get('/admin/edit-peserta1', function () {
+    return view('admin/SM/edit-peserta');
+});
+
+// Route Data Kategori
+Route::get('/admin/kategoriSM1', function () {
+    return view('admin/SM/data-kategoriSM');
+});
+
+
+// Route Data Babak
+Route::get('/admin/babakSM1', function () {
+    return view('admin/SM/babakSM');
+});
+Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+
+
+
+
+
+
+
+
 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Route::get('/admin/dashboard', function () {
+//     return view('admin/dashboard');
+// });
