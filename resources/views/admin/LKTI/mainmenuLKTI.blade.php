@@ -13,7 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/navmenu.css">
-    
+
+
     <title>Caturnawa - Admin</title>
 </head>
 <body>
@@ -22,8 +23,8 @@
 <header class="header" id="header">
     <nav class="nav container">
         <div class="nav_logo" id="nav-logo">
-            <img src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin SPC </a></h2>
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin LKTI </a></h2>
         </div>
     </nav>
 </header>
@@ -31,12 +32,13 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="#" id="data-pesertaLKTI"><i class="fa fa-users"></i> Peserta</a>
-    <a href="#" id="kategori-link"><i class="fa fa-list-alt"></i> Kategori</a>
-    <a href="#" id="penilaian-link"><i class="fa fa-star"></i> Skor</a>
-    <a href="#" id="ronde-link"><i class="fa fa-trophy"></i> Babak</a>
-    <a href="#" id="rank-link"><i class="fa fa-bar-chart"></i> Rank</a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="#" id="penyisihanLKTI" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="#" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="#" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+    
+    
     <!-- resources/views/mainmenu.blade.php -->
 
     <!-- Tautan untuk logout -->
@@ -54,115 +56,22 @@
 <div id="main-content" class="main-content">
     <section id="home" style="display: block;">
         <div id="home-container">
-            <!-- Ini adalah tempat konten beranda -->
-            <h3 class="welcome" >@lang('messages.admin')</h3>
-            <h3 class="welcome" >@lang('messages.admin1')</h3>
+            <h3 class="welcome">@lang('messages.admin')</h3>
+            <h3 class="welcome">@lang('messages.admin1')</h3>
         </div>
     </section>
     <section id="skor" style="display: none;">
-        <div id="data-container">
-            <!-- Konten tabel peserta akan dimuat di sini -->
-        </div>
+        <div id="data-container"></div>
     </section>
 </div>
 <!-- Script untuk memanggil file admin.js -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../../js/adminLKTI.js"></script>
+<script src="../../../js/adminLKTI.js"></script>
+
 <script>
 document.getElementById("menu").addEventListener("click", function () {
-    document.body.classList.toggle("sidebar-close");
+    document.body.classList.toggle("sidebar-open");
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-    function showContent(sectionId) {
-        const contents = document.querySelectorAll(".main-content > section");
-        contents.forEach((content) => {
-            content.style.display = "none";
-        });
-        document.getElementById(sectionId).style.display = "block";
-    }
-
-    $.ajax({
-        url: "/admin/mainmenuLKTI1",
-        success: function (result) {
-            $("#home-container").html($(result).find("#home-content").html());
-        },
-        error: function () {
-            $("#home-container").html("Gagal memuat data.");
-        },
-    });
-
-    document
-        .getElementById("beranda")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("home");
-
-            $.ajax({
-                url: "/admin/beranda1",
-                success: function (result) {
-                    $("#home-container").html(
-                        $(result).find("#home-content").html()
-                    );
-                },
-                error: function () {
-                    $("#home-container").html("Gagal memuat data.");
-                },
-            });
-        });
-
-    document
-        .getElementById("data-pesertaLKTI")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("skor");
-
-            $.ajax({
-                url: "/admin/pesertaLKTI1",
-                success: function (result) {
-                    $("#data-container").html(result);
-                },
-                error: function () {
-                    $("#data-container").html("Gagal memuat data.");
-                },
-            });
-        });
-
-    document
-        .getElementById("kategori-link")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("skor");
-
-            $.ajax({
-                url: "/admin/kategoriLKTI1",
-                success: function (result) {
-                    $("#data-container").html(result);
-                },
-                error: function () {
-                    $("#data-container").html("Gagal memuat data.");
-                },
-            });
-        });
-
-    document
-        .getElementById("ronde-link")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("skor");
-
-            $.ajax({
-                url: "/admin/babakLKTI1",
-                success: function (result) {
-                    $("#data-container").html(result);
-                },
-                error: function () {
-                    $("#data-container").html("Gagal memuat data.");
-                },
-            });
-        });
-});
-
 </script>
 </body>
 </html>

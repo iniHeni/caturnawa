@@ -181,11 +181,134 @@ Route::get('/admin/beranda', function () {
     return view('admin/EDC/beranda');
 });
 
-
+///////////////////  EDC  ///////////////////////
 // Route Data Peserta
 Route::get('/admin/pesertaEDC', function () {
-    return view('admin/EDC/data-pesertaEDC');
+    return view('admin/EDC/sectionp/data/data-pesertaEDC');
 });
+
+// Route Data Peserta2
+Route::get('/admin/pesertaEDC2', function () {
+    return view('admin/EDC/sectionp/data/data-pesertaEDC2');
+});
+
+// Route Data Peserta3
+Route::get('/admin/pesertaEDC3', function () {
+    return view('admin/EDC/sectionp/data/data-pesertaEDC3');
+});
+
+// Route Data Peserta4
+Route::get('/admin/pesertaEDC4', function () {
+    return view('admin/EDC/sectionp/data/data-pesertaEDC4');
+});
+
+// Route Data Peserta5
+Route::get('/admin/pesertaEDC5', function () {
+    return view('admin/EDC/sectionp/data/data-pesertaEDC5');
+});
+
+// Route Data Peserta6
+Route::get('/admin/pesertaEDC6', function () {
+    return view('admin/EDC/sectionp/data/data-pesertaEDC6');
+});
+
+
+// Route Data Peserta d2
+Route::get('/admin/pesertaEDCd2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC');
+});
+
+// Route Data Peserta2 d2
+Route::get('/admin/pesertaEDC2d2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC2');
+});
+
+// Route Data Peserta3 d2
+Route::get('/admin/pesertaEDC3d2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC3');
+});
+
+// Route Data Peserta4 d2
+Route::get('/admin/pesertaEDC4d2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC4');
+});
+
+// Route Data Peserta5 d2
+Route::get('/admin/pesertaEDC5d2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC5');
+});
+
+// Route Data Peserta6 d2
+Route::get('/admin/pesertaEDC6d2', function () {
+    return view('admin/EDC/sectionp/data2/data-pesertaEDC6');
+});
+
+
+
+// Route Data Peserta d3
+Route::get('/admin/pesertaEDCd3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC');
+});
+
+// Route Data Peserta2 d3
+Route::get('/admin/pesertaEDC2d3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC2');
+});
+
+// Route Data Peserta3 d3
+Route::get('/admin/pesertaEDC3d3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC3');
+});
+
+// Route Data Peserta4 d3
+Route::get('/admin/pesertaEDC4d3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC4');
+});
+
+// Route Data Peserta5 d3
+Route::get('/admin/pesertaEDC5d3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC5');
+});
+
+// Route Data Peserta6 d3
+Route::get('/admin/pesertaEDC6d3', function () {
+    return view('admin/EDC/sectionp/data3/data-pesertaEDC6');
+});
+
+
+
+
+// Route Data Peserta d4
+Route::get('/admin/pesertaEDCd4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC');
+});
+
+// Route Data Peserta2 d4
+Route::get('/admin/pesertaEDC2d4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC2');
+});
+
+// Route Data Peserta3 d4
+Route::get('/admin/pesertaEDC3d4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC3');
+});
+
+// Route Data Peserta4 d4
+Route::get('/admin/pesertaEDC4d4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC4');
+});
+
+// Route Data Peserta5 d4
+Route::get('/admin/pesertaEDC5d4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC5');
+});
+
+// Route Data Peserta6 d4
+Route::get('/admin/pesertaEDC6d4', function () {
+    return view('admin/EDC/sectionp/data4/data-pesertaEDC6');
+});
+
+
 
 // Route penyisihanEDC
 
@@ -206,22 +329,91 @@ Route::get('/admin/finalEDC', function () {
     return view('admin/EDC/finalEDC');
 });
 
-// Route Edit Peserta
 
-Route::get('/admin/edit-peserta', function () {
-    return view('admin/EDC/edit-peserta');
+
+
+///////////////////////////////////////////////////////////////
+// Route Data Peserta sf
+Route::get('/admin/pesertaEDCsf', function () {
+    return view('admin/EDC/sectionsf/data/data-pesertaEDC');
 });
 
-// Route Data Kategori
-Route::get('/admin/kategoriEDC', function () {
-    return view('admin/EDC/data-kategoriEDC');
+Route::get('/admin/pesertaEDCsf2', function () {
+    return view('admin/EDC/sectionsf/data2/data-pesertaEDC');
 });
 
 
-// Route Data Babak
-Route::get('/admin/babakEDC', function () {
-    return view('admin/EDC/babakEDC');
+///////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////
+
+// Route Data Peserta f
+Route::get('/admin/pesertaEDCf', function () {
+    return view('admin/EDC/sectionf/data/data-pesertaEDC');
 });
+
+Route::get('/admin/pesertaEDCf2', function () {
+    return view('admin/EDC/sectionf/data2/data-pesertaEDC');
+});
+
+Route::get('/admin/pesertaEDCf3', function () {
+    return view('admin/EDC/sectionf/data3/data-pesertaEDC');
+});
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+// Route penyisihanEDC
+
+Route::get('/admin/penyisihanEDC', function () {
+    return view('admin/EDC/penyisihanEDC');
+});
+
+
+// Route semifinalEDC
+
+Route::get('/admin/semifinalEDC', function () {
+    return view('admin/EDC/semifinalEDC');
+});
+
+// Route finalEDC
+
+Route::get('/admin/finalEDC', function () {
+    return view('admin/EDC/finalEDC');
+});
+
+
+
+//Route Section1
+Route::get('/admin/section1EDC', function () {
+    return view('admin/EDC/sectionp/section1');
+});
+
+//Route Section2
+Route::get('/admin/section2EDC', function () {
+    return view('admin/EDC/sectionp/section2');
+});
+
+
+//Route Section3
+Route::get('/admin/section3EDC', function () {
+    return view('admin/EDC/sectionp/section3');
+});
+
+
+//Route Section4
+Route::get('/admin/section4EDC', function () {
+    return view('admin/EDC/sectionp/section4');
+});
+
+////////////////////////  EDC ////////////////////////////////
+
+
+
+
 
 Route::get('/admin/mainmenuEDC', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
@@ -241,27 +433,239 @@ Route::get('/admin/beranda1', function () {
 });
 
 
+///////////////////  KDBI  ///////////////////////
 // Route Data Peserta
-Route::get('/admin/pesertaKDBI1', function () {
-    return view('admin/KDBI/data-pesertaKDBI');
+Route::get('/admin/pesertaKDBI', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI');
 });
 
-// Route Edit Peserta
-
-Route::get('/admin/edit-peserta1', function () {
-    return view('admin/KDBI/edit-peserta');
+// Route Data Peserta2
+Route::get('/admin/pesertaKDBI2', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI2');
 });
 
-// Route Data Kategori
-Route::get('/admin/kategoriKDBI1', function () {
-    return view('admin/KDBI/data-kategoriKDBI');
+// Route Data Peserta3
+Route::get('/admin/pesertaKDBI3', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI3');
+});
+
+// Route Data Peserta4
+Route::get('/admin/pesertaKDBI4', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI4');
+});
+
+// Route Data Peserta5
+Route::get('/admin/pesertaKDBI5', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI5');
+});
+
+// Route Data Peserta6
+Route::get('/admin/pesertaKDBI6', function () {
+    return view('admin/KDBI/sectionp/data/data-pesertaKDBI6');
 });
 
 
-// Route Data Babak
-Route::get('/admin/babakKDBI1', function () {
-    return view('admin/KDBI/babakKDBI');
+// Route Data Peserta d2
+Route::get('/admin/pesertaKDBId2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI');
 });
+
+// Route Data Peserta2 d2
+Route::get('/admin/pesertaKDBI2d2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI2');
+});
+
+// Route Data Peserta3 d2
+Route::get('/admin/pesertaKDBI3d2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI3');
+});
+
+// Route Data Peserta4 d2
+Route::get('/admin/pesertaKDBI4d2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI4');
+});
+
+// Route Data Peserta5 d2
+Route::get('/admin/pesertaKDBI5d2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI5');
+});
+
+// Route Data Peserta6 d2
+Route::get('/admin/pesertaKDBI6d2', function () {
+    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI6');
+});
+
+
+
+// Route Data Peserta d3
+Route::get('/admin/pesertaKDBId3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI');
+});
+
+// Route Data Peserta2 d3
+Route::get('/admin/pesertaKDBI2d3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI2');
+});
+
+// Route Data Peserta3 d3
+Route::get('/admin/pesertaKDBI3d3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI3');
+});
+
+// Route Data Peserta4 d3
+Route::get('/admin/pesertaKDBI4d3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI4');
+});
+
+// Route Data Peserta5 d3
+Route::get('/admin/pesertaKDBI5d3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI5');
+});
+
+// Route Data Peserta6 d3
+Route::get('/admin/pesertaKDBI6d3', function () {
+    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI6');
+});
+
+
+
+
+// Route Data Peserta d4
+Route::get('/admin/pesertaKDBId4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI');
+});
+
+// Route Data Peserta2 d4
+Route::get('/admin/pesertaKDBI2d4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI2');
+});
+
+// Route Data Peserta3 d4
+Route::get('/admin/pesertaKDBI3d4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI3');
+});
+
+// Route Data Peserta4 d4
+Route::get('/admin/pesertaKDBI4d4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI4');
+});
+
+// Route Data Peserta5 d4
+Route::get('/admin/pesertaKDBI5d4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI5');
+});
+
+// Route Data Peserta6 d4
+Route::get('/admin/pesertaKDBI6d4', function () {
+    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI6');
+});
+
+
+
+// Route penyisihanKDBI
+
+Route::get('/admin/penyisihanKDBI', function () {
+    return view('admin/KDBI/penyisihanKDBI');
+});
+
+
+// Route semifinalKDBI
+
+Route::get('/admin/semifinalKDBI', function () {
+    return view('admin/KDBI/semifinalKDBI');
+});
+
+// Route finalKDBI
+
+Route::get('/admin/finalKDBI', function () {
+    return view('admin/KDBI/finalKDBI');
+});
+
+
+
+
+///////////////////////////////////////////////////////////////
+// Route Data Peserta sf
+Route::get('/admin/pesertaKDBIsf', function () {
+    return view('admin/KDBI/sectionsf/data/data-pesertaKDBI');
+});
+
+Route::get('/admin/pesertaKDBIsf2', function () {
+    return view('admin/KDBI/sectionsf/data2/data-pesertaKDBI');
+});
+
+
+///////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////
+
+// Route Data Peserta f
+Route::get('/admin/pesertaKDBIf', function () {
+    return view('admin/KDBI/sectionf/data/data-pesertaKDBI');
+});
+
+Route::get('/admin/pesertaKDBIf2', function () {
+    return view('admin/KDBI/sectionf/data2/data-pesertaKDBI');
+});
+
+Route::get('/admin/pesertaKDBIf3', function () {
+    return view('admin/KDBI/sectionf/data3/data-pesertaKDBI');
+});
+
+
+
+///////////////////////////////////////////////////////////////////
+
+
+// Route penyisihanKDBI
+
+Route::get('/admin/penyisihanKDBI', function () {
+    return view('admin/KDBI/penyisihanKDBI');
+});
+
+
+// Route semifinalKDBI
+
+Route::get('/admin/semifinalKDBI', function () {
+    return view('admin/KDBI/semifinalKDBI');
+});
+
+// Route finalKDBI
+
+Route::get('/admin/finalKDBI', function () {
+    return view('admin/KDBI/finalKDBI');
+});
+
+
+
+//Route Section1
+Route::get('/admin/section1KDBI', function () {
+    return view('admin/KDBI/sectionp/section1');
+});
+
+//Route Section2
+Route::get('/admin/section2KDBI', function () {
+    return view('admin/KDBI/sectionp/section2');
+});
+
+
+//Route Section3
+Route::get('/admin/section3KDBI', function () {
+    return view('admin/KDBI/sectionp/section3');
+});
+
+
+//Route Section4
+Route::get('/admin/section4KDBI', function () {
+    return view('admin/KDBI/sectionp/section4');
+});
+
+////////////////////////  KDBI  ////////////////////////////////
+
+
+
+
 Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
 
@@ -283,27 +687,26 @@ Route::get('/admin/beranda1', function () {
 });
 
 
-// Route Data Peserta
-Route::get('/admin/pesertaLKTI1', function () {
-    return view('admin/LKTI/data-pesertaLKTI');
-});
+// Route penyisihanLKTI
 
-// Route Edit Peserta
-
-Route::get('/admin/edit-peserta1', function () {
-    return view('admin/LKTI/edit-peserta');
-});
-
-// Route Data Kategori
-Route::get('/admin/kategoriLKTI1', function () {
-    return view('admin/LKTI/data-kategoriLKTI');
+Route::get('/admin/penyisihanLKTI', function () {
+    return view('admin/LKTI/penyisihanLKTI');
 });
 
 
-// Route Data Babak
-Route::get('/admin/babakLKTI1', function () {
-    return view('admin/LKTI/babakLKTI');
+// Route semifinalLKTI
+
+Route::get('/admin/semifinalLKTI', function () {
+    return view('admin/LKTI/semifinalLKTI');
 });
+
+// Route finalLKTI
+
+Route::get('/admin/finalLKTI', function () {
+    return view('admin/LKTI/finalLKTI');
+});
+
+
 Route::get('/admin/mainmenuLKTI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuLKTI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
 
@@ -321,27 +724,26 @@ Route::get('/admin/beranda1', function () {
 });
 
 
-// Route Data Peserta
-Route::get('/admin/pesertaSM1', function () {
-    return view('admin/SM/data-pesertaSM');
-});
+// Route penyisihanSM
 
-// Route Edit Peserta
-
-Route::get('/admin/edit-peserta1', function () {
-    return view('admin/SM/edit-peserta');
-});
-
-// Route Data Kategori
-Route::get('/admin/kategoriSM1', function () {
-    return view('admin/SM/data-kategoriSM');
+Route::get('/admin/penyisihanSM', function () {
+    return view('admin/SM/penyisihanSM');
 });
 
 
-// Route Data Babak
-Route::get('/admin/babakSM1', function () {
-    return view('admin/SM/babakSM');
+// Route semifinalSM
+
+Route::get('/admin/semifinalSM', function () {
+    return view('admin/SM/semifinalSM');
 });
+
+// Route finalSM
+
+Route::get('/admin/finalSM', function () {
+    return view('admin/SM/finalSM');
+});
+
+
 Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
 
