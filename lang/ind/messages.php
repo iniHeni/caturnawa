@@ -23,6 +23,13 @@ return [
     'Daftar' =>'Daftar Sekarang',
     'Web' =>'Masuk Website',
     'count' =>'Hitung Mundur',
+    'opening' =>'Pendaftaran Awal',
+    'hargakdbi' =>'Rp300.000',
+    'hargasm' =>'Rp250.000',
+    'hargaspc' =>'Rp250.000',
+    'hargaedc' =>'Rp350.000',
+
+    
     // Home End
     
     //Admin Page

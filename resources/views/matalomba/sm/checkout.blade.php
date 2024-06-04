@@ -109,14 +109,14 @@
                 <table>
                 <div class="form first">
                 <div class="details personal">
-                        <span class="title">Ketua</span>
+                        <span class="title">Leader</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
                                 <input disabled placeholder="{{$ordersm->nama_1}}">
                             </div>
                             <div class="input-field">
-                                <label >Email</label>
+                                <label >Email  *For form UploadSM</label>
                                 <input disabled placeholder="{{$ordersm->email_1}}">
                             </div>
                             <div class="input-field">
@@ -418,14 +418,6 @@
                     <div class="details ID">
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
-                            <div class="input-field">
-                                <label>Username *untuk form UploadSM</label>
-                                <input disabled placeholder="{{$ordersm->username}}" required>
-                            </div>
-                            <div class="input-field">
-                                <label>Password **untuk form UploadSM</label>
-                                <input disabled placeholder="{{$ordersm->password}}" required>
-                            </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$ordersm->instansi}}" required>

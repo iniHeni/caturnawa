@@ -23,6 +23,11 @@ return [
     'Daftar' =>'Register Now!',
     'Web' =>'Goto Website',
     'count' =>'COUNTDOWN',
+    'opening' =>'Early Registration',
+    'hargakdbi' =>'$19',
+    'hargasm' =>'$16',
+    'hargaspc' =>'$16',
+    'hargaedc' =>'$22',
     // Home End 
     // Page Start Lomba
     'teks' => 'in Enlivening the 75th Nasional University Dies Natalies, 

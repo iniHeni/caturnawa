@@ -113,10 +113,6 @@
                                 <input disabled placeholder="{{$orderlkti->nama}}">
                             </div>
                             <div class="input-field">
-                                <label>Password</label>
-                                <input disabled placeholder="{{$orderlkti->password}}">
-                            </div>
-                            <div class="input-field">
                                 <label >Email</label>
                                 <input disabled placeholder="{{$orderlkti->email}}">
                             </div>

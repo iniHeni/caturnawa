@@ -81,8 +81,6 @@ return new class extends Migration
             $table->string('buktifollow_5');
             $table->string('twibbon_5');
             $table->bigInteger('price');
-            $table->string('username');
-            $table->string('password');
             $table->string('instansi');
             $table->string('linkvidio');
             $table->string('surat_delegasi');

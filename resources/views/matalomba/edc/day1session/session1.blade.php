@@ -133,16 +133,16 @@ h1{
               <thead>
                 <tr>
                   <th width="40px">No</th>
-                  <th>Hari</th>
+                  <th>Day</th>
                   <th>Mosi</th>
                   <th>Room</th>
-                  <th>Nama Tim</th>
-                  <th>Posisi</th>
-                  <th colspan="2">Nama Peserta</th>
-                  <th colspan="2">Skor</th>
-                  <th>Skor Tim</th>
+                  <th>Team</th>
+                  <th>Posisition</th>
+                  <th colspan="2">Participant</th>
+                  <th colspan="2">Score</th>
+                  <th>Score Team</th>
                   <th>Rank</th>
-                  <th>Juri</th>
+                  <th>Adjudicators</th>
                   <th>Victory Point</th>
                 </tr>
               </thead>
@@ -198,16 +198,16 @@ h1{
               <thead>
                 <tr>
                   <th width="40px">No</th>
-                  <th>Hari</th>
+                  <th>Day</th>
                   <th>Mosi</th>
                   <th>Room</th>
-                  <th>Nama Tim</th>
-                  <th>Posisi</th>
-                  <th colspan="2">Nama Peserta</th>
-                  <th colspan="2">Skor</th>
-                  <th>Skor Tim</th>
+                  <th>Team</th>
+                  <th>Posisition</th>
+                  <th colspan="2">Participant</th>
+                  <th colspan="2">Score</th>
+                  <th>Score Team</th>
                   <th>Rank</th>
-                  <th>Juri</th>
+                  <th>Adjudicators</th>
                   <th>Victory Point</th>
                 </tr>
               </thead>
@@ -268,18 +268,17 @@ h1{
               <thead>
                 <tr>
                   <th width="40px">No</th>
-                  <th>Hari</th>
+                  <th>Day</th>
                   <th>Mosi</th>
                   <th>Room</th>
-                  <th>Nama Tim</th>
-                  <th>Posisi</th>
-                  <th colspan="2">Nama Peserta</th>
-                  <th colspan="2">Skor</th>
-                  <th>Skor Tim</th>
+                  <th>Team</th>
+                  <th>Posisition</th>
+                  <th colspan="2">Participant</th>
+                  <th colspan="2">Score</th>
+                  <th>Score Team</th>
                   <th>Rank</th>
-                  <th>Juri</th>
+                  <th>Adjudicators</th>
                   <th>Victory Point</th>
-                </tr>
               </thead>
               <tbody>
                     <tr>
@@ -333,16 +332,16 @@ h1{
               <thead>
                 <tr>
                   <th width="40px">No</th>
-                  <th>Hari</th>
+                  <th>Day</th>
                   <th>Mosi</th>
                   <th>Room</th>
-                  <th>Nama Tim</th>
-                  <th>Posisi</th>
-                  <th colspan="2">Nama Peserta</th>
-                  <th colspan="2">Skor</th>
-                  <th>Skor Tim</th>
+                  <th>Team</th>
+                  <th>Posisition</th>
+                  <th colspan="2">Participant</th>
+                  <th colspan="2">Score</th>
+                  <th>Score Team</th>
                   <th>Rank</th>
-                  <th>Juri</th>
+                  <th>Adjudicators</th>
                   <th>Victory Point</th>
                 </tr>
               </thead>

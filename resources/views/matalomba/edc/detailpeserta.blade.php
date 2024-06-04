@@ -105,7 +105,7 @@
           <img class="team-member-image" src="../../img/uf1.png">
         </div>
         <p class="text-blk name">
-          Ketua
+          Debater 1
         </p>
         <p class="text-blk position">
           Nama
@@ -129,7 +129,7 @@
           <img class="team-member-image" src="../../img/uf1.png">
         </div>
         <p class="text-blk name">
-          Member 1
+          Debater 2
         </p>
         <p class="text-blk position">
           Nama

@@ -112,7 +112,7 @@
                                  @enderror
                             </div>
                             <div class="input-field">
-                                <label for="email_1">Email</label>
+                                <label for="email_1">Email  *untuk form UploadSM</label>
                                 <input type="email" name="email_1" id="email_1" placeholder="@lang('messages.place') Email " @error('email_1') is-invalid @enderror required>
                                 @error('email_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -604,20 +604,6 @@
                     <div class="details ID">
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
-                            <div class="input-field">
-                                <label for="username">Username *Account  UploadSM</label>
-                                <input type="text" name="username" id="username" placeholder="@lang('messages.place') Username" @error('username') is-invalid @enderror required>
-                                @error('username')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="input-field">
-                                <label for="password">Password *Account UploadSM</label>
-                                <input type="password" name="password" id="password" placeholder="@lang('messages.place') Password" @error('password') is-invalid @enderror required>
-                                @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
                             <div class="input-field">
                                 <label for="instansi">@lang('messages.instansi')</label>
                                 <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>

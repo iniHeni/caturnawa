@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->string('kompetisi');
             $table->string('nama');
-            $table->string('password');
             $table->string('email');
             $table->string('fakultas');
             $table->string('prodi');

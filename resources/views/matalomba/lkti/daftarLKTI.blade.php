@@ -105,23 +105,14 @@
                     <span class="title">@lang('messages.identitas')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label for="nama">@lang('messages.Name') *untuk form UploadSPC</label>
+                            <label for="nama">@lang('messages.Name')</label>
                             <input type="text" name="nama" id="nama" placeholder="@lang('messages.place') @lang('messages.Name')" @error('nama') is-invalid @enderror required>
                             @error('nama')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="password">Password *untuk form UploadSPC</label>
-                                <input type="password" name="password" id="password" placeholder="@lang('messages.place') Password " @error('password') is-invalid @enderror required>
-                                <span class="toggle-password" onclick="togglePasswordVisibility('password')">   
-                                </span>
-                                @error('password')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="input-field">
-                            <label for="email">Email</label>
+                            <label for="email">Email  *untuk form UploadSPC</label>
                             <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " @error('email') is-invalid @enderror required>
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
