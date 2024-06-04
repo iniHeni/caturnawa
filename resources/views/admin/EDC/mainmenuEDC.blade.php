@@ -13,7 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/navmenu.css">
-    
+
+
     <title>Caturnawa - Admin</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
 <header class="header" id="header">
     <nav class="nav container">
         <div class="nav_logo" id="nav-logo">
-            <img src="../../img/uf2.png" alt="Logo">
+            <img class= "logo" src="../../img/uf2.png" alt="Logo">
             <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -31,12 +32,11 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="#" id="data-pesertaEDC"><i class="fa fa-users"></i> Peserta</a>
-    <a href="#" id="kategori-link"><i class="fa fa-list-alt"></i> Kategori</a>
-    <a href="#" id="penilaian-link"><i class="fa fa-star"></i> Skor</a>
-    <a href="#" id="ronde-link"><i class="fa fa-trophy"></i> Babak</a>
-    <a href="#" id="rank-link"><i class="fa fa-bar-chart"></i> Rank</a>
+<a href="#" id="menu"><img  class="sidelogo" id="sidelogo"  src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="#" id="penyisihanEDC" class="penyisihanEDC"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="#" id="semifinalEDC" class="semifinalEDC"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="#" id="finalEDC" class="finalEDC"><i class="fa fa-trophy"></i> Final</a>
     <!-- resources/views/mainmenu.blade.php -->
 
     <!-- Tautan untuk logout -->
@@ -68,9 +68,10 @@
 <!-- Script untuk memanggil file admin.js -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../js/adminEDC.js"></script>
+
 <script>
 document.getElementById("menu").addEventListener("click", function () {
-    document.body.classList.toggle("sidebar-close");
+    document.body.classList.toggle("sidebar-open");
 });
 </script>
 </body>

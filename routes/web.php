@@ -391,6 +391,25 @@ Route::get('/admin/pesertaEDC', function () {
     return view('admin/EDC/data-pesertaEDC');
 });
 
+// Route penyisihanEDC
+
+Route::get('/admin/penyisihanEDC', function () {
+    return view('admin/EDC/penyisihanEDC');
+});
+
+
+// Route semifinalEDC
+
+Route::get('/admin/semifinalEDC', function () {
+    return view('admin/EDC/semifinalEDC');
+});
+
+// Route finalEDC
+
+Route::get('/admin/finalEDC', function () {
+    return view('admin/EDC/finalEDC');
+});
+
 // Route Edit Peserta
 
 Route::get('/admin/edit-peserta', function () {

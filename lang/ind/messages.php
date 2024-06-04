@@ -13,8 +13,6 @@ return [
     // Nav End Menu
     // Home Start
     'welcome' => 'Selamat Datang, Daftar Sekarang dan jadilah Pemenang!',
-    'admin' => 'Selamat Datang Juri dan Tabulator!',
-    'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
     'buka' =>'Pendaftaran Dibuka Pada',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',
@@ -25,7 +23,15 @@ return [
     'Daftar' =>'Daftar Sekarang',
     'Web' =>'Masuk Website',
     'count' =>'Hitung Mundur',
-    // Home End 
+    // Home End
+    
+    //Admin Page
+    'admin' => 'Selamat Datang Juri dan Tabulator!',
+    'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
+    'ronde1' => 'Ronde 1',
+    'ronde2' => 'Ronde 2',
+    'ronde3' => 'Ronde 3',
+    // Admin Page End
     // Page Start Lomba
     'teks' => 'Dalam memeriahkan Dies Natalies Universitas Nasional ke-75',
     'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema "Mengeksplorasi potensi inovasi teknologi energi terbarukan untuk mencapai momentum hijau global"',

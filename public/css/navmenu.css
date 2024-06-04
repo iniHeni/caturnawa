@@ -144,7 +144,14 @@ img {
     background-color: var(--body);
     box-shadow: 0 2px 16px hsla(230, 75%, 32%, 0.15);
     z-index: var(--z-fixed);
+    
+    transition: top 0.5s ease;
 }
+
+.header.hidden {
+    top: -20%
+}
+
 
 .nav {
     height: var(--header-height);
