@@ -156,27 +156,55 @@
         font-size: 20px;
     }
             </style>
+                  <style>
+                    #loadingDiv {
+               width: 100%;
+               height: 100%;
+               z-index: 99999;
+               position: fixed;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: white;
+            }
+             
+            #loadingDiv {
+               width: 100%;
+               height: 100%;
+               z-index: 999999;
+               position: fixed;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: white;
+             }
+             
+             .loader {
+               width: 9.5rem;
+               height: 9.5rem;
+               background: center / contain no-repeat url(../../img/loader.gif);
+             }
+                 </style>
   </head>
   <body>
+    <div id="loadingDiv">
+      <div class="loader"></div>
+    </div>
     <section class="wrapper">
       <div class="form signup">
         <header>Information</header>
         <form action="#">
-            <h1>Sebelum melanjutkan ke halaman Upload Harap Login Terlebih dahulu
-                Menggunakan username dan password yg sudah terdaftar di pendaftaran<br>
-            setelah mendapatkan username dan password kalian tinggal klik login dibawah ini lalu masukkan username dan password kalian Terimakasih!</h1>
+          <h1>Sebelum melanjutkan ke halaman Upload Harap Login Terlebih dahulu
+            Menggunakan Email yg sudah terdaftar di pendaftaran<br>kalian tinggal klik login dibawah ini lalu masukkan Email dan verify Terimakasih!</h1>
         </form>
       </div>
       <div class="form login">
         <header>Login</header>
         <form  action="/loginsm" method="POST">
             @csrf
-          <input type="text" name="nama" id="nama" for="nama" placeholder="nama/your name" required />
-          <input type="password" name="password" id="password" for="password" placeholder="Password" required />
-          <input type="submit" value="Login" />
+            <input type="email" name="email_1" id="email_1" for="email_1" placeholder="Your Email" required />
+            <input type="submit" value="Verify" />
         </form>
-        <a href="{{"/"}}">
-          <input type="submit" value="Home" /></a>
       </div>
       <script>
         const wrapper = document.querySelector(".wrapper"),
@@ -194,10 +222,28 @@
            Swal.fire({
                icon: 'error',
                title: 'Oops...',
-               text: "Username atau Password salah", // Ambil pesan error pertama
+               text: "Email Belom Terdaftar", // Ambil pesan error pertama
            });
        </script>
    @endif
     </section>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script>function removeLoader() {
+        $("#loadingDiv").fadeOut(200, () => {
+          $("#loadingDiv").remove();
+        });
+      }
+      
+      $(window).on("load", () => {
+        setTimeout(removeLoader, 2000);
+      
+        $("body").css(
+          "overflow-y",
+          "hidden",
+          setTimeout(() => {
+            $("body").css("overflow-y", "visible");
+          }, 2000)
+        );
+      });</script>
   </body>
 </html>

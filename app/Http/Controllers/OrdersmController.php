@@ -402,13 +402,12 @@ public function home($id){
 }
 
 public function loginsm(Request $loginsm){
-    $loginsm = $loginsm->validate([
-        'username' => 'required',
-        'password' => 'required',
+    $loginsm->validate([
+        'email_1' => 'required',
     ]);
-    $user = ordersm::where('username', $loginsm->nama)->first();
+    $user = ordersm::where('email_1', $loginsm->email_1)->first();
 
-    if ($user && $loginsm->password === $user->password) {
+    if ($user) {
         session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
         return view('matalomba/sm/uploadSM');
     } else {

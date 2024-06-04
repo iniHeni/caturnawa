@@ -21,7 +21,7 @@ Route::get('locale/{lang}',[LocaleController::class,'setLocale']);
 // Route post
 Route::post('/login', [OrderlktiController::class, 'login']);
 Route::post('/loginsm', [OrdersmController::class, 'loginsm']);
-Route::post('/sm/upload', [OrdersmController::class, 'upload']);
+Route::post('/sm/upload', [uploadsmController::class, 'uploadsm']);
 Route::post('/lkti/upload', [uploadlktiController::class, 'upload']);
 // Route Checkout
 
@@ -51,13 +51,115 @@ Route::get('/matalomba/scoreEDC', function () {
 Route::get('/matalomba/penyisihanEDC', function () {
     return view('matalomba/edc/penyisihan');
 });
+Route::get('/matalomba/penyisihanEDC/round1', function () {
+    return view('matalomba/edc/round1');
+});
+Route::get('/matalomba/penyisihanEDC/round2', function () {
+    return view('matalomba/edc/round2');
+});
+Route::get('/matalomba/penyisihanEDC/round3', function () {
+    return view('matalomba/edc/round3');
+});
+Route::get('/matalomba/penyisihanEDC/round4', function () {
+    return view('matalomba/edc/round4');
+});
+
+Route::get('/matalomba/penyisihanEDC/round1/session1', function () {
+    return view('matalomba/edc/day1session/session1');
+});
+Route::get('/matalomba/penyisihanEDC/round1/session2', function () {
+    return view('matalomba/edc/day1session/session2');
+});
+Route::get('/matalomba/penyisihanEDC/round1/session3', function () {
+    return view('matalomba/edc/day1session/session3');
+});
+Route::get('/matalomba/penyisihanEDC/round1/session4', function () {
+    return view('matalomba/edc/day1session/session4');
+});
+Route::get('/matalomba/penyisihanEDC/round1/session5', function () {
+    return view('matalomba/edc/day1session/session5');
+});
+Route::get('/matalomba/penyisihanEDC/round1/session6', function () {
+    return view('matalomba/edc/day1session/session6');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session7', function () {
+    return view('matalomba/edc/day1session/session7');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session8', function () {
+    return view('matalomba/edc/day1session/session8');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session9', function () {
+    return view('matalomba/edc/day1session/session9');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session10', function () {
+    return view('matalomba/edc/day1session/session10');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session11', function () {
+    return view('matalomba/edc/day1session/session11');
+});
+Route::get('/matalomba/penyisihanEDC/round2/session12', function () {
+    return view('matalomba/edc/day1session/session12');
+});
+
+Route::get('/matalomba/penyisihanEDC/round3/session1', function () {
+    return view('matalomba/edc/day2session/session1');
+});
+Route::get('/matalomba/penyisihanEDC/round3/session2', function () {
+    return view('matalomba/edc/day2session/session2');
+});
+Route::get('/matalomba/penyisihanEDC/round3/session3', function () {
+    return view('matalomba/edc/day2session/session3');
+});
+Route::get('/matalomba/penyisihanEDC/round3/session4', function () {
+    return view('matalomba/edc/day2session/session4');
+});
+Route::get('/matalomba/penyisihanEDC/round3/session5', function () {
+    return view('matalomba/edc/day2session/session5');
+});
+Route::get('/matalomba/penyisihanEDC/round3/session6', function () {
+    return view('matalomba/edc/day2session/session6');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session7', function () {
+    return view('matalomba/edc/day2session/session7');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session8', function () {
+    return view('matalomba/edc/day2session/session8');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session9', function () {
+    return view('matalomba/edc/day2session/session9');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session10', function () {
+    return view('matalomba/edc/day2session/session10');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session11', function () {
+    return view('matalomba/edc/day2session/session11');
+});
+Route::get('/matalomba/penyisihanEDC/round4/session12', function () {
+    return view('matalomba/edc/day2session/session12');
+});
+
 
 Route::get('/matalomba/sfinalEDC', function () {
     return view('matalomba/edc/sfinal');
 });
+Route::get('/matalomba/sfinalEDC/round1', function () {
+    return view('matalomba/edc/sfinalronde1');
+});
+Route::get('/matalomba/sfinalEDC/round2', function () {
+    return view('matalomba/edc/sfinalronde2');
+});
 
 Route::get('/matalomba/finalEDC', function () {
     return view('matalomba/edc/final');
+});
+Route::get('/matalomba/finalEDC/round1', function () {
+    return view('matalomba/edc/finalronde1');
+});
+Route::get('/matalomba/finalEDC/round2', function () {
+    return view('matalomba/edc/finalronde2');
+});
+Route::get('/matalomba/finalEDC/round3', function () {
+    return view('matalomba/edc/finalronde3');
 });
 
 
@@ -79,13 +181,115 @@ Route::get('/matalomba/detailpesertaKDBI', function () {
 Route::get('/matalomba/penyisihanKDBI', function () {
     return view('matalomba/kdbi/penyisihan');
 });
+Route::get('/matalomba/penyisihanKDBI/round1', function () {
+    return view('matalomba/kdbi/round1');
+});
+Route::get('/matalomba/penyisihanKDBI/round2', function () {
+    return view('matalomba/kdbi/round2');
+});
+Route::get('/matalomba/penyisihanKDBI/round3', function () {
+    return view('matalomba/kdbi/round3');
+});
+Route::get('/matalomba/penyisihanKDBI/round4', function () {
+    return view('matalomba/kdbi/round4');
+});
+
+Route::get('/matalomba/penyisihanKDBI/round1/session1', function () {
+    return view('matalomba/kdbi/day1session/session1');
+});
+Route::get('/matalomba/penyisihanKDBI/round1/session2', function () {
+    return view('matalomba/kdbi/day1session/session2');
+});
+Route::get('/matalomba/penyisihanKDBI/round1/session3', function () {
+    return view('matalomba/kdbi/day1session/session3');
+});
+Route::get('/matalomba/penyisihanKDBI/round1/session4', function () {
+    return view('matalomba/kdbi/day1session/session4');
+});
+Route::get('/matalomba/penyisihanKDBI/round1/session5', function () {
+    return view('matalomba/kdbi/day1session/session5');
+});
+Route::get('/matalomba/penyisihanKDBI/round1/session6', function () {
+    return view('matalomba/kdbi/day1session/session6');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session7', function () {
+    return view('matalomba/kdbi/day1session/session7');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session8', function () {
+    return view('matalomba/kdbi/day1session/session8');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session9', function () {
+    return view('matalomba/kdbi/day1session/session9');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session10', function () {
+    return view('matalomba/kdbi/day1session/session10');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session11', function () {
+    return view('matalomba/kdbi/day1session/session11');
+});
+Route::get('/matalomba/penyisihanKDBI/round2/session12', function () {
+    return view('matalomba/kdbi/day1session/session12');
+});
+
+Route::get('/matalomba/penyisihanKDBI/round3/session1', function () {
+    return view('matalomba/kdbi/day2session/session1');
+});
+Route::get('/matalomba/penyisihanKDBI/round3/session2', function () {
+    return view('matalomba/kdbi/day2session/session2');
+});
+Route::get('/matalomba/penyisihanKDBI/round3/session3', function () {
+    return view('matalomba/kdbi/day2session/session3');
+});
+Route::get('/matalomba/penyisihanKDBI/round3/session4', function () {
+    return view('matalomba/kdbi/day2session/session4');
+});
+Route::get('/matalomba/penyisihanKDBI/round3/session5', function () {
+    return view('matalomba/kdbi/day2session/session5');
+});
+Route::get('/matalomba/penyisihanKDBI/round3/session6', function () {
+    return view('matalomba/kdbi/day2session/session6');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session7', function () {
+    return view('matalomba/kdbi/day2session/session7');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session8', function () {
+    return view('matalomba/kdbi/day2session/session8');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session9', function () {
+    return view('matalomba/kdbi/day2session/session9');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session10', function () {
+    return view('matalomba/kdbi/day2session/session10');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session11', function () {
+    return view('matalomba/kdbi/day2session/session11');
+});
+Route::get('/matalomba/penyisihanKDBI/round4/session12', function () {
+    return view('matalomba/kdbi/day2session/session12');
+});
+
 
 Route::get('/matalomba/sfinalKDBI', function () {
     return view('matalomba/kdbi/sfinal');
 });
+Route::get('/matalomba/sfinalKDBI/round1', function () {
+    return view('matalomba/kdbi/sfinalronde1');
+});
+Route::get('/matalomba/sfinalKDBI/round2', function () {
+    return view('matalomba/kdbi/sfinalronde2');
+});
 
 Route::get('/matalomba/finalKDBI', function () {
     return view('matalomba/kdbi/final');
+});
+Route::get('/matalomba/finalKDBI/round1', function () {
+    return view('matalomba/kdbi/finalronde1');
+});
+Route::get('/matalomba/finalKDBI/round2', function () {
+    return view('matalomba/kdbi/finalronde2');
+});
+Route::get('/matalomba/finalKDBI/round3', function () {
+    return view('matalomba/kdbi/finalronde3');
 });
 
 // Matalomba LKTI 
@@ -404,12 +608,15 @@ Route::get('/admin/section3EDC', function () {
 });
 
 
+
 //Route Section4
 Route::get('/admin/section4EDC', function () {
     return view('admin/EDC/sectionp/section4');
 });
 
 ////////////////////////  EDC ////////////////////////////////
+
+
 
 
 

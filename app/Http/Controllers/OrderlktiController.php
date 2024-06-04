@@ -318,16 +318,15 @@ public function home($id){
 }
 public function login(Request $login){
     $loginlkti = $login->validate([
-        'nama' => 'required',
-        'password' => 'required',
+        'email' => 'required',
     ]);
-    $user = orderlkti::where('nama', $login->nama)->first();
+    $user = orderlkti::where('email', $login->email)->first();
 
-    if ($user && $login->password === $user->password) {
+    if ($user) {
         session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
         return view('matalomba/lkti/uploadLKTI');
     } else {
-        return back()->withErrors(['error' => 'username atau password salah.']);
+        return back()->withErrors(['error' => 'Email Belom terdaftar']);
     }
 }
 }

@@ -15,16 +15,47 @@
       <link rel="stylesheet" href="../../css/detaillpeserta.css">
 
       <title>Caturnawa - KTI DetailPeserta</title>
+      <style>
+        #loadingDiv {
+ width: 100%;
+ height: 100%;
+ z-index: 99999;
+ position: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: white;
+}
+ 
+#loadingDiv {
+ width: 100%;
+ height: 100%;
+ z-index: 999999;
+ position: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: white;
+ }
+ 
+ .loader {
+ width: 9.5rem;
+ height: 9.5rem;
+ background: center / contain no-repeat url(../img/loader.gif);
+ }
+     </style>
    </head>
    <body>
-      
+    <div id="loadingDiv">
+      <div class="loader"></div>
+    </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 22rem" class="nav__item">
+        <div style="margin-right: 18rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -71,7 +102,7 @@
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uflogo.png">
+          <img class="team-member-image" src="../../img/uf1.png">
         </div>
         <p class="text-blk name">
           Nama
@@ -99,7 +130,26 @@
 
 
     <!-- JavaScript -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      function removeLoader() {
+  $("#loadingDiv").fadeOut(200, () => {
+    $("#loadingDiv").remove();
+  });
+}
 
+$(window).on("load", () => {
+  setTimeout(removeLoader, 2000);
+
+  $("body").css(
+    "overflow-y",
+    "hidden",
+    setTimeout(() => {
+      $("body").css("overflow-y", "visible");
+    }, 2000)
+  );
+});
+  </script>
       <script src="../../js/nav.js"></script>
    </body>
 </html>

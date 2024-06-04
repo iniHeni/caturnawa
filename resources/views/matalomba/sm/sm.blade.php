@@ -18,11 +18,43 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/pagelombasm.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - ShortMovie</title>
+      <style>
+        #loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 99999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+}
+ 
+#loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 999999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+ }
+ 
+ .loader {
+   width: 9.5rem;
+   height: 9.5rem;
+   background: center / contain no-repeat url(../../img/loader.gif);
+ }
+     </style>
    </head>
    <body>
-      
+    <div id="loadingDiv">
+        <div class="loader"></div>
+      </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
@@ -72,6 +104,7 @@
     <h1 class="judul">@lang('messages.sm')</h1>
       <p class="testing1">@lang('messages.teks') <br> 
                         @lang('messages.teks1')</p>
+                        
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
       <h1 class="judul">@lang('messages.pesertalomba')</h1>
@@ -209,7 +242,7 @@
                 <span class="developer">@lang('messages.penyisihan')</span>
                 <h3>@lang('messages.dilaksanakan')</h3>
                 <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
+                    <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                 </div>
             </a>
                 <a href="{{url('matalomba/finalSM') }}" class="card-item">
@@ -217,7 +250,7 @@
                     <span class="editor">Final</span>
                     <h3>@lang('messages.dilaksanakan')</h3>
                     <div class="arrow">
-                        <i class="fas fa-arrow-right card-icon"></i>
+                        <i class="fas fa-arrow-right card-icon" id="final"></i>
                     </div>
                 </a>
             </div>
@@ -281,13 +314,51 @@
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script>function removeLoader() {
+        $("#loadingDiv").fadeOut(200, () => {
+          $("#loadingDiv").remove();
+        });
+      }
+      
+      $(window).on("load", () => {
+        setTimeout(removeLoader, 2000);
+      
+        $("body").css(
+          "overflow-y",
+          "hidden",
+          setTimeout(() => {
+            $("body").css("overflow-y", "visible");
+          }, 2000)
+        );
+      });</script>
     </body>
     <!-- JavaScript -->
 </html>
+
 <script src="../../js/swiper.js"></script>
 <script src="../../js/car2.js"></script>
       <script src="../../js/nav.js"></script>
+      <script type="text/javascript">
+        const penyisihan = document.getElementById('penyisihan');
+        const final = document.getElementById('final');
+        
+        penyisihan.addEventListener('click', () => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Penyisihan belum tersedia!',
+          });
+        });
+       
+       final.addEventListener('click', () => { // Add event listener for UploadSPC
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Final belum tersedia!',
+          });
+        });
+           </script>
    </body>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../js/nav.js"></script>

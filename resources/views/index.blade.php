@@ -23,9 +23,41 @@
 
 
       <title>Caturnawa</title>
+      <style>
+         #loadingDiv {
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+  
+#loadingDiv {
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+  }
+  
+  .loader {
+	width: 9.5rem;
+	height: 9.5rem;
+	background: center / contain no-repeat url(../img/loader.gif);
+  }
+      </style>
+
    </head>
    <body>
-      
+      <div id="loadingDiv">
+         <div class="loader"></div>
+       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
@@ -101,14 +133,14 @@
         <div class="card-item">
             <img src="img/kdbi2.png" alt="Card Image">
             <h3>@lang('messages.kdbi')</h3>
-            <h2 class="judullomba">Early Bird<br>Rp.300.000</h2>
+            <h2 class="judullomba">Pendaftaran Awal<br>Rp300.000</h2>
             <a href="{{url('matalomba/daftarKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/sm1.png" alt="Card Image">
             <h3>@lang('messages.sm')</h3>
-            <h2 class="judullomba">Early Bird<br>Rp.250.000</h2>
+            <h2 class="judullomba">Pendaftaran Awal<br>Rp250.000</h2>
             <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/loginsm') }}" class="card-icon" id="uploadBtn">UploadSM</a>
             <a href="{{url('matalomba/shortmovie') }}" class="card-icon">@lang('messages.Web')</a>
@@ -116,7 +148,7 @@
         <div class="card-item">
             <img src="img/spc.png" alt="Card Image">
             <h3>@lang('messages.lkti')</h3>
-            <h2 class="judullomba">Early Bird<br>Rp.250.000</h2>
+            <h2 class="judullomba">Pendaftaran Awal<br>Rp250.000</h2>
             <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/loginspc') }}" class="card-icon" id="uploadSPCBtn">UploadSPC</a>
             <a href="{{url('matalomba/lkti') }}" class="card-icon">@lang('messages.Web')</a>
@@ -124,7 +156,7 @@
         <div class="card-item">
             <img src="img/edc.png" alt="Card Image">
             <h3>@lang('messages.edc')</h3>
-            <h2 class="judullomba">Early Bid<br>Rp.350.000</h2>
+            <h2 class="judullomba">Pendaftaran Awal<br>Rp350.000</h2>
             <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
@@ -319,6 +351,7 @@ uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadS
       <!--=============== SCRIPT ===============-->
 
       <script src="js/homepage.js"></script>
+      <script src="js/loader.js"></script>
       <script src="js/nav.js"></script>
       <script type="text/javascript">
          $(function() {
