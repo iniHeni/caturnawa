@@ -1,4 +1,70 @@
+// adminLKTI.js
+
+let lastScrollTopHeader = 0; // Gunakan variabel yang berbeda untuk header
+const header = document.getElementById('header');
+const scrollThresholdHeader = 40; // Jarak scroll sebelum navbar berubah visibilitas
+
+window.addEventListener('scroll', function() {
+    let scrollTopHeader = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTopHeader > lastScrollTopHeader) {
+        // Scrolling down
+        header.classList.add('hidden');
+    } else if (lastScrollTopHeader - scrollTopHeader >= scrollThresholdHeader) {
+        // Scrolling up with a threshold
+        header.classList.remove('hidden');
+    }
+
+    lastScrollTopHeader = scrollTopHeader <= 0 ? 0 : scrollTopHeader; // For Mobile or negative scrolling
+});
+
+// adminLKTI.js
+
+// adminLKTI.js
+
+
+let lastScrollTopSidelogo =0;
+const sidelogo = document.getElementById('sidelogo'); // Mengambil elemen gambar sidebar
+const scrollThresholdSidelogo = 30; // Jarak scroll sebelum sidebar berubah
+window.addEventListener('scroll', function() {
+    let scrollTopSidelogo = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTopSidelogo > lastScrollTopSidelogo) {
+        // Scrolling down
+        sidelogo.classList.add('hide'); 
+    } else if (lastScrollTopSidelogo - scrollTopSidelogo >= scrollThresholdSidelogo) {
+        // Scrolling up with a threshold
+        sidelogo.classList.remove('hide');
+    }
+
+    lastScrollTopSidelogo = scrollTopSidelogo <= 0 ? 0 : scrollTopSidelogo; // For Mobile or negative scrolling
+});
+
+
+
+// Bagian baru yang ingin Anda tambahkan:
+let lastScrollTopSidebar = 0;
+const sidebar = document.getElementById('sidebar');
+const scrollThresholdSidebar = 30; // Jarak scroll sebelum sidebar berubah
+
+window.addEventListener('scroll', function() {
+    let scrollTopSidebar = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTopSidebar > lastScrollTopSidebar) {
+        // Scrolling down
+        sidebar.classList.add('up');
+    } else if (lastScrollTopSidebar - scrollTopSidebar >= scrollThresholdSidebar) {
+        // Scrolling up with a threshold
+        sidebar.classList.remove('up');
+    }
+
+    lastScrollTopSidebar = scrollTopSidebar <= 0 ? 0 : scrollTopSidebar; // For Mobile or negative scrolling
+});
+
+
+// LKTI
 document.addEventListener("DOMContentLoaded", function () {
+    // Fungsi untuk menampilkan konten berdasarkan ID
     function showContent(sectionId) {
         const contents = document.querySelectorAll(".main-content > section");
         contents.forEach((content) => {
@@ -7,8 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(sectionId).style.display = "block";
     }
 
+    // Muat konten beranda saat halaman utama dimuat
     $.ajax({
-        url: "/admin/mainmenuLKTI1",
+        url: "/admin/beranda",
         success: function (result) {
             $("#home-container").html($(result).find("#home-content").html());
         },
@@ -17,14 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
+    // Event listener untuk tombol "Dashboard"
     document
         .getElementById("beranda")
         .addEventListener("click", function (event) {
             event.preventDefault();
             showContent("home");
 
+            // Muat ulang konten beranda saat tombol Dashboard diklik
             $.ajax({
-                url: "/admin/beranda1",
+                url: "/admin/beranda",
                 success: function (result) {
                     $("#home-container").html(
                         $(result).find("#home-content").html()
@@ -36,14 +105,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-    document
-        .getElementById("data-pesertaLKTI")
+
+
+        document
+        .getElementById("penyisihanLKTI")
         .addEventListener("click", function (event) {
             event.preventDefault();
-            showContent("skor");
 
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll(
+                ".main-content > section"
+            );
+            contents.forEach((content) => {
+                content.style.display = "none";
+            });
+
+            // Tampilkan konten tabel
+            document.getElementById("skor").style.display = "block";
+
+            // Ambil data dari halaman lain menggunakan AJAX
             $.ajax({
-                url: "/admin/pesertaLKTI1",
+                url: "/admin/penyisihanLKTI",
                 success: function (result) {
                     $("#data-container").html(result);
                 },
@@ -53,14 +135,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-    document
-        .getElementById("kategori-link")
+
+        
+        document
+        .getElementById("semifinalLKTI")
         .addEventListener("click", function (event) {
             event.preventDefault();
-            showContent("skor");
 
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll(
+                ".main-content > section"
+            );
+            contents.forEach((content) => {
+                content.style.display = "none";
+            });
+
+            // Tampilkan konten tabel
+            document.getElementById("skor").style.display = "block";
+
+            // Ambil data dari halaman lain menggunakan AJAX
             $.ajax({
-                url: "/admin/kategoriLKTI1",
+                url: "/admin/semifinalLKTI",
                 success: function (result) {
                     $("#data-container").html(result);
                 },
@@ -70,14 +165,28 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-    document
-        .getElementById("ronde-link")
+
+
+
+        document
+        .getElementById("finalLKTI")
         .addEventListener("click", function (event) {
             event.preventDefault();
-            showContent("skor");
 
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll(
+                ".main-content > section"
+            );
+            contents.forEach((content) => {
+                content.style.display = "none";
+            });
+
+            // Tampilkan konten tabel
+            document.getElementById("skor").style.display = "block";
+
+            // Ambil data dari halaman lain menggunakan AJAX
             $.ajax({
-                url: "/admin/babakLKTI1",
+                url: "/admin/finalLKTI",
                 success: function (result) {
                     $("#data-container").html(result);
                 },
@@ -85,5 +194,5 @@ document.addEventListener("DOMContentLoaded", function () {
                     $("#data-container").html("Gagal memuat data.");
                 },
             });
-        });
-});
+        })
+    });

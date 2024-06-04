@@ -23,7 +23,7 @@
 <header class="header" id="header">
     <nav class="nav container">
         <div class="nav_logo" id="nav-logo">
-            <img class= "logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
             <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -32,11 +32,13 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-<a href="#" id="menu"><img  class="sidelogo" id="sidelogo"  src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="#" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="#" id="penyisihanEDC" class="penyisihanEDC"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="#" id="semifinalEDC" class="semifinalEDC"><i class="fa fa-list-alt"></i> SemiFinal</a>
-    <a href="#" id="finalEDC" class="finalEDC"><i class="fa fa-trophy"></i> Final</a>
+    <a href="#" id="penyisihanEDC" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="#" id="semifinalEDC" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="#" id="finalEDC" class="final"><i class="fa fa-trophy"></i> Final</a>
+    
+    
     <!-- resources/views/mainmenu.blade.php -->
 
     <!-- Tautan untuk logout -->
@@ -54,15 +56,12 @@
 <div id="main-content" class="main-content">
     <section id="home" style="display: block;">
         <div id="home-container">
-            <!-- Ini adalah tempat konten beranda -->
-            <h3 class="welcome" >@lang('messages.admin')</h3>
-            <h3 class="welcome" >@lang('messages.admin1')</h3>
+            <h3 class="welcome">@lang('messages.admin')</h3>
+            <h3 class="welcome">@lang('messages.admin1')</h3>
         </div>
     </section>
     <section id="skor" style="display: none;">
-        <div id="data-container">
-            <!-- Konten tabel peserta akan dimuat di sini -->
-        </div>
+        <div id="data-container"></div>
     </section>
 </div>
 <!-- Script untuk memanggil file admin.js -->
