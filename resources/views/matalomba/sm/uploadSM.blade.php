@@ -17,9 +17,40 @@
       <link rel="stylesheet" href="../css/upload.css">
 
       <title>@lang('messages.daftar')</title>
+      <style>
+        #loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 99999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+}
+ 
+#loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 999999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+ }
+ 
+ .loader {
+   width: 9.5rem;
+   height: 9.5rem;
+   background: center / contain no-repeat url(../../img/loader.gif);
+ }
+     </style>
    </head>
    <body>
-      
+    <div id="loadingDiv">
+        <div class="loader"></div>
+      </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
@@ -71,7 +102,7 @@
       <section>
       <div class="konten">
         <header>Upload Video</header>
-        <form action="/sm/upload" method="POST">
+        <form action="/sm/upload" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form first">
                     <div class="details ID">
@@ -178,6 +209,24 @@
       }
   });
       </script>
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script>function removeLoader() {
+        $("#loadingDiv").fadeOut(200, () => {
+          $("#loadingDiv").remove();
+        });
+      }
+      
+      $(window).on("load", () => {
+        setTimeout(removeLoader, 2000);
+      
+        $("body").css(
+          "overflow-y",
+          "hidden",
+          setTimeout(() => {
+            $("body").css("overflow-y", "visible");
+          }, 2000)
+        );
+      });</script>
       <script src="../../js/nav.js"></script>
       <script src="../../js/daftarlomba.js"></script>
    </body>

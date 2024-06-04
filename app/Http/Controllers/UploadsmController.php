@@ -9,7 +9,7 @@ use App\Models\uploadsm;
 
 class UploadsmController extends Controller
 {
-    public function upload(Request $request){
+    public function uploadsm(Request $request){
         $uploadsm = $request->validate([
             'nama' => 'required|string|max:50',
             'email' => 'required|string|max:50',
@@ -52,6 +52,6 @@ class UploadsmController extends Controller
         }
         $uploadsm = uploadsm::create($uploadsm);
         session()->flash('success', 'Terimakasih,Tunggu Info Selanjutnya dari kami ya!');
-        return view('/');
+        return redirect()->route('utama');
     }
 }

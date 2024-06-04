@@ -1,0 +1,88 @@
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(395px, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+    .card-list .card-item {
+      background: #fff;
+      padding: 26px;
+      border-radius: 25px;
+      align-items: center;
+      box-shadow: 0px 5px 8px #f6ae31;
+      list-style: none;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: border 0.5s ease;
+    }
+    .card-list .card-item:hover {
+      border: 2px solid #f6ae31;
+    }
+    .card-list .card-item img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .card-list span {
+      display: inline-block;
+      background: #F7DFF5;
+      margin-top: 32px;
+      padding: 8px 15px;
+      font-size: 1rem;
+      border-radius: 50px;
+      font-weight: 800;
+    }
+    .card-item h3 {
+      color: #000;
+      font-size: 1.3rem;
+      margin-top: 28px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .card-item .card-icon {
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 180px;
+      color: #f6ae31;
+      border: 1px solid #f6ae31;
+      border-radius: 20px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    
+    
+    .card-list .card-item:hover .card-icon  {
+      background: #f6ae31;
+      color: #fff; 
+    }
+    @media (max-width: 1200px) {
+      .card-list .card-item {
+          padding: 15px;
+          
+      }
+    }
+    @media screen and (max-width: 980px) {
+      .card-list {
+          margin: 0 auto;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          
+      }
+    }
+    @media screen and (max-width: 829px) {
+      .card-list {
+          margin: 0 auto;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          
+      }
+    }
+    

@@ -36,6 +36,7 @@ input[type=text], textarea, input[type=email], input[type=password], input[type=
   }
   h1{
     color: floralwhite;
+    font-size: 30;
   }
   .ladder-search {
     flex:1;
@@ -65,8 +66,10 @@ input[type=text], textarea, input[type=email], input[type=password], input[type=
 /* /end Ladder Navigation */
 /* Leaderboard Results */
 .leaderboard-results {
-  text-align:left;
+  display: flex;
+  text-align:center;
   border-collapse: collapse;
+
 }
 .leaderboard-results thead th {
   padding: 25px;

@@ -23,9 +23,41 @@
 
 
       <title>Caturnawa</title>
+      <style>
+         #loadingDiv {
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+  
+#loadingDiv {
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+  }
+  
+  .loader {
+	width: 9.5rem;
+	height: 9.5rem;
+	background: center / contain no-repeat url(../img/loader.gif);
+  }
+      </style>
+
    </head>
    <body>
-      
+      <div id="loadingDiv">
+         <div class="loader"></div>
+       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
@@ -319,6 +351,7 @@ uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadS
       <!--=============== SCRIPT ===============-->
 
       <script src="js/homepage.js"></script>
+      <script src="js/loader.js"></script>
       <script src="js/nav.js"></script>
       <script type="text/javascript">
          $(function() {
