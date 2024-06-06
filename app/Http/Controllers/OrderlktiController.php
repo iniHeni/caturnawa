@@ -14,7 +14,6 @@ class OrderlktiController extends Controller
     public function checkout(Request $request){
         $orderlkti = $request->validate([
             'nama' => 'required|string|max:50',
-            'password' => 'required|max:50',
             'email' => 'required|email',
             'fakultas' => 'required|string|max:50',
             'prodi' => 'required|string|max:50',
@@ -74,7 +73,7 @@ class OrderlktiController extends Controller
         $orderlkti = $request->all();
         if($request->hasFile('ktm'))
         {
-            $destination_path = 'images/lkti/ktm';
+            $destination_path = 'public/images/lkti/ktm';
             $image = $request->file('ktm');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm')->storeAS($destination_path,$image_name);
@@ -84,7 +83,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('foto'))
         {
-            $destination_path = 'images/lkti/foto';
+            $destination_path = 'public/images/lkti/foto';
             $image = $request->file('foto');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto')->storeAS($destination_path,$image_name);
@@ -94,7 +93,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('krs'))
         {
-            $destination_path = 'images/lkti/krs';
+            $destination_path = 'public/images/lkti/krs';
             $image = $request->file('krs');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs')->storeAS($destination_path,$image_name);
@@ -104,7 +103,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('buktifollow'))
         {
-            $destination_path = 'images/lkti/bukti';
+            $destination_path = 'public/images/lkti/bukti';
             $image = $request->file('buktifollow');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow')->storeAS($destination_path,$image_name);
@@ -114,7 +113,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('twibbon'))
         {
-            $destination_path = 'images/lkti/twibbon';
+            $destination_path = 'public/images/lkti/twibbon';
             $image = $request->file('twibbon');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
@@ -124,7 +123,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('surat_delegasi'))
         {
-            $destination_path = 'document/lkti/surat';
+            $destination_path = 'public/document/lkti/surat';
             $image = $request->file('surat_delegasi');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
@@ -134,7 +133,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('sertifikat'))
         {
-            $destination_path = 'document/lkti/sertif';
+            $destination_path = 'public/document/lkti/sertif';
             $image = $request->file('sertifikat');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat')->storeAS($destination_path,$image_name);
@@ -143,7 +142,7 @@ class OrderlktiController extends Controller
         }
         if($request->hasFile('sertifikat1'))
         {
-            $destination_path = 'document/lkti/sertif1';
+            $destination_path = 'public/document/lkti/sertif1';
             $image = $request->file('sertifikat1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat1')->storeAS($destination_path,$image_name);
@@ -151,12 +150,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat1'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat1'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat1'] = null;
         }
         if($request->hasFile('sertifikat2'))
         {
-            $destination_path = 'document/lkti/sertif2';
+            $destination_path = 'public/document/lkti/sertif2';
             $image = $request->file('sertifikat2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat2')->storeAS($destination_path,$image_name);
@@ -164,12 +163,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat2'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat2'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat2'] = null; 
         }
         if($request->hasFile('sertifikat3'))
         {
-            $destination_path = 'document/lkti/sertif3';
+            $destination_path = 'public/document/lkti/sertif3';
             $image = $request->file('sertifikat3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat3')->storeAS($destination_path,$image_name);
@@ -177,24 +176,24 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat3'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat3'] = null; // Atau bisa diatur menjadi string kosong ('')
+          
+            $orderlkti['sertifikat3'] = null;
         }
         if($request->hasFile('sertifikat4'))
         {
-            $destination_path = 'document/lkti/sertif4';
+            $destination_path = 'public/document/lkti/sertif4';
             $image = $request->file('sertifikat4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat4')->storeAS($destination_path,$image_name);
             $orderlkti['sertifikat4'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat4'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat4'] = null;
         }
         if($request->hasFile('sertifikat5'))
         {
-            $destination_path = 'document/lkti/sertif5';
+            $destination_path = 'public/document/lkti/sertif5';
             $image = $request->file('sertifikat5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat5')->storeAS($destination_path,$image_name);
@@ -202,12 +201,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat5'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat5'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat5'] = null; 
         }
         if($request->hasFile('sertifikat6'))
         {
-            $destination_path = 'document/lkti/sertif6';
+            $destination_path = 'public/document/lkti/sertif6';
             $image = $request->file('sertifikat6');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat6')->storeAS($destination_path,$image_name);
@@ -215,12 +214,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat6'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat6'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat6'] = null; 
         }
         if($request->hasFile('sertifikat7'))
         {
-            $destination_path = 'document/lkti/sertif7';
+            $destination_path = 'public/document/lkti/sertif7';
             $image = $request->file('sertifikat7');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat7')->storeAS($destination_path,$image_name);
@@ -228,12 +227,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat7'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat7'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat7'] = null; 
         }
         if($request->hasFile('sertifikat8'))
         {
-            $destination_path = 'document/lkti/sertif8';
+            $destination_path = 'public/document/lkti/sertif8';
             $image = $request->file('sertifikat8');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat8')->storeAS($destination_path,$image_name);
@@ -241,12 +240,12 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat8'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat8'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat8'] = null; 
         }
         if($request->hasFile('sertifikat9'))
         {
-            $destination_path = 'document/lkti/sertif9';
+            $destination_path = 'public/document/lkti/sertif9';
             $image = $request->file('sertifikat9');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('sertifikat9')->storeAS($destination_path,$image_name);
@@ -254,8 +253,8 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat9'] = $image_name;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat9'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat9'] = null; 
         }
 
          $additionalData = [
@@ -323,7 +322,7 @@ public function login(Request $login){
     $user = orderlkti::where('email', $login->email)->first();
 
     if ($user) {
-        session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
+        session()->flash('success', 'Please upload your competition file');
         return view('matalomba/lkti/uploadLKTI');
     } else {
         return back()->withErrors(['error' => 'Email Belom terdaftar']);

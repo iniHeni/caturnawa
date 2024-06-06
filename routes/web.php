@@ -7,6 +7,12 @@ use App\Http\Controllers\OrdersmController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\uploadlktiController;
 use App\Http\Controllers\uploadsmController;
+use App\Http\Controllers\spcpenyisihanController;
+use App\Http\Controllers\spcsemifinalController;
+use App\Http\Controllers\spcfinalController;
+use App\Http\Controllers\penyisihanutamaController;
+use App\Http\Controllers\loginadminController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 // index indo dan eng
@@ -24,12 +30,29 @@ Route::post('/loginsm', [OrdersmController::class, 'loginsm']);
 Route::post('/sm/upload', [uploadsmController::class, 'uploadsm']);
 Route::post('/lkti/upload', [uploadlktiController::class, 'upload']);
 // Route Checkout
-
 Route::post('/checkout', [OrderController::class, 'checkout']);
 Route::post('/kdbi/checkout', [OrderkdbiController::class, 'checkout']);
 Route::post('/lkti/checkout', [OrderlktiController::class, 'checkout']);
 Route::post('/sm/checkout', [OrdersmController::class, 'checkout']);
 
+
+Route::post('/tambah', [spcpenyisihanController::class, 'tambah']);
+Route::post('/tambah/sf', [spcsemifinalController::class, 'tambahsf']);
+Route::post('/tambah/final', [spcfinalController::class, 'tambahf']);
+Route::get('matalomba/lkti/penyisihan', [spcpenyisihanController::class, 'penyisihan']);
+Route::get('matalomba/lkti/sfinal', [spcsemifinalController::class, 'semifinal']);
+Route::get('matalomba/lkti/final', [spcfinalController::class, 'final']);
+
+Route::get('/spc/tambah', function () {
+    return view('admin/LKTI/tambah');
+});
+
+Route::get('/spc/tambah/semifinal', function () {
+    return view('admin/LKTI/tambahsf');
+});
+Route::get('/spc/tambah/final', function () {
+    return view('admin/LKTI/tambahf');
+});
 //  Matalomba EDC 
 Route::get('/matalomba/edc', function () {
     return view('matalomba/edc/edc');
@@ -314,9 +337,7 @@ Route::get('/matalomba/scoreLKTI', function () {
 });
 
 // score LKTI
-Route::get('/matalomba/penyisihanLKTI', function () {
-    return view('matalomba/lkti/penyisihan');
-});
+
 
 Route::get('/matalomba/sfinalLKTI', function () {
     return view('matalomba/lkti/sfinal');
@@ -369,6 +390,7 @@ Route::get('/matalomba/finalSM', function () {
 
 
 
+Route::post('/login/handler', [loginadminController::class, 'login'])->name('login.handler');
 
 // Route Login
 
@@ -873,8 +895,8 @@ Route::get('/admin/section4KDBI', function () {
 
 
 
-Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.showw'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.loginn'); // Rute untuk login (POST)
 
 
 
@@ -886,7 +908,7 @@ Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('main
 // Route Admin LKTI
 Route::get('/admin/mainmenuLKTI1', function () {
     return view('admin/LKTI/mainmenuLKTI');
-});
+})->name('spc.mainmenu');
 
 // Route Beranda
 Route::get('/admin/beranda1', function () {
@@ -896,9 +918,21 @@ Route::get('/admin/beranda1', function () {
 
 // Route penyisihanLKTI
 
-Route::get('/admin/penyisihanLKTI', function () {
-    return view('admin/LKTI/penyisihanLKTI');
-});
+
+Route::get('/admin/penyisihanLKTI1', [spcpenyisihanController::class, 'tampil'])->name('spc.tampil');
+Route::get('/admin/LKTI/edit/{id}', [spcpenyisihanController::class, 'edit'])->name('spc.edit');
+Route::post('/admin/LKTI/update/{id}', [spcpenyisihanController::class, 'update'])->name('spc.update');
+Route::post('/admin/LKTI/hapus/{id}', [spcpenyisihanController::class, 'hapus'])->name('spc.hapus');
+
+Route::get('/admin/semifinalLKTI1', [spcsemifinalController::class, 'tampilsf'])->name('spc.tampilsf');
+Route::get('/admin/LKTI/editsf/{id}', [spcsemifinalController::class, 'editsf'])->name('spc.editsf');
+Route::post('/admin/LKTI/updatesf/{id}', [spcsemifinalController::class, 'updatesf'])->name('spc.updatesf');
+Route::post('/admin/LKTI/hapussf/{id}', [spcsemifinalController::class, 'hapussf'])->name('spc.hapussf');
+
+Route::get('/admin/finalLKTI1', [spcfinalController::class, 'tampilf'])->name('spc.tampilf');
+Route::get('/admin/LKTI/editf/{id}', [spcfinalController::class, 'editf'])->name('spc.editf');
+Route::post('/admin/LKTI/updatef/{id}', [spcfinalController::class, 'updatef'])->name('spc.updatef');
+Route::post('/admin/LKTI/hapusf/{id}', [spcfinalController::class, 'hapusf'])->name('spc.hapusf');
 
 
 // Route semifinalLKTI
@@ -914,8 +948,8 @@ Route::get('/admin/finalLKTI', function () {
 });
 
 
-Route::get('/admin/mainmenuLKTI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuLKTI', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+Route::get('/admin/mainmenuLKTI', [AuthController::class, 'showMainMenu'])->name('mainmenu.showlkti'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuLKTI', [AuthController::class, 'login'])->name('mainmenu.loginlkti'); // Rute untuk login (POST)
 
 
 
@@ -951,8 +985,8 @@ Route::get('/admin/finalSM', function () {
 });
 
 
-Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
+Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.showsm'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.loginsm'); // Rute untuk login (POST)
 
 
 

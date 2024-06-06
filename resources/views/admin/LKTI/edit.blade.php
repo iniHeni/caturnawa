@@ -8,14 +8,15 @@
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
-
-
-    <title>Caturnawa - Admin</title>
+    <link rel="stylesheet" href="../../../css/tambahspc.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
         #loadingDiv {
    width: 100%;
@@ -45,6 +46,8 @@
    background: center / contain no-repeat url(../img/loader.gif);
  }
      </style>
+
+    <title>Caturnawa - Admin</title>
 </head>
 <body>
     <div id="loadingDiv">
@@ -83,19 +86,82 @@
     </form>
 </div>
 
-<!--==================== Main Content ====================-->
-<div id="main-content" class="main-content">
-    <section id="home" style="display: block;">
-        <div id="home-container">
-            <h3 class="welcome">@lang('messages.admin')</h3>
-            <h3 class="welcome">@lang('messages.admin1')</h3>
-        </div>
-    </section>
-    <section id="skor" style="display: none;">
-        <div id="data-container"></div>
-    </section>
-</div>
+<section>
+    <div class="konten">
+      <header>Data Penyisihan</header>
+      <form action="{{ route('spc.update', $edit->id) }}" method="POST"  id="penilaianForm" >
+          @csrf
+          <div class="form first">
+              <div class="details ID">
+                  <span class="title">Edit Penilaian</span>
+                  <div class="fields"> 
+                      <div class="input-field">
+                          <label for="university">Universitas</label>
+                          <input name="university" id="university" type="text" placeholder=" Asal Universtas" required value="{{ $edit->university }}" >
+                      </div>
+                      <div class="input-field">
+                          <label for="namapeserta">Nama Peserta</label>
+                          <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" value="{{ $edit->namapeserta }}"  required>
+                      </div>
+                      <div class="input-field">
+                        <label for="juri">Nama Juri</label>
+                        <input name="juri" id="juri" type="text" placeholder="Masukkan Nama Juri" value="{{ $edit->juri }}" required>
+                    </div>
+                      <div class="input-field">
+                        <label for="scorepenyajiankarya">Penyajian Karya Ilmiah:</label>
+                        <input type="number" id="scorepenyajiankarya" name="scorepenyajiankarya" oninput="hitungTotal()" value="{{ $edit->scorepenyajiankarya }}" >
+                    </div>
+                    <div class="input-field">
+                        <label for="scoresubstansikarya">Substansi Karya Ilmiah:</label>
+                        <input type="number" id="scoresubstansikarya" name="scoresubstansikarya" oninput="hitungTotal()" value="{{ $edit->scoresubstansikarya }}"  >
+                    </div>
+                    <div class="input-field">
+                        <label for="scorekualitaskarya">Kualitas Karya Ilmiah:</label>
+                        <input type="number" id="scorekualitaskarya" name="scorekualitaskarya" oninput="hitungTotal()" value="{{ $edit->scorekualitaskarya }}" >
+                    </div>
+                    <div class="input-field">
+                        <label for="total">Total:</label>
+                        <input @disabled(true) type="text" id="total" name="total" value="{{ $edit->total }}" readonly>
+                  </div>
+                  </div>
+                  <button type="submit" class="nextBtn">
+                      <span class="btnText">Submit</span>
+                      <i class="uil uil-navigator"></i>
+                  </button>
+              </div> 
+          </div>
+
+      </form>
+  </div>
+</section>
 <!-- Script untuk memanggil file admin.js -->
+<script>
+document.getElementById('penilaianForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    Swal.fire({
+        title: 'Success!',
+        text: 'Data berhasil diperbarui!',
+        icon: 'success',
+        confirmButtonText: 'Lanjutkan'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            this.submit(); // Submit the form after SweetAlert confirmation
+        }
+    });
+});
+</script>
+<script>
+    function hitungTotal() {
+      const form = document.getElementById("penilaianForm");
+      const scorepenyajiankarya = parseFloat(form.scorepenyajiankarya.value) || 0;
+      const scoresubstansikarya = parseFloat(form.scoresubstansikarya.value) || 0;
+      const scorekualitaskarya = parseFloat(form.scorekualitaskarya.value) || 0;
+
+      const total = scorepenyajiankarya + scoresubstansikarya + scorekualitaskarya;
+      form.total.value = total;
+    }
+  </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../../js/adminLKTI.js"></script>
 

@@ -236,7 +236,7 @@
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
-        <a href="{{url('matalomba/penyisihanLKTI') }}" class="card-item">
+        <a href="{{url('matalomba/lkti/penyisihan') }}" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="developer">@lang('messages.penyisihan')</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -244,7 +244,7 @@
                 <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/sfinalLKTI') }}" class="card-item" >
+        <a href="{{url('matalomba/lkti/sfinal') }}" class="card-item" >
             <img src="../../img/spc.png" alt="Card Image">
             <span class="designer">Semifinal</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -252,7 +252,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/finalLKTI') }}" class="card-item">
+        <a href="{{url('matalomba/lkti/final') }}" class="card-item">
             <img src="../../img/spc.png" alt="Card Image">
             <span class="editor">Final</span>
             <h3>@lang('messages.dilaksanakan')</h3>

@@ -61,7 +61,7 @@
          <img src="../../img/spcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 22rem" class="nav__item">
+        <div style="margin-right: 19rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
-                                <input disabled placeholder="{{$orderlkti->instansi}}" required>
+                                <input disabled placeholder="{{$orderlkti->instansi}}" >
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>
@@ -456,7 +456,7 @@
 
 </section>
 
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="../../js/nav.js"></script>
 <script>
     function removeLoader() {

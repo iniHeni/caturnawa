@@ -44,7 +44,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../img/loader.gif);
  }
      </style>
    </head>
@@ -90,114 +90,12 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <section id="skor">
-        <div class="container" style="display: flex; justify-content: center;">
-            <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>University</th>
-                                <th>NAMA PESERTA</th>
-                                <th>Score</th>
-                                <th>Rank</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
-                            <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-      <section id="skor">
-        <div class="container" style="display: flex; justify-content: center;">
-            <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Score Capaian/Achievement</h1>
-                <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th rowspan="2">NO</th>
-                                <th rowspan="2">University</th>
-                                <th rowspan="2">NAMA PESERTA</th>
-                                <th colspan="3">Capaian/Achievement</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
-                            <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Score Naskah</h1>
+                <h1 class="judul" style="color: white" >Leaderboard</h1>
                 <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                             <tr>
                                 <th rowspan="2">NO</th>
@@ -215,36 +113,19 @@
                               </tr>
                         </thead>
                         <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
+                            @foreach($penyisihann as $no=>$data)
                             <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                                <td>{{ $row['Skor'] }}</td>
-                                <td>{{ $row['Total'] }}</td>
-                                <td>{{ $row['total'] }}</td>
-                                <td>{{ $row['rank'] }}</td>
-                                <td>{{ $row['juri'] }}</td>
+                                <td>{{ $no+1 }}</td>
+                                <td>{{ $data->university }}</td>
+                                <td>{{ $data->namapeserta}}</td>
+                                <td>{{ $data->scorepenyajiankarya}}</td>
+                                <td>{{ $data->scoresubstansikarya}}</td>
+                                <td>{{ $data->scorekualitaskarya}}</td>
+                                <td>{{ $data->total}}</td>
+                                <td>{{ $data->rank}}</td>
+                                <td>{{ $data->juri}}</td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -284,6 +165,24 @@
       }, 2000)
     );
   });
+    </script>
+    <script>
+      fetch('matalomba/lkti/penyisihan')
+    .then(response => response.json())
+    .then(data => {
+        const tabelBody = document.querySelector('#tabelPenyisihan tbody');
+        tabelBody.innerHTML = ''; // Bersihkan tabel sebelum mengisi
+
+        data.forEach((item, index) => {
+            const row = `<tr>
+                <td>${index + 1}</td>
+                <td>${item.university}</td>
+                <td>${item.namapeserta}</td>
+                <td>... (data lainnya)</td>
+            </tr>`;
+            tabelBody.innerHTML += row;
+        });
+    });
     </script>
    </body>
 </html>

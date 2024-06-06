@@ -35,8 +35,8 @@ class OrderController extends Controller
             'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
             'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|multiple|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|multiple|mimes:png,jpeg,jpg|max:5000',
+            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
             'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
             'surat_delegasi' => 'required|mimes:pdf|max:5000',
@@ -44,7 +44,7 @@ class OrderController extends Controller
         $order = $request->all();
         if($request->hasFile('ktm_1'))
         {
-            $destination_path = 'images/edc/ktm1';
+            $destination_path = 'public/images/edc/ktm1';
             $image = $request->file('ktm_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
@@ -54,7 +54,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('ktm_2'))
         {
-            $destination_path = 'images/edc/ktm2';
+            $destination_path = 'public/images/edc/ktm2';
             $image = $request->file('ktm_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
@@ -64,7 +64,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('foto_1'))
         {
-            $destination_path = 'images/edc/foto1';
+            $destination_path = 'public/images/edc/foto1';
             $image = $request->file('foto_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
@@ -74,7 +74,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('foto_2'))
         {
-            $destination_path = 'images/edc/foto2';
+            $destination_path = 'public/images/edc/foto2';
             $image = $request->file('foto_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
@@ -84,7 +84,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('krs_1'))
         {
-            $destination_path = 'images/edc/krs1';
+            $destination_path = 'public/images/edc/krs1';
             $image = $request->file('krs_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
@@ -94,7 +94,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('krs_2'))
         {
-            $destination_path = 'images/edc/krs2';
+            $destination_path = 'public/images/edc/krs2';
             $image = $request->file('krs_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
@@ -103,7 +103,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('buktifollow_1'))
         {
-            $destination_path = 'images/edc/bukti1';
+            $destination_path = 'public/images/edc/bukti1';
             $image = $request->file('buktifollow_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
@@ -113,7 +113,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('buktifollow_2'))
         {
-            $destination_path = 'images/edc/bukti2';
+            $destination_path = 'public/images/edc/bukti2';
             $image = $request->file('buktifollow_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
@@ -123,7 +123,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('twibbon'))
         {
-            $destination_path = 'images/edc/twibbon';
+            $destination_path = 'public/images/edc/twibbon';
             $image = $request->file('twibbon');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
@@ -133,7 +133,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('twibbon2'))
         {
-            $destination_path = 'images/edc/twibbon2';
+            $destination_path = 'public/images/edc/twibbon2';
             $image = $request->file('twibbon2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
@@ -143,7 +143,7 @@ class OrderController extends Controller
         }
         if($request->hasFile('surat_delegasi'))
         {
-            $destination_path = 'document/edc/surat';
+            $destination_path = 'public/document/edc/surat';
             $image = $request->file('surat_delegasi');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);

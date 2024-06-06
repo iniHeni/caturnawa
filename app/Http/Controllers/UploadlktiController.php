@@ -19,7 +19,7 @@ class UploadlktiController extends Controller
         $uploadlkti = $request->all();
         if($request->hasFile('naskah'))
         {
-            $destination_path = 'document/lkti/naskah';
+            $destination_path = 'public/document/lkti/naskah';
             $image = $request->file('naskah');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('naskah')->storeAS($destination_path,$image_name);
@@ -28,7 +28,7 @@ class UploadlktiController extends Controller
 
         }
         $uploadlkti = uploadlkti::create($uploadlkti);
-        session()->flash('success', 'Terimakasih,Tunggu Info Selanjutnya dari kami ya!');
+        session()->flash('success', 'Thankyou,Wait for further information from us');
         return redirect()->route('utama');
     }
 }

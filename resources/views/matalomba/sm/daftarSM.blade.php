@@ -112,7 +112,7 @@
                                  @enderror
                             </div>
                             <div class="input-field">
-                                <label for="email_1">Email  *untuk form UploadSM</label>
+                                <label for="email_1">Email  *For form UploadSM</label>
                                 <input type="email" name="email_1" id="email_1" placeholder="@lang('messages.place') Email " @error('email_1') is-invalid @enderror required>
                                 @error('email_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -459,7 +459,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="nomorhp_4">@lang('messages.Nomor')</label>
-                                <input  name="nomorhp_4" id="nomorhp_4" type="Number" placeholder="M@lang('messages.place') @lang('messages.Nomor')" @error('nomorhp_4') is-invalid @enderror required>
+                                <input  name="nomorhp_4" id="nomorhp_4" type="Number" placeholder="@lang('messages.Nomor')" @error('nomorhp_4') is-invalid @enderror required>
                                 @error('nomorhp_4')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -612,7 +612,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="linkvidio">Link Video</label>
+                                <label for="linkvidio">Link Video *Optional</label>
                                 <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror required>
                                 @error('linkvidio')
                                 <div class="text-danger">{{ $message }}</div>

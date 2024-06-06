@@ -14,7 +14,8 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../css/pagelomba.css">
-      <link rel="stylesheet" href="../css/rank.css">
+
+
 
       <title>Caturnawa - LKTIScore</title>
       <style>
@@ -43,7 +44,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../img/loader.gif);
  }
      </style>
    </head>
@@ -89,59 +90,12 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <section id="skor">
+    <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>University</th>
-                                <th>NAMA PESERTA</th>
-                                <th>Score</th>
-                                <th>Rank</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
-                            <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!--==================== Tabel Skor ====================-->
-      <section id="skor">
-        <div class="container" style="display: flex; justify-content: center;">
-            <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">FINAL</h1>
-                <div class="table-responsive" style="max-height: 300px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                <h1 class="judul" style="color: white" >Leaderboard</h1>
+                <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                             <tr>
                                 <th rowspan="2">NO</th>
@@ -153,63 +107,45 @@
                                 <th rowspan="2">JURI</th>
                               </tr>
                               <tr>
-                                <th>Score Pemaparan Materi dan Presentasi Ilmiah</th>
-                                <th>Score Pertanyaan dan Jawaban</th>
-                                <th>score Aspek Kesesuaian dengan tema</th>
+                                <th>Score Penyajian Karya Tulis ilmiah</th>
+                                <th>Score Substansi Karya tulis ilmiah</th>
+                                <th>score Kualitas Karya tulis ilmiah</th>
                               </tr>
                         </thead>
                         <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
+                            @foreach($final as $no=>$data)
                             <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                                <td>{{ $row['Skor'] }}</td>
-                                <td>{{ $row['Total'] }}</td>
-                                <td>{{ $row['total'] }}</td>
-                                <td>{{ $row['rank'] }}</td>
-                                <td>{{ $row['juri'] }}</td>
+                                <td>{{ $no+1 }}</td>
+                                <td>{{ $data->university }}</td>
+                                <td>{{ $data->namapeserta}}</td>
+                                <td>{{ $data->scorepenyajiankarya}}</td>
+                                <td>{{ $data->scoresubstansikarya}}</td>
+                                <td>{{ $data->scorekualitaskarya}}</td>
+                                <td>{{ $data->total}}</td>
+                                <td>{{ $data->rank}}</td>
+                                <td>{{ $data->juri}}</td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
-
-<style>
-   .table-bordered td, .table-bordered th {
-       border: 2px solid black !important;
-       text-align: center;
-       vertical-align: middle;
-   }
-   thead th {
-       background-color: #0d6efd !important;
-       
-   }
-</style>
+    
+    <style>
+       .table-bordered td, .table-bordered th {
+           border: 2px solid black !important;
+           text-align: center;
+           vertical-align: middle;
+       }
+       thead th {
+           background-color: #0d6efd !important;
+           
+       }
+    </style>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="../../js/rank.js"></script>
       <script src="../../js/nav.js"></script>
       <script>
         function removeLoader() {
@@ -229,6 +165,24 @@
       }, 2000)
     );
   });
+    </script>
+    <script>
+      fetch('matalomba/lkti/penyisihan')
+    .then(response => response.json())
+    .then(data => {
+        const tabelBody = document.querySelector('#tabelPenyisihan tbody');
+        tabelBody.innerHTML = ''; // Bersihkan tabel sebelum mengisi
+
+        data.forEach((item, index) => {
+            const row = `<tr>
+                <td>${index + 1}</td>
+                <td>${item.university}</td>
+                <td>${item.namapeserta}</td>
+                <td>... (data lainnya)</td>
+            </tr>`;
+            tabelBody.innerHTML += row;
+        });
+    });
     </script>
    </body>
 </html>

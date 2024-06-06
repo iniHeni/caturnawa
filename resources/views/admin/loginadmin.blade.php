@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"  href="../../img/uf1.png">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +17,15 @@
 
     <div class="box-login">
         <h2>Login</h2>
-        <form action="{{ url('admin/mainmenuEDC') }}" method="POST">
+        <form action="/login/handler" method="POST">
             @csrf
-            <input type="text" name="user" placeholder="Username" class="input-control" autofocus>
-            <input type="password" name="pass" placeholder="Password" class="input-control">
-            <select name="lang" class="input-control">
-                <option value="ind">KDBI</option>
-                <option value="eng">EDC</option>
+            <input type="text" name="user" id="user" for="user" placeholder="Username" class="input-control" autofocus>
+            <input type="password" name="pass" id="pass" for="pass" placeholder="Password" class="input-control">
+            <select name="lang" class="input-control" id="lang" for="lang">
+                <option value="kdbi">KDBI</option>
+                <option value="edc">EDC</option>
+                <option value="spc">SPC</option>
+                <option value="sm">SM</option>
             </select>
             <br>
             <br>

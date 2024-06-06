@@ -1,5 +1,5 @@
 //Set the date we're counting down to 
-var countDownDate = new Date("June 05, 2024 00:00:00").getTime();
+var countDownDate = new Date("June 08, 2024 00:00:00").getTime();
 
 //Update the count down every 1 sec
 var x = setInterval(function(){
@@ -27,11 +27,11 @@ var x = setInterval(function(){
         clearInterval(x);
         document.getElementById("time").style.display = "none";
         document.querySelector("h1").className = "new-year";
-        document.querySelector("h1").innerText = "UnasFest Dibuka DaftarSekarang!";
+        document.querySelector("h1").innerText = "UNAS FEST IS OPEN REGIST NOW!";
 
 
         //firework animation
-        const fireworkCount = 350;
+        const fireworkCount = 300;
         const fireworkContainer = document.getElementById("firework-container");
 
         for(let i = 0; i < fireworkCount; i++){
@@ -72,7 +72,7 @@ firework.animate(
     },
     ],
     {
-      duration: duration * 800,
+      duration: duration * 1000,
     easing: "ease-out",
     fill: "both",
     }

@@ -196,7 +196,8 @@
         <form action="#">
           <h1>Sebelum melanjutkan ke halaman Upload Harap Login Terlebih dahulu
             Menggunakan Email yg sudah terdaftar di pendaftaran<br>kalian tinggal klik login dibawah ini lalu masukkan Email dan verify Terimakasih!</h1>
-        </form>
+            <h1><i>Before proceeding to the Upload page Please Login First Use the email already registered in the registration<br>click login below then enter Email and verify Thank you!</i></h1>
+          </form>
       </div>
       <div class="form login">
         <header>Login</header>
@@ -222,7 +223,7 @@
            Swal.fire({
                icon: 'error',
                title: 'Oops...',
-               text: "Email Belom Terdaftar", // Ambil pesan error pertama
+               text: "Email Not registered", // Ambil pesan error pertama
            });
        </script>
    @endif

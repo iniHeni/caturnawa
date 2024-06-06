@@ -62,7 +62,7 @@ thead th {
        .loader {
        width: 9.5rem;
        height: 9.5rem;
-       background: center / contain no-repeat url(../img/loader.gif);
+       background: center / contain no-repeat url(../../img/loader.gif);
        }
            </style>
 
@@ -113,57 +113,10 @@ thead th {
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
+              <h1 class="judul" style="color: white" >Leaderboard</h1>
                 <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
                     <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>University</th>
-                                <th>NAMA PESERTA</th>
-                                <th>Score</th>
-                                <th>Rank</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
-                            <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!--==================== Tabel Skor ====================-->
-<section id="skor">
-    <div class="container" style="display: flex; justify-content: center;">
-        <div style="width: 100%;">
-            <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">SEMI FINAL</h1>
-            <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                    <thead style="position: sticky; top: -1; z-index: 10;">
+                      <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
                             <th rowspan="2">NO</th>
                             <th rowspan="2">University</th>
@@ -174,48 +127,33 @@ thead th {
                             <th rowspan="2">JURI</th>
                           </tr>
                           <tr>
-                            <th>Score Pemaparan Materi dan Presentasi Ilmiah</th>
-                            <th>Score Pertanyaan dan Jawaban</th>
-                            <th>score Aspek Kesesuaian dengan tema</th>
+                            <th>Score Penyajian Karya Tulis ilmiah</th>
+                            <th>Score Substansi Karya tulis ilmiah</th>
+                            <th>score Kualitas Karya tulis ilmiah</th>
                           </tr>
                     </thead>
                     <tbody>
-                        <!-- Contoh data dummy -->
-                        @php
-                        $dummyData = [
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                        ];
-                        $limitedData = array_slice($dummyData, 0, 10);
-                        @endphp
-
-                        @forelse($limitedData as $row)
+                        @foreach($semifinal as $no=>$data)
                         <tr>
-                            <td scope="row">{{ $row['No'] }}</td>
-                            <td>{{ $row['University'] }}</td>
-                            <td>{{ $row['Peserta'] }}</td>
-                            <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            <td>{{ $row['Skor'] }}</td>
-                            <td>{{ $row['Total'] }}</td>
-                            <td>{{ $row['total'] }}</td>
-                            <td>{{ $row['rank'] }}</td>
-                            <td>{{ $row['juri'] }}</td>
+                            <td>{{ $no+1 }}</td>
+                            <td>{{ $data->university }}</td>
+                            <td>{{ $data->namapeserta}}</td>
+                            <td>{{ $data->scorepemaparanmateri}}</td>
+                            <td>{{ $data->scorepertanyaandanjawaban}}</td>
+                            <td>{{ $data->scoreaspekkesesuaian}}</td>
+                            <td>{{ $data->total}}</td>
+                            <td>{{ $data->rank}}</td>
+                            <td>{{ $data->juri}}</td>
                         </tr>
-                        @empty
-                        <tr>
-                            <td colspan="8">No User Found</td>
-                        </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+      <!--==================== Tabel Skor ====================-->
+
 
 <style>
    .table-bordered td, .table-bordered th {

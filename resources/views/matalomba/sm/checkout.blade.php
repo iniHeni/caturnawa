@@ -56,11 +56,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../img/edcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
-         <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
+        <nav class="nav container">
+        <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
+        <div class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+       <div style="margin-right: 20rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>

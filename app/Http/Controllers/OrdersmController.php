@@ -51,8 +51,6 @@ class OrdersmController extends Controller
             'nomorhp_3'=> 'required',
             'nomorhp_4' => 'required',
             'nomorhp_5'=> 'required',
-            'username' => 'required|string|max:50',
-            'password' => 'required|string|max:50',
             'instansi' => 'required|string|max:50',
             'linkvidio' => 'required',
             'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
@@ -85,7 +83,7 @@ class OrdersmController extends Controller
         $ordersm = $request->all();
         if($request->hasFile('ktm_1'))
         {
-            $destination_path = 'images/sm/ktm1';
+            $destination_path = 'public/images/sm/ktm1';
             $image = $request->file('ktm_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
@@ -95,7 +93,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('ktm_2'))
         {
-            $destination_path = 'images/sm/ktm2';
+            $destination_path = 'public/images/sm/ktm2';
             $image = $request->file('ktm_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
@@ -105,7 +103,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('ktm_3'))
         {
-            $destination_path = 'images/sm/ktm3';
+            $destination_path = 'public/images/sm/ktm3';
             $image = $request->file('ktm_3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_3')->storeAS($destination_path,$image_name);
@@ -115,7 +113,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('ktm_4'))
         {
-            $destination_path = 'images/sm/ktm4';
+            $destination_path = 'public/images/sm/ktm4';
             $image = $request->file('ktm_4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_4')->storeAS($destination_path,$image_name);
@@ -125,7 +123,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('ktm_5'))
         {
-            $destination_path = 'images/sm/ktm5';
+            $destination_path = 'public/images/sm/ktm5';
             $image = $request->file('ktm_5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('ktm_5')->storeAS($destination_path,$image_name);
@@ -135,7 +133,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('foto_1'))
         {
-            $destination_path = 'images/sm/foto1';
+            $destination_path = 'public/images/sm/foto1';
             $image = $request->file('foto_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
@@ -145,7 +143,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('foto_2'))
         {
-            $destination_path = 'images/sn/foto2';
+            $destination_path = 'public/images/sn/foto2';
             $image = $request->file('foto_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
@@ -155,7 +153,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('foto_3'))
         {
-            $destination_path = 'images/sn/foto3';
+            $destination_path = 'public/images/sn/foto3';
             $image = $request->file('foto_3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_3')->storeAS($destination_path,$image_name);
@@ -165,7 +163,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('foto_4'))
         {
-            $destination_path = 'images/sm/foto4';
+            $destination_path = 'public/images/sm/foto4';
             $image = $request->file('foto_4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_4')->storeAS($destination_path,$image_name);
@@ -175,7 +173,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('foto_5'))
         {
-            $destination_path = 'images/sm/foto5';
+            $destination_path = 'public/images/sm/foto5';
             $image = $request->file('foto_5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('foto_5')->storeAS($destination_path,$image_name);
@@ -185,7 +183,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('krs_1'))
         {
-            $destination_path = 'images/sm/krs1';
+            $destination_path = 'public/images/sm/krs1';
             $image = $request->file('krs_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
@@ -195,7 +193,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('krs_2'))
         {
-            $destination_path = 'images/sm/krs2';
+            $destination_path = 'public/images/sm/krs2';
             $image = $request->file('krs_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
@@ -204,7 +202,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('krs_3'))
         {
-            $destination_path = 'images/sm/krs3';
+            $destination_path = 'public/images/sm/krs3';
             $image = $request->file('krs_3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_3')->storeAS($destination_path,$image_name);
@@ -214,7 +212,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('krs_4'))
         {
-            $destination_path = 'images/sm/krs4';
+            $destination_path = 'public/images/sm/krs4';
             $image = $request->file('krs_4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_4')->storeAS($destination_path,$image_name);
@@ -223,7 +221,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('krs_5'))
         {
-            $destination_path = 'images/sm/krs5';
+            $destination_path = 'public/images/sm/krs5';
             $image = $request->file('krs_5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('krs_5')->storeAS($destination_path,$image_name);
@@ -233,7 +231,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_1'))
         {
-            $destination_path = 'images/sm/bukti1';
+            $destination_path = 'public/images/sm/bukti1';
             $image = $request->file('buktifollow_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
@@ -243,7 +241,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_2'))
         {
-            $destination_path = 'images/sm/bukti2';
+            $destination_path = 'public/images/sm/bukti2';
             $image = $request->file('buktifollow_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
@@ -253,7 +251,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_3'))
         {
-            $destination_path = 'images/sm/bukti3';
+            $destination_path = 'public/images/sm/bukti3';
             $image = $request->file('buktifollow_3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_3')->storeAS($destination_path,$image_name);
@@ -263,7 +261,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_4'))
         {
-            $destination_path = 'images/sm/bukti4';
+            $destination_path = 'public/images/sm/bukti4';
             $image = $request->file('buktifollow_4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_4')->storeAS($destination_path,$image_name);
@@ -273,7 +271,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_5'))
         {
-            $destination_path = 'images/sm/bukti5';
+            $destination_path = 'public/images/sm/bukti5';
             $image = $request->file('buktifollow_5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('buktifollow_5')->storeAS($destination_path,$image_name);
@@ -283,7 +281,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('twibbon_1'))
         {
-            $destination_path = 'images/sm/twibbon1';
+            $destination_path = 'public/images/sm/twibbon1';
             $image = $request->file('twibbon_1');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon_1')->storeAS($destination_path,$image_name);
@@ -293,7 +291,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('twibbon_2'))
         {
-            $destination_path = 'images/sm/twibbon2';
+            $destination_path = 'public/images/sm/twibbon2';
             $image = $request->file('twibbon_2');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon_2')->storeAS($destination_path,$image_name);
@@ -303,7 +301,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('twibbon_3'))
         {
-            $destination_path = 'images/sm/twibbon3';
+            $destination_path = 'public/images/sm/twibbon3';
             $image = $request->file('twibbon_3');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon_3')->storeAS($destination_path,$image_name);
@@ -313,7 +311,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('twibbon_4'))
         {
-            $destination_path = 'images/sm/twibbon4';
+            $destination_path = 'public/images/sm/twibbon4';
             $image = $request->file('twibbon_4');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon_4')->storeAS($destination_path,$image_name);
@@ -323,7 +321,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('twibbon_5'))
         {
-            $destination_path = 'images/sm/twibbon5';
+            $destination_path = 'public/images/sm/twibbon5';
             $image = $request->file('twibbon_5');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('twibbon_5')->storeAS($destination_path,$image_name);
@@ -333,7 +331,7 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('surat_delegasi'))
         {
-            $destination_path = 'document/sm/surat';
+            $destination_path = 'public/document/sm/surat';
             $image = $request->file('surat_delegasi');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
@@ -408,7 +406,7 @@ public function loginsm(Request $loginsm){
     $user = ordersm::where('email_1', $loginsm->email_1)->first();
 
     if ($user) {
-        session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
+        session()->flash('success', 'Please upload your competition file');
         return view('matalomba/sm/uploadSM');
     } else {
         return back()->withErrors(['error' => 'username atau password salah.']);

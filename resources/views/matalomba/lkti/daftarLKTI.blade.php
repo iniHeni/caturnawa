@@ -57,7 +57,7 @@
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 22rem" class="nav__item">
+        <div style="margin-right: 19rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -112,7 +112,7 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="email">Email  *untuk form UploadSPC</label>
+                            <label for="email">Email  *For form UploadSPC</label>
                             <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " @error('email') is-invalid @enderror required>
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
@@ -496,7 +496,7 @@
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">@lang('messages.bayar')</span>
+                        <span class="btnText">Submit</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 

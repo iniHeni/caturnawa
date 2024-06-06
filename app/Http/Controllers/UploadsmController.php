@@ -22,7 +22,7 @@ class UploadsmController extends Controller
         $uploadsm = $request->all();
         if($request->hasFile('poster'))
         {
-            $destination_path = 'document/sm/poster';
+            $destination_path = 'public/document/sm/poster';
             $image = $request->file('poster');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('poster')->storeAS($destination_path,$image_name);
@@ -32,7 +32,7 @@ class UploadsmController extends Controller
         }
         if($request->hasFile('script'))
         {
-            $destination_path = 'document/sm/script';
+            $destination_path = 'public/document/sm/script';
             $image = $request->file('script');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('script')->storeAS($destination_path,$image_name);
@@ -42,7 +42,7 @@ class UploadsmController extends Controller
         }
         if($request->hasFile('original'))
         {
-            $destination_path = 'document/sm/original';
+            $destination_path = 'public/document/sm/original';
             $image = $request->file('original');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('original')->storeAS($destination_path,$image_name);
@@ -51,7 +51,7 @@ class UploadsmController extends Controller
 
         }
         $uploadsm = uploadsm::create($uploadsm);
-        session()->flash('success', 'Terimakasih,Tunggu Info Selanjutnya dari kami ya!');
+        session()->flash('success', 'Thankyou,Wait for further information from us');
         return redirect()->route('utama');
     }
 }
