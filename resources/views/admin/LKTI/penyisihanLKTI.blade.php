@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,8 +66,9 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="{{url('/admin/beranda')}}" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
@@ -97,41 +97,27 @@
                     <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
-                                <th scope="col" rowspan="4">No</th>
-                                <th scope="col" rowspan="4">university</th>
-                                <th scope="col" rowspan="4">Nama Peserta</th>
-                                <th scope="col" colspan="3">Kriteria Penilaian</th>
-                                <th scope="col" rowspan="4">Total</th>
-                                <th scope="col" rowspan="4">Rank</th>
-                                <th scope="col" rowspan="4">Juri</th>
-                                <th scope="col" rowspan="4">actions</th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Penyajian Karya Ilmiah</th>
-                                <th scope="col">Substansi Karya Ilmiah</th>
-                                <th scope="col">Kualitas Karya Ilmiah</th>
-                            </tr>
-                            <tr>
-                                <th scope="col" colspan="3">Skor</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama Peserta</th>
+                                <th scope="col">Asal Instansi</th>
+                                <th scope="col">Score Capaian Unggulan</th>
+                                <th scope="col">Rank</th>
+                                <th scope="col">actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($tambah as $no=>$data)
                             <tr>
                                 <td>{{ $no+1 }}</td>
-                                <td>{{ $data->university }}</td>
-                                <td>{{ $data->namapeserta}}</td>
-                                <td>{{ $data->scorepenyajiankarya}}</td>
-                                <td>{{ $data->scoresubstansikarya}}</td>
-                                <td>{{ $data->scorekualitaskarya}}</td>
-                                <td>{{ $data->total}}</td>
+                                <td>{{ $data->namapeserta }}</td>
+                                <td>{{ $data->university}}</td>
+                                <td>{{ $data->scorecp}}</td>
                                 <td>{{ $data->rank}}</td>
-                                <td>{{ $data->juri}}</td>
                                 <td>
                                     <a href="{{ route('spc.edit', $data->id) }}">Edit</a>
                                     <form action="{{ route('spc.hapus', $data->id) }}" method="POST" id="delete">
                                         @csrf
-                                        <button type="submit" style="color: red">Hapus</button>
+                                        <button type="submit" style="color: red" id="deleteButton">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -155,6 +141,27 @@
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+document.getElementById('deleteButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Cegah pengiriman formulir secara default
+
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data ini akan dihapus secara permanen!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Jika pengguna mengklik "Ya, hapus!", kirim formulir
+            document.getElementById('delete').submit();
+        }
+    });
+});
+</script>
 <script src="../../../js/adminLKTI.js"></script>
 <script>
     document.getElementById("menu").addEventListener("click", function () {

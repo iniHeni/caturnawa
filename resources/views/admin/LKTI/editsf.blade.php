@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../../../css/navmenu.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+    <title>Caturnawa - Admin</title>
     <style>
         #loadingDiv {
    width: 100%;
@@ -43,11 +45,9 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
-
-    <title>Caturnawa - Admin</title>
 </head>
 <body>
     <div id="loadingDiv">
@@ -66,8 +66,9 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="{{url('/admin/beranda')}}" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaLKTI1')}}" id="pesertaLKTI" class="final"><i class="fa fa-user-circle-o  "></i> Participant</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
@@ -89,24 +90,20 @@
 <section>
     <div class="konten">
       <header>Data Penyisihan</header>
-      <form action="{{ route('spc.updatesf', $edit->id) }}" method="POST"  id="penilaianForm" >
+      <form action="{{ route('spc.updatesf', $edit->id) }}" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
             <div class="details personal">
                 <span class="title">Data Penilaian</span>
                 <div class="fields"> 
                     <div class="input-field">
-                        <label for="university">Universtas</label>
-                        <input name="university" id="university" type="text" placeholder=" Asal Universtas" required value="{{ $edit->university }}" >
-                    </div>
-                    <div class="input-field">
                         <label for="namapeserta">Nama Peserta</label>
                         <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" required value="{{ $edit->namapeserta }}">
                     </div>
                     <div class="input-field">
                       <label for="juri">Nama Juri</label>
-                      <select name="juri" id="juri" is-invalid  required value="{{ $edit->juri }}">
-                          <option selected>Pilih Juri</option>
+                      <select name="juri" id="juri" is-invalid  required>
+                          <option selected>{{ $edit->juri }}</option>
                           <option>Efriza, S.I.P., M.Si</option>
                           <option>Fajar Harry Sampurno, MBA, Ph.D.</option>
                           <option>Prof. Dr.Eng. Eniya Listiani Dewi</option>
@@ -115,116 +112,44 @@
                 </div>
               </div>
           <div class="details personal">
-          <span class="title">1. Pemaparan Materi dan Presentasi ilmiah</span>
+          <span class="title">1. Penyajian Karya Tulis ilmiah</span>
               <div class="fields">
               <div class="input-field">
-                <label for="krit1para1">Nilai 100-90:</label>
-                <input type="number" id="krit1para1" name="krit1para1" oninput="hitungTotal()" value="{{ $edit->krit1para1 }}" >
+                <label for="scorepenyajian">Score:</label>
+                <input type="number" id="scorepenyajian" name="scorepenyajian" oninput="hitungTotall()" value="{{ $edit->scorepenyajian }}">
             </div>
             <div class="input-field">
-                <label for="krit1para2">Nilai 90-80:</label>
-                <input type="number" id="krit1para2" name="krit1para2" oninput="hitungTotal()" value="{{ $edit->krit1para2 }}" >
-            </div>
-            <div class="input-field">
-                <label for="krit1para3">Nilai 80-75:</label>
-                <input type="number" id="krit1para3" name="krit1para3" oninput="hitungTotal()" value="{{ $edit->krit1para3 }}" >
-            </div>
-            <div class="input-field">
-              <label for="krit1para4">Nilai 70:</label>
-              <input type="number" id="krit1para4" name="krit1para4" oninput="hitungTotal()" value="{{ $edit->krit1para4 }}" >
+              <label for="penyajian">Kualitatif:</label>
+              <input type="text" id="penyajian" name="penyajian"  value="{{ $edit->penyajian }}">
           </div>
-          <div class="input-field">
-              <label for="krit1para5">Nilai 65-60:</label>
-              <input type="number" id="krit1para5" name="krit1para5" oninput="hitungTotal()" value="{{ $edit->krit1para5 }}" >
           </div>
-          <div class="input-field">
-              <label for="krit1para6">Nilai 60-50:</label>
-              <input type="number" id="krit1para6" name="krit1para6" oninput="hitungTotal()" value="{{ $edit->krit1para6 }}" >
-          </div>
-          <div class="input-field">
-              <label for="krit1para7">Nilai 50:</label>
-              <input type="number" id="krit1para7" name="krit1para7" oninput="hitungTotal()" value="{{ $edit->krit1para7 }}" >
-          </div>
-          <div class="input-field">
-                      <label for="scorepemaparanmateri">Total Score Krieria1:</label>
-                      <input @disabled(true) type="text" id="scorepemaparanmateri" name="scorepemaparanmateri" readonly value="{{ $edit->scorepemaparanmateri }}">
-                  </div>
-              </div>
           </div>
           <div class="details personal">
-              <span class="title">2. Pertanyaan dan Jawaban</span>
+              <span class="title">2.Substansi KaryaTulis</span>
                   <div class="fields">
                   <div class="input-field">
-                    <label for="krit2para1">Nilai 100-90:</label>
-                    <input type="number" id="krit2para1" name="krit2para1" oninput="hitungTotal()" value="{{ $edit->krit2para1 }}" >
+                    <label for="scoresubs">Score:</label>
+                    <input type="number" id="scoresubs" name="scoresubs" oninput="hitungTotall()"  value="{{ $edit->scoresubs }}">
                 </div>
                 <div class="input-field">
-                    <label for="krit2para2">Nilai 90-80:</label>
-                    <input type="number" id="krit2para2" name="krit2para2" oninput="hitungTotal()" value="{{ $edit->krit2para2 }}" >
-                </div>
-                <div class="input-field">
-                    <label for="krit2para3">Nilai 80-75:</label>
-                    <input type="number" id="krit2para3" name="krit2para3" oninput="hitungTotal()" value="{{ $edit->krit2para3 }}" >
-                </div>
-                <div class="input-field">
-                  <label for="krit2para4">Nilai 70:</label>
-                  <input type="number" id="krit2para4" name="krit2para4" oninput="hitungTotal()" value="{{ $edit->krit2para4 }}" >
-              </div>
-              <div class="input-field">
-                  <label for="krit2para5">Nilai 65-60:</label>
-                  <input type="number" id="krit2para5" name="krit2para5" oninput="hitungTotal()" value="{{ $edit->krit2para5 }}">
-              </div>
-              <div class="input-field">
-                  <label for="krit2para6">Nilai 60-50:</label>
-                  <input type="number" id="krit2para6" name="krit2para6" oninput="hitungTotal()" value="{{ $edit->krit2para6 }}" >
-              </div>
-              <div class="input-field">
-                  <label for="krit2para7">Nilai 50:</label>
-                  <input type="number" id="krit2para7" name="krit2para7" oninput="hitungTotal()" value="{{ $edit->krit2para7 }}" >
-              </div>
-              <div class="input-field">
-                  <label for="scorepertanyaandanjawaban">Total Score Kriteria2:</label>
-                  <input @disabled(true) type="text" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" readonly value="{{ $edit->scorepertanyaandanjawaban }}">
+                  <label for="subs">Kualitatif:</label>
+                  <input type="text" id="subs" name="subs" value="{{ $edit->subs }}">
               </div>
                   </div>
               </div>
               <div class="details personal">
-                  <span class="title">3. Aspek Kesesuaian dengan Tema</span>
+                  <span class="title">3. Kualitas Karya Tulis Ilmiah</span>
                       <div class="fields">
                       <div class="input-field">
-                        <label for="krit3para1">Nilai 100-90:</label>
-                        <input type="number" id="krit3para1" name="krit3para1" oninput="hitungTotal()" value="{{ $edit->krit3para1 }}" >
+                        <label for="scorekualitas">Score:</label>
+                        <input type="number" id="scorekualitas" name="scorekualitas" oninput="hitungTotall()" value="{{ $edit->scorekualitas }}">
                     </div>
                     <div class="input-field">
-                        <label for="krit3para2">Nilai 90-80:</label>
-                        <input type="number" id="krit3para2" name="krit3para2" oninput="hitungTotal()" value="{{ $edit->krit3para2 }}" >
-                    </div>
-                    <div class="input-field">
-                        <label for="krit3para3">Nilai 80-75:</label>
-                        <input type="number" id="krit3para3" name="krit3para3" oninput="hitungTotal()" value="{{ $edit->krit3para3 }}" >
-                    </div>
-                    <div class="input-field">
-                      <label for="krit3para4">Nilai 70:</label>
-                      <input type="number" id="krit3para4" name="krit3para4" oninput="hitungTotal()" value="{{ $edit->krit3para4 }}" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para5">Nilai 65-60:</label>
-                      <input type="number" id="krit3para5" name="krit3para5" oninput="hitungTotal()" value="{{ $edit->krit3para5 }}" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para6">Nilai 60-50:</label>
-                      <input type="number" id="krit3para6" name="krit3para6" oninput="hitungTotal()" value="{{ $edit->krit3para6 }}" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para7">Nilai 50:</label>
-                      <input type="number" id="krit3para7" name="krit3para7" oninput="hitungTotal()" value="{{ $edit->krit3para7 }}" >
-                  </div>
-                  <div class="input-field">
-                      <label for="scoreaspekkesesuaian">Total Score Kriteria3:</label>
-                      <input @disabled(true) type="text" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" readonly value="{{ $edit->scoreaspekkesesuaian }}">
+                      <label for="kualitas">Kualitatif:</label>
+                      <input type="text" id="kualitas" name="kualitas" value="{{ $edit->kualitas }}">
                   </div>
                       </div>
-                  </div>
+              </div>
           <div class="details ID">
               <span class="title">Hasil Total Score</span>
                   <div class="fields">
@@ -239,50 +164,48 @@
                 </button>
             </div> 
         </div>
-
-      </form>
-  </div>
+    </form>
+</div>
 </section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  document.getElementById('penilaian').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+  
+      Swal.fire({
+          title: 'Success!',
+          text: 'Data berhasil Ditambahkan!',
+          icon: 'success',
+          confirmButtonText: 'Lanjutkan'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              this.submit(); 
+          }
+      });
+  });
+  </script>
 <!-- Script untuk memanggil file admin.js -->
 <script>
-document.getElementById('penilaianForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+  function hitungTotall() {
+    const form = document.getElementById("penilaian");
+    const scorepenyajian = parseFloat(form.scorepenyajian.value) || 0;
+    const scoresubs = parseFloat(form.scoresubs.value) || 0;
+    const scorekualitas = parseFloat(form.scorekualitas.value) || 0;
 
-    Swal.fire({
-        title: 'Success!',
-        text: 'Data berhasil diperbarui!',
-        icon: 'success',
-        confirmButtonText: 'Lanjutkan'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            this.submit(); // Submit the form after SweetAlert confirmation
-        }
-    });
-});
+    const total = scorepenyajian + scoresubs + scorekualitas;
+    form.total.value = total;
+  }
 </script>
-<script>
-    function hitungTotal() {
-      const form = document.getElementById("penilaianForm");
-      const scorepemaparanmateri = parseFloat(form.scorepemaparanmateri.value) || 0;
-      const scorepertanyaandanjawaban = parseFloat(form.scorepertanyaandanjawaban.value) || 0;
-      const scoreaspekkesesuaian = parseFloat(form.scoreaspekkesesuaian.value) || 0;
-
-      const total = scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian;
-      form.total.value = total;
-    }
-  </script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../../js/adminLKTI.js"></script>
-
 <script>
 document.getElementById("menu").addEventListener("click", function () {
-    document.body.classList.toggle("sidebar-open");
+  document.body.classList.toggle("sidebar-open");
 });
 </script>
 <script>
-    function removeLoader() {
+  function removeLoader() {
 $("#loadingDiv").fadeOut(200, () => {
-  $("#loadingDiv").remove();
+$("#loadingDiv").remove();
 });
 }
 
@@ -290,11 +213,11 @@ $(window).on("load", () => {
 setTimeout(removeLoader, 2000);
 
 $("body").css(
-  "overflow-y",
-  "hidden",
-  setTimeout(() => {
-    $("body").css("overflow-y", "visible");
-  }, 2000)
+"overflow-y",
+"hidden",
+setTimeout(() => {
+  $("body").css("overflow-y", "visible");
+}, 2000)
 );
 });
 </script>

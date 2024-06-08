@@ -4,27 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--=============== Icon Web ===============-->
-    <link rel="icon" href="../../img/uf1.png">
+    <link rel="icon" href="../../../img/uf1.png">
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../css/nowrap.css">
+    <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/admin.css">
+    <link rel="stylesheet" href="../../../css/navmenu.css">
 
 
     <title>Caturnawa - Admin</title>
+    <style>
+        #loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 99999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+}
+ 
+#loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 999999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+ }
+ 
+ .loader {
+   width: 9.5rem;
+   height: 9.5rem;
+   background: center / contain no-repeat url(../img/loader.gif);
+ }
+     </style>
 </head>
 <body>
-
+    <div id="loadingDiv">
+        <div class="loader"></div>
+      </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin SM </a></h2>
+            <img class="logo" src="../../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin Short Movie </a></h2>
         </div>
     </nav>
 </header>
@@ -32,10 +63,10 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="#" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="#" id="penyisihanSM" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="#" id="finalSM" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
+    <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="#" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -70,6 +101,25 @@
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
+});
+</script>
+<script>
+    function removeLoader() {
+$("#loadingDiv").fadeOut(200, () => {
+  $("#loadingDiv").remove();
+});
+}
+
+$(window).on("load", () => {
+setTimeout(removeLoader, 2000);
+
+$("body").css(
+  "overflow-y",
+  "hidden",
+  setTimeout(() => {
+    $("body").css("overflow-y", "visible");
+  }, 2000)
+);
 });
 </script>
 </body>

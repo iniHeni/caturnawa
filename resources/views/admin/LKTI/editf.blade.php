@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../../../css/navmenu.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+    <title>Caturnawa - Admin</title>
     <style>
         #loadingDiv {
    width: 100%;
@@ -43,11 +45,9 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
-
-    <title>Caturnawa - Admin</title>
 </head>
 <body>
     <div id="loadingDiv">
@@ -66,8 +66,9 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="{{url('/admin/beranda')}}" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaLKTI1')}}" id="pesertaLKTI" class="final"><i class="fa fa-user-circle-o  "></i> Participant</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
@@ -89,71 +90,104 @@
 <section>
     <div class="konten">
       <header>Data Penyisihan</header>
-      <form action="{{ route('spc.updatef', $edit->id) }}" method="POST"  id="penilaianForm" >
+      <form action="{{ route('spc.updatef', $edit->id) }}" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
-              <div class="details ID">
-                  <span class="title">Edit Penilaian</span>
-                  <div class="fields"> 
-                      <div class="input-field">
-                          <label for="university">Universitas</label>
-                          <input name="university" id="university" type="text" placeholder=" Asal Universtas" required value="{{ $edit->university }}" >
+            <div class="details personal">
+                <span class="title">Data Penilaian</span>
+                <div class="fields"> 
+                    <div class="input-field">
+                        <label for="namapeserta">Nama Peserta</label>
+                        <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" required value="{{ $edit->namapeserta }}">
+                    </div>
+                    <div class="input-field">
+                      <label for="juri">Nama Juri</label>
+                      <select name="juri" id="juri" is-invalid  required>
+                          <option selected>{{ $edit->juri }}</option>
+                          <option>Efriza, S.I.P., M.Si</option>
+                          <option>Fajar Harry Sampurno, MBA, Ph.D.</option>
+                          <option>Prof. Dr.Eng. Eniya Listiani Dewi</option>
+                      </select>
                       </div>
-                      <div class="input-field">
-                          <label for="namapeserta">Nama Peserta</label>
-                          <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" value="{{ $edit->namapeserta }}"  required>
-                      </div>
-                      <div class="input-field">
-                        <label for="juri">Nama Juri</label>
-                        <input name="juri" id="juri" type="text" placeholder="Masukkan Nama Juri" value="{{ $edit->juri }}" required>
-                    </div>
-                      <div class="input-field">
-                        <label for="scorepemaparanmateri">Pemaparan Materi dan Presentasi:</label>
-                        <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" value="{{ $edit->scorepemaparanmateri }}" >
-                    </div>
-                    <div class="input-field">
-                        <label for="scorepertanyaandanjawaban">Pertanyaan dan Jawaban:</label>
-                        <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" value="{{ $edit->scorepertanyaandanjawaban }}"  >
-                    </div>
-                    <div class="input-field">
-                        <label for="scoreaspekkesesuaian">Aspek Kesesuaian dengan Tema:</label>
-                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" value="{{ $edit->scoreaspekkesesuaian }}" >
-                    </div>
-                    <div class="input-field">
-                        <label for="total">Total:</label>
-                        <input @disabled(true) type="text" id="total" name="total" value="{{ $edit->total }}" readonly>
-                  </div>
-                  </div>
-                  <button type="submit" class="nextBtn">
-                      <span class="btnText">Submit</span>
-                      <i class="uil uil-navigator"></i>
-                  </button>
-              </div> 
+                </div>
+              </div>
+          <div class="details personal">
+          <span class="title">1. Pemaparan Materi dan Presentasi ilmiah</span>
+              <div class="fields">
+              <div class="input-field">
+                <label for="scorepemaparanmateri">Score:</label>
+                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" value="{{ $edit->scorepemaparanmateri }}">
+            </div>
+            <div class="input-field">
+                <label for="materi">Kualitatif:</label>
+                <input type="text" id="materi" name="materi" value="{{ $edit->materi }}">
+            </div>
+              </div>
           </div>
-
+          <div class="details personal">
+              <span class="title">2. Pertanyaan dan Jawaban</span>
+                  <div class="fields">
+                  <div class="input-field">
+                    <label for="scorepertanyaandanjawaban">Score:</label>
+                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" value="{{ $edit->scorepertanyaandanjawaban }}">
+                </div>
+                <div class="input-field">
+                    <label for="pertanyaandanjawaban">Kualitatif:</label>
+                    <input type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban" value="{{ $edit->pertanyaandanjawaban }}">
+                </div>
+                  </div>
+              </div>
+              <div class="details personal">
+                  <span class="title">3. Aspek Kesesuaian dengan Tema</span>
+                      <div class="fields">
+                      <div class="input-field">
+                        <label for="scoreaspekkesesuaian">Score:</label>
+                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" value="{{ $edit->scoreaspekkesesuaian }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="kesesuaian">Kualitatif:</label>
+                        <input type="text" id="kesesuaian" name="kesesuaian" value="{{ $edit->kesesuaian }}">
+                    </div>
+                      </div>
+                  </div>
+          <div class="details ID">
+              <span class="title">Hasil Total Score</span>
+                  <div class="fields">
+                  <div class="input-field">
+                      <label for="total">Total Score Seluruh Kriteria:</label>
+                      <input @disabled(true) type="text" id="total" name="total" readonly value="{{ $edit->total }}">
+                  </div>
+                </div>
+                <button type="submit" class="nextBtn">
+                    <span class="btnText">Submit</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+            </div> 
+        </div>
       </form>
   </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    document.getElementById('penilaian').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+    
+        Swal.fire({
+            title: 'Success!',
+            text: 'Data berhasil Ditambahkan!',
+            icon: 'success',
+            confirmButtonText: 'Lanjutkan'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.submit(); 
+            }
+        });
+    });
+    </script>
 <!-- Script untuk memanggil file admin.js -->
 <script>
-document.getElementById('penilaianForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    Swal.fire({
-        title: 'Success!',
-        text: 'Data berhasil diperbarui!',
-        icon: 'success',
-        confirmButtonText: 'Lanjutkan'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            this.submit(); // Submit the form after SweetAlert confirmation
-        }
-    });
-});
-</script>
-<script>
     function hitungTotal() {
-      const form = document.getElementById("penilaianForm");
+      const form = document.getElementById("penilaian");
       const scorepemaparanmateri = parseFloat(form.scorepemaparanmateri.value) || 0;
       const scorepertanyaandanjawaban = parseFloat(form.scorepertanyaandanjawaban.value) || 0;
       const scoreaspekkesesuaian = parseFloat(form.scoreaspekkesesuaian.value) || 0;
@@ -162,9 +196,7 @@ document.getElementById('penilaianForm').addEventListener('submit', function(eve
       form.total.value = total;
     }
   </script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../../js/adminLKTI.js"></script>
-
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");

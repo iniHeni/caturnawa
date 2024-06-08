@@ -15,9 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
-    <link rel="stylesheet" href="../../../css/tambahspc.css">
+    <link rel="stylesheet" href="../../../css/tambahpenyisihan.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-
 
     <title>Caturnawa - Admin</title>
     <style>
@@ -46,7 +45,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 </head>
@@ -67,7 +66,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="{{url('/admin/beranda')}}" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -90,54 +89,39 @@
 <section>
     <div class="konten">
       <header>Data Penyisihan</header>
-      <form action="/tambah" method="POST" enctype="multipart/form-data" id="penilaianForm" >
+      <form action="/tambah" method="POST"  id="penilaian" >
           @csrf
           <div class="form first">
-              <div class="details ID">
-                  <span class="title">Data Penilaian</span>
-                  <div class="fields"> 
-                      <div class="input-field">
-                          <label for="university">Universitas</label>
-                          <input name="university" id="university" type="text" placeholder=" Asal Universtas" required >
-                      </div>
-                      <div class="input-field">
-                          <label for="namapeserta">Nama Peserta</label>
-                          <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" required>
-                      </div>
-                      <div class="input-field">
-                        <label for="juri">Nama Juri</label>
-                        <input name="juri" id="juri" type="text" placeholder="Masukkan Nama Peserta" required>
-                    </div>
-                      <div class="input-field">
-                        <label for="scorepenyajiankarya">Penyajian Karya Ilmiah:</label>
-                        <input type="number" id="scorepenyajiankarya" name="scorepenyajiankarya" oninput="hitungTotal()" >
+            <div class="details ID">
+                <span class="title">Data Penilaian</span>
+                <div class="fields"> 
+                    <div class="input-field">
+                        <label for="namapeserta">Nama Peserta</label>
+                        <input name="namapeserta" id="namapeserta" type="text" placeholder="Nama Peserta" required>
                     </div>
                     <div class="input-field">
-                        <label for="scoresubstansikarya">Substansi Karya Ilmiah:</label>
-                        <input type="number" id="scoresubstansikarya" name="scoresubstansikarya" oninput="hitungTotal()" >
+                        <label for="university">Asal Instansi</label>
+                        <input name="university" id="university" type="text" placeholder=" Asal Universitas" required >
                     </div>
                     <div class="input-field">
-                        <label for="scorekualitaskarya">Kualitas Karya Ilmiah:</label>
-                        <input type="number" id="scorekualitaskarya" name="scorekualitaskarya" oninput="hitungTotal()" >
-                    </div>
-                    <div class="input-field">
-                        <label for="total">Total:</label>
-                        <input @disabled(true) type="text" id="total" name="total" readonly>
-                  </div>
-                  </div>
-                  <button type="submit" class="nextBtn">
-                      <span class="btnText">Submit</span>
-                      <i class="uil uil-navigator"></i>
-                  </button>
-              </div> 
-          </div>
+                        <label for="scorecp">Score capaian Unggulan</label>
+                        <input name="scorecp" id="scorecp" type="number" placeholder=" Score Capaian" required >
+                    </div>    
+                </div>
+                <button type="submit" class="nextBtn">
+                    <span class="btnText">Submit</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+              </div>
+        </div>
       </form>
   </div>
 </section>
-<!-- Script untuk memanggil file admin.js -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-    document.getElementById('penilaianForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    document.getElementById('penilaian').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+    
         Swal.fire({
             title: 'Success!',
             text: 'Data berhasil Ditambahkan!',
@@ -150,20 +134,8 @@
         });
     });
     </script>
-<script>
-    function hitungTotal() {
-      const form = document.getElementById("penilaianForm");
-      const scorepenyajiankarya = parseFloat(form.scorepenyajiankarya.value) || 0;
-      const scoresubstansikarya = parseFloat(form.scoresubstansikarya.value) || 0;
-      const scorekualitaskarya = parseFloat(form.scorekualitaskarya.value) || 0;
-
-      const total = scorepenyajiankarya + scoresubstansikarya + scorekualitaskarya;
-      form.total.value = total;
-    }
-  </script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Script untuk memanggil file admin.js -->
 <script src="../../../js/adminLKTI.js"></script>
-
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");

@@ -12,7 +12,7 @@ return [
     'juri' => 'Jury',
     // Nav End Menu
     // Home Start
-    'welcome' => 'Welcome To Website, Register Now and Be The Winner!',
+    'welcome' => 'Welcome To Website<br>Register Now and Be The Winner!',
     'buka' =>'Registration Will Open on',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',
@@ -21,7 +21,7 @@ return [
     'sponsor' =>'Thankyou, To Our Sponsor',
     'follow' =>'Dont Forget To Follow Our Social Media!',
     'Daftar' =>'Register Now!',
-    'Web' =>'Goto Website',
+    'Web' =>'Go to Website',
     'count' =>'COUNTDOWN',
     'opening' =>'Early Registration',
     'hargakdbi' =>'$19',
@@ -38,6 +38,8 @@ return [
     'penyisihan' => 'Elimination',
     'dilaksanakan' => 'Held On',
     'jury' => 'Our Jury',
+    'view' => 'View More',
+
     'view' => 'View More',
     // Page End Lomba
     // Form Start
@@ -222,8 +224,6 @@ return [
      through an event. I am skilled in Public Speaking, which led me to win debate competitions, international conferences, take
      part in several organizations, and from that, I pay great attention to social issues. To manifest that interest, I lead learning
      guidance called Rumah Belajar.',
-     // SPC
-     // Data Juri End
-    // Data Juri End
+ 
 ]
 ?>

@@ -79,9 +79,9 @@ thead th {
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 14rem" class="nav__item">
+						<li><a href="locale/ind') }}" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -114,36 +114,70 @@ thead th {
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
               <h1 class="judul" style="color: white" >Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
+                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative; margin-bottom: 5rem">
                     <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
                       <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
-                            <th rowspan="2">NO</th>
-                            <th rowspan="2">University</th>
-                            <th rowspan="2">NAMA PESERTA</th>
-                            <th colspan="3">KRITERIA PENILAIAN</th>
-                            <th rowspan="2">TOTAL</th>
-                            <th rowspan="2">RANK</th>
-                            <th rowspan="2">JURI</th>
-                          </tr>
-                          <tr>
-                            <th>Score Penyajian Karya Tulis ilmiah</th>
-                            <th>Score Substansi Karya tulis ilmiah</th>
-                            <th>score Kualitas Karya tulis ilmiah</th>
-                          </tr>
+                          <th scope="col" >No</th>
+                          <th scope="col" >@lang('messages.peserta')</th>
+                          <th scope="col">Score</th>
+                          <th scope="col">Rank</th>
+                      </tr>
                     </thead>
                     <tbody>
                         @foreach($semifinal as $no=>$data)
                         <tr>
-                            <td>{{ $no+1 }}</td>
-                            <td>{{ $data->university }}</td>
-                            <td>{{ $data->namapeserta}}</td>
-                            <td>{{ $data->scorepemaparanmateri}}</td>
-                            <td>{{ $data->scorepertanyaandanjawaban}}</td>
-                            <td>{{ $data->scoreaspekkesesuaian}}</td>
-                            <td>{{ $data->total}}</td>
-                            <td>{{ $data->rank}}</td>
-                            <td>{{ $data->juri}}</td>
+                          <td>{{ $no+1 }}</td>
+                          <td>{{ $data ->namapeserta }}</td>
+                          <td>{{ $data->total}}</td>
+                          <td>{{ $data->rank}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+      <section id="skor">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div style="width: 100%;">
+              <h1 class="judul" style="color: white" >Result Semifinal</h1>
+                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                      <thead style="position: sticky; top: -1; z-index: 10;">
+                        <tr>
+                          <th scope="col" rowspan="4">No</th>
+                          <th scope="col" rowspan="4">@lang('messages.peserta')</th>
+                          <th scope="col" colspan="6">Kriteria Penilaian</th>
+                          <th scope="col" rowspan="4">Total</th>
+                          <th scope="col" rowspan="4">Rank</th>
+                          <th scope="col" rowspan="4">@lang('messages.juri')</th>
+                      </tr>
+                      <tr>
+                          <th scope="col" colspan="2">Penyajian Karya Tulis ilmiah</th>
+                          <th scope="col" colspan="2">Substansi KaryaTulis</th>
+                          <th scope="col" colspan="2">Kualitas Karya Tulis Ilmiah</th>
+                      </tr>
+                      <tr>
+                          <th scope="col" colspan="3">Score</th>
+                          <th scope="col" colspan="3">Kualitatif</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($semifinal as $no=>$data)
+                        <tr>
+                          <td>{{ $no+1 }}</td>
+                          <td>{{ $data->namapeserta }}</td>
+                          <td>{{ $data->scorepenyajian}}</td>
+                          <td>{{ $data->scoresubs}}</td>
+                          <td>{{ $data->scorekualitas}}</td>
+                          <td>{{ $data->penyajian}}</td>
+                          <td>{{ $data->subs}}</td>
+                          <td>{{ $data->kualitas}}</td>
+                          <td>{{ $data->total}}</td>
+                          <td>{{ $data->rank}}</td>
+                          <td>{{ $data->juri}}</td>
                         </tr>
                         @endforeach
                     </tbody>

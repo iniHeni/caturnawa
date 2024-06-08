@@ -59,9 +59,9 @@
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 14rem" class="nav__item">
+          <li><a href="locale/ind"><img src="../../../img/ind.png"  /></a></li>
+          <li><a href="locale/en"><img src="../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -93,37 +93,26 @@
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="color: white" >Leaderboard</h1>
+                <h1 class="judul" style="color: white" >Leaderboard @lang('messages.penyisihan') </h1>
                 <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
                     <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th rowspan="2">NO</th>
-                                <th rowspan="2">University</th>
-                                <th rowspan="2">NAMA PESERTA</th>
-                                <th colspan="3">KRITERIA PENILAIAN</th>
-                                <th rowspan="2">TOTAL</th>
-                                <th rowspan="2">RANK</th>
-                                <th rowspan="2">JURI</th>
-                              </tr>
-                              <tr>
-                                <th>Score Penyajian Karya Tulis ilmiah</th>
-                                <th>Score Substansi Karya tulis ilmiah</th>
-                                <th>score Kualitas Karya tulis ilmiah</th>
-                              </tr>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">@lang('messages.peserta')</th>
+                            <th scope="col">@lang('messages.instansi')</th>
+                            <th scope="col">@lang('messages.Capaian')</th>
+                            <th scope="col">Rank</th>
+                        </tr>
                         </thead>
                         <tbody>
                             @foreach($penyisihann as $no=>$data)
                             <tr>
-                                <td>{{ $no+1 }}</td>
-                                <td>{{ $data->university }}</td>
-                                <td>{{ $data->namapeserta}}</td>
-                                <td>{{ $data->scorepenyajiankarya}}</td>
-                                <td>{{ $data->scoresubstansikarya}}</td>
-                                <td>{{ $data->scorekualitaskarya}}</td>
-                                <td>{{ $data->total}}</td>
-                                <td>{{ $data->rank}}</td>
-                                <td>{{ $data->juri}}</td>
+                              <td>{{ $no+1 }}</td>
+                              <td>{{ $data->namapeserta }}</td>
+                              <td>{{ $data->university}}</td>
+                              <td>{{ $data->scorecp}}</td>
+                              <td>{{ $data->rank}}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -165,24 +154,6 @@
       }, 2000)
     );
   });
-    </script>
-    <script>
-      fetch('matalomba/lkti/penyisihan')
-    .then(response => response.json())
-    .then(data => {
-        const tabelBody = document.querySelector('#tabelPenyisihan tbody');
-        tabelBody.innerHTML = ''; // Bersihkan tabel sebelum mengisi
-
-        data.forEach((item, index) => {
-            const row = `<tr>
-                <td>${index + 1}</td>
-                <td>${item.university}</td>
-                <td>${item.namapeserta}</td>
-                <td>... (data lainnya)</td>
-            </tr>`;
-            tabelBody.innerHTML += row;
-        });
-    });
     </script>
    </body>
 </html>

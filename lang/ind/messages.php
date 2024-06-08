@@ -12,7 +12,7 @@ return [
     'juri' => 'Juri',
     // Nav End Menu
     // Home Start
-    'welcome' => 'Selamat Datang, Daftar Sekarang dan jadilah Pemenang!',
+    'welcome' => 'Selamat Datang<br>Daftar Sekarang dan jadilah Pemenang!',
     'buka' =>'Pendaftaran Dibuka Pada',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',

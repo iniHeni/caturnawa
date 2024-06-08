@@ -45,7 +45,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 </head>
@@ -66,7 +66,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="{{url('/admin/beranda')}}" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -88,17 +88,13 @@
 
 <section>
     <div class="konten">
-      <header>Data Semifinal</header>
+      <header>Data Final</header>
       <form action="/tambah/final" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
             <div class="details personal">
                 <span class="title">Data Penilaian</span>
                 <div class="fields"> 
-                    <div class="input-field">
-                        <label for="university">Universtas</label>
-                        <input name="university" id="university" type="text" placeholder=" Asal Universtas" required >
-                    </div>
                     <div class="input-field">
                         <label for="namapeserta">Nama Peserta</label>
                         <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" required>
@@ -118,111 +114,39 @@
           <span class="title">1. Pemaparan Materi dan Presentasi ilmiah</span>
               <div class="fields">
               <div class="input-field">
-                <label for="krit1para1">Nilai 100-90:</label>
-                <input type="number" id="krit1para1" name="krit1para1" oninput="hitungTotal()" >
+                <label for="scorepemaparanmateri">Score:</label>
+                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" >
             </div>
             <div class="input-field">
-                <label for="krit1para2">Nilai 90-80:</label>
-                <input type="number" id="krit1para2" name="krit1para2" oninput="hitungTotal()" >
+                <label for="materi">Kualitatif:</label>
+                <input type="text" id="materi" name="materi">
             </div>
-            <div class="input-field">
-                <label for="krit1para3">Nilai 80-75:</label>
-                <input type="number" id="krit1para3" name="krit1para3" oninput="hitungTotal()" >
-            </div>
-            <div class="input-field">
-              <label for="krit1para4">Nilai 70:</label>
-              <input type="number" id="krit1para4" name="krit1para4" oninput="hitungTotal()" >
-          </div>
-          <div class="input-field">
-              <label for="krit1para5">Nilai 65-60:</label>
-              <input type="number" id="krit1para5" name="krit1para5" oninput="hitungTotal()" >
-          </div>
-          <div class="input-field">
-              <label for="krit1para6">Nilai 60-50:</label>
-              <input type="number" id="krit1para6" name="krit1para6" oninput="hitungTotal()" >
-          </div>
-          <div class="input-field">
-              <label for="krit1para7">Nilai 50:</label>
-              <input type="number" id="krit1para7" name="krit1para7" oninput="hitungTotal()" >
-          </div>
-          <div class="input-field">
-                      <label for="scorepemaparanmateri">Total Score Krieria1:</label>
-                      <input @disabled(true) type="text" id="scorepemaparanmateri" name="scorepemaparanmateri" readonly>
-                  </div>
               </div>
           </div>
           <div class="details personal">
               <span class="title">2. Pertanyaan dan Jawaban</span>
                   <div class="fields">
                   <div class="input-field">
-                    <label for="krit2para1">Nilai 100-90:</label>
-                    <input type="number" id="krit2para1" name="krit2para1" oninput="hitungTotal()" >
+                    <label for="scorepertanyaandanjawaban">Score:</label>
+                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" >
                 </div>
                 <div class="input-field">
-                    <label for="krit2para2">Nilai 90-80:</label>
-                    <input type="number" id="krit2para2" name="krit2para2" oninput="hitungTotal()" >
+                    <label for="pertanyaandanjawaban">Kualitatif:</label>
+                    <input type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban">
                 </div>
-                <div class="input-field">
-                    <label for="krit2para3">Nilai 80-75:</label>
-                    <input type="number" id="krit2para3" name="krit2para3" oninput="hitungTotal()" >
-                </div>
-                <div class="input-field">
-                  <label for="krit2para4">Nilai 70:</label>
-                  <input type="number" id="krit2para4" name="krit2para4" oninput="hitungTotal()" >
-              </div>
-              <div class="input-field">
-                  <label for="krit2para5">Nilai 65-60:</label>
-                  <input type="number" id="krit2para5" name="krit2para5" oninput="hitungTotal()" >
-              </div>
-              <div class="input-field">
-                  <label for="krit2para6">Nilai 60-50:</label>
-                  <input type="number" id="krit2para6" name="krit2para6" oninput="hitungTotal()" >
-              </div>
-              <div class="input-field">
-                  <label for="krit2para7">Nilai 50:</label>
-                  <input type="number" id="krit2para7" name="krit2para7" oninput="hitungTotal()" >
-              </div>
-              <div class="input-field">
-                  <label for="scorepertanyaandanjawaban">Total Score Kriteria2:</label>
-                  <input @disabled(true) type="text" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" readonly>
-              </div>
                   </div>
               </div>
               <div class="details personal">
                   <span class="title">3. Aspek Kesesuaian dengan Tema</span>
                       <div class="fields">
                       <div class="input-field">
-                        <label for="krit3para1">Nilai 100-90:</label>
-                        <input type="number" id="krit3para1" name="krit3para1" oninput="hitungTotal()" >
+                        <label for="scoreaspekkesesuaian">Score:</label>
+                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" >
                     </div>
                     <div class="input-field">
-                        <label for="krit3para2">Nilai 90-80:</label>
-                        <input type="number" id="krit3para2" name="krit3para2" oninput="hitungTotal()" >
+                        <label for="kesesuaian">Kualitatif:</label>
+                        <input type="text" id="kesesuaian" name="kesesuaian">
                     </div>
-                    <div class="input-field">
-                        <label for="krit3para3">Nilai 80-75:</label>
-                        <input type="number" id="krit3para3" name="krit3para3" oninput="hitungTotal()" >
-                    </div>
-                    <div class="input-field">
-                      <label for="krit3para4">Nilai 70:</label>
-                      <input type="number" id="krit3para4" name="krit3para4" oninput="hitungTotal()" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para5">Nilai 65-60:</label>
-                      <input type="number" id="krit3para5" name="krit3para5" oninput="hitungTotal()" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para6">Nilai 60-50:</label>
-                      <input type="number" id="krit3para6" name="krit3para6" oninput="hitungTotal()" >
-                  </div>
-                  <div class="input-field">
-                      <label for="krit3para7">Nilai 50:</label>
-                      <input type="number" id="krit3para7" name="krit3para7" oninput="hitungTotal()" >
-                  </div>
-                  <div class="input-field">
-                      <label for="scoreaspekkesesuaian">Total Score Kriteria3:</label>
-                      <input @disabled(true) type="text" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" readonly>
-                  </div>
                       </div>
                   </div>
           <div class="details ID">
@@ -263,38 +187,9 @@
 <script>
     function hitungTotal() {
       const form = document.getElementById("penilaian");
-      const krit1para1 = parseFloat(form.krit1para1.value) || 0;
-      const krit1para2 = parseFloat(form.krit1para2.value) || 0;
-      const krit1para3 = parseFloat(form.krit1para3.value) || 0;
-      const krit1para4 = parseFloat(form.krit1para4.value) || 0;
-      const krit1para5 = parseFloat(form.krit1para5.value) || 0;
-      const krit1para6 = parseFloat(form.krit1para6.value) || 0;
-      const krit1para7 = parseFloat(form.krit1para7.value) || 0;
-
-      const scorepemaparanmateri = krit1para1 + krit1para2 + krit1para3 + krit1para4 + krit1para5 + krit1para6 + krit1para7;
-      form.scorepemaparanmateri.value = scorepemaparanmateri;
-
-      const krit2para1 = parseFloat(form.krit2para1.value) || 0;
-      const krit2para2 = parseFloat(form.krit2para2.value) || 0;
-      const krit2para3 = parseFloat(form.krit2para3.value) || 0;
-      const krit2para4 = parseFloat(form.krit2para4.value) || 0;
-      const krit2para5 = parseFloat(form.krit2para5.value) || 0;
-      const krit2para6 = parseFloat(form.krit2para6.value) || 0;
-      const krit2para7 = parseFloat(form.krit2para7.value) || 0;
-
-      const scorepertanyaandanjawaban = krit2para1 + krit2para2 + krit2para3 + krit2para4 + krit2para5 + krit2para6 + krit2para7;
-      form.scorepertanyaandanjawaban.value = scorepertanyaandanjawaban;
-
-      const krit3para1 = parseFloat(form.krit3para1.value) || 0;
-      const krit3para2 = parseFloat(form.krit3para2.value) || 0;
-      const krit3para3 = parseFloat(form.krit3para3.value) || 0;
-      const krit3para4 = parseFloat(form.krit3para4.value) || 0;
-      const krit3para5 = parseFloat(form.krit3para5.value) || 0;
-      const krit3para6 = parseFloat(form.krit3para6.value) || 0;
-      const krit3para7 = parseFloat(form.krit3para7.value) || 0;
-
-      const scoreaspekkesesuaian = krit3para1 + krit3para2 + krit3para3 + krit3para4 + krit3para5 + krit3para6 + krit3para7;
-      form.scoreaspekkesesuaian.value = scoreaspekkesesuaian;
+      const scorepemaparanmateri = parseFloat(form.scorepemaparanmateri.value) || 0;
+      const scorepertanyaandanjawaban = parseFloat(form.scorepertanyaandanjawaban.value) || 0;
+      const scoreaspekkesesuaian = parseFloat(form.scoreaspekkesesuaian.value) || 0;
 
       const total = scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian;
       form.total.value = total;

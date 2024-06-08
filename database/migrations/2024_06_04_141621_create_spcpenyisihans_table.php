@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('spcpenyisihans', function (Blueprint $table) {
             $table->id();
-            $table->string('university');
             $table->string('namapeserta');
-            $table->integer('scorepenyajiankarya');
-            $table->integer('scoresubstansikarya');
-            $table->integer('scorekualitaskarya');
-            $table->integer('total');
-            $table->string('juri');
+            $table->string('university');
+            $table->integer('scorecp');
             $table->timestamps();
         });
     }
