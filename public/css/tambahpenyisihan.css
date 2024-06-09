@@ -1,7 +1,7 @@
 .konten{
-    position: relative;
+    position: static;
     max-width: 1100px;
-    width: 30%;
+    width: 90%;
     border-radius: 20px;
     padding: 30px;
     margin: 0 15px;
@@ -11,14 +11,14 @@
     top: 6rem;
 }
 .konten header{
-    position: relative;
+    position: static;
     font-size: 20px;
     font-weight: 600;
     color: #333;
 }
 .konten header::before{
     content: "";
-    position: absolute;
+    position: static;
     left: 0;
     bottom: -2px;
     height: 3px;
@@ -27,14 +27,14 @@
     background-color: #4070f4;
 }
 .konten form{
-    position: relative;
+    position: static;
     margin-top: 16px;
     min-height: 200px;
     background-color: #fff;
     overflow: hidden;
 }
 .konten form .form{
-    position: absolute;
+    position: static;
     background-color: #fff;
     transition: 0.3s ease;
 }
@@ -156,7 +156,7 @@ form input.error,
         width: calc(100% / 2 - 15px);
     }
     .konten{
-        width: 100%;
+        width: 90%;
     }
     .konten form{
         min-height: 400px;
