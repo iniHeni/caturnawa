@@ -396,7 +396,7 @@ public function callback(Request $request){
 }
 public function home($id){
     $ordersm = ordersm::find($id);
-    return view('/');
+    return view('index');
 }
 
 public function loginsm(Request $loginsm){

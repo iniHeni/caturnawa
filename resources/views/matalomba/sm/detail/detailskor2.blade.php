@@ -3,20 +3,20 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/nowrap.css">
+      <link rel="stylesheet" href="../../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../../css/pagelomba.css">
 
 
-      <title>Caturnawa - SMPenyisihanScore</title>
+      <title>Caturnawa - SMFinalScore</title>
       <style>
         #loadingDiv {
    width: 100%;
@@ -43,7 +43,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../../img/loader.gif);
  }
      </style>
    </head>
@@ -54,13 +54,13 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/smcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <img src="../../../../img/smcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../../../locale/ind') }}" height="20"><img src="../../../../img/ind.png"  /></a></li>
+						<li><a href="../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -94,48 +94,58 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard Penyisihan</h1>
+            <h1 class="judul" style="color: white" >Leaderboard Detail Final</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
-                    <thead style="position: sticky; top: -1; z-index: 10;">
-                        <tr>
-                            <th scope="col">Team Participant</th>
-                            <th scope="col">Team Score</th>
-                            <th scope="col">rank</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($penyisihann as $rank=>$data)
+                  <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    <thead style="position: static; top: -1; z-index: 10;">
                       <tr>
-                        <td>{{ $data->namateam }}</td>
-                        <td>{{ $data->total}}</td>
-                        <td>{{ $rank+1 }}</td>
+                          <th scope="col">Team Participant</th>
+                          <th scope="col">Participant</th>
+                          <th scope="col">Penilaian Meliputi</th>
+                          <th scope="col">Kuantitatif</th>
+                          <th scope="col">Kualititatif</th>
+                          <th scope="col">Total</th>
+                          <th scope="col">Adjudicators</th>
                       </tr>
-                      @endforeach
-                    </tbody>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td rowspan="4">{{ $dataa->namateam }}</td>
+                          <td rowspan="4">{{ $dataa->peserta1 }} & {{ $dataa->peserta2 }} & {{ $dataa->peserta3 }} & {{ $dataa->peserta4 }} & {{ $dataa->peserta5 }}</td>
+                          <td>Ide cerita dan riset peristiwa dalam film</td>
+                          <td>{{ $dataa->skorkrit1 }}</td>
+                          <td>{{ $dataa->krit1 }}</td>
+                          <td rowspan="4">{{ $dataa->total }}</td>
+                          <td rowspan="4">{{ $dataa->juri }}</td>
+                      </tr>
+                      <tr>
+                       
+                          <td>Tujuan film dan pengaruh film</td>
+                          <td>{{ $dataa->skorkrit2 }}</td>
+                          <td>{{ $dataa->krit2 }}</td>
+                      </tr>
+                      <tr>
+                       
+                          <td>Kemampuan dan pemahaman membuat film</td>
+                          <td>{{ $dataa->skorkrit3}}</td>
+                          <td>{{ $dataa->krit3 }}</td>
+                      </tr>
+                      <tr>
+                        
+                          <td>Informasi dan pesan yang disampaikan dari film</td>
+                          <td>{{ $dataa->skorkrit4}}</td>
+                          <td>{{ $dataa->krit4 }}</td>
+                      </tr>
+                  </tbody>
+                  </table>
                 </table>
             </div>
-
+            <!-- Tampilkan pagination links jika diperlukan -->
+            <!-- Simulasi pagination untuk data dummy -->
         </div>
     </div>
 </section>
-<section id="rank">
-    @if($penyisihann->count() > 0)
-    <h1 class="judul">Session</h1>
-    <div class="card-list">
-        @foreach($penyisihann as $rank => $data)
-            <a href="{{ route('sm.detail', $rank + 1) }}" class="card-item"> 
-                <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
-                <h3>{{ $data->namateam }}</h3> 
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-        @endforeach
-    </div>
-@endif
-  </section>
-<!--==================== Session ====================-->
 
 <style>
    .table-bordered td, .table-bordered th {

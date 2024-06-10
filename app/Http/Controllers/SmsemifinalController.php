@@ -4,55 +4,112 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\smsemifinal;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class SmsemifinalController extends Controller
 {
     public function tampilp(){  
-        $tambah = smsemifinal::select()->get();
-        return view('admin/sm/penyisihan');      
+        $tambah = smsemifinal::select(
+            '*',
+        DB::raw('RANK() OVER (ORDER BY total DESC) as rank')
+        )->get();
+        return view('admin/sm/penyisihanSM', compact('tambah'));      
      }
 
     public function tambahp(Request $request){
         $tambah = $request->validate([
-            'university' => 'required|string|max:50',
-            'peserta' => 'required|string|max:50',
-            'ruang' => 'required|string|max:50',
+            'namateam' => 'required|string|max:50',
+            'peserta1' => 'required|string|max:50',
+            'peserta2' => 'required|string|max:50',
+            'peserta3' => 'required|string|max:50',
+            'peserta4' => 'required|string|max:50',
+            'peserta5' => 'required|string|max:50',
             'juri' => 'required',
+            'skorkrit1' => 'required|integer|min:0|max:100',
+            'skorkrit2' => 'required|integer|min:0|max:100',
+            'skorkrit3' => 'required|integer|min:0|max:100',
+            'skorkrit4' => 'required|integer|min:0|max:100',
+            'skorkrit5' => 'required|integer|min:0|max:100',
+            'skorkrit6' => 'required|integer|min:0|max:100',
+            'skorkrit7' => 'required|integer|min:0|max:100',
+            'skorkrit8' => 'required|integer|min:0|max:100',
+            'skorkrit9' => 'required|integer|min:0|max:100',
+            'skorkrit10' => 'required|integer|min:0|max:100',
+            'krit1' => 'required|string|max:100',
+            'krit2' => 'required|string|max:100',
+            'krit3' => 'required|string|max:100',
+            'krit4' => 'required|string|max:100',
+            'krit5' => 'required|string|max:100',
+            'krit6' => 'required|string|max:100',
+            'krit7' => 'required|string|max:100',
+            'krit8' => 'required|string|max:100',
+            'krit9' => 'required|string|max:100',
+            'krit10' => 'required|string|max:100',
         ]);
-        peserta::create($tambah);
-        return redirect()->route('spc.tampilp');
+        $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'] + $tambah['skorkrit5'] + $tambah['skorkrit6'] + $tambah['skorkrit7'] + $tambah['skorkrit8'] + $tambah['skorkrit9'] + $tambah['skorkrit10'];
+        smsemifinal::create($tambah);
+        return redirect()->route('sm.tampilp');
 
     }
 
     public function editp($id) {
-        $edit = peserta::find($id);
-        return view('admin/LKTI/editpeserta', compact('edit'));
+        $edit = smsemifinal::find($id);
+        return view('admin/SM/editsm', compact('edit'));
     }
 
     public function updatep(Request $request, $id){
     $update = $request->validate([
-        'university' => 'required|string|max:50',
-        'peserta' => 'required|string|max:50',
-        'ruang' => 'required|string|regex:/^[0-9]+\.[0-9]+$/|max:50',
-        'juri' => 'required',
+        'namateam' => 'required|string|max:50',
+            'peserta1' => 'required|string|max:50',
+            'peserta2' => 'required|string|max:50',
+            'peserta3' => 'required|string|max:50',
+            'peserta4' => 'required|string|max:50',
+            'peserta5' => 'required|string|max:50',
+            'juri' => 'required',
+            'skorkrit1' => 'required|integer|min:0|max:100',
+            'skorkrit2' => 'required|integer|min:0|max:100',
+            'skorkrit3' => 'required|integer|min:0|max:100',
+            'skorkrit4' => 'required|integer|min:0|max:100',
+            'skorkrit5' => 'required|integer|min:0|max:100',
+            'skorkrit6' => 'required|integer|min:0|max:100',
+            'skorkrit7' => 'required|integer|min:0|max:100',
+            'skorkrit8' => 'required|integer|min:0|max:100',
+            'skorkrit9' => 'required|integer|min:0|max:100',
+            'skorkrit10' => 'required|integer|min:0|max:100',
+            'krit1' => 'required|string|max:100',
+            'krit2' => 'required|string|max:100',
+            'krit3' => 'required|string|max:100',
+            'krit4' => 'required|string|max:100',
+            'krit5' => 'required|string|max:100',
+            'krit6' => 'required|string|max:100',
+            'krit7' => 'required|string|max:100',
+            'krit8' => 'required|string|max:100',
+            'krit9' => 'required|string|max:100',
+            'krit10' => 'required|string|max:100',
     ]);
-    $data = peserta::find($id);
+    $data = smsemifinal::find($id);
+    $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'] + $update['skorkrit5'] + $update['skorkrit6'] + $update['skorkrit7'] + $update['skorkrit8'] + $update['skorkrit9'] + $update['skorkrit10'];
     $data->update($update);
-        return redirect()->route('spc.tampilp');
+        return redirect()->route('sm.tampilp');
 }
 
 public function hapusp($id){
-    $hapus = peserta::find($id);
+    $hapus = smsemifinal::find($id);
     $hapus->delete();
-    return redirect()->route('spc.tampilp');
+    return redirect()->route('sm.tampilp');
 }
 public function penyisihan(){
-    $penyisihann = peserta::select(
+    $penyisihann = smsemifinal::select(
         '*',
-        DB::raw('RANK() OVER (ORDER BY total DESC) as rank') // Perhitungan rank
+        DB::raw('RANK() OVER (ORDER BY total DESC) as rank')
     )->get();
     
-    return view('matalomba/lkti/semifinal', compact('penyisihann'));
+    return view('matalomba/sm/sfinal', compact('penyisihann'));
+ }
+ public function detail($id){
+    $dataa = smsemifinal::find($id);
+    return view('matalomba/sm/detail/detailskor', compact('dataa'));
  }
 }
 

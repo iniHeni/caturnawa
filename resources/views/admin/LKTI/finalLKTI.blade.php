@@ -91,7 +91,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Final</h1>
-                <p><a href="{{ url('/spc/tambah/final') }}">Tambah Penilaian</a></p>
+                <p><a href="{{ url('/spc/tambah/final') }}" style="color:azure; font-size: 30px;">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">

@@ -13,10 +13,9 @@
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../css/pagelomba.css">
-      <link rel="stylesheet" href="../css/rank.css">
+      <link rel="stylesheet" href="../../css/pagelomba.css">
 
-      <title>Caturnawa - SMScore</title>
+      <title>Caturnawa - SMFinalScore</title>
       <style>
         #loadingDiv {
    width: 100%;
@@ -93,48 +92,46 @@
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard Final</h1>
+                <h1 class="judul" style="color: white">Leaderboard Total Final + Penyisihan</h1>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Team</th>
-                                <th scope="col">Participant</th>
-                                <th scope="col">score</th>
-                                <th scope="col">rank</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="10">1</td>
-                                <td rowspan="10">Universitas Nasional</td>
-                                <td>1. Johdoe</td>
-                                <td rowspan="10">score</td>
-                                <td rowspan="10">rank</td>
-                              </tr>
-                              <tr>
-                                <td>1. Johdoe</td>
-                              </tr>
-                              <tr>
-                                <td>2. Johdoe</td>
-                              </tr>
-                              <tr>
-                                <td>3. Johdoe</td>
-                              </tr>
-                              <tr>
-                                <td>4. Johdoe</td>
-                              </tr>
-                              <tr>
-                                <td>5. Johdoe</td>
-                              </tr>
-                        </tbody>
+                    <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
+                      <thead style="position: sticky; top: -1; z-index: 10;">
+                        <tr>
+                            <th scope="col">Team Participant</th>
+                            <th scope="col">Team Score</th>
+                            <th scope="col">rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($final as $rank=>$data)
+                      <tr>
+                        <td>{{ $data->namateam }}</td>
+                        <td>{{ $data->total}}</td>
+                        <td>{{ $rank+1 }}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
                     </table>
                 </div>
-                <!-- Tampilkan pagination links jika diperlukan -->
-                <!-- Simulasi pagination untuk data dummy -->
+
             </div>
         </div>
+    </section>
+    <section id="rank">
+      @if($final->count() > 0)
+      <h1 class="judul">Session</h1>
+      <div class="card-list">
+          @foreach($final as $rank => $data)
+              <a href="{{ route('sm.detailf', $rank + 1) }}" class="card-item"> 
+                  <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
+                  <h3>{{ $data->namateam }}</h3> 
+                  <div class="arrow">
+                      <i class="card-icon">Detail</i>
+                  </div>
+              </a>
+          @endforeach
+      </div>
+  @endif
     </section>
 <style>
    .table-bordered td, .table-bordered th {
@@ -167,7 +164,6 @@
           }, 2000)
         );
       });</script>
-      <script src="../../js/rank.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
 </html>

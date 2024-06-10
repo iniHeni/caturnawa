@@ -211,6 +211,6 @@ public function callback(Request $request){
 }
 public function home($id){
     $orderkdbi = orderkdbi::find($id);
-    return view('/');
+    return view('index');
 }
 }

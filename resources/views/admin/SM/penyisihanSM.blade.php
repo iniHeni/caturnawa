@@ -69,7 +69,7 @@
   <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
   <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
   <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-  <a href="#" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+  <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -89,100 +89,92 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
-                <p><a href="{{ url('/sm/tambah/sf') }}">Tambah Penilaian</a></p>
+                <p><a href="{{ url('/sm/tambah/penyisihan') }} " style="color:azure; font-size: 30px;">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px;  position: static;">
-                    <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Team</th>
-                                <th scope="col">Participant</th>
-                                <th scope="col">Penilaian Meliputi</th>
-                                <th scope="col">Bobot</th>
-                                <th scope="col">Score</th>
-                                <th scope="col">Rank</th>
-                                <th scope="col">Adjudicators</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="10">1</td>
-                                <td rowspan="10">Universitas Nasional</td>
-                                <td>1. Johdoe</td>
-                                <td>Kesesuaian antara judul film dengan cerita melalui film yang dibuat</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>2. Johndoe</td>
-                                <td>Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</td>
-                                <td ></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                                <td>3. Johndoe</td>
-                                <td>Kejelasan pesan yang disampaikan melalui film yang dibuat</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>4. Johndoe</td>
-                                <td>Kesesuaian antara judul film dengan cerita dan pesan yang akan disampaikan</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td rowspan="6">5.johndoe</td>
-                                <td>Kedalaman riset dan observasi dalam film</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                              <tr>
-                                <td>Kreativitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang dan waktu</td>
-                                <td></td>
-                                <td></td>  
-                                <td></td>
-                                <td></td>
-                            </tr>
-                              <tr>
-                                <td>Kreativitas dalam menggunakan unsur audio untuk memberikan informasi secara jelas serta memberikan suasana (mood) dalam film</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                              <tr>
-                                <td>Kreativitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik</td>
-                                <td></td>
-                                <td></td>  
-                                <td></td>
-                                <td></td>
-                            </tr>
-                              <tr>
-                                <td>Kesesuaian antara gambar dan suara serta estetika dalam film</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>  
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    <thead style="position: static; top: -1; z-index: 10;">
+                        <tr>
+                            <th scope="col" rowspan="3">No</th>
+                            <th scope="col" rowspan="3">Nama Team</th>
+                            <th scope="col" rowspan="3" colspan="5">Nama Peserta</th>
+                            <th scope="col" colspan="20">Kriteria Penilaian</th>
+                            <th scope="col" rowspan="3">Total</th>
+                            <th scope="col" rowspan="3">Rank</th>
+                            <th scope="col" rowspan="3">Adjudicators</th>
+                            <th scope="col" rowspan="3 ">actions</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Kesesuaian film dengan tema</th>
+                            <th scope="col">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda (teknik penyutradaraan)</th>
+                            <th scope="col">Kejelasan pesan yang disampaikan melalui film yang dibuat</th>
+                            <th scope="col">Kesesuaian antara judul film dengan cerita melalui film yang dibuat</th>
+                            <th scope="col">Kedalaman riset dan observasi dalam film</th>
+                            <th scope="col">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
+                            <th scope="col">Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</th>
+                            <th scope="col">Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi<br>secara jelas serta memberikan suasana (mood) dalam film</th>
+                            <th scope="col">Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</th>
+                            <th scope="col">Kesesuaian antara gambar dan suara serta estetika dalam film</th>
+                            <th scope="col">Kesesuaian film dengan tema</th>
+                            <th scope="col">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda (teknik penyutradaraan)</th>
+                            <th scope="col">Kejelasan pesan yang disampaikan melalui film yang dibuat</th>
+                            <th scope="col">Kesesuaian antara judul film dengan cerita melalui film yang dibuat</th>
+                            <th scope="col">Kedalaman riset dan observasi dalam film</th>
+                            <th scope="col">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
+                            <th scope="col">Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</th>
+                            <th scope="col">Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi<br>secara jelas serta memberikan suasana (mood) dalam film</th>
+                            <th scope="col">Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</th>
+                            <th scope="col">Kesesuaian antara gambar dan suara serta estetika dalam film</th>
+
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="10">Kuantitatif</th>
+                            <th scope="col" colspan="10">Kualitatif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($tambah as $no=>$data)
+                      <tr>
+                          <td>{{ $no+1 }}</td>
+                          <td>{{ $data->namateam }}</td>
+                          <td>{{ $data->peserta1}}</td>
+                          <td>{{ $data->peserta2}}</td>
+                          <td>{{ $data->peserta3}}</td>
+                          <td>{{ $data->peserta4}}</td>
+                          <td>{{ $data->peserta5}}</td>
+                          <td>{{ $data->skorkrit1}}</td>
+                          <td>{{ $data->skorkrit2}}</td>
+                          <td>{{ $data->skorkrit3}}</td>
+                          <td>{{ $data->skorkrit4}}</td>
+                          <td>{{ $data->skorkrit5}}</td>
+                          <td>{{ $data->skorkrit6}}</td>
+                          <td>{{ $data->skorkrit7}}</td>
+                          <td>{{ $data->skorkrit8}}</td>
+                          <td>{{ $data->skorkrit9}}</td>
+                          <td>{{ $data->skorkrit10}}</td>
+                          <td>{{ $data->krit1}}</td>
+                          <td>{{ $data->krit2}}</td>
+                          <td>{{ $data->krit3}}</td>
+                          <td>{{ $data->krit4}}</td>
+                          <td>{{ $data->krit5}}</td>
+                          <td>{{ $data->krit6}}</td>
+                          <td>{{ $data->krit7}}</td>
+                          <td>{{ $data->krit8}}</td>
+                          <td>{{ $data->krit9}}</td>
+                          <td>{{ $data->krit10}}</td>
+                          <td>{{ $data->total}}</td>
+                          <td>{{ $data->rank}}</td>
+                          <td>{{ $data->juri}}</td>
+                          <td>
+                              <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
+                              <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="deletee">
+                                  @csrf
+                                  <button id="deleteButton" type="submit" style="color: red">Hapus</button>
+                              </form>
+                          </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                </table>
                 </div>
         </div>
         <style>
@@ -201,7 +193,27 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../../js/adminSM.js"></script>
-
+<script>
+  document.getElementById('deleteButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Cegah pengiriman formulir secara default
+  
+      Swal.fire({
+          title: 'Apakah Anda yakin?',
+          text: "Data ini akan dihapus secara permanen!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Ya, hapus!',
+          cancelButtonText: 'Batal'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              // Jika pengguna mengklik "Ya, hapus!", kirim formulir
+              document.getElementById('deletee').submit();
+          }
+      });
+  });
+  </script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
