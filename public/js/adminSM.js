@@ -2,7 +2,7 @@
 
 let lastScrollTopHeader = 0; // Gunakan variabel yang berbeda untuk header
 const header = document.getElementById('header');
-const scrollThresholdHeader = 40; // Jarak scroll sebelum navbar berubah visibilitas
+const scrollThresholdHeader = 70; // Jarak scroll sebelum navbar berubah visibilitas
 
 window.addEventListener('scroll', function() {
     let scrollTopHeader = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,7 +25,7 @@ window.addEventListener('scroll', function() {
 
 let lastScrollTopSidelogo =0;
 const sidelogo = document.getElementById('sidelogo'); // Mengambil elemen gambar sidebar
-const scrollThresholdSidelogo = 30; // Jarak scroll sebelum sidebar berubah
+const scrollThresholdSidelogo = 65; // Jarak scroll sebelum sidebar berubah
 window.addEventListener('scroll', function() {
     let scrollTopSidelogo = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -45,7 +45,7 @@ window.addEventListener('scroll', function() {
 // Bagian baru yang ingin Anda tambahkan:
 let lastScrollTopSidebar = 0;
 const sidebar = document.getElementById('sidebar');
-const scrollThresholdSidebar = 30; // Jarak scroll sebelum sidebar berubah
+const scrollThresholdSidebar = 65; // Jarak scroll sebelum sidebar berubah
 
 window.addEventListener('scroll', function() {
     let scrollTopSidebar = window.pageYOffset || document.documentElement.scrollTop;
@@ -137,34 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         
-        document
-        .getElementById("semifinalSM")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // Sembunyikan semua konten
-            const contents = document.querySelectorAll(
-                ".main-content > section"
-            );
-            contents.forEach((content) => {
-                content.style.display = "none";
-            });
-
-            // Tampilkan konten tabel
-            document.getElementById("skor").style.display = "block";
-
-            // Ambil data dari halaman lain menggunakan AJAX
-            $.ajax({
-                url: "/admin/semifinalSM",
-                success: function (result) {
-                    $("#data-container").html(result);
-                },
-                error: function () {
-                    $("#data-container").html("Gagal memuat data.");
-                },
-            });
-        });
-
+        
 
 
 

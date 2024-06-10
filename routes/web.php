@@ -961,6 +961,59 @@ Route::get('/admin/penyisihanSM', function () {
     return view('admin/SM/penyisihanSM');
 });
 
+// Route penyisihan Team SM
+
+Route::get('/admin/penyisihanSMt1', function () {
+    return view('admin/SM/sectionp/penyisihanSM1');
+});
+
+Route::get('/admin/penyisihanSMt2', function () {
+    return view('admin/SM/sectionp/penyisihanSM2');
+});
+
+Route::get('/admin/penyisihanSMt3', function () {
+    return view('admin/SM/sectionp/penyisihanSM3');
+});
+Route::get('/admin/penyisihanSMt4', function () {
+    return view('admin/SM/sectionp/penyisihanSM4');
+});
+Route::get('/admin/penyisihanSMt5', function () {
+    return view('admin/SM/sectionp/penyisihanSM5');
+});
+Route::get('/admin/penyisihanSMt6', function () {
+    return view('admin/SM/sectionp/penyisihanSM6');
+});
+Route::get('/admin/penyisihanSMt7', function () {
+    return view('admin/SM/sectionp/penyisihanSM7');
+});
+Route::get('/admin/penyisihanSMt8', function () {
+    return view('admin/SM/sectionp/penyisihanSM8');
+});
+Route::get('/admin/penyisihanSMt9', function () {
+    return view('admin/SM/sectionp/penyisihanSM9');
+});
+Route::get('/admin/penyisihanSMt10', function () {
+    return view('admin/SM/sectionp/penyisihanSM10');
+});
+Route::get('/admin/penyisihanSMt11', function () {
+    return view('admin/SM/sectionp/penyisihanSM11');
+});
+Route::get('/admin/penyisihanSMt12', function () {
+    return view('admin/SM/sectionp/penyisihanSM12');
+});
+Route::get('/admin/penyisihanSMt13', function () {
+    return view('admin/SM/sectionp/penyisihanSM13');
+});
+Route::get('/admin/penyisihanSMt14', function () {
+    return view('admin/SM/sectionp/penyisihanSM14');
+});
+Route::get('/admin/penyisihanSMt15', function () {
+    return view('admin/SM/sectionp/penyisihanSM15');
+});
+
+
+
+
 // Route finalSM
 
 Route::get('/admin/finalSM', function () {
@@ -976,6 +1029,23 @@ Route::get('/admin/finalSM', [smfinalController::class, 'tampilf'])->name('sm.ta
 Route::get('/admin/SM/editf/{id}', [smfinalController::class, 'editf'])->name('sm.editf');
 Route::post('/admin/SM/updatef/{id}', [smfinalController::class, 'updatef'])->name('sm.updatef');
 Route::post('/admin/SM/hapusf/{id}', [smfinalController::class, 'hapusf'])->name('sm.hapusf');
+
+// Route final Team SM
+Route::get('/admin/finalSMt1', function () {
+    return view('admin/SM/sectionf/finalSM1');
+});
+
+Route::get('/admin/finalSMt2', function () {
+    return view('admin/SM/sectionf/finalSM2');
+});
+
+Route::get('/admin/finalSMt3', function () {
+    return view('admin/SM/sectionf/finalSM3');
+});
+Route::get('/admin/finalSMt4', function () {
+    return view('admin/SM/sectionf/finalSM4');
+});
+
 
 Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.showsm'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.loginsm'); // Rute untuk login (POST)

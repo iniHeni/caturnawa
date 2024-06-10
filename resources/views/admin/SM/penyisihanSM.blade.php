@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -184,13 +185,60 @@
                 text-align: center;
                 vertical-align: middle;
             }
+=======
+<div id="data-container">
+  <section id="skor">
+      <h1 class="welcome" style="margin-bottom: -3rem; margin-top:auto">Pilih Tim</h1>
+  <div class="card-list" style="max-width: 99rem;">
+      <a href="{{url('admin/penyisihanSMt1') }}" class="card-item">
+              <img src="../../img/sm1.png" alt="Card Image">
+              <span class="developer">Tim 1</span>
+              <h3>@lang('messages.dilaksanakan')</h3>
+              <div class="arrow">
+                  <i class="fa fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          
+          <a href="{{url('admin/penyisihanSMt2') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="creator">Tim 2</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="{{url('admin/penyisihanSMt3') }}" class="card-item">
+            <img src="../../img/sm.png" alt="Card Image">
+            <span class="designer">Tim 3</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+>>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
 
-            thead th {
-                background-color: #0d6efd !important;
-            }
-        </style>
-    </section>
+          <a href="{{url('admin/penyisihanSMt4') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="editor">Tim 4</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+
+        <a href="{{url('admin/penyisihanSMt5') }}" class="card-item">
+          <img src="../../img/sm.png" alt="Card Image">
+          <span class="manager">Tim 5</span>
+          <h3>@lang('messages.dilaksanakan')</h3>
+          <div class="arrow">
+              <i class="fa fa-arrow-right card-icon"></i>
+          </div>
+      </a>
+
+
+          
 </div>
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../../../js/adminSM.js"></script>
 <script>
@@ -225,20 +273,113 @@ $("#loadingDiv").fadeOut(200, () => {
   $("#loadingDiv").remove();
 });
 }
+=======
 
-$(window).on("load", () => {
-setTimeout(removeLoader, 2000);
+<div id="data-container">
+  <section id="skor">
+>>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
 
-$("body").css(
-  "overflow-y",
-  "hidden",
-  setTimeout(() => {
-    $("body").css("overflow-y", "visible");
-  }, 2000)
-);
-});
-</script>
-</body>
-</html>
+  <div class="card-list" style="max-width: 99rem;">
+      <a href="{{url('admin/penyisihanSMt6') }}" class="card-item">
+              <img src="../../img/sm1.png" alt="Card Image">
+              <span class="developer">Tim 6</span>
+              <h3>@lang('messages.dilaksanakan')</h3>
+              <div class="arrow">
+                  <i class="fa fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          
+          <a href="{{url('admin/penyisihanSMt7') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="creator">Tim 7</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="{{url('admin/penyisihanSMt8') }}" class="card-item">
+            <img src="../../img/sm.png" alt="Card Image">
+            <span class="designer">Tim 8</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+
+          <a href="{{url('admin/penyisihanSMt9') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="editor">Tim 9</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+
+        <a href="{{url('admin/penyisihanSMt10') }}" class="card-item">
+          <img src="../../img/sm.png" alt="Card Image">
+          <span class="manager">Tim 10</span>
+          <h3>@lang('messages.dilaksanakan')</h3>
+          <div class="arrow">
+              <i class="fa fa-arrow-right card-icon"></i>
+          </div>
+      </a>
 
 
+          
+</div>
+
+          
+</div>
+
+
+<div id="data-container">
+  <section id="skor">
+      
+    <div class="card-list" style="max-width: 99rem;">
+              <a href="{{url('admin/penyisihanSMt11') }}" class="card-item">
+              <img src="../../img/sm1.png" alt="Card Image">
+              <span class="developer">Tim 11</span>
+              <h3>@lang('messages.dilaksanakan')</h3>
+              <div class="arrow">
+                  <i class="fa fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          
+          <a href="{{url('admin/penyisihanSMt12') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="creator">Tim 12</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="{{url('admin/penyisihanSMt13') }}" class="card-item">
+            <img src="../../img/sm.png" alt="Card Image">
+            <span class="designer">Tim 13</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+
+          <a href="{{url('admin/penyisihanSMt14') }}" class="card-item">
+            <img src="../../img/sm1.png" alt="Card Image">
+            <span class="editor">Tim 14</span>
+            <h3>@lang('messages.dilaksanakan')</h3>
+            <div class="arrow">
+                <i class="fa fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+
+        <a href="{{url('admin/penyisihanSMt15') }}" class="card-item">
+          <img src="../../img/sm.png" alt="Card Image">
+          <span class="manager">Tim 15</span>
+          <h3>@lang('messages.dilaksanakan')</h3>
+          <div class="arrow">
+              <i class="fa fa-arrow-right card-icon"></i>
+          </div>
+      </a>
+
+
+          
+</div>
