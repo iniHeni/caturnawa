@@ -381,19 +381,34 @@
    }
    
    
-   .card-list .card-item:hover .card-icon  {
-     background: #f6ae31;
-     color: #fff; 
-   }
-   @media (max-width: 1200px) {
-     .card-list .card-item {
-         padding: 15px;
-     }
-   }
-   @media screen and (max-width: 980px) {
+ 
+   
+   @media screen and (max-width: 500px) {
      .card-list {
-         margin: 0 auto;
+         margin: 0 7;
          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
          
      }
    }
+
+
+   @media screen and (max-width: 980px) {
+      .card-list {
+          margin: 0 30;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          
+      }
+    }
+
+
+    .card-list .card-item:hover .card-icon  {
+      background: #f6ae31;
+      color: #fff; 
+    }
+    @media (max-width: 1200px) {
+      .card-list .card-item {
+          padding: 15px;
+      }
+    }
+    
+ 
