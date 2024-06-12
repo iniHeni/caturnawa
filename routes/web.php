@@ -25,6 +25,28 @@ Route::get('/', function () {
 })->name('utama');
 
 
+<<<<<<< HEAD
+=======
+//Route Periode
+
+Route::get('/periodeKDBI', function () {
+    return view('matalomba/kdbi/harga');
+});
+
+Route::get('/periodeSM', function () {
+    return view('matalomba/sm/harga');
+});
+
+Route::get('/periodeLKTI', function () {
+    return view('matalomba/LKTI/harga');
+});
+
+Route::get('/periodeEDC', function () {
+    return view('matalomba/edc/harga');
+});
+
+
+>>>>>>> df50c09c227fb1679bd25e4f1c00c7736348e50e
 // change Language
 
 Route::get('locale/{lang}',[LocaleController::class,'setLocale']);

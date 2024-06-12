@@ -69,16 +69,14 @@
                      </li>
             
                      <li class="nav__item">
-                        <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.peserta')</a>
                      </li>
             
                      <li class="nav__item">
-                        <a href="#rank" class="nav__link">@lang('messages.round')</a>
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.round')</a>
                      </li>
                      
-                     <li class="nav__item">
-                        <a href="#juri" class="nav__link">@lang('messages.juri')</a>
-                     </li>
+                     
                </ul>
 
               <!-- Close button -->
