@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pesertaspc;
 use App\Models\spcpenyisihan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -14,14 +15,13 @@ class SpcpenyisihanController extends Controller
             '*',
             DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') 
         )->get();
-        
         return view('admin/LKTI/penyisihanLKTI', compact('tambah'));
      }
 
     public function tambah(Request $request){
         $tambah = $request->validate([
-            'namapeserta' => 'required|string|max:50',
-            'university' => 'required|string|max:50',
+            'namapeserta' => 'required',
+            'university' => 'required',
             'scorecp' => 'required|integer|min:0',
         ]);
         spcpenyisihan::create($tambah);
@@ -31,13 +31,14 @@ class SpcpenyisihanController extends Controller
 
     public function edit($id) {
         $edit = spcpenyisihan::find($id);
-        return view('admin/LKTI/edit', compact('edit'));
+        $peserta = pesertaspc::all();
+        return view('admin/LKTI/edit', compact('edit', 'peserta'));
     }
 
     public function update(Request $request, $id){
     $update = $request->validate([
-        'namapeserta' => 'required|string|max:50',
-        'university' => 'required|string|max:50',
+        'namapeserta' => 'required',
+        'university' => 'required',
         'scorecp' => 'required|integer|min:0',
     ]);
     $data = spcpenyisihan::find($id);
@@ -58,7 +59,11 @@ public function penyisihan(){
     
     return view('matalomba/lkti/penyisihan', compact('penyisihann'));
  }
-
+ public function pesertaa(){
+    $peserta = pesertaspc::all();
+    
+    return view('admin/LKTI/tambah', compact('peserta'));
+ }
 
 }
 

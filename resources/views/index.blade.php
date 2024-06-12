@@ -141,14 +141,14 @@
             <h3>@lang('messages.sm')</h3>
             <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/loginsm') }}" class="card-icon" id="uploadBtn">Upload</a>
-            <a href="{{url('matalomba/shortmovie') }}" class="card-icon">@lang('messages.Web')</a>
+            <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/spc.png" alt="Card Image">
             <h3>@lang('messages.lkti')</h3>
             <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
             <a href="{{url('matalomba/loginspc') }}" class="card-icon" id="uploadSPCBtn">Upload</a>
-            <a href="{{url('matalomba/lkti') }}" class="card-icon">@lang('messages.Web')</a>
+            <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
          </div>
         <div class="card-item">
             <img src="img/edc.png" alt="Card Image">

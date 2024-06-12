@@ -51,6 +51,7 @@ class OrdersmController extends Controller
             'nomorhp_3'=> 'required',
             'nomorhp_4' => 'required',
             'nomorhp_5'=> 'required',
+            'namateam' => 'required|string|max:50',
             'instansi' => 'required|string|max:50',
             'linkvidio' => 'required',
             'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
@@ -85,264 +86,291 @@ class OrdersmController extends Controller
         {
             $destination_path = 'public/images/sm/ktm1';
             $image = $request->file('ktm_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/ktm1/' . $image_name);
 
-            $ordersm['ktm_1'] = $image_name;
+            $ordersm['ktm_1'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_2'))
         {
             $destination_path = 'public/images/sm/ktm2';
             $image = $request->file('ktm_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/ktm2/' . $image_name);
 
-            $ordersm['ktm_2'] = $image_name;
+            $ordersm['ktm_2'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_3'))
         {
             $destination_path = 'public/images/sm/ktm3';
             $image = $request->file('ktm_3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/ktm3/' . $image_name);
 
-            $ordersm['ktm_3'] = $image_name;
+            $ordersm['ktm_3'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_4'))
         {
             $destination_path = 'public/images/sm/ktm4';
             $image = $request->file('ktm_4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_4')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/ktm4/' . $image_name);
 
-            $ordersm['ktm_4'] = $image_name;
+            $ordersm['ktm_4'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_5'))
         {
             $destination_path = 'public/images/sm/ktm5';
             $image = $request->file('ktm_5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/ktm5/' . $image_name);
 
-            $ordersm['ktm_5'] = $image_name;
+            $ordersm['ktm_5'] = $imageUrl;
 
         }
         if($request->hasFile('foto_1'))
         {
             $destination_path = 'public/images/sm/foto1';
             $image = $request->file('foto_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/foto1/' . $image_name);
 
-            $ordersm['foto_1'] = $image_name;
+            $ordersm['foto_1'] = $imageUrl;
 
         }
         if($request->hasFile('foto_2'))
         {
             $destination_path = 'public/images/sn/foto2';
             $image = $request->file('foto_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/foto2/' . $image_name);
 
-            $ordersm['foto_2'] = $image_name;
+            $ordersm['foto_2'] = $imageUrl;
 
         }
         if($request->hasFile('foto_3'))
         {
             $destination_path = 'public/images/sn/foto3';
             $image = $request->file('foto_3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/foto3/' . $image_name);
 
-            $ordersm['foto_3'] = $image_name;
+            $ordersm['foto_3'] = $imageUrl;
 
         }
         if($request->hasFile('foto_4'))
         {
             $destination_path = 'public/images/sm/foto4';
             $image = $request->file('foto_4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_4')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/foto4/' . $image_name);
 
-            $ordersm['foto_4'] = $image_name;
+            $ordersm['foto_4'] = $imageUrl;
 
         }
         if($request->hasFile('foto_5'))
         {
             $destination_path = 'public/images/sm/foto5';
             $image = $request->file('foto_5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/foto5/' . $image_name);
 
-            $ordersm['foto_5'] = $image_name;
+            $ordersm['ktm_2'] = $imageUrl;
 
         }
         if($request->hasFile('krs_1'))
         {
             $destination_path = 'public/images/sm/krs1';
             $image = $request->file('krs_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/krs1/' . $image_name);
 
-            $ordersm['krs_1'] = $image_name;
+            $ordersm['krs_1'] = $imageUrl;
 
         }
         if($request->hasFile('krs_2'))
         {
             $destination_path = 'public/images/sm/krs2';
             $image = $request->file('krs_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
-            $ordersm['krs_2'] = $image_name;
+            $imageUrl = asset('storage/images/sm/krs2/' . $image_name);
+
+            $ordersm['krs_2'] = $imageUrl;
 
         }
         if($request->hasFile('krs_3'))
         {
             $destination_path = 'public/images/sm/krs3';
             $image = $request->file('krs_3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/krs3/' . $image_name);
 
-            $ordersm['krs_3'] = $image_name;
+            $ordersm['krs_3'] = $imageUrl;
 
         }
         if($request->hasFile('krs_4'))
         {
             $destination_path = 'public/images/sm/krs4';
             $image = $request->file('krs_4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_4')->storeAS($destination_path,$image_name);
-            $ordersm['krs_4'] = $image_name;
+            $imageUrl = asset('storage/images/sm/krs4/' . $image_name);
+
+            $ordersm['krs_4'] = $imageUrl;
 
         }
         if($request->hasFile('krs_5'))
         {
             $destination_path = 'public/images/sm/krs5';
             $image = $request->file('krs_5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/krs5/' . $image_name);
 
-            $ordersm['krs_5'] = $image_name;
+            $ordersm['krs_5'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_1'))
         {
             $destination_path = 'public/images/sm/bukti1';
             $image = $request->file('buktifollow_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/bukti1/' . $image_name);
 
-            $ordersm['buktifollow_1'] = $image_name;
+            $ordersm['buktifollow_1'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_2'))
         {
             $destination_path = 'public/images/sm/bukti2';
             $image = $request->file('buktifollow_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/bukti2/' . $image_name);
 
-            $ordersm['buktifollow_2'] = $image_name;
+            $ordersm['buktifollow_2'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_3'))
         {
             $destination_path = 'public/images/sm/bukti3';
             $image = $request->file('buktifollow_3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/bukti3/' . $image_name);
 
-            $ordersm['buktifollow_3'] = $image_name;
+            $ordersm['buktifollow_3'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_4'))
         {
             $destination_path = 'public/images/sm/bukti4';
             $image = $request->file('buktifollow_4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_4')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/bukti4/' . $image_name);
 
-            $ordersm['buktifollow_4'] = $image_name;
-
+            $ordersm['buktifollow_4'] = $imageUrl;
         }
         if($request->hasFile('buktifollow_5'))
         {
             $destination_path = 'public/images/sm/bukti5';
             $image = $request->file('buktifollow_5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/bukti5/' . $image_name);
 
-            $ordersm['buktifollow_5'] = $image_name;
-
+            $ordersm['buktifollow_5'] = $imageUrl;
         }
         if($request->hasFile('twibbon_1'))
         {
             $destination_path = 'public/images/sm/twibbon1';
             $image = $request->file('twibbon_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/twibbon1/' . $image_name);
 
-            $ordersm['twibbon_1'] = $image_name;
+            $ordersm['twibbon_1'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon_2'))
         {
             $destination_path = 'public/images/sm/twibbon2';
             $image = $request->file('twibbon_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/twibbon2/' . $image_name);
 
-            $ordersm['twibbon_2'] = $image_name;
+            $ordersm['twibbon_2'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon_3'))
         {
             $destination_path = 'public/images/sm/twibbon3';
             $image = $request->file('twibbon_3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon_3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/twibbon3/' . $image_name);
 
-            $ordersm['twibbon_3'] = $image_name;
+            $ordersm['twibbon_3'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon_4'))
         {
             $destination_path = 'public/images/sm/twibbon4';
             $image = $request->file('twibbon_4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon_4')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/twibbon4/' . $image_name);
 
-            $ordersm['twibbon_4'] = $image_name;
+            $ordersm['twibbon_4'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon_5'))
         {
             $destination_path = 'public/images/sm/twibbon5';
             $image = $request->file('twibbon_5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon_5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/sm/twibbon5/' . $image_name);
 
-            $ordersm['twibbon_5'] = $image_name;
+            $ordersm['twibbon_5'] = $imageUrl;
 
         }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'public/document/sm/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/surat/' . $image_name);
 
-            $ordersm['surat_delegasi'] = $image_name;
+            $ordersm['surat_delegasi'] = $imageUrl;
 
         }
 
          $additionalData = [
         'price' => 250000,
         'status' => 'Unpaid',
+        'order' => rand(),
         'kompetisi' => 'ShortMovie Competition',
     ];
 
@@ -362,7 +390,7 @@ class OrdersmController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => rand(),
+    'order_id' => $ordersm->order,
     'gross_amount' => $ordersm->price,
 ),
 'item_details' => array(
@@ -384,7 +412,7 @@ $params = array(
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 return view('matalomba/sm/checkout', compact('snapToken', 'ordersm'));
 }
-public function callback(Request $request){
+public function callbacks(Request $request){
     $serverKey = config('midtrans.server_key');
     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){

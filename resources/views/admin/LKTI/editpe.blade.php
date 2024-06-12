@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
-    <link rel="stylesheet" href="../../../css/tambahspc.css">
+    <link rel="stylesheet" href="../../../css/tambahpenyisihan.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
     <title>Caturnawa - Admin</title>
@@ -87,91 +87,49 @@
     </form>
 </div>
 
-
-
 <div style="margin-bottom: 20rem"></div>
 
 <section style="height: 60rem" >
     <div class="konten">
-      <header>Data Final</header>
-      <form action="/tambah/final" method="POST" enctype="multipart/form-data" id="penilaian" >
+      <header>Peserta Lomba</header>
+      <form action="{{ route('spc.updatepe', $edit->id) }}" method="POST"  id="penilaian" enctype="multipart/form-data">
           @csrf
           <div class="form first">
-            <div class="details personal">
-                <span class="title">Data Penilaian</span>
+            <div class="details ID">
+                <span class="title">Data Peserta</span>
                 <div class="fields"> 
                     <div class="input-field">
-                        <label for="namapeserta">Nama Peserta</label>
-                        <select name="namapeserta" id="namapeserta" is-invalid required >
-                            <option selected>Pilih Peserta</option> 
-                            @foreach ($peserta as $j)
-                                <option >{{ $j->nama }}</option>
-                            @endforeach
-                        </select>
+                        <label for="instansi">Asal Instansi</label>
+                        <input name="instansi" id="instansi" type="text" placeholder=" Asal Universitas" required  value="{{ $edit->instansi }}">
                     </div>
                     <div class="input-field">
-                      <label for="juri">Nama Juri</label>
-                      <select name="juri" id="juri" is-invalid  required>
-                          <option selected>Pilih Juri</option>
-                          <option>Efriza, S.I.P., M.Si</option>
-                          <option>Fajar Harry Sampurno, MBA, Ph.D.</option>
-                          <option>Prof. Dr.Eng. Eniya Listiani Dewi</option>
-                      </select>
-                      </div>
-                </div>
-              </div>
-          <div class="details personal">
-          <span class="title">1. Pemaparan Materi dan Presentasi ilmiah</span>
-              <div class="fields">
-              <div class="input-field">
-                <label for="scorepemaparanmateri">Score:</label>
-                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" >
-            </div>
-            <div class="input-field">
-                <label for="materi">Kualitatif:</label>
-                <input type="text" id="materi" name="materi">
-            </div>
-              </div>
-          </div>
-          <div class="details personal">
-              <span class="title">2. Pertanyaan dan Jawaban</span>
-                  <div class="fields">
-                  <div class="input-field">
-                    <label for="scorepertanyaandanjawaban">Score:</label>
-                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" >
-                </div>
-                <div class="input-field">
-                    <label for="pertanyaandanjawaban">Kualitatif:</label>
-                    <input type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban">
-                </div>
-                  </div>
-              </div>
-              <div class="details personal">
-                  <span class="title">3. Aspek Kesesuaian dengan Tema</span>
-                      <div class="fields">
-                      <div class="input-field">
-                        <label for="scoreaspekkesesuaian">Score:</label>
-                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" >
+                        <label for="nama">Nama Peserta</label>
+                        <input name="nama" id="nama" type="text" placeholder="Nama Peserta" required value="{{ $edit->nama }}">
                     </div>
                     <div class="input-field">
-                        <label for="kesesuaian">Kualitatif:</label>
-                        <input type="text" id="kesesuaian" name="kesesuaian">
+                        <label for="email">Email</label>
+                        <input name="email" id="email" type="email" placeholder="Email Peserta" required value="{{ $edit->email }}">
                     </div>
-                      </div>
+                    <div class="input-field">
+                        <label for="nohp">No Handphone</label>
+                        <input name="nohp" id="nohp" type="number" placeholder="MoHp Peserta" required value="{{ $edit->nohp }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="foto">Foto Formal Peserta *jpg,png.jpeg</label>
+                        <input name="foto" id="foto" type="file"  accept=".png, .jpg, .jpeg" required>
+                    </div>
+                        <div class="input-field">
+                            <label for="logo">Logo Instansi *jpg,png.jpeg</label>
+                            <input name="logo" id="logo" type="file"  accept=".png, .jpg, .jpeg, .PNG" required>
+                        </div>
                   </div>
-          <div class="details ID">
-              <span class="title">Hasil Total Score</span>
-                  <div class="fields">
-                  <div class="input-field">
-                      <label for="total">Total Score Seluruh Kriteria:</label>
-                      <input @disabled(true) type="text" id="total" name="total" readonly>
-                  </div>
+ 
                 </div>
                 <button type="submit" class="nextBtn">
                     <span class="btnText">Submit</span>
                     <i class="uil uil-navigator"></i>
                 </button>
-            </div> 
+              </div>
         </div>
       </form>
   </div>
@@ -194,17 +152,6 @@
     });
     </script>
 <!-- Script untuk memanggil file admin.js -->
-<script>
-    function hitungTotal() {
-      const form = document.getElementById("penilaian");
-      const scorepemaparanmateri = parseFloat(form.scorepemaparanmateri.value) || 0;
-      const scorepertanyaandanjawaban = parseFloat(form.scorepertanyaandanjawaban.value) || 0;
-      const scoreaspekkesesuaian = parseFloat(form.scoreaspekkesesuaian.value) || 0;
-
-      const total = scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian;
-      form.total.value = total;
-    }
-  </script>
 <script src="../../../js/adminLKTI.js"></script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {

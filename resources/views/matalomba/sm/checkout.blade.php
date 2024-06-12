@@ -419,6 +419,10 @@
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
                             <div class="input-field">
+                                <label>Team Name</label>
+                                <input disabled placeholder="{{$ordersm->nameteam}}" required>
+                            </div>
+                            <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$ordersm->instansi}}" required>
                             </div>
@@ -478,24 +482,45 @@
         payButton.addEventListener('click', function () {
           // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
           window.snap.pay('{{$snapToken}}', {
-            onSuccess: function(result){
-              window.location.href= '/matalomba/sm'
-              alert("payment success!"); console.log(result);
-            },
-            onPending: function(result){
-              /* You may add your own implementation here */
-              alert("wating your payment!"); console.log(result);
-            },
-            onError: function(result){
-              /* You may add your own implementation here */
-              alert("payment failed!"); console.log(result);
-            },
-            onClose: function(){
-              /* You may add your own implementation here */
-              alert('you closed the popup without finishing the payment');
-            }
-          })
-        });
+        onSuccess: function(result){
+            Swal.fire({
+    icon: 'success',
+    title: 'Payment Succes!',
+    text: 'Anda akan diarahkan ke halaman Lomba.',
+    showConfirmButton: false, 
+    timer: 2000,
+  }).then(() => {
+    window.location.href = '/matalomba/sm/sm'; 
+    console.log(result); 
+  });
+        },
+        onPending: function(result){
+          /* You may add your own implementation here */
+          alert("wating your payment!"); console.log(result);
+        },
+        onError: function(result){
+            Swal.fire({
+    icon: 'info',
+    title: 'Waiting Payment',
+    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+    showConfirmButton: false, // Tidak menampilkan tombol OK
+    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
+    didOpen: () => {
+      Swal.showLoading(); // Menampilkan animasi loading
+    },
+  });
+  console.log(result); 
+          
+        },
+        onClose: function(){
+            Swal.fire({
+    icon: 'warning',
+    title: 'Payment Canceled',
+    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+  });
+        }
+      })
+    });
       </script>
    </body>
 </html>

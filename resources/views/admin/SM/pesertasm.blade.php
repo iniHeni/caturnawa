@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <title>Caturnawa - Admin</title>
@@ -58,7 +58,7 @@
     <nav class="nav container">
         <div class="nav_logo" id="nav-logo">
             <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin LKTI </a></h2>
+            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin ShortMovie </a></h2>
         </div>
     </nav>
 </header>
@@ -67,11 +67,10 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
-    <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
-    <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="{{route('sm.mainmenu')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
+    <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -91,17 +90,36 @@
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
-                <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
-                <p><a class="add" href="{{ route('spc.pesertaa') }}" style="color: white">Tambah Penilaian</a></p>
+                <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
+                <p><a class="add" href="{{ url('/sm/tambah/peserta') }}" style="color: white">Tambah Peserta</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Peserta</th>
                                 <th scope="col">Asal Instansi</th>
-                                <th scope="col">Score Capaian Unggulan</th>
-                                <th scope="col">Rank</th>
+                                <th scope="col">Nama Team</th>
+                                <th scope="col">Peserta 1</th>
+                                <th scope="col">Peserta 2</th>
+                                <th scope="col">Peserta 3</th>
+                                <th scope="col">Peserta 4</th>
+                                <th scope="col">Peserta 5</th>
+                                <th scope="col">Email 1</th>
+                                <th scope="col">Email 2</th>
+                                <th scope="col">Email 3</th>
+                                <th scope="col">Email 4</th>
+                                <th scope="col">Email 5</th>
+                                <th scope="col">No Handphone 1</th>
+                                <th scope="col">No Handphone 2</th>
+                                <th scope="col">No Handphone 3</th>
+                                <th scope="col">No Handphone 4</th>
+                                <th scope="col">No Handphone 5</th>
+                                <th scope="col">Foto 1</th>
+                                <th scope="col">Foto 2</th>
+                                <th scope="col">Foto 3</th>
+                                <th scope="col">Foto 4</th>
+                                <th scope="col">Foto 5 </th>
+                                <th scope="col">Logo Instansi</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -109,16 +127,34 @@
                             @foreach($tambah as $no=>$data)
                             <tr>
                                 <td>{{ $no+1 }}</td>
-                                <td>{{ $data->namapeserta }}</td>
-                                <td>{{ $data->university}}</td>
-                                <td>{{ $data->scorecp}}</td>
-                                <td>{{ $data->rank}}</td>
+                                <td>{{ $data->instansi }}</td>
+                                <td>{{ $data->namateam }}</td>
+                                <td>{{ $data->nama}}</td>
+                                <td>{{ $data->nama1}}</td>
+                                <td>{{ $data->nama2}}</td>
+                                <td>{{ $data->nama3}}</td>
+                                <td>{{ $data->nama4}}</td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email }}">{{ $data->email}}</a></td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email1 }}">{{ $data->email1}}</a></td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email2 }}">{{ $data->email2}}</a></td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email3 }}">{{ $data->email3}}</a></td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email4 }}">{{ $data->email4}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp }}">{{ $data->nohp}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp1 }}">{{ $data->nohp1}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp2 }}">{{ $data->nohp2}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp3 }}">{{ $data->nohp3}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp4 }}">{{ $data->nohp4}}</a></td>
+                                <td>{{ $data->foto}}</td>
+                                <td>{{ $data->foto1}}</td>
+                                <td>{{ $data->foto2}}</td>
+                                <td>{{ $data->foto3}}</td>
+                                <td>{{ $data->foto4}}</td>
+                                <td>{{ $data->logo}}</td>
                                 <td>
-                                    <a href="{{ route('spc.edit', $data->id) }}">Edit</a>
-                                    <form action="{{ route('spc.hapus', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                    <a href="{{ route('sm.editpee', $data->id) }}">Edit</a>
+                                    <form action="{{ route('sm.hapuspee', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 
                                         @csrf
-                                        
-                                        <button type="submit" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                        <button type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -138,6 +174,11 @@
             thead th {
                 background-color: #0d6efd !important;
             }
+            a[href^="mailto:"] {
+    color:#0d6efd; 
+    text-decoration: underline;
+}
+
         </style>
     </section>
 </div>
@@ -160,7 +201,7 @@
         });
     }
     </script>
-<script src="../../../js/adminLKTI.js"></script>
+<script src="../../js/adminLKTI.js"></script>
 <script>
     document.getElementById("menu").addEventListener("click", function () {
         document.body.classList.toggle("sidebar-open");

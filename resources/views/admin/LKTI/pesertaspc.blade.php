@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <title>Caturnawa - Admin</title>
@@ -91,17 +91,19 @@
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
-                <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
-                <p><a class="add" href="{{ route('spc.pesertaa') }}" style="color: white">Tambah Penilaian</a></p>
+                <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
+                <p><a class="add" href="{{ url('/spc/tambah/peserta') }}" style="color: white">Tambah Peserta</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama Peserta</th>
                                 <th scope="col">Asal Instansi</th>
-                                <th scope="col">Score Capaian Unggulan</th>
-                                <th scope="col">Rank</th>
+                                <th scope="col">Nama Peserta</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">No Handphone</th>
+                                <th scope="col">Foto Peserta</th>
+                                <th scope="col">Logo Instansi</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -109,16 +111,17 @@
                             @foreach($tambah as $no=>$data)
                             <tr>
                                 <td>{{ $no+1 }}</td>
-                                <td>{{ $data->namapeserta }}</td>
-                                <td>{{ $data->university}}</td>
-                                <td>{{ $data->scorecp}}</td>
-                                <td>{{ $data->rank}}</td>
+                                <td>{{ $data->instansi }}</td>
+                                <td>{{ $data->nama}}</td>
+                                <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email }}">{{ $data->email}}</a></td>
+                                <td><a href="https://wa.me/{{ $data->nohp }}">{{ $data->nohp}}</a></td>
+                                <td>{{ $data->foto}}</td>
+                                <td>{{ $data->logo}}</td>
                                 <td>
-                                    <a href="{{ route('spc.edit', $data->id) }}">Edit</a>
-                                    <form action="{{ route('spc.hapus', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                    <a href="{{ route('spc.editpe', $data->id) }}">Edit</a>
+                                    <form action="{{ route('spc.hapuspe', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 
                                         @csrf
-                                        
-                                        <button type="submit" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                        <button type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -138,6 +141,11 @@
             thead th {
                 background-color: #0d6efd !important;
             }
+            a[href^="mailto:"] {
+    color:#0d6efd; 
+    text-decoration: underline;
+}
+
         </style>
     </section>
 </div>
@@ -160,7 +168,7 @@
         });
     }
     </script>
-<script src="../../../js/adminLKTI.js"></script>
+<script src="../../js/adminLKTI.js"></script>
 <script>
     document.getElementById("menu").addEventListener("click", function () {
         document.body.classList.toggle("sidebar-open");

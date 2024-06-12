@@ -186,14 +186,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_1">@lang('messages.bukti')</label>
+                                <label for="buktifollow_1">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
                                 <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_1') is-invalid @enderror required>
                                 @error('buktfollow_1')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_1">Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label for="twibbon_1">Upload Twibbon </label>
                                 <input name="twibbon_1" id="twibbon_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_1') is-invalid @enderror required>
                                 @error('twibbon_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -286,14 +286,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_2">@lang('messages.bukti')</label>
+                                <label for="buktifollow_2">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
                                 <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_2') is-invalid @enderror required>
                                 @error('buktifollow_2')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_2">Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label for="twibbon_2">Upload Twibbon </label>
                                 <input name="twibbon_2" id="twibbon_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_2') is-invalid @enderror required>
                                 @error('twibbon_2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -386,14 +386,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_3">@lang('messages.bukti')</label>
+                                <label for="buktifollow_3">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
                                 <input name="buktifollow_3" id="buktifollow_3" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_3') is-invalid @enderror required>
                                 @error('buktfollow_3')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_3">Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label for="twibbon_3">Upload Twibbon </label>
                                 <input name="twibbon_3" id="twibbon_3" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_3') is-invalid @enderror required>
                                 @error('twibbon_3')
                                 <div class="text-danger">{{ $message }}</div>
@@ -486,14 +486,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_4">@lang('messages.bukti')</label>
+                                <label for="buktifollow_4">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
                                 <input name="buktifollow_4" id="buktifollow_4" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_4') is-invalid @enderror required>
                                 @error('buktifollow_4')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_4">Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label for="twibbon_4">Upload Twibbon</label>
                                 <input name="twibbon_4" id="twibbon_4" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_4') is-invalid @enderror required>
                                 @error('twibbon_4')
                                 <div class="text-danger">{{ $message }}</div>
@@ -586,14 +586,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_5">@lang('messages.bukti')</label>
+                                <label for="buktifollow_5">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
                                 <input name="buktifollow_5" id="buktifollow_5" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_5') is-invalid @enderror required>
                                 @error('buktfollow_5')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_5">Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label for="twibbon_5">Upload Twibbon</label>
                                 <input name="twibbon_5" id="twibbon_5" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_5') is-invalid @enderror required>
                                 @error('twibbon_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -612,6 +612,13 @@
                                 @enderror
                             </div>
                             <div class="input-field">
+                                <label for="namateam">Team Name</label>
+                                <input type="text" name="namateam" id="namateam" placeholder="@lang('messages.place') Teamname"  @error('instansi') is-invalid @enderror required>
+                                @error('instansi')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
                                 <label for="linkvidio">Link Video *Optional</label>
                                 <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror required>
                                 @error('linkvidio')
@@ -619,7 +626,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="surat_delegasi">@lang('messages.surat')</label>
+                                <label for="surat_delegasi">@lang('messages.surat') *format: pdf</label>
                                 <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror  required>
                                 @error('surat_delegasi')
                                 <div class="text-danger">{{ $message }}</div>

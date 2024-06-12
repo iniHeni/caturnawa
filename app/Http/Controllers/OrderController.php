@@ -46,115 +46,127 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/ktm1';
             $image = $request->file('ktm_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/ktm1/' . $image_name);
 
-            $order['ktm_1'] = $image_name;
+            $order['ktm_1'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_2'))
         {
             $destination_path = 'public/images/edc/ktm2';
             $image = $request->file('ktm_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/ktm2/' . $image_name);
 
-            $order['ktm_2'] = $image_name;
+            $order['ktm_2'] = $imageUrl;
 
         }
         if($request->hasFile('foto_1'))
         {
             $destination_path = 'public/images/edc/foto1';
             $image = $request->file('foto_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/foto1/' . $image_name);
 
-            $order['foto_1'] = $image_name;
+            $order['foto_1'] = $imageUrl;
 
         }
         if($request->hasFile('foto_2'))
         {
             $destination_path = 'public/images/edc/foto2';
             $image = $request->file('foto_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/foto2/' . $image_name);
 
-            $order['foto_2'] = $image_name;
+            $order['foto_2'] = $imageUrl;
 
         }
         if($request->hasFile('krs_1'))
         {
             $destination_path = 'public/images/edc/krs1';
             $image = $request->file('krs_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/krs1/' . $image_name);
 
-            $order['krs_1'] = $image_name;
+            $order['krs_1'] = $imageUrl;
 
         }
         if($request->hasFile('krs_2'))
         {
             $destination_path = 'public/images/edc/krs2';
             $image = $request->file('krs_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
-            $order['krs_2'] = $image_name;
+            $imageUrl = asset('storage/images/edc/krs2/' . $image_name);
+
+            $order['krs_2'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_1'))
         {
             $destination_path = 'public/images/edc/bukti1';
             $image = $request->file('buktifollow_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
 
-            $order['buktifollow_1'] = $image_name;
+            $imageUrl = asset('storage/images/edc/bukti1/' . $image_name);
 
+            $order['buktifollow_1'] = $imageUrl;
         }
         if($request->hasFile('buktifollow_2'))
         {
             $destination_path = 'public/images/edc/bukti2';
             $image = $request->file('buktifollow_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/bukti2/' . $image_name);
 
-            $order['buktifollow_2'] = $image_name;
+            $order['buktifollow_2'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon'))
         {
             $destination_path = 'public/images/edc/twibbon';
             $image = $request->file('twibbon');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/twibbon/' . $image_name);
 
-            $order['twibbon'] = $image_name;
+            $order['twibbon'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon2'))
         {
             $destination_path = 'public/images/edc/twibbon2';
             $image = $request->file('twibbon2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/edc/twibbon2/' . $image_name);
 
-            $order['twibbon2'] = $image_name;
-
+            $order['twibbon2'] = $imageUrl;
         }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'public/document/edc/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/edc/surat/' . $image_name);
 
-            $order['surat_delegasi'] = $image_name;
+            $order['surat_delegasi'] = $imageUrl;
 
         }
 
          $additionalData = [
         'price' => 350000,
         'status' => 'Unpaid',
+        'order' => rand(),
         'kompetisi' => 'English Debate Competition',
     ];
 
@@ -172,9 +184,9 @@ class OrderController extends Controller
 // Set 3DS transaction for credit card to true
 \Midtrans\Config::$is3ds = true;
 
-$params = array(
+$paramss = array(
     'transaction_details' => array(
-        'order_id' => rand(),
+        'order_id' => $order->order,
         'gross_amount' => $order->price,
     ),
     'item_details' => array(
@@ -193,17 +205,16 @@ $params = array(
     ),
 );
 
-$snapToken = \Midtrans\Snap::getSnapToken($params);
+$snapToken = \Midtrans\Snap::getSnapToken($paramss);
 return view('matalomba/edc/checkout', compact('snapToken', 'order'));
     }
     public function callback(Request $request){
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            if($request->status == 'capture' or $request-> status == 'settlement'){
-                $order = Order::find ($request->order_id);
-                $order->create(['status' => 'Paid']);
-            }
+            $request->status == 'capture' or $request-> status == 'settlement';
+                
+            
         }
     }
     public function home($id){

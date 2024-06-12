@@ -1,0 +1,120 @@
+h5{margin-top: 5rem;
+    font-size: 30px;
+    text-align: center;
+    color: #f6ae31;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    max-width: 45rem;
+    margin: 90px auto;
+    padding: 20px;
+    gap: 45px;
+  }
+    .card-list .card-item {
+      background: #fff;
+      padding: 26px;
+      border-radius: 25px;
+      box-shadow: 0px 5px 8px #f6ae31;
+      list-style: none;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: border 0.5s ease;
+    }
+    .card-list .card-item:hover {
+      border: 2px solid #f6ae31;
+    }
+    .card-list .card-item img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .card-list span {
+      display: inline-block;
+      background: #d1e8ff;
+      margin-top: 32px;
+      padding: 8px 15px;
+      font-size: 1rem;
+      border-radius: 50px;
+      font-weight: 800;
+    }
+    .card-list .developer {
+      background-color: #0089ff; 
+      color: #fff;
+  }   
+ 
+  .card-list .creator {
+    background-color: #cfff00;
+    color: #6a782d;
+ }
+ 
+ 
+  .card-list .manager {
+    background-color: #ff7878;
+    color: #8e0000;
+ }
+  
+  .card-list .designer {
+      background-color: #d1e8ff;
+      color: #2968a8;
+  }
+  .card-list .editor {
+      background-color: #d6f8d6; 
+      color: #205c20;
+  }
+    .card-item h3 {
+      color: #000;
+      font-size: 1.3rem;
+      margin-top: 28px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .card-item .card-icon {
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 180px;
+      color: #f6ae31;
+      border: 1px solid #f6ae31;
+      border-radius: 20px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .add{
+       display: inline-block;
+     background: #d1e8ff;
+     margin-top: 32px;
+     padding: 8px 15px;
+     font-size: 1rem;
+     font-weight: 800;
+     background-color: #2f61f1;
+     color: #000;
+     border-radius: 60px;
+    }
+    
+    
+    .card-list .card-item:hover .card-icon  {
+      background: #f6ae31;
+      color: #fff; 
+    }
+    @media (max-width: 1200px) {
+      .card-list .card-item {
+          padding: 15px;
+      }
+    }
+    @media screen and (max-width: 980px) {
+      .card-list {
+          margin: 0 auto;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          
+      }
+    }
+
+    

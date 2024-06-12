@@ -4,19 +4,19 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="stylesheet" href="../../css/swiper.css">
+        <link rel="stylesheet" href="../../../css/swiper.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/nowrap.css">
+      <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenulkti.css">
-      <link rel="stylesheet" href="../../css/pagelombalkti.css">
+      <link rel="stylesheet" href="../../../css/navmenulkti.css">
+      <link rel="stylesheet" href="../../../css/pagelombalkti.css">
 
       <title>Caturnawa - KTI</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -46,7 +46,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
    </head>
@@ -62,8 +62,8 @@
        <ul class="nav__list">
        <div style="margin-right: 15rem" class="nav__item">
 
-						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../../locale/ind" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="../../locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
                     <li class="nav__item">
                         <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -110,123 +110,23 @@
       <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
+                    @if($peserta->count() > 0)
+                    @foreach($peserta as $rank => $data)
                     <div class="card swiper-slide">
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
+                            <img src="{{ $data->logo }}" alt="{{ $data->namateam }}" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h2 class="name">Team 1</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
+                            <h2 class="name">{{ $data->instansi }}</h2>
+                            <p class="description">{{ $data->namateam }}</p>
+                            <button class="button"><a href="{{route('sm.detailpeserta', $rank + 1) }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 2</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 3</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 4</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 5</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 6</h2>
-                            <p class="description">@lang('messages.bio').</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 7</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 8</h2>
-                            <p class="description">@lang('messages.bio').</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/spc.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 9</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaLKTI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -352,9 +252,9 @@
     );
   });
     </script>
-<script src="../../js/swiper.js"></script>
-<script src="../../js/car2.js"></script>
-      <script src="../../js/nav.js"></script>
+<script src="../../../js/swiper.js"></script>
+<script src="../../../js/car2.js"></script>
+      <script src="../../../js/nav.js"></script>
     </script>
     <script type="text/javascript">
  const penyisihan = document.getElementById('penyisihan');

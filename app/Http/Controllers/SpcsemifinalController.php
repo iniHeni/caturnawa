@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pesertaspc;
 use App\Models\spcsemifinal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -20,7 +21,7 @@ class SpcsemifinalController extends Controller
 
     public function tambahsf(Request $request){
         $tambah = $request->validate([
-            'namapeserta' => 'required|string|max:50',
+            'namapeserta' => 'required',
             'juri' => 'required',
             'scorepenyajian' => 'required|integer|min:0|max:100',
             'scoresubs' => 'required|integer|min:0|max:100',
@@ -38,12 +39,13 @@ class SpcsemifinalController extends Controller
 
     public function editsf($id) {
         $edit = spcsemifinal::find($id);
-        return view('admin/LKTI/editsf', compact('edit'));
+        $peserta = pesertaspc::all();
+        return view('admin/LKTI/editsf', compact('edit', 'peserta'));
     }
 
     public function updatesf(Request $request, $id){
     $update = $request->validate([
-            'namapeserta' => 'required|string|max:50',
+            'namapeserta' => 'required',
             'juri' => 'required',
             'scorepenyajian' => 'required|integer|min:0|max:100',
             'scoresubs' => 'required|integer|min:0|max:100',
@@ -70,5 +72,10 @@ public function semifinal(){
     )->get();
     
     return view('matalomba/lkti/sfinal', compact('semifinal'));
+ }
+ public function pesertaasf(){
+    $peserta = pesertaspc::all();
+    
+    return view('admin/LKTI/tambahsf', compact('peserta'));
  }
 }

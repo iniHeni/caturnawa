@@ -160,7 +160,6 @@ form input.error,
     }
     .konten form{
         min-height: 400px;
-        
     }
 }
 @media (max-width: 390px) {

@@ -67,9 +67,10 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('sm.mainmenu')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -96,27 +97,42 @@
                 <div class="fields"> 
                   <div class="input-field">
                     <label for="namateam">Nama Team</label>
-                    <input name="namateam" id="namateam" type="text" placeholder=" Nama Team" required >
+                    <select name="namateam" id="namateam" is-invalid required >
+                      <option selected>Pilih Nama Team</option> 
+                      @foreach ($peserta as $j)
+                          <option >{{ $j->namateam }}</option>
+                      @endforeach
+                  </select>
                 </div>
                     <div class="input-field">
                         <label for="peserta1">Nama Peserta 1</label>
-                        <input name="peserta1" id="peserta1" type="text" placeholder=" Masukkan Nama Peserta" required >
+                        <select name="peserta1" id="peserta1" is-invalid required >
+                          <option  selected>Pilih Peserta</option> 
+                      </select>
                     </div>
                     <div class="input-field">
                       <label for="peserta2">Nama Peserta 2</label>
-                      <input name="peserta2" id="peserta2" type="text" placeholder=" Masukkan Nama Peserta" required >
+                      <select name="peserta2" id="peserta2" is-invalid required >
+                        <option selected>Pilih Peserta</option> 
+                    </select>
                   </div>
                   <div class="input-field">
                     <label for="peserta3">Nama Peserta 3</label>
-                    <input name="peserta3" id="peserta3" type="text" placeholder=" Masukkan Nama Peserta" required >
+                    <select name="peserta3" id="peserta3" is-invalid required >
+                      <option selected>Pilih Peserta</option> 
+                  </select>
                 </div>
                 <div class="input-field">
                   <label for="peserta4">Nama Peserta 4</label>
-                  <input name="peserta4" id="peserta4" type="text" placeholder=" Masukkan Nama Peserta" required >
+                  <select name="peserta4" id="peserta4" is-invalid required >
+                    <option selected>Pilih Peserta</option> 
+                </select>
               </div>
               <div class="input-field">
                 <label for="peserta5">Nama Peserta 5</label>
-                <input name="peserta5" id="peserta5" type="text" placeholder="Masukkan Nama Peserta" required >
+                <select name="peserta5" id="peserta5" is-invalid required >
+                  <option selected>Pilih Peserta</option> 
+              </select>
             </div>
                     <div class="input-field">
                       <label for="juri">Nama Juri</label>
@@ -228,7 +244,7 @@
       form.total.value = total;
     }
   </script>
-<script src="../../../js/adminLKTI.js"></script>
+<script src="../../../js/adminSM.js"></script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
@@ -253,5 +269,55 @@ $("body").css(
 );
 });
 </script>
+<script>
+  const pesertaData = @json($peserta);
+
+  const namateamSelect = document.getElementById('namateam');
+
+  const pesertaElements = {
+    peserta1: document.getElementById('peserta1'),
+    peserta2: document.getElementById('peserta2'),
+    peserta3: document.getElementById('peserta3'),
+    peserta4: document.getElementById('peserta4'),
+    peserta5: document.getElementById('peserta5')  // Tambahkan kembali peserta5
+  };
+
+  namateamSelect.addEventListener('change', () => {
+    const selectedNamaTeam = namateamSelect.value;
+    const selectedTeamMembers = pesertaData.filter(p => p.namateam === selectedNamaTeam);
+
+    for (const key in pesertaElements) {
+      while (pesertaElements[key].options.length > 0) {
+        pesertaElements[key].remove(0);
+      }
+    }
+
+    if (selectedTeamMembers.length > 0) {
+
+      selectedTeamMembers.forEach(member => {
+        const option1 = document.createElement('option');
+        option1.value = member.nama || '';
+        option1.text = member.nama || '';
+        pesertaElements.peserta1.add(option1);
+
+        for (let i = 2; i <= 5; i++) { 
+          const pesertaKey = `peserta${i}`;
+          const option = document.createElement('option');
+          option.value = member[`nama${i - 1}`] || ''; 
+          option.text = member[`nama${i - 1}`] || '';
+          pesertaElements[pesertaKey].add(option);
+        }
+      });
+    } else {
+      for (let i = 1; i <= 5; i++) { 
+        const pesertaKey = `peserta${i}`;
+        const option = document.createElement('option');
+        option.value = '';
+        option.text = 'Tidak ada anggota';
+        pesertaElements[pesertaKey].add(option);
+      }
+    }
+  });
+</script> 
 </body>
 </html>

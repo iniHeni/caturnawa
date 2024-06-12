@@ -14,6 +14,8 @@ use App\Http\Controllers\penyisihanutamaController;
 use App\Http\Controllers\loginadminController;
 use App\Http\Controllers\smsemifinalController;
 use App\Http\Controllers\smfinalController;
+use App\Http\Controllers\pesertaspcController;
+use App\Http\Controllers\pesertasmController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -21,6 +23,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('index');
 })->name('utama');
+
 
 // change Language
 
@@ -37,6 +40,9 @@ Route::post('/kdbi/checkout', [OrderkdbiController::class, 'checkout']);
 Route::post('/lkti/checkout', [OrderlktiController::class, 'checkout']);
 Route::post('/sm/checkout', [OrdersmController::class, 'checkout']);
 
+
+Route::get('matalomba/spc/detailpeserta/{id}', [pesertaspcController::class, 'detailpesertaspc'])->name('spc.detailpeserta');
+Route::post('/tambah/peserta', [pesertaspcController::class, 'tambahpe']);
 Route::post('/tambah', [spcpenyisihanController::class, 'tambah']);
 Route::post('/tambah/sf', [spcsemifinalController::class, 'tambahsf']);
 Route::post('/tambah/final', [spcfinalController::class, 'tambahf']);
@@ -44,6 +50,9 @@ Route::get('matalomba/lkti/penyisihan', [spcpenyisihanController::class, 'penyis
 Route::get('matalomba/lkti/sfinal', [spcsemifinalController::class, 'semifinal']);
 Route::get('matalomba/lkti/final', [spcfinalController::class, 'final']);
 
+
+Route::get('matalomba/sm/detailpeserta/{id}', [pesertasmController::class, 'detailpeserta'])->name('sm.detailpeserta');
+Route::post('/tambahsm/peserta', [pesertasmController::class, 'tambahpee']);
 Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
 Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
 Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
@@ -53,24 +62,13 @@ Route::get('matalomba/sm/final/detail/{id}', [smfinalController::class, 'detailf
 
 
 
-
-
-Route::get('/spc/tambah', function () {
-    return view('admin/LKTI/tambah');
+Route::get('/spc/tambah/peserta', function () {
+    return view('admin/LKTI/tambahpe');
 });
 
-Route::get('/spc/tambah/semifinal', function () {
-    return view('admin/LKTI/tambahsf');
-});
-Route::get('/spc/tambah/final', function () {
-    return view('admin/LKTI/tambahf');
-});
 
-Route::get('/sm/tambah/penyisihan', function () {
-    return view('admin/sm/tambah');
-});
-Route::get('/sm/tambah/f', function () {
-    return view('admin/sm/tambahf');
+Route::get('/sm/tambah/peserta', function () {
+    return view('admin/sm/tambahpee');
 });
 //  Matalomba EDC 
 Route::get('/matalomba/edc', function () {
@@ -335,9 +333,7 @@ Route::get('/matalomba/finalKDBI/round3', function () {
 });
 
 // Matalomba LKTI 
-Route::get('/matalomba/lkti', function () {
-    return view('matalomba/lkti/lkti');
-});
+Route::get('/matalomba/spc', [pesertaspcController::class, 'pesertaspc'])->name('spc.page');
 
 Route::get('/matalomba/daftarKTI', function () {
     return view('matalomba/lkti/daftarLKTI');
@@ -347,9 +343,7 @@ Route::get('/matalomba/loginspc', function () {
     return view('matalomba/lkti/login');
 });
 
-Route::get('/matalomba/detailpesertaLKTI', function () {
-    return view('matalomba/lkti/detailpeserta');
-});
+
 
 Route::get('/matalomba/scoreLKTI', function () {
     return view('matalomba/lkti/score');
@@ -366,12 +360,8 @@ Route::get('/matalomba/finalLKTI', function () {
     return view('matalomba/lkti/final');
 });
 
+Route::get('/matalomba/shortmovie', [pesertasmController::class, 'peserta'])->name('sm.page');
 
-
-// Matalomba SM 
-Route::get('/matalomba/shortmovie', function () {
-    return view('matalomba/sm/sm');
-});
 
 Route::get('/matalomba/daftarSM', function () {
     return view('matalomba/sm/daftarSM');
@@ -383,10 +373,6 @@ Route::get('/matalomba/loginsm', function () {
 
 Route::get('/matalomba/uploadSM', function () {
     return view('matalomba/sm/uploadSM');
-});
-
-Route::get('/matalomba/detailpesertaSM', function () {
-    return view('matalomba/sm/detailpeserta');
 });
 
 Route::get('/matalomba/scoreSM', function () {
@@ -920,6 +906,13 @@ Route::get('/admin/beranda1', function () {
 
 
 // Route penyisihanLKTI
+Route::get('/admin/spc/tambahpeLKTI1', [spcpenyisihanController::class, 'pesertaa'])->name('spc.pesertaa');
+Route::get('/admin/spc/tambahpesfLKTI1', [spcsemifinalController::class, 'pesertaasf'])->name('spc.pesertaasf');
+Route::get('/admin/spc/tambahpefLKTI1', [spcfinalController::class, 'pesertaaf'])->name('spc.pesertaaf');
+Route::get('/admin/pesertaLKTI1', [pesertaspcController::class, 'tampilpe'])->name('spc.tampilpe');
+Route::get('/admin/LKTI/editpe/{id}', [pesertaspcController::class, 'editpe'])->name('spc.editpe');
+Route::post('/admin/LKTI/updatepe/{id}', [pesertaspcController::class, 'updatepe'])->name('spc.updatepe');
+Route::post('/admin/LKTI/hapuspe/{id}', [pesertaspcController::class, 'hapuspe'])->name('spc.hapuspe');
 
 Route::get('/admin/penyisihanLKTI1', [spcpenyisihanController::class, 'tampil'])->name('spc.tampil');
 Route::get('/admin/LKTI/edit/{id}', [spcpenyisihanController::class, 'edit'])->name('spc.edit');
@@ -954,71 +947,12 @@ Route::get('/admin/beranda1', function () {
     return view('admin/SM/beranda');
 });
 
-
-// Route penyisihanSM
-
-Route::get('/admin/penyisihanSM', function () {
-    return view('admin/SM/penyisihanSM');
-});
-
-// Route penyisihan Team SM
-
-Route::get('/admin/penyisihanSMt1', function () {
-    return view('admin/SM/sectionp/penyisihanSM1');
-});
-
-Route::get('/admin/penyisihanSMt2', function () {
-    return view('admin/SM/sectionp/penyisihanSM2');
-});
-
-Route::get('/admin/penyisihanSMt3', function () {
-    return view('admin/SM/sectionp/penyisihanSM3');
-});
-Route::get('/admin/penyisihanSMt4', function () {
-    return view('admin/SM/sectionp/penyisihanSM4');
-});
-Route::get('/admin/penyisihanSMt5', function () {
-    return view('admin/SM/sectionp/penyisihanSM5');
-});
-Route::get('/admin/penyisihanSMt6', function () {
-    return view('admin/SM/sectionp/penyisihanSM6');
-});
-Route::get('/admin/penyisihanSMt7', function () {
-    return view('admin/SM/sectionp/penyisihanSM7');
-});
-Route::get('/admin/penyisihanSMt8', function () {
-    return view('admin/SM/sectionp/penyisihanSM8');
-});
-Route::get('/admin/penyisihanSMt9', function () {
-    return view('admin/SM/sectionp/penyisihanSM9');
-});
-Route::get('/admin/penyisihanSMt10', function () {
-    return view('admin/SM/sectionp/penyisihanSM10');
-});
-Route::get('/admin/penyisihanSMt11', function () {
-    return view('admin/SM/sectionp/penyisihanSM11');
-});
-Route::get('/admin/penyisihanSMt12', function () {
-    return view('admin/SM/sectionp/penyisihanSM12');
-});
-Route::get('/admin/penyisihanSMt13', function () {
-    return view('admin/SM/sectionp/penyisihanSM13');
-});
-Route::get('/admin/penyisihanSMt14', function () {
-    return view('admin/SM/sectionp/penyisihanSM14');
-});
-Route::get('/admin/penyisihanSMt15', function () {
-    return view('admin/SM/sectionp/penyisihanSM15');
-});
-
-
-
-
-// Route finalSM
-
-Route::get('/admin/finalSM', function () {
-    return view('admin/SM/finalSM');
-});
+Route::get('/admin/sm/tambahpesfSM1', [smsemifinalController::class, 'pesertasf'])->name('sm.pesertasf');
+Route::get('/admin/sm/tambahpefSM1', [smfinalController::class, 'pesertaf'])->name('sm.pesertaf');
+Route::get('/admin/pesertaSM', [pesertasmController::class, 'tampilpee'])->name('sm.tampilpee');
+Route::get('/admin/SM/editpee/{id}', [pesertasmController::class, 'editpee'])->name('sm.editpee');
+Route::post('/admin/SM/updatepee/{id}', [pesertasmController::class, 'updatepee'])->name('sm.updatepee');
+Route::post('/admin/SM/hapuspee/{id}', [pesertasmController::class, 'hapuspee'])->name('sm.hapuspee');
 
 Route::get('/admin/penyisihanSM', [smsemifinalController::class, 'tampilp'])->name('sm.tampilp');
 Route::get('/admin/SM/editp/{id}', [smsemifinalController::class, 'editp'])->name('sm.editp');
@@ -1030,25 +964,6 @@ Route::get('/admin/SM/editf/{id}', [smfinalController::class, 'editf'])->name('s
 Route::post('/admin/SM/updatef/{id}', [smfinalController::class, 'updatef'])->name('sm.updatef');
 Route::post('/admin/SM/hapusf/{id}', [smfinalController::class, 'hapusf'])->name('sm.hapusf');
 
-// Route final Team SM
-Route::get('/admin/finalSMt1', function () {
-    return view('admin/SM/sectionf/finalSM1');
-});
-
-Route::get('/admin/finalSMt2', function () {
-    return view('admin/SM/sectionf/finalSM2');
-});
-
-Route::get('/admin/finalSMt3', function () {
-    return view('admin/SM/sectionf/finalSM3');
-});
-Route::get('/admin/finalSMt4', function () {
-    return view('admin/SM/sectionf/finalSM4');
-});
-
-
-Route::get('/admin/mainmenuSM', [AuthController::class, 'showMainMenu'])->name('mainmenu.showsm'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuSM', [AuthController::class, 'login'])->name('mainmenu.loginsm'); // Rute untuk login (POST)
 
 
 

@@ -68,6 +68,7 @@
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
@@ -99,10 +100,15 @@
               <div class="details personal">
                   <span class="title">Data Penilaian</span>
                   <div class="fields"> 
-                      <div class="input-field">
-                          <label for="namapeserta">Nama Peserta</label>
-                          <input name="namapeserta" id="namapeserta" type="text" placeholder="Masukkan Nama Peserta" required>
-                      </div>
+                    <div class="input-field">
+                        <label for="namapeserta">Nama Peserta</label>
+                        <select name="namapeserta" id="namapeserta" is-invalid required >
+                            <option selected>Pilih Peserta</option> 
+                            @foreach ($peserta as $j)
+                                <option >{{ $j->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                       <div class="input-field">
                         <label for="juri">Nama Juri</label>
                         <select name="juri" id="juri" is-invalid  required>

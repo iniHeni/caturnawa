@@ -49,115 +49,129 @@ class OrderkdbiController extends Controller
         {
             $destination_path = 'public/images/kdbi/ktm1';
             $image = $request->file('ktm_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/ktm_1/' . $image_name);
 
-            $orderkdbi['ktm_1'] = $image_name;
+            $orderlkti['ktm_1'] = $imageUrl;
 
         }
         if($request->hasFile('ktm_2'))
         {
             $destination_path = 'public/images/kdbi/ktm2';
             $image = $request->file('ktm_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/ktm2/' . $image_name);
 
-            $orderkdbi['ktm_2'] = $image_name;
+            $orderlkti['ktm_2'] = $imageUrl;
 
         }
         if($request->hasFile('foto_1'))
         {
             $destination_path = 'public/images/kdbi/foto1';
             $image = $request->file('foto_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/foto1/' . $image_name);
 
-            $orderkdbi['foto_1'] = $image_name;
+            $orderlkti['foto_1'] = $imageUrl;
 
         }
         if($request->hasFile('foto_2'))
         {
             $destination_path = 'public/images/kdbi/foto2';
             $image = $request->file('foto_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/foto2/' . $image_name);
 
-            $orderkdbi['foto_2'] = $image_name;
+            $orderlkti['foto_2'] = $imageUrl;
 
         }
         if($request->hasFile('krs_1'))
         {
             $destination_path = 'public/images/kdbi/krs1';
             $image = $request->file('krs_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/krs1/' . $image_name);
 
-            $orderkdbi['krs_1'] = $image_name;
+            $orderlkti['krs_1'] = $imageUrl;
 
         }
         if($request->hasFile('krs_2'))
         {
             $destination_path = 'public/images/kdbi/krs2';
             $image = $request->file('krs_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
-            $orderkdbi['krs_2'] = $image_name;
+            $imageUrl = asset('storage/images/kdbi/krs2/' . $image_name);
+
+            $orderlkti['krs_2'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_1'))
         {
             $destination_path = 'public/images/kdbi/bukti1';
             $image = $request->file('buktifollow_1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/bukti1/' . $image_name);
 
-            $orderkdbi['buktifollow_1'] = $image_name;
+            $orderlkti['buktifollow_1'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_2'))
         {
             $destination_path = 'public/images/kdbi/bukti2';
             $image = $request->file('buktifollow_2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/bukti2/' . $image_name);
 
-            $orderkdbi['buktifollow_2'] = $image_name;
+            $orderlkti['buktifollow_2'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon'))
         {
             $destination_path = 'public/images/kdbi/twibbon';
             $image = $request->file('twibbon');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/kdbi/twibbon/' . $image_name);
 
-            $orderkdbi['twibbon'] = $image_name;
-
+            $orderlkti['twibbon'] = $imageUrl;
         }
         if($request->hasFile('twibbon2'))
         {
             $destination_path = 'public/images/kdbi/twibbon2';
             $image = $request->file('twibbon2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
 
-            $orderkdbi['twibbon2'] = $image_name;
+            $imageUrl = asset('storage/images/kdbi/twibbon2/' . $image_name);
+
+            $orderlkti['twibbon2'] = $imageUrl;
 
         }
         if($request->hasFile('surat_delegasi'))
         {
             $destination_path = 'public/document/kdbi/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
 
-            $orderkdbi['surat_delegasi'] = $image_name;
+            $imageUrl = asset('storage/document/kdbi/surat/' . $image_name);
+
+            $orderlkti['surat_delegasi'] = $imageUrl;
 
         }
 
          $additionalData = [
         'price' => 300000,
         'status' => 'Unpaid',
+        'order' => rand(),
         'kompetisi' => 'Debate Bahasa Indonesia Competition',
     ];
 
@@ -177,7 +191,7 @@ class OrderkdbiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => rand(),
+    'order_id' => $orderkdbi->order,
     'gross_amount' => $orderkdbi->price,
 ),
 'item_details' => array(
@@ -199,7 +213,7 @@ $params = array(
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 return view('matalomba/kdbi/checkout', compact('snapToken', 'orderkdbi'));
 }
-public function callback(Request $request){
+public function callbackk(Request $request){
     $serverKey = config('midtrans.server_key');
     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){

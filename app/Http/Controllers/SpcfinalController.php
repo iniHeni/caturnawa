@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pesertaspc;
 use App\Models\spcfinal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -37,6 +38,7 @@ class SpcfinalController extends Controller
 
     public function editf($id) {
         $edit = spcfinal::find($id);
+        $peserta = pesertaspc::all();
         return view('admin/LKTI/editf', compact('edit'));
     }
 
@@ -69,5 +71,10 @@ public function final(){
     )->get();
     
     return view('matalomba/lkti/final', compact('final'));
+ }
+ public function pesertaaf(){
+    $peserta = pesertaspc::all();
+    
+    return view('admin/LKTI/tambahf', compact('peserta'));
  }
 }

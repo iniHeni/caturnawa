@@ -68,6 +68,7 @@
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{url('/admin/semifinalLKTI1')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
@@ -91,11 +92,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Final</h1>
-<<<<<<< HEAD
-                <p><a href="{{ url('/spc/tambah/final') }}" style="color:azure; font-size: 30px;">Tambah Penilaian</a></p>
-=======
-                <p><a class="add" href="{{ url('/spc/tambah/final') }}">Tambah Penilaian</a></p>
->>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
+                <p><a class="add" href="{{ route('spc.pesertaaf') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
@@ -134,9 +131,9 @@
                                 <td>{{ $data->juri}}</td>
                                 <td>
                                     <a href="{{ route('spc.editf', $data->id) }}">Edit</a>
-                                    <form action="{{ route('spc.hapusf', $data->id) }}" method="POST" id="deletee">
+                                    <form action="{{ route('spc.hapusf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                         @csrf
-                                        <button id="deleteButton" type="submit" style="color: red">Hapus</button>
+                                        <button  type="submit" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -161,9 +158,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-    document.getElementById('deleteButton').addEventListener('click', function(event) {
-        event.preventDefault(); // Cegah pengiriman formulir secara default
-    
+    function confirmDelete(id) {
         Swal.fire({
             title: 'Apakah Anda yakin?',
             text: "Data ini akan dihapus secara permanen!",
@@ -175,29 +170,12 @@
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Jika pengguna mengklik "Ya, hapus!", kirim formulir
-                document.getElementById('deletee').submit();
+                document.getElementById('delete-form-' + id).submit(); 
             }
         });
-    });
+    }
     </script>
 <script src="../../../js/adminLKTI.js"></script>
-<script>
-    document.getElementById('deletee').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-    
-        Swal.fire({
-            title: 'Success!',
-            text: 'Data berhasil Dihapus!',
-            icon: 'success',
-            confirmButtonText: 'Lanjutkan'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.submit(); // Submit the form after SweetAlert confirmation
-            }
-        });
-    });
-    </script>
     <script>
         document.getElementById("menu").addEventListener("click", function () {
             document.body.classList.toggle("sidebar-open");

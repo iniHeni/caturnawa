@@ -67,7 +67,8 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
   <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
-  <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+  <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+  <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
   <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
   <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
@@ -86,11 +87,10 @@
 </div>
 <div id="data-container">
     <section id="skor">
-<<<<<<< HEAD
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Final</h1>
-                <p><a href="{{ url('/sm/tambah/f') }} " style="color:azure; font-size: 30px;">Tambah Penilaian</a></p>
+                <p><a href="{{ route('sm.pesertaf') }} " class="add" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px;  position: static;">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     <thead style="position: static; top: -1; z-index: 10;">
@@ -142,9 +142,9 @@
                           <td>{{ $data->juri}}</td>
                           <td>
                               <a href="{{ route('sm.editf', $data->id) }}">Edit</a>
-                              <form action="{{ route('sm.hapusf', $data->id) }}" method="POST" id="deletee">
+                              <form action="{{ route('sm.hapusf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                   @csrf
-                                  <button id="deleteButton" type="submit" style="color: red">Hapus</button>
+                                  <button id="deleteButton" type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                               </form>
                           </td>
                           
@@ -169,28 +169,25 @@
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../../../js/adminSM.js"></script>
 <script>
-  document.getElementById('deleteButton').addEventListener('click', function(event) {
-      event.preventDefault(); // Cegah pengiriman formulir secara default
-  
-      Swal.fire({
-          title: 'Apakah Anda yakin?',
-          text: "Data ini akan dihapus secara permanen!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#d33',
-          cancelButtonColor: '#3085d6',
-          confirmButtonText: 'Ya, hapus!',
-          cancelButtonText: 'Batal'
-      }).then((result) => {
-          if (result.isConfirmed) {
-              // Jika pengguna mengklik "Ya, hapus!", kirim formulir
-              document.getElementById('deletee').submit();
-          }
-      });
-  });
-  </script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data ini akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit(); 
+            }
+        });
+    }
+    </script>
+<script src="../../../js/adminSM.js"></script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
@@ -219,47 +216,3 @@ $("body").css(
 </html>
 
 
-=======
-        <h1 class="welcome" style="margin-bottom: -3rem; margin-top:auto">Pilih Tim</h1>
-    <div class="card-list">
-        <a href="{{url('admin/finalSMt1') }}" class="card-item">
-                <img src="../../img/sm1.png" alt="Card Image">
-                <span class="developer">Tim 1</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
-                <div class="arrow">
-                    <i class="fa fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            
-            <a href="{{url('admin/finalSMt2') }}" class="card-item">
-              <img src="../../img/sm1.png" alt="Card Image">
-              <span class="creator">Tim 2</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-          <a href="{{url('admin/finalSMt3') }}" class="card-item">
-              <img src="../../img/sm.png" alt="Card Image">
-              <span class="designer">Tim 3</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-  
-            <a href="{{url('admin/finalSMt4') }}" class="card-item">
-              <img src="../../img/sm1.png" alt="Card Image">
-              <span class="editor">Tim 4</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-  
-          
-  
-  
-            
-  </div>
->>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea

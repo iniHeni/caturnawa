@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,7 +67,8 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
   <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
-  <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+  <a href="{{route('sm.mainmenu')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+  <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
   <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
   <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
@@ -90,7 +90,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
-                <p><a href="{{ url('/sm/tambah/penyisihan') }} " style="color:azure; font-size: 30px;">Tambah Penilaian</a></p>
+                <p><a class="add" href="{{ route('sm.pesertasf') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px;  position: static;">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     <thead style="position: static; top: -1; z-index: 10;">
@@ -167,9 +167,9 @@
                           <td>{{ $data->juri}}</td>
                           <td>
                               <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
-                              <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="deletee">
+                              <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                   @csrf
-                                  <button id="deleteButton" type="submit" style="color: red">Hapus</button>
+                                  <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                               </form>
                           </td>
                       </tr>
@@ -184,84 +184,36 @@
                 border: 2px solid black !important;
                 text-align: center;
                 vertical-align: middle;
+                
             }
-=======
-<div id="data-container">
-  <section id="skor">
-      <h1 class="welcome" style="margin-bottom: -3rem; margin-top:auto">Pilih Tim</h1>
-  <div class="card-list" style="max-width: 99rem;">
-      <a href="{{url('admin/penyisihanSMt1') }}" class="card-item">
-              <img src="../../img/sm1.png" alt="Card Image">
-              <span class="developer">Tim 1</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-          
-          <a href="{{url('admin/penyisihanSMt2') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="creator">Tim 2</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="{{url('admin/penyisihanSMt3') }}" class="card-item">
-            <img src="../../img/sm.png" alt="Card Image">
-            <span class="designer">Tim 3</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
->>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
 
-          <a href="{{url('admin/penyisihanSMt4') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="editor">Tim 4</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-
-        <a href="{{url('admin/penyisihanSMt5') }}" class="card-item">
-          <img src="../../img/sm.png" alt="Card Image">
-          <span class="manager">Tim 5</span>
-          <h3>@lang('messages.dilaksanakan')</h3>
-          <div class="arrow">
-              <i class="fa fa-arrow-right card-icon"></i>
-          </div>
-      </a>
-
-
-          
+            thead th {
+                background-color: #0d6efd !important;
+            }
+        </style>
+    </section>
 </div>
-<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../../../js/adminSM.js"></script>
 <script>
-  document.getElementById('deleteButton').addEventListener('click', function(event) {
-      event.preventDefault(); // Cegah pengiriman formulir secara default
-  
-      Swal.fire({
-          title: 'Apakah Anda yakin?',
-          text: "Data ini akan dihapus secara permanen!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#d33',
-          cancelButtonColor: '#3085d6',
-          confirmButtonText: 'Ya, hapus!',
-          cancelButtonText: 'Batal'
-      }).then((result) => {
-          if (result.isConfirmed) {
-              // Jika pengguna mengklik "Ya, hapus!", kirim formulir
-              document.getElementById('deletee').submit();
-          }
-      });
-  });
-  </script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data ini akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit(); 
+            }
+        });
+    }
+    </script>
+<script src="../../../js/adminSM.js"></script>
+
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
@@ -273,113 +225,20 @@ $("#loadingDiv").fadeOut(200, () => {
   $("#loadingDiv").remove();
 });
 }
-=======
 
-<div id="data-container">
-  <section id="skor">
->>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
+$(window).on("load", () => {
+setTimeout(removeLoader, 2000);
 
-  <div class="card-list" style="max-width: 99rem;">
-      <a href="{{url('admin/penyisihanSMt6') }}" class="card-item">
-              <img src="../../img/sm1.png" alt="Card Image">
-              <span class="developer">Tim 6</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-          
-          <a href="{{url('admin/penyisihanSMt7') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="creator">Tim 7</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="{{url('admin/penyisihanSMt8') }}" class="card-item">
-            <img src="../../img/sm.png" alt="Card Image">
-            <span class="designer">Tim 8</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-
-          <a href="{{url('admin/penyisihanSMt9') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="editor">Tim 9</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-
-        <a href="{{url('admin/penyisihanSMt10') }}" class="card-item">
-          <img src="../../img/sm.png" alt="Card Image">
-          <span class="manager">Tim 10</span>
-          <h3>@lang('messages.dilaksanakan')</h3>
-          <div class="arrow">
-              <i class="fa fa-arrow-right card-icon"></i>
-          </div>
-      </a>
+$("body").css(
+  "overflow-y",
+  "hidden",
+  setTimeout(() => {
+    $("body").css("overflow-y", "visible");
+  }, 2000)
+);
+});
+</script>
+</body>
+</html>
 
 
-          
-</div>
-
-          
-</div>
-
-
-<div id="data-container">
-  <section id="skor">
-      
-    <div class="card-list" style="max-width: 99rem;">
-              <a href="{{url('admin/penyisihanSMt11') }}" class="card-item">
-              <img src="../../img/sm1.png" alt="Card Image">
-              <span class="developer">Tim 11</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
-              <div class="arrow">
-                  <i class="fa fa-arrow-right card-icon"></i>
-              </div>
-          </a>
-          
-          <a href="{{url('admin/penyisihanSMt12') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="creator">Tim 12</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="{{url('admin/penyisihanSMt13') }}" class="card-item">
-            <img src="../../img/sm.png" alt="Card Image">
-            <span class="designer">Tim 13</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-
-          <a href="{{url('admin/penyisihanSMt14') }}" class="card-item">
-            <img src="../../img/sm1.png" alt="Card Image">
-            <span class="editor">Tim 14</span>
-            <h3>@lang('messages.dilaksanakan')</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-
-        <a href="{{url('admin/penyisihanSMt15') }}" class="card-item">
-          <img src="../../img/sm.png" alt="Card Image">
-          <span class="manager">Tim 15</span>
-          <h3>@lang('messages.dilaksanakan')</h3>
-          <div class="arrow">
-              <i class="fa fa-arrow-right card-icon"></i>
-          </div>
-      </a>
-
-
-          
-</div>

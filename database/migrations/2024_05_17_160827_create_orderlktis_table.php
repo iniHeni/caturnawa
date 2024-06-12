@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('orderlktis', function (Blueprint $table) {
             $table->id();
+            $table->integer('order');
             $table->string('kompetisi');
             $table->string('nama');
             $table->string('email');

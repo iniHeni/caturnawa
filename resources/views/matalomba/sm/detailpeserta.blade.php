@@ -3,7 +3,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../../css/detaillpeserta.css">
+      <link rel="stylesheet" href="../../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../../css/detaillpeserta.css">
 
       <title>Caturnawa - ShortMovie Score</title>
       <style>
@@ -41,7 +41,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
    </head>
@@ -52,12 +52,12 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
+         <img src="../../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="../../../locale/ind" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="../../../locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
           <li class="nav__item">
             <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -100,127 +100,92 @@
       <section>
 <div class="responsive-container-block container">
   <p class="text-blk team-head-text">
-    Team 1
+    Team {{ $dataa->id}}
   </p>
   <div class="responsive-container-block">
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto}}">
         </div>
         <p class="text-blk name">
-          Nama
+         {{ $dataa->nama }}
         </p>
         <p class="text-blk position">
-          Ketua
+          Team Leader 
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta.
+          {{ $dataa->email }}<br>{{ $dataa->nohp }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+       
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto1}}">
         </div>
         <p class="text-blk name">
-          Nama
+          {{ $dataa->nama1 }}
         </p>
         <p class="text-blk position">
           Member 1
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta
+          {{ $dataa->email1 }}<br>{{ $dataa->nohp1 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+    
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto2}}">
         </div>
         <p class="text-blk name">
-          Nama
+          {{ $dataa->nama2 }}
         </p>
         <p class="text-blk position">
           Member 2
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta.
+          {{ $dataa->email2 }}<br>{{ $dataa->nohp2 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+        
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto3}}">
         </div>
         <p class="text-blk name">
-          Nama
+          {{ $dataa->nama3 }}
         </p>
         <p class="text-blk position">
           Member 3
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta
+          {{ $dataa->email3 }}<br>{{ $dataa->nohp3 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+       
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto4}}">
         </div>
         <p class="text-blk name">
-          Nama
+          {{ $dataa->nama4 }}
         </p>
         <p class="text-blk position">
           Member 4
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta
+          {{ $dataa->email4 }}<br>{{ $dataa->nohp4 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -250,6 +215,33 @@
         );
       });</script>
 
-      <script src="../../js/nav.js"></script>
+      <script src="../../../js/nav.js"></script>
+      <script type="text/javascript">
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+        </script>
+        <script type="text/JavaScript"> 
+            function killCopy(e){ return false } 
+            function reEnable(){ return true } 
+            document.onselectstart=new Function ("return false"); 
+            if (window.sidebar)
+            { 
+                document.onmousedown=killCopy; 
+                document.onclick=reEnable; 
+            } 
+        </script>
+        <script type="text/Javascript">
+        $(document).keydown(function(event){
+      if(event.keyCode==123){
+          return false;
+      }
+      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+               return false;
+      }
+  });
+</script>
    </body>
 </html>

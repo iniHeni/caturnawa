@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\smsemifinal;
+use App\Models\pesertasm;
 use App\Models\smfinal;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -21,12 +22,12 @@ class SmfinalController extends Controller
 
     public function tambahf(Request $request){
         $tambah = $request->validate([
-            'namateam' => 'required|string|max:50',
-           'peserta1' => 'required|string|max:50',
-            'peserta2' => 'required|string|max:50',
-            'peserta3' => 'required|string|max:50',
-            'peserta4' => 'required|string|max:50',
-            'peserta5' => 'required|string|max:50',
+            'namateam' => 'required',
+            'peserta1' => 'required',
+            'peserta2' => 'required',
+            'peserta3' => 'required',
+            'peserta4' => 'required',
+            'peserta5' => 'required',
             'juri' => 'required',
             'skorkrit1' => 'required|integer|min:0|max:100',
             'skorkrit2' => 'required|integer|min:0|max:100',
@@ -45,17 +46,18 @@ class SmfinalController extends Controller
 
     public function editf($id) {
         $edit = smfinal::find($id);
-        return view('admin/SM/editsmf', compact('edit'));
+        $peserta = pesertasm::all();
+        return view('admin/SM/editsmf', compact('edit', 'peserta'));
     }
 
     public function updatef(Request $request, $id){
     $update = $request->validate([
-        'namateam' => 'required|string|max:50',
-            'peserta1' => 'required|string|max:50',
-            'peserta2' => 'required|string|max:50',
-            'peserta3' => 'required|string|max:50',
-            'peserta4' => 'required|string|max:50',
-            'peserta5' => 'required|string|max:50',
+        'namateam' => 'required',
+        'peserta1' => 'required',
+        'peserta2' => 'required',
+        'peserta3' => 'required',
+        'peserta4' => 'required',
+        'peserta5' => 'required',
             'juri' => 'required',
             'skorkrit1' => 'required|integer|min:0|max:100',
             'skorkrit2' => 'required|integer|min:0|max:100',
@@ -94,5 +96,9 @@ public function detailf($id){
     $dataa = smfinal::find($id);
     return view('matalomba/sm/detail/detailskor2', compact('dataa'));
  }
-
+ public function pesertaf(){
+    $peserta = pesertasm::all();
+    
+    return view('admin/sm/tambahf', compact('peserta'));
+ }
 }
