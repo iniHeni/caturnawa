@@ -65,8 +65,13 @@
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuSM')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+<<<<<<< HEAD
+    <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
+=======
     <a href="#" id="penyisihanSM" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="#" id="finalSM" class="final"><i class="fa fa-trophy"></i> Final</a>
+>>>>>>> a8a6ea5c37938adf95e6abd002e45c743504edea
     
     
     <!-- resources/views/mainmenu.blade.php -->

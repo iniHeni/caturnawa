@@ -60,8 +60,8 @@
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 14rem" class="nav__item">
-          <li><a href="locale/ind"><img src="../../../img/ind.png"  /></a></li>
-          <li><a href="locale/en"><img src="../../../img/eng.png" /></a></li>
+          <li><a href="../../../locale/ind"><img src="../../../img/ind.png"  /></a></li>
+          <li><a href="../../../locale/en"><img src="../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>

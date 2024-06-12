@@ -75,10 +75,11 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/ktm';
             $image = $request->file('ktm');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '_';
             $path = $request->file('ktm')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/ktm/' . $image_name);
 
-            $orderlkti['ktm'] = $image_name;
+            $orderlkti['ktm'] = $imageUrl;
 
         }
         if($request->hasFile('foto'))
@@ -306,14 +307,14 @@ public function callback(Request $request){
     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){
         if($request->status == 'capture' or $request-> status == 'settlement'){
-            $orderlkti = orderlkti::find ($request->order_id);
-            $orderlkti->array_merge(['status' => 'Paid']);
+            $orderlkti = orderlkti::find ($request);
+            $orderlkti->update(['status' => 'Paid']);
         }
     }
 }
 public function home($id){
     $orderlkti = orderlkti::find($id);
-    return view('/');
+    return view('index');
 }
 public function login(Request $login){
     $loginlkti = $login->validate([

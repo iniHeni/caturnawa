@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('smsemifinals', function (Blueprint $table) {
+        Schema::create('smfinals', function (Blueprint $table) {
             $table->id();
             $table->string('namateam');
             $table->string('peserta1');
@@ -28,18 +28,6 @@ return new class extends Migration
             $table->string('krit3');
             $table->integer('skorkrit4');
             $table->string('krit4');
-            $table->integer('skorkrit5');
-            $table->string('krit5');
-            $table->integer('skorkrit6');
-            $table->string('krit6');
-            $table->integer('skorkrit7');
-            $table->string('krit7');
-            $table->integer('skorkrit8');
-            $table->string('krit8');
-            $table->integer('skorkrit9');
-            $table->string('krit9');
-            $table->integer('skorkrit10');
-            $table->string('krit10');
             $table->integer('total');
             $table->timestamps();
         });
@@ -50,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('smsemifinals');
+        Schema::dropIfExists('smfinals');
     }
 };

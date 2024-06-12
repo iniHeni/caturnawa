@@ -13,6 +13,7 @@ use App\Http\Controllers\spcfinalController;
 use App\Http\Controllers\penyisihanutamaController;
 use App\Http\Controllers\loginadminController;
 use App\Http\Controllers\smsemifinalController;
+use App\Http\Controllers\smfinalController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -63,10 +64,14 @@ Route::get('matalomba/lkti/penyisihan', [spcpenyisihanController::class, 'penyis
 Route::get('matalomba/lkti/sfinal', [spcsemifinalController::class, 'semifinal']);
 Route::get('matalomba/lkti/final', [spcfinalController::class, 'final']);
 
-Route::post('/tambahsm/sf', [spcsemifinalController::class, 'tambahsf']);
-Route::post('/tambahsm/final', [spcfinalController::class, 'tambahf']);
-Route::get('matalomba/sm/sfinal', [spcsemifinalController::class, 'semifinal']);
-Route::get('matalomba/sm/final', [spcfinalController::class, 'final']);
+Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
+Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
+Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
+Route::get('matalomba/sm/penyisihan/detail/{id}', [smsemifinalController::class, 'detail'])->name('sm.detail');
+Route::get('matalomba/sm/final', [smfinalController::class, 'final'])->name('sm.final');
+Route::get('matalomba/sm/final/detail/{id}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+
+
 
 
 
@@ -81,8 +86,8 @@ Route::get('/spc/tambah/final', function () {
     return view('admin/LKTI/tambahf');
 });
 
-Route::get('/sm/tambah/sf', function () {
-    return view('admin/sm/tambahsf');
+Route::get('/sm/tambah/penyisihan', function () {
+    return view('admin/sm/tambah');
 });
 Route::get('/sm/tambah/f', function () {
     return view('admin/sm/tambahf');
@@ -407,22 +412,6 @@ Route::get('/matalomba/detailpesertaSM', function () {
 Route::get('/matalomba/scoreSM', function () {
     return view('matalomba/sm/score');
 });
-
-// score SM
-Route::get('/matalomba/penyisihanSM', function () {
-    return view('matalomba/sm/penyisihan');
-});
-
-Route::get('/matalomba/sfinalSM', function () {
-    return view('matalomba/sm/sfinal');
-});
-
-Route::get('/matalomba/finalSM', function () {
-    return view('matalomba/sm/final');
-});
-
-
-
 
 Route::post('/login/handler', [loginadminController::class, 'login'])->name('login.handler');
 
@@ -1051,6 +1040,15 @@ Route::get('/admin/finalSM', function () {
     return view('admin/SM/finalSM');
 });
 
+Route::get('/admin/penyisihanSM', [smsemifinalController::class, 'tampilp'])->name('sm.tampilp');
+Route::get('/admin/SM/editp/{id}', [smsemifinalController::class, 'editp'])->name('sm.editp');
+Route::post('/admin/SM/updatep/{id}', [smsemifinalController::class, 'updatep'])->name('sm.updatep');
+Route::post('/admin/SM/hapusp/{id}', [smsemifinalController::class, 'hapusp'])->name('sm.hapusp');
+
+Route::get('/admin/finalSM', [smfinalController::class, 'tampilf'])->name('sm.tampilf');
+Route::get('/admin/SM/editf/{id}', [smfinalController::class, 'editf'])->name('sm.editf');
+Route::post('/admin/SM/updatef/{id}', [smfinalController::class, 'updatef'])->name('sm.updatef');
+Route::post('/admin/SM/hapusf/{id}', [smfinalController::class, 'hapusf'])->name('sm.hapusf');
 
 // Route final Team SM
 Route::get('/admin/finalSMt1', function () {
