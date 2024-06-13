@@ -25,8 +25,6 @@ Route::get('/', function () {
 })->name('utama');
 
 
-<<<<<<< HEAD
-=======
 //Route Periode
 
 Route::get('/periodeKDBI', function () {
@@ -46,7 +44,6 @@ Route::get('/periodeEDC', function () {
 });
 
 
->>>>>>> df50c09c227fb1679bd25e4f1c00c7736348e50e
 // change Language
 
 Route::get('locale/{lang}',[LocaleController::class,'setLocale']);

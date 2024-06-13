@@ -184,35 +184,11 @@
                  <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
          </div>
-<<<<<<< HEAD
-        <div class="card-item">
-            <img src="img/sm1.png" alt="Card Image">
-            <h3>@lang('messages.sm')</h3>
-            <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/loginsm') }}" class="card-icon" id="uploadBtn">Upload</a>
-            <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-        <div class="card-item">
-            <img src="img/spc.png" alt="Card Image">
-            <h3>@lang('messages.lkti')</h3>
-            <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/loginspc') }}" class="card-icon" id="uploadSPCBtn">Upload</a>
-            <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-        <div class="card-item">
-            <img src="img/edc.png" alt="Card Image">
-            <h3>@lang('messages.edc')</h3>
-            <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-    </div>
-      </section>
-=======
+         
      </section>
      
      
      
->>>>>>> df50c09c227fb1679bd25e4f1c00c7736348e50e
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,64L34.3,80C68.6,96,137,128,206,133.3C274.3,139,343,117,411,112C480,107,549,117,617,112C685.7,107,754,85,823,85.3C891.4,85,960,107,1029,122.7C1097.1,139,1166,149,1234,144C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
          <!--=============== Kontak Kami ===============-->

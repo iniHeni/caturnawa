@@ -86,6 +86,7 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
+    padding: 0 10px;
     max-width: 1120px;
     margin-inline: 1.5rem;
     margin: -4 auto;
@@ -145,7 +146,6 @@ img {
     background-color: var(--body);
     box-shadow: 0 2px 16px hsla(230, 75%, 32%, 0.15);
     z-index: var(--z-fixed);
-    
     transition: top 0.5s ease;
 }
 
@@ -383,7 +383,7 @@ img {
 
 @media screen and (min-width: 1150px) {
     .container {
-        margin-inline: auto;
+    padding-left: 215px;
     }
 }
 

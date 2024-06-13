@@ -2,7 +2,7 @@
 
 let lastScrollTopHeader = 0; 
 const header = document.getElementById('header');
-const scrollThresholdHeader = 70; 
+const scrollThresholdHeader = 0; 
 
 window.addEventListener('scroll', function() {
     let scrollTopHeader = window.pageYOffset || document.documentElement.scrollTop;
@@ -22,7 +22,7 @@ window.addEventListener('scroll', function() {
 
 let lastScrollTopSidelogo =0;
 const sidelogo = document.getElementById('sidelogo'); 
-const scrollThresholdSidelogo = 60; 
+const scrollThresholdSidelogo = 0; 
 window.addEventListener('scroll', function() {
     let scrollTopSidelogo = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -42,7 +42,7 @@ window.addEventListener('scroll', function() {
 
 let lastScrollTopSidebar = 0;
 const sidebar = document.getElementById('sidebar');
-const scrollThresholdSidebar = 60; 
+const scrollThresholdSidebar = 0; 
 
 window.addEventListener('scroll', function() {
     let scrollTopSidebar = window.pageYOffset || document.documentElement.scrollTop;
