@@ -103,20 +103,12 @@
                         <input name="instansi" id="instansi" type="text" placeholder=" Asal Universitas" required  value="{{ $edit->instansi }}">
                     </div>
                     <div class="input-field">
-                        <label for="nama">Nama Peserta</label>
-                        <input name="nama" id="nama" type="text" placeholder="Nama Peserta" required value="{{ $edit->nama }}">
-                    </div>
-                    <div class="input-field">
                         <label for="email">Email</label>
                         <input name="email" id="email" type="email" placeholder="Email Peserta" required value="{{ $edit->email }}">
                     </div>
                     <div class="input-field">
                         <label for="nohp">No Handphone</label>
                         <input name="nohp" id="nohp" type="number" placeholder="MoHp Peserta" required value="{{ $edit->nohp }}">
-                    </div>
-                    <div class="input-field">
-                        <label for="foto">Foto Formal Peserta *jpg,png.jpeg</label>
-                        <input name="foto" id="foto" type="file"  accept=".png, .jpg, .jpeg" required>
                     </div>
                         <div class="input-field">
                             <label for="logo">Logo Instansi *jpg,png.jpeg</label>

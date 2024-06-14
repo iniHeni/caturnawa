@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('ordersms', function (Blueprint $table) {
             $table->id();
-            $table->integer('order');
+            $table->bigInteger('order');
             $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');

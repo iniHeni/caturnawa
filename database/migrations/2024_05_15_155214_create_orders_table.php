@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('order');
+            $table->bigInteger('order');
             $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');
@@ -45,7 +45,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('instansi');
             $table->string('surat_delegasi')->nullable;
-            $table->string('status');
+            $table->enum('status', ['Unpaid', 'Paid']);
             $table->timestamps();
         });
     }

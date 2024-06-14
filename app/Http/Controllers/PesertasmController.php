@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\pesertasm;
+use App\Models\ordersm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -10,108 +11,42 @@ use Illuminate\Support\Facades\DB;
 class PesertasmController extends Controller
 {
     public function tampilpee(){
+        $paidOrders = ordersm::where('status', 'Paid')
+        ->select('nama_1', 'nama_2', 'nama_3', 'nama_4', 'nama_5' , 'instansi', 'namateam', 'email_1', 'email_2', 'email_3', 'email_4', 'email_5', 'foto_1', 'foto_2', 'foto_3', 'foto_4', 'foto_5', 'nomorhp_1', 'nomorhp_2', 'nomorhp_3', 'nomorhp_4', 'nomorhp_5',)
+        ->get();
+
+    foreach ($paidOrders as $order) {
+        pesertasm::firstOrCreate(
+            ['namateam' => $order->namateam],
+            [
+            'nama' => $order->nama_1,
+            'nama1' => $order->nama_2,
+            'nama2' => $order->nama_3,
+            'nama3' => $order->nama_4,
+            'nama4' => $order->nama_5,
+            'instansi' => $order->instansi,
+            'email' => $order->email_1,
+            'email1' => $order->email_2,
+            'email2' => $order->email_3,
+            'email3' => $order->email_4,
+            'email4' => $order->email_5,
+            'foto' => $order->foto_1,
+            'foto1' => $order->foto_2,
+            'foto2' => $order->foto_3,
+            'foto3' => $order->foto_4,
+            'foto4' => $order->foto_5,
+            'nohp' => $order->nomorhp_1,
+            'nohp1' => $order->nomorhp_2,
+            'nohp2' => $order->nomorhp_3,
+            'nohp3' => $order->nomorhp_4,
+            'nohp4' => $order->nomorhp_5,
+            'logo' => 'nullable',
+        ]);
+    }
         $tambah = pesertasm::select()->get();
         
         return view('admin/sm/pesertasm', compact('tambah'));
      }
-
-    public function tambahpee(Request $request){
-        $tambah = $request->validate([
-            'instansi' => 'required|string|max:50',
-            'namateam' => 'required|string|max:50',
-                'nama' => 'required|string|max:50',
-                'nama1' => 'required|string|max:50',
-                'nama2' => 'required|string|max:50',
-                'nama3' => 'required|string|max:50',
-                'nama4' => 'required|string|max:50',
-                'email' => 'required|email',
-                'email1' => 'required|email',
-                'email2' => 'required|email',
-                'email3' => 'required|email',
-                'email4' => 'required|email',
-                'foto' => 'required|mimes:png,jpeg,jpg|max:5000',
-                'foto1' => 'required|mimes:png,jpeg,jpg|max:5000',
-                'foto2' => 'required|mimes:png,jpeg,jpg|max:5000',
-                'foto3' => 'required|mimes:png,jpeg,jpg|max:5000',
-                'foto4' => 'required|mimes:png,jpeg,jpg|max:5000',
-                'nohp' => 'required',
-                'nohp1' => 'required',
-                'nohp2' => 'required',
-                'nohp3' => 'required',
-                'nohp4' => 'required',
-                'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
-        ]);
-        $tambah = $request->all();
-        if($request->hasFile('foto'))
-        {
-            $destination_path = 'public/images/sm/peserta/foto';
-            $image = $request->file('foto');
-            $image_name = time() . '_';
-            $path = $request->file('foto')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/foto/' . $image_name);
-
-            $tambah['foto'] = $imageUrl;
-
-        }
-        if($request->hasFile('foto1'))
-        {
-            $destination_path = 'public/images/sm/peserta/foto1';
-            $image = $request->file('foto1');
-            $image_name = time() . '_';
-            $path = $request->file('foto1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/foto1/' . $image_name);
-
-            $tambah['foto1'] = $imageUrl;
-
-        }
-        if($request->hasFile('foto2'))
-        {
-            $destination_path = 'public/images/sm/peserta/foto2';
-            $image = $request->file('foto2');
-            $image_name = time() . '_';
-            $path = $request->file('foto2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/foto2/' . $image_name);
-
-            $tambah['foto2'] = $imageUrl;
-
-        }
-        if($request->hasFile('foto3'))
-        {
-            $destination_path = 'public/images/sm/peserta/foto3';
-            $image = $request->file('foto3');
-            $image_name = time() . '_';
-            $path = $request->file('foto3')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/foto3/' . $image_name);
-
-            $tambah['foto3'] = $imageUrl;
-
-        }
-        if($request->hasFile('foto4'))
-        {
-            $destination_path = 'public/images/sm/peserta/foto4';
-            $image = $request->file('foto4');
-            $image_name = time() . '_';
-            $path = $request->file('foto4')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/foto4/' . $image_name);
-
-            $tambah['foto4'] = $imageUrl;
-
-        }
-        if($request->hasFile('logo'))
-        {
-            $destination_path = 'public/images/sm/peserta/logo';
-            $image = $request->file('logo');
-            $image_name = time() . '_';
-            $path = $request->file('logo')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/peserta/logo/' . $image_name);
-
-            $tambah['logo'] = $imageUrl;
-
-        }
-        pesertasm::create($tambah);
-        return redirect()->route('sm.tampilpee');
-
-    }
 
     public function editpee($id) {
         $edit = pesertasm::find($id);
@@ -132,11 +67,6 @@ class PesertasmController extends Controller
             'email2' => 'required|email',
             'email3' => 'required|email',
             'email4' => 'required|email',
-            'foto' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto3' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto4' => 'required|mimes:png,jpeg,jpg|max:5000',
             'nohp' => 'required',
             'nohp1' => 'required',
             'nohp2' => 'required',
@@ -145,66 +75,11 @@ class PesertasmController extends Controller
             'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
     ]);
     $update = $request->all();
-    if($request->hasFile('foto'))
-    {
-        $destination_path = 'public/images/sm/peserta/foto';
-        $image = $request->file('foto');
-        $image_name = time() . '_';
-        $path = $request->file('foto')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/foto/' . $image_name);
-
-        $tambah['foto'] = $imageUrl;
-
-    }
-    if($request->hasFile('foto1'))
-    {
-        $destination_path = 'public/images/sm/peserta/foto1';
-        $image = $request->file('foto1');
-        $image_name = time() . '_';
-        $path = $request->file('foto1')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/foto1/' . $image_name);
-
-        $tambah['foto1'] = $imageUrl;
-
-    }
-    if($request->hasFile('foto2'))
-    {
-        $destination_path = 'public/images/sm/peserta/foto2';
-        $image = $request->file('foto2');
-        $image_name = time() . '_';
-        $path = $request->file('foto2')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/foto2/' . $image_name);
-
-        $tambah['foto2'] = $imageUrl;
-
-    }
-    if($request->hasFile('foto3'))
-    {
-        $destination_path = 'public/images/sm/peserta/foto3';
-        $image = $request->file('foto3');
-        $image_name = time() . '_';
-        $path = $request->file('foto3')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/foto3/' . $image_name);
-
-        $tambah['foto3'] = $imageUrl;
-
-    }
-    if($request->hasFile('foto4'))
-    {
-        $destination_path = 'public/images/sm/peserta/foto4';
-        $image = $request->file('foto4');
-        $image_name = time() . '_';
-        $path = $request->file('foto4')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/foto4/' . $image_name);
-
-        $tambah['foto4'] = $imageUrl;
-
-    }
     if($request->hasFile('logo'))
     {
         $destination_path = 'public/images/sm/peserta/logo';
         $image = $request->file('logo');
-        $image_name = time() . '_';
+        $image_name = time() . '.' . $image->getClientOriginalExtension();
         $path = $request->file('logo')->storeAS($destination_path,$image_name);
         $imageUrl = asset('storage/images/sm/peserta/logo/' . $image_name);
 

@@ -21,6 +21,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
         #loadingDiv {
    width: 100%;
@@ -479,20 +480,20 @@ $("body").css(
 </script>
 <script src="../../js/daftarlomba.js"></script>
 <script type="text/javascript">
-  // For example trigger on button clicked, or any time you need
-  var payButton = document.getElementById('pay-button');
-  payButton.addEventListener('click', function () {
-    // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-    window.snap.pay('{{$snapToken}}', {
+    // For example trigger on button clicked, or any time you need
+    var payButton = document.getElementById('pay-button');
+    payButton.addEventListener('click', function () {
+      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+      window.snap.pay('{{$snapToken}}', {
         onSuccess: function(result){
             Swal.fire({
     icon: 'success',
-    title: 'Payment Succes!',
-    text: 'Anda akan diarahkan ke halaman Lomba.',
+    title: 'Pembayaran Berhasil!',
+    text: 'Anda akan diarahkan ke halaman SPC.',
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
-    window.location.href = '/matalomba/lkti/lkti'; 
+    window.location.href = '/homespc/{{$orderlkti->id}}'; 
     console.log(result); 
   });
         },
@@ -503,7 +504,7 @@ $("body").css(
         onError: function(result){
             Swal.fire({
     icon: 'info',
-    title: 'Waiting Payment',
+    title: 'Menunggu Pembayaran',
     text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
     showConfirmButton: false, // Tidak menampilkan tombol OK
     allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
@@ -517,13 +518,13 @@ $("body").css(
         onClose: function(){
             Swal.fire({
     icon: 'warning',
-    title: 'Payment Canceled',
+    title: 'Pembayaran Dibatalkan',
     text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
   });
         }
       })
     });
-</script> 
+  </script>
     </body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->

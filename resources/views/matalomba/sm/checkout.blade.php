@@ -20,6 +20,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
         #loadingDiv {
    width: 100%;
@@ -420,7 +421,7 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>Team Name</label>
-                                <input disabled placeholder="{{$ordersm->nameteam}}" required>
+                                <input disabled placeholder="{{$ordersm->namateam}}" required>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
@@ -490,7 +491,7 @@
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
-    window.location.href = '/matalomba/sm/sm'; 
+    window.location.href = '/homesm/{{$ordersm->id}}'; 
     console.log(result); 
   });
         },

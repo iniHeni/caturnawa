@@ -35,7 +35,7 @@ return new class extends Migration
             $table->biginteger('nohp2');
             $table->biginteger('nohp3');
             $table->biginteger('nohp4');
-            $table->string('logo');
+            $table->string('logo')->nullable;
             $table->timestamps();
         });
     }

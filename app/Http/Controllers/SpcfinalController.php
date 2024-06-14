@@ -21,14 +21,14 @@ class SpcfinalController extends Controller
 
     public function tambahf(Request $request){
         $tambah = $request->validate([
-            'namapeserta' => 'required|string|max:50',
+            'namapeserta' => 'required',
             'juri' => 'required',
             'scorepemaparanmateri' => 'required|integer|min:0|max:100',
-            'scorepertanyaandanjawaban' => 'required|integer|min:0|max:90',
-            'scoreaspekkesesuaian' => 'required|integer|min:0|max:80',
-            'materi' => 'required|string|max:50',
-            'pertanyaandanjawaban' => 'required|string|max:50',
-            'kesesuaian' => 'required|string|max:50',
+            'scorepertanyaandanjawaban' => 'required|integer|min:0|max:100',
+            'scoreaspekkesesuaian' => 'required|integer|min:0|max:100',
+            'materi' => 'required|string|max:100',
+            'pertanyaandanjawaban' => 'required|string|max:100',
+            'kesesuaian' => 'required|string|max:100',
         ]);
         $tambah['total'] = $tambah['scorepemaparanmateri'] + $tambah['scorepertanyaandanjawaban'] + $tambah['scoreaspekkesesuaian'];
         spcfinal::create($tambah);
@@ -44,14 +44,14 @@ class SpcfinalController extends Controller
 
     public function updatef(Request $request, $id){
     $update = $request->validate([
-            'namapeserta' => 'required|string|max:50',
+            'namapeserta' => 'required',
             'juri' => 'required',
             'scorepemaparanmateri' => 'required|integer|min:0|max:100',
-            'scorepertanyaandanjawaban' => 'required|integer|min:0|max:90',
-            'scoreaspekkesesuaian' => 'required|integer|min:0|max:80',
-            'materi' => 'required|string|max:50',
-            'pertanyaandanjawaban' => 'required|string|max:50',
-            'kesesuaian' => 'required|string|max:50',
+            'scorepertanyaandanjawaban' => 'required|integer|min:0|max:100',
+            'scoreaspekkesesuaian' => 'required|integer|min:0|max:100',
+            'materi' => 'required|string|max:100',
+            'pertanyaandanjawaban' => 'required|string|max:100',
+            'kesesuaian' => 'required|string|max:100',
     ]);
     $data = spcfinal::find($id);
     $update['total'] = $update['scorepemaparanmateri'] + $update['scorepertanyaandanjawaban'] + $update['scoreaspekkesesuaian'];

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Order;
+use App\Models\ordersm;
+use App\Models\orderlkti;
+use App\Models\orderkdbi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -46,7 +49,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/ktm1';
             $image = $request->file('ktm_1');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/ktm1/' . $image_name);
 
@@ -57,7 +60,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/ktm2';
             $image = $request->file('ktm_2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/ktm2/' . $image_name);
 
@@ -68,7 +71,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/foto1';
             $image = $request->file('foto_1');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/foto1/' . $image_name);
 
@@ -79,7 +82,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/foto2';
             $image = $request->file('foto_2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/foto2/' . $image_name);
 
@@ -90,7 +93,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/krs1';
             $image = $request->file('krs_1');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/krs1/' . $image_name);
 
@@ -101,7 +104,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/krs2';
             $image = $request->file('krs_2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/krs2/' . $image_name);
 
@@ -112,7 +115,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/bukti1';
             $image = $request->file('buktifollow_1');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
 
             $imageUrl = asset('storage/images/edc/bukti1/' . $image_name);
@@ -123,7 +126,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/bukti2';
             $image = $request->file('buktifollow_2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/bukti2/' . $image_name);
 
@@ -134,7 +137,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/twibbon';
             $image = $request->file('twibbon');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/twibbon/' . $image_name);
 
@@ -145,7 +148,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/images/edc/twibbon2';
             $image = $request->file('twibbon2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/edc/twibbon2/' . $image_name);
 
@@ -155,7 +158,7 @@ class OrderController extends Controller
         {
             $destination_path = 'public/document/edc/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/edc/surat/' . $image_name);
 
@@ -186,7 +189,7 @@ class OrderController extends Controller
 
 $paramss = array(
     'transaction_details' => array(
-        'order_id' => $order->order,
+        'order_id' => "EDC" . '-' . $order->order,
         'gross_amount' => $order->price,
     ),
     'item_details' => array(
@@ -208,17 +211,30 @@ $paramss = array(
 $snapToken = \Midtrans\Snap::getSnapToken($paramss);
 return view('matalomba/edc/checkout', compact('snapToken', 'order'));
     }
-    public function callback(Request $request){
+    public function callback(Request $request, $type){
+        switch ($type) {
+            case 'KDBI':
+                return app(orderkdbiController::class)->callbackk($request);
+            case 'LKTI':
+                return app(orderlktiController::class)->callbackl($request);
+            case 'SM':
+                return app(ordersmController::class)->callbacks($request);
+            default:
+                return $this->callback($request);
+        }
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            $request->status == 'capture' or $request-> status == 'settlement';
-                
-            
+            if($request->transaction_status == 'settlement'){
+                $orderlkti = Order::find ($request->order_id);
+                $orderlkti->update(['status' => 'Paid']);
+            }
         }
     }
-    public function home($id){
-        $order = Order::find($id);
-        return view('index');
+
+    public function homeedc($id){
+        $orderlkti = Order::find($id);
+        $orderlkti->update(['status' => 'Paid']);
+        return view('index',);
     }
 }

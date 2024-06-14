@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\orderlkti;
+use App\Models\pesertaspc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -75,7 +76,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/ktm';
             $image = $request->file('ktm');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('ktm')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/lkti/ktm/' . $image_name);
 
@@ -86,7 +87,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/foto';
             $image = $request->file('foto');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('foto')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/lkti/foto/' . $image_name);
 
@@ -97,7 +98,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/krs';
             $image = $request->file('krs');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('krs')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/lkti/krs/' . $image_name);
 
@@ -108,7 +109,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/bukti';
             $image = $request->file('buktifollow');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/lkti/bukti/' . $image_name);
 
@@ -119,7 +120,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/images/lkti/twibbon';
             $image = $request->file('twibbon');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/lkti/twibbon/' . $image_name);
 
@@ -130,7 +131,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/surat/' . $image_name);
 
@@ -140,7 +141,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif';
             $image = $request->file('sertifikat');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif/' . $image_name);
 
@@ -151,7 +152,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif1';
             $image = $request->file('sertifikat1');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat1')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif1/' . $image_name);
 
@@ -164,7 +165,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif2';
             $image = $request->file('sertifikat2');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat2')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif2/' . $image_name);
 
@@ -177,7 +178,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif3';
             $image = $request->file('sertifikat3');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat3')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif3/' . $image_name);
 
@@ -191,7 +192,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif4';
             $image = $request->file('sertifikat4');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat4')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif4/' . $image_name);
 
@@ -205,7 +206,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif5';
             $image = $request->file('sertifikat5');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat5')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif5/' . $image_name);
 
@@ -219,7 +220,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif6';
             $image = $request->file('sertifikat6');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat6')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif6/' . $image_name);
 
@@ -233,7 +234,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif7';
             $image = $request->file('sertifikat7');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat7')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif7/' . $image_name);
 
@@ -247,7 +248,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif8';
             $image = $request->file('sertifikat8');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat8')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif8/' . $image_name);
 
@@ -261,7 +262,7 @@ class OrderlktiController extends Controller
         {
             $destination_path = 'public/document/lkti/sertif9';
             $image = $request->file('sertifikat9');
-            $image_name = time() . '_';
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat9')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/sertif9/' . $image_name);
 
@@ -296,7 +297,7 @@ class OrderlktiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => $orderlkti->order,
+    'order_id' => "LKTI" . '-' . $orderlkti->order,
     'gross_amount' => $orderlkti->price,
 ),
 'item_details' => array(
@@ -317,32 +318,21 @@ $params = array(
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 return view('matalomba/lkti/checkout', compact('snapToken', 'orderlkti'));
 }
-public function callback(Request $request){
+public function callbackl(Request $request){
     $serverKey = config('midtrans.server_key');
     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){
-        if($request->status == 'capture' or $request-> status == 'settlement'){
-            $orderlkti = orderlkti::find ($request);
+        if($request->transaction_status == 'settlement'){
+            $orderlkti = orderlkti::find ($request->order_id);
             $orderlkti->update(['status' => 'Paid']);
         }
     }
 }
-public function home($id){
+public function homespc($id){
     $orderlkti = orderlkti::find($id);
-    return view('index');
+    $orderlkti->update(['status' => 'Paid']);
+    return view('index',);
 }
-public function login(Request $login){
-    $loginlkti = $login->validate([
-        'email' => 'required',
-    ]);
-    $user = orderlkti::where('email', $login->email)->first();
 
-    if ($user) {
-        session()->flash('success', 'Please upload your competition file');
-        return view('matalomba/lkti/uploadLKTI');
-    } else {
-        return back()->withErrors(['error' => 'Email Belom terdaftar']);
-    }
-}
 }
 

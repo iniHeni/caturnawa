@@ -104,7 +104,7 @@
                     </div>
                     <div class="input-field">
                         <label for="namateam">Nama Team</label>
-                        <input name="namateam" id="namateam" type="text" placeholder=" Asal Universitas" required value="{{ $edit->namateam }}">
+                        <input @disabled(true) name="namateam" id="namateam" type="text" placeholder=" Asal Universitas" required value="{{ $edit->namateam }}">
                     </div>
                     <div class="input-field">
                         <label for="nama">Nama Peserta 1</label>
@@ -165,26 +165,6 @@
                         <div class="input-field">
                             <label for="nohp4">No Peserta Handphone 5</label>
                             <input name="nohp4" id="nohp4" type="number" placeholder="Nomer hp Peserta" required value="{{ $edit->nohp4 }}">
-                        </div>
-                        <div class="input-field">
-                            <label for="foto">Foto Formal Peserta 1 *jpg,png.jpeg</label>
-                            <input name="foto" id="foto" type="file"  accept=".png, .jpg, .jpeg" required value="{{ $edit->foto }}">
-                        </div>
-                        <div class="input-field">
-                            <label for="foto1">Foto Formal Peserta 2 *jpg,png.jpeg</label>
-                            <input name="foto1" id="foto1" type="file"  accept=".png, .jpg, .jpeg" required value="{{ $edit->foto1 }}">
-                        </div>
-                        <div class="input-field">
-                            <label for="foto2">Foto Formal Peserta 3 *jpg,png.jpeg</label>
-                            <input name="foto2" id="foto2" type="file"  accept=".png, .jpg, .jpeg" required value="{{ $edit->foto2 }}">
-                        </div>
-                        <div class="input-field">
-                            <label for="foto3">Foto Formal Peserta 4 *jpg,png.jpeg</label>
-                            <input name="foto3" id="foto3" type="file"  accept=".png, .jpg, .jpeg" required value="{{ $edit->foto3 }}">
-                        </div>
-                        <div class="input-field">
-                            <label for="foto4">Foto Formal Peserta 5 *jpg,png.jpeg</label>
-                            <input name="foto4" id="foto4" type="file"  accept=".png, .jpg, .jpeg" required value="{{ $edit->foto4 }}">
                         </div>
                         <div class="input-field">
                             <label for="logo">Logo Instansi *jpg,png.jpeg</label>

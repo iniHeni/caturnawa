@@ -17,6 +17,108 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenulkti.css">
       <link rel="stylesheet" href="../../../css/pagelombalkti.css">
+      <style>
+        .wrapper .card_Container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card_Container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 1),
+                inset 0 0 0 1000px rgba(67, 52, 109, .6);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .imbBx, .imbBx img{
+    width: 100%;
+    height: 100%;
+}
+
+.card .content{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.432);
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    transition: bottom 0.5s;
+    transition-delay: 0.65s;
+}
+
+.card:hover .content{
+    bottom: 0;
+    transition-delay: 0s;
+}
+
+.content .contentBx h3{
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    transition-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.card:hover .content .contentBx h3{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content .contentBx h3 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.content .sci{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+}
+
+.content .sci li{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.2s * var(--i));
+}
+
+.card:hover .content .sci li{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.content .sci li a{
+    color: #fff;
+    font-size: 24px;
+}
+      </style>
 
       <title>Caturnawa - KTI</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -163,70 +265,104 @@
     </div>
 </section>
 <!--==================== Jury ====================-->
-<section id="juri">
-    <div class="main">
-            <div class="title">@lang('messages.jury')</div>
-    
-            <div class="card_container">
-    
-                <div class="card">
-                    <div class="round_box"></div>
-                    <div class="img_box">
-                        <img src="../../img/jurispc1.jpg" alt="">
-                    </div>
-    
-                    <div class="user_content1">
-                        <h5 class="name">Efriza, S.I.P., M.Si.</h5>
-                        <p class="post">@lang('messages.jurispcposisi1')</p>
-                        <p class="about">@lang('messages.jurispcbio1')</p>
-                    </div>
-                </div>
-    
-                <div class="card">
-                    <div class="squareBox"></div>
-                    <div class="round_box"></div>
-                    <div class="img_box">
-                        <img src="../../img/jurispc2.jpg" alt="">
-                    </div>
-    
-                    <div class="user_content2">
-                        <h5 class="name">Fajar Harry Sampurno, MBA, Ph.D.</h5>
-                        <p class="post">@lang('messages.jurispcposisi2')</p>
-                        <p class="about">@lang('messages.jurispcbio2')</p>
-                    </div>
-                </div>
-    
-                <div class="card">
-                    <div class="squareBox"></div>
-                    <div class="round_box"></div>
-                    <div class="img_box">
-                        <img src="../../img/jurispc3.jpg" alt="">
-                    </div>
-    
-                    <div class="user_content3">
-                        <h5 class="name">Prof. Dr. Eng. Eniya<br>Listiani Dewi</h5>
-                        <p class="post">@lang('messages.jurispcposisi3')</p>
-                        <p class="about">@lang('messages.jurispcbio3')</p>
-                    </div>
+    <div class="wrapper">
+
+        <div class="title">
+            <h3>Our Adjudicators</h3>
+        </div>
+
+        <div class="card_Container">
+
+            <div class="card">
+
+                <div class="imbBx">
+                    <img src="../../img/jurispc1.jpg" alt="">
                 </div>
 
-                <div class="card">
-                    <div class="squareBox"></div>
-                    <div class="round_box"></div>
-                    <div class="img_box">
-                        <img src="../../img/jurispcsiswi.jpeg" alt="">
+                <div class="content">
+                    <div class="contentBx">
+                        <h3>Efriza, S.I.P., M.Si. <br><span>@lang('messages.jurispcposisi1')</span></h3>
                     </div>
-    
-                    <div class="user_content4">
-                        <h5 class="name">Desfara Anggreani</h5>
-                        <p class="post">@lang('messages.jurispcposisi4')</p>
-                        <p class="about">@lang('messages.jurispcbio4')</p>
-                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
                 </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="imbBx">
+                    <img src="../../img/jurispc2.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <div class="contentBx">
+                        <h3>Fajar Harry Sampurno, MBA, Ph.D. <br><span>@lang('messages.jurispcposisi2')</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="imbBx">
+                    <img src="../../img/jurispc3.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <div class="contentBx">
+                        <h3>Prof. Dr. Eng. Eniya Listiani Dewi<br><span>@lang('messages.jurispcposisi3')</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="imbBx">
+                    <img src="../../img/jurispcsiswi.jpeg" alt="">
+                </div>
+
+                <div class="content">
+                    <div class="contentBx">
+                        <h3>Desfara Anggreani<br><span>@lang('messages.jurispcposisi4')</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </section>
 
+    </div>
 
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>

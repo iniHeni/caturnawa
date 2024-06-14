@@ -298,7 +298,7 @@
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
-    window.location.href = '/matalomba/kdbi/kdbi'; 
+    window.location.href = '/homekdbi/{{$orderkdbi->id}}'; 
     console.log(result); 
   });
         },
