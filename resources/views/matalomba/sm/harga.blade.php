@@ -99,43 +99,108 @@
      </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       
-<!--==================== Mata Lomba ====================-->
-<div id="data-box">
-    <h5 style="margin: 90px auto;" > Periode Pendaftaran</h5>
-    
-<div style="max-width: 78rem;" class="card-list">
-    <a href="{{url('/matalomba/daftarSM') }}"  class="card-item">
-            <img src="../../../img/sm1.png" alt="Card Image">
-            <span class="developer">Rp. 150.000</span>
-            <h3>Periode </br>
-            7 Juli - 20 Juli</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="{{url('/matalomba/daftarSM') }}"  class="card-item">
-            <img src="../../../img/sm1.png" alt="Card Image">
-            <span class="developer">Rp. 180.000</span>
-            <h3>Periode </br>
-            21 Juli - 3 Agustus</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="{{url('/matalomba/daftarSM') }}"  class="card-item">
-            <img src="../../../img/sm1.png" alt="Card Image">
-            <span class="developer">Rp. 250.000</span>
-            <h3>Periode </br>
-            4 Agustus - 18 Juli</h3>
-            <div class="arrow">
-                <i class="fa fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        
-</div>
+<!--==================== Periode Tiket ====================-->
+<div class="container1">
+   <h1 class="upcomming">upcomming event</h1>
+   
+   <div class="item">
+     <span class="up-border"></span>
+       <span class="down-border"></span>
+     <div class="item-right">
+       <span class="leftup-border"></span>
+       <span class="leftdown-border"></span>
+       <h2 class="num">23</h2>
+       <p class="day">Juli</p>
+       <span class="up-border"></span>
+       <span class="down-border"></span>
+     </div>
+     
+     <div class="item-left">
+       <p class="event">Periode I</p>
+       <h2 class="title">Universitas Nasional</h2>
+       <div class="sce">
+         <div class="icon">
+           <i class="fa fa-table"></i>
+         </div>
+         <p>Short Movies</p>
+       </div>
+       <div class="fix"></div>
+       <div class="loc">
+         <div class="icon">
+           <i class="fa fa-map-marker"></i>
+         </div>
+         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+       </div>
+       <div class="fix"></div>
+       <a href="{{url('/matalomba/daftarSM') }}" class="daftar">Daftar</a>
+     </div>
+   </div>
+   
+   <div class="item">
+     <div class="item-right">
+       <span class="leftup-border"></span>
+       <span class="leftdown-border"></span>
+       <h2 class="num">28</h2>
+       <p class="day">Agusts</p>
+       <span class="up-border"></span>
+       <span class="down-border"></span>
+     </div>
+     
+     <div class="item-left">
+       <p class="event">Periode II</p>
+       <h2 class="title">Universitas Nasional</h2>
+       <div class="sce">
+         <div class="icon">
+           <i class="fa fa-table"></i>
+         </div>
+         <p>Short Movies</p>
+       </div>
+       <div class="fix"></div>
+       <div class="loc">
+         <div class="icon">
+           <i class="fa fa-map-marker"></i>
+         </div>
+         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+       </div>
+       <div class="fix"></div>
+       <button class="tickets">Tutup</button>
+     </div>
+   </div>
+   
+   <div class="item">
+     <div class="item-right">
+       <span class="leftup-border"></span>
+       <span class="leftdown-border"></span>
+       <h2 class="num">23</h2>
+       <p class="day">Sept</p>
+       <span class="up-border"></span>
+       <span class="down-border"></span>
+     </div>
+     
+     <div class="item-left">
+       <p class="event">Periode III</p>
+       <h2 class="title">Universitas Nasional</h2>
+       <div class="sce">
+         <div class="icon">
+           <i class="fa fa-table"></i>
+         </div>
+         <p>Short Movies</p>
+       </div>
+       <div class="fix"></div>
+       <div class="loc">
+         <div class="icon">
+           <i class="fa fa-map-marker"></i>
+         </div>
+         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+       </div>
+       <div class="fix"></div>
+       <button class="tickets">Tutup</button>
+     </div>
+   </div>
+ </div>
+ 
 
 <!--==================== Juri ====================-->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
