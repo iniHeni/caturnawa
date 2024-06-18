@@ -40,6 +40,10 @@ return new class extends Migration
             $table->string('krit9');
             $table->integer('skorkrit10');
             $table->string('krit10');
+            $table->integer('skorkrit11');
+            $table->string('krit11');
+            $table->integer('skorkrit12');
+            $table->string('krit12');
             $table->integer('total');
             $table->timestamps();
         });

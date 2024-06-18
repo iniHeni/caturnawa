@@ -95,10 +95,9 @@
             <div style="width: 100%;">
                 <h1 class="judul" style="color: white" >Leaderboard @lang('messages.penyisihan') </h1>
                 <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 500px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                           <tr>
-                            <th scope="col">No</th>
                             <th scope="col">@lang('messages.peserta')</th>
                             <th scope="col">@lang('messages.instansi')</th>
                             <th scope="col">@lang('messages.Capaian')</th>
@@ -108,7 +107,6 @@
                         <tbody>
                             @foreach($penyisihann as $no=>$data)
                             <tr>
-                              <td>{{ $no+1 }}</td>
                               <td>{{ $data->namapeserta }}</td>
                               <td>{{ $data->university}}</td>
                               <td>{{ $data->scorecp}}</td>

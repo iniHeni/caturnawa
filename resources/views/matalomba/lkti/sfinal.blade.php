@@ -112,13 +112,12 @@ thead th {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
-            <div style="width: 100%;">
+            <div style="width: `00%;">
               <h1 class="judul" style="color: white" >Leaderboard</h1>
                 <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative; margin-bottom: 5rem">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table class="table table-bordered table-striped" style="min-width: 400px; margin-bottom: 0; border-collapse: collapse;">
                       <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
-                          <th scope="col" >No</th>
                           <th scope="col" >@lang('messages.peserta')</th>
                           <th scope="col">Score</th>
                           <th scope="col">Rank</th>
@@ -127,7 +126,6 @@ thead th {
                     <tbody>
                         @foreach($semifinal as $no=>$data)
                         <tr>
-                          <td>{{ $no+1 }}</td>
                           <td>{{ $data ->namapeserta }}</td>
                           <td>{{ $data->total}}</td>
                           <td>{{ $data->rank}}</td>
@@ -144,10 +142,9 @@ thead th {
             <div style="width: 100%;">
               <h1 class="judul" style="color: white" >Result Semifinal</h1>
                 <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
                       <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
-                          <th scope="col" rowspan="4">No</th>
                           <th scope="col" rowspan="4">@lang('messages.peserta')</th>
                           <th scope="col" colspan="6">Kriteria Penilaian</th>
                           <th scope="col" rowspan="4">Total</th>
@@ -167,7 +164,6 @@ thead th {
                     <tbody>
                         @foreach($semifinal as $no=>$data)
                         <tr>
-                          <td>{{ $no+1 }}</td>
                           <td>{{ $data->namapeserta }}</td>
                           <td>{{ $data->scorepenyajian}}</td>
                           <td>{{ $data->scoresubs}}</td>

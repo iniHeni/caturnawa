@@ -16,6 +16,19 @@ use App\Http\Controllers\smsemifinalController;
 use App\Http\Controllers\smfinalController;
 use App\Http\Controllers\pesertaspcController;
 use App\Http\Controllers\pesertasmController;
+use App\Http\Controllers\pesertaedcController;
+use App\Http\Controllers\day1edcController;
+use App\Http\Controllers\day2edcController;
+use App\Http\Controllers\day3edcController;
+use App\Http\Controllers\day4edcController;
+use App\Http\Controllers\day5edcController;
+use App\Http\Controllers\pesertakdbiController;
+use App\Http\Controllers\day1kdbiController;
+use App\Http\Controllers\day2kdbiController;
+use App\Http\Controllers\day3kdbiController;
+use App\Http\Controllers\day4kdbiController;
+use App\Http\Controllers\day5kdbiController;
+use App\Http\Controllers\smsfinalController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -74,10 +87,67 @@ Route::get('matalomba/lkti/final', [spcfinalController::class, 'final']);
 Route::get('matalomba/sm/detailpeserta/{id}', [pesertasmController::class, 'detailpeserta'])->name('sm.detailpeserta');
 Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
 Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
+Route::post('/tambahsm/sfinal', [smsfinalController::class, 'tambahsf']);
 Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
 Route::get('matalomba/sm/penyisihan/detail/{id}', [smsemifinalController::class, 'detail'])->name('sm.detail');
 Route::get('matalomba/sm/final', [smfinalController::class, 'final'])->name('sm.final');
 Route::get('matalomba/sm/final/detail/{id}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+Route::get('matalomba/sm/sfinal', [smsfinalController::class, 'sfinal'])->name('sm.sfinal');
+Route::get('matalomba/sm/sfinal/detail/{id}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
+
+Route::get('matalomba/edc/detailpeserta/{id}', [pesertaedcController::class, 'detailpesertaedc'])->name('edc.detailpeserta');
+Route::post('/tambahpenyisihan/edcday1', [day1edcController::class, 'tambahedc']);
+Route::get('matalomba/edc/penyisihan', [day1edcController::class, 'gabungan']);
+Route::get('matalomba/edc/Semifinal', [day3edcController::class, 'gabungansf']);
+Route::get('matalomba/edc/Final', [day5edcController::class, 'gabunganf']);
+Route::get('matalomba/edc/penyisihan/round1', [day1edcController::class, 'day1round1']);
+Route::get('matalomba/edc/day1round1/detail{sesi}', [day1edcController::class, 'detailday1r1'])->name('edc.detailday1r1');
+Route::get('matalomba/edc/penyisihan/round2', [day1edcController::class, 'day1round2']);
+Route::get('matalomba/edc/day1round2/detail{sesi}', [day1edcController::class, 'detailday1r2'])->name('edc.detailday1r2');
+Route::post('/tambahedc2', [day2edcController::class, 'tambahedc2']);
+Route::get('matalomba/edc/penyisihan/round3', [day2edcController::class, 'day2round1']);
+Route::get('matalomba/edc/day2round1/detail{sesi}', [day2edcController::class, 'detailday2r1'])->name('edc.detailday2r1');
+Route::get('matalomba/edc/penyisihan/round4', [day2edcController::class, 'day2round2']);
+Route::get('matalomba/edc/day2round2/detail{sesi}', [day2edcController::class, 'detailday2r2'])->name('edc.detailday2r2');
+Route::post('/tambahedc3', [day3edcController::class, 'tambahedc3']);
+Route::get('matalomba/edc/semifinal/round1', [day3edcController::class, 'day3round1']);
+Route::get('matalomba/edc/sfround1/detail{id}', [day3edcController::class, 'detailday3r1'])->name('edc.detailday3r1');
+Route::get('matalomba/edc/semifinal/round2', [day3edcController::class, 'day3round2']);
+Route::get('matalomba/edc/sfround2/detail{id}', [day3edcController::class, 'detailday3r2'])->name('edc.detailday3r2');
+Route::post('/tambahedc4', [day4edcController::class, 'tambahedc4']);
+Route::get('matalomba/edc/finalday1/round1', [day4edcController::class, 'day4round1']);
+Route::get('matalomba/edc/fday1round1/detail{id}', [day4edcController::class, 'detailday4r1'])->name('edc.detailday4r1');
+Route::get('matalomba/edc/finalday1/round2', [day4edcController::class, 'day4round2']);
+Route::get('matalomba/edc/fday1round2/detail{id}', [day4edcController::class, 'detailday4r2'])->name('edc.detailday4r2');
+Route::post('/tambahedc5', [day5edcController::class, 'tambahedc5']);
+Route::get('matalomba/edc/finalday2/round1', [day5edcController::class, 'day5round1']);
+Route::get('matalomba/edc/fday2round1/detail{id}', [day5edcController::class, 'detailday5r1'])->name('edc.detailday5r1');
+
+
+
+Route::get('matalomba/kdbi/detailpeserta/{id}', [pesertakdbiController::class, 'detailpesertakdbi'])->name('kdbi.detailpeserta');
+Route::post('/tambahkdbi1', [day1kdbiController::class, 'tambahkdbi']);
+Route::get('matalomba/kdbi/penyisihan', [day1kdbiController::class, 'gabungankdbi']);
+Route::get('matalomba/kdbi/Semifinal', [day3kdbiController::class, 'gabungankdbisf']);
+Route::get('matalomba/kdbi/Final', [day5kdbiController::class, 'gabungankdbif']);
+Route::get('matalomba/kdbi/penyisihan/round1', [day1kdbiController::class, 'day1r1']);
+Route::get('matalomba/kdbi/day1round1/detail{sesi}', [day1kdbiController::class, 'detailday1r1'])->name('kdbi.detailday1r1');
+Route::get('matalomba/kdbi/penyisihan/round2', [day1kdbiController::class, 'day1round2']);
+Route::get('matalomba/kdbi/day1round2/detail{sesi}', [day1kdbiController::class, 'detailday1r2'])->name('kdbi.detailday1r2');
+Route::post('/tambahkdbi2', [day2kdbiController::class, 'tambahkdbi2']);
+Route::get('matalomba/kdbi/penyisihan/round3', [day2kdbiController::class, 'day2round1']);
+Route::get('matalomba/kdbi/day2round1/detail{sesi}', [day2kdbiController::class, 'detailday2r1'])->name('kdbi.detailday2r1');
+Route::get('matalomba/kdbi/penyisihan/round4', [day2kdbiController::class, 'day2round2']);
+Route::get('matalomba/kdbi/day2round2/detail{sesi}', [day2kdbiController::class, 'detailday2r2'])->name('kdbi.detailday2r2');
+Route::post('/tambahkdbi3', [day3kdbiController::class, 'tambahkdbi3']);
+Route::get('matalomba/kdbi/semifinal/round1', [day3kdbiController::class, 'day3round1']);
+Route::get('matalomba/kdbi/semifinal/round2', [day3kdbiController::class, 'day3round2']);
+Route::post('/tambahkdbi4', [day4kdbiController::class, 'tambahkdbi4']);
+Route::get('matalomba/kdbi/finalday1/round1', [day4kdbiController::class, 'day4round1']);
+Route::get('matalomba/kdbi/finalday1/round2', [day4kdbiController::class, 'day4round2']);
+Route::post('/tambahkdbi5', [day5kdbiController::class, 'tambahkdbi5']);
+Route::get('matalomba/kdbi/finalday2/round1', [day5kdbiController::class, 'day5r1']);
+
 
 
 
@@ -86,9 +156,8 @@ Route::get('/sm/tambah/peserta', function () {
     return view('admin/sm/tambahpee');
 });
 //  Matalomba EDC 
-Route::get('/matalomba/edc', function () {
-    return view('matalomba/edc/edc');
-});
+Route::get('/matalomba/edc', [pesertaedcController::class, 'pesertaedc'])->name('edc.page');
+Route::get('/matalomba/kdbi', [pesertakdbiController::class, 'pesertakdbi'])->name('kdbi.page');
 
 Route::get('/matalomba/daftarEDC', function () {
     return view('matalomba/edc/daftarEDC');
@@ -102,107 +171,13 @@ Route::get('/matalomba/scoreEDC', function () {
     return view('matalomba/edc/score');
 });
 
-// score EDC
-Route::get('/matalomba/penyisihanEDC', function () {
-    return view('matalomba/edc/penyisihan');
-});
-Route::get('/matalomba/penyisihanEDC/round1', function () {
-    return view('matalomba/edc/round1');
-});
-Route::get('/matalomba/penyisihanEDC/round2', function () {
-    return view('matalomba/edc/round2');
-});
-Route::get('/matalomba/penyisihanEDC/round3', function () {
-    return view('matalomba/edc/round3');
-});
-Route::get('/matalomba/penyisihanEDC/round4', function () {
-    return view('matalomba/edc/round4');
-});
 
-Route::get('/matalomba/penyisihanEDC/round1/session1', function () {
-    return view('matalomba/edc/day1session/session1');
-});
-Route::get('/matalomba/penyisihanEDC/round1/session2', function () {
-    return view('matalomba/edc/day1session/session2');
-});
-Route::get('/matalomba/penyisihanEDC/round1/session3', function () {
-    return view('matalomba/edc/day1session/session3');
-});
-Route::get('/matalomba/penyisihanEDC/round1/session4', function () {
-    return view('matalomba/edc/day1session/session4');
-});
-Route::get('/matalomba/penyisihanEDC/round1/session5', function () {
-    return view('matalomba/edc/day1session/session5');
-});
-Route::get('/matalomba/penyisihanEDC/round1/session6', function () {
-    return view('matalomba/edc/day1session/session6');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session7', function () {
-    return view('matalomba/edc/day1session/session7');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session8', function () {
-    return view('matalomba/edc/day1session/session8');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session9', function () {
-    return view('matalomba/edc/day1session/session9');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session10', function () {
-    return view('matalomba/edc/day1session/session10');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session11', function () {
-    return view('matalomba/edc/day1session/session11');
-});
-Route::get('/matalomba/penyisihanEDC/round2/session12', function () {
-    return view('matalomba/edc/day1session/session12');
-});
-
-Route::get('/matalomba/penyisihanEDC/round3/session1', function () {
-    return view('matalomba/edc/day2session/session1');
-});
-Route::get('/matalomba/penyisihanEDC/round3/session2', function () {
-    return view('matalomba/edc/day2session/session2');
-});
-Route::get('/matalomba/penyisihanEDC/round3/session3', function () {
-    return view('matalomba/edc/day2session/session3');
-});
-Route::get('/matalomba/penyisihanEDC/round3/session4', function () {
-    return view('matalomba/edc/day2session/session4');
-});
-Route::get('/matalomba/penyisihanEDC/round3/session5', function () {
-    return view('matalomba/edc/day2session/session5');
-});
-Route::get('/matalomba/penyisihanEDC/round3/session6', function () {
-    return view('matalomba/edc/day2session/session6');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session7', function () {
-    return view('matalomba/edc/day2session/session7');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session8', function () {
-    return view('matalomba/edc/day2session/session8');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session9', function () {
-    return view('matalomba/edc/day2session/session9');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session10', function () {
-    return view('matalomba/edc/day2session/session10');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session11', function () {
-    return view('matalomba/edc/day2session/session11');
-});
-Route::get('/matalomba/penyisihanEDC/round4/session12', function () {
-    return view('matalomba/edc/day2session/session12');
-});
 
 
 Route::get('/matalomba/sfinalEDC', function () {
     return view('matalomba/edc/sfinal');
 });
-Route::get('/matalomba/sfinalEDC/round1', function () {
-    return view('matalomba/edc/sfinalronde1');
-});
-Route::get('/matalomba/sfinalEDC/round2', function () {
-    return view('matalomba/edc/sfinalronde2');
-});
+
 
 Route::get('/matalomba/finalEDC', function () {
     return view('matalomba/edc/final');
@@ -219,10 +194,7 @@ Route::get('/matalomba/finalEDC/round3', function () {
 
 
 
-// Matalomba KDBI 
-Route::get('/matalomba/kdbi', function () {
-    return view('matalomba/kdbi/kdbi');
-});
+
 
 Route::get('/matalomba/daftarKDBI', function () {
     return view('matalomba/kdbi/daftarKDBI');
@@ -247,80 +219,6 @@ Route::get('/matalomba/penyisihanKDBI/round3', function () {
 });
 Route::get('/matalomba/penyisihanKDBI/round4', function () {
     return view('matalomba/kdbi/round4');
-});
-
-Route::get('/matalomba/penyisihanKDBI/round1/session1', function () {
-    return view('matalomba/kdbi/day1session/session1');
-});
-Route::get('/matalomba/penyisihanKDBI/round1/session2', function () {
-    return view('matalomba/kdbi/day1session/session2');
-});
-Route::get('/matalomba/penyisihanKDBI/round1/session3', function () {
-    return view('matalomba/kdbi/day1session/session3');
-});
-Route::get('/matalomba/penyisihanKDBI/round1/session4', function () {
-    return view('matalomba/kdbi/day1session/session4');
-});
-Route::get('/matalomba/penyisihanKDBI/round1/session5', function () {
-    return view('matalomba/kdbi/day1session/session5');
-});
-Route::get('/matalomba/penyisihanKDBI/round1/session6', function () {
-    return view('matalomba/kdbi/day1session/session6');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session7', function () {
-    return view('matalomba/kdbi/day1session/session7');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session8', function () {
-    return view('matalomba/kdbi/day1session/session8');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session9', function () {
-    return view('matalomba/kdbi/day1session/session9');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session10', function () {
-    return view('matalomba/kdbi/day1session/session10');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session11', function () {
-    return view('matalomba/kdbi/day1session/session11');
-});
-Route::get('/matalomba/penyisihanKDBI/round2/session12', function () {
-    return view('matalomba/kdbi/day1session/session12');
-});
-
-Route::get('/matalomba/penyisihanKDBI/round3/session1', function () {
-    return view('matalomba/kdbi/day2session/session1');
-});
-Route::get('/matalomba/penyisihanKDBI/round3/session2', function () {
-    return view('matalomba/kdbi/day2session/session2');
-});
-Route::get('/matalomba/penyisihanKDBI/round3/session3', function () {
-    return view('matalomba/kdbi/day2session/session3');
-});
-Route::get('/matalomba/penyisihanKDBI/round3/session4', function () {
-    return view('matalomba/kdbi/day2session/session4');
-});
-Route::get('/matalomba/penyisihanKDBI/round3/session5', function () {
-    return view('matalomba/kdbi/day2session/session5');
-});
-Route::get('/matalomba/penyisihanKDBI/round3/session6', function () {
-    return view('matalomba/kdbi/day2session/session6');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session7', function () {
-    return view('matalomba/kdbi/day2session/session7');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session8', function () {
-    return view('matalomba/kdbi/day2session/session8');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session9', function () {
-    return view('matalomba/kdbi/day2session/session9');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session10', function () {
-    return view('matalomba/kdbi/day2session/session10');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session11', function () {
-    return view('matalomba/kdbi/day2session/session11');
-});
-Route::get('/matalomba/penyisihanKDBI/round4/session12', function () {
-    return view('matalomba/kdbi/day2session/session12');
 });
 
 
@@ -404,139 +302,13 @@ Route::get('/admin/login', function () {
 
 // Route Admin EDC
 Route::get('/admin/mainmenuEDC', function () {
-    return view('admin/EDC/mainmenuEDC');
+    return view('admin/EDC/mainmenuEDC')->name('edc.mainmenu');
 });
 // Route Beranda
 Route::get('/admin/beranda', function () {
     return view('admin/EDC/beranda');
 });
 
-///////////////////  EDC  ///////////////////////
-// Route Data Peserta
-Route::get('/admin/pesertaEDC', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC');
-});
-
-// Route Data Peserta2
-Route::get('/admin/pesertaEDC2', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC2');
-});
-
-// Route Data Peserta3
-Route::get('/admin/pesertaEDC3', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC3');
-});
-
-// Route Data Peserta4
-Route::get('/admin/pesertaEDC4', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC4');
-});
-
-// Route Data Peserta5
-Route::get('/admin/pesertaEDC5', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC5');
-});
-
-// Route Data Peserta6
-Route::get('/admin/pesertaEDC6', function () {
-    return view('admin/EDC/sectionp/data/data-pesertaEDC6');
-});
-
-
-// Route Data Peserta d2
-Route::get('/admin/pesertaEDCd2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC');
-});
-
-// Route Data Peserta2 d2
-Route::get('/admin/pesertaEDC2d2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC2');
-});
-
-// Route Data Peserta3 d2
-Route::get('/admin/pesertaEDC3d2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC3');
-});
-
-// Route Data Peserta4 d2
-Route::get('/admin/pesertaEDC4d2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC4');
-});
-
-// Route Data Peserta5 d2
-Route::get('/admin/pesertaEDC5d2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC5');
-});
-
-// Route Data Peserta6 d2
-Route::get('/admin/pesertaEDC6d2', function () {
-    return view('admin/EDC/sectionp/data2/data-pesertaEDC6');
-});
-
-
-
-// Route Data Peserta d3
-Route::get('/admin/pesertaEDCd3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC');
-});
-
-// Route Data Peserta2 d3
-Route::get('/admin/pesertaEDC2d3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC2');
-});
-
-// Route Data Peserta3 d3
-Route::get('/admin/pesertaEDC3d3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC3');
-});
-
-// Route Data Peserta4 d3
-Route::get('/admin/pesertaEDC4d3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC4');
-});
-
-// Route Data Peserta5 d3
-Route::get('/admin/pesertaEDC5d3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC5');
-});
-
-// Route Data Peserta6 d3
-Route::get('/admin/pesertaEDC6d3', function () {
-    return view('admin/EDC/sectionp/data3/data-pesertaEDC6');
-});
-
-
-
-
-// Route Data Peserta d4
-Route::get('/admin/pesertaEDCd4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC');
-});
-
-// Route Data Peserta2 d4
-Route::get('/admin/pesertaEDC2d4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC2');
-});
-
-// Route Data Peserta3 d4
-Route::get('/admin/pesertaEDC3d4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC3');
-});
-
-// Route Data Peserta4 d4
-Route::get('/admin/pesertaEDC4d4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC4');
-});
-
-// Route Data Peserta5 d4
-Route::get('/admin/pesertaEDC5d4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC5');
-});
-
-// Route Data Peserta6 d4
-Route::get('/admin/pesertaEDC6d4', function () {
-    return view('admin/EDC/sectionp/data4/data-pesertaEDC6');
-});
 
 
 
@@ -549,9 +321,6 @@ Route::get('/admin/penyisihanEDC', function () {
 
 // Route semifinalEDC
 
-Route::get('/admin/semifinalEDC', function () {
-    return view('admin/EDC/semifinalEDC');
-});
 
 // Route finalEDC
 
@@ -561,39 +330,6 @@ Route::get('/admin/finalEDC', function () {
 
 
 
-
-///////////////////////////////////////////////////////////////
-// Route Data Peserta sf
-Route::get('/admin/pesertaEDCsf', function () {
-    return view('admin/EDC/sectionsf/data/data-pesertaEDC');
-});
-
-Route::get('/admin/pesertaEDCsf2', function () {
-    return view('admin/EDC/sectionsf/data2/data-pesertaEDC');
-});
-
-
-///////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////
-
-// Route Data Peserta f
-Route::get('/admin/pesertaEDCf', function () {
-    return view('admin/EDC/sectionf/data/data-pesertaEDC');
-});
-
-Route::get('/admin/pesertaEDCf2', function () {
-    return view('admin/EDC/sectionf/data2/data-pesertaEDC');
-});
-
-Route::get('/admin/pesertaEDCf3', function () {
-    return view('admin/EDC/sectionf/data3/data-pesertaEDC');
-});
-
-
-
-///////////////////////////////////////////////////////////////////
 
 
 // Route penyisihanEDC
@@ -603,12 +339,6 @@ Route::get('/admin/penyisihanEDC', function () {
 });
 
 
-// Route semifinalEDC
-
-Route::get('/admin/semifinalEDC', function () {
-    return view('admin/EDC/semifinalEDC');
-});
-
 // Route finalEDC
 
 Route::get('/admin/finalEDC', function () {
@@ -617,37 +347,12 @@ Route::get('/admin/finalEDC', function () {
 
 
 
-//Route Section1
-Route::get('/admin/section1EDC', function () {
-    return view('admin/EDC/sectionp/section1');
-});
-
-//Route Section2
-Route::get('/admin/section2EDC', function () {
-    return view('admin/EDC/sectionp/section2');
-});
-
-
-//Route Section3
-Route::get('/admin/section3EDC', function () {
-    return view('admin/EDC/sectionp/section3');
-});
-
-
-
-//Route Section4
-Route::get('/admin/section4EDC', function () {
-    return view('admin/EDC/sectionp/section4');
-});
-
-////////////////////////  EDC ////////////////////////////////
 
 
 
 
-
-
-
+Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login');
 Route::get('/admin/mainmenuEDC', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
 
@@ -655,143 +360,15 @@ Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainm
 
 
 
-// Route Admin KDBI
-Route::get('/admin/mainmenuKDBI1', function () {
-    return view('admin/KDBI/mainmenuKDBI');
-});
-
 // Route Beranda
 Route::get('/admin/beranda1', function () {
     return view('admin/KDBI/beranda');
 });
 
 
-///////////////////  KDBI  ///////////////////////
-// Route Data Peserta
-Route::get('/admin/pesertaKDBI', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI');
-});
-
-// Route Data Peserta2
-Route::get('/admin/pesertaKDBI2', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI2');
-});
-
-// Route Data Peserta3
-Route::get('/admin/pesertaKDBI3', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI3');
-});
-
-// Route Data Peserta4
-Route::get('/admin/pesertaKDBI4', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI4');
-});
-
-// Route Data Peserta5
-Route::get('/admin/pesertaKDBI5', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI5');
-});
-
-// Route Data Peserta6
-Route::get('/admin/pesertaKDBI6', function () {
-    return view('admin/KDBI/sectionp/data/data-pesertaKDBI6');
-});
-
-
-// Route Data Peserta d2
-Route::get('/admin/pesertaKDBId2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI');
-});
-
-// Route Data Peserta2 d2
-Route::get('/admin/pesertaKDBI2d2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI2');
-});
-
-// Route Data Peserta3 d2
-Route::get('/admin/pesertaKDBI3d2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI3');
-});
-
-// Route Data Peserta4 d2
-Route::get('/admin/pesertaKDBI4d2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI4');
-});
-
-// Route Data Peserta5 d2
-Route::get('/admin/pesertaKDBI5d2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI5');
-});
-
-// Route Data Peserta6 d2
-Route::get('/admin/pesertaKDBI6d2', function () {
-    return view('admin/KDBI/sectionp/data2/data-pesertaKDBI6');
-});
 
 
 
-// Route Data Peserta d3
-Route::get('/admin/pesertaKDBId3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI');
-});
-
-// Route Data Peserta2 d3
-Route::get('/admin/pesertaKDBI2d3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI2');
-});
-
-// Route Data Peserta3 d3
-Route::get('/admin/pesertaKDBI3d3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI3');
-});
-
-// Route Data Peserta4 d3
-Route::get('/admin/pesertaKDBI4d3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI4');
-});
-
-// Route Data Peserta5 d3
-Route::get('/admin/pesertaKDBI5d3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI5');
-});
-
-// Route Data Peserta6 d3
-Route::get('/admin/pesertaKDBI6d3', function () {
-    return view('admin/KDBI/sectionp/data3/data-pesertaKDBI6');
-});
-
-
-
-
-// Route Data Peserta d4
-Route::get('/admin/pesertaKDBId4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI');
-});
-
-// Route Data Peserta2 d4
-Route::get('/admin/pesertaKDBI2d4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI2');
-});
-
-// Route Data Peserta3 d4
-Route::get('/admin/pesertaKDBI3d4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI3');
-});
-
-// Route Data Peserta4 d4
-Route::get('/admin/pesertaKDBI4d4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI4');
-});
-
-// Route Data Peserta5 d4
-Route::get('/admin/pesertaKDBI5d4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI5');
-});
-
-// Route Data Peserta6 d4
-Route::get('/admin/pesertaKDBI6d4', function () {
-    return view('admin/KDBI/sectionp/data4/data-pesertaKDBI6');
-});
 
 
 
@@ -802,67 +379,7 @@ Route::get('/admin/penyisihanKDBI', function () {
 });
 
 
-// Route semifinalKDBI
 
-Route::get('/admin/semifinalKDBI', function () {
-    return view('admin/KDBI/semifinalKDBI');
-});
-
-// Route finalKDBI
-
-Route::get('/admin/finalKDBI', function () {
-    return view('admin/KDBI/finalKDBI');
-});
-
-
-
-
-///////////////////////////////////////////////////////////////
-// Route Data Peserta sf
-Route::get('/admin/pesertaKDBIsf', function () {
-    return view('admin/KDBI/sectionsf/data/data-pesertaKDBI');
-});
-
-Route::get('/admin/pesertaKDBIsf2', function () {
-    return view('admin/KDBI/sectionsf/data2/data-pesertaKDBI');
-});
-
-
-///////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////
-
-// Route Data Peserta f
-Route::get('/admin/pesertaKDBIf', function () {
-    return view('admin/KDBI/sectionf/data/data-pesertaKDBI');
-});
-
-Route::get('/admin/pesertaKDBIf2', function () {
-    return view('admin/KDBI/sectionf/data2/data-pesertaKDBI');
-});
-
-Route::get('/admin/pesertaKDBIf3', function () {
-    return view('admin/KDBI/sectionf/data3/data-pesertaKDBI');
-});
-
-
-
-///////////////////////////////////////////////////////////////////
-
-
-// Route penyisihanKDBI
-
-Route::get('/admin/penyisihanKDBI', function () {
-    return view('admin/KDBI/penyisihanKDBI');
-});
-
-
-// Route semifinalKDBI
-
-Route::get('/admin/semifinalKDBI', function () {
-    return view('admin/KDBI/semifinalKDBI');
-});
 
 // Route finalKDBI
 
@@ -899,16 +416,13 @@ Route::get('/admin/section4KDBI', function () {
 
 
 
-Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.showw'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.loginn'); // Rute untuk login (POST)
 
 
 
 
-
-
-
-
+Route::get('/admin/mainmenuKDBI', function () {
+    return view('admin/KDBI/mainmenuKDBI');
+})->name('kdbi.mainmenu');
 // Route Admin LKTI
 Route::get('/admin/mainmenuLKTI1', function () {
     return view('admin/LKTI/mainmenuLKTI');
@@ -964,6 +478,7 @@ Route::get('/admin/beranda1', function () {
 
 Route::get('/admin/sm/tambahpesfSM1', [smsemifinalController::class, 'pesertasf'])->name('sm.pesertasf');
 Route::get('/admin/sm/tambahpefSM1', [smfinalController::class, 'pesertaf'])->name('sm.pesertaf');
+Route::get('/admin/sm/tambahpessfSM1', [smsfinalController::class, 'pesertap'])->name('sm.pesertap');
 Route::get('/admin/pesertaSM', [pesertasmController::class, 'tampilpee'])->name('sm.tampilpee');
 Route::get('/admin/SM/editpee/{id}', [pesertasmController::class, 'editpee'])->name('sm.editpee');
 Route::post('/admin/SM/updatepee/{id}', [pesertasmController::class, 'updatepee'])->name('sm.updatepee');
@@ -973,6 +488,11 @@ Route::get('/admin/penyisihanSM', [smsemifinalController::class, 'tampilp'])->na
 Route::get('/admin/SM/editp/{id}', [smsemifinalController::class, 'editp'])->name('sm.editp');
 Route::post('/admin/SM/updatep/{id}', [smsemifinalController::class, 'updatep'])->name('sm.updatep');
 Route::post('/admin/SM/hapusp/{id}', [smsemifinalController::class, 'hapusp'])->name('sm.hapusp');
+
+Route::get('/admin/semifinalSM', [smsfinalController::class, 'tampilsf'])->name('sm.tampilsf');
+Route::get('/admin/SM/editsf/{id}', [smsfinalController::class, 'editsf'])->name('sm.editsf');
+Route::post('/admin/SM/updatesf/{id}', [smsfinalController::class, 'updatesf'])->name('sm.updatesf');
+Route::post('/admin/SM/hapussf/{id}', [smsfinalController::class, 'hapussf'])->name('sm.hapussf');
 
 Route::get('/admin/finalSM', [smfinalController::class, 'tampilf'])->name('sm.tampilf');
 Route::get('/admin/SM/editf/{id}', [smfinalController::class, 'editf'])->name('sm.editf');
@@ -991,6 +511,74 @@ Route::post('/admin/SM/hapusf/{id}', [smfinalController::class, 'hapusf'])->name
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::get('/admin/dashboard', function () {
-//     return view('admin/dashboard');
-// });
+Route::get('/admin/edc/tambahday1', [day1edcController::class, 'pesertaday1'])->name('edc.pesertaday1');
+Route::get('/admin/edc/tambahday2', [day2edcController::class, 'pesertaday2'])->name('edc.pesertaday2');
+Route::get('/admin/edc/tambahsf', [day3edcController::class, 'pesertaedcsf'])->name('edc.pesertasf');
+Route::get('/admin/edc/tambahday1f', [day4edcController::class, 'pesertaday1f'])->name('edc.pesertaday1f');
+Route::get('/admin/edc/tambahday2f', [day5edcController::class, 'pesertaday2f'])->name('edc.pesertaday2f');
+Route::get('/admin/pesertaEDC', [pesertaedcController::class, 'tampiledcpe'])->name('edc.tampiledcpe');
+Route::get('/admin/edc/editedcpe/{id}', [pesertaedcController::class, 'editedcpe'])->name('edc.editedcpe');
+Route::post('/admin/edc/updateedcpe/{id}', [pesertaedcController::class, 'updateedcpe'])->name('edc.updateedcpe');
+Route::post('/admin/edc/hapusedcpe/{id}', [pesertaedcController::class, 'hapusedcpe'])->name('edc.hapusedcpe');
+
+Route::get('/admin/penyisihan/day1', [day1edcController::class, 'tampiledc'])->name('edc.tampiledc');
+Route::get('/admin/edc/editedc/{id}', [day1edcController::class, 'editedc'])->name('edc.editedc');
+Route::post('/admin/edc/updateedc/{id}', [day1edcController::class, 'updateedc'])->name('edc.updateedc');
+Route::post('/admin/edc/hapusedc/{id}', [day1edcController::class, 'hapusedc'])->name('edc.hapusedc');
+
+Route::get('/admin/penyisihan/day2', [day2edcController::class, 'tampiledc2'])->name('edc.tampiledc2');
+Route::get('/admin/edc/editedc2/{id}', [day2edcController::class, 'editedc2'])->name('edc.editedc2');
+Route::post('/admin/edc/updateedc2/{id}', [day2edcController::class, 'updateedc2'])->name('edc.updateedc2');
+Route::post('/admin/edc/hapusedc2/{id}', [day2edcController::class, 'hapusedc2'])->name('edc.hapusedc2');
+
+Route::get('/admin/Semifinal', [day3edcController::class, 'tampiledc3'])->name('edc.tampiledc3');
+Route::get('/admin/edc/editedc3/{id}', [day3edcController::class, 'editedc3'])->name('edc.editedc3');
+Route::post('/admin/edc/updateedc3/{id}', [day3edcController::class, 'updateedc3'])->name('edc.updateedc3');
+Route::post('/admin/edc/hapusedc3/{id}', [day3edcController::class, 'hapusedc3'])->name('edc.hapusedc3');
+
+Route::get('/admin/Final/day1', [day4edcController::class, 'tampiledc4'])->name('edc.tampiledc4');
+Route::get('/admin/edc/editedc4/{id}', [day4edcController::class, 'editedc4'])->name('edc.editedc4');
+Route::post('/admin/edc/updateedc4/{id}', [day4edcController::class, 'updateedc4'])->name('edc.updateedc4');
+Route::post('/admin/edc/hapusedc4/{id}', [day4edcController::class, 'hapusedc4'])->name('edc.hapusedc4');
+
+Route::get('/admin/Final/day2', [day5edcController::class, 'tampiledc5'])->name('edc.tampiledc5');
+Route::get('/admin/edc/editedc5/{id}', [day5edcController::class, 'editedc5'])->name('edc.editedc5');
+Route::post('/admin/edc/updateedc5/{id}', [day5edcController::class, 'updateedc5'])->name('edc.updateedc5');
+Route::post('/admin/edc/hapusedc5/{id}', [day5edcController::class, 'hapusedc5'])->name('edc.hapusedc5');
+
+/// batas edc
+
+Route::get('/admin/kdbi/tambahday1', [day1kdbiController::class, 'pesertaday1'])->name('kdbi.pesertaday1');
+Route::get('/admin/kdbi/tambahday2', [day2kdbiController::class, 'pesertaday2'])->name('kdbi.pesertaday2');
+Route::get('/admin/kdbi/tambahsf', [day3kdbiController::class, 'pesertakdbisf'])->name('kdbi.pesertasf');
+Route::get('/admin/kdbi/tambahday1f', [day4kdbiController::class, 'pesertaday1f'])->name('kdbi.pesertaday1f');
+Route::get('/admin/kdbi/tambahday2f', [day5kdbiController::class, 'pesertaday2f'])->name('kdbi.pesertaday2f');
+Route::get('/admin/pesertaKDBI', [pesertakdbiController::class, 'tampilkdbipe'])->name('kdbi.tampilkdbipe');
+Route::get('/admin/kdbi/editkdbipe/{id}', [pesertakdbiController::class, 'editkdbipe'])->name('kdbi.editkdbipe');
+Route::post('/admin/kdbi/updatekdbipe/{id}', [pesertakdbiController::class, 'updatekdbipe'])->name('kdbi.updatekdbipe');
+Route::post('/admin/kdbi/hapuskdbipe/{id}', [pesertakdbiController::class, 'hapuskdbipe'])->name('kdbi.hapuskdbipe');
+
+Route::get('/admin/penyisihankdbi/day1', [day1kdbiController::class, 'tampilkdbi'])->name('kdbi.tampilkdbi');
+Route::get('/admin/kdbi/editkdbi/{id}', [day1kdbiController::class, 'editkdbi'])->name('kdbi.editkdbi');
+Route::post('/admin/kdbi/updatekdbi/{id}', [day1kdbiController::class, 'updatekdbi'])->name('kdbi.updatekdbi');
+Route::post('/admin/kdbi/hapuskdbi/{id}', [day1kdbiController::class, 'hapuskdbi'])->name('kdbi.hapuskdbi');
+
+Route::get('/admin/penyisihankdbi/day2', [day2kdbiController::class, 'tampilkdbi2'])->name('kdbi.tampilkdbi2');
+Route::get('/admin/kdbi/editkdbi2/{id}', [day2kdbiController::class, 'editkdbi2'])->name('kdbi.editkdbi2');
+Route::post('/admin/kdbi/updatekdbi2/{id}', [day2kdbiController::class, 'updatekdbi2'])->name('kdbi.updatekdbi2');
+Route::post('/admin/kdbi/hapuskdbi2/{id}', [day2kdbiController::class, 'hapuskdbi2'])->name('kdbi.hapuskdbi2');
+
+Route::get('/admin/SemifinalKDBI', [day3kdbiController::class, 'tampilkdbi3'])->name('kdbi.tampilkdbi3');
+Route::get('/admin/kdbi/editkdbi3/{id}', [day3kdbiController::class, 'editkdbi3'])->name('kdbi.editkdbi3');
+Route::post('/admin/kdbi/updatekdbi3/{id}', [day3kdbiController::class, 'updatekdbi3'])->name('kdbi.updatekdbi3');
+Route::post('/admin/kdbi/hapuskdbi3/{id}', [day3kdbiController::class, 'hapuskdbi3'])->name('kdbi.hapuskdbi3');
+
+Route::get('/admin/FinalKDBI/day1', [day4kdbiController::class, 'tampilkdbi4'])->name('kdbi.tampilkdbi4');
+Route::get('/admin/kdbi/editkdbi4/{id}', [day4kdbiController::class, 'editkdbi4'])->name('kdbi.editkdbi4');
+Route::post('/admin/kdbi/updatekdbi4/{id}', [day4kdbiController::class, 'updatekdbi4'])->name('kdbi.updatekdbi4');
+Route::post('/admin/kdbi/hapuskdbi4/{id}', [day4kdbiController::class, 'hapuskdbi4'])->name('kdbi.hapuskdbi4');
+
+Route::get('/admin/FinalKDBI/day2', [day5kdbiController::class, 'tampilkdbi5'])->name('kdbi.tampilkdbi5');
+Route::get('/admin/kdbi/editkdbi5/{id}', [day5kdbiController::class, 'editkdbi5'])->name('kdbi.editkdbi5');
+Route::post('/admin/kdbi/updatekdbi5/{id}', [day5kdbiController::class, 'updatekdbi5'])->name('kdbi.updatekdbi5');
+Route::post('/admin/kdbi/hapuskdbi5/{id}', [day5kdbiController::class, 'hapuskdbi5'])->name('kdbi.hapuskdbi5');

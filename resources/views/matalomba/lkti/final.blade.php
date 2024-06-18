@@ -95,10 +95,9 @@
             <div style="width: 100%;">
                 <h1 class="judul" style="color: white" >Leaderboard</h1>
                 <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative; margin-bottom: 5rem">
-                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 300px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                           <tr>
-                            <th scope="col">No</th>
                             <th scope="col">Nama Peserta</th>
                             <th scope="col" >Score</th>
                             <th scope="col">Rank</th>
@@ -107,7 +106,7 @@
                         <tbody>
                             @foreach($final as $no=>$data)
                             <tr>
-                              <td>{{ $no+1 }}</td>
+
                               <td>{{ $data->namapeserta}}</td>
                               <td>{{ $data->total}}</td>
                               <td>{{ $data->rank}}</td>
@@ -124,10 +123,9 @@
             <div style="width: 100%;">
                 <h1 class="judul" style="color: white" >Hasil Final</h1>
                 <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                           <tr>
-                            <th scope="col" rowspan="4">No</th>
                             <th scope="col" rowspan="4">Nama Peserta</th>
                             <th scope="col" colspan="6">Kriteria Penilaian</th>
                             <th scope="col" rowspan="4">Total</th>
@@ -147,7 +145,6 @@
                         <tbody>
                             @foreach($final as $no=>$data)
                             <tr>
-                              <td>{{ $no+1 }}</td>
                               <td>{{ $data->namapeserta}}</td>
                               <td>{{ $data->scorepemaparanmateri}}</td>
                               <td>{{ $data->scorepertanyaandanjawaban}}</td>

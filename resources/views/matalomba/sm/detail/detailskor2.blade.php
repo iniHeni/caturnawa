@@ -105,6 +105,7 @@
                           <th scope="col">Penilaian Meliputi</th>
                           <th scope="col">Kuantitatif</th>
                           <th scope="col">Kualititatif</th>
+                          <th scope="col">Nilai Mutu</th>
                           <th scope="col">Total</th>
                           <th scope="col">Adjudicators</th>
                       </tr>
@@ -112,10 +113,11 @@
                   <tbody>
                       <tr>
                           <td rowspan="4">{{ $dataa->namateam }}</td>
-                          <td rowspan="4">{{ $dataa->peserta1 }} & {{ $dataa->peserta2 }} & {{ $dataa->peserta3 }} & {{ $dataa->peserta4 }} & {{ $dataa->peserta5 }}</td>
-                          <td>Ide cerita dan riset peristiwa dalam film</td>
+                          <td rowspan="4">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
+                          <td>Ide cerita dalam film</td>
                           <td>{{ $dataa->skorkrit1 }}</td>
                           <td>{{ $dataa->krit1 }}</td>
+                          <td >{{ $dataa->mutu1 }}</td>
                           <td rowspan="4">{{ $dataa->total }}</td>
                           <td rowspan="4">{{ $dataa->juri }}</td>
                       </tr>
@@ -124,18 +126,21 @@
                           <td>Tujuan film dan pengaruh film</td>
                           <td>{{ $dataa->skorkrit2 }}</td>
                           <td>{{ $dataa->krit2 }}</td>
+                          <td >{{ $dataa->mutu2 }}</td>
                       </tr>
                       <tr>
                        
                           <td>Kemampuan dan pemahaman membuat film</td>
                           <td>{{ $dataa->skorkrit3}}</td>
                           <td>{{ $dataa->krit3 }}</td>
+                          <td >{{ $dataa->mutu3 }}</td>
                       </tr>
                       <tr>
                         
-                          <td>Informasi dan pesan yang disampaikan dari film</td>
+                          <td>Etika dalam mempresentasikan film</td>
                           <td>{{ $dataa->skorkrit4}}</td>
                           <td>{{ $dataa->krit4 }}</td>
+                          <td >{{ $dataa->mutu4 }}</td>
                       </tr>
                   </tbody>
                   </table>

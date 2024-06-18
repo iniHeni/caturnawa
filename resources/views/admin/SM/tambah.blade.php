@@ -67,10 +67,11 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{route('sm.mainmenu')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="{{url('/admin/semifinalSM')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -105,31 +106,31 @@
                   </select>
                 </div>
                     <div class="input-field">
-                        <label for="peserta1">Nama Peserta 1</label>
+                        <label for="peserta1">Nama Peserta 1 *Otomatis</label>
                         <select name="peserta1" id="peserta1" is-invalid required >
                           <option  selected>Pilih Peserta</option> 
                       </select>
                     </div>
                     <div class="input-field">
-                      <label for="peserta2">Nama Peserta 2</label>
+                      <label for="peserta2">Nama Peserta 2 *Otomatis</label>
                       <select name="peserta2" id="peserta2" is-invalid required >
                         <option selected>Pilih Peserta</option> 
                     </select>
                   </div>
                   <div class="input-field">
-                    <label for="peserta3">Nama Peserta 3</label>
+                    <label for="peserta3">Nama Peserta 3 *Otomatis</label>
                     <select name="peserta3" id="peserta3" is-invalid required >
                       <option selected>Pilih Peserta</option> 
                   </select>
                 </div>
                 <div class="input-field">
-                  <label for="peserta4">Nama Peserta 4</label>
+                  <label for="peserta4">Nama Peserta 4 *Otomatis</label>
                   <select name="peserta4" id="peserta4" is-invalid required >
                     <option selected>Pilih Peserta</option> 
                 </select>
               </div>
               <div class="input-field">
-                <label for="peserta5">Nama Peserta 5</label>
+                <label for="peserta5">Nama Peserta 5 *Otomatis</label>
                 <select name="peserta5" id="peserta5" is-invalid required >
                   <option selected>Pilih Peserta</option> 
               </select>
@@ -159,7 +160,7 @@
               </div>
           </div>
           <div class="details personal">
-              <span class="title">2. Kreatifitas dalam Menceritakan realita dari sudut pandang Berbeda</span>
+              <span class="title">2. Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</span>
                   <div class="fields">
                     <div class="input-field">
                       <label for="skorkrit2">Kuantitatif:</label>
@@ -172,7 +173,7 @@
                   </div>
               </div>
               <div class="details personal">
-                  <span class="title">3. Kejelasan pesan yang disampaikan melalui film yang dibuat</span>
+                  <span class="title">3. Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</span>
                       <div class="fields">
                         <div class="input-field">
                           <label for="skorkrit3">Kuantitatif:</label>
@@ -185,7 +186,7 @@
                       </div>
                   </div>
                   <div class="details personal">
-                    <span class="title">4. Kesesuaian antara judul film dengan Cerita Pesan yang akan disampaikan</span>
+                    <span class="title">4. Seberapa orisinalitas cerita dalam script</span>
                         <div class="fields">
                           <div class="input-field">
                             <label for="skorkrit4">Kuantitatif:</label>
@@ -211,7 +212,7 @@
                             </div>
                         </div>
                         <div class="details personal">
-                            <span class="title">6. Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</span>
+                            <span class="title">6. Kejelasan dalam struktur dan alur cerita</span>
                                 <div class="fields">
                                   <div class="input-field">
                                     <label for="skorkrit6">Kuantitatif:</label>
@@ -224,7 +225,7 @@
                                 </div>
                             </div>
                     <div class="details personal">
-                    <span class="title">7. Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</span>
+                    <span class="title">7. Keutuhan cerita yang di gambarkan</span>
                         <div class="fields">
                           <div class="input-field">
                             <label for="skorkrit7">Kuantitatif:</label>
@@ -237,7 +238,7 @@
                         </div>
                     </div>
                       <div class="details personal">
-                        <span class="title">8. Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi secara jelas serta memberikan suasana (mood) dalam film</span>
+                        <span class="title">8. Pemilihan bahasa yang digunakan</span>
                             <div class="fields">
                               <div class="input-field">
                                 <label for="skorkrit8">Kuantitatif:</label>
@@ -250,7 +251,7 @@
                             </div>
                       </div>
                           <div class="details personal">
-                            <span class="title">9. Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</span>
+                            <span class="title">9.Kesesuaian dengan isi script</span>
                                 <div class="fields">
                                   <div class="input-field">
                                     <label for="skorkrit9">Kuantitatif:</label>
@@ -263,7 +264,7 @@
                                 </div>
                           </div>
                               <div class="details personal">
-                                <span class="title">10. Kesesuaian antara gambar dan suara serta estetika dalam film</span>
+                                <span class="title">10. Kejelasan dalam menggambarkan adegan dengan detail</span>
                                     <div class="fields">
                                       <div class="input-field">
                                         <label for="skorkrit10">Kuantitatif:</label>
@@ -272,6 +273,32 @@
                                     <div class="input-field">
                                       <label for="krit10">Kualitatif</label>
                                       <input name="krit10" id="krit10" type="text" placeholder="Masukkan Kualitatif" required>
+                                  </div>
+                                    </div>
+                              </div>
+                              <div class="details personal">
+                                <span class="title">11. Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</span>
+                                    <div class="fields">
+                                      <div class="input-field">
+                                        <label for="skorkrit11">Kuantitatif:</label>
+                                        <input type="number" id="skorkrit11" name="skorkrit11" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
+                                    </div>
+                                    <div class="input-field">
+                                      <label for="krit11">Kualitatif</label>
+                                      <input name="krit11" id="krit11" type="text" placeholder="Masukkan Kualitatif" required>
+                                  </div>
+                                    </div>
+                              </div>
+                              <div class="details personal">
+                                <span class="title">12. Kesesuaian storyboard dengan film</span>
+                                    <div class="fields">
+                                      <div class="input-field">
+                                        <label for="skorkrit12">Kuantitatif:</label>
+                                        <input type="number" id="skorkrit12" name="skorkrit12" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
+                                    </div>
+                                    <div class="input-field">
+                                      <label for="krit12">Kualitatif</label>
+                                      <input name="krit12" id="krit12" type="text" placeholder="Masukkan Kualitatif" required>
                                   </div>
                                     </div>
                               </div>
@@ -323,8 +350,10 @@
       const skorkrit8 = parseFloat(form.skorkrit8.value) || 0;
       const skorkrit9 = parseFloat(form.skorkrit9.value) || 0;
       const skorkrit10 = parseFloat(form.skorkrit10.value) || 0;
+      const skorkrit11 = parseFloat(form.skorkrit11.value) || 0;
+      const skorkrit12 = parseFloat(form.skorkrit12.value) || 0;
 
-      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10;
+      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10 + skorkrit11 + skorkrit12;
       form.total.value = total;
     }
   </script>

@@ -70,6 +70,7 @@
     <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="{{url('/admin/semifinalSM')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
@@ -274,6 +275,32 @@
                                   </div>
                                     </div>
                               </div>
+                              <div class="details personal">
+                                <span class="title">11. Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</span>
+                                    <div class="fields">
+                                      <div class="input-field">
+                                        <label for="skorkrit11">Kuantitatif:</label>
+                                        <input type="number" id="skorkrit11" name="skorkrit11" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit11 }}">
+                                    </div>
+                                    <div class="input-field">
+                                      <label for="krit11">Kualitatif</label>
+                                      <input name="krit11" id="krit11" type="text" placeholder="Masukkan Kualitatif" required value="{{ $edit->krit11 }}">
+                                  </div>
+                                    </div>
+                              </div>
+                              <div class="details personal">
+                                <span class="title">12. Kesesuaian storyboard dengan film</span>
+                                    <div class="fields">
+                                      <div class="input-field">
+                                        <label for="skorkrit12">Kuantitatif:</label>
+                                        <input type="number" id="skorkrit12" name="skorkrit12" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit12 }}">
+                                    </div>
+                                    <div class="input-field">
+                                      <label for="krit12">Kualitatif</label>
+                                      <input name="krit12" id="krit12" type="text" placeholder="Masukkan Kualitatif" required value="{{ $edit->krit12 }}">
+                                  </div>
+                                    </div>
+                              </div>
                     <div class="details ID">
                       <span class="title">Hasil Total Score</span>
                           <div class="fields">
@@ -322,8 +349,10 @@
       const skorkrit8 = parseFloat(form.skorkrit8.value) || 0;
       const skorkrit9 = parseFloat(form.skorkrit9.value) || 0;
       const skorkrit10 = parseFloat(form.skorkrit10.value) || 0;
+      const skorkrit11 = parseFloat(form.skorkrit11.value) || 0;
+      const skorkrit12 = parseFloat(form.skorkrit12.value) || 0;
 
-      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10;
+      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10 + skorkrit11 + skorkrit12;
       form.total.value = total;
     }
   </script>

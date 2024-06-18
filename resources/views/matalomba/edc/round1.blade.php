@@ -3,17 +3,17 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/nowrap.css">
+      <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../css/pagelomba.css">
       <style>
         h1{
             color: #fff;
@@ -136,7 +136,7 @@ background-color: white;
 .loader {
 width: 9.5rem;
 height: 9.5rem;
-background: center / contain no-repeat url(../../img/loader.gif);
+background: center / contain no-repeat url(../../../img/loader.gif);
 }
 </style>
       <title>Caturnawa - EDCRound1</title>
@@ -148,13 +148,12 @@ background: center / contain no-repeat url(../../img/loader.gif);
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <img src="../../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 25rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -187,48 +186,17 @@ background: center / contain no-repeat url(../../img/loader.gif);
 <section id="rank">
     <h1 class="judul">Session</h1>
     <div class="card-list">
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session1') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 1</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session2') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 2</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session3') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 3</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session4') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 4</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session5') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 5</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
-            <a href="{{url('/matalomba/penyisihanEDC/round1/session6') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
-                <h3>Session 6</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
+      @if($dataa->count() > 0)
+      @foreach($dataa->groupBy('sesi') as $sesi => $dataPerSesi)
+          <a href="{{ route('edc.detailday1r1', $sesi) }}" class="card-item"> 
+              <img src="../../../img/edc.png" alt="Card Image">
+              <h3>Session {{ $sesi }}</h3>
+              <div class="arrow">
+                  <i class="card-icon">Detail</i>
+              </div>
+          </a>
+      @endforeach
+  @endif
         </div>
     </section>
 <!--==================== Session ====================-->
@@ -251,7 +219,7 @@ background: center / contain no-repeat url(../../img/loader.gif);
           }, 2000)
         );
       });</script>
-<script src="../../js/rank.js"></script>
-      <script src="../../js/nav.js"></script>
+<script src="../../../js/rank.js"></script>
+      <script src="../../../js/nav.js"></script>
    </body>
 </html>

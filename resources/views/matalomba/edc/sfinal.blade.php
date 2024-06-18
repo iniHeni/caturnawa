@@ -3,18 +3,18 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/nowrap.css">
+      <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../css/pagelomba.css">
-      <link rel="stylesheet" href="../css/babak.css">
+      <link rel="stylesheet" href="../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../css/babak.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
 
@@ -45,7 +45,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
    </head>
@@ -56,13 +56,12 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+         <img src="../../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 25rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+					
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -96,25 +95,25 @@
             <div style="width: 100%;">
                 <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
                 <div class="table-responsive" style="max-height: 300px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>Rank</th>
-                                <th>Team</th>
-                                <th>Participant1</th>
-                                <th>Participant2</th>
-                                <th>Victory Point</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                             <td>1</td>
-                             <td>Universitas Nasional</td>
-                             <td>1. Johdoe</td>
-                             <td>Ide cerita dan riset peristiwa dalam film</td>
-                             <td ></td>
-                           </tr>
-                        </tbody>
+                    <table class="table table-bordered table-striped" style="min-width: 500px; margin-bottom: 0; border-collapse: collapse;">
+                      <thead style="position: sticky; top: -1; z-index: 10;">
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Participant</th>
+                            <th>Victory Point</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($groupedByTeam as $data)
+                      <tr>
+                        <td>{{ $data['rank'] }}</td> 
+                        <td>{{ $data['team'] }}</td>
+                        <td>{{ $data['nama1'] }}<br>{{ $data['nama2'] }}</td>
+                        <td>{{ $data['total'] }}</td>
+                    </tr>
+        @endforeach
+                    </tbody>
                     </table>
                 </div>
             </div>
@@ -135,15 +134,15 @@
       <!--==================== Round ====================-->
 <section id="rank">
     <div class="card-list">
-            <a href="{{url('/matalomba/sfinalEDC/round1') }}" class="card-item" id="round1">
-                <img src="../../img/edc.png" alt="Card Image">
+            <a href="{{url('matalomba/edc/semifinal/round1') }}" class="card-item" id="round1">
+                <img src="../../../img/edc.png" alt="Card Image">
                 <h3>Round 1</h3>
                 <div class="arrow">
                     <i class="card-icon">Detail</i>
                 </div>
             </a>
-            <a href="{{url('/matalomba/sfinalEDC/round2') }}" class="card-item">
-                <img src="../../img/edc.png" alt="Card Image">
+            <a href="{{url('matalomba/edc/semifinal/round2') }}" class="card-item">
+                <img src="../../../img/edc.png" alt="Card Image">
                 <h3>Round 2</h3>
                 <div class="arrow">
                     <i class="card-icon">Detail</i>
@@ -171,7 +170,7 @@
           }, 2000)
         );
       });</script>      
-<script src="../../js/nav.js"></script>
+<script src="../../../js/nav.js"></script>
       <script type="text/javascript">
         const round1 = document.getElementById('round1');
         

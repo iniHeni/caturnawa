@@ -3,17 +3,18 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../../css/detaillpeserta.css">
 
-      <title>Caturnawa - KDBIDetail</title>
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../../css/detaillpeserta.css">
+
+      <title>Caturnawa - EDCDetail</title>
       <style>
         #loadingDiv {
    width: 100%;
@@ -40,7 +41,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
    </head>
@@ -50,20 +51,24 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
-        <div class="nav__menu" id="nav-menu">
-       <ul class="nav__list">
-       <div style="margin-right: 21rem" class="nav__item">
-                       <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-                       <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
-                   </div>
+         <nav class="nav container">
+         <img src="../../../img/logokdbi.jpeg" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+        <div style="margin-right: 18rem" class="nav__item">
+						<li><a href="../../../locale/ind" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="../../../locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
+					</div>
           <li class="nav__item">
             <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
          </li>
 
          <li class="nav__item">
             <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('matalomba/scoreKDBI') }}" class="nav__link">@lang('messages.score')</a>
          </li>
 
          <li class="nav__item">
@@ -92,114 +97,102 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-<section id="peserta">
+      <section>
 <div class="responsive-container-block container">
   <p class="text-blk team-head-text">
-    Team 1
+    Team {{ $dataa->id}}
   </p>
   <div class="responsive-container-block">
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto}}">
         </div>
         <p class="text-blk name">
-          Ketua
+         {{ $dataa->nama }}
         </p>
         <p class="text-blk position">
-          Nama
+          Debater 1
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta.
+          {{ $dataa->email }}<br>{{ $dataa->nohp }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+       
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto1}}">
         </div>
         <p class="text-blk name">
-          Member 1
+          {{ $dataa->nama1 }}
         </p>
         <p class="text-blk position">
-          Nama
+          Debater 2
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta
+          {{ $dataa->email1 }}<br>{{ $dataa->nohp1 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+    
       </div>
     </div>
 
+    a
   </div>
 </div>
 </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        function removeLoader() {
-    $("#loadingDiv").fadeOut(200, () => {
-      $("#loadingDiv").remove();
-    });
-  }
-  
-  $(window).on("load", () => {
-    setTimeout(removeLoader, 2000);
-  
-    $("body").css(
-      "overflow-y",
-      "hidden",
-      setTimeout(() => {
-        $("body").css("overflow-y", "visible");
-      }, 2000)
-    );
-  });
-    </script>
-<script src="../../js/nav.js"></script>
-    </body>
+
+
     <!-- JavaScript -->
-</html>
-<script type="text/javascript">
-  $(function() {
-      $(this).bind("contextmenu", function(e) {
-          e.preventDefault();
-      });
-  }); 
-  </script>
-  <script type="text/JavaScript"> 
-      function killCopy(e){ return false } 
-      function reEnable(){ return true } 
-      document.onselectstart=new Function ("return false"); 
-      if (window.sidebar)
-      { 
-          document.onmousedown=killCopy; 
-          document.onclick=reEnable; 
-      } 
-  </script>
-  <script type="text/Javascript">
-  $(document).keydown(function(event){
-if(event.keyCode==123){
-    return false;
-}
-else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-         return false;
-}
-});
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script>function removeLoader() {
+        $("#loadingDiv").fadeOut(200, () => {
+          $("#loadingDiv").remove();
+        });
+      }
+      
+      $(window).on("load", () => {
+        setTimeout(removeLoader, 2000);
+      
+        $("body").css(
+          "overflow-y",
+          "hidden",
+          setTimeout(() => {
+            $("body").css("overflow-y", "visible");
+          }, 2000)
+        );
+      });</script>
+
+      <script src="../../../js/nav.js"></script>
+      <script type="text/javascript">
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+        </script>
+        <script type="text/JavaScript"> 
+            function killCopy(e){ return false } 
+            function reEnable(){ return true } 
+            document.onselectstart=new Function ("return false"); 
+            if (window.sidebar)
+            { 
+                document.onmousedown=killCopy; 
+                document.onclick=reEnable; 
+            } 
+        </script>
+        <script type="text/Javascript">
+        $(document).keydown(function(event){
+      if(event.keyCode==123){
+          return false;
+      }
+      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+               return false;
+      }
+  });
 </script>
+   </body>
+</html>

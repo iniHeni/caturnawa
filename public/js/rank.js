@@ -1,50 +1,46 @@
-const rankingsBody = document.querySelector("#rankings > tbody");
-
-function loadRankings () {
-    const request = new XMLHttpRequest();
-
-    request.open("get", "https://codepen.io/imisterk/pen/MLgwOa.js");
-    request.onload = () => {
-        try {
-            const json = JSON.parse(request.responseText);
-            populateRankings(json);
-        } catch (e) {
-            console.warn("Could not load Player Rankings! :(");
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll(".item");
+  
+    function checkRegistrationStatus() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+  
+      items.forEach((item, index) => {
+        const dateElements = item.querySelectorAll(".num, .day");
+        let dateString = Array.from(dateElements).map(el => el.textContent).join(" ");
+  
+  
+        let phaseStart, phaseEnd;
+        if (index === 0) {
+          phaseStart = new Date(currentYear, 5, 15); 
+          phaseEnd = new Date(currentYear, 6, 26, 23, 59, 59); 
+        } else if (index === 1) {
+          phaseStart = new Date(currentYear, 7, 27); 
+          phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
+        } else if (index === 2) {
+          phaseStart = new Date(currentYear, 7, 12); 
+          phaseEnd = new Date(currentYear, 7, 23, 23, 59, 59); 
         }
-    };
-
-    request.send();
-}
-
-function populateRankings (json) {
-    // Populate Leaderboard
-    json.forEach((row) => {
-        const tr = document.createElement("tr");
-
-        row.forEach((cell) => {
-            const td = document.createElement("td");
-            td.textContent = cell;
-            tr.appendChild(td);
-        });
-
-        rankingsBody.appendChild(tr);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => { loadRankings (); });
-
-$("#search-leaderboard").keyup(function() {
-    var value = this.value;
-
-    $("table").find("tr").each(function(index) {
-        if (index === 0) return;
-
-        var if_td_has = false;
-        $(this).find('td').each(function () {
-            if_td_has = if_td_has || $(this).text().indexOf(value) !== -1; //Check if td's text matches key and then use OR to check it for all td's
-        });
-
-        $(this).toggle(if_td_has);
-
-    });
-});
+  
+        const ticketsButton = item.querySelector(".tickets, .daftar"); 
+  
+        if (now >= phaseStart && now <= phaseEnd && !ticketsButton.classList.contains("daftar")) {
+          ticketsButton.textContent = "Register Now!";
+          ticketsButton.classList.remove("tickets");
+          ticketsButton.classList.add("daftar");
+          ticketsButton.addEventListener("click", function() {
+            window.location.href = "/matalomba/daftarEDC"; 
+          });
+        } else if ((now < phaseStart || now > phaseEnd) && !ticketsButton.classList.contains("tickets")) {
+          ticketsButton.textContent = "Tutup/Closed";
+          ticketsButton.classList.remove("daftar");
+          ticketsButton.classList.add("tickets");
+          ticketsButton.href = "#";
+        }
+      });
+    }
+  
+    checkRegistrationStatus();
+  
+    setInterval(checkRegistrationStatus, 60000); // Check every minute
+  });

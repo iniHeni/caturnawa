@@ -67,7 +67,7 @@
                </li>
       
                <li class="nav__item">
-                  <a href="{{url('matalomba/sm') }}" class="nav__link">@lang('messages.peserta')</a>
+                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
                </li>
       
                </ul>
@@ -94,7 +94,7 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard Penyisihan</h1>
+            <h1 class="judul" style="color: white" >Leaderboard Result Elimination</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                     <thead style="position: sticky; top: -1; z-index: 10;">
@@ -112,6 +112,7 @@
                         <td>{{ $rank+1 }}</td>
                       </tr>
                       @endforeach
+                      <tr><td colspan="3">Jury Mention</td></tr>
                     </tbody>
                 </table>
             </div>

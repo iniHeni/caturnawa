@@ -67,10 +67,11 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
   <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
-  <a href="{{route('sm.mainmenu')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+  <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
   <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
   <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-  <a href="{{url('/admin/finalSM')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+  <a href="{{url('/admin/semifinalSM')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+  <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -97,39 +98,31 @@
                         <tr>
                             <th scope="col" rowspan="3">No</th>
                             <th scope="col" rowspan="3">Nama Team</th>
-                            <th scope="col" rowspan="3" colspan="5">Nama Peserta</th>
-                            <th scope="col" colspan="20">Kriteria Penilaian</th>
+                            <th scope="col" rowspan="3" >Nama Peserta</th>
+                            <th scope="col" colspan="24">Kriteria Penilaian</th>
                             <th scope="col" rowspan="3">Total</th>
                             <th scope="col" rowspan="3">Rank</th>
                             <th scope="col" rowspan="3">Adjudicators</th>
                             <th scope="col" rowspan="3 ">actions</th>
                         </tr>
                         <tr>
-                            <th scope="col">Kesesuaian film dengan tema</th>
-                            <th scope="col">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda (teknik penyutradaraan)</th>
-                            <th scope="col">Kejelasan pesan yang disampaikan melalui film yang dibuat</th>
-                            <th scope="col">Kesesuaian antara judul film dengan cerita melalui film yang dibuat</th>
-                            <th scope="col">Kedalaman riset dan observasi dalam film</th>
-                            <th scope="col">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
-                            <th scope="col">Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</th>
-                            <th scope="col">Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi<br>secara jelas serta memberikan suasana (mood) dalam film</th>
-                            <th scope="col">Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</th>
-                            <th scope="col">Kesesuaian antara gambar dan suara serta estetika dalam film</th>
-                            <th scope="col">Kesesuaian film dengan tema</th>
-                            <th scope="col">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda (teknik penyutradaraan)</th>
-                            <th scope="col">Kejelasan pesan yang disampaikan melalui film yang dibuat</th>
-                            <th scope="col">Kesesuaian antara judul film dengan cerita melalui film yang dibuat</th>
-                            <th scope="col">Kedalaman riset dan observasi dalam film</th>
-                            <th scope="col">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
-                            <th scope="col">Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</th>
-                            <th scope="col">Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi<br>secara jelas serta memberikan suasana (mood) dalam film</th>
-                            <th scope="col">Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</th>
-                            <th scope="col">Kesesuaian antara gambar dan suara serta estetika dalam film</th>
+                            <th scope="col" colspan="2">Kesesuaian film dengan tema</th>
+                            <th scope="col" colspan="2">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
+                            <th scope="col" colspan="2">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</th>
+                            <th scope="col" colspan="2">Seberapa orisinalitas cerita dalam script</th>
+                            <th scope="col" colspan="2">Kedalaman riset dan observasi dalam film</th>
+                            <th scope="col" colspan="2">Kejelasan dalam struktur dan alur cerita</th>
+                            <th scope="col" colspan="2">Keutuhan cerita yang di gambarkan</th>
+                            <th scope="col" colspan="2">Pemilihan bahasa yang digunakan</th>
+                            <th scope="col" colspan="2">Kesesuaian dengan isi script</th>
+                            <th scope="col" colspan="2">Kejelasan dalam menggambarkan adegan dengan detail</th>
+                            <th scope="col" colspan="2">Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</th>
+                            <th scope="col" colspan="2">Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</th>
 
                         </tr>
                         <tr>
-                            <th scope="col" colspan="10">Kuantitatif</th>
-                            <th scope="col" colspan="10">Kualitatif</th>
+                            <th scope="col" colspan="12">Kuantitatif</th>
+                            <th scope="col" colspan="12">Kualitatif</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -137,11 +130,7 @@
                       <tr>
                           <td>{{ $no+1 }}</td>
                           <td>{{ $data->namateam }}</td>
-                          <td>{{ $data->peserta1}}</td>
-                          <td>{{ $data->peserta2}}</td>
-                          <td>{{ $data->peserta3}}</td>
-                          <td>{{ $data->peserta4}}</td>
-                          <td>{{ $data->peserta5}}</td>
+                          <td>1.{{ $data->peserta1}}<br>2.{{ $data->peserta2}}<br>3.{{ $data->peserta3}}<br>4.{{ $data->peserta4}}<br>5.{{ $data->peserta5}}</td>
                           <td>{{ $data->skorkrit1}}</td>
                           <td>{{ $data->skorkrit2}}</td>
                           <td>{{ $data->skorkrit3}}</td>
@@ -152,6 +141,8 @@
                           <td>{{ $data->skorkrit8}}</td>
                           <td>{{ $data->skorkrit9}}</td>
                           <td>{{ $data->skorkrit10}}</td>
+                          <td>{{ $data->skorkrit11}}</td>
+                          <td>{{ $data->skorkrit12}}</td>
                           <td>{{ $data->krit1}}</td>
                           <td>{{ $data->krit2}}</td>
                           <td>{{ $data->krit3}}</td>
@@ -162,6 +153,8 @@
                           <td>{{ $data->krit8}}</td>
                           <td>{{ $data->krit9}}</td>
                           <td>{{ $data->krit10}}</td>
+                          <td>{{ $data->krit11}}</td>
+                          <td>{{ $data->krit12}}</td>
                           <td>{{ $data->total}}</td>
                           <td>{{ $data->rank}}</td>
                           <td>{{ $data->juri}}</td>

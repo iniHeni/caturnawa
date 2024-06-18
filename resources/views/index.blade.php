@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,30 +23,7 @@
 
 
       <title>Caturnawa</title>
-      {{-- <style>
-         .card-item {
-             opacity: 1;
-             transition: opacity 1s ease-in-out;
-         }
-         
-         .card-item.fade-out {
-             opacity: 0;
-             transition: opacity 1s ease-in-out;
-         }
-         
-         .card-item.fade-in {
-             opacity: 0;
-             visibility: hidden;
-             transition: opacity 0s ease-in-out 1s, visibility 0s linear 1s;
-         }
-         
-         .card-item.show {
-             opacity: 1;
-             visibility: visible;
-             transition: opacity 1s ease-in-out, visibility 0s linear;
-         }
-         </style> --}}
-         
+
          
          
          
@@ -184,16 +161,8 @@
                  <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
          </div>
-<<<<<<< HEAD
     </div>
       </section>
-=======
-         
-     </section>
-     
-     
-     
->>>>>>> 67ad4aef4c628bef218db1923a2b4777fff6523d
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,64L34.3,80C68.6,96,137,128,206,133.3C274.3,139,343,117,411,112C480,107,549,117,617,112C685.7,107,754,85,823,85.3C891.4,85,960,107,1029,122.7C1097.1,139,1166,149,1234,144C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
          <!--=============== Kontak Kami ===============-->
@@ -291,96 +260,18 @@
              });
          @endif
          </script>
-   <script type="text/javascript">
-const uploadSMBtn = document.getElementById('');
-const uploadSPCBtn = document.getElementById(''); 
-
-uploadSMBtn.addEventListener('click', () => {
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Fitur upload belum tersedia!',
-  });
-});
-
-uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Fitur upload belum tersedia!',
-  });
-});
-   </script>
-
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
 	</script> 
    <script src="https://kit.fontawesome.com/74b658c783.js" crossorigin="anonymous"></script>
-	<script>
-	       $('.clients-carousel').owlCarousel({
-	   autoplay: true,
-	   loop: true,
-	   margin: 15,
-	   dots: false,
-	   slideTransition: 'linear',
-	   autoplayTimeout: 4500,
-	   autoplayHoverPause: true,
-	   autoplaySpeed: 4500,
-	   responsive: {
-	     0: {
-	       items: 2
-	     },
-	     500: {
-	       items: 3
-	     },
-	     600: {
-	       items: 4
-	     },
-	     800: {
-	       items: 4
-	     },
-	     1200: {
-	       items: 4
-	     }
-
-	   }
-	 });
-	</script>
 
       <!--=============== SCRIPT ===============-->
 
       <script src="../js/homepage.js"></script>
       <script src="../js/loader.js"></script>
       <script src="../js/nav.js"></script>
-      <script src="../js/harga.js"></script>
-      <script type="text/javascript">
-         $(function() {
-             $(this).bind("contextmenu", function(e) {
-                 e.preventDefault();
-             });
-         }); 
-         </script>
-         <script type="text/JavaScript"> 
-             function killCopy(e){ return false } 
-             function reEnable(){ return true } 
-             document.onselectstart=new Function ("return false"); 
-             if (window.sidebar)
-             { 
-                 document.onmousedown=killCopy; 
-                 document.onclick=reEnable; 
-             } 
-         </script>
-         <script type="text/Javascript">
-         $(document).keydown(function(event){
-       if(event.keyCode==123){
-           return false;
-       }
-       else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-                return false;
-       }
-   });
-</script>
+     
    </body>
 </html>

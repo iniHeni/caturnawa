@@ -105,37 +105,42 @@
                           <th scope="col">Penilaian Meliputi</th>
                           <th scope="col">Kuantitatif</th>
                           <th scope="col">Kualititatif</th>
+                          <th scope="col">Nilai Mutu</th>
                           <th scope="col">Total</th>
                           <th scope="col">Adjudicators</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
-                          <td rowspan="10">{{ $dataa->namateam }}</td>
-                          <td rowspan="10">{{ $dataa->peserta1 }} & {{ $dataa->peserta2 }} & {{ $dataa->peserta3 }} & {{ $dataa->peserta4 }} & {{ $dataa->peserta5 }}</td>
+                          <td rowspan="12">{{ $dataa->namateam }}</td>
+                          <td rowspan="12">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
                           <td>Kesesuaian film dengan tema</td>
                           <td>{{ $dataa->skorkrit1 }}</td>
                           <td>{{ $dataa->krit1 }}</td>
-                          <td rowspan="10">{{ $dataa->total }}</td>
-                          <td rowspan="10">{{ $dataa->juri }}</td>
+                          <td>{{ $dataa->mutu1 }}</td>
+                          <td rowspan="12">{{ $dataa->total }}</td>
+                          <td rowspan="12">{{ $dataa->juri }}</td>
                       </tr>
                       <tr>
                        
-                          <td>Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda (teknik penyutradaraan)</td>
+                          <td>Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</td>
                           <td>{{ $dataa->skorkrit2 }}</td>
                           <td>{{ $dataa->krit2 }}</td>
+                          <td>{{ $dataa->mutu2 }}</td>
                       </tr>
                       <tr>
                        
-                          <td>Kejelasan pesan yang disampaikan melalui film yang dibuat</td>
+                          <td>Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</td>
                           <td>{{ $dataa->skorkrit3}}</td>
                           <td>{{ $dataa->krit3 }}</td>
+                          <td>{{ $dataa->mutu3 }}</td>
                       </tr>
                       <tr>
                         
-                          <td>Kesesuaian antara judul film dengan cerita melalui film yang dibuat</td>
+                          <td>Seberapa orisinalitas cerita dalam script</td>
                           <td>{{ $dataa->skorkrit4}}</td>
                           <td>{{ $dataa->krit4 }}</td>
+                          <td>{{ $dataa->mutu4 }}</td>
                       </tr>
                       
                       <tr>
@@ -143,37 +148,57 @@
                           <td>Kedalaman riset dan observasi dalam film</td>
                           <td>{{ $dataa->skorkrit5}}</td>
                           <td>{{ $dataa->krit5 }}</td>
+                          <td>{{ $dataa->mutu5 }}</td>
                       </tr>
                       <tr>
                         
-                          <td>Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</td>
+                          <td>Kejelasan dalam struktur dan alur cerita</td>
                           <td>{{ $dataa->skorkrit6}}</td>
                           <td>{{ $dataa->krit6 }}</td>
+                          <td>{{ $dataa->mutu6 }}</td>
                       </tr>
                       <tr>
                     
-                        <td>Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</td>
+                        <td>Keutuhan cerita yang di gambarkan</td>
                         <td>{{ $dataa->skorkrit7}}</td>
                         <td>{{ $dataa->krit7 }}</td>
+                        <td>{{ $dataa->mutu7 }}</td>
                     </tr>
                     <tr>
                   
-                      <td>Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi secara jelas serta memberikan suasana (mood) dalam film</td>
+                      <td>Pemilihan bahasa yang digunakan</td>
                       <td>{{ $dataa->skorkrit8}}</td>
                       <td>{{ $dataa->krit8 }}</td>
+                      <td>{{ $dataa->mutu8 }}</td>
                   </tr>
                   <tr>
                
-                    <td>Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</td>
+                    <td>Kesesuaian dengan isi script</td>
                     <td>{{ $dataa->skorkrit9}}</td>
                     <td>{{ $dataa->krit9 }}</td>
+                    <td>{{ $dataa->mutu9 }}</td>
                 </tr>
                 <tr>
           
-                  <td>Kesesuaian antara gambar dan suara serta estetika dalam film</td>
+                  <td>Kejelasan dalam menggambarkan adegan dengan detail</td>
                   <td>{{ $dataa->skorkrit10}}</td>
                   <td>{{ $dataa->krit10 }}</td>
+                  <td>{{ $dataa->mutu10 }}</td>
               </tr>
+              <tr>
+          
+                <td>Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</td>
+                <td>{{ $dataa->skorkrit11}}</td>
+                <td>{{ $dataa->krit11 }}</td>
+                <td>{{ $dataa->mutu11 }}</td>
+            </tr>
+            <tr>
+          
+              <td>Kesesuaian storyboard dengan film</td>
+              <td>{{ $dataa->skorkrit12}}</td>
+              <td>{{ $dataa->krit12 }}</td>
+              <td>{{ $dataa->mutu12 }}</td>
+          </tr>
                      
                   </tbody>
                   </table>

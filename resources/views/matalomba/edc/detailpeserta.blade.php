@@ -3,7 +3,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon"  href="../../img/uf1.png">
+      <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../../css/detaillpeserta.css">
+      <link rel="stylesheet" href="../../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../../css/detaillpeserta.css">
 
       <title>Caturnawa - EDCDetail</title>
       <style>
@@ -41,7 +41,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
    </head>
@@ -52,27 +52,31 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
-         <div class="nav__menu" id="nav-menu">
+         <img src="../../../img/edcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo" ></a>
+      <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 23rem" class="nav__item">
-						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 18rem" class="nav__item">
+						<li><a href="../../../locale/ind" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="../../../locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
           <li class="nav__item">
             <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
          </li>
 
          <li class="nav__item">
-            <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
          </li>
 
          <li class="nav__item">
-            <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
+            <a href="{{url('matalomba/scoreKDBI') }}" class="nav__link">@lang('messages.score')</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.round')</a>
          </li>
          
          <li class="nav__item">
-            <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.juri')</a>
+            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.juri')</a>
          </li>
                </ul>
 
@@ -96,68 +100,53 @@
       <section>
 <div class="responsive-container-block container">
   <p class="text-blk team-head-text">
-    Team 1
+    Team {{ $dataa->id}}
   </p>
   <div class="responsive-container-block">
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto}}">
         </div>
         <p class="text-blk name">
-          Debater 1
+         {{ $dataa->nama }}
         </p>
         <p class="text-blk position">
-          Nama
+          Debater 1
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta.
+          {{ $dataa->email }}<br>{{ $dataa->nohp }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+       
       </div>
     </div>
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto1}}">
         </div>
         <p class="text-blk name">
-          Debater 2
+          {{ $dataa->nama1 }}
         </p>
         <p class="text-blk position">
-          Nama
+          Debater 2
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta
+          {{ $dataa->email1 }}<br>{{ $dataa->nohp1 }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
+    
       </div>
     </div>
+
+    a
   </div>
 </div>
 </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 
-    <!-- JavaScript -->
-    
 
-      <script src="../../js/nav.js"></script>
-    </body>
+    <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
@@ -176,6 +165,8 @@
           }, 2000)
         );
       });</script>
+
+      <script src="../../../js/nav.js"></script>
       <script type="text/javascript">
         $(function() {
             $(this).bind("contextmenu", function(e) {
@@ -202,5 +193,6 @@
                return false;
       }
   });
-      </script>
+</script>
+   </body>
 </html>

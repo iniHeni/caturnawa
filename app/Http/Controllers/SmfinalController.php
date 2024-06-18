@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\smsemifinal;
 use App\Models\pesertasm;
 use App\Models\smfinal;
+use App\Models\smsfinal;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
@@ -82,10 +83,11 @@ public function hapusf($id){
 
 public function final()
 {
-    $final = DB::table('smsemifinals')
-    ->select('smsemifinals.namateam', DB::raw('SUM(smsemifinals.total + smfinals.total) as total'))
-    ->join('smfinals', 'smsemifinals.namateam', '=', 'smfinals.namateam')
-    ->groupBy('smsemifinals.namateam')
+    $final = DB::table('smfinals') // Ubah tabel awal menjadi smfinals
+    ->select('smfinals.namateam', DB::raw('SUM(smfinals.total + COALESCE(smsemifinals.total, 0) + COALESCE(smsfinals.total, 0)) as total')) 
+    ->leftJoin('smsemifinals', 'smfinals.namateam', '=', 'smsemifinals.namateam')
+    ->leftJoin('smsfinals', 'smfinals.namateam', '=', 'smsfinals.namateam')
+    ->groupBy('smfinals.namateam')
     ->orderByDesc('total')
     ->get();
 
@@ -94,8 +96,26 @@ return view('matalomba/sm/final', compact('final'));
 }
 public function detailf($id){
     $dataa = smfinal::find($id);
+    $dataa->mutu1 = $this->calculateNilaiMutu($dataa->skorkrit1);
+    $dataa->mutu2 = $this->calculateNilaiMutu($dataa->skorkrit2);
+    $dataa->mutu3 = $this->calculateNilaiMutu($dataa->skorkrit3);
+    $dataa->mutu4 = $this->calculateNilaiMutu($dataa->skorkrit4);
     return view('matalomba/sm/detail/detailskor2', compact('dataa'));
  }
+ private function calculateNilaiMutu($skorkrit)
+{
+    if ($skorkrit >= 85 && $skorkrit <= 100) {
+        return 'A';
+    } elseif ($skorkrit >= 65 && $skorkrit <= 84) {
+        return 'B';
+    } elseif ($skorkrit >= 45 && $skorkrit <= 64) {
+        return 'C';
+    } elseif ($skorkrit >= 25 && $skorkrit <= 44) {
+        return 'D';
+    } else {
+        return 'E';
+    }
+}
  public function pesertaf(){
     $peserta = pesertasm::all();
     

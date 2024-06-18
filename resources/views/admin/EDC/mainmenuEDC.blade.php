@@ -13,12 +13,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/navmenu.css">
-
+    <style>
+        #loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 99999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+}
+ 
+#loadingDiv {
+   width: 100%;
+   height: 100%;
+   z-index: 999999;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+ }
+ 
+ .loader {
+   width: 9.5rem;
+   height: 9.5rem;
+   background: center / contain no-repeat url(../img/loader.gif);
+ }
+     </style>
 
     <title>Caturnawa - Admin</title>
 </head>
 <body>
-
+    <div id="loadingDiv">
+        <div class="loader"></div>
+      </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
@@ -33,10 +63,11 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="#" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="#" id="penyisihanEDC" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="#" id="semifinalEDC" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
-    <a href="#" id="finalEDC" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
+    <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="{{url('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="{{url('/admin/finalEDC')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -64,14 +95,49 @@
         <div id="data-container"></div>
     </section>
 </div>
-<!-- Script untuk memanggil file admin.js -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../../js/adminEDC.js"></script>
-
 <script>
-document.getElementById("menu").addEventListener("click", function () {
-    document.body.classList.toggle("sidebar-open");
-});
-</script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data ini akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit(); 
+            }
+        });
+    }
+    </script>
+<script src="../../../js/adminEDC.js"></script>
+<script>
+    document.getElementById("menu").addEventListener("click", function () {
+        document.body.classList.toggle("sidebar-open");
+    });
+    </script>
+    <script>
+        function removeLoader() {
+    $("#loadingDiv").fadeOut(200, () => {
+      $("#loadingDiv").remove();
+    });
+  }
+  
+  $(window).on("load", () => {
+    setTimeout(removeLoader, 2000);
+  
+    $("body").css(
+      "overflow-y",
+      "hidden",
+      setTimeout(() => {
+        $("body").css("overflow-y", "visible");
+      }, 2000)
+    );
+  });
+    </script>
 </body>
 </html>

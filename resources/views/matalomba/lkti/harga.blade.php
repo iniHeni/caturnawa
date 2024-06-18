@@ -103,7 +103,7 @@
 <!--==================== Mata Lomba ====================-->
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
-   <h1 class="upcomming">upcomming event</h1>
+   <h1 class="upcomming">Price</h1>
    
    <div class="item">
      <span class="up-border"></span>
@@ -112,14 +112,14 @@
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
        <h2 class="num">23</h2>
-       <p class="day">Juli</p>
+       <p class="day">July</p>
        <span class="up-border"></span>
        <span class="down-border"></span>
      </div>
      
      <div class="item-left">
-       <p class="event">Periode I</p>
-       <h2 class="title">Universitas Nasional</h2>
+       <p class="event">Early Bid</p>
+       <h2 class="title">Rp350.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -134,7 +134,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <a href="{{url('/matalomba/daftarKTI') }}" class="daftar">Daftar</a>
+       <button class="tickets">Tutup/Closed</button>
      </div>
    </div>
    
@@ -142,15 +142,15 @@
      <div class="item-right">
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
-       <h2 class="num">28</h2>
-       <p class="day">Agusts</p>
+       <h2 class="num">27</h2>
+       <p class="day">July</p>
        <span class="up-border"></span>
        <span class="down-border"></span>
      </div>
      
      <div class="item-left">
-       <p class="event">Periode II</p>
-       <h2 class="title">Universitas Nasional</h2>
+       <p class="event">Phase 1</p>
+       <h2 class="title">Rp400.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -165,7 +165,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <a class="tickets">Tutup</a>
+       <a class="tickets">Tutup/Closed</a>
      </div>
    </div>
    
@@ -173,15 +173,15 @@
      <div class="item-right">
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
-       <h2 class="num">23</h2>
-       <p class="day">Sept</p>
+       <h2 class="num">12</h2>
+       <p class="day">August</p>
        <span class="up-border"></span>
        <span class="down-border"></span>
      </div>
      
      <div class="item-left">
-       <p class="event">Periode III</p>
-       <h2 class="title">Universitas Nasional</h2>
+       <p class="event">Phase 2</p>
+       <h2 class="title">Rp450.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -196,7 +196,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <a class="tickets">Tutup</a>
+       <a class="tickets">Tutup/Closed</a>
      </div>
    </div>
  </div>
@@ -222,7 +222,7 @@
           }, 2000)
         );
       });</script>
-<script src="../../js/rank.js"></script>
+<script src="../../js/ranklkti.js"></script>
 
       <script src="../../js/nav.js"></script>
    </body>

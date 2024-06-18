@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\orderlkti;
 use App\Models\pesertaspc;
 use Illuminate\Http\Request;
@@ -273,8 +274,18 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat9'] = null; 
         }
 
+        $now = Carbon::now();
+        if ($now->between('2024-07-23', '2024-07-26')) {
+            $price = 350000; 
+        } elseif ($now->between('2024-07-27', '2024-08-11')) {
+            $price = 500000; 
+        } elseif ($now->between('2024-08-12', '2024-08-23')) {
+            $price = 550000; 
+        } else {
+            $price = 9999999; // Default or registration closed
+        }
          $additionalData = [
-        'price' => 250000,
+        'price' => $price,
         'status' => 'Unpaid',
         'order' => rand(),
         'kompetisi' => 'Scientific Paper',

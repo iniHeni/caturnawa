@@ -145,6 +145,14 @@
                     <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                 </div>
             </a>
+            <a href="{{url('matalomba/sm/sfinal') }}" class="card-item">
+              <img src="../../img/sm.png" alt="Card Image">
+              <span class="designer">Semifinal</span>
+              <h3>@lang('messages.dilaksanakan')</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon" id="final"></i>
+              </div>
+          </a>
                 <a href="{{url('matalomba/sm/final') }}" class="card-item">
                     <img src="../../img/sm.png" alt="Card Image">
                     <span class="editor">Final</span>
