@@ -20,6 +20,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
         #loadingDiv {
    width: 100%;
@@ -56,11 +57,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../img/edcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
-         <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
+        <nav class="nav container">
+        <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
+        <div class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+       <div style="margin-right: 20rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -109,14 +110,14 @@
                 <table>
                 <div class="form first">
                 <div class="details personal">
-                        <span class="title">Ketua</span>
+                        <span class="title">Leader</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
                                 <input disabled placeholder="{{$ordersm->nama_1}}">
                             </div>
                             <div class="input-field">
-                                <label >Email</label>
+                                <label >Email  *For form UploadSM</label>
                                 <input disabled placeholder="{{$ordersm->email_1}}">
                             </div>
                             <div class="input-field">
@@ -419,12 +420,8 @@
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label>Username *untuk form UploadSM</label>
-                                <input disabled placeholder="{{$ordersm->username}}" required>
-                            </div>
-                            <div class="input-field">
-                                <label>Password **untuk form UploadSM</label>
-                                <input disabled placeholder="{{$ordersm->password}}" required>
+                                <label>Team Name</label>
+                                <input disabled placeholder="{{$ordersm->namateam}}" required>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
@@ -486,24 +483,45 @@
         payButton.addEventListener('click', function () {
           // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
           window.snap.pay('{{$snapToken}}', {
-            onSuccess: function(result){
-              window.location.href= '/matalomba/sm'
-              alert("payment success!"); console.log(result);
-            },
-            onPending: function(result){
-              /* You may add your own implementation here */
-              alert("wating your payment!"); console.log(result);
-            },
-            onError: function(result){
-              /* You may add your own implementation here */
-              alert("payment failed!"); console.log(result);
-            },
-            onClose: function(){
-              /* You may add your own implementation here */
-              alert('you closed the popup without finishing the payment');
-            }
-          })
-        });
+        onSuccess: function(result){
+            Swal.fire({
+    icon: 'success',
+    title: 'Payment Succes!',
+    text: 'Anda akan diarahkan ke halaman Lomba.',
+    showConfirmButton: false, 
+    timer: 2000,
+  }).then(() => {
+    window.location.href = '/homesm/{{$ordersm->id}}'; 
+    console.log(result); 
+  });
+        },
+        onPending: function(result){
+          /* You may add your own implementation here */
+          alert("wating your payment!"); console.log(result);
+        },
+        onError: function(result){
+            Swal.fire({
+    icon: 'info',
+    title: 'Waiting Payment',
+    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+    showConfirmButton: false, // Tidak menampilkan tombol OK
+    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
+    didOpen: () => {
+      Swal.showLoading(); // Menampilkan animasi loading
+    },
+  });
+  console.log(result); 
+          
+        },
+        onClose: function(){
+            Swal.fire({
+    icon: 'warning',
+    title: 'Payment Canceled',
+    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+  });
+        }
+      })
+    });
       </script>
    </body>
 </html>

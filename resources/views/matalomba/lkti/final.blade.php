@@ -14,7 +14,8 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenu.css">
       <link rel="stylesheet" href="../css/pagelomba.css">
-      <link rel="stylesheet" href="../css/rank.css">
+
+
 
       <title>Caturnawa - LKTIScore</title>
       <style>
@@ -43,7 +44,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../img/loader.gif);
  }
      </style>
    </head>
@@ -58,9 +59,9 @@
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+        <div style="margin-right: 14rem" class="nav__item">
+						<li><a href="locale/ind') }}" height="20"><img src="../../../img/ind.png"  /></a></li>
+						<li><a href="locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -92,124 +93,90 @@
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                <h1 class="judul" style="color: white" >Leaderboard</h1>
+                <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative; margin-bottom: 5rem">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 300px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>University</th>
-                                <th>NAMA PESERTA</th>
-                                <th>Score</th>
-                                <th>Rank</th>
-                              </tr>
+                          <tr>
+                            <th scope="col">Nama Peserta</th>
+                            <th scope="col" >Score</th>
+                            <th scope="col">Rank</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
+                            @foreach($final as $no=>$data)
                             <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
+
+                              <td>{{ $data->namapeserta}}</td>
+                              <td>{{ $data->total}}</td>
+                              <td>{{ $data->rank}}</td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
-      <!--==================== Tabel Skor ====================-->
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">FINAL</h1>
-                <div class="table-responsive" style="max-height: 300px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
+                <h1 class="judul" style="color: white" >Hasil Final</h1>
+                <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th rowspan="2">NO</th>
-                                <th rowspan="2">University</th>
-                                <th rowspan="2">NAMA PESERTA</th>
-                                <th colspan="3">KRITERIA PENILAIAN</th>
-                                <th rowspan="2">TOTAL</th>
-                                <th rowspan="2">RANK</th>
-                                <th rowspan="2">JURI</th>
-                              </tr>
-                              <tr>
-                                <th>Score Pemaparan Materi dan Presentasi Ilmiah</th>
-                                <th>Score Pertanyaan dan Jawaban</th>
-                                <th>score Aspek Kesesuaian dengan tema</th>
-                              </tr>
+                          <tr>
+                            <th scope="col" rowspan="4">Nama Peserta</th>
+                            <th scope="col" colspan="6">Kriteria Penilaian</th>
+                            <th scope="col" rowspan="4">Total</th>
+                            <th scope="col" rowspan="4">Rank</th>
+                            <th scope="col" rowspan="4">Juri</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="2">Pemaparan Materi dan Presentasi Ilmiah</th>
+                            <th scope="col" colspan="2">Pertanyaan dan Jawaban</th>
+                            <th scope="col" colspan="2">Aspek Kesesuaian dengan Tema</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3">Skor</th>
+                            <th scope="col" colspan="3">Kualitatif</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80', 'Skor' => '80', 'Total'=> '80', 'total'=> '80', 'rank'=> '1', 'juri'=> 'johndoe',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
+                            @foreach($final as $no=>$data)
                             <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                                <td>{{ $row['Skor'] }}</td>
-                                <td>{{ $row['Total'] }}</td>
-                                <td>{{ $row['total'] }}</td>
-                                <td>{{ $row['rank'] }}</td>
-                                <td>{{ $row['juri'] }}</td>
+                              <td>{{ $data->namapeserta}}</td>
+                              <td>{{ $data->scorepemaparanmateri}}</td>
+                              <td>{{ $data->scorepertanyaandanjawaban}}</td>
+                              <td>{{ $data->scoreaspekkesesuaian}}</td>
+                              <td>{{ $data->materi}}</td>
+                              <td>{{ $data->pertanyaandanjawaban}}</td>
+                              <td>{{ $data->kesesuaian}}</td>
+                              <td>{{ $data->total}}</td>
+                              <td>{{ $data->rank}}</td>
+                              <td>{{ $data->juri}}</td>
                             </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
-
-<style>
-   .table-bordered td, .table-bordered th {
-       border: 2px solid black !important;
-       text-align: center;
-       vertical-align: middle;
-   }
-   thead th {
-       background-color: #0d6efd !important;
-       
-   }
-</style>
+    
+    <style>
+       .table-bordered td, .table-bordered th {
+           border: 2px solid black !important;
+           text-align: center;
+           vertical-align: middle;
+       }
+       thead th {
+           background-color: #0d6efd !important;
+           
+       }
+    </style>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="../../js/rank.js"></script>
       <script src="../../js/nav.js"></script>
       <script>
         function removeLoader() {
@@ -229,6 +196,24 @@
       }, 2000)
     );
   });
+    </script>
+    <script>
+      fetch('matalomba/lkti/penyisihan')
+    .then(response => response.json())
+    .then(data => {
+        const tabelBody = document.querySelector('#tabelPenyisihan tbody');
+        tabelBody.innerHTML = ''; // Bersihkan tabel sebelum mengisi
+
+        data.forEach((item, index) => {
+            const row = `<tr>
+                <td>${index + 1}</td>
+                <td>${item.university}</td>
+                <td>${item.namapeserta}</td>
+                <td>... (data lainnya)</td>
+            </tr>`;
+            tabelBody.innerHTML += row;
+        });
+    });
     </script>
    </body>
 </html>

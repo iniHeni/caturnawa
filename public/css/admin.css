@@ -60,7 +60,6 @@
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  margin-left: -17rem ;
   
 }
 
@@ -69,7 +68,7 @@
    display: flex;
     justify-content: center;
     align-items: center;
-    height: 15rem; /* 100% of the viewport height */
+    height: 17rem; /* 100% of the viewport height */
     width: 100%;   /* 100% of the viewport width */
     text-align: center;
     color:wheat;
@@ -116,6 +115,27 @@
    .nav_logo {
       display: flex;
       align-items: center;
+      column-gap: 1rem;
+      margin-left: -2.5rem ;
+      
+   }
+
+   .logo{
+      width: 35%;
+   }
+   
+   .logout{
+      position: absolute;
+        bottom: 7.5rem;
+   }
+
+}
+
+
+@media screen and (min-width: 515px) {
+   .nav_logo {
+      display: flex;
+      align-items: center;
       column-gap: 3rem;
       margin-left: -2.5rem ;
       
@@ -126,33 +146,43 @@
    }
    
    .logout{
-      position: relative;
-      bottom: -12.5rem;
-   }
+      position: absolute;
+        bottom: 7.5rem;
 
 }
+}
+
+
 @media screen and (min-width: 750px) {
    .nav_logo {
       display: flex;
       align-items: center;
-      column-gap: 1rem;
-      margin-left: -4rem ;
+      column-gap: 2rem;
+      margin-left: -1rem ;
    }
    .logo{
       width: 15%;
      }
+     .logout{
+      position: absolute;
+        bottom: 7.5rem;
+   }
 }
 
 @media screen and (min-width: 850px) {
    .nav_logo {
       display: flex;
       align-items: center;
-      column-gap: 1rem;
-      margin-left: -4rem ;
+      column-gap: 2rem;
+      margin-left: -1rem ;
    }
    .logo{
       width: 15%;
      }
+     .logout{
+      position: absolute;
+        bottom: 7.5rem;
+   }
 }
 @media screen and (min-width: 1226px) {
    .nav_logo {
@@ -160,6 +190,10 @@
       align-items: center;
       column-gap: 1rem;
       margin-left: -6rem ;
+   }
+   .logout{
+      position: absolute;
+        bottom: 7.5rem;
    }
 }
 
@@ -184,8 +218,8 @@
      }
 
      .logout{
-      position: relative;
-      bottom: -15rem;
+      position: absolute;
+        bottom: 7.5rem;
    }
 }
 
@@ -195,10 +229,50 @@
 }
 
 
+@media screen and (min-width: 1920px) {
+   .nav_logo {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      margin-left: -31.5rem ;
+   }
+   .logo{
+      width: 15%;
+     }
+
+     .logout{
+      position: absolute;
+        bottom: 10.5rem;
+   }
+}
+
+@media screen and (min-width: 2220px) {
+   .nav_logo {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      margin-left: -34.5rem ;
+   }
+   .logo{
+      width: 15%;
+     }
+
+     .logout{
+      position: absolute;
+        bottom: 10.5rem;
+   }
+}
+
+
+
+
+
+
+
 .card-list {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-   max-width: 50rem;
+   max-width: 45rem;
    margin: 65px auto;
    padding: 20px;
    gap: 20px;
@@ -237,11 +311,17 @@
      color: #B22485;
  }   
 
- .card-list .manager {
-   background-color: #d2ffd1;
-   color: #4da829;
+ .card-list .creator {
+   background-color: #cfff00;
+   color: #6a782d;
 }
- d2ffd1
+
+
+ .card-list .manager {
+   background-color: #ff7878;
+   color: #8e0000;
+}
+ 
  .card-list .designer {
      background-color: #d1e8ff;
      color: #2968a8;
@@ -271,6 +351,17 @@
      margin-top: 25px;
      cursor: pointer;
      transition: 0.2s ease;
+   }
+   .add{
+      display: inline-block;
+    background: #d1e8ff;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: #2f61f1;
+    color: #000;
+    border-radius: 60px;
    }
    
    

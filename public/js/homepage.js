@@ -1,5 +1,5 @@
 //Set the date we're counting down to 
-var countDownDate = new Date("June 05, 2024 00:00:00").getTime();
+var countDownDate = new Date("July 23, 2024 00:00:00").getTime();
 
 //Update the count down every 1 sec
 var x = setInterval(function(){
@@ -27,11 +27,11 @@ var x = setInterval(function(){
         clearInterval(x);
         document.getElementById("time").style.display = "none";
         document.querySelector("h1").className = "new-year";
-        document.querySelector("h1").innerText = "UnasFest Dibuka DaftarSekarang!";
+        document.querySelector("h1").innerText = "UNAS FEST IS OPEN REGIST NOW!";
 
 
         //firework animation
-        const fireworkCount = 350;
+        const fireworkCount = 300;
         const fireworkContainer = document.getElementById("firework-container");
 
         for(let i = 0; i < fireworkCount; i++){
@@ -72,7 +72,7 @@ firework.animate(
     },
     ],
     {
-      duration: duration * 800,
+      duration: duration * 1000,
     easing: "ease-out",
     fill: "both",
     }
@@ -84,3 +84,74 @@ firework.animate(
     }   
 }, 1000);
 
+$(function() {
+    $(this).bind("contextmenu", function(e) {
+        e.preventDefault();
+    });
+}); 
+
+    function killCopy(e){ return false } 
+    function reEnable(){ return true } 
+    document.onselectstart=new Function ("return false"); 
+    if (window.sidebar)
+    { 
+        document.onmousedown=killCopy; 
+        document.onclick=reEnable; 
+    } 
+
+$(document).keydown(function(event){
+if(event.keyCode==123){
+  return false;
+}
+else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+       return false;
+}
+});
+
+$('.clients-carousel').owlCarousel({
+    autoplay: true,
+    loop: true,
+    margin: 15,
+    dots: false,
+    slideTransition: 'linear',
+    autoplayTimeout: 4500,
+    autoplayHoverPause: true,
+    autoplaySpeed: 4500,
+    responsive: {
+      0: {
+        items: 2
+      },
+      500: {
+        items: 3
+      },
+      600: {
+        items: 4
+      },
+      800: {
+        items: 4
+      },
+      1200: {
+        items: 4
+      }
+
+    }
+  });
+
+const uploadSMBtn = document.getElementById('');
+const uploadSPCBtn = document.getElementById(''); 
+
+uploadSMBtn.addEventListener('click', () => {
+Swal.fire({
+icon: 'error',
+title: 'Oops...',
+text: 'Fitur upload belum tersedia!',
+});
+});
+
+uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
+Swal.fire({
+icon: 'error',
+title: 'Oops...',
+text: 'Fitur upload belum tersedia!',
+});
+});

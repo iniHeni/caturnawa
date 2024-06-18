@@ -96,31 +96,23 @@
       <section>
 <div class="responsive-container-block container">
   <p class="text-blk team-head-text">
-    Team 1
+    Team {{ $dataa->id}}
   </p>
   <div class="responsive-container-block">
     <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
       <div class="card">
         <div class="team-image-wrapper">
-          <img class="team-member-image" src="../../img/uf1.png">
+          <img class="team-member-image" src="{{ $dataa->foto}}">
         </div>
         <p class="text-blk name">
-          Nama
+          {{ $dataa->nama }}
         </p>
         <p class="text-blk position">
-          User
+          {{ $dataa->instansi }}
         </p>
         <p class="text-blk feature-text">
-          Biodata Peserta.
+          {{ $dataa->email }}<br>{{ $dataa->nohp }}
         </p>
-        <div class="social-icons">
-          <a href="https://www.twitter.com" target="_blank">
-            <img class="twitter-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img class="facebook-icon" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg">
-          </a>
-        </div>
       </div>
     </div>
    

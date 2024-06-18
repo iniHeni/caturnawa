@@ -2,7 +2,7 @@
 
 let lastScrollTopHeader = 0; // Gunakan variabel yang berbeda untuk header
 const header = document.getElementById('header');
-const scrollThresholdHeader = 40; // Jarak scroll sebelum navbar berubah visibilitas
+const scrollThresholdHeader = 0; // Jarak scroll sebelum navbar berubah visibilitas
 
 window.addEventListener('scroll', function() {
     let scrollTopHeader = window.pageYOffset || document.documentElement.scrollTop;
@@ -25,7 +25,7 @@ window.addEventListener('scroll', function() {
 
 let lastScrollTopSidelogo =0;
 const sidelogo = document.getElementById('sidelogo'); // Mengambil elemen gambar sidebar
-const scrollThresholdSidelogo = 30; // Jarak scroll sebelum sidebar berubah
+const scrollThresholdSidelogo = 0; // Jarak scroll sebelum sidebar berubah
 window.addEventListener('scroll', function() {
     let scrollTopSidelogo = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -45,7 +45,7 @@ window.addEventListener('scroll', function() {
 // Bagian baru yang ingin Anda tambahkan:
 let lastScrollTopSidebar = 0;
 const sidebar = document.getElementById('sidebar');
-const scrollThresholdSidebar = 30; // Jarak scroll sebelum sidebar berubah
+const scrollThresholdSidebar = 0; // Jarak scroll sebelum sidebar berubah
 
 window.addEventListener('scroll', function() {
     let scrollTopSidebar = window.pageYOffset || document.documentElement.scrollTop;

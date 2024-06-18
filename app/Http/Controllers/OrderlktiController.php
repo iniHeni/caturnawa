@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\orderlkti;
+use App\Models\pesertaspc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -14,7 +16,6 @@ class OrderlktiController extends Controller
     public function checkout(Request $request){
         $orderlkti = $request->validate([
             'nama' => 'required|string|max:50',
-            'password' => 'required|max:50',
             'email' => 'required|email',
             'fakultas' => 'required|string|max:50',
             'prodi' => 'required|string|max:50',
@@ -74,193 +75,219 @@ class OrderlktiController extends Controller
         $orderlkti = $request->all();
         if($request->hasFile('ktm'))
         {
-            $destination_path = 'images/lkti/ktm';
+            $destination_path = 'public/images/lkti/ktm';
             $image = $request->file('ktm');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('ktm')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/ktm/' . $image_name);
 
-            $orderlkti['ktm'] = $image_name;
+            $orderlkti['ktm'] = $imageUrl;
 
         }
         if($request->hasFile('foto'))
         {
-            $destination_path = 'images/lkti/foto';
+            $destination_path = 'public/images/lkti/foto';
             $image = $request->file('foto');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('foto')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/foto/' . $image_name);
 
-            $orderlkti['foto'] = $image_name;
+            $orderlkti['foto'] = $imageUrl;
 
         }
         if($request->hasFile('krs'))
         {
-            $destination_path = 'images/lkti/krs';
+            $destination_path = 'public/images/lkti/krs';
             $image = $request->file('krs');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('krs')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/krs/' . $image_name);
 
-            $orderlkti['krs'] = $image_name;
+            $orderlkti['krs'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow'))
         {
-            $destination_path = 'images/lkti/bukti';
+            $destination_path = 'public/images/lkti/bukti';
             $image = $request->file('buktifollow');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/bukti/' . $image_name);
 
-            $orderlkti['buktifollow'] = $image_name;
+            $orderlkti['buktifollow'] = $imageUrl;
 
         }
         if($request->hasFile('twibbon'))
         {
-            $destination_path = 'images/lkti/twibbon';
+            $destination_path = 'public/images/lkti/twibbon';
             $image = $request->file('twibbon');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/images/lkti/twibbon/' . $image_name);
 
-            $orderlkti['twibbon'] = $image_name;
+            $orderlkti['twibbon'] = $imageUrl;
 
         }
         if($request->hasFile('surat_delegasi'))
         {
-            $destination_path = 'document/lkti/surat';
+            $destination_path = 'public/document/lkti/surat';
             $image = $request->file('surat_delegasi');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/surat/' . $image_name);
 
-            $orderlkti['surat_delegasi'] = $image_name;
-
+            $orderlkti['surat_delegasi'] = $imageUrl;
         }
         if($request->hasFile('sertifikat'))
         {
-            $destination_path = 'document/lkti/sertif';
+            $destination_path = 'public/document/lkti/sertif';
             $image = $request->file('sertifikat');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat')->storeAS($destination_path,$image_name);
-            $orderlkti['sertifikat'] = $image_name;
+            $imageUrl = asset('storage/document/lkti/sertif/' . $image_name);
+
+            $orderlkti['sertifikat'] = $imageUrl;
 
         }
         if($request->hasFile('sertifikat1'))
         {
-            $destination_path = 'document/lkti/sertif1';
+            $destination_path = 'public/document/lkti/sertif1';
             $image = $request->file('sertifikat1');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat1')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif1/' . $image_name);
 
-            $orderlkti['sertifikat1'] = $image_name;
-
+            $orderlkti['sertifikat1'] = $imageUrl;
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat1'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat1'] = null;
         }
         if($request->hasFile('sertifikat2'))
         {
-            $destination_path = 'document/lkti/sertif2';
+            $destination_path = 'public/document/lkti/sertif2';
             $image = $request->file('sertifikat2');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat2')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif2/' . $image_name);
 
-            $orderlkti['sertifikat2'] = $image_name;
-
+            $orderlkti['sertifikat2'] = $imageUrl;
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat2'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat2'] = null; 
         }
         if($request->hasFile('sertifikat3'))
         {
-            $destination_path = 'document/lkti/sertif3';
+            $destination_path = 'public/document/lkti/sertif3';
             $image = $request->file('sertifikat3');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat3')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif3/' . $image_name);
 
-            $orderlkti['sertifikat3'] = $image_name;
+            $orderlkti['sertifikat3'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat3'] = null; // Atau bisa diatur menjadi string kosong ('')
+          
+            $orderlkti['sertifikat3'] = null;
         }
         if($request->hasFile('sertifikat4'))
         {
-            $destination_path = 'document/lkti/sertif4';
+            $destination_path = 'public/document/lkti/sertif4';
             $image = $request->file('sertifikat4');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat4')->storeAS($destination_path,$image_name);
-            $orderlkti['sertifikat4'] = $image_name;
+            $imageUrl = asset('storage/document/lkti/sertif4/' . $image_name);
+
+            $orderlkti['sertifikat4'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat4'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat4'] = null;
         }
         if($request->hasFile('sertifikat5'))
         {
-            $destination_path = 'document/lkti/sertif5';
+            $destination_path = 'public/document/lkti/sertif5';
             $image = $request->file('sertifikat5');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat5')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif5/' . $image_name);
 
-            $orderlkti['sertifikat5'] = $image_name;
+            $orderlkti['sertifikat5'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat5'] = null; // Atau bisa diatur menjadi string kosong ('')
+           
+            $orderlkti['sertifikat5'] = null; 
         }
         if($request->hasFile('sertifikat6'))
         {
-            $destination_path = 'document/lkti/sertif6';
+            $destination_path = 'public/document/lkti/sertif6';
             $image = $request->file('sertifikat6');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat6')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif6/' . $image_name);
 
-            $orderlkti['sertifikat6'] = $image_name;
+            $orderlkti['sertifikat6'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat6'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat6'] = null; 
         }
         if($request->hasFile('sertifikat7'))
         {
-            $destination_path = 'document/lkti/sertif7';
+            $destination_path = 'public/document/lkti/sertif7';
             $image = $request->file('sertifikat7');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat7')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif7/' . $image_name);
 
-            $orderlkti['sertifikat7'] = $image_name;
+            $orderlkti['sertifikat7'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat7'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat7'] = null; 
         }
         if($request->hasFile('sertifikat8'))
         {
-            $destination_path = 'document/lkti/sertif8';
+            $destination_path = 'public/document/lkti/sertif8';
             $image = $request->file('sertifikat8');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat8')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif8/' . $image_name);
 
-            $orderlkti['sertifikat8'] = $image_name;
+            $orderlkti['sertifikat8'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat8'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat8'] = null; 
         }
         if($request->hasFile('sertifikat9'))
         {
-            $destination_path = 'document/lkti/sertif9';
+            $destination_path = 'public/document/lkti/sertif9';
             $image = $request->file('sertifikat9');
-            $image_name = $image->getClientOriginalName();
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('sertifikat9')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/lkti/sertif9/' . $image_name);
 
-            $orderlkti['sertifikat9'] = $image_name;
+            $orderlkti['sertifikat9'] = $imageUrl;
 
         }else {
-            // Jika file sertifikat tidak diunggah, atur nilai sertifikat menjadi null atau default value lainnya (opsional)
-            $orderlkti['sertifikat9'] = null; // Atau bisa diatur menjadi string kosong ('')
+            
+            $orderlkti['sertifikat9'] = null; 
         }
 
+        $now = Carbon::now();
+        if ($now->between('2024-07-23', '2024-07-26')) {
+            $price = 350000; 
+        } elseif ($now->between('2024-07-27', '2024-08-11')) {
+            $price = 500000; 
+        } elseif ($now->between('2024-08-12', '2024-08-23')) {
+            $price = 550000; 
+        } else {
+            $price = 9999999; // Default or registration closed
+        }
          $additionalData = [
-        'price' => 250000,
+        'price' => $price,
         'status' => 'Unpaid',
+        'order' => rand(),
         'kompetisi' => 'Scientific Paper',
     ];
 
@@ -281,7 +308,7 @@ class OrderlktiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => rand(),
+    'order_id' => "LKTI" . '-' . $orderlkti->order,
     'gross_amount' => $orderlkti->price,
 ),
 'item_details' => array(
@@ -302,32 +329,21 @@ $params = array(
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 return view('matalomba/lkti/checkout', compact('snapToken', 'orderlkti'));
 }
-public function callback(Request $request){
+public function callbackl(Request $request){
     $serverKey = config('midtrans.server_key');
     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
     if($hashed == $request->signature_key){
-        if($request->status == 'capture' or $request-> status == 'settlement'){
+        if($request->transaction_status == 'settlement'){
             $orderlkti = orderlkti::find ($request->order_id);
-            $orderlkti->array_merge(['status' => 'Paid']);
+            $orderlkti->update(['status' => 'Paid']);
         }
     }
 }
-public function home($id){
+public function homespc($id){
     $orderlkti = orderlkti::find($id);
-    return view('/');
+    $orderlkti->update(['status' => 'Paid']);
+    return view('index',);
 }
-public function login(Request $login){
-    $loginlkti = $login->validate([
-        'email' => 'required',
-    ]);
-    $user = orderlkti::where('email', $login->email)->first();
 
-    if ($user) {
-        session()->flash('success', 'Silahkan Upload File Kompetisi Anda');
-        return view('matalomba/lkti/uploadLKTI');
-    } else {
-        return back()->withErrors(['error' => 'Email Belom terdaftar']);
-    }
-}
 }
 

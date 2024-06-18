@@ -21,6 +21,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
         #loadingDiv {
    width: 100%;
@@ -289,23 +290,44 @@
         payButton.addEventListener('click', function () {
           // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
           window.snap.pay('{{$snapToken}}', {
-            onSuccess: function(result){
-              window.location.href= '/matalomba/kdbi'
-              alert("payment success!"); console.log(result);
-            },
-            onPending: function(result){
-              /* You may add your own implementation here */
-              alert("wating your payment!"); console.log(result);
-            },
-            onError: function(result){
-              /* You may add your own implementation here */
-              alert("payment failed!"); console.log(result);
-            },
-            onClose: function(){
-              /* You may add your own implementation here */
-              alert('you closed the popup without finishing the payment');
-            }
-          })
-        });
+        onSuccess: function(result){
+            Swal.fire({
+    icon: 'success',
+    title: 'Payment Succes!',
+    text: 'Anda akan diarahkan ke halaman Lomba.',
+    showConfirmButton: false, 
+    timer: 2000,
+  }).then(() => {
+    window.location.href = '/homekdbi/{{$orderkdbi->id}}'; 
+    console.log(result); 
+  });
+        },
+        onPending: function(result){
+          /* You may add your own implementation here */
+          alert("wating your payment!"); console.log(result);
+        },
+        onError: function(result){
+            Swal.fire({
+    icon: 'info',
+    title: 'Waiting Payment',
+    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+    showConfirmButton: false, // Tidak menampilkan tombol OK
+    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
+    didOpen: () => {
+      Swal.showLoading(); // Menampilkan animasi loading
+    },
+  });
+  console.log(result); 
+          
+        },
+        onClose: function(){
+            Swal.fire({
+    icon: 'warning',
+    title: 'Payment Canceled',
+    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+  });
+        }
+      })
+    });
       </script>
 </html>

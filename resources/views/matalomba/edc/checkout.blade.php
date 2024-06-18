@@ -290,7 +290,7 @@
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
-    window.location.href = '/matalomba/edc'; 
+    window.location.href = '/homeedc/{{$order->id}}'; 
     console.log(result); 
   });
         },
@@ -322,7 +322,6 @@
       })
     });
   </script>
-</script>
 
         
     </body>

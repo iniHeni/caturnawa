@@ -111,123 +111,23 @@
       <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
+                    @if($peserta->count() > 0)
+                    @foreach($peserta as $rank => $data)
                     <div class="card swiper-slide">
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                             <img src="../../img/sm.png" alt="" class="card-img">
+                             <img src="{{ $data->logo }}" alt="{{ $data->namateam }}" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h2 class="name">Team 1</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
+                            <h2 class="name">{{ $data->instansi }}</h2>
+                            <p class="description">{{ $data->namateam }}</p>
+                            <button class="button"><a href="{{route('sm.detailpeserta', $rank + 1) }}">@lang('messages.view')</a></button>
                         </div>
                     </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 2</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 3</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 4</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 5</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 6</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 7</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 8</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/sm.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 9</h2>
-                            <p class="description">@lang('messages.bio')</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaSM') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -237,7 +137,7 @@
       <section id="rank">
         <h1 class="judul">@lang('messages.babak')</h1>
         <div class="card-list">
-            <a href="{{url('matalomba/sfinalSM') }}" class="card-item">
+            <a href="{{url('matalomba/sm/penyisihan') }}" class="card-item">
                 <img src="../../img/spc.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
                 <h3>@lang('messages.dilaksanakan')</h3>
@@ -245,7 +145,15 @@
                     <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                 </div>
             </a>
-                <a href="{{url('matalomba/finalSM') }}" class="card-item">
+            <a href="{{url('matalomba/sm/sfinal') }}" class="card-item">
+              <img src="../../img/sm.png" alt="Card Image">
+              <span class="designer">Semifinal</span>
+              <h3>@lang('messages.dilaksanakan')</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon" id="final"></i>
+              </div>
+          </a>
+                <a href="{{url('matalomba/sm/final') }}" class="card-item">
                     <img src="../../img/sm.png" alt="Card Image">
                     <span class="editor">Final</span>
                     <h3>@lang('messages.dilaksanakan')</h3>

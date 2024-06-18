@@ -13,10 +13,9 @@
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenu.css">
-      <link rel="stylesheet" href="../css/pagelomba.css">
-      <link rel="stylesheet" href="../css/rank.css">
+      <link rel="stylesheet" href="../../css/pagelomba.css">
 
-      <title>Caturnawa - SMScore</title>
+      <title>Caturnawa - SMFinalScore</title>
       <style>
         #loadingDiv {
    width: 100%;
@@ -67,7 +66,7 @@
                </li>
       
                <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
                </li>
       
                </ul>
@@ -89,336 +88,53 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+      <!--==================== Tabel Skor ====================-->
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 600px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                        <thead style="position: sticky; top: -1; z-index: 10;">
-                            <tr>
-                                <th>University</th>
-                                <th>NAMA PESERTA</th>
-                                <th>Score</th>
-                                <th>Rank</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Contoh data dummy -->
-                            @php
-                            $dummyData = [
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                                ['No' => 1, 'University' => 'John Doe', 'Peserta' => 'John Doe', 'Kriteria Penilaian' => '80',],
-                            ];
-                            $limitedData = array_slice($dummyData, 0, 10);
-                            @endphp
-    
-                            @forelse($limitedData as $row)
-                            <tr>
-                                <td scope="row">{{ $row['No'] }}</td>
-                                <td>{{ $row['University'] }}</td>
-                                <td>{{ $row['Peserta'] }}</td>
-                                <td>{{ $row['Kriteria Penilaian'] }}</td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8">No User Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!--==================== Tabel Skor ====================-->
-<section id="skor">
-    <div class="container" style="display: flex; justify-content: center;">
-        <div style="width: 100%;">
-            <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">FINAL</h1>
-            <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
-                <table class="table table-bordered table-striped" style="min-width: 2400px; margin-bottom: 0; border-collapse: collapse;">
-                    <thead style="position: sticky; top: -1; z-index: 10;">
+                <h1 class="judul" style="color: white">Leaderboard Result Elimination + Semifinal + Final</h1>
+                <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
+                      <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Team</th>
-                            <th scope="col">Participant</th>
-                            <th scope="col">Kriteria</th>
-                            <th scope="col">Score</th>
-                            <th scope="col">Penilaian Kuantitatif</th>
-                            <th scope="col">Penilaian Kualitatif</th>
-                            <th scope="col">Total</th>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Adjudicators</th>
+                            <th scope="col">Team Participant</th>
+                            <th scope="col">Team Score</th>
+                            <th scope="col">rank</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td rowspan="5">1</td>
-                            <td rowspan="5">Universitas Nasional</td>
-                            <td>1. Johdoe</td>
-                            <td>Ide cerita dan riset peristiwa dalam film</td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>2. Johndoe</td>
-                            <td>Tujuan film dan pengaruh film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>3. Johndoe</td>
-                            <td>Kemampuan dan pemahaman membuat film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>4. John doe</td>
-                            <td rowspan="2">Informasi pesan yang disampaikan dari film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>5. Johndoe</td>
-                            <td></td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td rowspan="5">2</td>
-                            <td rowspan="5">Universitas Nasional</td>
-                            <td>1. Johdoe</td>
-                            <td>Ide cerita dan riset peristiwa dalam film</td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>2. Johndoe</td>
-                            <td>Tujuan film dan pengaruh film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>3. Johndoe</td>
-                            <td>Kemampuan dan pemahaman membuat film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>4. John doe</td>
-                            <td rowspan="2">Informasi pesan yang disampaikan dari film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>5. Johndoe</td>
-                            <td></td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td rowspan="5">3</td>
-                            <td rowspan="5">Universitas Nasional</td>
-                            <td>1. Johdoe</td>
-                            <td>Ide cerita dan riset peristiwa dalam film</td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>2. Johndoe</td>
-                            <td>Tujuan film dan pengaruh film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>3. Johndoe</td>
-                            <td>Kemampuan dan pemahaman membuat film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>4. John doe</td>
-                            <td rowspan="2">Informasi pesan yang disampaikan dari film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>5. Johndoe</td>
-                            <td></td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td rowspan="5">4</td>
-                            <td rowspan="5">Universitas Nasional</td>
-                            <td>1. Johdoe</td>
-                            <td>Ide cerita dan riset peristiwa dalam film</td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>2. Johndoe</td>
-                            <td>Tujuan film dan pengaruh film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>3. Johndoe</td>
-                            <td>Kemampuan dan pemahaman membuat film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>4. John doe</td>
-                            <td rowspan="2">Informasi pesan yang disampaikan dari film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>5. Johndoe</td>
-                            <td></td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td rowspan="5">5</td>
-                            <td rowspan="5">Universitas Nasional</td>
-                            <td>1. Johdoe</td>
-                            <td>Ide cerita dan riset peristiwa dalam film</td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>2. Johndoe</td>
-                            <td>Tujuan film dan pengaruh film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>3. Johndoe</td>
-                            <td>Kemampuan dan pemahaman membuat film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>4. John doe</td>
-                            <td rowspan="2">Informasi pesan yang disampaikan dari film</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>5. Johndoe</td>
-                            <td></td>
-                            <td ></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
+                      @foreach($final as $rank=>$data)
+                      <tr>
+                        <td>{{ $data->namateam }}</td>
+                        <td>{{ $data->total}}</td>
+                        <td>{{ $rank+1 }}</td>
+                        
+                      </tr>
+                      @endforeach
+                      <tr><td colspan="3">Jury Mention</td></tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
+
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+    <section id="rank">
+      @if($final->count() > 0)
+      <h1 class="judul">Detail Score</h1>
+      <div class="card-list">
+          @foreach($final as $rank => $data)
+              <a href="{{ route('sm.detailf', $rank + 1) }}" class="card-item"> 
+                  <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
+                  <h3>{{ $data->namateam }}</h3> 
+                  <div class="arrow">
+                      <i class="card-icon">Detail</i>
+                  </div>
+              </a>
+          @endforeach
+      </div>
+  @endif
+    </section>
 <style>
    .table-bordered td, .table-bordered th {
        border: 2px solid black !important;
@@ -431,7 +147,34 @@
    }
 </style>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $(this).bind("contextmenu", function(e) {
+          e.preventDefault();
+      });
+  }); 
+  </script>
+  <script type="text/JavaScript"> 
+      function killCopy(e){ return false } 
+      function reEnable(){ return true } 
+      document.onselectstart=new Function ("return false"); 
+      if (window.sidebar)
+      { 
+          document.onmousedown=killCopy; 
+          document.onclick=reEnable; 
+      } 
+  </script>
+  <script type="text/Javascript">
+  $(document).keydown(function(event){
+if(event.keyCode==123){
+    return false;
+}
+else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+         return false;
+}
+});
+</script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
@@ -450,7 +193,6 @@
           }, 2000)
         );
       });</script>
-      <script src="../../js/rank.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
 </html>

@@ -1,9 +1,9 @@
-<html lang="en">
+<html>
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--=============== Icon Web ===============-->
-      <link rel="icon" href="img/uf1.png">
+      <link rel="icon" href="../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -17,12 +17,16 @@
 
       <!--=============== CSS ===============-->
          
-      <link rel="stylesheet" href="css/navmenu.css">
-      <link rel="stylesheet" href="css/homepage.css">
+      <link rel="stylesheet" href="../css/navmenu.css">
+      <link rel="stylesheet" href="../css/homepage.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
       <title>Caturnawa</title>
+
+         
+         
+         
       <style>
          #loadingDiv {
 	width: 100%;
@@ -61,14 +65,14 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
+         <img src="../img/uf2.png" width="145" class="nav_gmbar" ></img>
             <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
-						<li><a href="locale/en"><img src="img/eng.png" /></a></li>
+						<li><a href="../locale/ind"><img src="../img/ind.png"  /></a></li>
+						<li><a href="../locale/en"><img src="../img/eng.png" /></a></li>
 					</div>
                   <li class="nav__item">
                      <a href="#" class="nav__link">@lang('messages.beranda')</a>
@@ -122,79 +126,45 @@
     <div id="seconds"></div>
 </div>
 <h4>@lang('messages.buka')
-   <span>05 June</span></h4>
+   <span>23 July</span></h4>
 <div id="firework-container"></div>
 </div>
 
       <!--==================== Mata Lomba ====================-->
       <section id="matalomba" class="container">
-      <h5 class="judullomba">@lang('messages.jenislomba')</h5>
-<div class="card-list">
-        <div class="card-item">
-            <img src="img/kdbi2.png" alt="Card Image">
-            <h3>@lang('messages.kdbi')</h3>
-            <h2 class="judullomba">Pendaftaran Awal<br>Rp300.000</h2>
-            <a href="{{url('matalomba/daftarKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-        <div class="card-item">
-            <img src="img/sm1.png" alt="Card Image">
-            <h3>@lang('messages.sm')</h3>
-            <h2 class="judullomba">Pendaftaran Awal<br>Rp250.000</h2>
-            <a href="{{url('matalomba/daftarSM') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/loginsm') }}" class="card-icon" id="uploadBtn">UploadSM</a>
-            <a href="{{url('matalomba/shortmovie') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-        <div class="card-item">
-            <img src="img/spc.png" alt="Card Image">
-            <h3>@lang('messages.lkti')</h3>
-            <h2 class="judullomba">Pendaftaran Awal<br>Rp250.000</h2>
-            <a href="{{url('matalomba/daftarKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/loginspc') }}" class="card-icon" id="uploadSPCBtn">UploadSPC</a>
-            <a href="{{url('matalomba/lkti') }}" class="card-icon">@lang('messages.Web')</a>
-         </div>
-        <div class="card-item">
-            <img src="img/edc.png" alt="Card Image">
-            <h3>@lang('messages.edc')</h3>
-            <h2 class="judullomba">Pendaftaran Awal<br>Rp350.000</h2>
-            <a href="{{url('matalomba/daftarEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
-            <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
+         <h5 class="judullomba">@lang('messages.jenislomba')</h5>
+         <div class="card-list">
+             <div id="cardKDBI" class="card-item">
+                 <img src="../img/kdbi2.png" alt="Card Image">
+                 <h3>@lang('messages.kdbi')</h3>
+                 <a id="registerButtonKDBI" href="{{url('/periodeKDBI') }}" class="card-icon">Daftar Sekarang</a>
+                 <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
+             </div>
+             <div id="cardSM" class="card-item">
+                 <img src="../img/sm1.png" alt="Card Image">
+                 <h3>@lang('messages.sm')</h3>
+                 <a id="registerButtonSM" href="{{url('/periodeSM') }}" class="card-icon">@lang('messages.Daftar')</a>
+                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">Upload</a>
+                 <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
+             </div>
+             <div id="cardSPC" class="card-item">
+                 <img src="../img/spc.png" alt="Card Image">
+                 <h3>@lang('messages.lkti')</h3>
+                 <a id="registerButtonSPC" href="{{url('/periodeLKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
+                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">Upload</a>
+                 <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
+             </div>
+             <div id="cardEDC" class="card-item">
+                 <img src="../img/edc.png" alt="Card Image">
+                 <h3>@lang('messages.edc')</h3>
+                 <a id="registerButtonEDC" href="{{url('/periodeEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
+                 <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
+             </div>
          </div>
     </div>
       </section>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,64L34.3,80C68.6,96,137,128,206,133.3C274.3,139,343,117,411,112C480,107,549,117,617,112C685.7,107,754,85,823,85.3C891.4,85,960,107,1029,122.7C1097.1,139,1166,149,1234,144C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-
-      <!--=============== Sponsor ===============-->
-      <section class="Sponsor">
-      <div class="clients">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="sec-heading">
-						<h2>@lang('messages.sponsor')</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="owl-carousel owl-theme clients-carousel">
-						<div class="item box"><img alt="client logo" class="client-img" src="img/uf2024.png"></div>
-						<div class="item box">
-                     <a href="https://sariroti.com/id">
-                        <img alt="client logo" class="client-img" style="width: 160" src="img/sariroti.png"></a></div>
-						<div class="item box">
-                     <a href="https://www.bumiaksara.com/">
-                        <img alt="client logo" class="client-img" style="width: 135" src="img/bumiaksara.png"></a></div>
-						<div class="item box">
-                     <a href="https://www.hidupbanyakrasa.com/">
-                        <img alt="client logo" class="client-img" style="width: 160" src="img/goodday.png"></a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
          <!--=============== Kontak Kami ===============-->
       <section class="section1" id="kontak">
       <div class="contact-page">
@@ -211,7 +181,7 @@
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8696420912884!2d106.83691367485514!3d-6.280862993707984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f211176e9827%3A0xb4bc144c3140a2d9!2sUniversitas%20Nasional!5e0!3m2!1sid!2sid!4v1688004466233!5m2!1sid!2sid" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
-            <form id="contact" action="https://formspree.io/f/mleqaqdr" method="post">
+            <form id="contact" action="https://formspree.io/f/mqkrvvza" method="post">
             <div class="row input-container">
                   <div class="col-xs-12">
                      <div class="styled-input wide">
@@ -290,95 +260,18 @@
              });
          @endif
          </script>
-   <script type="text/javascript">
-const uploadSMBtn = document.getElementById('');
-const uploadSPCBtn = document.getElementById(''); 
-
-uploadSMBtn.addEventListener('click', () => {
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Fitur upload belum tersedia!',
-  });
-});
-
-uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Fitur upload belum tersedia!',
-  });
-});
-   </script>
-
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
 	</script> 
    <script src="https://kit.fontawesome.com/74b658c783.js" crossorigin="anonymous"></script>
-	<script>
-	       $('.clients-carousel').owlCarousel({
-	   autoplay: true,
-	   loop: true,
-	   margin: 15,
-	   dots: false,
-	   slideTransition: 'linear',
-	   autoplayTimeout: 4500,
-	   autoplayHoverPause: true,
-	   autoplaySpeed: 4500,
-	   responsive: {
-	     0: {
-	       items: 2
-	     },
-	     500: {
-	       items: 3
-	     },
-	     600: {
-	       items: 4
-	     },
-	     800: {
-	       items: 4
-	     },
-	     1200: {
-	       items: 4
-	     }
-
-	   }
-	 });
-	</script>
 
       <!--=============== SCRIPT ===============-->
 
-      <script src="js/homepage.js"></script>
-      <script src="js/loader.js"></script>
-      <script src="js/nav.js"></script>
-      <script type="text/javascript">
-         $(function() {
-             $(this).bind("contextmenu", function(e) {
-                 e.preventDefault();
-             });
-         }); 
-         </script>
-         <script type="text/JavaScript"> 
-             function killCopy(e){ return false } 
-             function reEnable(){ return true } 
-             document.onselectstart=new Function ("return false"); 
-             if (window.sidebar)
-             { 
-                 document.onmousedown=killCopy; 
-                 document.onclick=reEnable; 
-             } 
-         </script>
-         <script type="text/Javascript">
-         $(document).keydown(function(event){
-       if(event.keyCode==123){
-           return false;
-       }
-       else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-                return false;
-       }
-   });
-</script>
+      <script src="../js/homepage.js"></script>
+      <script src="../js/loader.js"></script>
+      <script src="../js/nav.js"></script>
+     
    </body>
 </html>

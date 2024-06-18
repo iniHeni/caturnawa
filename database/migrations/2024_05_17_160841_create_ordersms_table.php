@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('ordersms', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('order');
             $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');
@@ -81,8 +82,7 @@ return new class extends Migration
             $table->string('buktifollow_5');
             $table->string('twibbon_5');
             $table->bigInteger('price');
-            $table->string('username');
-            $table->string('password');
+            $table->string('namateam');
             $table->string('instansi');
             $table->string('linkvidio');
             $table->string('surat_delegasi');

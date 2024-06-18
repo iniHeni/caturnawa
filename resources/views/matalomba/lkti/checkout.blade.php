@@ -21,6 +21,7 @@
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
         #loadingDiv {
    width: 100%;
@@ -61,7 +62,7 @@
          <img src="../../img/spcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 22rem" class="nav__item">
+        <div style="margin-right: 19rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -113,10 +114,6 @@
                                 <input disabled placeholder="{{$orderlkti->nama}}">
                             </div>
                             <div class="input-field">
-                                <label>Password</label>
-                                <input disabled placeholder="{{$orderlkti->password}}">
-                            </div>
-                            <div class="input-field">
                                 <label >Email</label>
                                 <input disabled placeholder="{{$orderlkti->email}}">
                             </div>
@@ -166,7 +163,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
-                                <input disabled placeholder="{{$orderlkti->instansi}}" required>
+                                <input disabled placeholder="{{$orderlkti->instansi}}" >
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>
@@ -191,8 +188,8 @@
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
-                                <select disabled placeholder="{{$orderlkti->tingkat_kegiatan}}">
-                                    <option selected></option>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->tingkat_kegiatan}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -201,7 +198,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -219,7 +216,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan1}}"></option>
+                                    <option selected> {{$orderlkti->tingkat_kegiatan1}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -228,7 +225,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat1}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat1}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -246,7 +243,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan2}}"></option>
+                                    <option selected>{{$orderlkti->tingkat_kegiatan2}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -255,7 +252,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat2}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat2}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -273,7 +270,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan3}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan3}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -282,7 +279,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat3}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat3}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -300,7 +297,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan4}}"></option>
+                                    <option selected> {{$orderlkti->tingkat_kegiatan4}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -309,7 +306,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat4}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat4}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -327,7 +324,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan5}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan5}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -336,7 +333,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat5}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat5}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -354,7 +351,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan6}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan6}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -363,7 +360,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat6}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat6}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -381,7 +378,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan7}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan7}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -390,7 +387,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat7}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat7}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>
@@ -408,7 +405,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan8}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan8}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -417,7 +414,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat8}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat8}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>          
@@ -435,7 +432,7 @@
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
-                                    <option selected aria-placeholder="{{$orderlkti->tingkat_kegiatan9}}"></option>
+                                    <option selected >{{$orderlkti->tingkat_kegiatan9}}</option>
                                     <option>@lang('messages.intern')</option>
                                     <option>@lang('messages.regional')</option>
                                     <option>@lang('messages.nasional')</option>
@@ -444,7 +441,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled placeholder="{{$orderlkti->sertifikat9}}"  type="file" accept="pdf/*">
+                                <input disabled value="{{$orderlkti->sertifikat9}}"  type="file" accept="pdf/*">
                             </div>  
                         </div>
                         <button type="submit" class="nextBtn" id="pay-button">
@@ -460,7 +457,7 @@
 
 </section>
 
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="../../js/nav.js"></script>
 <script>
     function removeLoader() {
@@ -483,30 +480,51 @@ $("body").css(
 </script>
 <script src="../../js/daftarlomba.js"></script>
 <script type="text/javascript">
-  // For example trigger on button clicked, or any time you need
-  var payButton = document.getElementById('pay-button');
-  payButton.addEventListener('click', function () {
-    // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-    window.snap.pay('{{$snapToken}}', {
-      onSuccess: function(result){
-        window.location.href= '/matalomba/lkti'
-        alert("payment success!"); console.log(result);
-      },
-      onPending: function(result){
-        /* You may add your own implementation here */
-        alert("wating your payment!"); console.log(result);
-      },
-      onError: function(result){
-        /* You may add your own implementation here */
-        alert("payment failed!"); console.log(result);
-      },
-      onClose: function(){
-        /* You may add your own implementation here */
-        alert('you closed the popup without finishing the payment');
-      }
-    })
+    // For example trigger on button clicked, or any time you need
+    var payButton = document.getElementById('pay-button');
+    payButton.addEventListener('click', function () {
+      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+      window.snap.pay('{{$snapToken}}', {
+        onSuccess: function(result){
+            Swal.fire({
+    icon: 'success',
+    title: 'Pembayaran Berhasil!',
+    text: 'Anda akan diarahkan ke halaman SPC.',
+    showConfirmButton: false, 
+    timer: 2000,
+  }).then(() => {
+    window.location.href = '/homespc/{{$orderlkti->id}}'; 
+    console.log(result); 
   });
-</script> 
+        },
+        onPending: function(result){
+          /* You may add your own implementation here */
+          alert("wating your payment!"); console.log(result);
+        },
+        onError: function(result){
+            Swal.fire({
+    icon: 'info',
+    title: 'Menunggu Pembayaran',
+    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+    showConfirmButton: false, // Tidak menampilkan tombol OK
+    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
+    didOpen: () => {
+      Swal.showLoading(); // Menampilkan animasi loading
+    },
+  });
+  console.log(result); 
+          
+        },
+        onClose: function(){
+            Swal.fire({
+    icon: 'warning',
+    title: 'Pembayaran Dibatalkan',
+    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+  });
+        }
+      })
+    });
+  </script>
     </body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->

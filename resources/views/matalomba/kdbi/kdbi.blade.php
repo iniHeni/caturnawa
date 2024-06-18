@@ -69,16 +69,14 @@
                      </li>
             
                      <li class="nav__item">
-                        <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.peserta')</a>
                      </li>
             
                      <li class="nav__item">
-                        <a href="#rank" class="nav__link">@lang('messages.round')</a>
+                        <a href="{{url('/') }}" class="nav__link">@lang('messages.round')</a>
                      </li>
                      
-                     <li class="nav__item">
-                        <a href="#juri" class="nav__link">@lang('messages.juri')</a>
-                     </li>
+                     
                </ul>
 
               <!-- Close button -->
@@ -103,137 +101,37 @@
         @lang('messages.teks1')</p>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
-      <h1 class="judul">@lang('messages.pesertalomba')</h1>
-      <div class="slide-container swiper">
-            <div class="slide-content">
-                <div class="card-wrapper swiper-wrapper">
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                             <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 1</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 2</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 3</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 4</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 5</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 6</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 7</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 8</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                    <div class="card swiper-slide">
-                        <div class="image-content">
-                            <span class="overlay"></span>
-                            <div class="card-image">
-                            <img src="../../img/kdbi2.png" alt="" class="card-img">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="name">Team 9</h2>
-                            <p class="description">Biodata Peserta</p>
-                            <button class="button"><a href="{{url('matalomba/detailpesertaKDBI') }}">@lang('messages.view')</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-</section>
+        <h1 class="judul">@lang('messages.pesertalomba')</h1>
+        <div class="slide-container swiper">
+              <div class="slide-content">
+                  <div class="card-wrapper swiper-wrapper">
+                      @if($peserta->count() > 0)
+                      @foreach($peserta as $rank => $data)
+                      <div class="card swiper-slide">
+                          <div class="image-content">
+                              <span class="overlay"></span>
+                              <div class="card-image">
+                               <img src="{{ $data->logo }}" alt="{{ $data->namateam }}" class="card-img">
+                              </div>
+                          </div>
+                          <div class="card-content">
+                              <h2 class="name">{{ $data->instansi }}</h2>
+                              <p class="description">{{ $data->namateam }}</p>
+                              <button class="button"><a href="{{route('kdbi.detailpeserta', $rank + 1) }}">@lang('messages.view')</a></button>
+                          </div>
+                      </div>
+                      @endforeach
+                      @endif
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+  </section>
 <!--==================== Round ====================-->
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
-        <a href="{{url('matalomba/penyisihanKDBI') }}" class="card-item">
+        <a href="{{url('matalomba/kdbi/penyisihan') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="developer">@lang('messages.penyisihan')</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -241,7 +139,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/sfinalKDBI') }}" class="card-item">
+        <a href="{{url('matalomba/kdbi/Semifinal') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="designer">Semifinal</span>
             <h3>@lang('messages.dilaksanakan')</h3>
@@ -249,7 +147,7 @@
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/finalKDBI') }}" class="card-item">
+        <a href="{{url('matalomba/kdbi/Final') }}" class="card-item">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="editor">Final</span>
             <h3>@lang('messages.dilaksanakan')</h3>

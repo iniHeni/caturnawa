@@ -57,7 +57,7 @@
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 22rem" class="nav__item">
+        <div style="margin-right: 19rem" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -105,23 +105,14 @@
                     <span class="title">@lang('messages.identitas')</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label for="nama">@lang('messages.Name') *untuk form UploadSPC</label>
+                            <label for="nama">@lang('messages.Name')</label>
                             <input type="text" name="nama" id="nama" placeholder="@lang('messages.place') @lang('messages.Name')" @error('nama') is-invalid @enderror required>
                             @error('nama')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="password">Password *untuk form UploadSPC</label>
-                                <input type="password" name="password" id="password" placeholder="@lang('messages.place') Password " @error('password') is-invalid @enderror required>
-                                <span class="toggle-password" onclick="togglePasswordVisibility('password')">   
-                                </span>
-                                @error('password')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="input-field">
-                            <label for="email">Email</label>
+                            <label for="email">Email  *For form UploadSPC</label>
                             <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " @error('email') is-invalid @enderror required>
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
@@ -505,7 +496,7 @@
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">@lang('messages.bayar')</span>
+                        <span class="btnText">Submit</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 

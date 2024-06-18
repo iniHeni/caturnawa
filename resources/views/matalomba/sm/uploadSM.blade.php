@@ -177,7 +177,7 @@
         @if(session('success'))
             Swal.fire({
                 icon: 'success',
-                title: 'Login Berhasil!',
+                title: 'Login Succes!',
                 text: '{{ session('success') }}'
             });
         @endif

@@ -12,7 +12,7 @@ return [
     'juri' => 'Juri',
     // Nav End Menu
     // Home Start
-    'welcome' => 'Selamat Datang, Daftar Sekarang dan jadilah Pemenang!',
+    'welcome' => 'Selamat Datang<br>Daftar Sekarang dan jadilah Pemenang!',
     'buka' =>'Pendaftaran Dibuka Pada',
     'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
     'sm' =>'Short Movie Competition',
@@ -23,6 +23,13 @@ return [
     'Daftar' =>'Daftar Sekarang',
     'Web' =>'Masuk Website',
     'count' =>'Hitung Mundur',
+    'opening' =>'Pendaftaran Awal',
+    'hargakdbi' =>'Rp300.000',
+    'hargasm' =>'Rp250.000',
+    'hargaspc' =>'Rp250.000',
+    'hargaedc' =>'Rp350.000',
+
+    
     // Home End
     
     //Admin Page
