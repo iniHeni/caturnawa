@@ -275,5 +275,54 @@ return [
          'jurispcbio4' => 'Saya seorang mahasiswa sarjana di Fakultas Ilmu Kesehatan. Saya belajar banyak dari orang-orang, terutama bagaimana koneksi dibuat melalui acara. Saya mahir berbicara di depan umum, yang menyebabkan saya memenangkan kontes debat, konferensi internasional, berpartisipasi dalam beberapa organisasi, dan dari itu, saya sangat memperhatikan isu-isu sosial. Untuk menunjukkan minat itu, saya memimpin panduan belajar yang disebut Rumah Belajar.',
          // SPC
      // Data Juri End
+     'penilaian' => 'Penilaian Meliputi',
+     'team1' => 'Team Peserta',
+     'peserta1' => 'Peserta',
+     'kuanti' => 'Kuantitatif',
+     'kuali' => 'Kualitatif',
+     'nilaimutu' => 'Nilai Mutu',
+     
+     'krit1' => 'Kesesuaian film dengan tema',
+     'krit2' => 'Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film',
+     'krit3' => 'Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda',
+     'krit4' => 'Seberapa orisinalitas cerita dalam script',
+     'krit5' => 'Kedalaman riset dan observasi dalam film',
+     'krit6' => 'Kejelasan dalam struktur dan alur cerita',
+     'krit7' => 'Keutuhan cerita yang di gambarkan',
+     'krit8' => 'Pemilihan bahasa yang digunakan',
+     'krit9' => 'Kesesuaian dengan isi script',
+     'krit10' => 'Kejelasan dalam menggambarkan adegan dengan detail',
+     'krit11' => 'Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual',
+     'krit12' => 'Kesesuaian storyboard dengan film',
+
+     'kritsf1' => 'Ketepatan dan kesesuaian white balance',
+     'kritsf2' => 'Ketetapan dan kesesuaian angle, pergerakan kamera, dan komposisi',
+     'kritsf3' => 'Ketepatan dan kesesuaian key light',
+     'kritsf4' => 'Ketepatan dan kesesuaian teknik penataan lampu',
+     'kritsf5' => 'Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realitas yang diperoleh menjadi suatu yang menarik untuk ditonton',
+     'kritsf6' => 'Kesesuaian antara gambar dan suara serta estetika dalam film',
+     'kritsf7' => 'Kelarasan musik dengan film',
+     'kritsf8' => 'Ketepatan dan kesesuaian teknik cutting',
+     'kritsf9' => 'Ketepatan poster dengan film',
+     'kritsf10' => 'Komposisi gambar : warna dan tata letak objek dalam gambar',
+     'kritsf11' => 'Keindahan/sisi artistik penyajian visual',
+     'kritsf12' => 'Jumlah like dan view film yang tayang di Youtube',
+
+     'kritf1' => 'Ide cerita dalam film',
+     'kritf2' => 'Tujuan film dan pengaruh film',
+     'kritf3' => 'Kemampuan dan pemahaman membuat film',
+     'kritf4' => 'Etika dalam mempresentasikan film',
+
+     'lktisf1' => 'Penyajian Karya Tulis ilmiah',
+     'lktisf2' => 'Substansi KaryaTulis',
+     'lktisf3' => 'Kualitas Karya Tulis Ilmiah',
+
+     'lktif1' => 'Pemaparan Materi dan Presentasi Ilmiah',
+     'lktif2' => 'Pertanyaan dan Jawaban',
+     'lktif3' => 'Aspek Kesesuaian dengan Tema',
+     
+
+
+     
 ]
 ?>

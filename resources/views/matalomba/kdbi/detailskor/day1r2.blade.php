@@ -13,9 +13,7 @@
       <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenu.css">
-      <link rel="stylesheet" href="../../../css/pagelomba.css">
-      <link rel="stylesheet" href="../../../css/rank.css">
-      <link rel="stylesheet" href="../../../css/babak.css">
+
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
 
@@ -57,19 +55,20 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
         <nav class="nav container">
-        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" >Caturnawa</a>
+        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+        
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 18rem" class="nav__item">
+       <div style="margin-right: 25rem" class="nav__item">
 						
 					</div>
-               <li class="nav__item">
-                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
-               </li>
-      
-               <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-               </li>
+          <li class="nav__item">
+            <a href="{{url('/') }}" class="nav__link">Home</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('/matalomba/kdbi') }}" class="nav__link">Participant</a>
+         </li>
       
                </ul>
 
@@ -191,5 +190,33 @@
     });
        </script>
       <script src="../../../js/nav.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+        </script>
+        <script type="text/JavaScript"> 
+            function killCopy(e){ return false } 
+            function reEnable(){ return true } 
+            document.onselectstart=new Function ("return false"); 
+            if (window.sidebar)
+            { 
+                document.onmousedown=killCopy; 
+                document.onclick=reEnable; 
+            } 
+        </script>
+        <script type="text/Javascript">
+        $(document).keydown(function(event){
+      if(event.keyCode==123){
+          return false;
+      }
+      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+               return false;
+      }
+  });
+      </script>
    </body>
 </html>

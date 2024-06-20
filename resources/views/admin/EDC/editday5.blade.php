@@ -100,7 +100,7 @@
                 <div class="fields"> 
                     <div class="input-field">
                         <label for="ronde">Ronde </label>
-                        <select name="ronde" id="ronde"  required value>
+                        <select name="ronde" id="ronde"  required >
                             <option selected>{{ $edit->ronde }}</option>
                             <option>1</option>   
                             <option>2</option>  
@@ -137,37 +137,47 @@
                         </select>
                     </div>
                     <div class="input-field">
-                        <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
-                        <select name="nama1" id="nama1"  required >
-                            <option selected>{{ $edit->nama1 }}</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
                         <label for="posisi1">Posisi Peserta 1 </label>
                         <select name="posisi1" id="posisi1"  required >
                             <option selected>{{ $edit->posisi1 }}</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
-                        <select d name="nama2" id="nama2"  required >
-                            <option selected>{{ $edit->nama2 }}</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
                         </select>
                     </div>
                     <div class="input-field">
                         <label for="posisi2">Posisi Peserta 2 </label>
                         <select name="posisi2" id="posisi2" required >
                             <option selected>{{ $edit->posisi2 }}</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
                         </select>
                     </div>
+                    <div class="input-field">
+                        <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
+                        <select name="nama1" id="nama1"  required >
+                            <option selected>{{ $edit->nama1 }}</option> 
+                        </select>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
+                        <select d name="nama2" id="nama2"  required >
+                            <option selected>{{ $edit->nama2 }}</option> 
+                        </select>
+                    </div>
+                  
                 </div>
               </div>
             <div class="details ID">

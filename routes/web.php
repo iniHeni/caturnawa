@@ -81,7 +81,9 @@ Route::post('/tambah/sf', [spcsemifinalController::class, 'tambahsf']);
 Route::post('/tambah/final', [spcfinalController::class, 'tambahf']);
 Route::get('matalomba/lkti/penyisihan', [spcpenyisihanController::class, 'penyisihan']);
 Route::get('matalomba/lkti/sfinal', [spcsemifinalController::class, 'semifinal']);
+Route::get('matalomba/lkti/sfinal/detail{namapeserta}', [spcsemifinalController::class, 'detail'])->name('spc.detail');
 Route::get('matalomba/lkti/final', [spcfinalController::class, 'final']);
+Route::get('matalomba/lkti/final/detail{namapeserta}', [spcfinalController::class, 'detail'])->name('spc.detailf');
 
 
 Route::get('matalomba/sm/detailpeserta/{id}', [pesertasmController::class, 'detailpeserta'])->name('sm.detailpeserta');
@@ -89,11 +91,11 @@ Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
 Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
 Route::post('/tambahsm/sfinal', [smsfinalController::class, 'tambahsf']);
 Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
-Route::get('matalomba/sm/penyisihan/detail/{id}', [smsemifinalController::class, 'detail'])->name('sm.detail');
+Route::get('matalomba/sm/penyisihan/detail{namateam}', [smsemifinalController::class, 'detail'])->name('sm.detail');
 Route::get('matalomba/sm/final', [smfinalController::class, 'final'])->name('sm.final');
-Route::get('matalomba/sm/final/detail/{id}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+Route::get('matalomba/sm/final/detail{namateam}', [smfinalController::class, 'detailf'])->name('sm.detailf');
 Route::get('matalomba/sm/sfinal', [smsfinalController::class, 'sfinal'])->name('sm.sfinal');
-Route::get('matalomba/sm/sfinal/detail/{id}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
+Route::get('matalomba/sm/sfinal/detail{namateam}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
 
 Route::get('matalomba/edc/detailpeserta/{id}', [pesertaedcController::class, 'detailpesertaedc'])->name('edc.detailpeserta');
 Route::post('/tambahpenyisihan/edcday1', [day1edcController::class, 'tambahedc']);

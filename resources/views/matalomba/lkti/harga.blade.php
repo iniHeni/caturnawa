@@ -104,10 +104,7 @@
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
    <h1 class="upcomming">Price</h1>
-   
    <div class="item">
-     <span class="up-border"></span>
-       <span class="down-border"></span>
      <div class="item-right">
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
@@ -118,39 +115,8 @@
      </div>
      
      <div class="item-left">
-       <p class="event">Early Bid</p>
-       <h2 class="title">Rp350.000</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
-         <p>Scientific Paper Competition</p>
-       </div>
-       <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <button class="tickets">Tutup/Closed</button>
-     </div>
-   </div>
-   
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">27</h2>
-       <p class="day">July</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
        <p class="event">Phase 1</p>
-       <h2 class="title">Rp400.000</h2>
+       <h2 class="title">Rp170.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -181,7 +147,7 @@
      
      <div class="item-left">
        <p class="event">Phase 2</p>
-       <h2 class="title">Rp450.000</h2>
+       <h2 class="title">Rp200.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>

@@ -59,15 +59,15 @@
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="../../../locale/ind') }}" height="20"><img src="../../../../img/ind.png"  /></a></li>
-						<li><a href="../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
+						<li><a href="../../../../locale/ind') }}" height="20"><img src="../../../../img/ind.png"  /></a></li>
+						<li><a href="../../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                </li>
       
                <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+                  <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
                </li>
       
                </ul>
@@ -94,54 +94,59 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard Detail Final</h1>
+            <h1 class="judul" style="color: white" >Detail Final</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     <thead style="position: static; top: -1; z-index: 10;">
                       <tr>
-                          <th scope="col">Team Participant</th>
-                          <th scope="col">Participant</th>
-                          <th scope="col">Penilaian Meliputi</th>
-                          <th scope="col">Kuantitatif</th>
-                          <th scope="col">Kualititatif</th>
-                          <th scope="col">Nilai Mutu</th>
-                          <th scope="col">Total</th>
-                          <th scope="col">Adjudicators</th>
-                      </tr>
-                  </thead>
-                  <tbody>
+                        <th scope="col">@lang('messages.team1')</th>
+                        <th scope="col">@lang('messages.peserta1')</th>
+                        <th scope="col">@lang('messages.penilaian')</th>
+                        <th scope="col">@lang('messages.kuanti')</th>
+                        <th scope="col">@lang('messages.kuali')</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Adjudicators</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @foreach ($dataa as $item)
                       <tr>
-                          <td rowspan="4">{{ $dataa->namateam }}</td>
-                          <td rowspan="4">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
-                          <td>Ide cerita dalam film</td>
-                          <td>{{ $dataa->skorkrit1 }}</td>
-                          <td>{{ $dataa->krit1 }}</td>
-                          <td >{{ $dataa->mutu1 }}</td>
-                          <td rowspan="4">{{ $dataa->total }}</td>
-                          <td rowspan="4">{{ $dataa->juri }}</td>
-                      </tr>
-                      <tr>
-                       
-                          <td>Tujuan film dan pengaruh film</td>
-                          <td>{{ $dataa->skorkrit2 }}</td>
-                          <td>{{ $dataa->krit2 }}</td>
-                          <td >{{ $dataa->mutu2 }}</td>
-                      </tr>
-                      <tr>
-                       
-                          <td>Kemampuan dan pemahaman membuat film</td>
-                          <td>{{ $dataa->skorkrit3}}</td>
-                          <td>{{ $dataa->krit3 }}</td>
-                          <td >{{ $dataa->mutu3 }}</td>
-                      </tr>
-                      <tr>
-                        
-                          <td>Etika dalam mempresentasikan film</td>
-                          <td>{{ $dataa->skorkrit4}}</td>
-                          <td>{{ $dataa->krit4 }}</td>
-                          <td >{{ $dataa->mutu4 }}</td>
-                      </tr>
+                          <td rowspan="5">{{ $item->namateam }}</td> {{-- Nama tim --}}
+                          <td rowspan="5">1.{{ $item->peserta1 }}<br>2.{{ $item->peserta2 }}<br>3.{{ $item->peserta3 }}<br>4.{{ $item->peserta4 }}<br>5.{{ $item->peserta5 }}
+                          </td>
+                          @for ($i = 1; $i <= 4; $i++)
+                          <tr>
+                              <td>@lang('messages.kritf' . $i)</td>
+                              <td>
+                                  @if (is_array(explode(', ', $item->{'skorkrit' . $i})))
+                                      @foreach (explode(', ', $item->{'skorkrit' . $i}) as $score)
+                                          {{ $score }}<br>
+                                      @endforeach
+                                  @endif
+                              </td>
+                              <td>
+                                  @if (is_array(explode(', ', $item->{'krit' . $i})))
+                                      @foreach (explode(', ', $item->{'krit' . $i}) as $krit)
+                                          {{ $krit }}<br>
+                                      @endforeach
+                                  @endif
+                              </td>
+                              @if ($i === 1)  {{-- Hanya tampilkan total dan juri pada baris pertama --}}
+                                  <td rowspan="4">{{ $item->total }}</td>
+                                  <td rowspan="4">
+                                    @if (is_array(explode(', ', $item->juri)))
+                                        @php $juriCount = 1; @endphp 
+                                        @foreach (explode(', ', $item->juri) as $juri)
+                                            {{ $juriCount }}. {{ $juri }}<br>
+                                            @php $juriCount++; @endphp
+                                        @endforeach
+                                    @endif
+                                </td>
+                              @endif
+                          </tr>
+                      @endfor
+                  @endforeach
                   </tbody>
                   </table>
                 </table>

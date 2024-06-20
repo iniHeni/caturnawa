@@ -117,7 +117,7 @@
     
     <div class="item-left">
       <p class="event">Early Bid</p>
-      <h2 class="title">Rp350.000/Team</h2>
+      <h2 class="title">Rp300.000/Team</h2>
       <div class="sce">
         <div class="icon">
           <i class="fa fa-table"></i>
@@ -140,7 +140,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">27</h2>
+      <h2 class="num">29</h2>
       <p class="day">July</p>
       <span class="up-border"></span>
       <span class="down-border"></span>
