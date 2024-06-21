@@ -101,7 +101,7 @@
             @csrf
             <div class="form first">
                 <div class="details personal">
-                        <span class="title">Debater 1</span>
+                        <span class="title">Peserta 1</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_1">@lang('messages.Name')</label>
@@ -192,7 +192,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon">Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                                 @error('twibbon')
                                 <div class="text-danger">{{ $message }}</div>
@@ -201,7 +201,7 @@
                         </div>
                     </div>
                     <div class="details ">
-                        <span class="title">Debater 2</span>
+                        <span class="title">Peserta 2</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_2">@lang('messages.Name')</label>
@@ -292,7 +292,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon2">Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon2">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input name="twibbon2" id="twibbon2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon2') is-invalid @enderror required>
                                 @error('twibbon2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -321,7 +321,7 @@
     
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Checkout</span>
+                        <span class="btnText">Pembayaran</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
                 </div>

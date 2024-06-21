@@ -34,7 +34,7 @@ return [
     
     //Admin Page
     'admin' => 'Selamat Datang Juri dan Tabulator!',
-    'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
+    'admin1' => 'Tekan tombol Menu di bagian kanan Navbar untuk membuka atau menutup Menu Admin!',
     'ronde1' => 'Ronde 1',
     'ronde2' => 'Ronde 2',
     'ronde3' => 'Ronde 3',
@@ -54,9 +54,9 @@ return [
     'pendaftaran' => 'Pendaftaran',
     'identitas' => 'Identitas',
     'Name' =>'Nama Lengkap',
-    'Nomor' =>'Nomor Whatssapp',
+    'Nomor' =>'Nomor WhatsApp',
     'fakultas' => 'Fakultas',
-    'prodi' => 'Prodi',
+    'prodi' => 'Program Studi',
     'gender' => 'Jenis Kelamin',
     'pria' => 'Pria',
     'wanita' => 'Wanita',
@@ -64,10 +64,10 @@ return [
     'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg*Maks 5MB',
     'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg*Maks 5MB',
     'krs' => 'Kartu Rencana Studi *format:jpg,png,jpeg*Maks 5MB',
-    'bukti' => 'Bukti Follow Social Media UNAS Fest *format:jpg,png,jpeg*Maks 5MB',
+    'bukti' => 'Bukti Mengikuti Sosial Media UNAS Fest *format:jpg,png,jpeg*Maks 5MB',
     'team' => 'Berkas Team',
     'instansi' => 'Asal Instansi',
-    'surat' => 'Surat Delegasi Kampus scan:pdf *Maks 5MB',
+    'surat' => 'Surat Delegasi Kampus Scan:pdf *Maks 5MB',
     'Capaian' => 'Capaian Unggulan',
     'namakegiatan' => 'Nama Kegiatan',
     'jenis' => 'Jenis Kegiatan',
@@ -84,11 +84,11 @@ return [
     'Send' => 'Kirim Pesan',
     'ketua' => 'Ketua Tim',
     'member' => 'Anggota',
-    'link' => 'Link Vidio Youtube',
+    'link' => 'Link Video Youtube',
     'bio' => 'Biodata Peserta',
     // Form End 
     // placeholder start
-    'place' => 'Masukkan',
+    'place' => 'Isi',
     // place holder end
 
      // Data Juri Start
