@@ -70,15 +70,15 @@
                      </li>
    
                      <li class="nav__item">
-                        <a href="{{url('matalomba/scoreSM') }}" class="nav__link">@lang('messages.score')</a>
+                        <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.score')</a>
                      </li>
    
                      <li class="nav__item">
-                        <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
+                        <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
                      </li>
                      
                      <li class="nav__item">
-                        <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
+                        <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
                      </li>
                </ul>
 

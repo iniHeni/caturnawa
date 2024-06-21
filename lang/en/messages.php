@@ -225,5 +225,50 @@ return [
      part in several organizations, and from that, I pay great attention to social issues. To manifest that interest, I lead learning
      guidance called Rumah Belajar.',
  
+     'penilaian' => 'Assessments include',
+     'team1' => 'Team Participant',
+     'peserta1' => 'Peserta',
+     'kuanti' => 'Quantitative',
+     'kuali' => 'Qualitative',
+     'nilaimutu' => 'Quality Values',
+
+     'krit1' => 'Film compatibility with theme',
+     'krit2' => 'The correspondence between facts and reality with the story raised in the film',
+     'krit3' => 'Creativity in telling reality from different perspectives',
+     'krit4' => 'Seberapa orisinalitas cerita dalam script',
+     'krit5' => 'How original the story is in the script',
+     'krit6' => 'Clearness in structure and storyline',
+     'krit7' => 'The completeness of the story described',
+     'krit8' => 'Selection of language used',
+     'krit9' => 'Compatibility with script contents',
+     'krit10' => 'Clearness in depicting scenes with detail',
+     'krit11' => 'Clearness in displaying creative ideas in visual presentation',
+     'krit12' => 'Storyboard compatibility with film',
+
+     'kritsf1' => 'White balance accuracy and suitability',
+     'kritsf2' => 'Angle fixation and suitability, camera motion, and composition',
+     'kritsf3' => 'Key light accuracy and compatibility',
+     'kritsf4' => 'Accuracy and compatibility of lighting arrangement techniques',
+     'kritsf5' => 'Creativity in combining video and audio elements in organizing stories based on information and reality gained into something interesting to watch',
+     'kritsf6' => 'Compatibility between image and sound as well as aesthetics in film',
+     'kritsf7' => 'Music alignment with film',
+     'kritsf8' => 'Accuracy and suitability of cutting techniques',
+     'kritsf9' => 'Poster accuracy with film',
+     'kritsf10' => 'Image composition : color and layout of objects in the image',
+     'kritsf11' => 'The beauty/artistic side of visual presentation',
+     'kritsf12' => 'Number of likes and views of movies shown on YouTube',
+
+     'kritf1' => 'Story ideas in movies',
+     'kritf2' => 'The purpose of the film and the influence of the movie',
+     'kritf3' => 'The ability and understanding of making films',
+     'kritf4' => 'Ethics in film presentation',
+     
+     'lktisf1' => 'Presentation of Scientific Paper Works',
+     'lktisf2' => 'Substance of Scientific Paper Works',
+     'lktisf3' => 'Quality Scientific Paper Works',
+
+     'lktif1' => 'Material Exhibition and Scientific Presentation',
+     'lktif2' => 'Questions and Answers',
+     'lktif3' => 'Theme Compatibility Aspects',
 ]
 ?>

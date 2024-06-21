@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Validation\Rule;
 
 class Day5edcController extends Controller
 {
@@ -48,6 +49,7 @@ class Day5edcController extends Controller
         ]);
         $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
         day5edc::create($tambah);
+        
         return redirect()->route('edc.tampiledc5');
         
     }
@@ -59,22 +61,22 @@ class Day5edcController extends Controller
     }
 
     public function updateedc5(Request $request, $id){
-    $update = $request->validate([
-        'ronde' => 'required',
-            'juri' => 'required',
-            'room' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-    ]);
-    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2 ;
-    $data = day5edc::find($id);
-    $data->update($update);
+        $update = $request->validate([
+            'ronde' => 'required',
+                'juri' => 'required',
+                'room' => 'required',
+                'team' => 'required',
+                'posisi' => 'required',
+                'posisi1' => 'required',
+                'posisi2' => 'required',
+                'nama1' => 'required',
+                'nama2' => 'required',
+                'skorindividu1' => 'required|integer|min:0|max:100',
+                'skorindividu2' => 'required|integer|min:0|max:100',
+        ]);
+        $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2 ;
+        $data = day5edc::find($id);
+        $data->update($update);
         return redirect()->route('edc.tampiledc5');
 }
 
@@ -90,15 +92,34 @@ public function hapusedc5($id){
     return view('admin/EDC/tambah5', compact('peserta'));
  }
  public function day5round1(){
-    $final = DB::table('day5edcs')
+    $groupedData = DB::table('day5edcs')
     ->select(
-        '*',
-        DB::raw('RANK() OVER (ORDER BY vp DESC, created_at ASC) as rank')
+        'team',
+        'ronde', 
+        DB::raw("STRING_AGG(DISTINCT nama1, ', ') as nama1"),
+        DB::raw("STRING_AGG(DISTINCT nama2, ', ') as nama2"),
+        DB::raw("STRING_AGG(DISTINCT posisi, ', ') as posisi"),
+        DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
+        DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
+        DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
+        DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
+        DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+        DB::raw('MAX(vp) as vp')
     )
-    ->where('ronde', '1')
-    ->orderBy('vp', 'desc')
-    ->orderBy('created_at', 'asc') 
+    ->where('ronde', 1)
+    ->groupBy('team', 'ronde')
     ->get();
+
+$final = $groupedData->map(function ($row) {
+    $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+    return $row;
+})
+->sortByDesc('total')
+->values()
+->map(function ($item, $index) {
+    $item->rank = $index + 1;
+    return $item;
+});
     return view('matalomba/edc/finalronde3', compact('final'));
  }
 
@@ -107,18 +128,18 @@ public function hapusedc5($id){
         'team',
         'nama1',
         'nama2',
-        DB::raw('SUM(vp) as total')
+        'vp',
     )
-    ->groupBy('team', 'nama1', 'nama2') // Group by nama1 dan nama2 juga
+    ->groupBy('team', 'nama1', 'nama2', 'vp') // Group by nama1 dan nama2 juga
     ->get();
     
     $totalVpDay2 = day5edc::select(
         'team',
         'nama1',
         'nama2',
-        DB::raw('SUM(vp) as total')
+        'vp',
     )
-    ->groupBy('team', 'nama1', 'nama2')
+    ->groupBy('team', 'nama1', 'nama2', 'vp')
     ->get();
     
     $groupedByTeam = $totalVpDay1->concat($totalVpDay2)
@@ -128,7 +149,7 @@ public function hapusedc5($id){
                 'team' => $group[0]['team'],
                 'nama1' => $group[0]['nama1'],
                 'nama2' => $group[0]['nama2'],
-                'total' => $group->sum('total')
+                'total' => $group->sum('vp')
             ];
         })
         ->sortByDesc('total') 

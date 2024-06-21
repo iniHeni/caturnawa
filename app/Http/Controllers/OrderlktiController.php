@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class OrderlktiController extends Controller
 {
@@ -275,14 +276,21 @@ class OrderlktiController extends Controller
         }
 
         $now = Carbon::now();
-        if ($now->between('2024-07-23', '2024-07-26')) {
-            $price = 350000; 
-        } elseif ($now->between('2024-07-27', '2024-08-11')) {
-            $price = 500000; 
+        
+        $asalInstansi = $request->input('instansi'); 
+        $asalInstansi = Str::lower($asalInstansi); 
+        $asalInstansi = str_replace(' ', '', $asalInstansi);
+
+if ($asalInstansi === 'universitasnasional' && $now->between('2024-07-23', '2024-07-26')) {
+    $price = 85000;
+} elseif ($asalInstansi === 'universitasnasional') {
+    $price = 100000;
+} elseif ($now->between('2024-07-23', '2024-08-11')) {
+            $price = 170000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
-            $price = 550000; 
-        } else {
-            $price = 9999999; // Default or registration closed
+            $price = 200000; 
+        }else {
+            $price = 9999999; 
         }
          $additionalData = [
         'price' => $price,

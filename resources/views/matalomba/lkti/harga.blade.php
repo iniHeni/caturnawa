@@ -106,8 +106,6 @@
    <h1 class="upcomming">Harga</h1>
    
    <div class="item">
-     <span class="up-border"></span>
-       <span class="down-border"></span>
      <div class="item-right">
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
@@ -150,7 +148,7 @@
      
      <div class="item-left">
        <p class="event">Phase 1</p>
-       <h2 class="title">Rp400.000</h2>
+       <h2 class="title">Rp170.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -181,7 +179,7 @@
      
      <div class="item-left">
        <p class="event">Phase 2</p>
-       <h2 class="title">Rp450.000</h2>
+       <h2 class="title">Rp200.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>

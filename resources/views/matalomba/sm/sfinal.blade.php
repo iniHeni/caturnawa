@@ -59,15 +59,15 @@
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="../locale/ind') }}" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+						<li><a href="locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+						<li><a href="locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                </li>
       
                <li class="nav__item">
-                  <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
+                  <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
                </li>
       
                </ul>
@@ -94,12 +94,12 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard Result Elimination</h1>
+            <h1 class="judul" style="color: white" >Leaderboard Result Detail @lang('messages.penyisihan')</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                     <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
-                            <th scope="col">Team Participant</th>
+                            <th scope="col">Detail @lang('messages.team1')</th>
                             <th scope="col">Team Score</th>
                             <th scope="col">rank</th>
                         </tr>
@@ -125,7 +125,7 @@
     <h1 class="judul">Detail Score</h1>
     <div class="card-list">
         @foreach($penyisihann as $rank => $data)
-            <a href="{{ route('sm.detail', $rank + 1) }}" class="card-item"> 
+            <a href="{{ route('sm.detail', $data->namateam) }}" class="card-item"> 
                 <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
                 <h3>{{ $data->namateam }}</h3> 
                 <div class="arrow">

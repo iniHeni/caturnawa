@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Determine start and end dates based on ticket phase
         let phaseStart, phaseEnd;
         if (index === 0) {
-          phaseStart = new Date(currentYear, 6, 23); // July 23rd
+          phaseStart = new Date(currentYear, 5, 18); // July 23rd
           phaseEnd = new Date(currentYear, 6, 26, 23, 59, 59); // July 26th, end of day
         } else if (index === 1) {
           phaseStart = new Date(currentYear, 7, 27); // August 27th
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = "/matalomba/daftarKTI"; 
           });
         } else if ((now < phaseStart || now > phaseEnd) && !ticketsButton.classList.contains("tickets")) {
-          ticketsButton.textContent = "Tutup/Closed";
+          ticketsButton.textContent = "Closed";
           ticketsButton.classList.remove("daftar");
           ticketsButton.classList.add("tickets");
           ticketsButton.href = "#";

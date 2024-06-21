@@ -94,28 +94,55 @@ public function final()
 return view('matalomba/sm/final', compact('final'));
 
 }
-public function detailf($id){
-    $dataa = smfinal::find($id);
-    $dataa->mutu1 = $this->calculateNilaiMutu($dataa->skorkrit1);
-    $dataa->mutu2 = $this->calculateNilaiMutu($dataa->skorkrit2);
-    $dataa->mutu3 = $this->calculateNilaiMutu($dataa->skorkrit3);
-    $dataa->mutu4 = $this->calculateNilaiMutu($dataa->skorkrit4);
+public function detailf($namateam){
+    //$dataa = smfinal::find($id);
+    //$dataa->mutu1 = $this->calculateNilaiMutu($dataa->skorkrit1);
+    //$dataa->mutu2 = $this->calculateNilaiMutu($dataa->skorkrit2);
+    //$dataa->mutu3 = $this->calculateNilaiMutu($dataa->skorkrit3);
+    //$dataa->mutu4 = $this->calculateNilaiMutu($dataa->skorkrit4);
+    $namateam = strip_tags(trim($namateam));
+    $dataa = DB::table('smfinals')
+        ->select('namateam',
+                DB::raw("string_agg(skorkrit1::text, ', ') as skorkrit1"),
+                DB::raw("string_agg(skorkrit2::text, ', ') as skorkrit2"),
+                DB::raw("string_agg(skorkrit3::text, ', ') as skorkrit3"),
+                DB::raw("string_agg(skorkrit4::text, ', ') as skorkrit4"),
+
+
+                DB::raw("string_agg(krit1::text, ', ') as krit1"),
+                DB::raw("string_agg(krit2::text, ', ') as krit2"),
+                DB::raw("string_agg(krit3::text, ', ') as krit3"),
+                DB::raw("string_agg(krit4::text, ', ') as krit4"),
+
+
+                DB::raw("ARRAY_TO_STRING(ARRAY_AGG(DISTINCT peserta1), ', ') as peserta1"),
+                DB::raw("ARRAY_TO_STRING(ARRAY_AGG(DISTINCT peserta2), ', ') as peserta2"),
+                DB::raw("ARRAY_TO_STRING(ARRAY_AGG(DISTINCT peserta3), ', ') as peserta3"),
+                DB::raw("ARRAY_TO_STRING(ARRAY_AGG(DISTINCT peserta4), ', ') as peserta4"),
+                DB::raw("ARRAY_TO_STRING(ARRAY_AGG(DISTINCT peserta5), ', ') as peserta5"),
+               
+                DB::raw('SUM(skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4) as total'),
+                DB::raw("string_agg(juri::text, ', ') as juri"),
+                )
+        ->where('namateam', $namateam)
+        ->groupBy('namateam')
+        ->get();
     return view('matalomba/sm/detail/detailskor2', compact('dataa'));
  }
- private function calculateNilaiMutu($skorkrit)
-{
-    if ($skorkrit >= 85 && $skorkrit <= 100) {
-        return 'A';
-    } elseif ($skorkrit >= 65 && $skorkrit <= 84) {
-        return 'B';
-    } elseif ($skorkrit >= 45 && $skorkrit <= 64) {
-        return 'C';
-    } elseif ($skorkrit >= 25 && $skorkrit <= 44) {
-        return 'D';
-    } else {
-        return 'E';
-    }
-}
+ //private function calculateNilaiMutu($skorkrit)
+//{
+    //if ($skorkrit >= 85 && $skorkrit <= 100) {
+       // return 'A';
+   // } elseif ($skorkrit >= 65 && $skorkrit <= 84) {
+    //   return 'B';
+   // } elseif ($skorkrit >= 45 && $skorkrit <= 64) {
+   //     return 'C';
+  //  } elseif ($skorkrit >= 25 && $skorkrit <= 44) {
+   //     return 'D';
+   // } else {
+    //    return 'E';
+   // }
+//}
  public function pesertaf(){
     $peserta = pesertasm::all();
     

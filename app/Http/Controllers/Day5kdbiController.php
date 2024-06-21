@@ -90,15 +90,34 @@ public function hapuskdbi5($id){
     return view('admin/KDBI/tambah5', compact('peserta'));
  }
  public function day5r1(){
-    $final = DB::table('day5kdbis')
+    $groupedData = DB::table('day4kdbis')
     ->select(
-        '*',
-        DB::raw('RANK() OVER (ORDER BY vp DESC, created_at ASC) as rank')
+        'team',
+        'ronde', 
+        DB::raw("STRING_AGG(DISTINCT nama1, ', ') as nama1"),
+        DB::raw("STRING_AGG(DISTINCT nama2, ', ') as nama2"),
+        DB::raw("STRING_AGG(DISTINCT posisi, ', ') as posisi"),
+        DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
+        DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
+        DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
+        DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
+        DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+        DB::raw('MAX(vp) as vp')
     )
-    ->where('ronde', '1')
-    ->orderBy('vp', 'desc')
-    ->orderBy('created_at', 'asc') 
+    ->where('ronde', 1) // Menambahkan filter untuk ronde 1
+    ->groupBy('team', 'ronde')
     ->get();
+
+$final = $groupedData->map(function ($row) {
+    $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+    return $row;
+})
+->sortByDesc('total')
+->values()
+->map(function ($item, $index) {
+    $item->rank = $index + 1;
+    return $item;
+});
     return view('matalomba/kdbi/finalronde3', compact('final'));
  }
 

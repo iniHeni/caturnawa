@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="../../../../css/pagelomba.css">
 
 
-      <title>Caturnawa - SMPenyisihanScore</title>
+      <title>Caturnawa - SPCSemifinalScore</title>
       <style>
         #loadingDiv {
    width: 100%;
@@ -54,7 +54,7 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../../../img/smcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <img src="../../../../img/spcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
@@ -91,71 +91,95 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     
       <!--==================== Tabel Skor ====================-->
-<section id="skor">
-    <div class="container" style=" justify-content: center;">
-        <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Detail @lang('messages.penyisihan')</h1>
-            <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
-                <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
-                  <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
-                    <thead style="position: static; top: -1; z-index: 10;">
+      <section id="skor">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div style="width: 100%;">
+                <h1 class="judul" style="color: white" >Detail SemiFinal</h1>
+                <div class="table-responsive" style="max-height: 800px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
+                        <thead style="position: sticky; top: -1; z-index: 10;">
+                          <tr>
+                            <th>Name @lang('messages.peserta')</th>
+                            <th>@lang('messages.penilaian')</th>
+                            <th>@lang('messages.kuanti')</th>
+                            <th>@lang('messages.kuali')</th>
+                            <th>Total</th>
+                            <th>@lang('messages.juri')</th>
+                    
+
+                        </tr>
+                    </thead>
+              <tbody>
+                  @foreach ($data as $item)
                       <tr>
-                          <th scope="col">@lang('messages.team1')</th>
-                          <th scope="col">@lang('messages.peserta1')</th>
-                          <th scope="col">@lang('messages.penilaian')</th>
-                          <th scope="col">@lang('messages.kuanti')</th>
-                          <th scope="col">@lang('messages.kuali')</th>
-                          <th scope="col">Total</th>
-                          <th scope="col">Adjudicators</th>
+                          <td rowspan="3">{{ $item->namapeserta }}</td>
+                          <td>1.@lang('messages.lktisf1')</td>
+                          <td>
+                              @if (is_array(explode(', ', $item->scorepenyajian)))
+                                  @foreach (explode(', ', $item->scorepenyajian) as $score)
+                                      {{ $score }}<br>
+                                  @endforeach
+                              @endif
+                          </td>
+                          <td> @if (is_array(explode(', ', $item->penyajian)))
+                            @foreach (explode(', ', $item->penyajian) as $score)
+                                {{ $score }}<br>
+                            @endforeach
+                        @endif</td> 
+                        <td rowspan="3">
+                          @if (is_array(explode(', ', $item->total)))
+                              @foreach (explode(', ', $item->total) as $score)
+                                  {{ $score }}<br>
+                              @endforeach
+                          @endif
+                      </td>
+                          <td rowspan="3">
+                              @if (is_array(explode(', ', $item->juri)))
+                                  @foreach (explode(', ', $item->juri) as $juri)
+                                      {{ $juri }}<br>
+                                  @endforeach
+                              @endif
+                          </td>
+                          
                       </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($data as $item)
-                        <tr>
-                            <td rowspan="13">{{ $item->namateam }}</td> {{-- Nama tim --}}
-                            <td rowspan="13">1.{{ $item->peserta1 }}<br>2.{{ $item->peserta2 }}<br>3.{{ $item->peserta3 }}<br>4.{{ $item->peserta4 }}<br>5.{{ $item->peserta5 }}
-                            </td>
-                            @for ($i = 1; $i <= 12; $i++)
-                            <tr>
-                                <td>@lang('messages.krit' . $i)</td>
-                                <td>
-                                    @if (is_array(explode(', ', $item->{'skorkrit' . $i})))
-                                        @foreach (explode(', ', $item->{'skorkrit' . $i}) as $score)
-                                            {{ $score }}<br>
-                                        @endforeach
-                                    @endif
-                                </td>
-                                <td>
-                                    @if (is_array(explode(', ', $item->{'krit' . $i})))
-                                        @foreach (explode(', ', $item->{'krit' . $i}) as $krit)
-                                            {{ $krit }}<br>
-                                        @endforeach
-                                    @endif
-                                </td>
-                                @if ($i === 1)  {{-- Hanya tampilkan total dan juri pada baris pertama --}}
-                                    <td rowspan="12">{{ $item->total }}</td>
-                                    <td rowspan="12">
-                                      @if (is_array(explode(', ', $item->juri)))
-                                          @php $juriCount = 1; @endphp 
-                                          @foreach (explode(', ', $item->juri) as $juri)
-                                              {{ $juriCount }}. {{ $juri }}<br>
-                                              @php $juriCount++; @endphp
-                                          @endforeach
-                                      @endif
-                                  </td>
-                                @endif
-                            </tr>
-                        @endfor
-                    @endforeach
-                </tbody>
-                  </table>
-                </table>
+                      <tr>
+                          <td>2.@lang('messages.lktisf2')</td>
+                          <td>
+                              @if (is_array(explode(', ', $item->scoresubs)))
+                                  @foreach (explode(', ', $item->scoresubs) as $score)
+                                      {{ $score }}<br>
+                                  @endforeach
+                              @endif
+                          </td>
+                          <td> @if (is_array(explode(', ', $item->subs)))
+                            @foreach (explode(', ', $item->subs) as $score)
+                                {{ $score }}<br>
+                            @endforeach
+                        @endif</td>
+                      </tr>
+                      <tr>
+                          <td>3.@lang('messages.lktisf3')</td>
+                          <td>
+                              @if (is_array(explode(', ', $item->scorekualitas)))
+                                  @foreach (explode(', ', $item->scorekualitas) as $score)
+                                      {{ $score }}<br>
+                                  @endforeach
+                              @endif
+                          </td>
+                          <td>@if (is_array(explode(', ', $item->kualitas)))
+                            @foreach (explode(', ', $item->kualitas) as $score)
+                                {{ $score }}<br>
+                            @endforeach
+                        @endif</td>
+                      </tr>
+                      
+                  @endforeach
+              </tbody>
+                    </table>
+                </div>
             </div>
-            <!-- Tampilkan pagination links jika diperlukan -->
-            <!-- Simulasi pagination untuk data dummy -->
         </div>
-    </div>
-</section>
+    </section>
 
 <style>
    .table-bordered td, .table-bordered th {

@@ -141,8 +141,13 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="input-field">
-                        <label for="room">Room/Ruangan </label>
-                        <input type="text" id="room" name="room" placeholder="Masukkan Ruangan" required>
+                        <label for="room"> </label>
+                        <select name="room" id="room"  required >
+                            <option selected>Breakout Room</option>
+                            <option>1</option> 
+                            <option>2</option> 
+                            <option>3</option> 
+                        </select>
                     </div>
                     @error('room')
                     <div class="text-danger">{{ $message }}</div>
@@ -173,6 +178,40 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="input-field">
+                        <label for="posisi1">Posisi Peserta 1 </label>
+                        <select name="posisi1" id="posisi1"  required >
+                            <option selected>Pilih Posisi</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
+                        </select>
+                    </div>
+                    @error('posisi1')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="input-field">
+                        <label for="posisi2">Posisi Peserta 2 </label>
+                        <select name="posisi2" id="posisi2" required >
+                            <option selected>Pilih Posisi</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
+                        </select>
+                    </div>
+                    @error('posisi2')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="input-field">
                         <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
                         <select name="nama1" id="nama1"  required >
                             <option selected>Pilih Peserta</option> 
@@ -181,19 +220,7 @@
                     @error('nama1')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
-                    <div class="input-field">
-                        <label for="posisi1">Posisi Peserta 1 </label>
-                        <select name="posisi1" id="posisi1"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    @error('posisi1')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    
                     <div class="input-field">
                         <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
                         <select d name="nama2" id="nama2"  required >
@@ -201,19 +228,6 @@
                         </select>
                     </div>
                     @error('nama2')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="posisi2">Posisi Peserta 2 </label>
-                        <select name="posisi2" id="posisi2" required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    @error('posisi2')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>

@@ -71,15 +71,15 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.peserta')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
                   
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.juri')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.juri')</a>
                   </li>
                </ul>
 

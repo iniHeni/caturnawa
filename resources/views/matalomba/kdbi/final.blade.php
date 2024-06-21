@@ -146,20 +146,20 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../../img/kdbiaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+         <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
         <div style="margin-right: 25rem" class="nav__item">
 						
 					</div>
-               <li class="nav__item">
-                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
-               </li>
-      
-               <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-               </li>
+          <li class="nav__item">
+            <a href="{{url('/') }}" class="nav__link">Home</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('matalomba/edc') }}" class="nav__link">Participant</a>
+         </li>
       
                </ul>
 

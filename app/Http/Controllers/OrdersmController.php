@@ -369,12 +369,12 @@ class OrdersmController extends Controller
         }
 
         $now = Carbon::now();
-        if ($now->between('2024-07-23', '2024-07-26')) {
-            $price = 350000; 
-        } elseif ($now->between('2024-07-27', '2024-08-11')) {
-            $price = 500000; 
+        if ($now->between('2024-07-23', '2024-07-28')) {
+            $price = 300000; 
+        } elseif ($now->between('2024-07-29', '2024-08-11')) {
+            $price = 400000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
-            $price = 550000; 
+            $price = 450000; 
         } else {
             $price = 9999999; // Default or registration closed
         }
