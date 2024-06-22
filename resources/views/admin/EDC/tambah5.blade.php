@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navmenu.css">
     <link rel="stylesheet" href="../../../css/tambahpenyisihan.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://zcdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
     <title>Caturnawa - Admin</title>
     <style>

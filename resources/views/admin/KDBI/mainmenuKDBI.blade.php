@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <style>
         #loadingDiv {
    width: 100%;
@@ -52,6 +52,10 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
             <img class="logo" src="../../img/uf2.png" alt="Logo">
             <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin KDBI </a></h2>
@@ -114,7 +118,7 @@
         });
     }
     </script>
-<script src="../../../js/adminEDC.js"></script>
+<script src="../../../js/adminKDBI.js"></script>
 <script>
     document.getElementById("menu").addEventListener("click", function () {
         document.body.classList.toggle("sidebar-open");

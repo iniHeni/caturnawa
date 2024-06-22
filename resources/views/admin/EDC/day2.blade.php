@@ -13,12 +13,9 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    
     <link rel="stylesheet" href="../../../css/tambahspc.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-
-
-    <title>Caturnawa - Admin</title>
+    <link rel="stylesheet" href="../../css/navadmin.css">
     <style>
         #loadingDiv {
    width: 100%;
@@ -45,9 +42,11 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../../../img/loader.gif);
+   background: center / contain no-repeat url(../img/loader.gif);
  }
      </style>
+
+    <title>Caturnawa - Admin</title>
 </head>
 <body>
     <div id="loadingDiv">
@@ -56,9 +55,13 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin EDC </a></h2>
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
 </header>

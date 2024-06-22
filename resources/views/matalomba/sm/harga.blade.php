@@ -101,7 +101,11 @@
       
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
+<<<<<<< HEAD
   <h1 class="upcomming">@lang('messages.harga')</h1>
+=======
+  <h1 class="upcomming">Harga</h1>
+>>>>>>> e5c5b849dc4b6013f365424de9f232527ef5b144
   
   <div class="item">
     <span class="up-border"></span>
@@ -155,7 +159,11 @@
       </div>
 
       <div class="fix"></div>
+<<<<<<< HEAD
       <button class="tickets">@lang('messages.tutup')</button>
+=======
+      <button class="tickets">Tutup</button>
+>>>>>>> e5c5b849dc4b6013f365424de9f232527ef5b144
     </div>
   </div>
   
@@ -213,7 +221,11 @@
       </div>
 
       <div class="fix"></div>
+<<<<<<< HEAD
       <button class="tickets">@lang('messages.tutup')</button>
+=======
+      <button class="tickets">Tutup</button>
+>>>>>>> e5c5b849dc4b6013f365424de9f232527ef5b144
     </div>
   </div>
   
@@ -271,7 +283,11 @@
       </div>
       
       <div class="fix"></div>
+<<<<<<< HEAD
       <button class="tickets">@lang('messages.tutup')</button>
+=======
+      <button class="tickets">Tutup</button>
+>>>>>>> e5c5b849dc4b6013f365424de9f232527ef5b144
     </div>
   </div>
  
