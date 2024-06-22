@@ -172,10 +172,10 @@
             }
 
             thead th {
-                background-color: #0d6efd !important;
+                background-color: #dee2e6 !important;
             }
             a[href^="mailto:"] {
-    color:#0d6efd; 
+    color:#dee2e6; 
     text-decoration: underline;
 }
 

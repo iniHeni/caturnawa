@@ -94,7 +94,7 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard @lang('messages.penyisihan') + Semifinal</h1>
+            <h1 class="judul" style="color: white" >Leaderboard @lang('messages.penyisihan') Semifinal</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                     <thead style="position: sticky; top: -1; z-index: 10;">
@@ -112,7 +112,7 @@
                         <td>{{ $rank+1 }}</td>
                       </tr>
                       @endforeach
-                      <tr><td colspan="3">Jury Mention</td></tr>
+                      
                     </tbody>
                 </table>
             </div>
@@ -125,7 +125,7 @@
     <h1 class="judul">Detail Score</h1>
     <div class="card-list">
         @foreach($semifinal as $rank => $data)
-            <a href="{{ route('sm.detailsf', $data->namateam) }}" class="card-item"> 
+            <a href="{{ route('sm.detailsf', $rank + 1) }}" class="card-item"> 
                 <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
                 <h3>{{ $data->namateam }}</h3> 
                 <div class="arrow">
@@ -138,17 +138,7 @@
   </section>
 <!--==================== Session ====================-->
 
-<style>
-   .table-bordered td, .table-bordered th {
-       border: 2px solid black !important;
-       text-align: center;
-       vertical-align: middle;
-   }
-   thead th {
-       background-color: #0d6efd !important;
-       
-   }
-</style>
+
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

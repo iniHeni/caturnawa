@@ -122,42 +122,36 @@ $final = $groupedData->map(function ($row) {
  }
 
  public function gabungankdbif(){
-    $totalVpDay1 = day4kdbi::select(
-        'team',
-        'nama1',
-        'nama2',
-        DB::raw('SUM(vp) as total')
-    )
-    ->groupBy('team', 'nama1', 'nama2') // Group by nama1 dan nama2 juga
-    ->get();
-    
-    $totalVpDay2 = day5kdbi::select(
-        'team',
-        'nama1',
-        'nama2',
-        DB::raw('SUM(vp) as total')
-    )
-    ->groupBy('team', 'nama1', 'nama2')
-    ->get();
-    
-    $groupedByTeam = $totalVpDay1->concat($totalVpDay2)
-        ->groupBy('team') // Group by team saja untuk penggabungan
-        ->map(function ($group) {
-            return [
-                'team' => $group[0]['team'],
-                'nama1' => $group[0]['nama1'],
-                'nama2' => $group[0]['nama2'],
-                'total' => $group->sum('total')
-            ];
-        })
-        ->sortByDesc('total') 
-        ->values()
-        ->map(function ($item, $index) {
-            $item['rank'] = $index + 1; // Tambahkan peringkat (rank)
-            return $item;
-        });
+    $day4Data = day4kdbi::select('team', 'nama1', 'nama2', 'ronde', DB::raw('MIN(vp) as vp')) 
+   ->groupBy('team', 'nama1', 'nama2', 'ronde')
+   ->get();
 
-        
+
+$day5Data = day5kdbi::select('team', 'nama1', 'nama2', 'ronde', DB::raw('MIN(vp) as vp')) 
+   ->groupBy('team', 'nama1', 'nama2', 'ronde')
+   ->get();
+
+
+$mergedData = $day4Data->concat($day5Data);
+
+
+$groupedByTeam = $mergedData->groupBy('team')->map(function ($teamData) {
+   $totalVpPerRonde = $teamData->groupBy('ronde')->map->sum('vp'); 
+   return [
+       'team' => $teamData[0]['team'],
+       'nama1' => $teamData[0]['nama1'],
+       'nama2' => $teamData[0]['nama2'],
+       'total_vp_ronde1' => $totalVpPerRonde->get(1, 0), 
+       'total_vp_ronde2' => $totalVpPerRonde->get(2, 0),
+       'total' => $totalVpPerRonde->sum(), 
+   ];
+});
+
+// Urutkan berdasarkan total VP dan tambahkan peringkat
+$groupedByTeam = $groupedByTeam->sortByDesc('total')->values()->map(function ($item, $index) {
+   $item['rank'] = $index + 1;
+   return $item;
+});
     return view('matalomba/kdbi/final', compact('groupedByTeam'));
  }
 }

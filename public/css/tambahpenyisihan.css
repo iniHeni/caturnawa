@@ -73,6 +73,14 @@ form .fields .input-field{
     flex-direction: column;
     margin: 4px 0;
 }
+
+.input-field1{
+    display: flex;
+    width: calc(100% / 1 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
 .input-field label{
     font-size: 12px;
     font-weight: 500;

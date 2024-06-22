@@ -94,80 +94,130 @@
                 <p><a class="add" href="{{ route('sm.pesertasf') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px;  position: static;">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    @foreach($tambah as $no=>$data)
                     <thead style="position: static; top: -1; z-index: 10;">
+                       
+                        <tr><th scope="col" colspan="6" style="text-align: left;">Adjudicators: {{ $data->juri }}</th></tr>
+                        
                         <tr>
-                            <th scope="col" rowspan="3">No</th>
-                            <th scope="col" rowspan="3">Nama Team</th>
-                            <th scope="col" rowspan="3" >Nama Peserta</th>
-                            <th scope="col" colspan="24">Kriteria Penilaian</th>
-                            <th scope="col" rowspan="3">Total</th>
-                            <th scope="col" rowspan="3">Rank</th>
-                            <th scope="col" rowspan="3">Adjudicators</th>
-                            <th scope="col" rowspan="3 ">actions</th>
+                            <th scope="col">@lang('messages.team1')</th>
+                            <th scope="col">@lang('messages.peserta1')</th>
+                            <th scope="col">@lang('messages.penilaian')</th>
+                            <th scope="col">@lang('messages.kuanti')</th>
+                            <th scope="col">@lang('messages.kuali')</th>
+                            <th scope="col">actions</th>
                         </tr>
-                        <tr>
-                            <th scope="col" colspan="2">Kesesuaian film dengan tema</th>
-                            <th scope="col" colspan="2">Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</th>
-                            <th scope="col" colspan="2">Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</th>
-                            <th scope="col" colspan="2">Seberapa orisinalitas cerita dalam script</th>
-                            <th scope="col" colspan="2">Kedalaman riset dan observasi dalam film</th>
-                            <th scope="col" colspan="2">Kejelasan dalam struktur dan alur cerita</th>
-                            <th scope="col" colspan="2">Keutuhan cerita yang di gambarkan</th>
-                            <th scope="col" colspan="2">Pemilihan bahasa yang digunakan</th>
-                            <th scope="col" colspan="2">Kesesuaian dengan isi script</th>
-                            <th scope="col" colspan="2">Kejelasan dalam menggambarkan adegan dengan detail</th>
-                            <th scope="col" colspan="2">Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</th>
-                            <th scope="col" colspan="2">Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</th>
-
-                        </tr>
-                        <tr>
-                            <th scope="col" colspan="12">Kuantitatif</th>
-                            <th scope="col" colspan="12">Kualitatif</th>
-                        </tr>
+                       
                     </thead>
                     <tbody>
-                      @foreach($tambah as $no=>$data)
+                     
                       <tr>
-                          <td>{{ $no+1 }}</td>
-                          <td>{{ $data->namateam }}</td>
-                          <td>1.{{ $data->peserta1}}<br>2.{{ $data->peserta2}}<br>3.{{ $data->peserta3}}<br>4.{{ $data->peserta4}}<br>5.{{ $data->peserta5}}</td>
-                          <td>{{ $data->skorkrit1}}</td>
-                          <td>{{ $data->skorkrit2}}</td>
-                          <td>{{ $data->skorkrit3}}</td>
-                          <td>{{ $data->skorkrit4}}</td>
-                          <td>{{ $data->skorkrit5}}</td>
-                          <td>{{ $data->skorkrit6}}</td>
-                          <td>{{ $data->skorkrit7}}</td>
-                          <td>{{ $data->skorkrit8}}</td>
-                          <td>{{ $data->skorkrit9}}</td>
-                          <td>{{ $data->skorkrit10}}</td>
-                          <td>{{ $data->skorkrit11}}</td>
-                          <td>{{ $data->skorkrit12}}</td>
-                          <td>{{ $data->krit1}}</td>
-                          <td>{{ $data->krit2}}</td>
-                          <td>{{ $data->krit3}}</td>
-                          <td>{{ $data->krit4}}</td>
-                          <td>{{ $data->krit5}}</td>
-                          <td>{{ $data->krit6}}</td>
-                          <td>{{ $data->krit7}}</td>
-                          <td>{{ $data->krit8}}</td>
-                          <td>{{ $data->krit9}}</td>
-                          <td>{{ $data->krit10}}</td>
-                          <td>{{ $data->krit11}}</td>
-                          <td>{{ $data->krit12}}</td>
-                          <td>{{ $data->total}}</td>
-                          <td>{{ $data->rank}}</td>
-                          <td>{{ $data->juri}}</td>
-                          <td>
-                              <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
-                              <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
-                                  @csrf
-                                  <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
-                              </form>
-                          </td>
-                      </tr>
-                      @endforeach
+                        <td rowspan="12">{{ $data->namateam }}</td>
+                        <td rowspan="12" style="width: 100px">1.{{ $data->peserta1 }}<br>2.{{ $data->peserta2 }}<br>3.{{ $data->peserta3 }}<br>4.{{ $data->peserta4 }}<br>5.{{ $data->peserta5 }}</td>
+                        <td>Kesesuaian film dengan tema</td>
+                        <td>{{ $data->skorkrit1 }}</td>
+                        <td>{{ $data->krit1 }}</td>
+                        <td rowspan="12">
+                            <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
+                            <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                @csrf
+                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        
+                        <td>Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</td>
+                        <td>{{ $data->skorkrit2 }}</td>
+                        <td >{{ $data->krit2 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                        
+                        <td>Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</td>
+                        <td>{{ $data->skorkrit3}}</td>
+                        <td>{{ $data->krit3 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                       
+                        <td>Seberapa orisinalitas cerita dalam script</td>
+                        <td>{{ $data->skorkrit4}}</td>
+                        <td>{{ $data->krit4 }}</td>
+                        
+                    </tr>
+
+                    <tr>
+
+                        <td>Kedalaman riset dan observasi dalam film</td>
+                        <td>{{ $data->skorkrit5}}</td>
+                        <td>{{ $data->krit5 }}</td>
+                      
+                    </tr>
+                    <tr>
+
+                        
+                        <td>Kejelasan dalam struktur dan alur cerita</td>
+                        <td>{{ $data->skorkrit6}}</td>
+                        <td>{{ $data->krit6 }}</td>
+                     
+                    </tr>
+                    <tr>
+
+                      
+                      <td>Keutuhan cerita yang di gambarkan</td>
+                      <td>{{ $data->skorkrit7}}</td>
+                      <td>{{ $data->krit7 }}</td>
+                    
+                  </tr>
+                  <tr>
+
+                    
+                    <td>Pemilihan bahasa yang digunakan</td>
+                    <td>{{ $data->skorkrit8}}</td>
+                    <td>{{ $data->krit8 }}</td>
+                    
+                </tr>
+                <tr>
+
+                  
+                  <td>Kesesuaian dengan isi script</td>
+                  <td>{{ $data->skorkrit9}}</td>
+                  <td>{{ $data->krit9 }}</td>
+               
+              </tr>
+              <tr>
+
+                
+                <td>Kejelasan dalam menggambarkan adegan dengan detail</td>
+                <td>{{ $data->skorkrit10}}</td>
+                <td>{{ $data->krit10 }}</td>
+              
+            </tr>
+            <tr>
+
+              <td>Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</td>
+              <td>{{ $data->skorkrit11}}</td>
+              <td>{{ $data->krit11 }}</td>
+            
+          </tr>
+          <tr>
+
+            <td>Kesesuaian storyboard dengan film</td>
+            <td>{{ $data->skorkrit12}}</td>
+            <td>{{ $data->krit12 }}</td>
+          
+        </tr>
+
+        <tr><td colspan="3">Total Score</td>
+          <td colspan="7">{{ $data->total }}</td>
+          </tr>
+                      
                     </tbody>
+                    @endforeach
                 </table>
                 </div>
         </div>
@@ -177,12 +227,16 @@
                 border: 2px solid black !important;
                 text-align: center;
                 vertical-align: middle;
-                
             }
 
             thead th {
-                background-color: #0d6efd !important;
+                background-color: #dee2e6 !important;
             }
+            a[href^="mailto:"] {
+    color:#dee2e6 ; 
+    text-decoration: underline;
+}
+
         </style>
     </section>
 </div>

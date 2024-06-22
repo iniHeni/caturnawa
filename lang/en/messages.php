@@ -54,10 +54,10 @@ return [
     'pria' => 'Male',
     'wanita' => 'Female',
     'alamat' => 'Full Addres',
-    'ktm' => 'Student ID Card *format:jpg,png,jpeg*Maks 5MB' ,
-    'foto' => 'Formal Photograph With Red Background *format:jpg,png,jpeg*Maks 5MB',
-    'krs' => 'Study Plan Card *format:jpg,png,jpeg*Maks 5MB',
-    'bukti' => 'Prove That Follow our Social Media *format:jpg,png,jpeg*Maks 5MB',
+    'ktm' => 'Student ID Card *format:jpg,png,jpeg, Max 3MB' ,
+    'foto' => 'Formal Photograph With Red Background *format:jpg,png,jpeg, Max 3MB',
+    'krs' => 'Study Plan Card *format:jpg,png,jpeg, Max 3MB',
+    'bukti' => 'Prove That Follow our Social Media *format:pdf',
     'team' => 'File Team',
     'instansi' => 'Origin Institution',
     'surat' => 'Delegation Letter From Institution',
@@ -70,7 +70,7 @@ return [
     'regional' => 'Regional',
     'nasional' => 'National',
     'provinsi' => 'Province',
-    'sertif' => 'Certificate scan:pdf *Maks 5MB',
+    'sertif' => 'Certificate scan:pdf , Max 3MB',
     'bayar' => 'Payment',
     'kembali' => 'Back',
     'Pesan' =>'Message',
@@ -83,6 +83,22 @@ return [
     // placeholder start
     'place' => 'Enter',
     // place holder end
+
+
+    // Harga indo
+    'harga' => 'Price',
+    'tahap' => 'Early Bird',
+    'tahap1' => 'Phase 1',
+    'tahap2' => 'Phase 2',
+    'tahap3' => 'Phase 3',
+    'Rp' => '$19/Team',
+    'Rp1' => '$25/Team',
+    'Rp2' => '$28/Team',
+    'tgl' => 'July',
+    'tgl1' => 'August',
+    'tutup' => 'Closed',
+
+
 
     // Data Juri Start
     //EDC
@@ -270,5 +286,11 @@ return [
      'lktif1' => 'Material Exhibition and Scientific Presentation',
      'lktif2' => 'Questions and Answers',
      'lktif3' => 'Theme Compatibility Aspects',
+    'orginal' => 'Originality Of Works',
+     'pengesahan' => 'Endorsement of works',
+     'hakcipta' =>  'Copyright of the work',
+     'lembar' =>  'Work organizationality sheet',
+     'lembarbio' =>  'Biodata Sheet',
+     'asal' =>  'Choose Country',
 ]
 ?>

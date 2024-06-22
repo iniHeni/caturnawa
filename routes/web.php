@@ -91,11 +91,11 @@ Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
 Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
 Route::post('/tambahsm/sfinal', [smsfinalController::class, 'tambahsf']);
 Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
-Route::get('matalomba/sm/penyisihan/detail{namateam}', [smsemifinalController::class, 'detail'])->name('sm.detail');
+Route::get('matalomba/sm/penyisihan/detail{id}', [smsemifinalController::class, 'detail'])->name('sm.detail');
 Route::get('matalomba/sm/final', [smfinalController::class, 'final'])->name('sm.final');
-Route::get('matalomba/sm/final/detail{namateam}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+Route::get('matalomba/sm/final/detail{id}', [smfinalController::class, 'detailf'])->name('sm.detailf');
 Route::get('matalomba/sm/sfinal', [smsfinalController::class, 'sfinal'])->name('sm.sfinal');
-Route::get('matalomba/sm/sfinal/detail{namateam}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
+Route::get('matalomba/sm/sfinal/detail{id}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
 
 Route::get('matalomba/edc/detailpeserta/{id}', [pesertaedcController::class, 'detailpesertaedc'])->name('edc.detailpeserta');
 Route::post('/tambahpenyisihan/edcday1', [day1edcController::class, 'tambahedc']);
@@ -353,7 +353,7 @@ Route::get('/admin/finalEDC', function () {
 
 
 
-Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenukdbi.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login');
 Route::get('/admin/mainmenuEDC', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)

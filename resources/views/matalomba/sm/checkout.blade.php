@@ -433,7 +433,7 @@
                             </div>
                             <div class="input-field">
                                 <label>Price</label>
-                                <input disabled placeholder="{{$ordersm->price}}">
+                                <input disabled placeholder="Rp{{$ordersm->price}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>

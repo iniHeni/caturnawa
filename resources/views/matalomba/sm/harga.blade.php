@@ -101,7 +101,7 @@
       
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
-  <h1 class="upcomming">Price</h1>
+  <h1 class="upcomming">@lang('messages.harga')</h1>
   
   <div class="item">
     <span class="up-border"></span>
@@ -109,95 +109,171 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">23</h2>
-      <p class="day">July</p>
+      <h2 class="num">23 @lang('messages.tgl') - 28 @lang('messages.tgl')</h2>
+      
       <span class="up-border"></span>
       <span class="down-border"></span>
     </div>
     
     <div class="item-left">
-      <p class="event">Early Bid</p>
-      <h2 class="title">Rp300.000/Team</h2>
+      <p class="event">@lang('messages.tahap')</p>
+      <h2 class="title">@lang('messages.Rp')</h2>
       <div class="sce">
         <div class="icon">
           <i class="fa fa-table"></i>
         </div>
         <p>Short Movie Competition</p>
       </div>
+
       <div class="fix"></div>
+
+      <div class="item-left1">
+      <p class="event">Online</p>
+      </div>
       <div class="loc">
+        <div class="icon">
+          
+        </div>
+        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
+      </div>
+       
+      <div class="item-left1">
+      <p class="event">On-Site</p>
+      </div>
+      <div class="loc">
+      <div class="icon">
+          
+        </div>
+        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
+        </div>
+
+        <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
       </div>
+
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">@lang('messages.tutup')</button>
     </div>
   </div>
   
   <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">29</h2>
-      <p class="day">July</p>
+      <h2 class="num">29 @lang('messages.tgl') - 11 @lang('messages.tgl1')</h2>
+      <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>
     </div>
     
     <div class="item-left">
-      <p class="event">Phase 1</p>
-      <h2 class="title">Rp400.000/Team</h2>
+      <p class="event">@lang('messages.tahap1')</p>
+      <h2 class="title">@lang('messages.Rp1')</h2>
       <div class="sce">
         <div class="icon">
           <i class="fa fa-table"></i>
         </div>
         <p>Short Movie Competition</p>
       </div>
+
+      <div class="item-left1">
+      <p class="event">Online</p>
+      </div>
+      <div class="loc">
+        <div class="icon">
+          
+        </div>
+        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
+      </div>
+
+      <div class="item-left1">
+      <p class="event">On-Site</p>
+      </div>
+      <div class="loc">
+      <div class="icon">
+          
+        </div>
+        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
+        </div>
+
+
+
       <div class="fix"></div>
+
       <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
       </div>
+
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">@lang('messages.tutup')</button>
     </div>
   </div>
   
   <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">12</h2>
-      <p class="day">August</p>
+      <h2 style="font-size:32px" class="num">12 @lang('messages.tgl1') - 23 @lang('messages.tgl1')</h2>
+      <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>
     </div>
     
     <div class="item-left">
-      <p class="event">Phase 2</p>
-      <h2 class="title">Rp450.000/Team</h2>
+      <p class="event">@lang('messages.tahap2')</p>
+      <h2 class="title">@lang('messages.Rp2')</h2>
       <div class="sce">
         <div class="icon">
           <i class="fa fa-table"></i>
         </div>
         <p>Short Movie Competition</p>
       </div>
+
+      <div class="item-left1">
+      <p class="event">Online</p>
+      </div>
+      <div class="loc">
+        <div class="icon">
+          
+        </div>
+        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
+      </div>
+
+      <div class="item-left1">
+      <p class="event">On-Site</p>
+      </div>
+      <div class="loc">
+      <div class="icon">
+          
+        </div>
+        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
+        </div>
+
+
+
       <div class="fix"></div>
+
       <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
       </div>
+      
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">@lang('messages.tutup')</button>
     </div>
   </div>
-</div>
  
 
 <!--==================== Juri ====================-->

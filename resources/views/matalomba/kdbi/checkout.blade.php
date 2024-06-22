@@ -241,7 +241,7 @@
                             </div>
                             <div class="input-field">
                                 <label>Price</label>
-                                <input disabled placeholder="{{$orderkdbi->price}}">
+                                <input disabled placeholder="IDR{{$orderkdbi->price}}">
                             </div>
                         </div>
                         <button type="submit" class="nextBtn" id="pay-button">

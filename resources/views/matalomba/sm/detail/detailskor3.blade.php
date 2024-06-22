@@ -99,74 +99,126 @@
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     <thead style="position: static; top: -1; z-index: 10;">
+                      <tr><th scope="col" colspan="5" style="text-align: left;">Adjudicators: {{ $dataa->juri }}</th></tr>
                       <tr>
-                        <th scope="col">@lang('messages.team1')</th>
-                        <th scope="col">@lang('messages.peserta1')</th>
-                        <th scope="col">@lang('messages.penilaian')</th>
-                        <th scope="col">@lang('messages.kuanti')</th>
-                        <th scope="col">@lang('messages.kuali')</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Adjudicators</th>
+                          <th scope="col">@lang('messages.team1')</th>
+                          <th scope="col">@lang('messages.peserta1')</th>
+                          <th scope="col">@lang('messages.penilaian')</th>
+                          <th scope="col">@lang('messages.kuanti')</th>
+                          <th scope="col">@lang('messages.kuali')</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr>
+                        <td rowspan="12">{{ $dataa->namateam }}</td>
+                        <td rowspan="12">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
+                        <td>@lang('messages.kritsf1')</td>
+                        <td>{{ $dataa->skorkrit1 }}</td>
+                        <td>{{ $dataa->krit1 }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                  @foreach ($data as $item)
-                      <tr>
-                          <td rowspan="13">{{ $item->namateam }}</td> {{-- Nama tim --}}
-                          <td rowspan="13">1.{{ $item->peserta1 }}<br>2.{{ $item->peserta2 }}<br>3.{{ $item->peserta3 }}<br>4.{{ $item->peserta4 }}<br>5.{{ $item->peserta5 }}
-                          </td>
-                          @for ($i = 1; $i <= 12; $i++)
-                          <tr>
-                              <td>@lang('messages.kritsf' . $i)</td>
-                              <td>
-                                  @if (is_array(explode(', ', $item->{'skorkrit' . $i})))
-                                      @foreach (explode(', ', $item->{'skorkrit' . $i}) as $score)
-                                          {{ $score }}<br>
-                                      @endforeach
-                                  @endif
-                              </td>
-                              <td>
-                                  @if (is_array(explode(', ', $item->{'krit' . $i})))
-                                      @foreach (explode(', ', $item->{'krit' . $i}) as $krit)
-                                          {{ $krit }}<br>
-                                      @endforeach
-                                  @endif
-                              </td>
-                              @if ($i === 1)  {{-- Hanya tampilkan total dan juri pada baris pertama --}}
-                                  <td rowspan="12">{{ $item->total }}</td>
-                                  <td rowspan="12">
-                                    @if (is_array(explode(', ', $item->juri)))
-                                        @php $juriCount = 1; @endphp 
-                                        @foreach (explode(', ', $item->juri) as $juri)
-                                            {{ $juriCount }}. {{ $juri }}<br>
-                                            @php $juriCount++; @endphp
-                                        @endforeach
-                                    @endif
-                                </td>
-                              @endif
-                          </tr>
-                      @endfor
-                  @endforeach
-                  </tbody>
-                  </table>
-                </table>
-            </div>
-            <!-- Tampilkan pagination links jika diperlukan -->
-            <!-- Simulasi pagination untuk data dummy -->
-        </div>
-    </div>
-</section>
+                    <tr>
 
+                        
+                        <td>@lang('messages.kritsf2')</td>
+                        <td>{{ $dataa->skorkrit2 }}</td>
+                        <td>{{ $dataa->krit2 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                        
+                        <td>@lang('messages.kritsf3')</td>
+                        <td>{{ $dataa->skorkrit3}}</td>
+                        <td>{{ $dataa->krit3 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                       
+                        <td>@lang('messages.kritsf4')</td>
+                        <td>{{ $dataa->skorkrit4}}</td>
+                        <td>{{ $dataa->krit4 }}</td>
+                        
+                    </tr>
+
+                    <tr>
+
+                        <td>@lang('messages.kritsf5')</td>
+                        <td>{{ $dataa->skorkrit5}}</td>
+                        <td>{{ $dataa->krit5 }}</td>
+                      
+                    </tr>
+                    <tr>
+
+                        
+                        <td>@lang('messages.kritsf6')</td>
+                        <td>{{ $dataa->skorkrit6}}</td>
+                        <td>{{ $dataa->krit6 }}</td>
+                     
+                    </tr>
+                    <tr>
+
+                      
+                      <td>@lang('messages.kritsf7')</td>
+                      <td>{{ $dataa->skorkrit7}}</td>
+                      <td>{{ $dataa->krit7 }}</td>
+                    
+                  </tr>
+                  <tr>
+
+                    
+                    <td>@lang('messages.kritsf8')</td>
+                    <td>{{ $dataa->skorkrit8}}</td>
+                    <td>{{ $dataa->krit8 }}</td>
+                    
+                </tr>
+                <tr>
+
+                  
+                  <td>@lang('messages.kritsf9')</td>
+                  <td>{{ $dataa->skorkrit9}}</td>
+                  <td>{{ $dataa->krit9 }}</td>
+               
+              </tr>
+              <tr>
+
+                
+                <td>@lang('messages.kritsf10')</td>
+                <td>{{ $dataa->skorkrit10}}</td>
+                <td>{{ $dataa->krit10 }}</td>
+              
+            </tr>
+            <tr>
+
+              <td>@lang('messages.kritsf11')</td>
+              <td>{{ $dataa->skorkrit11}}</td>
+              <td>{{ $dataa->krit11 }}</td>
+            
+          </tr>
+          <tr>
+
+            <td>@lang('messages.kritsf12')</td>
+            <td>{{ $dataa->skorkrit12}}</td>
+            <td>{{ $dataa->krit12 }}</td>
+          
+        </tr>
+        <tr><td colspan="3">Total Score</td>
+          <td colspan="7">{{ $dataa->total }}</td></tr>
+
+                </tbody>
+                </table>
+              </table>
+          </div>
+          <!-- Tampilkan pagination links jika diperlukan -->
+          <!-- Simulasi pagination untuk data dummy -->
+      </div>
+  </div>
+</section>
 <style>
-   .table-bordered td, .table-bordered th {
-       border: 2px solid black !important;
-       text-align: center;
-       vertical-align: middle;
-   }
-   thead th {
-       background-color: #0d6efd !important;
-       
-   }
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>

@@ -122,16 +122,10 @@
      </section>
      
      <style>
-        .table-bordered td, .table-bordered th {
-            border: 2px solid black !important;
-            text-align: center;
-            vertical-align: middle;
-        }
-        thead th {
-            background-color: #0d6efd !important;
-            
-        }
-     </style>
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
+</style>
       <!--==================== Round ====================-->
 <section id="rank">
     <h1 class="judul">Day 1</h1>

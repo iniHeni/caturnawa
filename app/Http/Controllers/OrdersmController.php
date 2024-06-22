@@ -32,11 +32,11 @@ class OrdersmController extends Controller
             'prodi_3' =>'required|string|max:50',
             'prodi_4' => 'required|string|max:50',
             'prodi_5' =>'required|string|max:50',
-            'npm_1' => 'required|string|max:50',
-            'npm_2' => 'required|string|max:50',
-            'npm_3' => 'required|string|max:50',
-            'npm_4' => 'required|string|max:50',
-            'npm_5' => 'required|string|max:50',
+            'npm_1' => 'required',
+            'npm_2' => 'required',
+            'npm_3' => 'required',
+            'npm_4' => 'required',
+            'npm_5' => 'required',
             'jeniskelamin_1' => 'required',
             'jeniskelamin_2' => 'required',
             'jeniskelamin_3' => 'required',
@@ -55,32 +55,33 @@ class OrdersmController extends Controller
             'namateam' => 'required|string|max:50',
             'instansi' => 'required|string|max:50',
             'linkvidio' => 'required',
-            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_3' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_4' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_5' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_3' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_4' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_5' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_3'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_4' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_5'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_3' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_4' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_5' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon_3' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon_4' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon_5' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000',
+            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_3' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_4' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_5' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_3' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_4' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_5' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_3'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_4' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_5'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'buktifollow_1' => 'required|mimes:pdf|max:3000',
+            'buktifollow_2' => 'required|mimes:pdf|max:3000',
+            'buktifollow_3' => 'required|mimes:pdf|max:3000',
+            'buktifollow_4' => 'required|mimes:pdf|max:3000',
+            'buktifollow_5' => 'required|mimes:pdf|max:3000',
+            'twibbon_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon_3' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon_4' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon_5' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'surat_delegasi' => 'required|mimes:pdf|max:3000',
+            'bio' => 'required|mimes:pdf|max:3000',
         ]);     
         $ordersm = $request->all();
         if($request->hasFile('ktm_1'))
@@ -190,7 +191,7 @@ class OrdersmController extends Controller
             $path = $request->file('foto_5')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/sm/foto5/' . $image_name);
 
-            $ordersm['ktm_2'] = $imageUrl;
+            $ordersm['foto5'] = $imageUrl;
 
         }
         if($request->hasFile('krs_1'))
@@ -250,54 +251,54 @@ class OrdersmController extends Controller
         }
         if($request->hasFile('buktifollow_1'))
         {
-            $destination_path = 'public/images/sm/bukti1';
+            $destination_path = 'public/document/sm/bukti1';
             $image = $request->file('buktifollow_1');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/bukti1/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bukti1/' . $image_name);
 
             $ordersm['buktifollow_1'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_2'))
         {
-            $destination_path = 'public/images/sm/bukti2';
+            $destination_path = 'public/document/sm/bukti2';
             $image = $request->file('buktifollow_2');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/bukti2/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bukti2/' . $image_name);
 
             $ordersm['buktifollow_2'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_3'))
         {
-            $destination_path = 'public/images/sm/bukti3';
+            $destination_path = 'public/document/sm/bukti3';
             $image = $request->file('buktifollow_3');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_3')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/bukti3/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bukti3/' . $image_name);
 
             $ordersm['buktifollow_3'] = $imageUrl;
 
         }
         if($request->hasFile('buktifollow_4'))
         {
-            $destination_path = 'public/images/sm/bukti4';
+            $destination_path = 'public/document/sm/bukti4';
             $image = $request->file('buktifollow_4');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_4')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/bukti4/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bukti4/' . $image_name);
 
             $ordersm['buktifollow_4'] = $imageUrl;
         }
         if($request->hasFile('buktifollow_5'))
         {
-            $destination_path = 'public/images/sm/bukti5';
+            $destination_path = 'public/document/sm/bukti5';
             $image = $request->file('buktifollow_5');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_5')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/sm/bukti5/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bukti5/' . $image_name);
 
             $ordersm['buktifollow_5'] = $imageUrl;
         }
@@ -367,6 +368,17 @@ class OrdersmController extends Controller
             $ordersm['surat_delegasi'] = $imageUrl;
 
         }
+        if($request->hasFile('bio'))
+        {
+            $destination_path = 'public/document/sm/bio';
+            $image = $request->file('bio');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('bio')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/surat/' . $image_name);
+
+            $ordersm['bio'] = $imageUrl;
+
+        }
 
         $now = Carbon::now();
         if ($now->between('2024-07-23', '2024-07-28')) {
@@ -376,7 +388,7 @@ class OrdersmController extends Controller
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
             $price = 450000; 
         } else {
-            $price = 9999999; // Default or registration closed
+            $price = 9999999; 
         }
          $additionalData = [
         'price' => $price,

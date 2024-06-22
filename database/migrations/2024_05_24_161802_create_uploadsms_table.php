@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('poster');
             $table->string('original');
             $table->string('script');
+            $table->string('karya');
+            $table->string('cipta');
+            $table->string('story');
+            $table->string('sipnosis');
+            $table->string('ori');
             $table->string('linkvidio');
             $table->timestamps();
         });

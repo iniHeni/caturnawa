@@ -387,7 +387,7 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat7}}"  type="file" accept="pdf/*">
+                                <input disabled value="Rp{{$orderlkti->sertifikat7}}"  type="file" accept="pdf/*">
                             </div>
                         </div>
                     </div>

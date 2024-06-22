@@ -14,7 +14,8 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../css/upload.css">
+      <link rel="stylesheet" href="../../css/upload.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>@lang('messages.daftar')</title>
       <style>
@@ -109,7 +110,7 @@
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label for="nama">Nama Ketua</label>
+                                <label for="nama">@lang('messages.ketua')</label>
                                 <input type="text" name="nama" id="nama" placeholder="@lang('messages.place') @lang('messages.Name')" @error('nama') is-invalid @enderror required>
                                 @error('nama')
                                  <div class="text-danger">{{ $message }}</div>
@@ -130,23 +131,58 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="poster">Poster *pdf maks 5mb</label>
+                                <label for="poster">Poster *PDF Max 3mb</label>
                                 <input type="file" name="poster" id="poster" accept=".pdf, .PDF" @error('poster') is-invalid @enderror  required>
                                 @error('poster')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="original">orginalitas karya *pdf maks 5mb</label>
+                                <label for="original">@lang('messages.orginal') *PDF Max 3mb</label>
                                 <input type="file" name="original" id="original" accept=".pdf, .PDF" @error('original') is-invalid @enderror  required>
                                 @error('original')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="script">script *pdf maks 5mb</label>
+                                <label for="script">script *PDF Max 3mb</label>
                                 <input type="file" name="script" id="script" accept=".pdf, .PDF" @error('script') is-invalid @enderror  required>
                                 @error('script')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="karya">@lang('messages.pengesahan') *PDF Max 3mb</label>
+                                <input type="file" name="karya" id="karya" accept=".pdf, .PDF" @error('karya') is-invalid @enderror  required>
+                                @error('karya')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="cipta">@lang('messages.hakcipta') *PDF Max 3mb</label>
+                                <input type="file" name="cipta" id="cipta" accept=".pdf, .PDF" @error('cipta') is-invalid @enderror  required>
+                                @error('cipta')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="story">Story Board *PDF Max 3mb</label>
+                                <input type="file" name="story" id="story" accept=".pdf, .PDF" @error('story') is-invalid @enderror  required>
+                                @error('story')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="sipnosis">Sypnosis *PDF Max 3mb</label>
+                                <input type="file" name="sipnosis" id="sipnosis" accept=".pdf, .PDF" @error('sipnosis') is-invalid @enderror  required>
+                                @error('sipnosis')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="ori">@lang('messages.lembar')</label>
+                                <input type="file" name="ori" id="ori" accept=".pdf, .PDF" @error('ori') is-invalid @enderror  required>
+                                @error('ori')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -161,7 +197,7 @@
     
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Kirim/Send</span>
+                        <span class="btnText">Send</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
             </div>
@@ -173,15 +209,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-        @if(session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Succes!',
-                text: '{{ session('success') }}'
-            });
-        @endif
-        </script>
+   
     <script type="text/javascript">
         $(function() {
             $(this).bind("contextmenu", function(e) {

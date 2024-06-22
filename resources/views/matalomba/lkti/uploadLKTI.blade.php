@@ -164,15 +164,7 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../../js/nav.js"></script>
     <script src="../../js/daftarlomba.js"></script>
-    <script>
-        @if(session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Succes!',
-                text: '{{ session('success') }}'
-            });
-        @endif
-        </script>
+    
        <script>
         function removeLoader() {
     $("#loadingDiv").fadeOut(200, () => {

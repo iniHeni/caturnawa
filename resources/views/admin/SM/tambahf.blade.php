@@ -155,7 +155,7 @@
             </div>
             <div class="input-field">
               <label for="krit1">Kualitatif</label>
-              <input name="krit1" id="krit1" type="text" placeholder="Masukkan Kualitatif" required>
+              <textarea name="krit1" id="krit1"  required></textarea>
           </div>
               </div>
           </div>
@@ -168,7 +168,7 @@
                   </div>
                   <div class="input-field">
                     <label for="krit2">Kualitatif</label>
-                    <input name="krit2" id="krit2" type="text" placeholder="Masukkan Kualitatif" required>
+                    <textarea name="krit2" id="krit2"  required></textarea>
                 </div>
                   </div>
               </div>
@@ -181,7 +181,7 @@
                       </div>
                       <div class="input-field">
                         <label for="krit3">Kualitatif</label>
-                        <input name="krit3" id="krit3" type="text" placeholder="Masukkan Kualitatif" required>
+                        <textarea name="krit3" id="krit3"  required></textarea>
                     </div>
                       </div>
                   </div>
@@ -194,7 +194,7 @@
                         </div>
                         <div class="input-field">
                           <label for="krit4">Kualitatif</label>
-                          <input name="krit4" id="krit4" type="text" placeholder="Masukkan Kualitatif" required>
+                          <textarea name="krit4" id="krit4"  required></textarea>
                       </div>
                         </div>
                     </div>

@@ -34,23 +34,51 @@ class Day1edcController extends Controller
     }
 
     public function tambahedc(Request $request){
-        $tambah = $request->validate([
-            'ronde' => 'required',
-            'sesi' => 'required',
-            'juri' => 'required',
-            'room' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
+        $validatedData = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $validator = Validator::make($request->all(), [
+                'ronde.' . $i => 'required',
+                'sesi.' . $i => 'required',
+                'juri.' . $i => 'required',
+                'room.' . $i => 'required',
+                'team.' . $i => 'required',
+                'posisi.' . $i => 'required',
+                'posisi1.' . $i => 'required',
+                'posisi2.' . $i => 'required',
+                'nama1.' . $i => 'required',
+                'nama2.' . $i => 'required',
+                'skorindividu1.' . $i => 'required|integer|min:0|max:100',
+                'skorindividu2.' . $i => 'required|integer|min:0|max:100',
+            ]);
+    
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+    
             
-        ]);
-        $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
-        day1edc::create($tambah);
+            $totalSkorTim = ($request->input('skorindividu1')[$i] + $request->input('skorindividu2')[$i]) / 2;
+    
+           
+            $validatedData[] = [
+                'ronde' => $request->input('ronde')[$i],
+                'sesi' => $request->input('sesi')[$i],
+                'juri' => $request->input('juri')[$i],
+                'room' => $request->input('room')[$i],
+                'team' => $request->input('team')[$i],
+                'posisi' => $request->input('posisi')[$i],
+                'posisi1' => $request->input('posisi1')[$i],
+                'posisi2' => $request->input('posisi2')[$i],
+                'nama1' => $request->input('nama1')[$i],
+                'nama2' => $request->input('nama2')[$i],
+                'skorindividu1' => $request->input('skorindividu1')[$i],
+                'skorindividu2' => $request->input('skorindividu2')[$i],
+                'total' => $totalSkorTim,
+            ];
+        }
+    
+        day4edc::create($validatedData);
         return redirect()->route('edc.tampiledc');
         
     }
@@ -62,23 +90,48 @@ class Day1edcController extends Controller
     }
 
     public function updateedc(Request $request, $id){
-    $update = $request->validate([
-        'ronde' => 'required',
-            'sesi' => 'required',
-            'juri' => 'required',
-            'room' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-    ]);
-    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2 ;
-    $data = day1edc::find($id);
-    $data->update($update);
+        $validator = Validator::make($request->all(), [
+            'ronde.*' => 'required',
+            'sesi.*' => 'required',
+            'juri.*' => 'required',
+            'room.*' => 'required',
+            'team.*' => 'required',
+            'posisi.*' => 'required',
+            'posisi1.*' => 'required',
+            'posisi2.*' => 'required',
+            'nama1.*' => 'required',
+            'nama2.*' => 'required',
+            'skorindividu1.*' => 'required|integer|min:0|max:100',
+            'skorindividu2.*' => 'required|integer|min:0|max:100',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+    
+        // Loop untuk memperbarui setiap data
+        for ($i = 1; $i <= 4; $i++) {
+            $data = day1edc::find($id + $i - 1); // Asumsikan ID berurutan
+    
+            if ($data) {
+                $updateData = [
+                    'ronde' => $request->input('ronde')[$i],
+                    'sesi' => $request->input('sesi')[$i],
+                    'juri' => $request->input('juri')[$i],
+                    'room' => $request->input('room')[$i],
+                    'team' => $request->input('team')[$i],
+                    'posisi' => $request->input('posisi')[$i],
+                    'posisi1' => $request->input('posisi1')[$i],
+                    'posisi2' => $request->input('posisi2')[$i],
+                    'nama1' => $request->input('nama1')[$i],
+                    'nama2' => $request->input('nama2')[$i],
+                    'skorindividu1' => $request->input('skorindividu1')[$i],
+                    'skorindividu2' => $request->input('skorindividu2')[$i],
+                    'total' => ($request->input('skorindividu1')[$i] + $request->input('skorindividu2')[$i]) / 2
+                ];
+                $data->update($updateData);
+            }
+        }
         return redirect()->route('edc.tampiledc');
 }
 

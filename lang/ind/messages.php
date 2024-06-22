@@ -61,13 +61,13 @@ return [
     'pria' => 'Pria',
     'wanita' => 'Wanita',
     'alamat' => 'Alamat Lengkap',
-    'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg*Maks 5MB',
-    'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg*Maks 5MB',
-    'krs' => 'Kartu Rencana Studi *format:jpg,png,jpeg*Maks 5MB',
-    'bukti' => 'Bukti Follow Social Media UNAS Fest *format:jpg,png,jpeg*Maks 5MB',
+    'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg, Max 3MB',
+    'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg, Max 3MB',
+    'krs' => 'Kartu Rencana Studi *format:jpg,png,jpeg, Max 3MB',
+    'bukti' => 'Bukti Follow Social Media UNAS Fest *format:pdf',
     'team' => 'Berkas Team',
     'instansi' => 'Asal Instansi',
-    'surat' => 'Surat Delegasi Kampus scan:pdf *Maks 5MB',
+    'surat' => 'Surat Delegasi Kampus scan:pdf , Max 3MB',
     'Capaian' => 'Capaian Unggulan',
     'namakegiatan' => 'Nama Kegiatan',
     'jenis' => 'Jenis Kegiatan',
@@ -77,7 +77,7 @@ return [
     'regional' => 'Regional',
     'nasional' => 'Nasional',
     'provinsi' => 'Provinsi',
-    'sertif' => 'Sertifikat scan:pdf *Maks 5MB' ,
+    'sertif' => 'Sertifikat scan:pdf , Max 3MB' ,
     'bayar' => 'Pembayaran',
     'kembali' => 'Kembali',
     'Pesan' => 'Pesan',
@@ -90,6 +90,25 @@ return [
     // placeholder start
     'place' => 'Masukkan',
     // place holder end
+
+// Harga indo
+'harga' => 'Harga',
+    'tahap' => 'Pendaftaran Awal',
+    'tahap1' => 'Tahap 1',
+    'tahap2' => 'Tahap 2',
+    'tahap3' => 'Tahap 3',
+    'Rp' => 'Rp 300.000/Tim',
+    'Rp1' => 'Rp 400.000/Tim',
+    'Rp2' => 'Rp 450.000/Tim',
+    'tgl' => 'Juli',
+    'tgl1' => 'Agustus',
+    'tutup' => 'Tutup',
+
+    
+
+
+
+
 
      // Data Juri Start
 
@@ -320,6 +339,12 @@ return [
      'lktif1' => 'Pemaparan Materi dan Presentasi Ilmiah',
      'lktif2' => 'Pertanyaan dan Jawaban',
      'lktif3' => 'Aspek Kesesuaian dengan Tema',
+     'orginal' => 'Originalitas Karya',
+     'pengesahan' => 'Pengesahan Karya',
+     'hakcipta' =>  'Hak Cipta Karya',
+     'lembar' =>  'Lembar Originalitas karya',
+     'lembarbio' =>  'Lembar Biodata',
+     'asal' =>  'Pilih Asal Negara',
      
 
 

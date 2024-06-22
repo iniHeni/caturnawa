@@ -128,17 +128,10 @@
                 </div>
         </div>
         <style>
-            .table-bordered td,
-            .table-bordered th {
-                border: 2px solid black !important;
-                text-align: center;
-                vertical-align: middle;
-            }
-
-            thead th {
-                background-color: #0d6efd !important;
-            }
-        </style>
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
+</style>
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

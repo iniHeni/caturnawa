@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 2100px;
+    min-height: 2250px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -89,6 +89,18 @@ form .fields .input-field{
     height: 42px;
     margin: 8px 0;
 }
+.input-field textarea{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 60px;
+    margin: 8px 0;
+}
+.input-field textarea :focus,
 .input-field input :focus,
 .input-field select:focus{
     box-shadow: 0 3px 6px rgba(0,0,0,0.13);
@@ -140,6 +152,11 @@ form .buttons button , .backBtn{
 }
 form input.error,
 .input-field input[is-invalid] {
+    border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
+}
+
+form input.error,
+.input-field textarea[is-invalid] {
     border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
 }
 .input-field .text-danger {

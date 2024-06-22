@@ -31,11 +31,11 @@ class UploadlktiController extends Controller
             $path = $request->file('naskah')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/naskah/' . $image_name);
 
-            $update['naskah'] = $imageUrl;
+            $uploadlkti['naskah'] = $imageUrl;
 
         }
         $uploadlkti = uploadlkti::create($uploadlkti);
-        session()->flash('success', 'Thankyou,Wait for further information from us');
+        flash('Success', 'Thankyou,Wait for further information from us');
         return redirect()->route('utama');
     }
 }
