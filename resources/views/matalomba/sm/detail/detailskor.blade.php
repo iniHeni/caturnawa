@@ -96,10 +96,10 @@
         <div style="width: 100%;">
             <h1 class="judul" style="color: white" >Detail @lang('messages.penyisihan')</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
-                <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
-                  <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                <table class="table table-bordered " style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
+                  <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     <thead style="position: static; top: -1; z-index: 10;">
-                      <tr><th scope="col" colspan="5" style="text-align: left;">Adjudicators: {{ $dataa->juri }}</th></tr>
+                      <tr><th scope="col" colspan="5" style="text-align: left;">Juri: {{ $dataa->juri }}</th></tr>
                       <tr>
                           <th scope="col">@lang('messages.team1')</th>
                           <th scope="col">@lang('messages.peserta1')</th>
@@ -114,14 +114,14 @@
                         <td rowspan="12">{{ $dataa->namateam }}</td>
                         <td rowspan="12">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
                         <td>@lang('messages.krit1')</td>
-                        <td>{{ $dataa->skorkrit1 }}</td>
+                        <td class="rata" >{{ $dataa->skorkrit1 }}</td>
                         <td>{{ $dataa->krit1 }}</td>
                     </tr>
                     <tr>
 
                         
                         <td>@lang('messages.krit2')</td>
-                        <td>{{ $dataa->skorkrit2 }}</td>
+                        <td class="rata" >{{ $dataa->skorkrit2 }}</td>
                         <td>{{ $dataa->krit2 }}</td>
                        
                     </tr>
@@ -129,7 +129,7 @@
 
                         
                         <td>@lang('messages.krit3')</td>
-                        <td>{{ $dataa->skorkrit3}}</td>
+                        <td class="rata" >{{ $dataa->skorkrit3}}</td>
                         <td>{{ $dataa->krit3 }}</td>
                        
                     </tr>
@@ -137,7 +137,7 @@
 
                        
                         <td>@lang('messages.krit4')</td>
-                        <td>{{ $dataa->skorkrit4}}</td>
+                        <td class="rata" >{{ $dataa->skorkrit4}}</td>
                         <td>{{ $dataa->krit4 }}</td>
                         
                     </tr>
@@ -145,7 +145,7 @@
                     <tr>
 
                         <td>@lang('messages.krit5')</td>
-                        <td>{{ $dataa->skorkrit5}}</td>
+                        <td class="rata" >{{ $dataa->skorkrit5}}</td>
                         <td>{{ $dataa->krit5 }}</td>
                       
                     </tr>
@@ -153,7 +153,7 @@
 
                         
                         <td>@lang('messages.krit6')</td>
-                        <td>{{ $dataa->skorkrit6}}</td>
+                        <td class="rata" >{{ $dataa->skorkrit6}}</td>
                         <td>{{ $dataa->krit6 }}</td>
                      
                     </tr>
@@ -161,7 +161,7 @@
 
                       
                       <td>@lang('messages.krit7')</td>
-                      <td>{{ $dataa->skorkrit7}}</td>
+                      <td class="rata" >{{ $dataa->skorkrit7}}</td>
                       <td>{{ $dataa->krit7 }}</td>
                     
                   </tr>
@@ -169,7 +169,7 @@
 
                     
                     <td>@lang('messages.krit8')</td>
-                    <td>{{ $dataa->skorkrit8}}</td>
+                    <td class="rata" >{{ $dataa->skorkrit8}}</td>
                     <td>{{ $dataa->krit8 }}</td>
                     
                 </tr>
@@ -177,7 +177,7 @@
 
                   
                   <td>@lang('messages.krit9')</td>
-                  <td>{{ $dataa->skorkrit9}}</td>
+                  <td class="rata" >{{ $dataa->skorkrit9}}</td>
                   <td>{{ $dataa->krit9 }}</td>
                
               </tr>
@@ -185,21 +185,21 @@
 
                 
                 <td>@lang('messages.krit10')</td>
-                <td>{{ $dataa->skorkrit10}}</td>
+                <td class="rata" >{{ $dataa->skorkrit10}}</td>
                 <td>{{ $dataa->krit10 }}</td>
               
             </tr>
             <tr>
 
               <td>@lang('messages.krit11')</td>
-              <td>{{ $dataa->skorkrit11}}</td>
+              <td class="rata" >{{ $dataa->skorkrit11}}</td>
               <td>{{ $dataa->krit11 }}</td>
             
           </tr>
           <tr>
 
             <td>@lang('messages.krit1')</td>
-            <td>{{ $dataa->skorkrit12}}</td>
+            <td class="rata" >{{ $dataa->skorkrit12}}</td>
             <td>{{ $dataa->krit12 }}</td>
           
         </tr>
@@ -216,10 +216,19 @@
   </div>
 </section>
 <style>
-  thead th {
-      background-color: #dee2e6 !important; 
+  .table-bordered td,
+  .table-bordered th {
+      vertical-align: middle;
+      
   }
- </style>
+  .rata {
+    text-align: center;
+  }
+
+  thead th {
+      background-color: #cecece !important;
+  }
+</style>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">

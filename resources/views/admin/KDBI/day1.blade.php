@@ -101,7 +101,7 @@
                     @foreach ($groupedByRondeAndSesi as $ronde => $sesiChunks)
     <h2 style="color: white; text-align:center">Ronde {{ $ronde }}</h2>
     @foreach ($sesiChunks as $sesi => $dataSesi)
-                    <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 5rem; border-collapse: collapse;">
+                    <table class="table table-bordered " style="min-width: 650px; margin-bottom: 5rem; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
                                 <th scope="col" rowspan="2">Ronde</th>
@@ -153,10 +153,18 @@
                 </div>
         </div>
         <style>
- thead th {
-     background-color: #dee2e6 !important; 
- }
-</style>
+            .table-bordered td,
+            .table-bordered th {
+                
+                text-align: center;
+                vertical-align: middle;
+                
+            }
+
+            thead th {
+                background-color: #cecece !important;
+            }
+        </style>
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
