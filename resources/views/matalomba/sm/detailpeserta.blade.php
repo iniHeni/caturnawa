@@ -64,19 +64,19 @@
          </li>
 
          <li class="nav__item">
-            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
+            <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
          </li>
 
          <li class="nav__item">
-            <a href="{{url('matalomba/scoreKDBI') }}" class="nav__link">@lang('messages.score')</a>
+            <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.score')</a>
          </li>
 
          <li class="nav__item">
-            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.round')</a>
+            <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
          </li>
          
          <li class="nav__item">
-            <a href="{{url('matalomba/kdbi') }}" class="nav__link">@lang('messages.juri')</a>
+            <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
          </li>
                </ul>
 

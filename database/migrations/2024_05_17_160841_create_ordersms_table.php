@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email_1');
             $table->string('fakultas_1');
             $table->string('prodi_1');
-            $table->string('npm_1');
+            $table->bigInteger('npm_1');
             $table->string('jeniskelamin_1');
             $table->string('alamatlengkap_1');
             $table->bigInteger('nomorhp_1');
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('email_2');
             $table->string('fakultas_2');
             $table->string('prodi_2');
-            $table->string('npm_2');
+            $table->bigInteger('npm_2');
             $table->string('jeniskelamin_2');
             $table->string('alamatlengkap_2');
             $table->bigInteger('nomorhp_2');
@@ -46,7 +46,7 @@ return new class extends Migration
             $table->string('email_3');
             $table->string('fakultas_3');
             $table->string('prodi_3');
-            $table->string('npm_3');
+            $table->bigInteger('npm_3');
             $table->string('jeniskelamin_3');
             $table->string('alamatlengkap_3');
             $table->bigInteger('nomorhp_3');
@@ -59,7 +59,7 @@ return new class extends Migration
             $table->string('email_4');
             $table->string('fakultas_4');
             $table->string('prodi_4');
-            $table->string('npm_4');
+            $table->bigInteger('npm_4');
             $table->string('jeniskelamin_4');
             $table->string('alamatlengkap_4');
             $table->bigInteger('nomorhp_4');
@@ -72,7 +72,7 @@ return new class extends Migration
             $table->string('email_5');
             $table->string('fakultas_5');
             $table->string('prodi_5');
-            $table->string('npm_5');
+            $table->bigInteger('npm_5');
             $table->string('jeniskelamin_5');
             $table->string('alamatlengkap_5');
             $table->bigInteger('nomorhp_5');
@@ -86,6 +86,7 @@ return new class extends Migration
             $table->string('instansi');
             $table->string('linkvidio');
             $table->string('surat_delegasi');
+            $table->string('bio');
             $table->enum('status', ['Unpaid', 'Paid']);
 
             $table->timestamps();

@@ -66,15 +66,15 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="#peserta" class="nav__link">@lang('messages.peserta')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.peserta')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.round')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
                   
                   <li class="nav__item">
-                     <a href="{{url('matalomba/lkti') }}" class="nav__link">@lang('messages.juri')</a>
+                     <a href="{{url('/matalomba/spc') }}" class="nav__link">@lang('messages.juri')</a>
                   </li>
                </ul>
 
@@ -112,7 +112,7 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="email">Email  *For form UploadSPC</label>
+                            <label for="email">Email  *For form UnggahSPC</label>
                             <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " @error('email') is-invalid @enderror required>
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
@@ -200,7 +200,7 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="twibbon">Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                            <label for="twibbon">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
                             <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                             @error('twibbon')
                             <div class="text-danger">{{ $message }}</div>
@@ -496,7 +496,7 @@
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Submit</span>
+                        <span class="btnText">Pembayaran</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 
@@ -530,7 +530,7 @@
     );
   });
     </script>
-    <script src="../../js/daftarlomba.js"></script>
+
    </body>
 
     <script type="text/javascript">

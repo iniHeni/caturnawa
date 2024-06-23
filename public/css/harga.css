@@ -8,7 +8,7 @@ body {
   font-family: 'Cabin', sans-serif;
 }
 .container1 {
-  max-width: 1350px;
+  max-width: 1450px;
   margin: 0px auto;
   padding: 0 10px;
   overflow: hidden;
@@ -33,10 +33,10 @@ body {
 }
 .container1 .item-right {
   background-color: #1b6dc9;
-  padding: 80px 20px;
+  padding: 233px 20px;
   flex: 1 1 28%;
   position: relative;
-  height: 280px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +75,7 @@ body {
   right: -20px;
 }
 .container1 .item-right .num {
-  font-size: 60px;
+  font-size: 35px;
   text-align: center;
   color: #fff;
 }
@@ -88,6 +88,14 @@ body {
   flex: 70%;
   padding: 18px 25px 16px 20px;
   border-left: 5px dotted #999;
+}
+.item-left1 {
+  flex: 70%;
+  padding: 18px 25px 0px 0px;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  
 }
 .event {
   color: #111;
@@ -102,7 +110,7 @@ body {
 .container1 .item-left .sce, .container1 .item-left .loc {
   display: flex;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 .container1 .item-left .sce .icon, .container1 .item-left .loc .icon {
   margin-right: 10px;
@@ -137,6 +145,28 @@ body {
 .linethrough {
   text-decoration: line-through;
 }
+
+@media (max-width: 1550px) {
+  .container1 {
+    padding: 0px 240;
+  }
+  .container1 .item {
+    flex-direction: column;
+  }
+  .container1 .item-right {
+    flex: 1 1 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+  .container1 .item-left {
+    flex: 1 1 100%;
+    padding: 20px;
+    border-left: none;
+    border-top: 5px dotted #999;
+  }
+}
+
+
 @media (max-width: 1150px) {
   .container1 {
     padding: 0px 2rem;

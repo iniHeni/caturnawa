@@ -14,7 +14,6 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenu.css">
       <link rel="stylesheet" href="../../../css/pagelomba.css">
-      <link rel="stylesheet" href="../../../css/rank.css">
       <link rel="stylesheet" href="../../../css/babak.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
@@ -57,20 +56,21 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-         <img src="../../../img/logokdbi.jpeg" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+         <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
-						
+        <div style="margin-right: 10rem" class="nav__item">
+          <li><a href="../../../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
+          <li><a href="../../../locale/en" width="20px"><img src="../../img/eng.png" /></a></li>
 					</div>
-               <li class="nav__item">
-                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
-               </li>
-      
-               <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-               </li>
+          <li class="nav__item">
+            <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('/matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
+         </li>
       
                </ul>
 
@@ -101,7 +101,7 @@
                              <tr>
                                  <th>Rank</th>
                                  <th>Team</th>
-                                 <th>Participant</th>
+                                 <th>@lang('messages.peserta')</th>
                                  <th>Victory Point</th>
                                </tr>
                          </thead>
@@ -122,16 +122,10 @@
      </section>
      
      <style>
-        .table-bordered td, .table-bordered th {
-            border: 2px solid black !important;
-            text-align: center;
-            vertical-align: middle;
-        }
-        thead th {
-            background-color: #0d6efd !important;
-            
-        }
-     </style>
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
+</style>
       <!--==================== Round ====================-->
 <section id="rank">
     <h1 class="judul">Day 1</h1>
@@ -190,7 +184,7 @@
           }, 2000)
         );
       });</script>
-<script src="../../js/rank.js"></script>
+
 <script type="text/javascript">
     const round2 = document.getElementById('round2');
     const round3 = document.getElementById('round3'); 
@@ -211,6 +205,35 @@
       });
     });
        </script>
+
       <script src="../../../js/nav.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+        </script>
+        <script type="text/JavaScript"> 
+            function killCopy(e){ return false } 
+            function reEnable(){ return true } 
+            document.onselectstart=new Function ("return false"); 
+            if (window.sidebar)
+            { 
+                document.onmousedown=killCopy; 
+                document.onclick=reEnable; 
+            } 
+        </script>
+        <script type="text/Javascript">
+        $(document).keydown(function(event){
+      if(event.keyCode==123){
+          return false;
+      }
+      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+               return false;
+      }
+  });
+      </script>
    </body>
 </html>

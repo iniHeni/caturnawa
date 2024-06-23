@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <style>
         #loadingDiv {
    width: 100%;
@@ -52,9 +52,13 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
             <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin EDC </a></h2>
+            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
 </header>
@@ -63,11 +67,11 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
-    <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
-    <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
-    <a href="{{url('/admin/finalEDC')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
+    <a href="{{url('/admin/mainmenuKDBI')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{url('/admin/pesertaKDBI')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
+    <a href="{{url('/admin/penyisihanKDBI')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
+    <a href="{{route('kdbi.tampilkdbi3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="{{url('/admin/finalKDBI')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
     <!-- resources/views/mainmenu.blade.php -->
@@ -114,7 +118,7 @@
         });
     }
     </script>
-<script src="../../../js/adminEDC.js"></script>
+<script src="../../../js/adminKDBI.js"></script>
 <script>
     document.getElementById("menu").addEventListener("click", function () {
         document.body.classList.toggle("sidebar-open");

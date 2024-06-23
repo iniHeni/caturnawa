@@ -13,9 +13,6 @@
       <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenu.css">
-      <link rel="stylesheet" href="../../../css/pagelomba.css">
-      <link rel="stylesheet" href="../../../css/rank.css">
-      <link rel="stylesheet" href="../../../css/babak.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
 
@@ -57,18 +54,19 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
         <nav class="nav container">
-        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" >Caturnawa</a>
+        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+        
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 18rem" class="nav__item">
-						
+       <div style="margin-right: 25rem" class="nav__item">
+       
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                </li>
       
                <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+                  <a href="{{url('/matalomba/kdbi') }}" class="nav__link">@lang('messages.peserta')</a>
                </li>
       
                </ul>
@@ -136,17 +134,10 @@
                 </div>
         </div>
         <style>
-            .table-bordered td,
-            .table-bordered th {
-                border: 2px solid black !important;
-                text-align: center;
-                vertical-align: middle;
-            }
-
-            thead th {
-                background-color: #0d6efd !important;
-            }
-        </style>
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
+</style>
     </section>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
@@ -190,5 +181,33 @@
     });
        </script>
       <script src="../../../js/nav.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+        </script>
+        <script type="text/JavaScript"> 
+            function killCopy(e){ return false } 
+            function reEnable(){ return true } 
+            document.onselectstart=new Function ("return false"); 
+            if (window.sidebar)
+            { 
+                document.onmousedown=killCopy; 
+                document.onclick=reEnable; 
+            } 
+        </script>
+        <script type="text/Javascript">
+        $(document).keydown(function(event){
+      if(event.keyCode==123){
+          return false;
+      }
+      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+               return false;
+      }
+  });
+      </script>
    </body>
 </html>

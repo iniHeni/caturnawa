@@ -40,18 +40,18 @@ class SmsfinalController extends Controller
             'skorkrit10' => 'required|integer|min:0|max:100',
             'skorkrit11' => 'required|integer|min:0|max:100',
             'skorkrit12' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string|max:100',
-            'krit2' => 'required|string|max:100',
-            'krit3' => 'required|string|max:100',
-            'krit4' => 'required|string|max:100',
-            'krit5' => 'required|string|max:100',
-            'krit6' => 'required|string|max:100',
-            'krit7' => 'required|string|max:100',
-            'krit8' => 'required|string|max:100',
-            'krit9' => 'required|string|max:100',
-            'krit10' => 'required|string|max:100',
-            'krit11' => 'required|string|max:100',
-            'krit12' => 'required|string|max:100',
+            'krit1' => 'required|string',
+            'krit2' => 'required|string',
+            'krit3' => 'required|string',
+            'krit4' => 'required|string',
+            'krit5' => 'required|string',
+            'krit6' => 'required|string',
+            'krit7' => 'required|string',
+            'krit8' => 'required|string',
+            'krit9' => 'required|string',
+            'krit10' => 'required|string',
+            'krit11' => 'required|string',
+            'krit12' => 'required|string',
         ]);
         $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'] + $tambah['skorkrit5'] + $tambah['skorkrit6'] + $tambah['skorkrit7'] + $tambah['skorkrit8'] + $tambah['skorkrit9'] + $tambah['skorkrit10'] + $tambah['skorkrit11'] + $tambah['skorkrit12'];
         smsfinal::create($tambah);
@@ -86,18 +86,18 @@ class SmsfinalController extends Controller
             'skorkrit10' => 'required|integer|min:0|max:100',
             'skorkrit11' => 'required|integer|min:0|max:100',
             'skorkrit12' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string|max:100',
-            'krit2' => 'required|string|max:100',
-            'krit3' => 'required|string|max:100',
-            'krit4' => 'required|string|max:100',
-            'krit5' => 'required|string|max:100',
-            'krit6' => 'required|string|max:100',
-            'krit7' => 'required|string|max:100',
-            'krit8' => 'required|string|max:100',
-            'krit9' => 'required|string|max:100',
-            'krit10' => 'required|string|max:100',
-            'krit11' => 'required|string|max:100',
-            'krit12' => 'required|string|max:100',
+            'krit1' => 'required|string',
+            'krit2' => 'required|string',
+            'krit3' => 'required|string',
+            'krit4' => 'required|string',
+            'krit5' => 'required|string',
+            'krit6' => 'required|string',
+            'krit7' => 'required|string',
+            'krit8' => 'required|string',
+            'krit9' => 'required|string',
+            'krit10' => 'required|string',
+            'krit11' => 'required|string',
+            'krit12' => 'required|string',
     ]);
     $data = smsfinal::find($id);
     $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'] + $update['skorkrit5'] + $update['skorkrit6'] + $update['skorkrit7'] + $update['skorkrit8'] + $update['skorkrit9'] + $update['skorkrit10'] + $update['skorkrit11'] + $update['skorkrit12'];
@@ -121,34 +121,9 @@ public function sfinal(){
  }
  public function detailsf($id){
     $dataa = smsfinal::find($id);
-    $dataa->mutu1 = $this->calculateNilaiMutu($dataa->skorkrit1);
-    $dataa->mutu2 = $this->calculateNilaiMutu($dataa->skorkrit2);
-    $dataa->mutu3 = $this->calculateNilaiMutu($dataa->skorkrit3);
-    $dataa->mutu4 = $this->calculateNilaiMutu($dataa->skorkrit4);
-    $dataa->mutu5 = $this->calculateNilaiMutu($dataa->skorkrit5);
-    $dataa->mutu6 = $this->calculateNilaiMutu($dataa->skorkrit6);
-    $dataa->mutu7 = $this->calculateNilaiMutu($dataa->skorkrit7);
-    $dataa->mutu8 = $this->calculateNilaiMutu($dataa->skorkrit8);
-    $dataa->mutu9 = $this->calculateNilaiMutu($dataa->skorkrit9);
-    $dataa->mutu10 = $this->calculateNilaiMutu($dataa->skorkrit10);
-    $dataa->mutu11 = $this->calculateNilaiMutu($dataa->skorkrit11);
-    $dataa->mutu12 = $this->calculateNilaiMutu($dataa->skorkrit12);
     return view('matalomba/sm/detail/detailskor3', compact('dataa'));
  }
- private function calculateNilaiMutu($skorkrit)
-{
-    if ($skorkrit >= 85 && $skorkrit <= 100) {
-        return 'A';
-    } elseif ($skorkrit >= 65 && $skorkrit <= 84) {
-        return 'B';
-    } elseif ($skorkrit >= 45 && $skorkrit <= 64) {
-        return 'C';
-    } elseif ($skorkrit >= 25 && $skorkrit <= 44) {
-        return 'D';
-    } else {
-        return 'E';
-    }
-}
+
  public function pesertap(){
     $peserta = pesertasm::all();
     

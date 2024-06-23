@@ -19,9 +19,14 @@ class UploadsmController extends Controller
             'nama' => 'required|string|max:50',
             'email' => 'required|email',
             'instansi' => 'required|string|max:50',
-            'poster' => 'required|mimes:pdf|max:5000',
-            'script' => 'required|mimes:pdf|max:5000',
-            'original' => 'required|mimes:pdf|max:5000',
+            'poster' => 'required|mimes:pdf|max:3000',
+            'script' => 'required|mimes:pdf|max:3000',
+            'original' => 'required|mimes:pdf|max:3000',
+            'karya' => 'required|mimes:pdf|max:3000',
+            'cipta' => 'required|mimes:pdf|max:3000',
+            'story' => 'required|mimes:pdf|max:3000',
+            'sipnosis' => 'required|mimes:pdf|max:3000',
+            'ori' => 'required|mimes:pdf|max:3000',
             'linkvidio' => 'required|string|max:50',
         ]);
         $uploadsm = $request->all();
@@ -33,7 +38,7 @@ class UploadsmController extends Controller
             $path = $request->file('poster')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/sm/poster/' . $image_name);
 
-            $update['poster'] = $imageUrl;
+            $uploadsm['poster'] = $imageUrl;
 
         }
         if($request->hasFile('script'))
@@ -44,7 +49,7 @@ class UploadsmController extends Controller
             $path = $request->file('script')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/sm/script/' . $image_name);
 
-            $update['script'] = $imageUrl;
+            $uploadsm['script'] = $imageUrl;
 
         }
         if($request->hasFile('original'))
@@ -55,11 +60,66 @@ class UploadsmController extends Controller
             $path = $request->file('original')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/sm/original/' . $image_name);
 
-            $update['original'] = $imageUrl;
+            $uploadsm['original'] = $imageUrl;
+
+        }
+        if($request->hasFile('karya'))
+        {
+            $destination_path = 'public/document/sm/karya';
+            $image = $request->file('karya');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('karya')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/karya/' . $image_name);
+
+            $uploadsm['karya'] = $imageUrl;
+
+        }
+        if($request->hasFile('cipta'))
+        {
+            $destination_path = 'public/document/sm/cipta';
+            $image = $request->file('cipta');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('cipta')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/cipta/' . $image_name);
+
+            $uploadsm['cipta'] = $imageUrl;
+
+        }
+        if($request->hasFile('story'))
+        {
+            $destination_path = 'public/document/sm/story';
+            $image = $request->file('story');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('story')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/story/' . $image_name);
+
+            $uploadsm['story'] = $imageUrl;
+
+        }
+        if($request->hasFile('sipnosis'))
+        {
+            $destination_path = 'public/document/sm/sipnosis';
+            $image = $request->file('sipnosis');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('sipnosis')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/sipnosis/' . $image_name);
+
+            $uploadsm['sipnosis'] = $imageUrl;
+
+        }
+        if($request->hasFile('ori'))
+        {
+            $destination_path = 'public/document/sm/ori';
+            $image = $request->file('ori');
+            $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('ori')->storeAS($destination_path,$image_name);
+            $imageUrl = asset('storage/document/sm/ori/' . $image_name);
+
+            $uploadsm['ori'] = $imageUrl;
 
         }
         $uploadsm = uploadsm::create($uploadsm);
-        session()->flash('success', 'Thankyou,Wait for further information from us');
+        flash('Success', 'Thankyou,Wait for further information from us');
         return redirect()->route('utama');
     }
 }

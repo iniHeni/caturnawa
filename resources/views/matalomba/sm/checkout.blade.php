@@ -70,19 +70,19 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
+                     <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.peserta')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/scoreEDC') }}" class="nav__link">@lang('messages.score')</a>
+                     <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.score')</a>
                   </li>
 
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.round')</a>
+                     <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
                   </li>
                   
                   <li class="nav__item">
-                     <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.juri')</a>
+                     <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
                   </li>
                </ul>
 
@@ -117,7 +117,7 @@
                                 <input disabled placeholder="{{$ordersm->nama_1}}">
                             </div>
                             <div class="input-field">
-                                <label >Email  *For form UploadSM</label>
+                                <label >Email  *For form UnggahSM</label>
                                 <input disabled placeholder="{{$ordersm->email_1}}">
                             </div>
                             <div class="input-field">
@@ -165,7 +165,7 @@
                                 <input disabled placeholder="{{$ordersm->buktifollow_1}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label>Unggah Twibbon *format:png,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$ordersm->twibbon_1}}">
                             </div>
                             
@@ -228,7 +228,7 @@
                             </div>
 
                             <div class="input-field">
-                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label>Unggah Twibbon *format:png,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$ordersm->twibbon_2}}">
                             </div>
                         </div>
@@ -289,7 +289,7 @@
                                 <input disabled placeholder="{{$ordersm->buktifollow_3}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label>Unggah Twibbon *format:png,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$ordersm->twibbon_3}}">
                             </div>
                         </div>
@@ -350,7 +350,7 @@
                                 <input disabled placeholder="{{$ordersm->buktifollow_4}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label>Unggah Twibbon *format:png,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$ordersm->twibbon_4}}">
                             </div>
                         </div>
@@ -411,7 +411,7 @@
                                 <input disabled placeholder="{{$ordersm->buktifollow_5}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *format:png,jpg maks 5mb</label>
+                                <label>Unggah Twibbon *format:png,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$ordersm->twibbon_5}}">
                             </div>
                         </div>
@@ -433,7 +433,7 @@
                             </div>
                             <div class="input-field">
                                 <label>Price</label>
-                                <input disabled placeholder="{{$ordersm->price}}">
+                                <input disabled placeholder="Rp{{$ordersm->price}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>

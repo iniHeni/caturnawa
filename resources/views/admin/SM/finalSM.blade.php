@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
@@ -56,9 +56,13 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin Short Movie </a></h2>
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
 </header>
@@ -94,64 +98,68 @@
                 <p><a href="{{ route('sm.pesertaf') }} " class="add" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px;  position: static;">
                   <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    @foreach($tambah as $no=>$data)
                     <thead style="position: static; top: -1; z-index: 10;">
+                       
+                        <tr><th scope="col" colspan="6" style="text-align: left;">Adjudicators: {{ $data->juri }}</th></tr>
+                        
                         <tr>
-                            <th scope="col" rowspan="3">No</th>
-                            <th scope="col" rowspan="3">Nama Team</th>
-                            <th scope="col" rowspan="3" colspan="5">Nama Peserta</th>
-                            <th scope="col" colspan="8">Kriteria Penilaian</th>
-                            <th scope="col" rowspan="3">Total</th>
-                            <th scope="col" rowspan="3">Rank</th>
-                            <th scope="col" rowspan="3">Adjudicators</th>
-                            <th scope="col" rowspan="3 ">actions</th>
+                            <th scope="col">@lang('messages.team1')</th>
+                            <th scope="col">@lang('messages.peserta1')</th>
+                            <th scope="col">@lang('messages.penilaian')</th>
+                            <th scope="col">@lang('messages.kuanti')</th>
+                            <th scope="col">@lang('messages.kuali')</th>
+                            <th scope="col">actions</th>
                         </tr>
-                        <tr>
-                            <th scope="col">Ide cerita dan riset peristiwa dalam film</th>
-                            <th scope="col">Tujuan film dan pengaruh film</th>
-                            <th scope="col">Kemampuan dan pemahaman membuat film</th>
-                            <th scope="col">Informasi dan pesan yang disampaikan dari film</th>
-                            <th scope="col">Ide cerita dan riset peristiwa dalam film</th>
-                            <th scope="col">Tujuan film dan pengaruh film</th>
-                            <th scope="col">Kemampuan dan pemahaman membuat film</th>
-                            <th scope="col">Informasi dan pesan yang disampaikan dari film</th>
-                        </tr>
-                        <tr>
-                            <th scope="col" colspan="4">Kuantitatif</th>
-                            <th scope="col" colspan="4">Kualitatif</th>
-                        </tr>
+                       
                     </thead>
                     <tbody>
-                      @foreach($tambah as $no=>$data)
+                     
                       <tr>
-                          <td>{{ $no+1 }}</td>
-                          <td>{{ $data->namateam }}</td>
-                          <td>{{ $data->peserta1}}</td>
-                          <td>{{ $data->peserta2}}</td>
-                          <td>{{ $data->peserta3}}</td>
-                          <td>{{ $data->peserta4}}</td>
-                          <td>{{ $data->peserta5}}</td>
-                          <td>{{ $data->skorkrit1}}</td>
-                          <td>{{ $data->skorkrit2}}</td>
-                          <td>{{ $data->skorkrit3}}</td>
-                          <td>{{ $data->skorkrit4}}</td>
-                          <td>{{ $data->krit1}}</td>
-                          <td>{{ $data->krit2}}</td>
-                          <td>{{ $data->krit3}}</td>
-                          <td>{{ $data->krit4}}</td>
-                          <td>{{ $data->total}}</td>
-                          <td>{{ $data->rank}}</td>
-                          <td>{{ $data->juri}}</td>
-                          <td>
-                              <a href="{{ route('sm.editf', $data->id) }}">Edit</a>
-                              <form action="{{ route('sm.hapusf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
-                                  @csrf
-                                  <button id="deleteButton" type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
-                              </form>
-                          </td>
-                          
-                      </tr>
-                      @endforeach
+                        <td rowspan="4">{{ $data->namateam }}</td>
+                        <td rowspan="4">1.{{ $data->peserta1 }}<br>2.{{ $data->peserta2 }}<br>3.{{ $data->peserta3 }}<br>4.{{ $data->peserta4 }}<br>5.{{ $data->peserta5 }}</td>
+                        <td>Ide cerita dalam film</td>
+                        <td>{{ $data->skorkrit1 }}</td>
+                        <td>{{ $data->krit1 }}</td>
+                        <td rowspan="4">
+                            <a href="{{ route('sm.editf', $data->id) }}">Edit</a>
+                            <form action="{{ route('sm.hapusf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                @csrf
+                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        
+                        <td>Tujuan film dan pengaruh film</td>
+                        <td>{{ $data->skorkrit2 }}</td>
+                        <td>{{ $data->krit2 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                        
+                        <td>Kemampuan dan pemahaman membuat film</td>
+                        <td>{{ $data->skorkrit3}}</td>
+                        <td>{{ $data->krit3 }}</td>
+                       
+                    </tr>
+                    <tr>
+
+                       
+                        <td>Etika dalam mempresentasikan film</td>
+                        <td>{{ $data->skorkrit4}}</td>
+                        <td>{{ $data->krit4 }}</td>
+                        
+                    </tr>
+
+        <tr><td colspan="3">Total Score</td>
+          <td colspan="7">{{ $data->total }}</td>
+          </tr>
+                      
                     </tbody>
+                    @endforeach
                 </table>
                 </div>
         </div>
@@ -164,8 +172,13 @@
             }
 
             thead th {
-                background-color: #0d6efd !important;
+                background-color: #dee2e6 !important;
             }
+            a[href^="mailto:"] {
+    color:#dee2e6 ; 
+    text-decoration: underline;
+}
+
         </style>
     </section>
 </div>

@@ -65,10 +65,14 @@ public function hapusf($id){
     return redirect()->route('spc.tampilf');
 }
 public function final(){
-    $final = spcfinal::select(
-        '*',
-        DB::raw('RANK() OVER (ORDER BY total DESC) as rank') // Perhitungan rank
-    )->get();
+    $final = DB::table('spcfinals')
+    ->select(
+        'namapeserta',
+        DB::raw('SUM(total) as total'), // Menghitung total untuk setiap namapeserta
+        DB::raw('RANK() OVER (ORDER BY SUM(total) DESC) as rank') // Peringkat berdasarkan total
+    )
+    ->groupBy('namapeserta') // Mengelompokkan berdasarkan namapeserta
+    ->get();
     
     return view('matalomba/lkti/final', compact('final'));
  }
@@ -77,4 +81,25 @@ public function final(){
     
     return view('admin/LKTI/tambahf', compact('peserta'));
  }
+ public function detail($namapeserta){
+    $namapeserta = strip_tags(trim($namapeserta)); // Contoh pembersihan dasar
+
+    // 2. Ambil data peserta dari database
+    $data = DB::table('spcfinals')
+        ->select('namapeserta',
+                DB::raw("string_agg(scorepemaparanmateri::text, ', ') as scorepemaparanmateri"),
+                DB::raw("string_agg(scorepertanyaandanjawaban::text, ', ') as scorepertanyaandanjawaban"),
+                DB::raw("string_agg(scoreaspekkesesuaian::text, ', ') as scoreaspekkesesuaian"),
+                DB::raw("string_agg(materi::text, ', ') as materi"),
+                DB::raw("string_agg(pertanyaandanjawaban::text, ', ') as pertanyaandanjawaban"),
+                DB::raw("string_agg(kesesuaian::text, ', ') as kesesuaian"),
+                DB::raw('SUM(scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian) as total'),
+                DB::raw("string_agg(juri::text, ', ') as juri"),
+                )
+        ->where('namapeserta', $namapeserta)
+        ->groupBy('namapeserta')
+        ->get();
+  
+    return view('matalomba/lkti/detail/detailskor1', compact('data'));
+}
 }

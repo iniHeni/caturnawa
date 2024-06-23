@@ -147,19 +147,20 @@ background: center / contain no-repeat url(../../../img/loader.gif);
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
         <nav class="nav container">
-        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
+        <img src="../../../img/logokdbi.jpeg" width="140" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
+        
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 18rem" class="nav__item">
+       <div style="margin-right: 25rem" class="nav__item">
 						
 					</div>
-               <li class="nav__item">
-                  <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
-               </li>
-      
-               <li class="nav__item">
-                  <a href="{{url('matalomba/edc') }}" class="nav__link">@lang('messages.peserta')</a>
-               </li>
+          <li class="nav__item">
+            <a href="{{url('/') }}" class="nav__link">Home</a>
+         </li>
+
+         <li class="nav__item">
+            <a href="{{url('matalomba/edc') }}" class="nav__link">Participant</a>
+         </li>
       
                </ul>
 
@@ -223,17 +224,10 @@ background: center / contain no-repeat url(../../../img/loader.gif);
                 </div>
         </div>
         <style>
-            .table-bordered td,
-            .table-bordered th {
-                border: 2px solid black !important;
-                text-align: center;
-                vertical-align: middle;
-            }
-
-            thead th {
-                background-color: #0d6efd !important;
-            }
-        </style>
+ thead th {
+     background-color: #dee2e6 !important; 
+ }
+</style>
     </section>
 <!--==================== Session ====================-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>

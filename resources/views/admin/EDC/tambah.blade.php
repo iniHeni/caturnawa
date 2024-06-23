@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <link rel="stylesheet" href="../../../css/tambahpenyisihan.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
@@ -56,9 +56,13 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin EDC </a></h2>
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
 </header>
@@ -92,122 +96,152 @@
 <section style="height: 60rem" >
     <div class="konten">
       <header>Data Penyisihan</header>
-      <form action="/tambahpenyisihan/edcday1" method="POST" enctype="multipart/form-data"  id="penilaian" >
-          @csrf
-          <div class="form first">
-            <div class="details personal">
-                <span class="title">Data Penilaian</span>
-                <div class="fields"> 
+      <form action="/tambahpenyisihan/edcday1" method="POST" enctype="multipart/form-data" id="penilaian">
+        @csrf
+    
+        @for ($i = 1; $i <= 4; $i++)
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Data Penilaian {{ $i }}</span>
                     <div class="input-field">
-                        <label for="ronde">Ronde </label>
-                        <select name="ronde" id="ronde"  required >
-                            <option selected>Pilih Ronde</option>
-                            <option>1</option>   
-                            <option>2</option>  
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="sesi">Session </label>
-                        <select name="sesi" id="sesi"  required >
-                            <option selected>Pilih Sesi</option>
-                            <option>1</option> 
-                            <option>2</option> 
-                            <option>3</option> 
-                            <option>4</option> 
-                            <option>5</option> 
-                            <option>6</option>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="juri">Adjudicators </label>
-                        <select name="juri" id="juri"  required >
+                        <label for="juri[{{ $i }}]">Adjudicators</label>
+                        <select name="juri[{{ $i }}]" id="juri_{{ $i }}" required>
                             <option selected>Pilih Adjudicators</option>
-                            <option>Aldifikri Kevin Marvel</option> 
-                            <option>Ahmad Kushay</option> 
-                            <option>Muhammad Adity Muchtar</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="room">Room/Ruangan </label>
-                        <input type="text" id="room" name="room" placeholder="Masukkan Ruangan">
-                    </div>
-                    <div class="input-field">
-                        <label for="team">Nama Team</label>
-                        <select name="team" id="team"  required >
-                            <option selected>Pilih Team</option> 
-                            @foreach ($peserta as $j)
-                                <option >{{ $j->instansi }}</option>
+                            @foreach ($peserta as $adjudicator)
+                                <option value="{{ $adjudicator->id }}">{{ $adjudicator->nama }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="input-field">
-                        <label for="posisi">Posisi Team </label>
-                        <select name="posisi" id="posisi"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
-                        <select name="nama1" id="nama1"  required >
-                            <option selected>Pilih Peserta</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="posisi1">Posisi Peserta 1 </label>
-                        <select name="posisi1" id="posisi1"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
-                        <select d name="nama2" id="nama2"  required >
-                            <option selected>Pilih Peserta</option> 
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="posisi2">Posisi Peserta 2 </label>
-                        <select name="posisi2" id="posisi2" required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
+                    <div class="fields">
+                        <div class="input-field1">
+                            <label for="ronde[{{ $i }}]">Ronde</label>
+                            <select name="ronde[{{ $i }}]" id="ronde_{{ $i }}" required>
+                                <option selected>Pilih Ronde</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="sesi[{{ $i }}]">Session</label>
+                            <select name="sesi[{{ $i }}]" id="sesi_{{ $i }}" required>
+                                <option selected>Pilih Sesi</option>
+                                @for ($j = 1; $j <= 6; $j++)
+                                    <option value="{{ $j }}">{{ $j }}</option>
+                                @endfor
+                            </select>
+                        </div>
+    
+                        
+    
+                        <div class="input-field">
+                            <label for="room[{{ $i }}]">Breakout Room</label>
+                            <select name="room[{{ $i }}]" id="room_{{ $i }}" required>
+                                <option selected>Breakout Room</option>
+                                @for ($j = 1; $j <= 3; $j++)
+                                    <option value="{{ $j }}">{{ $j }}</option>
+                                @endfor
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="team[{{ $i }}]">Nama Team</label>
+                            <select name="team[{{ $i }}]" id="team_{{ $i }}" required>
+                                <option selected>Pilih Team</option>
+                                @foreach ($peserta as $j)
+                                    <option value="{{ $j->id }}">{{ $j->instansi }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="posisi[{{ $i }}]">Posisi Team</label>
+                            <select name="posisi[{{ $i }}]" id="posisi_{{ $i }}" required>
+                                <option selected>Pilih Posisi</option>
+                                <option value="OG">OG</option>
+                                <option value="CG">CG</option>
+                                <option value="OO">OO</option>
+                                <option value="CO">CO</option>
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="posisi1[{{ $i }}]">Posisi Peserta 1</label>
+                            <select name="posisi1[{{ $i }}]" id="posisi1_{{ $i }}" required>
+                                <option selected>Pilih Posisi</option>
+                                <option value="PM">PM</option>
+                                <option value="DPM">DPM</option>
+                                <option value="MoG">MoG</option>
+                                <option value="Whip Gov">Whip Gov</option>
+                                <option value="LoO">LoO</option>
+                                <option value="DLoO">DLoO</option>
+                                <option value="MoO">MoO</option>
+                                <option value="Whip Opp">Whip Opp</option>
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="posisi2[{{ $i }}]">Posisi Peserta 2</label>
+                            <select name="posisi2[{{ $i }}]" id="posisi2_{{ $i }}" required>
+                                <option selected>Pilih Posisi</option>
+                                <option value="PM">PM</option>
+                                <option value="DPM">DPM</option>
+                                <option value="MoG">MoG</option>
+                                <option value="Whip Gov">Whip Gov</option>
+                                <option value="LoO">LoO</option>
+                                <option value="DLoO">DLoO</option>
+                                <option value="MoO">MoO</option>
+                                <option value="Whip Opp">Whip Opp</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="nama1[{{ $i }}]">Nama Peserta 1</label>
+                            <select name="nama1[{{ $i }}]" id="nama1_{{ $i }}" required>
+                                <option selected>Pilih Peserta</option>
+                                @foreach ($peserta as $j)
+                                    <option value="{{ $j->id }}">{{ $j->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="nama2[{{ $i }}]">Nama Peserta 2</label>
+                            <select name="nama2[{{ $i }}]" id="nama2_{{ $i }}" required>
+                                <option selected>Pilih Peserta</option>
+                                @foreach ($peserta as $j)
+                                    <option value="{{ $j->id }}">{{ $j->nama1 }}</option> 
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
-              </div>
-            <div class="details ID">
-                <span class="title">Skor Individu dan Team</span>
-                <div class="fields"> 
-                    <div class="input-field">
-                        <label for="skorindividu1">Score Peserta 1 </label>
-                        <input name="skorindividu1" id="skorindividu1" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotall()">
-                    </div>   
-                    <div class="input-field">
-                        <label for="skorindividu2">Score Peserta 2 </label>
-                        <input name="skorindividu2" id="skorindividu2" type="number" placeholder=" Score Individu Peserta" required oninput="hitungTotall()">
-                    </div>  
-                    <div class="input-field">
-                        <label for="total">Score Team:</label>
-                        <input @disabled(true) type="number" id="total" name="total" readonly>
+    
+                <div class="details ID">
+                    <span class="title">Skor Individu dan Team {{ $i }}</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="skorindividu1[{{ $i }}]">Score Peserta 1</label>
+                            <input name="skorindividu1[{{ $i }}]" id="skorindividu1_{{ $i }}" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotal({{ $i }})">
+                        </div>
+                        <div class="input-field">
+                            <label for="skorindividu2[{{ $i }}]">Score Peserta 2</label>
+                            <input name="skorindividu2[{{ $i }}]" id="skorindividu2_{{ $i }}" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotal({{ $i }})">
+                        </div>
+                        <div class="input-field">
+                            <label for="total[{{ $i }}]">Score Team:</label>
+                            <input @disabled(true) type="number" id="total_{{ $i }}" name="total[{{ $i }}]" readonly>
+                        </div>
                     </div>
-                    
                 </div>
-              </div>
-              <button type="submit" class="nextBtn">
-                <span class="btnText">Submit</span>
-                <i class="uil uil-navigator"></i>
-            </button>
-        </div>
-      </form>
+            </div>
+        @endfor
+    
+        <button type="submit" class="nextBtn">
+            <span class="btnText">Submit</span>
+            <i class="uil uil-navigator"></i>
+        </button>
+    </form>
+    
   </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -254,37 +288,53 @@ $("body").css(
 });
 </script>
 <script>
-    function hitungTotall() {
-      const form = document.getElementById("penilaian");
-      const skorindividu1 = parseFloat(form.skorindividu1.value) || 0;
-      const skorindividu2 = parseFloat(form.skorindividu2.value) || 0;
+   const pesertaData = @json($peserta);
 
-      const total = (skorindividu1 + skorindividu2) / 2;
-      form.total.value = total;
+// Ambil semua formulir yang ada
+const formElements = document.querySelectorAll('.form'); // Menggunakan class 'form' yang diberikan di kode HTML
+
+formElements.forEach((form, index) => { // Iterasi setiap formulir
+    const namaPesertaSelect = form.querySelector(`#team_${index + 1}`); // Gunakan selector dengan index yang sesuai
+    const universitySelect = form.querySelector(`#nama1_${index + 1}`);
+    const universitySelect2 = form.querySelector(`#nama2_${index + 1}`);
+    const skorIndividu1Input = form.querySelector(`#skorindividu1_${index + 1}`);
+    const skorIndividu2Input = form.querySelector(`#skorindividu2_${index + 1}`);
+    const totalInput = form.querySelector(`#total_${index + 1}`);
+
+    // Fungsi untuk menghitung total skor
+    function hitungTotal() {
+        const skor1 = parseInt(skorIndividu1Input.value) || 0;
+        const skor2 = parseInt(skorIndividu2Input.value) || 0;
+        totalInput.value = (skor1 + skor2) / 2;
     }
-  </script>
-<script>
-    const pesertaData = @json($peserta); // Membuat variabel JS dari data peserta
-    
-    const namaPesertaSelect = document.getElementById('team');
-    const universitySelect = document.getElementById('nama1');
-    const universitySelect2 = document.getElementById('nama2');
-    
+
     namaPesertaSelect.addEventListener('change', () => {
         const selectedPesertaId = namaPesertaSelect.value;
-        const selectedPeserta = pesertaData.find(p => p.instansi == selectedPesertaId);
-    
-        universitySelect.innerHTML = ''; 
+        const selectedPeserta = pesertaData.find(p => p.id == selectedPesertaId); // Gunakan id dari $peserta
+
+        universitySelect.innerHTML = '';
         universitySelect.options.add(new Option('Pilih Peserta', ''));
-        universitySelect2.innerHTML = ''; 
-        universitySelect2.options.add(new Option('Pilih Peserta', '')); 
+        universitySelect2.innerHTML = '';
+        universitySelect2.options.add(new Option('Pilih Peserta', ''));
         if (selectedPeserta) {
             universitySelect.options.add(new Option(selectedPeserta.nama, selectedPeserta.nama));
             universitySelect.value = selectedPeserta.nama;
-            universitySelect2.options.add(new Option(selectedPeserta.nama1, selectedPeserta.nama1));
-            universitySelect2.value = selectedPeserta.nama1; 
+            universitySelect2.options.add(new Option(selectedPeserta.nama1, selectedPeserta.nama1)); // Perbaiki untuk menggunakan nama1 yang sesuai
+            universitySelect2.value = selectedPeserta.nama1; // Perbaiki untuk menggunakan nama1 yang sesuai
         }
+
+        // Reset total setelah memilih peserta baru
+        skorIndividu1Input.value = '';
+        skorIndividu2Input.value = '';
+        totalInput.value = '';
     });
-    </script>
+
+    // Tambahkan event listener untuk input skor individu
+    skorIndividu1Input.addEventListener('input', hitungTotal);
+    skorIndividu2Input.addEventListener('input', hitungTotal);
+});
+
+  </script>
+
 </body>
 </html>

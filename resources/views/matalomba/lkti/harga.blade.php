@@ -103,11 +103,9 @@
 <!--==================== Mata Lomba ====================-->
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
-   <h1 class="upcomming">Price</h1>
+   <h1 class="upcomming">Harga</h1>
    
    <div class="item">
-     <span class="up-border"></span>
-       <span class="down-border"></span>
      <div class="item-right">
        <span class="leftup-border"></span>
        <span class="leftdown-border"></span>
@@ -134,7 +132,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <button class="tickets">Tutup/Closed</button>
+       <button class="tickets">Tutup</button>
      </div>
    </div>
    
@@ -150,7 +148,7 @@
      
      <div class="item-left">
        <p class="event">Phase 1</p>
-       <h2 class="title">Rp400.000</h2>
+       <h2 class="title">Rp170.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -165,7 +163,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <a class="tickets">Tutup/Closed</a>
+       <a class="tickets">Tutup</a>
      </div>
    </div>
    
@@ -181,7 +179,7 @@
      
      <div class="item-left">
        <p class="event">Phase 2</p>
-       <h2 class="title">Rp450.000</h2>
+       <h2 class="title">Rp200.000</h2>
        <div class="sce">
          <div class="icon">
            <i class="fa fa-table"></i>
@@ -196,7 +194,7 @@
          <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
        </div>
        <div class="fix"></div>
-       <a class="tickets">Tutup/Closed</a>
+       <a class="tickets">Tutup</a>
      </div>
    </div>
  </div>

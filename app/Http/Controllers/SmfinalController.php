@@ -34,10 +34,10 @@ class SmfinalController extends Controller
             'skorkrit2' => 'required|integer|min:0|max:100',
             'skorkrit3' => 'required|integer|min:0|max:100',
             'skorkrit4' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string|max:100',
-            'krit2' => 'required|string|max:100',
-            'krit3' => 'required|string|max:100',
-            'krit4' => 'required|string|max:100',
+            'krit1' => 'required|string',
+            'krit2' => 'required|string',
+            'krit3' => 'required|string',
+            'krit4' => 'required|string',
         ]);
         $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'];
         smfinal::create($tambah);
@@ -64,10 +64,10 @@ class SmfinalController extends Controller
             'skorkrit2' => 'required|integer|min:0|max:100',
             'skorkrit3' => 'required|integer|min:0|max:100',
             'skorkrit4' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string|max:100',
-            'krit2' => 'required|string|max:100',
-            'krit3' => 'required|string|max:100',
-            'krit4' => 'required|string|max:100',
+           'krit1' => 'required|string',
+            'krit2' => 'required|string',
+            'krit3' => 'required|string',
+            'krit4' => 'required|string',
     ]);
     $data = smfinal::find($id);
     $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'];
@@ -96,26 +96,9 @@ return view('matalomba/sm/final', compact('final'));
 }
 public function detailf($id){
     $dataa = smfinal::find($id);
-    $dataa->mutu1 = $this->calculateNilaiMutu($dataa->skorkrit1);
-    $dataa->mutu2 = $this->calculateNilaiMutu($dataa->skorkrit2);
-    $dataa->mutu3 = $this->calculateNilaiMutu($dataa->skorkrit3);
-    $dataa->mutu4 = $this->calculateNilaiMutu($dataa->skorkrit4);
     return view('matalomba/sm/detail/detailskor2', compact('dataa'));
- }
- private function calculateNilaiMutu($skorkrit)
-{
-    if ($skorkrit >= 85 && $skorkrit <= 100) {
-        return 'A';
-    } elseif ($skorkrit >= 65 && $skorkrit <= 84) {
-        return 'B';
-    } elseif ($skorkrit >= 45 && $skorkrit <= 64) {
-        return 'C';
-    } elseif ($skorkrit >= 25 && $skorkrit <= 44) {
-        return 'D';
-    } else {
-        return 'E';
-    }
 }
+
  public function pesertaf(){
     $peserta = pesertasm::all();
     

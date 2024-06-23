@@ -14,7 +14,7 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
-      <link rel="stylesheet" href="../css/pendaftaransm.css">
+      <link rel="stylesheet" href="../../css/pendaftaransm.css">
 
       <title>@lang('messages.daftar')</title>
       <style>
@@ -70,11 +70,11 @@
                      </li>
    
                      <li class="nav__item">
-                        <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
+                        <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
                      </li>
                      
                      <li class="nav__item">
-                        <a href="{{url('matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
+                        <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.juri')</a>
                      </li>
                </ul>
 
@@ -134,7 +134,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="npm_1">@lang('messages.npm')</label>
-                                <input type="text" name="npm_1" id="npm_1" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_1') is-invalid @enderror required>
+                                <input type="number" name="npm_1" id="npm_1" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_1') is-invalid @enderror required>
                                 @error('npm_1')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -179,21 +179,21 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_1">@lang('messages.krs')i</label>
+                                <label for="krs_1">@lang('messages.krs')</label>
                                 <input name="krs_1" id="krs_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_1') is-invalid @enderror required>
                                 @error('krs_1')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_1">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
-                                <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_1') is-invalid @enderror required>
+                                <label for="buktifollow_1">@lang('messages.bukti')(Instagram,Tiktok,Youtube), max 3mb</label>
+                                <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".pdf, .PDF" @error('buktifollow_1') is-invalid @enderror required>
                                 @error('buktfollow_1')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_1">Upload Twibbon </label>
+                                <label for="twibbon_1">Upload Twibbon, max 3mb </label>
                                 <input name="twibbon_1" id="twibbon_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_1') is-invalid @enderror required>
                                 @error('twibbon_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -234,7 +234,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="npm_2">@lang('messages.npm')</label>
-                                <input type="text" name="npm_2" id="npm_2" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_2') is-invalid @enderror required>
+                                <input type="number" name="npm_2" id="npm_2" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_2') is-invalid @enderror required>
                                 @error('npm_2')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -286,14 +286,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_2">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
-                                <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_2') is-invalid @enderror required>
+                                <label for="buktifollow_2">@lang('messages.bukti')(Instagram,Tiktok,Youtube), max 3mb</label>
+                                <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".pdf, .PDF" @error('buktifollow_2') is-invalid @enderror required>
                                 @error('buktifollow_2')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_2">Upload Twibbon </label>
+                                <label for="twibbon_2">Upload Twibbon, max 3mb </label>
                                 <input name="twibbon_2" id="twibbon_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_2') is-invalid @enderror required>
                                 @error('twibbon_2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -334,7 +334,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="npm_3">@lang('messages.npm')</label>
-                                <input type="text" name="npm_3" id="npm_3" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_3') is-invalid @enderror required>
+                                <input type="number" name="npm_3" id="npm_3" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_3') is-invalid @enderror required>
                                 @error('npm_3')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -386,14 +386,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_3">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
-                                <input name="buktifollow_3" id="buktifollow_3" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_3') is-invalid @enderror required>
+                                <label for="buktifollow_3">@lang('messages.bukti')(Instagram,Tiktok,Youtube), max 3mb</label>
+                                <input name="buktifollow_3" id="buktifollow_3" type="file" accept=".pdf, .PDF" @error('buktifollow_3') is-invalid @enderror required>
                                 @error('buktfollow_3')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_3">Upload Twibbon </label>
+                                <label for="twibbon_3">Upload Twibbon, max 3mb </label>
                                 <input name="twibbon_3" id="twibbon_3" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_3') is-invalid @enderror required>
                                 @error('twibbon_3')
                                 <div class="text-danger">{{ $message }}</div>
@@ -434,7 +434,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="npm_4">@lang('messages.npm')</label>
-                                <input type="text" name="npm_4" id="npm_4" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_4') is-invalid @enderror required>
+                                <input type="number" name="npm_4" id="npm_4" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_4') is-invalid @enderror required>
                                 @error('npm_4')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -486,14 +486,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_4">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
-                                <input name="buktifollow_4" id="buktifollow_4" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_4') is-invalid @enderror required>
+                                <label for="buktifollow_4">@lang('messages.bukti')(Instagram,Tiktok,Youtube), max 3mb </label>
+                                <input name="buktifollow_4" id="buktifollow_4" type="file" accept=".pdf, .PDF" @error('buktifollow_4') is-invalid @enderror required>
                                 @error('buktifollow_4')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_4">Upload Twibbon</label>
+                                <label for="twibbon_4">Upload Twibbon, max 3mb</label>
                                 <input name="twibbon_4" id="twibbon_4" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_4') is-invalid @enderror required>
                                 @error('twibbon_4')
                                 <div class="text-danger">{{ $message }}</div>
@@ -534,7 +534,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="npm_5">@lang('messages.npm')</label>
-                                <input type="text" name="npm_5" id="npm_5" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_5') is-invalid @enderror required>
+                                <input type="number" name="npm_5" id="npm_5" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm_5') is-invalid @enderror required>
                                 @error('npm_5')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -586,14 +586,14 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="buktifollow_5">@lang('messages.bukti')(Instagram,Tiktok,Youtube)</label>
-                                <input name="buktifollow_5" id="buktifollow_5" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_5') is-invalid @enderror required>
+                                <label for="buktifollow_5">@lang('messages.bukti')(Instagram,Tiktok,Youtube), max 3mb</label>
+                                <input name="buktifollow_5" id="buktifollow_5" type="file" accept=".pdf, .PDF" @error('buktifollow_5') is-invalid @enderror required>
                                 @error('buktfollow_5')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon_5">Upload Twibbon</label>
+                                <label for="twibbon_5">Upload Twibbon, max 3mb</label>
                                 <input name="twibbon_5" id="twibbon_5" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon_5') is-invalid @enderror required>
                                 @error('twibbon_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -626,9 +626,16 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="surat_delegasi">@lang('messages.surat') *format: pdf</label>
+                                <label for="surat_delegasi">@lang('messages.surat') *format: pdf, max 3mb</label>
                                 <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror  required>
                                 @error('surat_delegasi')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="bio">@lang('messages.lembarbio') *format: pdf, max 3mb</label>
+                                <input type="file" name="bio" id="bio" accept=".pdf, .PDF" @error('bio') is-invalid @enderror  required>
+                                @error('bio')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -695,6 +702,5 @@
   });
       </script>
       <script src="../../js/nav.js"></script>
-      <script src="../../js/daftarlomba.js"></script>
    </body>
 </html>

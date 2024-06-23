@@ -102,7 +102,7 @@
       
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
-  <h1 class="upcomming">Price</h1>
+  <h1 class="upcomming">Harga</h1>
   
   <div class="item">
     <span class="up-border"></span>
@@ -133,7 +133,7 @@
         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
       </div>
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">Tutup</button>
     </div>
   </div>
   
@@ -164,7 +164,7 @@
         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
       </div>
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">Tutup</button>
     </div>
   </div>
   
@@ -195,7 +195,7 @@
         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
       </div>
       <div class="fix"></div>
-      <button class="tickets">Tutup/Closed</button>
+      <button class="tickets">Tutup</button>
     </div>
   </div>
 </div>

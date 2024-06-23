@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 2600px;
+    min-height: 3400px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -69,7 +69,7 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }

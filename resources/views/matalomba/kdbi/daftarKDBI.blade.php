@@ -101,7 +101,7 @@
             @csrf
             <div class="form first">
                 <div class="details personal">
-                        <span class="title">Debater 1</span>
+                        <span class="title">Peserta 1</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_1">@lang('messages.Name')</label>
@@ -192,7 +192,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon">Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                                 @error('twibbon')
                                 <div class="text-danger">{{ $message }}</div>
@@ -201,7 +201,7 @@
                         </div>
                     </div>
                     <div class="details ">
-                        <span class="title">Debater 2</span>
+                        <span class="title">Peserta 2</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_2">@lang('messages.Name')</label>
@@ -292,7 +292,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon2">Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon2">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input name="twibbon2" id="twibbon2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon2') is-invalid @enderror required>
                                 @error('twibbon2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -321,7 +321,7 @@
     
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Checkout</span>
+                        <span class="btnText">Pembayaran</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
                 </div>
@@ -331,7 +331,6 @@
 </section>
 
 <script src="../../js/nav.js"></script>
-<script src="../../js/daftarlomba.js"></script>
     </body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->

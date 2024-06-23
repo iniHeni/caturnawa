@@ -2,7 +2,7 @@
 .konten{
     position: relative;
     max-width: 1350px;
-    width: 100%;
+    width: 200%;
     border-radius: 20px;
     padding: 30px;
     margin: 0 15px;
@@ -12,8 +12,8 @@
 }
 .konten header{
     position: relative;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 700;
     color: #333;
 }
 .konten header::before{
@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 350px;
+    min-height: 450px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -56,8 +56,8 @@ form.secActive .form.first{
 .konten form .title{
     display: block;
     margin-bottom: 8px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     margin: 6px 0;
     color: #333;
 }

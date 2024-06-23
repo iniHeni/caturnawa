@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <link rel="stylesheet" href="../../../css/tambahsm.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
@@ -55,12 +55,16 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
-        <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin Short Movie </a></h2>
-        </div>
-    </nav>
+  <nav class="nav container">
+      <div class="nav_menu" id="nav-menu">
+          <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+      </div>
+      <div class="nav_logo" id="nav-logo">
+          <img class="logo" src="../../img/uf2.png" alt="Logo">
+          <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
+      </div>
+  </nav>
 </header>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
 

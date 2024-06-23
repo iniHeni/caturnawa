@@ -108,7 +108,7 @@ public function hapusedc2($id){
         return $item;
     });
 
-    $perPage = 4; 
+    $perPage = 20; 
     $currentPage = Paginator::resolveCurrentPage();
     $dataa = $dataa->slice(($currentPage - 1) * $perPage, $perPage)->all();
     $paginatedData = new Paginator($dataa, $perPage, $currentPage);
@@ -131,7 +131,7 @@ public function hapusedc2($id){
         return $item;
     });
 
-    $perPage = 4; 
+    $perPage = 20; 
     $currentPage = Paginator::resolveCurrentPage();
     $dataa = $dataa->slice(($currentPage - 1) * $perPage, $perPage)->all();
     $paginatedData = new Paginator($dataa, $perPage, $currentPage);

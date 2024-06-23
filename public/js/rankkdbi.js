@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = "/matalomba/daftarKDBI"; 
           });
         } else if ((now < phaseStart || now > phaseEnd) && !ticketsButton.classList.contains("tickets")) {
-          ticketsButton.textContent = "Tutup/Closed";
+          ticketsButton.textContent = "Closed";
           ticketsButton.classList.remove("daftar");
           ticketsButton.classList.add("tickets");
           ticketsButton.href = "#";

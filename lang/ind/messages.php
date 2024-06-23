@@ -34,7 +34,7 @@ return [
     
     //Admin Page
     'admin' => 'Selamat Datang Juri dan Tabulator!',
-    'admin1' => 'Tekan tombol Admin di bagian Navbar untuk membuka atau menutup Menu Admin!',
+    'admin1' => 'Tekan tombol Menu di bagian kanan Navbar untuk membuka atau menutup Menu Admin!',
     'ronde1' => 'Ronde 1',
     'ronde2' => 'Ronde 2',
     'ronde3' => 'Ronde 3',
@@ -54,20 +54,20 @@ return [
     'pendaftaran' => 'Pendaftaran',
     'identitas' => 'Identitas',
     'Name' =>'Nama Lengkap',
-    'Nomor' =>'Nomor Whatssapp',
+    'Nomor' =>'Nomor WhatsApp',
     'fakultas' => 'Fakultas',
-    'prodi' => 'Prodi',
+    'prodi' => 'Program Studi',
     'gender' => 'Jenis Kelamin',
     'pria' => 'Pria',
     'wanita' => 'Wanita',
     'alamat' => 'Alamat Lengkap',
-    'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg*Maks 5MB',
-    'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg*Maks 5MB',
-    'krs' => 'Kartu Rencana Studi *format:jpg,png,jpeg*Maks 5MB',
-    'bukti' => 'Bukti Follow Social Media UNAS Fest *format:jpg,png,jpeg*Maks 5MB',
+    'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg, Max 3MB',
+    'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg, Max 3MB',
+    'krs' => 'Kartu Rencana Studi *format:jpg,png,jpeg, Max 3MB',
+    'bukti' => 'Bukti Follow Social Media UNAS Fest *format:pdf',
     'team' => 'Berkas Team',
     'instansi' => 'Asal Instansi',
-    'surat' => 'Surat Delegasi Kampus scan:pdf *Maks 5MB',
+    'surat' => 'Surat Delegasi Kampus scan:pdf , Max 3MB',
     'Capaian' => 'Capaian Unggulan',
     'namakegiatan' => 'Nama Kegiatan',
     'jenis' => 'Jenis Kegiatan',
@@ -77,19 +77,38 @@ return [
     'regional' => 'Regional',
     'nasional' => 'Nasional',
     'provinsi' => 'Provinsi',
-    'sertif' => 'Sertifikat scan:pdf *Maks 5MB' ,
+    'sertif' => 'Sertifikat scan:pdf , Max 3MB' ,
     'bayar' => 'Pembayaran',
     'kembali' => 'Kembali',
     'Pesan' => 'Pesan',
     'Send' => 'Kirim Pesan',
     'ketua' => 'Ketua Tim',
     'member' => 'Anggota',
-    'link' => 'Link Vidio Youtube',
+    'link' => 'Link Video Youtube',
     'bio' => 'Biodata Peserta',
     // Form End 
     // placeholder start
-    'place' => 'Masukkan',
+    'place' => 'Isi',
     // place holder end
+
+// Harga indo
+'harga' => 'Harga',
+    'tahap' => 'Pendaftaran Awal',
+    'tahap1' => 'Tahap 1',
+    'tahap2' => 'Tahap 2',
+    'tahap3' => 'Tahap 3',
+    'Rp' => 'Rp 300.000/Tim',
+    'Rp1' => 'Rp 400.000/Tim',
+    'Rp2' => 'Rp 450.000/Tim',
+    'tgl' => 'Juli',
+    'tgl1' => 'Agustus',
+    'tutup' => 'Tutup',
+
+    
+
+
+
+
 
      // Data Juri Start
 
@@ -275,5 +294,60 @@ return [
          'jurispcbio4' => 'Saya seorang mahasiswa sarjana di Fakultas Ilmu Kesehatan. Saya belajar banyak dari orang-orang, terutama bagaimana koneksi dibuat melalui acara. Saya mahir berbicara di depan umum, yang menyebabkan saya memenangkan kontes debat, konferensi internasional, berpartisipasi dalam beberapa organisasi, dan dari itu, saya sangat memperhatikan isu-isu sosial. Untuk menunjukkan minat itu, saya memimpin panduan belajar yang disebut Rumah Belajar.',
          // SPC
      // Data Juri End
+     'penilaian' => 'Penilaian Meliputi',
+     'team1' => 'Team Peserta',
+     'peserta1' => 'Peserta',
+     'kuanti' => 'Kuantitatif',
+     'kuali' => 'Kualitatif',
+     'nilaimutu' => 'Nilai Mutu',
+     
+     'krit1' => 'Kesesuaian film dengan tema',
+     'krit2' => 'Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film',
+     'krit3' => 'Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda',
+     'krit4' => 'Seberapa orisinalitas cerita dalam script',
+     'krit5' => 'Kedalaman riset dan observasi dalam film',
+     'krit6' => 'Kejelasan dalam struktur dan alur cerita',
+     'krit7' => 'Keutuhan cerita yang di gambarkan',
+     'krit8' => 'Pemilihan bahasa yang digunakan',
+     'krit9' => 'Kesesuaian dengan isi script',
+     'krit10' => 'Kejelasan dalam menggambarkan adegan dengan detail',
+     'krit11' => 'Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual',
+     'krit12' => 'Kesesuaian storyboard dengan film',
+
+     'kritsf1' => 'Ketepatan dan kesesuaian white balance',
+     'kritsf2' => 'Ketetapan dan kesesuaian angle, pergerakan kamera, dan komposisi',
+     'kritsf3' => 'Ketepatan dan kesesuaian key light',
+     'kritsf4' => 'Ketepatan dan kesesuaian teknik penataan lampu',
+     'kritsf5' => 'Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realitas yang diperoleh menjadi suatu yang menarik untuk ditonton',
+     'kritsf6' => 'Kesesuaian antara gambar dan suara serta estetika dalam film',
+     'kritsf7' => 'Kelarasan musik dengan film',
+     'kritsf8' => 'Ketepatan dan kesesuaian teknik cutting',
+     'kritsf9' => 'Ketepatan poster dengan film',
+     'kritsf10' => 'Komposisi gambar : warna dan tata letak objek dalam gambar',
+     'kritsf11' => 'Keindahan/sisi artistik penyajian visual',
+     'kritsf12' => 'Jumlah like dan view film yang tayang di Youtube',
+
+     'kritf1' => 'Ide cerita dalam film',
+     'kritf2' => 'Tujuan film dan pengaruh film',
+     'kritf3' => 'Kemampuan dan pemahaman membuat film',
+     'kritf4' => 'Etika dalam mempresentasikan film',
+
+     'lktisf1' => 'Penyajian Karya Tulis ilmiah',
+     'lktisf2' => 'Substansi KaryaTulis',
+     'lktisf3' => 'Kualitas Karya Tulis Ilmiah',
+
+     'lktif1' => 'Pemaparan Materi dan Presentasi Ilmiah',
+     'lktif2' => 'Pertanyaan dan Jawaban',
+     'lktif3' => 'Aspek Kesesuaian dengan Tema',
+     'orginal' => 'Originalitas Karya',
+     'pengesahan' => 'Pengesahan Karya',
+     'hakcipta' =>  'Hak Cipta Karya',
+     'lembar' =>  'Lembar Originalitas karya',
+     'lembarbio' =>  'Lembar Biodata',
+     'asal' =>  'Pilih Asal Negara',
+     
+
+
+     
 ]
 ?>

@@ -23,9 +23,9 @@ class LoginadminController extends Controller
             session();
             $matalomba = $request->input('lang');
             if ($matalomba === 'kdbi') {
-                return redirect()->route('kdbi.mainmenu');
+                return redirect()->route('mainmenukdbi.show');
             } else if ($matalomba === 'edc') {
-                return redirect()->route('edc.mainmenu');
+                return redirect()->route('mainmenu.show');
             } else if ($matalomba === 'spc') {
                 return redirect()->route('spc.mainmenu');
             } else if ($matalomba === 'sm') {

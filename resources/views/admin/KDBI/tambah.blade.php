@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../css/admin.css">
-    <link rel="stylesheet" href="../../../css/navmenu.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <link rel="stylesheet" href="../../../css/tambahpenyisihan.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
@@ -56,9 +56,13 @@
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
     <nav class="nav container">
+        <div class="nav_menu" id="nav-menu">
+            <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
+
+        </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin KDBI </a></h2>
+            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
 </header>
@@ -137,8 +141,13 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="input-field">
-                        <label for="room">Room/Ruangan </label>
-                        <input type="text" id="room" name="room" placeholder="Masukkan Ruangan" required>
+                        <label for="room"> </label>
+                        <select name="room" id="room"  required >
+                            <option selected>Breakout Room</option>
+                            <option>1</option> 
+                            <option>2</option> 
+                            <option>3</option> 
+                        </select>
                     </div>
                     @error('room')
                     <div class="text-danger">{{ $message }}</div>
@@ -169,6 +178,40 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     <div class="input-field">
+                        <label for="posisi1">Posisi Peserta 1 </label>
+                        <select name="posisi1" id="posisi1"  required >
+                            <option selected>Pilih Posisi</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
+                        </select>
+                    </div>
+                    @error('posisi1')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="input-field">
+                        <label for="posisi2">Posisi Peserta 2 </label>
+                        <select name="posisi2" id="posisi2" required >
+                            <option selected>Pilih Posisi</option> 
+                            <option>PM</option> 
+                            <option>DPM</option> 
+                            <option>MoG</option> 
+                            <option>Whip Gov</option> 
+                            <option>LoO</option> 
+                            <option>DLoO</option> 
+                            <option>MoO</option> 
+                            <option>Whip Opp</option> 
+                        </select>
+                    </div>
+                    @error('posisi2')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="input-field">
                         <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
                         <select name="nama1" id="nama1"  required >
                             <option selected>Pilih Peserta</option> 
@@ -177,19 +220,7 @@
                     @error('nama1')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
-                    <div class="input-field">
-                        <label for="posisi1">Posisi Peserta 1 </label>
-                        <select name="posisi1" id="posisi1"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    @error('posisi1')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    
                     <div class="input-field">
                         <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
                         <select d name="nama2" id="nama2"  required >
@@ -197,19 +228,6 @@
                         </select>
                     </div>
                     @error('nama2')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="posisi2">Posisi Peserta 2 </label>
-                        <select name="posisi2" id="posisi2" required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    @error('posisi2')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -261,7 +279,7 @@
     });
     </script>
 <!-- Script untuk memanggil file admin.js -->
-<script src="../../../js/adminEDC.js"></script>
+<script src="../../../js/adminKDBI.js"></script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {
     document.body.classList.toggle("sidebar-open");
