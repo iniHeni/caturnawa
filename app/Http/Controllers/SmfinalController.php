@@ -34,10 +34,10 @@ class SmfinalController extends Controller
             'skorkrit2' => 'required|integer|min:0|max:100',
             'skorkrit3' => 'required|integer|min:0|max:100',
             'skorkrit4' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string',
-            'krit2' => 'required|string',
-            'krit3' => 'required|string',
-            'krit4' => 'required|string',
+            'krit1' => 'required',
+            'krit2' => 'required',
+            'krit3' => 'required',
+            'krit4' => 'required',
         ]);
         $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'];
         smfinal::create($tambah);
@@ -64,10 +64,10 @@ class SmfinalController extends Controller
             'skorkrit2' => 'required|integer|min:0|max:100',
             'skorkrit3' => 'required|integer|min:0|max:100',
             'skorkrit4' => 'required|integer|min:0|max:100',
-           'krit1' => 'required|string',
-            'krit2' => 'required|string',
-            'krit3' => 'required|string',
-            'krit4' => 'required|string',
+           'krit1' => 'required',
+            'krit2' => 'required',
+            'krit3' => 'required',
+            'krit4' => 'required',
     ]);
     $data = smfinal::find($id);
     $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'];

@@ -21,13 +21,13 @@ return new class extends Migration
             $table->string('peserta5');
             $table->string('juri');
             $table->integer('skorkrit1');
-            $table->string('krit1');
+            $table->text('krit1');
             $table->integer('skorkrit2');
-            $table->string('krit2');
+            $table->text('krit2');
             $table->integer('skorkrit3');
-            $table->string('krit3');
+            $table->text('krit3');
             $table->integer('skorkrit4');
-            $table->string('krit4');
+            $table->text('krit4');
             $table->integer('total');
             $table->timestamps();
         });

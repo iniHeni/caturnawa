@@ -55,13 +55,13 @@ class PesertasmController extends Controller
 
     public function updatepee(Request $request, $id){
     $update = $request->validate([
-        'instansi' => 'required|string|max:50',
-        'namateam' => 'required|string|max:50',
-            'nama' => 'required|string|max:50',
-            'nama1' => 'required|string|max:50',
-            'nama2' => 'required|string|max:50',
-            'nama3' => 'required|string|max:50',
-            'nama4' => 'required|string|max:50',
+        'instansi' => 'required|string',
+        'namateam' => 'required|string',
+            'nama' => 'required|string',
+            'nama1' => 'required|string',
+            'nama2' => 'required|string',
+            'nama3' => 'required|string',
+            'nama4' => 'required|string',
             'email' => 'required|email',
             'email1' => 'required|email',
             'email2' => 'required|email',
@@ -72,7 +72,7 @@ class PesertasmController extends Controller
             'nohp2' => 'required',
             'nohp3' => 'required',
             'nohp4' => 'required',
-            'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
     ]);
     $update = $request->all();
     if($request->hasFile('logo'))

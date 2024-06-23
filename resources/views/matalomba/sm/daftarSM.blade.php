@@ -612,15 +612,15 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="namateam">Team Name</label>
-                                <input type="text" name="namateam" id="namateam" placeholder="@lang('messages.place') Teamname"  @error('instansi') is-invalid @enderror required>
+                                <label for="namateam">@lang('messages.teamm')</label>
+                                <input type="text" name="namateam" id="namateam" placeholder="@lang('messages.place') @lang('messages.teamm')"  @error('instansi') is-invalid @enderror required>
                                 @error('instansi')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
                                 <label for="linkvidio">Link Video *Optional</label>
-                                <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror required>
+                                <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror >
                                 @error('linkvidio')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -643,7 +643,7 @@
     
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Checkout</span>
+                        <span class="btnText">@lang('messages.Daftar')</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
             </div>

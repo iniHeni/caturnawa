@@ -228,8 +228,8 @@
         <style>
             .table-bordered td,
             .table-bordered th {
-                border: 2px solid black !important;
-                text-align: center;
+                border: 2px solid #dee2e6 !important;
+                text-align: left;
                 vertical-align: middle;
             }
 

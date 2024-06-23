@@ -54,7 +54,7 @@ class OrdersmController extends Controller
             'nomorhp_5'=> 'required',
             'namateam' => 'required|string|max:50',
             'instansi' => 'required|string|max:50',
-            'linkvidio' => 'required',
+            'linkvidio' => 'nullable|string',
             'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
             'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
             'ktm_3' => 'required|mimes:png,jpeg,jpg|max:3000',
@@ -191,7 +191,7 @@ class OrdersmController extends Controller
             $path = $request->file('foto_5')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/images/sm/foto5/' . $image_name);
 
-            $ordersm['foto5'] = $imageUrl;
+            $ordersm['foto_5'] = $imageUrl;
 
         }
         if($request->hasFile('krs_1'))
@@ -374,7 +374,7 @@ class OrdersmController extends Controller
             $image = $request->file('bio');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('bio')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/document/sm/surat/' . $image_name);
+            $imageUrl = asset('storage/document/sm/bio/' . $image_name);
 
             $ordersm['bio'] = $imageUrl;
 
@@ -421,14 +421,13 @@ $params = array(
     'id' => $ordersm->id,
     'price' => $ordersm->price,
     'quantity' => 1,
-    'name' =>  "ShortMovie Competition",
+    'name' =>  "Short Movie Competition",
     ),
 ),
 'customer_details' => array(
-    'first_name' => $request->nama_1,
+    'first_name' => $ordersm->instansi . '-' . $ordersm->namateam,
     'email' => $request->email_1,
-    'last_name' => $request->nama_2,
-    'phone' => $request->nomorhp_2,
+    'phone' => $request->nomorhp_1 . "(ketua)",
 ),
 );
 

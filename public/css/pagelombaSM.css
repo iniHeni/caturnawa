@@ -12,7 +12,6 @@
 .judul{
   text-align: center;
   color: white;
-  margin-top: 6rem;
   
 }
 .card{
@@ -191,17 +190,22 @@
     object-fit: cover;
   }
   .card-list span {
-    display: inline-block;
+    display: block;         
     background: #F7DFF5;
-    margin-top: 32px;
+    margin: 70px; 
+    margin-top: 20;
+    margin-bottom: 20;     
     padding: 8px 15px;
     font-size: 1rem;
     border-radius: 50px;
     font-weight: 600;
-  }
+    text-align: center;     
+}
   .card-list .developer {
     background-color: #F7DFF5; 
     color: #B22485;
+    padding: 8px 10px;
+
 }   
 .card-list .designer {
     background-color: #d1e8ff;
@@ -210,6 +214,8 @@
 .card-list .editor {
     background-color: #d6f8d6; 
     color: #205c20;
+
+
 }
   .card-item h3 {
     color: #000;
@@ -262,7 +268,7 @@
 
 .main .title{
   font-size: 30px;
-  margin-top: 25rem;
+  margin-top: 10rem;
   text-align: center;
   color: #f6ae31;
 }

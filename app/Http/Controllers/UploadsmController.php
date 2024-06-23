@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\uploadsm;
 use App\Models\ordersm;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class UploadsmController extends Controller
@@ -119,7 +120,8 @@ class UploadsmController extends Controller
 
         }
         $uploadsm = uploadsm::create($uploadsm);
-        flash('Success', 'Thankyou,Wait for further information from us');
+        session()->flash('success', 'Terimakasih!, Tunggu Informasi Selanjutnya dari kami');
+
         return redirect()->route('utama');
     }
 }

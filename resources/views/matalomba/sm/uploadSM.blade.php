@@ -145,7 +145,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="script">script *PDF Max 3mb</label>
+                                <label for="script">Script *PDF Max 3mb</label>
                                 <input type="file" name="script" id="script" accept=".pdf, .PDF" @error('script') is-invalid @enderror  required>
                                 @error('script')
                                 <div class="text-danger">{{ $message }}</div>
@@ -196,8 +196,9 @@
                         </div>
     
                     </div>
+                    
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Send</span>
+                        <span class="btnText">@lang('messages.Send1')</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
             </div>

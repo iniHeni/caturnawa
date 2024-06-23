@@ -7,6 +7,7 @@ use App\Models\pesertasm;
 use App\Models\smsfinal;
 use App\Models\smsemiinal;
 use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Support\Facades\DB;
 
 class SmsfinalController extends Controller
@@ -40,18 +41,18 @@ class SmsfinalController extends Controller
             'skorkrit10' => 'required|integer|min:0|max:100',
             'skorkrit11' => 'required|integer|min:0|max:100',
             'skorkrit12' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string',
-            'krit2' => 'required|string',
-            'krit3' => 'required|string',
-            'krit4' => 'required|string',
-            'krit5' => 'required|string',
-            'krit6' => 'required|string',
-            'krit7' => 'required|string',
-            'krit8' => 'required|string',
-            'krit9' => 'required|string',
-            'krit10' => 'required|string',
-            'krit11' => 'required|string',
-            'krit12' => 'required|string',
+            'krit1' => 'required',
+            'krit2' => 'required',
+            'krit3' => 'required',
+            'krit4' => 'required',
+            'krit5' => 'required',
+            'krit6' => 'required',
+            'krit7' => 'required',
+            'krit8' => 'required',
+            'krit9' => 'required',
+            'krit10' => 'required',
+            'krit11' => 'required',
+            'krit12' => 'required',
         ]);
         $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'] + $tambah['skorkrit5'] + $tambah['skorkrit6'] + $tambah['skorkrit7'] + $tambah['skorkrit8'] + $tambah['skorkrit9'] + $tambah['skorkrit10'] + $tambah['skorkrit11'] + $tambah['skorkrit12'];
         smsfinal::create($tambah);
@@ -86,18 +87,18 @@ class SmsfinalController extends Controller
             'skorkrit10' => 'required|integer|min:0|max:100',
             'skorkrit11' => 'required|integer|min:0|max:100',
             'skorkrit12' => 'required|integer|min:0|max:100',
-            'krit1' => 'required|string',
-            'krit2' => 'required|string',
-            'krit3' => 'required|string',
-            'krit4' => 'required|string',
-            'krit5' => 'required|string',
-            'krit6' => 'required|string',
-            'krit7' => 'required|string',
-            'krit8' => 'required|string',
-            'krit9' => 'required|string',
-            'krit10' => 'required|string',
-            'krit11' => 'required|string',
-            'krit12' => 'required|string',
+            'krit1' => 'required',
+            'krit2' => 'required',
+            'krit3' => 'required',
+            'krit4' => 'required',
+            'krit5' => 'required',
+            'krit6' => 'required',
+            'krit7' => 'required',
+            'krit8' => 'required',
+            'krit9' => 'required',
+            'krit10' => 'required',
+            'krit11' => 'required',
+            'krit12' => 'required',
     ]);
     $data = smsfinal::find($id);
     $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'] + $update['skorkrit5'] + $update['skorkrit6'] + $update['skorkrit7'] + $update['skorkrit8'] + $update['skorkrit9'] + $update['skorkrit10'] + $update['skorkrit11'] + $update['skorkrit12'];

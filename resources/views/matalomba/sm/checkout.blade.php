@@ -477,51 +477,85 @@
       });</script>
       <script src="../../js/loader.js"></script>
       <script src="../../js/daftarlomba.js"></script>
-      <script type="text/javascript">
-        // For example trigger on button clicked, or any time you need
-        var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function () {
-          // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-          window.snap.pay('{{$snapToken}}', {
-        onSuccess: function(result){
-            Swal.fire({
-    icon: 'success',
-    title: 'Payment Succes!',
-    text: 'Anda akan diarahkan ke halaman Lomba.',
-    showConfirmButton: false, 
-    timer: 2000,
-  }).then(() => {
-    window.location.href = '/homesm/{{$ordersm->id}}'; 
-    console.log(result); 
-  });
-        },
-        onPending: function(result){
-          /* You may add your own implementation here */
-          alert("wating your payment!"); console.log(result);
-        },
-        onError: function(result){
-            Swal.fire({
-    icon: 'info',
-    title: 'Waiting Payment',
-    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
-    showConfirmButton: false, // Tidak menampilkan tombol OK
-    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
-    didOpen: () => {
-      Swal.showLoading(); // Menampilkan animasi loading
-    },
-  });
-  console.log(result); 
-          
-        },
-        onClose: function(){
-            Swal.fire({
-    icon: 'warning',
-    title: 'Payment Canceled',
-    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
-  });
-        }
-      })
-    });
+            <script type="text/javascript">
+                // For example trigger on button clicked, or any time you need
+                var payButton = document.getElementById('pay-button');
+                payButton.addEventListener('click', function () {
+                // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+                window.snap.pay('{{$snapToken}}', {
+                onSuccess: function(result){
+                    Swal.fire({
+            icon: 'success',
+            title: 'Payment Succes!',
+            text: 'Anda akan diarahkan ke halaman Lomba.',
+            showConfirmButton: false, 
+            timer: 2000,
+        }).then(() => {
+            window.location.href = '/homesm/{{$ordersm->id}}'; 
+            console.log(result); 
+        });
+                },
+                onPending: function(result) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Waiting Payment',
+            text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+            Swal.showLoading();
+            },
+        });
+                console.log(result);
+                },
+                let checkInterval = setInterval(() => {
+                    checkPaymentStatus(result.transaction_id) 
+                        .then((status) => {
+                            if (status === 'settlement') {
+                                clearInterval(checkInterval); 
+                                window.location.href = '/homesm/{{$ordersm->id}}'; // Redirect jika settlement
+                            } else if (status === 'deny') {
+                                clearInterval(checkInterval); 
+                                location.reload(); 
+                            }
+                           
+                        })
+                        .catch((error) => {
+                            clearInterval(checkInterval); 
+                            console.error("Error saat memeriksa status pembayaran:", error);
+                            
+                        });
+                }, 5000); 
+           
+                onError: function(result) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
+            showCancelButton: true, 
+            confirmButtonText: 'Coba Lagi',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            
+            } else {
+                window.location.href = '/homesm/{{$ordersm->id}}'; 
+            }
+        });
+
+        console.error("Error pembayaran:", result);
+                
+                },
+                onClose: function(){
+                    Swal.fire({
+            icon: 'warning',
+            title: 'Payment Canceled',
+            text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+        });
+                }
+            })
+            });
+            
       </script>
    </body>
 </html>

@@ -138,25 +138,27 @@
         <h1 class="judul">@lang('messages.babak')</h1>
         <div class="card-list">
             <a href="{{url('matalomba/sm/penyisihan') }}" class="card-item">
-                <img src="../../img/spc.png" alt="Card Image">
+                <img src="../../img/sm1.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>27 - 28 September 2024
+                </h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                 </div>
             </a>
             <a href="{{url('matalomba/sm/sfinal') }}" class="card-item">
-              <img src="../../img/sm.png" alt="Card Image">
+              <img src="../../img/sm1.png" alt="Card Image">
               <span class="designer">Semifinal</span>
-              <h3>@lang('messages.dilaksanakan')</h3>
+              <h3>@lang('messages.dilaksanakan')<br>30 September 2024
+              </h3>
               <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="final"></i>
               </div>
           </a>
                 <a href="{{url('matalomba/sm/final') }}" class="card-item">
-                    <img src="../../img/sm.png" alt="Card Image">
+                    <img src="../../img/sm1.png" alt="Card Image">
                     <span class="editor">Final</span>
-                    <h3>@lang('messages.dilaksanakan')</h3>
+                    <h3>@lang('messages.dilaksanakan')<br>15 Oktober 2024</h3>
                     <div class="arrow">
                         <i class="fas fa-arrow-right card-icon" id="final"></i>
                     </div>

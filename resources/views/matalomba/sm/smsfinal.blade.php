@@ -94,14 +94,14 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard @lang('messages.penyisihan') Semifinal</h1>
+            <h1 class="judul" style="color: white" >Leaderboard Semifinal</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                     <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
                             <th scope="col">@lang('messages.team1')</th>
                             <th scope="col">Team Score</th>
-                            <th scope="col">rank</th>
+                            <th scope="col">Rank</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -136,6 +136,23 @@
     </div>
 @endif
   </section>
+  <style>
+    .table-bordered td,
+    .table-bordered th {
+        border: 2px solid #dee2e6 !important;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    thead th {
+        background-color: #dee2e6 !important;
+    }
+    a[href^="mailto:"] {
+color:#dee2e6 ; 
+text-decoration: underline;
+}
+
+</style>
 <!--==================== Session ====================-->
 
 

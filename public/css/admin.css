@@ -66,13 +66,13 @@
 
 .welcome{
    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 17rem; /* 100% of the viewport height */
-    width: 100%;   /* 100% of the viewport width */
-    text-align: center;
-    color:wheat;
-    padding:3rem;
+   justify-content: center;
+   align-items: center;
+   height: 15rem; /* 100% of the viewport height */
+   width: 100%;   /* 100% of the viewport width */
+   text-align: center;
+   color:wheat;
+   padding: 1rem;
 }
 
 

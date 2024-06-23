@@ -61,7 +61,7 @@
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/uf2.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="input-field">
                         <label for="namateam">Nama Team</label>
-                        <input @disabled(true) name="namateam" id="namateam" type="text" placeholder=" Asal Universitas" required value="{{ $edit->namateam }}">
+                        <input  name="namateam" id="namateam" type="text" placeholder=" Asal Universitas" required value="{{ $edit->namateam }}">
                     </div>
                     <div class="input-field">
                         <label for="nama">Nama Peserta 1</label>

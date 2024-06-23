@@ -82,6 +82,7 @@ return [
     'kembali' => 'Kembali',
     'Pesan' => 'Pesan',
     'Send' => 'Kirim Pesan',
+    'Send1' =>'Kirim',
     'ketua' => 'Ketua Tim',
     'member' => 'Anggota',
     'link' => 'Link Video Youtube',
@@ -345,7 +346,7 @@ return [
      'lembar' =>  'Lembar Originalitas karya',
      'lembarbio' =>  'Lembar Biodata',
      'asal' =>  'Pilih Asal Negara',
-     
+     'teamm' =>  'Nama Tim',
 
 
      

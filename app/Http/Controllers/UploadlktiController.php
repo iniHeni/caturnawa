@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\uploadlkti;
 use App\Models\orderlkti;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UploadlktiController extends Controller
 {
@@ -35,7 +36,7 @@ class UploadlktiController extends Controller
 
         }
         $uploadlkti = uploadlkti::create($uploadlkti);
-        flash('Success', 'Thankyou,Wait for further information from us');
+        Alert::success('Berhasil', 'Tunggu Info Selanjutnya dari kami');
         return redirect()->route('utama');
     }
 }

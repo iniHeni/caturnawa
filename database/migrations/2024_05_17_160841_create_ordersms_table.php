@@ -84,7 +84,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('namateam');
             $table->string('instansi');
-            $table->string('linkvidio');
+            $table->string('linkvidio')->nullable();
             $table->string('surat_delegasi');
             $table->string('bio');
             $table->enum('status', ['Unpaid', 'Paid']);

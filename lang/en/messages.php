@@ -75,6 +75,7 @@ return [
     'kembali' => 'Back',
     'Pesan' =>'Message',
     'Send' =>'Send Message',
+    'Send1' =>'Send',
     'ketua' => 'Leader Team',
     'member' => 'Member',
     'link' => 'Link Video Youtube',
@@ -292,5 +293,6 @@ return [
      'lembar' =>  'Work organizationality sheet',
      'lembarbio' =>  'Biodata Sheet',
      'asal' =>  'Choose Country',
+     'teamm' =>  'Team Name',
 ]
 ?>
