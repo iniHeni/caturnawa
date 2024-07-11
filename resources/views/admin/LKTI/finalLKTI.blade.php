@@ -98,7 +98,7 @@
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Final</h1>
                 <p><a class="add" href="{{ route('spc.pesertaaf') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
-                    <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
                                 <th scope="col" rowspan="4">No</th>
@@ -147,10 +147,18 @@
                 </div>
         </div>
         <style>
- thead th {
-     background-color: #dee2e6 !important; 
- }
-</style>
+            .table-bordered td,
+            .table-bordered th {
+                
+                text-align: center;
+                vertical-align: middle;
+                
+            }
+
+            thead th {
+                background-color: #cecece !important;
+            }
+        </style>
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

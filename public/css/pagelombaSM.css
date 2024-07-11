@@ -2,7 +2,7 @@
 .slide-container{
   max-width: 850px;
   width: 100%;
-  padding: 40px 0;
+  padding: 10px 0px 65px 0px;
 }
 .slide-content{
   margin: 0 20px;
@@ -12,7 +12,7 @@
 .judul{
   text-align: center;
   color: white;
-  
+  padding: 25px 0px 40px 0px;
 }
 .card{
   border-radius: 25px;
@@ -166,7 +166,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 1250px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 70px;
   gap: 20px;
 }
   .card-list .card-item {
@@ -267,6 +267,7 @@
 }
 
 .main .title{
+  padding: 95px 0px 25px 0px;
   font-size: 30px;
   margin-top: 10rem;
   text-align: center;
@@ -425,19 +426,14 @@
 .testing1 {
   color: #f6ae31;
   text-align: center;
-  margin: 0 180px;
   font-size: 25;
-  margin-top: 50px;
-  margin-bottom: 90px;
+  padding: 20px 38px 70px;
 }
 @media screen and (max-width: 1024px) {
   .main {
       margin-bottom: auto;
   }
   .testing1 {
-      margin: 0 150px;
-      margin-top: 40px;
-      margin-bottom: 50px;
   }
   .card_container .card{
     height: 900px;
@@ -467,9 +463,6 @@
 }
 @media screen and (max-width: 500px) {
   .testing1 {
-      margin: 0 20px;
-      margin-top: 40px;
-      margin-bottom: 50px;
       font-size: 17;
   }
 }

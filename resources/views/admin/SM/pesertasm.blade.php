@@ -97,7 +97,7 @@
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
-                    <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
                                 <th scope="col">No</th>
@@ -170,18 +170,16 @@
         <style>
             .table-bordered td,
             .table-bordered th {
-                border: 2px solid black !important;
+                
                 text-align: center;
                 vertical-align: middle;
+                
             }
 
             thead th {
-                background-color: #dee2e6 !important;
+                background-color: #cecece !important;
             }
-            a[href^="mailto:"] {
-    color:#dee2e6; 
-    text-decoration: underline;
-}
+        </style>
 
         </style>
     </section>
