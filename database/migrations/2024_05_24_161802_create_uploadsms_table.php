@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('instansi');
             $table->string('poster');
-            $table->string('original');
             $table->string('script');
             $table->string('karya');
             $table->string('cipta');
@@ -25,6 +24,7 @@ return new class extends Migration
             $table->string('sipnosis');
             $table->string('ori');
             $table->string('linkvidio');
+            $table->string('shortlist');
             $table->timestamps();
         });
     }

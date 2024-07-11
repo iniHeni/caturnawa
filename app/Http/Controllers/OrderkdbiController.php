@@ -13,34 +13,35 @@ class OrderkdbiController extends Controller
 {
     public function checkout(Request $request){
         $order = $request->validate([
-            'nama_1' => 'required|string|max:50',
-            'nama_2' => 'required|string|max:50',
+            'nama_1' => 'required|string',
+            'nama_2' => 'required|string',
             'email_1' => 'required|email',
             'email_2' => 'required|email',
-            'fakultas_1'=> 'required|string|max:50',
-            'fakultas_2' => 'required|string|max:50',
-            'prodi_1' =>'required|string|max:50',
-            'prodi_2' => 'required|string|max:50',
-            'npm_1' => 'required|string|max:50',
-            'npm_2' => 'required|string|max:50',
+            'fakultas_1'=> 'required|string',
+            'fakultas_2' => 'required|string',
+            'prodi_1' =>'required|string',
+            'prodi_2' => 'required|string',
+            'npm_1' => 'required|string',
+            'npm_2' => 'required|string',
             'jeniskelamin_1' => 'required',
             'jeniskelamin_2' => 'required',
             'alamatlengkap_1' => 'required',
             'alamatlengkap_2' => 'required',
             'nomorhp_1'=> 'required',
             'nomorhp_2' => 'required',
-            'instansi' => 'required|string|max:50',
-            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000',
+            'namateam' => 'required',
+            'instansi' => 'required|string',
+            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'buktifollow_1' => 'required|mimes:pdf|max:3000',
+            'buktifollow_2' => 'required|mimes:pdf|max:3000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'surat_delegasi' => 'required|mimes:pdf|max:3000',
         ]); 
 
         
@@ -114,7 +115,7 @@ class OrderkdbiController extends Controller
         }
         if($request->hasFile('buktifollow_1'))
         {
-            $destination_path = 'public/images/kdbi/bukti1';
+            $destination_path = 'public/document/kdbi/bukti1';
             $image = $request->file('buktifollow_1');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
@@ -125,7 +126,7 @@ class OrderkdbiController extends Controller
         }
         if($request->hasFile('buktifollow_2'))
         {
-            $destination_path = 'public/images/kdbi/bukti2';
+            $destination_path = 'public/document/kdbi/bukti2';
             $image = $request->file('buktifollow_2');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
             $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
@@ -237,6 +238,7 @@ public function callbackk(Request $request){
 public function homekdbi($id){
     $orderlkti = orderkdbi::find($id);
     $orderlkti->update(['status' => 'Paid']);
-    return view('index',);
+    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    return redirect()->away($whatsappGroupUrl);
 }
 }

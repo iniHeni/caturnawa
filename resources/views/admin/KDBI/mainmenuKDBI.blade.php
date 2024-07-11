@@ -51,13 +51,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo "  src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo" id="menu" style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -89,10 +89,10 @@
 
 <!--==================== Main Content ====================-->
 <div id="main-content" class="main-content">
-    <section id="home" style="display: block;">
+    <section id="home" class="homepage" style="display: block;">
         <div id="home-container">
-            <h3 class="welcome">@lang('messages.admin')</h3>
-            <h3 class="welcome">@lang('messages.admin1')</h3>
+            <h3 class="welcome2">@lang('messages.admin')</h3>
+            <h3 class="welcome3">@lang('messages.admin1')</h3>
         </div>
     </section>
     <section id="skor" style="display: none;">

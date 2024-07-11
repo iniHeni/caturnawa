@@ -22,20 +22,21 @@ document.addEventListener("DOMContentLoaded", function() {
           phaseEnd = new Date(currentYear, 7, 23, 23, 59, 59); 
         }
   
-        const ticketsButton = item.querySelector(".tickets, .daftar"); 
+        const ticketsButtonTutup = item.querySelector(".tickets"); 
+        const ticketsButtonDaftar = item.querySelector(".daftar");
   
-        if (now >= phaseStart && now <= phaseEnd && !ticketsButton.classList.contains("daftar")) {
-          ticketsButton.textContent = "Register Now!";
-          ticketsButton.classList.remove("tickets");
-          ticketsButton.classList.add("daftar");
-          ticketsButton.addEventListener("click", function() {
-            window.location.href = "/matalomba/daftarEDC"; 
+        if (now >= phaseStart && now <= phaseEnd) {
+          ticketsButtonDaftar.style.display = "block"; 
+          ticketsButtonTutup.style.display = "none";   
+          
+          ticketsButtonDaftar.addEventListener("click", function() {
+              window.location.href = "/matalomba/daftarEDC";
           });
-        } else if ((now < phaseStart || now > phaseEnd) && !ticketsButton.classList.contains("tickets")) {
-          ticketsButton.textContent = "Closed";
-          ticketsButton.classList.remove("daftar");
-          ticketsButton.classList.add("tickets");
-          ticketsButton.href = "#";
+        } else {
+          ticketsButtonTutup.style.display = "block";  
+          ticketsButtonDaftar.style.display = "none";  
+  
+          ticketsButtonTutup.href = "#"; 
         }
       });
     }

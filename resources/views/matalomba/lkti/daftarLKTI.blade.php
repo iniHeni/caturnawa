@@ -13,22 +13,12 @@
       
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/pendaftaranspc.css">
-
+      <link rel="stylesheet" href="../../css/back.css">
       <title>@lang('messages.daftar')</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
+
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -53,13 +43,13 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 19rem" class="nav__item">
+        <div style="left: 200px" class="nav__item" id="languageSwitcher">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
-						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
+                        <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
                   <li class="nav__item">
                      <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -112,7 +102,7 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="email">Email  *For form UnggahSPC</label>
+                            <label for="email">Email </label>
                             <input type="email" name="email" id="email" placeholder="@lang('messages.place') Email " @error('email') is-invalid @enderror required>
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
@@ -133,8 +123,8 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="npm">NPM</label>
-                            <input type="text" name="npm" id="npm" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm') is-invalid @enderror required>
+                            <label for="npm">@lang('messages.npm')</label>
+                            <input type="number" name="npm" id="npm" placeholder="@lang('messages.place') @lang('messages.npm')" @error('npm') is-invalid @enderror required>
                             @error('npm')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -165,6 +155,13 @@
                             @enderror
                         </div>
                         <div class="input-field">
+                            <label for="instansi">@lang('messages.instansi')</label>
+                            <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
+                            @error('instansi')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="input-field">
                             <label for="ktm">@lang('messages.ktm')</label>
                             <input name="ktm" id="ktm" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('ktm') is-invalid @enderror required>
                             @error('ktm')
@@ -185,22 +182,16 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="input-field">
-                            <label for="instansi">@lang('messages.instansi')</label>
-                            <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
-                            @error('instansi')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+                        
                         <div class="input-field">
                             <label for="buktifollow">@lang('messages.bukti')</label>
-                            <input name="buktifollow" id="buktifollow" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow') is-invalid @enderror required>
+                            <input name="buktifollow" id="buktifollow" type="file" accept=".pdf, .PDF" @error('buktifollow') is-invalid @enderror required>
                             @error('buktifollow')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="twibbon">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
+                            <label for="twibbon">@lang('messages.unggah1') Twibbon *png,jpeg,jpg max 5mb</label>
                             <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                             @error('twibbon')
                             <div class="text-danger">{{ $message }}</div>
@@ -227,11 +218,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan" id="jenis_kegiatan" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" required>
+                            <select name="jenis_kegiatan" id="jenis_kegiatan" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
                             @error('jenis_kegiatan')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        
+                        <div id="baru" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan" id="tingkat_kegiatan" required>
@@ -240,6 +242,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                             @error('tingkat_kegiatan')
                             <div class="text-danger">{{ $message }}</div>
@@ -262,8 +265,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan1">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan1" id="jenis_kegiatan1" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan1" id="jenis_kegiatan1" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan1')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru1" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan1">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan1" id="tingkat_kegiatan1" nullable>
@@ -272,6 +289,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -289,8 +307,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan2">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan2" id="jenis_kegiatan2" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan2" id="jenis_kegiatan2" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan2')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru2" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan2">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan2" id="tingkat_kegiatan2" nullable>
@@ -299,6 +331,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -316,8 +349,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan3">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan3" id="jenis_kegiatan3" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan3" id="jenis_kegiatan3" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan3')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru3" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan3">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan3" id="tingkat_kegiatan3" nullable>
@@ -326,6 +373,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -343,8 +391,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan4">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan4" id="jenis_kegiatan4" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan4" id="jenis_kegiatan4" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan4')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru4" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan4">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan4" id="tingkat_kegiatan4" nullable>
@@ -353,6 +415,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -370,8 +433,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan5">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan5" id="jenis_kegiatan5" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan5" id="jenis_kegiatan5" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan5')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru5" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan5">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan5" id="tingkat_kegiatan5" nullable>
@@ -380,6 +457,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -397,8 +475,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan6">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan6" id="jenis_kegiatan6" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan6" id="jenis_kegiatan6" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan6')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru6" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan6">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan6" id="tingkat_kegiatan6" nullable>
@@ -407,6 +499,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -424,8 +517,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan7">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan7" id="jenis_kegiatan7" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan7" id="jenis_kegiatan7" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan7')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru7" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan7">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan7" id="tingkat_kegiatan7" nullable>
@@ -434,6 +541,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -451,8 +559,23 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan8">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan8" id="jenis_kegiatan8" type="text" placeholder="@lang('messages.place') @lang('messages.jenis')" nullable>
+                            <select name="jenis_kegiatan8" id="jenis_kegiatan8" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan8')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru8" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan8">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan8" id="tingkat_kegiatan8" nullable>
@@ -461,6 +584,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -478,8 +602,22 @@
                         </div>
                         <div class="input-field">
                             <label for="jenis_kegiatan9">@lang('messages.jenis')</label>
-                            <input name="jenis_kegiatan9" id="jenis_kegiatan9" type="text" placeholder="@lang('messages.place') @lang('messages.jenis') " nullable>
+                            <select name="jenis_kegiatan9" id="jenis_kegiatan9" required>
+                                <option selected>@lang('messages.pilih')</option>
+                                <option id="kompetisi">@lang('messages.kompe')</option>
+                                <option id="pengakuan">@lang('messages.pengakuan')</option>
+                                <option id="penghargaan">@lang('messages.pengharga')</option>
+                                <option id="karir_organisasi">@lang('messages.karir')</option>
+                                <option id="hasil_karya">@lang('messages.hasilkarya')</option>
+                                <option id="pemberdayaan">@lang('messages.pemberdayaan')</option>
+                                <option id="kewirausahaan">@lang('messages.wira')</option>
+                            </select>
+                            @error('jenis_kegiatan9')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        
+                        <div id="baru9" class="input-field"></div> 
                         <div class="input-field">
                             <label for="tingkat_kegiatan9">@lang('messages.tingkat')</label>
                             <select name="tingkat_kegiatan9" id="tingkat_kegiatan9" nullable>
@@ -488,6 +626,7 @@
                                 <option>@lang('messages.regional')</option>
                                 <option>@lang('messages.nasional')</option>
                                 <option>@lang('messages.provinsi')</option>
+                                <option>@lang('messages.kab')</option>
                             </select>
                         </div>
                         <div class="input-field">
@@ -496,7 +635,7 @@
                         </div>
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Pembayaran</span>
+                        <span class="btnText">@lang('messages.Daftar')</span>
                         <i class="uil uil-navigator"></i>
                     </button>
                 </div> 
@@ -505,12 +644,15 @@
     </div>
 
 </section>
-
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../../js/nav.js"></script>
+    <script src="../../js/form.js"></script>
     <script>
         function removeLoader() {
     $("#loadingDiv").fadeOut(200, () => {
@@ -560,5 +702,6 @@
       }
   });
       </script>
+      <script src="../../js/SM.js"></script>
 </html>
 

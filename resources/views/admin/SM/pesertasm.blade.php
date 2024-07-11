@@ -55,13 +55,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/smcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
@@ -148,12 +148,12 @@
                                 <td><a href="https://wa.me/{{ $data->nohp2 }}">{{ $data->nohp2}}</a></td>
                                 <td><a href="https://wa.me/{{ $data->nohp3 }}">{{ $data->nohp3}}</a></td>
                                 <td><a href="https://wa.me/{{ $data->nohp4 }}">{{ $data->nohp4}}</a></td>
-                                <td>{{ $data->foto}}</td>
-                                <td>{{ $data->foto1}}</td>
-                                <td>{{ $data->foto2}}</td>
-                                <td>{{ $data->foto3}}</td>
-                                <td>{{ $data->foto4}}</td>
-                                <td>{{ $data->logo}}</td>
+                                <td><a href="{{ $data->foto}}">{{ $data->foto}}</a></td>
+                                <td><a href="{{ $data->foto1}}">{{ $data->foto1}}</a></td>
+                                <td><a href="{{ $data->foto2}}">{{ $data->foto2}}</a></td>
+                                <td><a href="{{ $data->foto3}}">{{ $data->foto3}}</a></td>
+                                <td><a href="{{ $data->foto4}}">{{ $data->foto4}}</a></td>
+                                <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
                                 <td>
                                     <a href="{{ route('sm.editpee', $data->id) }}">Edit</a>
                                     <form action="{{ route('sm.hapuspee', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

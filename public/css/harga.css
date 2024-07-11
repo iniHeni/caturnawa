@@ -24,7 +24,7 @@ body {
 .container1 .item {
   background: #fff;
   overflow: hidden;
-  margin: 13px 0;
+  margin: 12px 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -33,10 +33,10 @@ body {
 }
 .container1 .item-right {
   background-color: #1b6dc9;
-  padding: 233px 20px;
+  padding: 165px 20px 185px;
   flex: 1 1 28%;
   position: relative;
-  height: 520px;
+  height: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ body {
 .container1 .item-left {
   flex: 70%;
   padding: 18px 25px 16px 20px;
-  border-left: 5px dotted #999;
+  border-left: 5px dotted #f6ae31;
 }
 .item-left1 {
   flex: 70%;
@@ -100,7 +100,7 @@ body {
 .event {
   color: #111;
   font-size: 23px;
-  margin-bottom: 15px;
+  padding: 15px 0px;
 }
 .container1 .item-left .title {
   color: #111;
@@ -148,26 +148,21 @@ body {
 
 @media (max-width: 1550px) {
   .container1 {
-    padding: 0px 240;
-  }
-  .container1 .item {
-    flex-direction: column;
+    padding: 0px 90px;
   }
   .container1 .item-right {
-    flex: 1 1 100%;
     height: auto;
-    padding: 40px 20px;
+    padding: 115px 20px;
   }
   .container1 .item-left {
-    flex: 1 1 100%;
-    padding: 20px;
-    border-left: none;
-    border-top: 5px dotted #999;
+    /* padding: 20px; */
+    /* border-left: none; */
+    /* border-top: 5px dotted #f6ae31; */
   }
 }
 
 
-@media (max-width: 1150px) {
+@media (max-width: 420px) {
   .container1 {
     padding: 0px 2rem;
   }
@@ -175,29 +170,34 @@ body {
     flex-direction: column;
   }
   .container1 .item-right {
-    flex: 1 1 100%;
+    
     height: auto;
     padding: 40px 20px;
   }
   .container1 .item-left {
-    flex: 1 1 100%;
+    
     padding: 20px;
     border-left: none;
-    border-top: 5px dotted #999;
+    border-top: 5px dotted #f6ae31;
   }
 }
 @media (max-width: 768px) {
-  .upcomming {
-    font-size: 32px;
+  .container1 {
+    padding: 0px 3rem;
   }
-  .container1 .item-right .num {
-    font-size: 48px;
+  .container1 .item {
+    flex-direction: column;
   }
-  .container1 .item-right .day {
-    font-size: 20px;
+  .container1 .item-right {
+    
+    height: auto;
+    padding: 40px 20px;
   }
-  .container1 .item-left .title {
-    font-size: 28px;
+  .container1 .item-left {
+    
+    padding: 20px;
+    border-left: none;
+    border-top: 5px dotted #f6ae31;
   }
 }
 @media (max-width: 480px) {

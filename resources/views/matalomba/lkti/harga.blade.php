@@ -16,25 +16,14 @@
 	   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="css/harga.css">
-      
-      <link rel="stylesheet" href="css/navmenu.css">
-      <
+      <link rel="stylesheet" href="css/hargaspc.css">
+      <link rel="stylesheet" href="css/back.css">
+      <link rel="stylesheet" href="css/navmenulomba.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
       <title>Caturnawa</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -52,6 +41,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../../img/loader.gif);
  }
+ 
      </style>
    </head>
    <body>
@@ -60,13 +50,13 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
-           <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+        <nav class="nav contnav">
+        <img src="img/spcaja.png" width="145" class="nav_gmbar" ></img>
+           <h2><a href="{{url('/') }}" class="nav__logo" ></a></h2>
 
            <div class="nav__menu" id="nav-menu">
               <ul class="nav__list">
-              <div style="margin-right: 10rem" class="nav__item">
+              <div style="left: 200px" class="nav__item">
                        <li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
                        <li><a href="locale/en"><img src="img/eng.png" /></a></li>
                    </div>
@@ -102,103 +92,83 @@
       
 <!--==================== Mata Lomba ====================-->
 <!--==================== Periode Tiket ====================-->
-<div class="container1">
-   <h1 class="upcomming">Harga</h1>
-   
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">23</h2>
-       <p class="day">July</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
+<div style="margin-bottom: 0px;" class="container1">
+  <h1 class="upcomming">@lang('messages.harga')</h1>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 class="num">23 @lang('messages.tgl') - 11 @lang('messages.tgl1')</h2>
+      
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
      
-     <div class="item-left">
-       <p class="event">Early Bid</p>
-       <h2 class="title">Rp350.000</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap1')</p>
+      <h2 class="title">@lang('messages.Rp3')</h2>
+      <p style="margin-bottom: 15px;" >* @lang('messages.khusus') @lang('messages.Rp3u')</p>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
          <p>Scientific Paper Competition</p>
        </div>
        <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <button class="tickets">Tutup</button>
-     </div>
-   </div>
+
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
    
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">27</h2>
-       <p class="day">July</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
-       <p class="event">Phase 1</p>
-       <h2 class="title">Rp170.000</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 class="num">12 - 23 @lang('messages.tgl1') </h2>
+      <!-- <p class="day">2024</p> -->
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap2')</p>
+      <h2 class="title">@lang('messages.Rp4')</h2>
+      <p style="margin-bottom: 15px;" >* @lang('messages.khusus') @lang('messages.Rp4u')</p>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
          <p>Scientific Paper Competition</p>
        </div>
-       <div class="fix"></div>
        <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <a class="tickets">Tutup</a>
-     </div>
-   </div>
-   
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">12</h2>
-       <p class="day">August</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
-       <p class="event">Phase 2</p>
-       <h2 class="title">Rp200.000</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
-         <p>Scientific Paper Competition</p>
-       </div>
-       <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <a class="tickets">Tutup</a>
-     </div>
-   </div>
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
  </div>
- 
+ <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 
 <!--==================== Juri ====================-->
 
@@ -221,7 +191,8 @@
         );
       });</script>
 <script src="../../js/ranklkti.js"></script>
-
       <script src="../../js/nav.js"></script>
+      <script src="../../js/SM.js"></script>
    </body>
+   
 </html>

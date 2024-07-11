@@ -22,17 +22,7 @@
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
+
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -57,11 +47,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
+        <nav class="nav contnav">
         <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 20rem" class="nav__item">
+       <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -420,19 +410,16 @@
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label>Team Name</label>
+                                <label>@lang('messages.team2')</label>
                                 <input disabled placeholder="{{$ordersm->namateam}}" required>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$ordersm->instansi}}" required>
                             </div>
+                           
                             <div class="input-field">
-                                <label>Link Video</label>
-                                <input disabled placeholder="{{$ordersm->linkvidio}}" required>
-                            </div>
-                            <div class="input-field">
-                                <label>Price</label>
+                                <label>@lang('messages.harga')</label>
                                 <input disabled placeholder="Rp{{$ordersm->price}}">
                             </div>
                             <div class="input-field">
@@ -445,15 +432,13 @@
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" id="pay-button">
-                            <a href="{{url('matalomba/daftarKTI') }}" class="btnText">@lang('messages.kembali')</a>
+                            <a href="{{url('matalomba/daftarSM') }}" class="btnText">@lang('messages.kembali')</a>
                         </button>
                     </div> 
                 </div>
                 </table>
 
 </section>
-
-
         
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
@@ -487,7 +472,7 @@
                     Swal.fire({
             icon: 'success',
             title: 'Payment Succes!',
-            text: 'Anda akan diarahkan ke halaman Lomba.',
+            text: 'Anda akan diarahkan ke Link Whatssap Group',
             showConfirmButton: false, 
             timer: 2000,
         }).then(() => {
@@ -496,36 +481,8 @@
         });
                 },
                 onPending: function(result) {
-        Swal.fire({
-            icon: 'info',
-            title: 'Waiting Payment',
-            text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            didOpen: () => {
-            Swal.showLoading();
-            },
-        });
-                console.log(result);
-                },
-                let checkInterval = setInterval(() => {
-                    checkPaymentStatus(result.transaction_id) 
-                        .then((status) => {
-                            if (status === 'settlement') {
-                                clearInterval(checkInterval); 
-                                window.location.href = '/homesm/{{$ordersm->id}}'; // Redirect jika settlement
-                            } else if (status === 'deny') {
-                                clearInterval(checkInterval); 
-                                location.reload(); 
-                            }
-                           
-                        })
-                        .catch((error) => {
-                            clearInterval(checkInterval); 
-                            console.error("Error saat memeriksa status pembayaran:", error);
-                            
-                        });
-                }, 5000); 
+    location.reload();
+},
            
                 onError: function(result) {
         Swal.fire({
@@ -539,7 +496,7 @@
             if (result.isConfirmed) {
             
             } else {
-                window.location.href = '/homesm/{{$ordersm->id}}'; 
+                window.location.href = '/'; 
             }
         });
 
@@ -557,5 +514,15 @@
             });
             
       </script>
+      <script>
+        fetch('/callback-url') // Ganti dengan URL endpoint callback Anda
+    .then(response => response.json())
+    .then(data => {
+        if (data.reload_page) {
+            location.reload(); // Reload halaman saat ada instruksi dari backend
+        }
+    });
+      </script>
+      <script src="../../js/SM.js"></script>
    </body>
 </html>

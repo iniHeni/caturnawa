@@ -17,24 +17,13 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="css/harga.css">
-      
-      <link rel="stylesheet" href="css/navmenu.css">
-      <
+      <link rel="stylesheet" href="css/back.css">
+      <link rel="stylesheet" href="css/navmenudbt.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
       <title>Caturnawa</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -60,13 +49,13 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
-           <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+        <nav class="nav contnav">
+        <img src="../../../img/kdbiaja.png" width="145px;" class="nav_gmbar" ></img>
+           <h2><a href="{{url('/') }}" class="nav__logo" ></a></h2>
 
            <div class="nav__menu" id="nav-menu">
-              <ul class="nav__list">
-              <div style="margin-right: 10rem" class="nav__item">
+            <ul class="nav__list">
+               <div style="left: 200px" class="nav__item">
                        <li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
                        <li><a href="locale/en"><img src="img/eng.png" /></a></li>
                    </div>
@@ -98,11 +87,14 @@
            </div>
         </nav>
      </header>
+     <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       
 <!--==================== Periode Tiket ====================-->
 <div class="container1">
-  <h1 class="upcomming">Harga</h1>
+  <h1 class="upcomming">@lang('messages.harga')</h1>
   
   <div class="item">
     <span class="up-border"></span>
@@ -110,96 +102,104 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">23</h2>
-      <p class="day">July</p>
+      <h2 class="num">23 - 28 @lang('messages.tgl')</h2>
+      
       <span class="up-border"></span>
       <span class="down-border"></span>
     </div>
     
     <div class="item-left">
-      <p class="event">Early Bid</p>
-      <h2 class="title">Rp350.000/Team</h2>
+      <p class="event">@lang('messages.tahap')</p>
+      <h2 class="title">@lang('messages.Rp5')</h2>
       <div class="sce">
         <div class="icon">
           <i class="fa fa-table"></i>
         </div>
         <p>Kompetisi Debat Bahasa Indonesia</p>
       </div>
-      <div class="fix"></div>
-      <div class="loc">
-        <div class="icon">
-          <i class="fa fa-map-marker"></i>
-        </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-      </div>
-      <div class="fix"></div>
-      <button class="tickets">Tutup</button>
-    </div>
-  </div>
-  
-  <div class="item">
-    <div class="item-right">
-      <span class="leftup-border"></span>
-      <span class="leftdown-border"></span>
-      <h2 class="num">27</h2>
-      <p class="day">July</p>
-      <span class="up-border"></span>
-      <span class="down-border"></span>
-    </div>
-    
-    <div class="item-left">
-      <p class="event">Phase 1</p>
-      <h2 class="title">Rp400.000/Team</h2>
-      <div class="sce">
-        <div class="icon">
-          <i class="fa fa-table"></i>
-        </div>
-        <p>Kompetisi Debat Bahasa Indonesia</p>
-      </div>
-      <div class="fix"></div>
-      <div class="loc">
-        <div class="icon">
-          <i class="fa fa-map-marker"></i>
-        </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-      </div>
-      <div class="fix"></div>
-      <button class="tickets">Tutup</button>
-    </div>
-  </div>
-  
-  <div class="item">
-    <div class="item-right">
-      <span class="leftup-border"></span>
-      <span class="leftdown-border"></span>
-      <h2 class="num">12</h2>
-      <p class="day">August</p>
-      <span class="up-border"></span>
-      <span class="down-border"></span>
-    </div>
-    
-    <div class="item-left">
-      <p class="event">Phase 2</p>
-      <h2 class="title">Rp450.000/Team</h2>
-      <div class="sce">
-        <div class="icon">
-          <i class="fa fa-table"></i>
-        </div>
-        <p>Kompetisi Debat Bahasa Indonesia</p>
-      </div>
-      <div class="fix"></div>
-      <div class="loc">
-        <div class="icon">
-          <i class="fa fa-map-marker"></i>
-        </div>
-        <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-      </div>
-      <div class="fix"></div>
-      <button class="tickets">Tutup</button>
-    </div>
-  </div>
-</div>
 
+      <div class="fix"></div>
+
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 class="num">29 @lang('messages.tgl') - 11 @lang('messages.tgl1') </h2>
+      <!-- <p class="day">2024</p> -->
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap1')</p>
+      <h2 class="title">@lang('messages.Rp1')</h2>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>Kompetisi Debat Bahasa Indonesia</p>
+      </div>
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 style="font-size:32px" class="num">12 - 23 @lang('messages.tgl1')</h2>
+      <!-- <p class="day">2024</p> -->
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap2')</p>
+      <h2 class="title">@lang('messages.Rp2')</h2>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>Kompetisi Debat Bahasa Indonesia</p>
+      </div>
+    <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+      
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
   
   
 
@@ -224,7 +224,7 @@
         );
       });</script>
 <script src="../../js/rankkdbi.js"></script>
-
+<script src="../../js/SM.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
 </html>

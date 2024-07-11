@@ -17,24 +17,14 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="css/harga.css">
-      
-      <link rel="stylesheet" href="css/navmenu.css">
-      <
+      <link rel="stylesheet" href="../../../css/back.css">
+      <link rel="stylesheet" href="css/navmenulomba.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
       <title>Caturnawa</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+
  
 #loadingDiv {
    width: 100%;
@@ -60,8 +50,8 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
+        <nav class="nav contnav">
+        <img src="img/smcaja.png" width="145" class="nav_gmbar" ></img>
            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
 
            <div class="nav__menu" id="nav-menu">
@@ -109,7 +99,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">23 @lang('messages.tgl') - 28 @lang('messages.tgl')</h2>
+      <h2 class="num">23 - 28 @lang('messages.tgl')</h2>
       
       <span class="up-border"></span>
       <span class="down-border"></span>
@@ -127,27 +117,7 @@
 
       <div class="fix"></div>
 
-      <div class="item-left1">
-      <p class="event">Online</p>
-      </div>
       <div class="loc">
-        <div class="icon">
-          
-        </div>
-        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
-      </div>
-       
-      <div class="item-left1">
-      <p class="event">On-Site</p>
-      </div>
-      <div class="loc">
-      <div class="icon">
-          
-        </div>
-        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
-        </div>
-
-        <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
@@ -155,7 +125,8 @@
       </div>
 
       <div class="fix"></div>
-      <button class="tickets">@lang('messages.tutup')</button>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
     </div>
   </div>
   
@@ -165,7 +136,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">29 @lang('messages.tgl') - 11 @lang('messages.tgl1')</h2>
+      <h2 class="num">29 @lang('messages.tgl') - 11 @lang('messages.tgl1') </h2>
       <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>
@@ -180,31 +151,6 @@
         </div>
         <p>Short Movie Competition</p>
       </div>
-
-      <div class="item-left1">
-      <p class="event">Online</p>
-      </div>
-      <div class="loc">
-        <div class="icon">
-          
-        </div>
-        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
-      </div>
-
-      <div class="item-left1">
-      <p class="event">On-Site</p>
-      </div>
-      <div class="loc">
-      <div class="icon">
-          
-        </div>
-        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
-        </div>
-
-
-
-      <div class="fix"></div>
-
       <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
@@ -213,7 +159,8 @@
       </div>
 
       <div class="fix"></div>
-      <button class="tickets">@lang('messages.tutup')</button>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
     </div>
   </div>
   
@@ -223,7 +170,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 style="font-size:32px" class="num">12 @lang('messages.tgl1') - 23 @lang('messages.tgl1')</h2>
+      <h2 style="font-size:32px" class="num">12 - 23 @lang('messages.tgl1')</h2>
       <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>
@@ -238,32 +185,7 @@
         </div>
         <p>Short Movie Competition</p>
       </div>
-
-      <div class="item-left1">
-      <p class="event">Online</p>
-      </div>
-      <div class="loc">
-        <div class="icon">
-          
-        </div>
-        <p class="fa fa-video-camera" aria-hidden="true"> Zoom/GMeet</p>
-      </div>
-
-      <div class="item-left1">
-      <p class="event">On-Site</p>
-      </div>
-      <div class="loc">
-      <div class="icon">
-          
-        </div>
-        <p class="fa fa-building" aria-hidden="true"> Aula Universitas Nasional</p>
-        </div>
-
-
-
-      <div class="fix"></div>
-
-      <div class="loc">
+    <div class="loc">
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
@@ -271,11 +193,14 @@
       </div>
       
       <div class="fix"></div>
-      <button class="tickets">@lang('messages.tutup')</button>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
     </div>
   </div>
  
-
+  <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 <!--==================== Juri ====================-->
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
@@ -298,5 +223,6 @@
 <script src="../../js/ranksm.js"></script>
 
       <script src="../../js/nav.js"></script>
+      <script src="../../js/SM.js"></script>
    </body>
 </html>

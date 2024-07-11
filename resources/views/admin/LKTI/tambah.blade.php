@@ -55,14 +55,14 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin LKTI </a></h2>
+            <img class="logo" src="../../img/spcaja.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin SPC </a></h2>
         </div>
     </nav>
 </header>
@@ -70,7 +70,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/spcaja.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
@@ -113,9 +113,7 @@
                     </div>
                     <div class="input-field">
                         <label for="university">Asal Instansi *Otomatis terisi</label>
-                        <select name="university" id="university" is-invalid required >
-                            <option selected>Pilih Instansi</option> 
-                        </select>
+                        <input name="university" id="university" type="text" placeholder=" Asal Instansi " required >
                     </div>
                     <div class="input-field">
                         <label for="scorecp">Score capaian Unggulan </label>
@@ -175,23 +173,25 @@ $("body").css(
 });
 </script>
 <script>
-    const pesertaData = @json($peserta); // Membuat variabel JS dari data peserta
-    
-    const namaPesertaSelect = document.getElementById('namapeserta');
-    const universitySelect = document.getElementById('university');
-    
-    namaPesertaSelect.addEventListener('change', () => {
-        const selectedPesertaId = namaPesertaSelect.value;
-        const selectedPeserta = pesertaData.find(p => p.nama == selectedPesertaId);
-    
-        universitySelect.innerHTML = ''; // Kosongkan opsi sebelumnya
-        universitySelect.options.add(new Option('Pilih Instansi', '')); // Tambahkan opsi default
-    
-        if (selectedPeserta) {
-            universitySelect.options.add(new Option(selectedPeserta.instansi, selectedPeserta.instansi));
-            universitySelect.value = selectedPeserta.instansi; // Pilih opsi secara otomatis
-        }
-    });
+    const pesertaData = @json($peserta);
+
+const namaPesertaInput = document.getElementById('namapeserta'); // Menggunakan input
+const universityInput = document.getElementById('university'); // Menggunakan input
+
+namaPesertaInput.addEventListener('input', () => { // Event listener untuk input
+  const inputNama = namaPesertaInput.value.toLowerCase(); 
+  const filteredPeserta = pesertaData.filter(p => p.nama.toLowerCase().includes(inputNama));
+
+  universityInput.value = ''; // Kosongkan input universitas
+
+  if (filteredPeserta.length === 1) {
+    universityInput.value = filteredPeserta[0].instansi; // Isi otomatis jika hanya 1 hasil
+  } else if (filteredPeserta.length > 1) {
+    // Opsional: Berikan saran jika ada lebih dari 1 hasil
+    console.log("Beberapa peserta ditemukan:", filteredPeserta); 
+    // Anda bisa menampilkan saran di bawah input, misalnya.
+  }
+});
     </script>
 </body>
 </html>

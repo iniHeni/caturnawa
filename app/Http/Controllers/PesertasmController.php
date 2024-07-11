@@ -75,16 +75,17 @@ class PesertasmController extends Controller
             'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
     ]);
     $update = $request->all();
-    if($request->hasFile('logo'))
-    {
-        $destination_path = 'public/images/sm/peserta/logo';
-        $image = $request->file('logo');
-        $image_name = time() . '.' . $image->getClientOriginalExtension();
-        $path = $request->file('logo')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/sm/peserta/logo/' . $image_name);
-
+    if ($request->hasFile('logo')) {
+        $originalFileName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('logo')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+        $destinationPath = 'public/images/sm/logo';
+        $request->file('logo')->storeAs($destinationPath, $imageName);
+    
+        $imageUrl = asset('storage/images/sm/logo/' . $imageName);
         $update['logo'] = $imageUrl;
-
     }
     $data = pesertasm::find($id);
     $data->update($update);

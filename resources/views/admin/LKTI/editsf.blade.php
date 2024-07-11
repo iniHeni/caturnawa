@@ -55,14 +55,14 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin LKTI </a></h2>
+            <img class="logo" src="../../../img/spcaja.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin SPC </a></h2>
         </div>
     </nav>
 </header>
@@ -70,7 +70,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/spcaja.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
@@ -113,8 +113,8 @@
                       <label for="juri">Nama Juri</label>
                       <select name="juri" id="juri" is-invalid  required>
                           <option selected>{{ $edit->juri }}</option>
-                          <option>Efriza, S.I.P., M.Si</option>
-                          <option>Fajar Harry Sampurno, MBA, Ph.D.</option>
+                          <option>Efriza S.I.P. M.Si</option>
+                          <option>Fajar Harry Sampurno MBA Ph.D.</option>
                           <option>Prof. Dr.Eng. Eniya Listiani Dewi</option>
                       </select>
                       </div>
@@ -129,7 +129,7 @@
             </div>
             <div class="input-field">
               <label for="penyajian">Kualitatif:</label>
-              <input type="text" id="penyajian" name="penyajian"  value="{{ $edit->penyajian }}">
+              <textarea type="text" id="penyajian" name="penyajian"  value="{{ $edit->penyajian }}"></textarea>
           </div>
           </div>
           </div>
@@ -142,7 +142,7 @@
                 </div>
                 <div class="input-field">
                   <label for="subs">Kualitatif:</label>
-                  <input type="text" id="subs" name="subs" value="{{ $edit->subs }}">
+                  <textarea type="text" id="subs" name="subs" value="{{ $edit->subs }}"></textarea>
               </div>
                   </div>
               </div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="input-field">
                       <label for="kualitas">Kualitatif:</label>
-                      <input type="text" id="kualitas" name="kualitas" value="{{ $edit->kualitas }}">
+                      <textarea type="text" id="kualitas" name="kualitas" value="{{ $edit->kualitas }}"></textarea>
                   </div>
                       </div>
               </div>

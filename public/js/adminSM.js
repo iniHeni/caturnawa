@@ -73,37 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(sectionId).style.display = "block";
     }
 
-    // Muat konten beranda saat halaman utama dimuat
-    $.ajax({
-        url: "/admin/beranda",
-        success: function (result) {
-            $("#home-container").html($(result).find("#home-content").html());
-        },
-        error: function () {
-            $("#home-container").html("Gagal memuat data.");
-        },
-    });
-
-    // Event listener untuk tombol "Dashboard"
-    document
-        .getElementById("beranda")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("home");
-
-            // Muat ulang konten beranda saat tombol Dashboard diklik
-            $.ajax({
-                url: "/admin/beranda",
-                success: function (result) {
-                    $("#home-container").html(
-                        $(result).find("#home-content").html()
-                    );
-                },
-                error: function () {
-                    $("#home-container").html("Gagal memuat data.");
-                },
-            });
-        });
+    
 
 
 

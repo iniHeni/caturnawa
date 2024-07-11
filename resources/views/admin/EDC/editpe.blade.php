@@ -20,16 +20,6 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -55,13 +45,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/edcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -106,12 +96,32 @@
                         <input name="instansi" id="instansi" type="text" placeholder=" Asal Universitas" required  value="{{ $edit->instansi }}">
                     </div>
                     <div class="input-field">
-                        <label for="email">Email</label>
-                        <input name="email" id="email" type="email" placeholder="Email Peserta" required value="{{ $edit->email }}">
+                        <label for="namateam">Nama Team</label>
+                        <input name="namateam" id="namateam" type="text" placeholder=" Nama Team" required  value="{{ $edit->namateam }}">
                     </div>
                     <div class="input-field">
-                        <label for="nohp">No Handphone</label>
-                        <input name="nohp" id="nohp" type="number" placeholder="MoHp Peserta" required value="{{ $edit->nohp }}">
+                        <label for="nama">Nama Debater 1</label>
+                        <input name="nama" id="nama" type="text" placeholder=" Debater 1" required  value="{{ $edit->nama }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="nama1">Nama Debater 2</label>
+                        <input name="nama1" id="nama1" type="text" placeholder=" Debater 2" required  value="{{ $edit->nama1 }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="email">Email Debater 1</label>
+                        <input name="email" id="email" type="email" placeholder="Email Debater 1" required value="{{ $edit->email }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="email1">Email Debater 2</label>
+                        <input name="email1" id="email1" type="email" placeholder="Email Debater 2" required value="{{ $edit->email1 }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="nohp">No Handphone 1</label>
+                        <input name="nohp" id="nohp" type="number" placeholder="MoHp Peserta 1" required value="{{ $edit->nohp }}">
+                    </div>
+                    <div class="input-field">
+                        <label for="nohp1">No Handphone 2</label>
+                        <input name="nohp1" id="nohp1" type="number" placeholder="MoHp Peserta 2" required value="{{ $edit->nohp1 }}">
                     </div>
                         <div class="input-field">
                             <label for="logo">Logo Instansi *jpg,png.jpeg</label>

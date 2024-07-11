@@ -55,13 +55,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-  <nav class="nav container">
+  <nav class="nav container1">
       <div class="nav_menu" id="nav-menu">
           <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
       </div>
       <div class="nav_logo" id="nav-logo">
-          <img class="logo" src="../../img/uf2.png" alt="Logo">
+          <img class="logo" src="../../../img/smcaja.png" alt="Logo">
           <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
       </div>
   </nav>
@@ -101,6 +101,16 @@
                 <span class="title">Data Penilaian</span>
                 <div class="fields"> 
                   <div class="input-field">
+                    <label for="juri">Nama Juri</label>
+                    <select name="juri" id="juri" is-invalid  required>
+                        <option selected>{{ $edit->juri }}</option>
+                        <option>Daniel Wisnu Wardhana</option>
+                        <option>Kusen Dony Hermansyah</option>
+                        <option>Jentoni Pakpahan</option>
+                    </select>
+                    </div>
+
+                  <div class="input-field">
                     <label for="namateam">Nama Team</label>
                     <select name="namateam" id="namateam" is-invalid required >
                       <option selected>{{ $edit->namateam }}</option> 
@@ -110,104 +120,83 @@
                   </select>
                 </div>
                 <div class="input-field">
-                  <label for="peserta1">Nama Peserta 1</label>
-                  <select name="peserta1" id="peserta1" is-invalid required >
-                    <option  selected>{{ $edit->peserta1 }}</option> 
-                </select>
+                  <label for="peserta1">Nama Peserta 1 *Otomatis terisi</label>
+                  <input type="text" id="peserta1" name="peserta1"  required value="{{ $edit->peserta1 }}">
               </div>
               <div class="input-field">
-                <label for="peserta2">Nama Peserta 2</label>
-                <select name="peserta2" id="peserta2" is-invalid required >
-                  <option selected>{{ $edit->peserta2 }}</option> 
-              </select>
+                <label for="peserta2">Nama Peserta 2 *Otomatis terisi</label>
+                <input type="text" id="peserta2" name="peserta2"  required value="{{ $edit->peserta2 }}">
             </div>
             <div class="input-field">
-              <label for="peserta3">Nama Peserta 3</label>
-              <select name="peserta3" id="peserta3" is-invalid required >
-                <option selected>{{ $edit->peserta3 }}</option> 
-            </select>
+              <label for="peserta3">Nama Peserta 3 *Otomatis terisi</label>
+              <input type="text" id="peserta3" name="peserta3"  required value="{{ $edit->peserta3 }}">
           </div>
           <div class="input-field">
-            <label for="peserta4">Nama Peserta 4</label>
-            <select name="peserta4" id="peserta4" is-invalid required >
-              <option selected>{{ $edit->peserta4 }}</option> 
-          </select>
+            <label for="peserta4">Nama Peserta 4 *Otomatis terisi</label>
+            <input type="text" id="peserta4" name="peserta4"  required value="{{ $edit->peserta4 }}">
         </div>
         <div class="input-field">
-          <label for="peserta5">Nama Peserta 5</label>
-          <select name="peserta5" id="peserta5" is-invalid required >
-            <option selected>{{ $edit->peserta5 }}</option> 
-        </select>
-                    <div class="input-field">
-                      <label for="juri">Nama Juri</label>
-                      <select name="juri" id="juri" is-invalid  required>
-                          <option selected>{{ $edit->juri }}</option>
-                          <option>Daniel Wisnu Wardhana</option>
-                          <option>Kusen Dony Hermansyah</option>
-                          <option>Rita Sri Hastuti</option>
-                      </select>
-                      </div>
+          <label for="peserta5">Nama Peserta 5 *Otomatis terisi</label>
+          <input type="text" id="peserta5" name="peserta5"  required value="{{ $edit->peserta5 }}">
+      </div>
+                    
                 </div>
-              </div>
-          <div class="details personal">
-          <span class="title">1. Ide cerita dan riset peristiwa dalam film</span>
-              <div class="fields">
-              <div class="input-field">
-                <label for="skorkrit1">Kuantitatif:</label>
-                <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" value="{{ $edit->skorkrit1 }}">
-            </div>
-            <div class="input-field">
-              <label for="krit1">Kualitatif</label>
-              <textarea name="krit1" id="krit1" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit1 }}</textarea>
-          </div>
-              </div>
-          </div>
-          <div class="details personal">
-              <span class="title">2. Tujuan film dan pengaruh film</span>
-                  <div class="fields">
-                    <div class="input-field">
-                      <label for="skorkrit2">Kuantitatif:</label>
-                      <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" value="{{ $edit->skorkrit2 }}">
-                  </div>
-                  <div class="input-field">
-                    <label for="krit2">Kualitatif</label>
-                    <textarea name="krit2" id="krit2" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit2 }}</textarea>
-                </div>
-                  </div>
               </div>
               <div class="details personal">
-                  <span class="title">3. Kemampuan dan pemahaman membuat film</span>
-                      <div class="fields">
-                        <div class="input-field">
-                          <label for="skorkrit3">Kuantitatif:</label>
-                          <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" value="{{ $edit->skorkrit3 }}">
-                      </div>
-                      <div class="input-field">
-                        <label for="krit3">Kualitatif</label>
-                        <textarea name="krit3" id="krit3" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit3 }}</textarea>
-                    </div>
-                      </div>
+                <span class="title">Kuantitatif </span>
+                    <div class="fields">
+                    <div class="input-field">
+                      <label for="skorkrit1">1. Ide cerita dalam film </label>
+                      <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit1 }}">
                   </div>
-                  <div class="details personal">
-                    <span class="title">4. Informasi dan pesan yang disampaikan dari film</span>
-                        <div class="fields">
-                          <div class="input-field">
-                            <label for="skorkrit4">Kuantitatif:</label>
-                            <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" value="{{ $edit->skorkrit4 }}">
-                        </div>
-                        <div class="input-field">
-                          <label for="krit4">Kualitatif</label>
-                          <textarea name="krit4" id="krit4" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit4 }}</textarea>
-                      </div>
-                        </div>
-                    </div>
+                  <div class="input-field">
+                      <label for="skorkrit2">2. Tujuan film dan pengaruh film<</label>
+                      <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit2 }}">
+                  </div>
+                  <div class="input-field">
+                    <label for="skorkrit3">3.Kemampuan dan pemahaman membuat film</label>
+                    <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit3 }}">
+                </div>
+                <div class="input-field">
+                    <label for="skorkrit4">4. Etika dalam mempresentasikan film</label>
+                    <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit4 }}">
+                </div>
+                <div class="input-field">
+                  <label for="skorkrit5">5. Sikap dalam berprestasi </label>
+                  <input type="number" id="skorkrit5" name="skorkrit5" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit5 }}">
+              </div>
+              <div class="input-field">
+                  <label for="skorkrit6">6. Ketepatan sinopsis dengan film</label>
+                  <input type="number" id="skorkrit6" name="skorkrit6" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit6 }}">
+              </div>
+              <div class="input-field">
+                <label for="skorkrit7">7.Ketepatan shotlist dengan film</label>
+                <input type="number" id="skorkrit7" name="skorkrit7" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit7 }}">
+            </div>
+            <div class="input-field">
+                <label for="skorkrit8">8.Ketepatan storyboard dengan film</label>
+                <input type="number" id="skorkrit8" name="skorkrit8" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit8 }}">
+            </div>
+            <div class="input-field">
+              <label for="skorkrit9">9.Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</label>
+              <input type="number" id="skorkrit9" name="skorkrit9" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit9 }}">
+          </div>
+          <div class="input-field">
+              <label for="skorkrit10">10.Seberapa orisinalitas cerita dalam script</label>
+              <input type="number" id="skorkrit10" name="skorkrit10" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit10 }}">
+          </div>
                     <div class="details ID">
                       <span class="title">Hasil Total Score</span>
                           <div class="fields">
-                          <div class="input-field">
+                            <div class="input-field">
                               <label for="total">Total Score Seluruh Kriteria:</label>
                               <input @disabled(true) type="text" id="total" name="total" readonly value="{{ $edit->total }}">
                           </div>
+                            <div class="input-field">
+                              <label for="note">Catatan</label>
+                              <textarea id="note" name="note"  required >{{ $edit->note }}</textarea>
+                          </div>
+                          
                         </div>
                         <button type="submit" class="nextBtn">
                             <span class="btnText">Submit</span>
@@ -243,8 +232,14 @@
       const skorkrit2 = parseFloat(form.skorkrit2.value) || 0;
       const skorkrit3 = parseFloat(form.skorkrit3.value) || 0;
       const skorkrit4 = parseFloat(form.skorkrit4.value) || 0;
+      const skorkrit5 = parseFloat(form.skorkrit5.value) || 0;
+      const skorkrit6 = parseFloat(form.skorkrit6.value) || 0;
+      const skorkrit7 = parseFloat(form.skorkrit7.value) || 0;
+      const skorkrit8 = parseFloat(form.skorkrit8.value) || 0;
+      const skorkrit9 = parseFloat(form.skorkrit9.value) || 0;
+      const skorkrit10 = parseFloat(form.skorkrit10.value) || 0;
 
-      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4;
+      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10;
       form.total.value = total;
     }
   </script>
@@ -273,5 +268,45 @@ $("body").css(
 );
 });
 </script>
+<script>
+  const pesertaData = @json($peserta);
+const namateamInput = document.getElementById('namateam'); // Elemen input teks
+
+// Mengubah pesertaElements menjadi array of input elements
+const pesertaInputs = [
+    document.getElementById('peserta1'),
+    document.getElementById('peserta2'),
+    document.getElementById('peserta3'),
+    document.getElementById('peserta4'),
+    document.getElementById('peserta5')
+];
+
+namateamInput.addEventListener('input', () => {
+    const searchTerm = namateamInput.value.toLowerCase();
+    const selectedTeamMembers = pesertaData.filter(p => p.namateam.toLowerCase().includes(searchTerm));
+
+    if (selectedTeamMembers.length > 0) {
+        selectedTeamMembers.forEach((member, index) => {
+            if (index < 5) {
+             
+                pesertaInputs[index].value = member.peserta || member[`peserta${index}`] || '';
+
+               
+                if (member.peserta1) pesertaInputs[0].value = member.peserta1;
+                if (member.peserta2) pesertaInputs[1].value = member.peserta2;
+                if (member.peserta3) pesertaInputs[2].value = member.peserta3;
+                if (member.peserta4) pesertaInputs[3].value = member.peserta4;
+                if (member.peserta5) pesertaInputs[4].value = member.peserta5;
+            }
+        });
+    } else {
+        
+        pesertaInputs.forEach(input => {
+            input.value = '';
+        });
+    }
+});
+
+</script> 
 </body>
 </html>

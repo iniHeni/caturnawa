@@ -27,8 +27,8 @@ class Day5kdbiObserver
         // 1. Ambil data semua tim dengan total skor, diurutkan berdasarkan total descending
         $allTeams = DB::table('day5kdbis')
             ->select('team', 
-            DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
-            DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+            DB::raw('AVG(skorindividu1) as skorindividu1'), 
+            DB::raw('AVG(skorindividu2) as skorindividu2'),
                     )
             ->where('ronde', $ronde)
             ->groupBy('team')
@@ -36,7 +36,9 @@ class Day5kdbiObserver
     
         // 2. Hitung total skor untuk setiap tim
         $allTeams = $allTeams->map(function ($row) {
-            $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+            $row->skorindividu1 = number_format($row->skorindividu1, 1, '.', '');
+            $row->skorindividu2 = number_format($row->skorindividu2, 1, '.', '');
+            $row->total = number_format(($row->skorindividu1 + $row->skorindividu2) / 2, 1, '.', '');
             return $row;
         });
     
@@ -54,7 +56,7 @@ class Day5kdbiObserver
             // Update data VP untuk tim
             day5kdbi::where('team', $team->team)
             ->where('ronde', $ronde)
-            ->update(['vp' => ($rank <= 3) ? 4 - $rank + 1 : 0]); // Perbaikan di sini
+            ->update(['vp' => ($rank <= 4) ? 4 - $rank + 1 : 0]); // Perbaikan di sini
         
         $previousTotal = $team->total;
         }

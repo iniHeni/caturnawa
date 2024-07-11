@@ -16,21 +16,13 @@
 
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../css/back.css">
+      <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pagelombaedc.css">
 
       <title>Caturnawa - EDC</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+      
  
 #loadingDiv {
    width: 100%;
@@ -57,11 +49,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" ></a>
+         <nav class="nav contnav">
+         <img src="../../img/edcaja.png" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 18rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -100,12 +92,19 @@
          </nav>
       </header>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-    <h1 class="judul">@lang('messages.edc')</h1>
-      <p class="testing1">@lang('messages.teks')<br> 
-        @lang('messages.teks1')</p>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
+      <h1 class="judul">English Debate Competition</h1>
+      <p class="testing1">@lang('messages.teks')
+            @lang('messages.teks1')</p>
+            <div class="cont">
+                <a class="gb" href="https://drive.google.com/drive/folders/1TVhm_ayI7emGH-VVc2UvkRuB7yqldqcE">@lang('messages.gb')</a>
+             </div>
+    
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
-        <h1 class="judul">@lang('messages.pesertalomba')</h1>
+        <h1 class="judul1">@lang('messages.pesertalomba')</h1>
         <div class="slide-container swiper">
               <div class="slide-content">
                   <div class="card-wrapper swiper-wrapper">
@@ -121,7 +120,7 @@
                           <div class="card-content">
                               <h2 class="name">{{ $data->instansi }}</h2>
                               <p class="description">{{ $data->namateam }}</p>
-                              <button class="button"><a href="{{route('edc.detailpeserta', $rank + 1) }}">@lang('messages.view')</a></button>
+                              <button class="button"><a href="{{route('edc.detailpeserta', $data->id) }}">@lang('messages.view')</a></button>
                           </div>
                       </div>
                       @endforeach
@@ -138,7 +137,7 @@
             <a href="{{url('matalomba/edc/penyisihan') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>18 - 19 September</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
@@ -146,7 +145,7 @@
             <a href="{{url('matalomba/edc/Semifinal') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="designer">Semifinal</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>20 September</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
@@ -154,7 +153,7 @@
             <a href="{{url('matalomba/edc/Final') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="editor">Final</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>14 - 15 @lang('messages.ok1')</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
@@ -227,7 +226,6 @@
     <!-- JavaScript -->
 <script src="../../js/swiper.js"></script>
 <script src="../../js/car2.js"></script>
-      <script src="../../js/nav.js"></script>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script>function removeLoader() {
@@ -248,6 +246,8 @@
         );
       });</script>
         <script src="../../js/nav.js"></script>
+
+        
         <script type="text/javascript">
            $(function() {
                $(this).bind("contextmenu", function(e) {
@@ -275,4 +275,5 @@
          }
      });
          </script>
+         <script src="../../js/SM.js"></script>
 </html>

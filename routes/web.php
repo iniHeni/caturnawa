@@ -32,10 +32,187 @@ use App\Http\Controllers\smsfinalController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Middleware\AuthMiddleware;
+
+// Route Admin EDC
+// Route::get('/admin/mainmenuEDC', function () {
+//     return view('admin/EDC/mainmenuEDC');
+// })->name('mainmenu.show')->middleware(AuthMiddleware::class);
+
+// Route::get('/admin/mainmenuKDBI1', function () {
+//     return view('admin/KDBI/mainmenuKDBI');
+// })->name('mainmenukdbi.show')->middleware(AuthMiddleware::class);
+
+// // Route Admin LKTI
+// Route::get('/admin/mainmenuLKTI1', function () {
+//     return view('admin/LKTI/mainmenuLKTI');
+// })->name('mainmenu.showlkti')->middleware(AuthMiddleware::class);
+
+// // Route Admin SM
+// Route::get('/admin/mainmenuSM1', function () {
+//     return view('admin/SM/mainmenuSM');
+// })->name('mainmenu.showsm')->middleware(AuthMiddleware::class);
+
+// Route::get('/admin/penyisihanEDC', function () {
+//     return view('admin/EDC/penyisihanEDC');
+// })->middleware(AuthMiddleware::class);
+
+// // Route Login
+// Route::get('/admin/login', function () {
+//     return view('admin/loginadmin');
+// });
+
+
+
+////////////////////////  KDBI  ////////////////////////////////
+
+// Route::get('/admin/mainmenuKDBI', function () {
+//     return view('admin/KDBI/mainmenuKDBI');
+// })->name('kdbi.mainmenu');
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/KDBI/beranda');
+});
+
+// Route penyisihanKDBI
+
+Route::get('/admin/penyisihanKDBI', function () {
+    return view('admin/KDBI/penyisihanKDBI');
+});
+
+// Route finalKDBI
+
+Route::get('/admin/finalKDBI', function () {
+    return view('admin/KDBI/finalKDBI');
+});
+
+
+//Route Section1
+Route::get('/admin/section1KDBI', function () {
+    return view('admin/KDBI/sectionp/section1');
+});
+
+//Route Section2
+Route::get('/admin/section2KDBI', function () {
+    return view('admin/KDBI/sectionp/section2');
+});
+
+
+//Route Section3
+Route::get('/admin/section3KDBI', function () {
+    return view('admin/KDBI/sectionp/section3');
+});
+
+
+//Route Section4
+Route::get('/admin/section4KDBI', function () {
+    return view('admin/KDBI/sectionp/section4');
+});
+
+
+
+
+
+// Route Admin LKTI
+// Route::get('/admin/mainmenuLKTI1', function () {
+//     return view('admin/LKTI/mainmenuLKTI');
+// })->name('spc.mainmenu');
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/LKTI/beranda');
+});
+
+// Route Admin SM
+Route::get('/admin/mainmenuSM1', function () {
+    return view('admin/SM/mainmenuSM');
+})->name('sm.mainmenu');
+
+// Route Beranda
+Route::get('/admin/beranda1', function () {
+    return view('admin/SM/beranda');
+});
+
+
+// Middleware auth untuk memastikan login hanya diperlukan sekali selama sesi
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/mainmenuEDC', function () {
+        return view('admin/EDC/mainmenuEDC');
+    })->name('mainmenu.show');
+
+    Route::get('/admin/mainmenuKDBI', function () {
+        return view('admin/KDBI/mainmenuKDBI');
+    })->name('mainmenukdbi.show');
+
+    Route::get('/admin/mainmenuLKTI1', function () {
+        return view('admin/LKTI/mainmenuLKTI');
+    })->name('mainmenu.showlkti');
+
+    Route::get('/admin/mainmenuSM1', function () {
+        return view('admin/SM/mainmenuSM');
+    })->name('mainmenu.showsm');
+    
+});
+    Route::get('/admin/penyisihanEDC', function () {
+        return view('admin/EDC/penyisihanEDC');
+    });
+
+
+// Route Login
+Route::get('/admin/login', function () {
+    return view('admin/loginadmin');
+});
+
+
+
+
+
 // index indo dan eng
 Route::get('/', function () {
     return view('index');
 })->name('utama');
+
+// Route Admin EDC
+// Route::get('/admin/mainmenuEDC', function () {
+//     return view('admin/EDC/mainmenuEDC')->name('edc.mainmenu');
+// });
+// Route Beranda
+Route::get('/admin/beranda', function () {
+    return view('admin/EDC/beranda');
+});
+
+
+
+
+// Route penyisihanEDC
+
+// Route::get('/admin/penyisihanEDC', function () {
+//     return view('admin/EDC/penyisihanEDC');
+// });
+
+
+// Route semifinalEDC
+
+
+// Route finalEDC
+
+Route::get('/admin/finalEDC', function () {
+    return view('admin/EDC/finalEDC');
+});
+
+// Route penyisihanEDC
+
+// Route::get('/admin/penyisihanEDC', function () {
+//     return view('admin/EDC/penyisihanEDC');
+// });
+
+// Route finalEDC
+
+Route::get('/admin/finalEDC', function () {
+    return view('admin/EDC/finalEDC');
+});
+
 
 
 //Route Periode
@@ -91,11 +268,14 @@ Route::post('/tambahsm/penyisihan', [smsemifinalController::class, 'tambahp']);
 Route::post('/tambahsm/final', [smfinalController::class, 'tambahf']);
 Route::post('/tambahsm/sfinal', [smsfinalController::class, 'tambahsf']);
 Route::get('matalomba/sm/penyisihan', [smsemifinalController::class, 'penyisihan']);
-Route::get('matalomba/sm/penyisihan/detail{id}', [smsemifinalController::class, 'detail'])->name('sm.detail');
+Route::get('matalomba/sm/penyisihan/detail{namateam}', [smsemifinalController::class, 'detail'])->name('sm.detail');
+Route::get('admin/sm/penyisihan/detail{namateam}', [smsemifinalController::class, 'detailadmin'])->name('sm.detailadmin');
 Route::get('matalomba/sm/final', [smfinalController::class, 'final'])->name('sm.final');
-Route::get('matalomba/sm/final/detail{id}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+Route::get('matalomba/sm/final/detail{namateam}', [smfinalController::class, 'detailf'])->name('sm.detailf');
+Route::get('admin/sm/final/detail{namateam}', [smfinalController::class, 'detailfadmin'])->name('sm.detailfadmin');
 Route::get('matalomba/sm/sfinal', [smsfinalController::class, 'sfinal'])->name('sm.sfinal');
-Route::get('matalomba/sm/sfinal/detail{id}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
+Route::get('matalomba/sm/sfinal/detail{namateam}', [smsfinalController::class, 'detailsf'])->name('sm.detailsf');
+Route::get('admin/sm/sfinal/detail{namateam}', [smsfinalController::class, 'detailsfadmin'])->name('sm.detailsfadmin');
 
 Route::get('matalomba/edc/detailpeserta/{id}', [pesertaedcController::class, 'detailpesertaedc'])->name('edc.detailpeserta');
 Route::post('/tambahpenyisihan/edcday1', [day1edcController::class, 'tambahedc']);
@@ -298,54 +478,9 @@ Route::post('/login/handler', [loginadminController::class, 'login'])->name('log
 
 // Route Login
 
-Route::get('/admin/login', function () {
-    return view('admin/loginadmin');
-});
-
-// Route Admin EDC
-Route::get('/admin/mainmenuEDC', function () {
-    return view('admin/EDC/mainmenuEDC')->name('edc.mainmenu');
-});
-// Route Beranda
-Route::get('/admin/beranda', function () {
-    return view('admin/EDC/beranda');
-});
-
-
-
-
-// Route penyisihanEDC
-
-Route::get('/admin/penyisihanEDC', function () {
-    return view('admin/EDC/penyisihanEDC');
-});
-
-
-// Route semifinalEDC
-
-
-// Route finalEDC
-
-Route::get('/admin/finalEDC', function () {
-    return view('admin/EDC/finalEDC');
-});
-
-
-
-
-
-// Route penyisihanEDC
-
-Route::get('/admin/penyisihanEDC', function () {
-    return view('admin/EDC/penyisihanEDC');
-});
-
-
-// Route finalEDC
-
-Route::get('/admin/finalEDC', function () {
-    return view('admin/EDC/finalEDC');
-});
+// Route::get('/admin/login', function () {
+//     return view('admin/loginadmin');
+// });
 
 
 
@@ -353,8 +488,9 @@ Route::get('/admin/finalEDC', function () {
 
 
 
-Route::get('/admin/mainmenuKDBI', [AuthController::class, 'showMainMenu'])->name('mainmenukdbi.show'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuKDBI', [AuthController::class, 'login'])->name('mainmenu.login');
+
+Route::get('/admin/mainmenuKDBI1', [AuthController::class, 'showMainMenu'])->name('mainmenukdbi.show'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuKDBI1', [AuthController::class, 'login'])->name('mainmenu.login');
 Route::get('/admin/mainmenuEDC', [AuthController::class, 'showMainMenu'])->name('mainmenu.show'); // Rute untuk menampilkan halaman main menu (GET)
 Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainmenu.login'); // Rute untuk login (POST)
 
@@ -362,78 +498,7 @@ Route::post('/admin/mainmenuEDC', [AuthController::class, 'login'])->name('mainm
 
 
 
-// Route Beranda
-Route::get('/admin/beranda1', function () {
-    return view('admin/KDBI/beranda');
-});
 
-
-
-
-
-
-
-
-// Route penyisihanKDBI
-
-Route::get('/admin/penyisihanKDBI', function () {
-    return view('admin/KDBI/penyisihanKDBI');
-});
-
-
-
-
-// Route finalKDBI
-
-Route::get('/admin/finalKDBI', function () {
-    return view('admin/KDBI/finalKDBI');
-});
-
-
-
-//Route Section1
-Route::get('/admin/section1KDBI', function () {
-    return view('admin/KDBI/sectionp/section1');
-});
-
-//Route Section2
-Route::get('/admin/section2KDBI', function () {
-    return view('admin/KDBI/sectionp/section2');
-});
-
-
-//Route Section3
-Route::get('/admin/section3KDBI', function () {
-    return view('admin/KDBI/sectionp/section3');
-});
-
-
-//Route Section4
-Route::get('/admin/section4KDBI', function () {
-    return view('admin/KDBI/sectionp/section4');
-});
-
-////////////////////////  KDBI  ////////////////////////////////
-
-
-
-
-
-
-
-
-Route::get('/admin/mainmenuKDBI', function () {
-    return view('admin/KDBI/mainmenuKDBI');
-})->name('kdbi.mainmenu');
-// Route Admin LKTI
-Route::get('/admin/mainmenuLKTI1', function () {
-    return view('admin/LKTI/mainmenuLKTI');
-})->name('spc.mainmenu');
-
-// Route Beranda
-Route::get('/admin/beranda1', function () {
-    return view('admin/LKTI/beranda');
-});
 
 
 // Route penyisihanLKTI
@@ -462,21 +527,15 @@ Route::post('/admin/LKTI/hapusf/{id}', [spcfinalController::class, 'hapusf'])->n
 
 
 
-Route::get('/admin/mainmenuLKTI', [AuthController::class, 'showMainMenu'])->name('mainmenu.showlkti'); // Rute untuk menampilkan halaman main menu (GET)
-Route::post('/admin/mainmenuLKTI', [AuthController::class, 'login'])->name('mainmenu.loginlkti'); // Rute untuk login (POST)
+Route::get('/admin/mainmenuLKTI1', [AuthController::class, 'showMainMenu'])->name('mainmenu.showlkti'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuLKTI1', [AuthController::class, 'login'])->name('mainmenu.loginlkti'); // Rute untuk login (POST)
 
 
 
 
-// Route Admin SM
-Route::get('/admin/mainmenuSM1', function () {
-    return view('admin/SM/mainmenuSM');
-})->name('sm.mainmenu');
 
-// Route Beranda
-Route::get('/admin/beranda1', function () {
-    return view('admin/SM/beranda');
-});
+Route::get('/admin/mainmenuSM1', [AuthController::class, 'showMainMenu'])->name('mainmenu.showsm'); // Rute untuk menampilkan halaman main menu (GET)
+Route::post('/admin/mainmenuSM1', [AuthController::class, 'login'])->name('mainmenu.loginsm'); // Rute untuk login (POST)
 
 Route::get('/admin/sm/tambahpesfSM1', [smsemifinalController::class, 'pesertasf'])->name('sm.pesertasf');
 Route::get('/admin/sm/tambahpefSM1', [smfinalController::class, 'pesertaf'])->name('sm.pesertaf');

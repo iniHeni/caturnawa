@@ -15,19 +15,10 @@
     <link rel="stylesheet" href="../../../css/admin.css">
     
     <link rel="stylesheet" href="../../../css/tambahspc.css">
-    <link rel="stylesheet" href="../../css/navadmin.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
+
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -42,7 +33,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 
@@ -54,13 +45,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/edcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -98,55 +89,52 @@
                 <p><a class="add" href="{{ route('edc.pesertaday1') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     @foreach ($groupedByRondeAndSesi as $ronde => $sesiChunks)
-    <h2 style="color: white; text-align:center">Ronde {{ $ronde }}</h2>
-    @foreach ($sesiChunks as $sesi => $dataSesi)
+                    @foreach ($sesiChunks as $sesi => $dataSesi)
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+    <h2 style="color: white; text-align:center">Ronde {{ $ronde }} |</h2>
+    <h3 style="color: white; text-align:center; margin-left: 10px;">Sesi {{ $sesi }}</h3></div>
+    @foreach ($dataSesi as $room => $dataa)
+    <h3 style="color: white; text-align:center">Breakout Room {{ $room }}</h3>
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 5rem; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
-                                <th scope="col" rowspan="2">Ronde</th>
-                                <th scope="col" rowspan="2">Session</th>
                                 <th scope="col" rowspan="2">Adjudicators</th>
-                                <th scope="col" rowspan="2">Room</th>
                                 <th scope="col" rowspan="2">Team</th>
                                 <th scope="col" rowspan="2">Position Team</th>
-                                <th scope="col" rowspan="2">Position Participant</th>
                                 <th scope="col" rowspan="2">Participant Name</th>
-                                <th scope="col"  colspan="2">Score Individu</th>
+                                <th scope="col" >Score Individu</th>
                                 <th scope="col" rowspan="2">Score team</th>
                                 <th scope="col" rowspan="2">Victory Point</th>
                                 <th scope="col" rowspan="2">Action</th>
                             </tr>
-                            <tr>
-                                <th scope="col" colspan="1">Individu 1</th>
-                                <th scope="col" colspan="1">Individu 2</th>
-                            </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dataSesi as $data)
+                            @if ($dataa->isNotEmpty()) 
+                            <tr>
+                                <td rowspan="20">{{ $dataa->first()->juri }}</td> 
+                            @foreach ($dataa as $item)
+                            
                         <tr>
-                            <td>{{ $data->ronde }}</td>
-                            <td>{{ $data->sesi}}</td>
-                            <td>{{ $data->juri}}</td>
-                            <td>{{ $data->room}}</td>
-                            <td>{{ $data->team}}</td>
-                            <td>{{ $data->posisi}}</td>
-                            <td>{{ $data->posisi1}}<br>{{ $data->posisi2}}</td>
-                            <td>{{ $data->nama1}}<br>{{ $data->nama2}}</td>
-                            <td>{{ $data->skorindividu1}}</td>
-                            <td>{{ $data->skorindividu2}}</td>
-                            <td>{{ $data->total}}</td>
-                            <td>{{ $data->vp}}</td>
+                            <td>{{ $item->team}}</td>
+                            <td>{{ $item->posisi}}</td>
+                            <td>{{ $item->nama1}}({{ $item->posisi1}})<br>{{ $item->nama2}}({{ $item->posisi2}})</td>
+                            <td>{{ $item->skorindividu1}}<br>{{ $item->skorindividu2}}</td>
+                            <td>{{ $item->total}}</td>
+                            <td>{{ $item->vp}}</td>
                             <td>
-                                <a href="{{ route('edc.editedc', $data->id) }}">Edit</a>
-                                <form action="{{ route('edc.hapusedc', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                <a href="{{ route('edc.editedc', $item->id) }}">Edit</a>
+                                <form action="{{ route('edc.hapusedc', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}">
                                     @csrf 
-                                    <button type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                    <button type="button" style="color: red" onclick="confirmDelete({{ $item->id }})">Hapus</button>
                                 </form>
                             </td>
                         </tr>
+                        
                     @endforeach
+                    @endif
                         </tbody>
                     </table>
+                    @endforeach
                     @endforeach
                     @endforeach
                 </div>

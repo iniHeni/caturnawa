@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer('scorepenyajian');
             $table->integer('scoresubs');
             $table->integer('scorekualitas');
-            $table->string('penyajian');
-            $table->string('subs');
-            $table->string('kualitas');
+            $table->text('penyajian');
+            $table->text('subs');
+            $table->text('kualitas');
             $table->integer('total');
             $table->string('juri');
             $table->timestamps();

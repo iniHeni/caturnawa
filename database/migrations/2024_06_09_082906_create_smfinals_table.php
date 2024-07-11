@@ -21,14 +21,17 @@ return new class extends Migration
             $table->string('peserta5');
             $table->string('juri');
             $table->integer('skorkrit1');
-            $table->text('krit1');
             $table->integer('skorkrit2');
-            $table->text('krit2');
             $table->integer('skorkrit3');
-            $table->text('krit3');
             $table->integer('skorkrit4');
-            $table->text('krit4');
-            $table->integer('total');
+            $table->integer('skorkrit5');
+            $table->integer('skorkrit6');
+            $table->integer('skorkrit7');
+            $table->integer('skorkrit8');
+            $table->integer('skorkrit9');
+            $table->integer('skorkrit10');
+            $table->text('note');
+            $table->float('total');
             $table->timestamps();
         });
     }

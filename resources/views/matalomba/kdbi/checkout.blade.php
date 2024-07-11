@@ -14,7 +14,8 @@
       
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../../css/back.css">
+      <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/cekout.css">
       <script type="text/javascript"
       src="https://app.sandbox.midtrans.com/snap/snap.js"
@@ -58,11 +59,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
+        <nav class="nav contnav">
+        <img src="../../../img/kdbiaja.png" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 21rem" class="nav__item">
+       <div style="left: 200px" class="nav__item">
                        <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
                        <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
                    </div>
@@ -99,6 +100,9 @@
             </div>
          </nav>
       </header>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L120,186.7C240,149,480,75,720,80C960,85,1200,171,1320,213.3L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
       <section>
         <div class="konten">
@@ -162,7 +166,7 @@
                                 <input disabled placeholder="{{$orderkdbi->buktifollow_1}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label>@lang('messages.unggah1') Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$orderkdbi->twibbon}}">
                             </div>
                         </div>
@@ -223,7 +227,7 @@
                                 <input disabled placeholder="{{$orderkdbi->buktifollow_2}}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label>@lang('messages.unggah1') Twibbon *png,jpeg,jpg maks 5mb</label>
                                 <input disabled placeholder="{{$orderkdbi->twibbon2}}">
                             </div>
                         </div>
@@ -231,6 +235,10 @@
                     <div class="details ID">
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
+                            <div class="input-field">
+                                <label>@lang('messages.team2')</label>
+                                <input disabled placeholder="{{$orderkdbi->namateam}}" required>
+                            </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$orderkdbi->instansi}}" required>
@@ -303,31 +311,36 @@
   });
         },
         onPending: function(result){
-          /* You may add your own implementation here */
-          alert("wating your payment!"); console.log(result);
+            location.reload();
         },
         onError: function(result){
             Swal.fire({
-    icon: 'info',
-    title: 'Waiting Payment',
-    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
-    showConfirmButton: false, // Tidak menampilkan tombol OK
-    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
-    didOpen: () => {
-      Swal.showLoading(); // Menampilkan animasi loading
-    },
-  });
-  console.log(result); 
-          
-        },
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
+            showCancelButton: true, 
+            confirmButtonText: 'Coba Lagi',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            
+            } else {
+                window.location.href = '/'; 
+            }
+        });
+
+        console.error("Error pembayaran:", result);
+                
+                },
         onClose: function(){
             Swal.fire({
     icon: 'warning',
-    title: 'Payment Canceled',
+    title: 'Pembayaran Dibatalkan',
     text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
   });
         }
       })
     });
-      </script>
+  </script>
+  <script src="../../js/SM.js"></script>
 </html>

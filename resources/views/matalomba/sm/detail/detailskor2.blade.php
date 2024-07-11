@@ -12,22 +12,13 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../../../css/pagelomba.css">
 
 
       <title>Caturnawa - SMFinalScore</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+
  
 #loadingDiv {
    width: 100%;
@@ -45,6 +36,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../../../../img/loader.gif);
  }
+ 
      </style>
    </head>
    <body>
@@ -53,15 +45,18 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../../../img/smcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <nav class="nav contnav">
+         <img src="../../../../img/smcaja.png" class="nav_logo"><a href="{{url('/') }}" class="nav__logo"></a>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
-						<li><a href="../../../../locale/ind') }}" height="20"><img src="../../../../img/ind.png"  /></a></li>
+        <div style="left: 200px" class="nav__item">
+						<li><a href="../../../../locale/ind" height="20"><img src="../../../../img/ind.png"  /></a></li>
 						<li><a href="../../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
 					</div>
+                <li class="nav__item">
+                  <a href="{{url('matalomba/sm/sfinal') }}" class="nav__link">Leaderboard</a>
+               </li>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                </li>
@@ -91,87 +86,130 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
     
       <!--==================== Tabel Skor ====================-->
+      <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" style="margin: 0 auto;">
+                <div class="counter blue">
+                    <div class="counter-icon" >
+                        <i class="fa fa-trophy" style="margin: 12 auto;" ></i>
+                    </div>
+                    @foreach($final as $rank=>$data)
+                    <span class="counter-value">{{ $data->total }}</span>
+                    @endforeach
+                    <h3>@lang('messages.rata')</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
             <h1 class="judul" style="color: white" >Detail Final</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
-                <table class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
-                  <table class="table table-bordered table-striped" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                <table class="table table-bordered " style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
+                  <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                    @foreach($tambah as $no=>$dataa)
                     <thead style="position: static; top: -1; z-index: 10;">
-                      <tr><th scope="col" colspan="5" style="text-align: left;">Adjudicators: {{ $dataa->juri }}</th></tr>
+                      <tr><th scope="col" colspan="3" style="text-align: left;">@lang('messages.juri'): {{ $dataa->juri }}</th></tr>
                       <tr>
-                          <th scope="col">@lang('messages.team1')</th>
-                          <th scope="col">@lang('messages.peserta1')</th>
-                          <th scope="col">@lang('messages.penilaian')</th>
-                          <th scope="col">@lang('messages.kuanti')</th>
-                          <th scope="col">@lang('messages.kuali')</th>
+                        <tr><th scope="col" colspan="3" style="text-align: left;">@lang('messages.team2'): {{ $dataa->namateam }}</th></tr>
+                            <tr><th scope="col" colspan="3" style="text-align: left;">@lang('messages.peserta'):<br>1. {{ $dataa->peserta1 }}<br>2. {{ $dataa->peserta2 }}<br>3. {{ $dataa->peserta3 }}<br>4. {{ $dataa->peserta4 }}<br>5. {{ $dataa->peserta5 }}</th>
+                        </tr>
+                          <th scope="col" style="text-align: center">@lang('messages.penilaian')</th>
+                          <th scope="col" style="text-align: center">@lang('messages.kuanti')</th>
                       </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <td rowspan="4">{{ $dataa->namateam }}</td>
-                        <td rowspan="4">1.{{ $dataa->peserta1 }}<br>2.{{ $dataa->peserta2 }}<br>3.{{ $dataa->peserta3 }}<br>4.{{ $dataa->peserta4 }}<br>5.{{ $dataa->peserta5 }}</td>
                         <td>@lang('messages.kritf1')</td>
-                        <td>{{ $dataa->skorkrit1 }}</td>
-                        <td>{{ $dataa->krit1 }}</td>
+                        <td style="text-align: center">{{ $dataa->skorkrit1 }}</td>
                     </tr>
                     <tr>
 
                         
                         <td>@lang('messages.kritf2')</td>
-                        <td>{{ $dataa->skorkrit2 }}</td>
-                        <td>{{ $dataa->krit2 }}</td>
+                        <td style="text-align: center">{{ $dataa->skorkrit2 }}</td>
                        
                     </tr>
                     <tr>
 
                         
                         <td>@lang('messages.kritf3')</td>
-                        <td>{{ $dataa->skorkrit3}}</td>
-                        <td>{{ $dataa->krit3 }}</td>
+                        <td style="text-align: center">{{ $dataa->skorkrit3}}</td>
                        
                     </tr>
                     <tr>
-
-                       
                         <td>@lang('messages.kritf4')</td>
-                        <td>{{ $dataa->skorkrit4}}</td>
-                        <td>{{ $dataa->krit4 }}</td>
+                        <td style="text-align: center">{{ $dataa->skorkrit4}}</td>
                         
                     </tr>
                     <tr>
-        <tr><td colspan="3">Total Score</td>
-          <td colspan="7">{{ $dataa->total }}</td></tr>
+                      <td>@lang('messages.kritf5')</td>
+                      <td style="text-align: center">{{ $dataa->skorkrit5 }}</td>
+                  </tr>
+                  <tr>
+
+                      
+                      <td>@lang('messages.kritf6')</td>
+                      <td style="text-align: center">{{ $dataa->skorkrit6 }}</td>
+                     
+                  </tr>
+                  <tr>
+
+                      
+                      <td>@lang('messages.kritf7')</td>
+                      <td style="text-align: center">{{ $dataa->skorkrit7}}</td>
+                     
+                  </tr>
+                  <tr>
+                      <td>@lang('messages.kritf8')</td>
+                      <td style="text-align: center">{{ $dataa->skorkrit8}}</td>
+                      
+                  </tr>
+                  <tr>
+
+                      
+                    <td>@lang('messages.kritf9')</td>
+                    <td style="text-align: center">{{ $dataa->skorkrit9}}</td>
+                   
+                </tr>
+                <tr>
+                    <td>@lang('messages.kritf10')</td>
+                    <td style="text-align: center">{{ $dataa->skorkrit10}}</td>
+                    
+                </tr>
+                    <tr>
+        <tr><td colspan="1" style="text-align: center">Total Score</td>
+          <td colspan="1" style="text-align: center">{{ $dataa->total }}</td></tr>
+          <tr><th scope="col" colspan="4" style="text-align: left;">@lang('messages.note'): {{ $dataa->note }}</th>
+          </tr>
 
                 </tbody>
+                @endforeach
                 </table>
               </table>
           </div>
-          <!-- Tampilkan pagination links jika diperlukan -->
-          <!-- Simulasi pagination untuk data dummy -->
       </div>
   </div>
 </section>
 
 <style>
-  .table-bordered td,
-  .table-bordered th {
-      border: 2px solid #dee2e6 !important;
-      text-align: left;
-      vertical-align: middle;
-  }
+ .table-bordered td,
+            .table-bordered th {
+                border: 2px solid #dee2e6 !important;
+                text-align: left;
+                vertical-align: middle;
+                
+            }
 
-  thead th {
-      background-color: #dee2e6 !important;
-  }
-  a[href^="mailto:"] {
-color:#dee2e6 ; 
-text-decoration: underline;
-}
+            thead th {
+                background-color: #cecece !important;
+            }
 
 </style>
-
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
@@ -219,6 +257,22 @@ else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
           }, 2000)
         );
       });</script>
-      <script src="../../js/nav.js"></script>
+      <script src="../../../../js/nav.js"></script>
+      <script src="../../../js/SM.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('.counter-value').each(function(){
+              $(this).prop('Counter',0).animate({
+                  Counter: $(this).text()
+              },{
+                  duration: 3500,
+                  easing: 'swing',
+                  step: function (now){
+                      $(this).text(Math.ceil(now));
+                  }
+              });
+          });
+      });
+      </script>
    </body>
 </html>

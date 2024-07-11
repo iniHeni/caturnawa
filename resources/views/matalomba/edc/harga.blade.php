@@ -17,9 +17,8 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="css/harga.css">
-      
-      <link rel="stylesheet" href="css/navmenu.css">
-      <
+      <link rel="stylesheet" href="css/back.css">
+      <link rel="stylesheet" href="css/navmenudbt.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -60,13 +59,13 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="img/uf2.png" width="145" class="nav_gmbar" ></img>
-           <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+        <nav class="nav contnav">
+        <img src="img/edcaja.png" width="145" class="nav_gmbar" ></img>
+           <h2><a href="{{url('/') }}" class="nav__logo" ></a></h2>
 
            <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-               <div style="margin-right: 10rem" class="nav__item">
+               <div style="left: 200px" class="nav__item">
                         <li><a href="locale/ind"><img src="img/ind.png"  /></a></li>
                         <li><a href="locale/en"><img src="img/eng.png" /></a></li>
                     </div>
@@ -102,103 +101,116 @@
       
 <!--==================== Period Tiket ====================-->
 <div class="container1">
-   <h1 class="upcomming">Price</h1>
-   
-   <div class="item">
-     <span class="up-border"></span>
-       <span class="down-border"></span>
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">23</h2>
-       <p class="day">July</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
-       <p class="event">Early Bid</p>
-       <h2 class="title">Rp350.000/Team</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
-         <p>English Debat Competition</p>
-       </div>
-       <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <a href="{{url('/matalomba/daftarEDC') }}" class="daftar">Register</a>
-     </div>
-   </div>
-   
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">29</h2>
-       <p class="day">July</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
-       <p class="event">Phase 1</p>
-       <h2 class="title">Rp500.000/Team</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
-         <p>English Debat Competition</p>
-       </div>
-       <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <a class="tickets">Closed</a>
-     </div>
-   </div>
-   
-   <div class="item">
-     <div class="item-right">
-       <span class="leftup-border"></span>
-       <span class="leftdown-border"></span>
-       <h2 class="num">12</h2>
-       <p class="day">August</p>
-       <span class="up-border"></span>
-       <span class="down-border"></span>
-     </div>
-     
-     <div class="item-left">
-       <p class="event">Phase 2</p>
-       <h2 class="title">Rp550.000/Team</h2>
-       <div class="sce">
-         <div class="icon">
-           <i class="fa fa-table"></i>
-         </div>
-         <p>English Debat Competition</p>
-       </div>
-       <div class="fix"></div>
-       <div class="loc">
-         <div class="icon">
-           <i class="fa fa-map-marker"></i>
-         </div>
-         <p>Pejaten, Pasar Minggu<br>Jakarta Selatan</p>
-       </div>
-       <div class="fix"></div>
-       <a class="tickets">Closed</a>
-     </div>
-   </div>
- </div>
+  <h1 class="upcomming">@lang('messages.harga')</h1>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 class="num">23 - 28 @lang('messages.tgl')</h2>
+      
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap')</p>
+      <h2 class="title">@lang('messages.Rp5')</h2>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>English Debate Competition</p>
+      </div>
+
+      <div class="fix"></div>
+
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 class="num">29 @lang('messages.tgl') - 11 @lang('messages.tgl1') </h2>
+      <!-- <p class="day">2024</p> -->
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap1')</p>
+      <h2 class="title">@lang('messages.Rp6')</h2>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>English Debate Competition</p>
+      </div>
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
+  
+  <div class="item">
+    <span class="up-border"></span>
+      <span class="down-border"></span>
+    <div class="item-right">
+      <span class="leftup-border"></span>
+      <span class="leftdown-border"></span>
+      <h2 style="font-size:32px" class="num">12 - 23 @lang('messages.tgl1')</h2>
+      <!-- <p class="day">2024</p> -->
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div>
+    
+    <div class="item-left">
+      <p class="event">@lang('messages.tahap2')</p>
+      <h2 class="title">@lang('messages.Rp7')</h2>
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>English Debate Competition</p>
+      </div>
+    <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+      </div>
+      
+      <div class="fix"></div>
+      <button class="tickets" >@lang('messages.tutup')</button>
+      <button class="daftar" >@lang('messages.Daftar')</button>
+    </div>
+  </div>
+ 
+  <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
  
 
 <!--==================== Juri ====================-->
@@ -225,4 +237,5 @@
 
       <script src="../../js/nav.js"></script>
    </body>
+   <script src="../../js/SM.js"></script>
 </html>

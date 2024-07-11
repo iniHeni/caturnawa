@@ -28,17 +28,6 @@
          
          
       <style>
-         #loadingDiv {
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: white;
-}
-  
 #loadingDiv {
 	width: 100%;
 	height: 100%;
@@ -64,13 +53,13 @@
        </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../img/uf2.png" width="145" class="nav_gmbar" ></img>
-            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <nav class="nav contnav">
+         <img src="../img/uf2.png" class="nav_logo" ></img>
+            <h2><a href="{{url('/') }}" class="nav__logo">Caturnawa</a></h2>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-               <div style="margin-right: 10rem" class="nav__item">
+               <div class="nav__item">
 						<li><a href="../locale/ind"><img src="../img/ind.png"  /></a></li>
 						<li><a href="../locale/en"><img src="../img/eng.png" /></a></li>
 					</div>
@@ -109,7 +98,7 @@
       <div class="content">
         <div class="text">
           <h3 class="texthome">@lang('messages.welcome')</h3>
-          <p>
+          <p >
           Caturnawa UNAS FEST</p>
         </div>
       </div>
@@ -120,13 +109,13 @@
 </p>
 </h1>
 <div id="time">
-    <div id="days"></div>
+    <div id="days" ></div>
     <div id="hours"></div>
     <div id="minutes"></div>
     <div id="seconds"></div>
 </div>
 <h4>@lang('messages.buka')
-   <span>23 July</span></h4>
+   <span>@lang('messages.julii')</span></h4>
 <div id="firework-container"></div>
 </div>
 
@@ -136,27 +125,27 @@
          <div class="card-list">
              <div id="cardKDBI" class="card-item">
                  <img src="../img/kdbi2.png" alt="Card Image">
-                 <h3>@lang('messages.kdbi')</h3>
-                 <a id="registerButtonKDBI" href="{{url('/periodeKDBI') }}" class="card-icon">Daftar Sekarang</a>
+                 <h3>Kompetisi Debat Bahasa Indonesia</h3>
+                 <a id="registerButtonKDBI" href="{{url('/periodeKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
                  <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardSM" class="card-item">
                  <img src="../img/sm1.png" alt="Card Image">
-                 <h3>@lang('messages.sm')</h3>
+                 <h3>Short Movie Competition</h3>
                  <a id="registerButtonSM" href="{{url('/periodeSM') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">Upload</a>
+                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">@lang('messages.unggah')</a>
                  <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardSPC" class="card-item">
                  <img src="../img/spc.png" alt="Card Image">
-                 <h3>@lang('messages.lkti')</h3>
+                 <h3>Scientific Paper Competition</h3>
                  <a id="registerButtonSPC" href="{{url('/periodeLKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">Upload</a>
+                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">@lang('messages.unggah')</a>
                  <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardEDC" class="card-item">
                  <img src="../img/edc.png" alt="Card Image">
-                 <h3>@lang('messages.edc')</h3>
+                 <h3>English Debate Competition</h3>
                  <a id="registerButtonEDC" href="{{url('/periodeEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
                  <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
@@ -245,7 +234,7 @@
             <span><i class="fab fa-youtube"></i></span>
          </a>
       </div>
-      <h5>@Copyright UNASFEST2024</h5>
+      <h5>@Copyright UNAS FEST 2024</h5>
       @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -270,6 +259,7 @@
       <script src="../js/homepage.js"></script>
       <script src="../js/loader.js"></script>
       <script src="../js/nav.js"></script>
+      <script src="../js/SM.js"></script>
       <script>
          @if(session('success'))
              Swal.fire({

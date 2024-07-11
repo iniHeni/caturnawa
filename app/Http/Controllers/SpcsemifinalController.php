@@ -4,20 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\pesertaspc;
 use App\Models\spcsemifinal;
+use App\Models\spcpenyisihan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 class SpcsemifinalController extends Controller
 {
-    public function tampilsf(){
-        $tambah = spcsemifinal::select(
-            '*',
-            DB::raw('RANK() OVER (ORDER BY total DESC) as rank') // Perhitungan rank
-        )->get();
-        
-        return view('admin/LKTI/semifinalLKTI', compact('tambah'));
-     }
+    public function tampilsf()
+    {
+        $tambah = spcsemifinal::select('*', DB::raw('RANK() OVER (ORDER BY total DESC) as rank'))
+        ->orderBy('total', 'DESC')
+        ->get();
+
+$groupedData = $tambah->groupBy('namapeserta');
+foreach ($groupedData as $namapeserta => $pesertaGroup) {
+foreach ($pesertaGroup as $index => $peserta) {
+$peserta->rank = $tambah->where('namapeserta', $namapeserta)->pluck('rank')[$index];
+}
+}
+
+return view('admin/LKTI/semifinalLKTI', compact('groupedData'));
+    }
 
     public function tambahsf(Request $request){
         $tambah = $request->validate([
@@ -26,9 +34,9 @@ class SpcsemifinalController extends Controller
             'scorepenyajian' => 'required|integer|min:0|max:100',
             'scoresubs' => 'required|integer|min:0|max:100',
             'scorekualitas' => 'required|integer|min:0|max:100',
-            'penyajian' => 'required|string',
-            'subs' => 'required|string',
-            'kualitas' => 'required|string',
+            'penyajian' => 'required',
+            'subs' => 'required',
+            'kualitas' => 'required',
 
         ]);
         $tambah['total'] = $tambah['scorepenyajian'] + $tambah['scoresubs'] + $tambah['scorekualitas'];
@@ -39,7 +47,11 @@ class SpcsemifinalController extends Controller
 
     public function editsf($id) {
         $edit = spcsemifinal::find($id);
-        $peserta = pesertaspc::all();
+        $peserta = spcpenyisihan::select(
+            '*',
+            DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') // Perhitungan rank
+        )->limit(10)
+        ->get();
         return view('admin/LKTI/editsf', compact('edit', 'peserta'));
     }
 
@@ -50,9 +62,9 @@ class SpcsemifinalController extends Controller
             'scorepenyajian' => 'required|integer|min:0|max:100',
             'scoresubs' => 'required|integer|min:0|max:100',
             'scorekualitas' => 'required|integer|min:0|max:100',
-            'penyajian' => 'required|string',
-            'subs' => 'required|string',
-            'kualitas' => 'required|string',
+            'penyajian' => 'required',
+            'subs' => 'required',
+            'kualitas' => 'required',
     ]);
     $data = spcsemifinal::find($id);
     $update['total'] = $update['scorepenyajian'] + $update['scoresubs'] + $update['scorekualitas'];
@@ -67,26 +79,35 @@ public function hapussf($id){
 }
 public function semifinal(){
     $semifinal = DB::table('spcsemifinals')
+    ->leftJoin('pesertaspcs', 'spcsemifinals.namapeserta', '=', 'pesertaspcs.nama')
     ->select(
-        'namapeserta',
-        DB::raw('SUM(total) as total'), // Menghitung total untuk setiap namapeserta
-        DB::raw('RANK() OVER (ORDER BY SUM(total) DESC) as rank') // Peringkat berdasarkan total
+        'spcsemifinals.namapeserta',
+        DB::raw("COALESCE(pesertaspcs.logo, 'default_logo.jpg') as logo"), 
+        DB::raw('SUM(total) as total'),
+        DB::raw('RANK() OVER (ORDER BY SUM(total) DESC) as rank')
     )
-    ->groupBy('namapeserta') // Mengelompokkan berdasarkan namapeserta
+    ->groupBy('spcsemifinals.namapeserta','pesertaspcs.logo')
+    ->orderBy('rank', 'asc')
     ->get();
     
     
     return view('matalomba/lkti/sfinal', compact('semifinal'));
  }
  public function pesertaasf(){
-    $peserta = pesertaspc::all();
+    $peserta = DB::table('spcpenyisihans')
+    ->select('namapeserta', DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank'))
+    ->orderBy('scorecp', 'DESC') 
+    ->limit(10)
+    ->get();
+
+    
     
     return view('admin/LKTI/tambahsf', compact('peserta'));
  }
  public function detail($namapeserta){
-    $namapeserta = strip_tags(trim($namapeserta)); // Contoh pembersihan dasar
+    $namapeserta = strip_tags(trim($namapeserta)); 
 
-    // 2. Ambil data peserta dari database
+
     $data = DB::table('spcsemifinals')
         ->select('namapeserta',
                 DB::raw("string_agg(scorepenyajian::text, ', ') as scorepenyajian"),

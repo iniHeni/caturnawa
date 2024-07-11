@@ -16,155 +16,168 @@ class OrderController extends Controller
 {
     public function checkout(Request $request){
         $order = $request->validate([
-            'nama_1' => 'required|string|max:50',
-            'nama_2' => 'required|string|max:50',
+            'nama_1' => 'required|string',
+            'nama_2' => 'required|string',
             'email_1' => 'required|email',
             'email_2' => 'required|email',
-            'fakultas_1'=> 'required|string|max:50',
-            'fakultas_2' => 'required|string|max:50',
-            'prodi_1' =>'required|string|max:50',
-            'prodi_2' => 'required|string|max:50',
-            'npm_1' => 'required|string|max:50',
-            'npm_2' => 'required|string|max:50',
+            'fakultas_1'=> 'required|string',
+            'fakultas_2' => 'required|string',
+            'prodi_1' =>'required|string',
+            'prodi_2' => 'required|string',
+            'npm_1' => 'required|string',
+            'npm_2' => 'required|string',
             'jeniskelamin_1' => 'required',
             'jeniskelamin_2' => 'required',
             'alamatlengkap_1' => 'required',
             'alamatlengkap_2' => 'required',
             'nomorhp_1'=> 'required',
             'nomorhp_2' => 'required',
-            'instansi' => 'required|string|max:50',
-            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000',
+            'namateam' => 'required',
+            'instansi' => 'required|string',
+            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'buktifollow_1' => 'required|mimes:pdf|max:3000',
+            'buktifollow_2' => 'required|mimes:pdf|max:3000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'surat_delegasi' => 'required|mimes:pdf|max:3000',
         ]);     
         $order = $request->all();
-        if($request->hasFile('ktm_1'))
-        {
-            $destination_path = 'public/images/edc/ktm1';
-            $image = $request->file('ktm_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/ktm1/' . $image_name);
-
+        if ($request->hasFile('ktm_1')) {
+            $originalFileName = pathinfo($request->file('ktm_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('ktm_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/ktm_1';
+            $request->file('ktm_1')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/ktm_1/' . $imageName);
             $order['ktm_1'] = $imageUrl;
-
         }
-        if($request->hasFile('ktm_2'))
-        {
-            $destination_path = 'public/images/edc/ktm2';
-            $image = $request->file('ktm_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/ktm2/' . $image_name);
-
+        if ($request->hasFile('ktm_2')) {
+            $originalFileName = pathinfo($request->file('ktm_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('ktm_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/ktm_2';
+            $request->file('ktm_2')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/ktm_2/' . $imageName);
             $order['ktm_2'] = $imageUrl;
-
         }
-        if($request->hasFile('foto_1'))
-        {
-            $destination_path = 'public/images/edc/foto1';
-            $image = $request->file('foto_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/foto1/' . $image_name);
-
+        if ($request->hasFile('foto_1')) {
+            $originalFileName = pathinfo($request->file('foto_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('foto_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/foto_1';
+            $request->file('foto_1')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/foto_1/' . $imageName);
             $order['foto_1'] = $imageUrl;
-
         }
-        if($request->hasFile('foto_2'))
-        {
-            $destination_path = 'public/images/edc/foto2';
-            $image = $request->file('foto_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/foto2/' . $image_name);
-
+        if ($request->hasFile('foto_2')) {
+            $originalFileName = pathinfo($request->file('foto_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('foto_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/foto_2';
+            $request->file('foto_2')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/foto_2/' . $imageName);
             $order['foto_2'] = $imageUrl;
-
         }
-        if($request->hasFile('krs_1'))
-        {
-            $destination_path = 'public/images/edc/krs1';
-            $image = $request->file('krs_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/krs1/' . $image_name);
-
+        if ($request->hasFile('krs_1')) {
+            $originalFileName = pathinfo($request->file('krs_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('krs_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/krs_1';
+            $request->file('krs_1')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/krs_1/' . $imageName);
             $order['krs_1'] = $imageUrl;
-
         }
-        if($request->hasFile('krs_2'))
-        {
-            $destination_path = 'public/images/edc/krs2';
-            $image = $request->file('krs_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/krs2/' . $image_name);
-
+        if ($request->hasFile('krs_2')) {
+            $originalFileName = pathinfo($request->file('krs_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('krs_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/krs_2';
+            $request->file('krs_2')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/krs_2/' . $imageName);
             $order['krs_2'] = $imageUrl;
-
         }
-        if($request->hasFile('buktifollow_1'))
-        {
-            $destination_path = 'public/images/edc/bukti1';
-            $image = $request->file('buktifollow_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
-
-            $imageUrl = asset('storage/images/edc/bukti1/' . $image_name);
-
+        if ($request->hasFile('buktifollow_1')) {
+            $originalFileName = pathinfo($request->file('buktifollow_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/document/edc/buktifollow_1';
+            $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/document/edc/buktifollow_1/' . $imageName);
             $order['buktifollow_1'] = $imageUrl;
         }
-        if($request->hasFile('buktifollow_2'))
-        {
-            $destination_path = 'public/images/edc/bukti2';
-            $image = $request->file('buktifollow_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/bukti2/' . $image_name);
-
+        if ($request->hasFile('buktifollow_2')) {
+            $originalFileName = pathinfo($request->file('buktifollow_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/document/edc/buktifollow_2';
+            $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/document/edc/buktifollow_2/' . $imageName);
             $order['buktifollow_2'] = $imageUrl;
-
         }
-        if($request->hasFile('twibbon'))
-        {
-            $destination_path = 'public/images/edc/twibbon';
-            $image = $request->file('twibbon');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/twibbon/' . $image_name);
-
+        if ($request->hasFile('twibbon')) {
+            $originalFileName = pathinfo($request->file('twibbon')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('twibbon')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/twibbon';
+            $request->file('twibbon')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/twibbon/' . $imageName);
             $order['twibbon'] = $imageUrl;
-
         }
-        if($request->hasFile('twibbon2'))
-        {
-            $destination_path = 'public/images/edc/twibbon2';
-            $image = $request->file('twibbon2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/edc/twibbon2/' . $image_name);
-
+        if ($request->hasFile('twibbon2')) {
+            $originalFileName = pathinfo($request->file('twibbon2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('twibbon2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/edc/twibbon2';
+            $request->file('twibbon2')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/edc/twibbon2/' . $imageName);
             $order['twibbon2'] = $imageUrl;
         }
-        if($request->hasFile('surat_delegasi'))
-        {
-            $destination_path = 'public/document/edc/surat';
-            $image = $request->file('surat_delegasi');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/document/edc/surat/' . $image_name);
-
+        if ($request->hasFile('surat_delegasi')) {
+            $originalFileName = pathinfo($request->file('surat_delegasi')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName); 
+            $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/document/edc/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/document/edc/surat_delegasi/' . $imageName);
             $order['surat_delegasi'] = $imageUrl;
-
         }
 
         $now = Carbon::now();
@@ -246,6 +259,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
     public function homeedc($id){
         $orderlkti = Order::find($id);
         $orderlkti->update(['status' => 'Paid']);
-        return view('index',);
+        $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+
+    return redirect()->away($whatsappGroupUrl);
     }
 }

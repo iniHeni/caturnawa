@@ -55,14 +55,14 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin LKTI </a></h2>
+            <img class="logo" src="../../img/spcaja.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin SPC </a></h2>
         </div>
     </nav>
 </header>
@@ -70,7 +70,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/spcaja.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
@@ -101,28 +101,26 @@
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
-                                <th scope="col">No</th>
                                 <th scope="col">Nama Peserta</th>
                                 <th scope="col">Asal Instansi</th>
-                                <th scope="col">Score Capaian Unggulan</th>
-                                <th scope="col">Rank</th>
-                                <th scope="col">actions</th>
+                                <th class="mid" class="mid" scope="col">Score Capaian Unggulan</th>
+                                <th class="mid" scope="col">Rank</th>
+                                <th class="mid" scope="col">actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($tambah as $no=>$data)
                             <tr>
-                                <td>{{ $no+1 }}</td>
                                 <td>{{ $data->namapeserta }}</td>
                                 <td>{{ $data->university}}</td>
-                                <td>{{ $data->scorecp}}</td>
-                                <td>{{ $data->rank}}</td>
-                                <td>
+                                <td class="mid">{{ $data->scorecp}}</td>
+                                <td class="mid">{{ $data->rank}}</td>
+                                <td style="text-align: center">
                                     <a href="{{ route('spc.edit', $data->id) }}">Edit</a>
                                     <form action="{{ route('spc.hapus', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                         @csrf
                                         
-                                        <button type="submit" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                        <button type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -132,13 +130,16 @@
                 </div>
         </div>
         <style>
-            .table-bordered td,
-            .table-bordered th {
+                      .table-bordered th {
+                border: 2px solid #dee2e6 !important;
                 
-                text-align: center;
                 vertical-align: middle;
-                
-            }
+              }
+
+              .mid{
+                text-align: center;
+
+              }
 
             thead th {
                 background-color: #cecece !important;

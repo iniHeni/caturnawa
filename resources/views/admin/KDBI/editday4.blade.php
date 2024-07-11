@@ -20,16 +20,7 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+
  
 #loadingDiv {
    width: 100%;
@@ -55,13 +46,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -126,7 +117,7 @@
                         <select name="team" id="team"  required >
                             <option selected>{{ $edit->team }}</option> 
                             @foreach ($peserta as $j)
-                                <option >{{ $j->instansi }}</option>
+                                <option >{{ $j->namateam }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -162,7 +153,7 @@
                     </div>
                     <div class="input-field">
                         <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
-                        <select d name="nama2" id="nama2"  required >
+                        <select  name="nama2" id="nama2"  required >
                             <option selected>{{ $edit->nama2 }}</option> 
                         </select>
                     </div>
@@ -270,7 +261,7 @@ $("body").css(
     
     namaPesertaSelect.addEventListener('change', () => {
         const selectedPesertaId = namaPesertaSelect.value;
-        const selectedPeserta = pesertaData.find(p => p.instansi == selectedPesertaId);
+        const selectedPeserta = pesertaData.find(p => p.namateam == selectedPesertaId);
     
         universitySelect.innerHTML = ''; 
         universitySelect.options.add(new Option('Pilih Peserta', ''));

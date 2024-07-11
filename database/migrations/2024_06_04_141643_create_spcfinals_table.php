@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer('scorepemaparanmateri');
             $table->integer('scorepertanyaandanjawaban');
             $table->integer('scoreaspekkesesuaian');
-            $table->string('materi');
-            $table->string('pertanyaandanjawaban');
-            $table->string('kesesuaian');
+            $table->text('materi');
+            $table->text('pertanyaandanjawaban');
+            $table->text('kesesuaian');
             $table->integer('total');
             $table->string('juri');
             $table->timestamps();

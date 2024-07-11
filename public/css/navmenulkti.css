@@ -139,16 +139,30 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header.hidden {
+  top: -40%
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--body);
-  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  background-color: rgba(255, 255, 255, 0.781);
+  box-shadow: 0 16px 16px hsl(0deg 0% 0% / 27%);
   z-index: var(--z-fixed);
+  transition: top 0.5s ease;
 }
-
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  backdrop-filter: blur(4px);  
+  z-index: -1;       
+}
 .nav {
   height: var(--header-height);
   display: flex;
@@ -222,6 +236,27 @@ img {
   transition: color .4s;
 }
 @media screen and (max-width: 1020px) {
+  .header{
+    border-radius: 50px;
+    top: 20px;
+    left: 5%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.781);
+    box-shadow: 0px 0px 30px 5px hsl(0deg 0% 0% / 27%);
+    
+  
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    backdrop-filter: blur(4px);  
+    z-index: -1;       
+  }
   .nav__menu {
     position: fixed;
     top: -100%;
@@ -231,6 +266,7 @@ img {
     width: 100%;
     padding-block: 4.5rem 4rem;
     transition: top .4s;
+    box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
   }
   .nav__link{
     margin-left: -2rem;

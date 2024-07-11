@@ -12,24 +12,25 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../css/navmenudbt.css">
+      <link rel="stylesheet" href="../../../css/back.css">
       <link rel="stylesheet" href="../../../css/pagelomba.css">
       <style>
         h1{
             color: #fff;
             text-align: center;
         }
-        .card-list {
+        /* .card-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     gap: 20px;
-  }
+  } */
     .card-list .card-item {
       background: #fff;
-      padding: 26px;
+      padding: 26px 0px 50px;
       border-radius: 25px;
       align-items: center;
       box-shadow: 0px 5px 8px #f6ae31;
@@ -88,7 +89,7 @@
     }
     @media (max-width: 1200px) {
       .card-list .card-item {
-          padding: 15px;
+        padding: 26px 0px 50px;
           
       }
     }
@@ -148,12 +149,12 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
+        <div class="nav__item">
 
 					</div>
                <li class="nav__item">
@@ -182,6 +183,9 @@
             </div>
          </nav>
       </header>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       <!--==================== Session ====================-->
 <section id="rank">
@@ -222,5 +226,6 @@
       });</script>
 <script src="../../../js/rank.js"></script>
       <script src="../../../js/nav.js"></script>
+      <script src="../../js/SM.js"></script>
    </body>
 </html>

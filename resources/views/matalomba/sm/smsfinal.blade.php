@@ -12,23 +12,12 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/pagelomba.css">
 
 
       <title>Caturnawa - SMSemifinalScore</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -45,6 +34,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../../img/loader.gif);
  }
+
      </style>
    </head>
    <body>
@@ -53,12 +43,12 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../img/smcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <nav class="nav contnav">
+         <img src="../../img/smcaja.png" class="nav_logo"><a href="{{url('/') }}" class="nav__logo"></a>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -94,22 +84,20 @@
 <section id="skor">
     <div class="container" style=" justify-content: center;">
         <div style="width: 100%;">
-            <h1 class="judul" style="color: white" >Leaderboard Semifinal</h1>
+            <h1 class="judul" style="color: white" >Leaderboard Result (Semifinal)</h1>
             <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
                 <table class="table table-bordered " style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
                     <thead style="position: sticky; top: -1; z-index: 10;">
                         <tr>
+                            <th scope="col">@lang('messages.team2')</th>
                             <th scope="col">@lang('messages.team1')</th>
-                            <th scope="col">Team Score</th>
-                            <th scope="col">Rank</th>
                         </tr>
                     </thead>
                     <tbody>
                       @foreach($semifinal as $rank=>$data)
                       <tr>
                         <td>{{ $data->namateam }}</td>
-                        <td>{{ $data->total}}</td>
-                        <td>{{ $rank+1 }}</td>
+                        <td>{{ $data->total}}</td> 
                       </tr>
                       @endforeach
                       
@@ -125,8 +113,8 @@
     <h1 class="judul">Detail Score</h1>
     <div class="card-list">
         @foreach($semifinal as $rank => $data)
-            <a href="{{ route('sm.detailsf', $rank + 1) }}" class="card-item"> 
-                <img src="{{ asset('img/sm1.png') }}" alt="Card Image">
+            <a href="{{ route('sm.detailsf', $data->namateam) }}" class="card-item"> 
+                <img src="{{ asset($data->logo) }}" class="card-image" loading="lazy">
                 <h3>{{ $data->namateam }}</h3> 
                 <div class="arrow">
                     <i class="card-icon">Detail</i>
@@ -169,7 +157,9 @@ text-decoration: underline;
 <!--==================== Session ====================-->
 
 
-
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
@@ -218,5 +208,6 @@ text-decoration: underline;
       }
   });
       </script>
+      <script src="../../js/SM.js"></script>
    </body>
 </html>

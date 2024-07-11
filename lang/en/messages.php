@@ -9,15 +9,13 @@ return [
     'peserta' => 'Participant',
     'score' => 'Score',
     'round' => 'Round',
-    'juri' => 'Jury',
+    'juri' => 'Adjudicators',
     // Nav End Menu
     // Home Start
-    'welcome' => 'Welcome To Website<br>Register Now and Be The Winner!',
+    'welcome' => 'Welcome To Caturnawa<br>Register Now and Be The Winner!',
     'buka' =>'Registration Will Open on',
-    'kdbi' =>'Kompetisi Debat Bahasa Indonesia',
-    'sm' =>'Short Movie Competition',
-    'lkti' =>'Scientific Paper Competition',
-    'edc' =>'Debate English Competition',
+    'unggah1' =>  'Upload',
+ 
     'sponsor' =>'Thankyou, To Our Sponsor',
     'follow' =>'Dont Forget To Follow Our Social Media!',
     'Daftar' =>'Register Now!',
@@ -30,34 +28,35 @@ return [
     'hargaedc' =>'$22',
     // Home End 
     // Page Start Lomba
-    'teks' => 'in Enlivening the 75th Nasional University Dies Natalies, 
-    UNAS FEST opens registration for the competition with the theme',
-    'teks1' => '"Exploring the Potential of Rewable Energy Trough Technology innovation to Achieve Global Green Momentum"',
+    'teks' => 'In celebrating the 75th Universitas Nasional Anniversary, 
+    UNAS FEST opened registration for the competition with the theme ',
+    'teks1' => '"Exploring The Potential Of Renewable Energy Technology Innovation To Achieve Global Green Momentum"',
     'pesertalomba' => 'Participant Competition',
     'babak' => 'Round',
     'penyisihan' => 'Elimination',
     'dilaksanakan' => 'Held On',
-    'jury' => 'Our Jury',
+    'jury' => 'Our Adjudicators',
     'view' => 'View More',
-
+    'gb' => 'Guide Book',
     'view' => 'View More',
     // Page End Lomba
     // Form Start
     'pendaftaran' => 'Register',
     'identitas' => 'Identity',
     'Name' =>'Full Name',
-    'Nomor' =>'Number Whatssapp',
+    'Nomor' =>'WhatsApp Number',
     'fakultas' => 'Faculty',
     'prodi' => 'Major',
     'npm' => 'Student ID Number',
-    'gender' => 'Choose Gender',
+    'gender' => 'Sex',
     'pria' => 'Male',
     'wanita' => 'Female',
-    'alamat' => 'Full Addres',
+    'alamat' => 'Full Address',
     'ktm' => 'Student ID Card *format:jpg,png,jpeg, Max 3MB' ,
     'foto' => 'Formal Photograph With Red Background *format:jpg,png,jpeg, Max 3MB',
-    'krs' => 'Study Plan Card *format:jpg,png,jpeg, Max 3MB',
-    'bukti' => 'Prove That Follow our Social Media *format:pdf',
+    'krs' => 'Student Record *format:jpg,png,jpeg, Max 3MB',
+    'krs1' => 'Study Plan Card *format:jpg,png,jpeg, Max 3MB',
+    'bukti' => 'Proof of following UNAS FEST Social Media, such as: TikTok, YouTube, Instagram *format:pdf',
     'team' => 'File Team',
     'instansi' => 'Origin Institution',
     'surat' => 'Delegation Letter From Institution',
@@ -76,7 +75,7 @@ return [
     'Pesan' =>'Message',
     'Send' =>'Send Message',
     'Send1' =>'Send',
-    'ketua' => 'Leader Team',
+    'ketua' => 'Team Leader',
     'member' => 'Member',
     'link' => 'Link Video Youtube',
     'bio' => 'Bio Participant',
@@ -86,18 +85,26 @@ return [
     // place holder end
 
 
-    // Harga indo
+    // Harga eng
     'harga' => 'Price',
     'tahap' => 'Early Bird',
     'tahap1' => 'Phase 1',
     'tahap2' => 'Phase 2',
     'tahap3' => 'Phase 3',
-    'Rp' => '$19/Team',
-    'Rp1' => '$25/Team',
-    'Rp2' => '$28/Team',
+    'Rp' => 'Rp 300.000/Team',
+    'Rp1' => 'IDR 400.000<br>USD $25 (International Participant)',
+    'Rp2' => 'IDR 450.000<br>USD $28 (International Participant)',
+    'Rp3' => 'Rp 170.000',
+    'Rp4' => 'Rp 200.000',
+    'Rp5' => 'IDR 350.000<br>USD $23 (International Participant)',
+    'Rp6' => 'IDR 500.000<br>USD $31 (International Participant)',
+    'Rp7' => 'IDR 550.000<br>USD $34 (International Participant)',
+   'Rp3u' => 'Rp 85.000',
+    'Rp4u' => 'Rp 100.000',
     'tgl' => 'July',
     'tgl1' => 'August',
     'tutup' => 'Closed',
+    'khusus' => 'Special Price for National University Students',
 
 
 
@@ -120,11 +127,29 @@ return [
     etc.',
 
     'juriposisi2' => 'Debate Coach',
-    'juribio2' => 'I am interested in research, teaching, public speaking and critical
-    thinking. This interest mainly manifests in the form of being active in
-    parliamentary debating, where I joined various competitions, taught
-    lots of institutions, and make initiatives to proliferate debating all over
-    Indonesia.',
+    'juribio2' => 'Desfara Anggreani is a social activist and young 
+entrepreneur currently pursuing a Bachelor degree in Nursing 
+at Universitas Nasional since 2021. In addition, she is taking 
+an Information Systems course at the National University of 
+Singapore. Desfara is known as a skilled public speaker, which 
+has led her to achieve various accomplishments in debate 
+competitions and international conferences.
+Desfara achievements span various fields, including winning 1st place in the SDGs 
+project at the International Youth Experience 2024, 2nd place in the National Scientific Writing 
+Competition at UNAS FEST 2023, as well as several other championships in public speaking, 
+essay writing, and english olympiads. Her active involvement in organizations has fostered her 
+attention to social issues, which she has realized through the establishment of Rumah Belajar, 
+a tutoring center she leads.
+Desfara professional experience is diverse. She is the founder of Runut Waktu, an 
+initiative focused on social issues in education, health, and the environment. Desfara also 
+serves as the CEO of The Eternals Indonesia, a local perfume brand. Additionally
+she was a mentor at Twinkling Stars, a partnership at World Inspiration Indonesia, and held 
+various important positions in organizations such as Get Wellness Soon, Indonesia Millennial 
+Connect, and ASEAN Youth Organization.
+The diversity of Desfara experiences and achievements demonstrates her strong 
+commitment to social issues, education, and leadership. With this rich background, Desfara 
+Anggreani positions herself as an inspiring young figure with the potential to make significant 
+contributions to social and economic development in the future.',
 
     'juriposisi3' => 'Consultant at ABeam Consulting',
     'juribio3' => 'Professional Consultant focusing on Customer Experience (CX),
@@ -161,65 +186,16 @@ return [
 
     // SM
     'jurismposisi1' => 'Chief Operational Officer at <br> PT Aksara Dimensi Perkasa',
-    'jurismbio1' => 'The world of broadcasting, cinematography and photography has been my focus for 25 years. Some experience in the broadcast world like producing some TV programs at the Production house Triwarsana (Helmi Yahya). Located in the Production house that I established for almost five years from 2003.
-    Being a product specialist at Canon Indonesia for almost 3 years. Photography and Videography is my major in teaching at several campuses, such as Mercubuana University, Sahid University, Trisakti Media Communication High School, and at the National University, from 2011 to the present.
-    Since 2021, Ive built a visual audio company that works with more than 150 digital platforms like spotify, apple music, youtube music and so on.',
+    'jurismbio1' => 'World of Broadcasting, cinematography, and photography have been my focus for almost 25 years. I have had experiences in the broadcast world such as producing several TV programs at the Triwarsana Production house (Helmi Yahya). I was involved in the Production house that I founded for almost 5 years from 2003. I served as a product specialist at Canon Indonesia for almost 3 years. Photography and Videography are my majors in teaching at several campuses, such as Universitas Mercubuana, Universitas Sahid, Sekolah Tinggi Media Komunikasi Trisakti, and at Universitas Nasional, from 2011 until now. Since 2021, I have returned to establish a company in the audio-visual field that collaborates with more than 150 digital platforms such as Spotify, Apple Music, YouTube Music, and others.
+',
 
     'jurismposisi2' => 'Lecture at National University',
-    'jurismbio2' => 'Kusen Dony Hermansyah, better known as Dony or Kusdon is a graduate of the Faculty of Film and Television from the Jakarta Institute of Art and the Postgraduate Program of the Indonesian Institute of Arts in Surakarta. He began his career as a film editor in 1994, in documentary films, and after graduating from a diploma program in 2000, he began two professions as a lecturer and film editor. Dony also taught at several institutions, including the Jakarta Institute of Fine Arts and the Jakarta State Polytechnic Creative Media, and has worked in a variety of film genres, including documentaries, sinetrons, experimental films, fiction films, as well as music videos.',
+    'jurismbio2' => 'Kusen Dony Hermansyah, better known as Dony or Kusdon, is a graduate of the Faculty of Film and Television from the Jakarta Institute of Arts and the Postgraduate Program of the Indonesian Institute of Art in Surakarta. He began his career as a film editor in 1994, especially in documentary films, and after graduating from a diploma program in 2000, he began to pursue two professions as a lecturer and film editor. Dony also teaches at several institutions, including the Jakarta Institute of Arts and the Jakarta Creative Media State Polytechnic, and has worked in various film genres, including documentaries, soap operas, experimental films, fiction films, and music videos.
+',
 
-    'jurismposisi3' => 'Member of PWI (Indonesian Journalists Association)',
-    'jurismbio3' => 'As a member of the PWI and even occupying an important position at the central level, Rita not only represented success in her own journalistic career, but also played a role in shaping the direction and policy of the organization that affected thousands of journalists across Indonesia.
-    Besides, Rita career journey that covers a wide range of media fields, from newspapers, magazines, radio, television, to internet-based mass media, demonstrates her flexibility and ability to adapt to technological developments and trends in the media industry.
-    Rita role in business execution management and public relations (PR) also adds another dimension to her experience and expertise. His involvement as a member and manager of the Indonesian Film Sensor Foundation (LSF) demonstrates his contribution in the area of media policy and regulation.',
+    'jurismposisi4' => 'Line Producer At PT MNC Pictures',
+     'jurismbio4' => 'Jentoni Pakpahan is a graduate of the Faculty of English Language and Literature from the Universitas Nasional (UNAS). He is a professional in the Indonesian entertainment industry with extensive experience in film and television production. Currently, he works as a Line Producer at PT MNC Pictures since October 2020, and in the same place, he also has work experience as an Assistant Producer from April 2015 to October 2020. In addition, he also has work experience at MD Entertainment as an Assistant Production Manager from 2010 to 2013, and experience working as a freelancer on various film, advertising, and commercial projects. Jentoni Pakpahan has been involved in several successful film projects, including "Kamu Tidak Sendiri" (2021), "Mars and Venus (Collabs Version)" (2020), and "Meet Me After Sunset" (2018). He has also been involved in several other television and film projects. In addition to his experience in the entertainment industry, Jentoni Pakpahan also has skills in drumming, Microsoft Office, Microsoft Excel, and social media.',
     // SM
-
-    // LKTI
-    'jurismposisi1' => 'Chief Operational Officer at <br> PT Aksara Dimensi Perkasa',
-    'jurismbio1' => 'Dunia Broadcasting, sinematografi dan fotografitelah saya geluti
-    selama hampir 25 tahun ini. Beberapa pengalaman di dunia
-    broadcast seperti meproduseri beberapa program TV di Production
-    house Triwarsana (Helmi Yahya). Berkecimpung di Production
-    house yang saya dirikan selama hampir 5 tahun dari tahun 2003.
-    Menjadi product specialist di Canon Indonesia selama hampir 3
-    tahun. Fotografi dan Videografi adalah major saya dalam mengajar
-    dibeberapa kampus, seperti Universitas Mercubuana, Universitas
-    Sahid,Sekolah Tinggi Media Komunikasi Trisakti, dan di Universitas
-    Nasional, sejak tahun 2011 hingga saat ini.
-    Sejak tahun 2021, kembali saya membangun sebuah sebuah
-    perusahaan dibidang audio visual yang bekerjasama dengan lebih
-    dari 150platform digital seperti, spotify, apple music, youtube music
-    dan lain-lain.',
-
-    'jurismposisi2' => 'Dosen Universitas Nasional',
-    'jurismbio2' => 'Kusen Dony Hermansyah, lebih dikenal dengan Dony atau Kusdon adalah lulusan
-    Fakultas Film dan Televisi dari Institut Kesenian Jakarta dan Program Pascasarjana
-    Institut Seni Indonesia di Surakarta. Ia memulai karir sebagai editor film pada tahun
-    1994, khususnya dalam film dokumenter, dan setelah lulus program diploma pada
-    tahun 2000, ia memulai menjalani dua profesi sebagai dosen dan editor film. Dony juga
-    mengajar di beberapa institusi, termasuk Institut Kesenian Jakarta dan Politeknik
-    Negeri Media Kreatif Jakarta, dan telah bekerja dalam berbagai genre film, termasuk
-    dokumenter, sinetron, film eksperimental, film fiksi, dan video musik.',
-
-    'jurismposisi3' => 'Anggota PWI (Persatuan Wartawan Indonesia)',
-    'jurismbio3' => 'Dengan pengalamannya yang luas dan beragam di berbagai bidang
-    media, serta posisinya yang penting dalam struktur organisasi seperti PWI, Rita telah
-    memberikan kontribusi yang signifikan dalam pengembangan profesi jurnalistik di
-    Indonesia.
-    Sebagai anggota PWI dan bahkan menempati posisi penting di tingkat pusat, Rita tidak
-    hanya menjadi representasi keberhasilan dalam karier jurnalistiknya sendiri, tetapi juga
-    berperan dalam membentuk arah dan kebijakan organisasi yang memengaruhi ribuan
-    wartawan di seluruh Indonesia.
-    Selain itu, perjalanan karier Rita yang mencakup berbagai bidang media, mulai dari koran,
-    majalah, radio, televisi, hingga media massa berbasis internet, menunjukkan
-    fleksibilitasnya dan kemampuannya untuk beradaptasi dengan perkembangan teknologi
-    dan tren dalam industri media.
-    Peran Rita dalam manajemen pelaksanaan usaha dan public relations (PR) juga menambah
-    dimensi lain dalam pengalaman dan keahliannya. Keterlibatannya sebagai anggota dan
-    pengurus Lembaga Sensor Film (LSF) Indonesia menunjukkan kontribusinya dalam ranah
-    kebijakan dan regulasi media.',
-    // LKTI
-
      // SPC
      'jurispcposisi1' => 'Lecture at Pamulang University PSDKU',
      'jurispcbio1' => 'Efriza, S.I.P., M.Si. is a graduate of S1 Political Sciences of National University and S2 Political Science at the Institute of Social Sciences and Political sciences of Jakarta. (IISIP). Currently, Efriza has served as a Permanent Lecturer of Government Sciences at the University of Pamulang Program of Study Outside the Main Campus (UNPAM PSDKU), Serang, Banten, since March 2022, as well as as as a permanent lecturer of Political Science at the Higher School of State Administration Sciences (STIP-AN) since October 2016. 
@@ -243,42 +219,47 @@ return [
      guidance called Rumah Belajar.',
  
      'penilaian' => 'Assessments include',
-     'team1' => 'Team Participant',
-     'peserta1' => 'Peserta',
+     'team1' => 'Team Score',
+     'team2' => 'Team Name',
      'kuanti' => 'Quantitative',
      'kuali' => 'Qualitative',
      'nilaimutu' => 'Quality Values',
 
-     'krit1' => 'Film compatibility with theme',
-     'krit2' => 'The correspondence between facts and reality with the story raised in the film',
-     'krit3' => 'Creativity in telling reality from different perspectives',
-     'krit4' => 'Seberapa orisinalitas cerita dalam script',
-     'krit5' => 'How original the story is in the script',
-     'krit6' => 'Clearness in structure and storyline',
-     'krit7' => 'The completeness of the story described',
-     'krit8' => 'Selection of language used',
-     'krit9' => 'Compatibility with script contents',
-     'krit10' => 'Clearness in depicting scenes with detail',
-     'krit11' => 'Clearness in displaying creative ideas in visual presentation',
-     'krit12' => 'Storyboard compatibility with film',
+     'krit1' => 'Accuracy and conformity of white balance',
+     'krit2' => 'Accuracy and appropriateness of angles, camera movement, and composition',
+     'krit3' => 'Accuracy and fit of the key light',
+     'krit4' => 'Accuracy and suitability of lighting arrangement techniques',
+     'krit5' => 'The suitability of the film to the theme',
+     'krit6' => 'The compatibility between fact and reality with the story raised in the film',
+     'krit7' => 'Creativity in telling reality from a different perspective',
+     'krit8' => 'How original is the story in the script',
+     'krit9' => 'Depth of research and observation in film',
+     'krit10' => 'Compatibility between image and sound and aesthetics in film',
+     'krit11' => 'Precision and suitability of cutting techniques',
 
-     'kritsf1' => 'White balance accuracy and suitability',
-     'kritsf2' => 'Angle fixation and suitability, camera motion, and composition',
-     'kritsf3' => 'Key light accuracy and compatibility',
-     'kritsf4' => 'Accuracy and compatibility of lighting arrangement techniques',
-     'kritsf5' => 'Creativity in combining video and audio elements in organizing stories based on information and reality gained into something interesting to watch',
-     'kritsf6' => 'Compatibility between image and sound as well as aesthetics in film',
-     'kritsf7' => 'Music alignment with film',
-     'kritsf8' => 'Accuracy and suitability of cutting techniques',
-     'kritsf9' => 'Poster accuracy with film',
-     'kritsf10' => 'Image composition : color and layout of objects in the image',
-     'kritsf11' => 'The beauty/artistic side of visual presentation',
-     'kritsf12' => 'Number of likes and views of movies shown on YouTube',
+     'kritsf1' => 'Facial expressions and gestures',
+     'kritsf2' => 'How well actors understand and develop the characters played',
+     'kritsf3' => 'Ability to convey dialogue with the right intonation, rhythm, and emotions',
+     'kritsf4' => 'Ability to influence and move the audiences emotions',
+     'kritsf5' => 'Character fit',
+     'kritsf6' => 'Aesthetics and design',
+     'kritsf7' => 'How costumes contribute to the overall visual aesthetics of the film and the impression it wants to convey to the audience',
+     'kritsf8' => 'Creativity in combining video and audio elements in compiling a storyline based on the information and reality obtained becomes an interesting thing to watch',
+     'kritsf9' => 'Music with movies',
+     'kritsf10' => 'Poster fidelity with film',
+     'kritsf11' => 'Image composition: Color and Layout of objects in the image',
+     'kritsf12' => 'Beauty/artistic side of visual presentation',
 
      'kritf1' => 'Story ideas in movies',
      'kritf2' => 'The purpose of the film and the influence of the movie',
      'kritf3' => 'The ability and understanding of making films',
-     'kritf4' => 'Ethics in film presentation',
+     'kritf4' => 'Information and messages conveyed from the film',
+     'kritf5' => 'Attitude in achievement',
+     'kritf6' => 'Accuracy of synopsis with movies',
+     'kritf7' => 'Shotlist accuracy with film',
+     'kritf8' => 'Storyboard accuracy with movies',
+     'kritf9' => 'The conformity between fact and reality with the story raised in the film',
+     'kritf10' => 'How original is the story in the script',
      
      'lktisf1' => 'Presentation of Scientific Paper Works',
      'lktisf2' => 'Substance of Scientific Paper Works',
@@ -289,10 +270,37 @@ return [
      'lktif3' => 'Theme Compatibility Aspects',
     'orginal' => 'Originality Of Works',
      'pengesahan' => 'Endorsement of works',
-     'hakcipta' =>  'Copyright of the work',
-     'lembar' =>  'Work organizationality sheet',
-     'lembarbio' =>  'Biodata Sheet',
+     'hakcipta' =>  'Statement of Transfer of Copyright of Scientific Publication',
+     'lembar' =>  'Originality statement sheet',
+     'lembarbio' =>  'Biodata Team Sheet',
      'asal' =>  'Choose Country',
      'teamm' =>  'Team Name',
-]
+
+     'kab' =>  'Regency/City/PT',
+     'kompe' =>  'Competition',
+     'pengakuan' =>  'Confession',
+     'pengharga' =>  'Appreciation',
+     'karir' =>  'Organizational Career',
+     'hasilkarya' =>  'Artwork',
+     'pemberdayaan' =>  'Humanitarian Empowerment or Action',
+     'wira' =>  'Entrepreneurship',
+     'judul' =>  'Title',
+     'tema' =>  'Subtheme',
+     'unggah' =>  'Upload Work',
+
+     'sweet1' =>  'Not available',
+     'sweet2' =>  'Elimination Results Not Yet Released!',
+     'sweet3' =>  'Semifinal Results Not Yet Released!',
+     'sweet4' =>  'Final Results Not Yet Released!',
+     'note' =>  'Notes',
+     'julii' =>  'July 23',
+     'bidang' =>  'Manifestation of Achievements',
+     'back' =>  'Back',
+     'pteam' =>  'Team Position',
+     'pname' =>  'Participant Name',
+     'pind' =>  'Individual',
+     'ok1' =>  'October',
+     'instansi1' => 'Institution',
+     'rata' =>  'Avarage Team Score',
+     ]
 ?>

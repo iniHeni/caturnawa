@@ -55,13 +55,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-  <nav class="nav container">
+  <nav class="nav container1">
       <div class="nav_menu" id="nav-menu">
           <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
       </div>
       <div class="nav_logo" id="nav-logo">
-          <img class="logo" src="../../../img/uf2.png" alt="Logo">
+          <img class="logo" src="../../../img/smcaja.png" alt="Logo">
           <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
       </div>
   </nav>
@@ -101,6 +101,15 @@
                 <span class="title">Data Penilaian</span>
                 <div class="fields"> 
                   <div class="input-field">
+                    <label for="juri">Nama Juri</label>
+                    <select name="juri" id="juri" is-invalid  required>
+                        <option selected>{{ $edit->juri }}</option>
+                        <option>Daniel Wisnu Wardhana</option>
+                        <option>Kusen Dony Hermansyah</option>
+                        <option>Jentoni Pakpahan</option>
+                    </select>
+                    </div>
+                  <div class="input-field">
                     <label for="namateam">Nama Team</label>
                     <select name="namateam" id="namateam" is-invalid required >
                       <option selected>{{ $edit->namateam }}</option> 
@@ -110,205 +119,89 @@
                   </select>
                 </div>
                 <div class="input-field">
-                  <label for="peserta1">Nama Peserta 1</label>
-                  <select name="peserta1" id="peserta1" is-invalid required >
-                    <option  selected>{{ $edit->peserta1 }}</option> 
-                </select>
+                  <label for="peserta1">Nama Peserta 1 *Otomatis terisi</label>
+                  <input type="text" id="peserta1" name="peserta1"  required value="{{ $edit->peserta1 }}">
               </div>
               <div class="input-field">
-                <label for="peserta2">Nama Peserta 2</label>
-                <select name="peserta2" id="peserta2" is-invalid required >
-                  <option selected>{{ $edit->peserta2 }}</option> 
-              </select>
+                <label for="peserta2">Nama Peserta 2 *Otomatis terisi</label>
+                <input type="text" id="peserta2" name="peserta2"  required value="{{ $edit->peserta2 }}">
             </div>
             <div class="input-field">
-              <label for="peserta3">Nama Peserta 3</label>
-              <select name="peserta3" id="peserta3" is-invalid required >
-                <option selected>{{ $edit->peserta3 }}</option> 
-            </select>
+              <label for="peserta3">Nama Peserta 3 *Otomatis terisi</label>
+              <input type="text" id="peserta3" name="peserta3"  required value="{{ $edit->peserta3 }}">
           </div>
           <div class="input-field">
-            <label for="peserta4">Nama Peserta 4</label>
-            <select name="peserta4" id="peserta4" is-invalid required >
-              <option selected>{{ $edit->peserta4 }}</option> 
-          </select>
+            <label for="peserta4">Nama Peserta 4 *Otomatis terisi</label>
+            <input type="text" id="peserta4" name="peserta4"  required value="{{ $edit->peserta4 }}">
         </div>
         <div class="input-field">
-          <label for="peserta5">Nama Peserta 5</label>
-          <select name="peserta5" id="peserta5" is-invalid required >
-            <option selected>{{ $edit->peserta5 }}</option> 
-        </select>
-                    <div class="input-field">
-                      <label for="juri">Nama Juri</label>
-                      <select name="juri" id="juri" is-invalid  required>
-                          <option selected>{{ $edit->juri }}</option>
-                          <option>Daniel Wisnu Wardhana</option>
-                          <option>Kusen Dony Hermansyah</option>
-                          <option>Rita Sri Hastuti</option>
-                      </select>
-                      </div>
+          <label for="peserta5">Nama Peserta 5 *Otomatis terisi</label>
+          <input type="text" id="peserta5" name="peserta5"  required value="{{ $edit->peserta5 }}">
+      </div>
                 </div>
-              </div>
-          <div class="details personal">
-          <span class="title">1. Kesesuaian film dengan tema </span>
-              <div class="fields">
-              <div class="input-field">
-                <label for="skorkrit1">Kuantitatif:</label>
-                <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" value="{{ $edit->skorkrit1 }}">
-            </div>
-            <div class="input-field">
-              <label for="krit1">Kualitatif</label>
-              <textarea name="krit1" id="krit1" type="text" placeholder="Masukkan Kualitatif" required>{{ $edit->krit1 }}</textarea>
-          </div>
-              </div>
-          </div>
-          <div class="details personal">
-              <span class="title">2. Kreatifitas dalam Menceritakan realita dari sudut pandang Berbeda</span>
-                  <div class="fields">
-                    <div class="input-field">
-                      <label for="skorkrit2">Kuantitatif:</label>
-                      <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" value="{{ $edit->skorkrit2 }}">
-                  </div>
-                  <div class="input-field">
-                    <label for="krit2">Kualitatif</label>
-                    <textarea name="krit2" id="krit2" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit2 }}</textarea>
-                </div>
-                  </div>
               </div>
               <div class="details personal">
-                  <span class="title">3. Kejelasan pesan yang disampaikan melalui film yang dibuat</span>
-                      <div class="fields">
-                        <div class="input-field">
-                          <label for="skorkrit3">Kuantitatif:</label>
-                          <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" value="{{ $edit->skorkrit3 }}">
-                      </div>
-                      <div class="input-field">
-                        <label for="krit3">Kualitatif</label>
-                        <textarea name="krit3" id="krit3" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit3 }}</textarea>
-                    </div>
-                      </div>
+                <span class="title">Kuantitatif </span>
+                    <div class="fields">
+                    <div class="input-field">
+                      <label for="skorkrit1">1.Ketepatan dan kesesuaian white balance</label>
+                      <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit1}}">
                   </div>
-                  <div class="details personal">
-                    <span class="title">4. Kesesuaian antara judul film dengan Cerita Pesan yang akan disampaikan</span>
-                        <div class="fields">
-                          <div class="input-field">
-                            <label for="skorkrit4">Kuantitatif:</label>
-                            <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" value="{{ $edit->skorkrit4 }}">
-                        </div>
-                        <div class="input-field">
-                          <label for="krit4">Kualitatif</label>
-                          <textarea name="krit4" id="krit4" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit4 }}</textarea>
-                      </div>
-                        </div>
+                  <div class="input-field">
+                    <label for="skorkrit2">2.Ketepatan dan kesesuaian angle, pergerakan kamera, dan komposisi</label>
+                    <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit2}}">
+                </div>
+                <div class="input-field">
+                  <label for="skorkrit3">3.Ketepatan dan kesesuaian key light</label>
+                  <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit3}}">
+              </div>
+              <div class="input-field">
+                <label for="skorkrit4">4.Ketepatan dan kesesuaian teknik penataan lampu</label>
+                <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit4}}">
+            </div>
+              <div class="input-field">
+                <label for="skorkrit5">5.Kesesuaian film dengan tema</label>
+                <input type="number" id="skorkrit5" name="skorkrit5" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit5}}">
+            </div>
+            <div class="input-field">
+              <label for="skorkrit6">6.Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</label>
+              <input type="number" id="skorkrit6" name="skorkrit6" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit6}}">
+          </div>
+          <div class="input-field">
+            <label for="skorkrit7">7.Kreatifitas dalam menceritakan realita dari sudut pandang yang berbeda</label>
+            <input type="number" id="skorkrit7" name="skorkrit7" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit7}}">
+        </div>
+        <div class="input-field">
+          <label for="skorkrit8">8.Seberapa orisinalitas cerita dalam script</label>
+          <input type="number" id="skorkrit8" name="skorkrit8" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit8}}">
+      </div>
+      <div class="input-field">
+        <label for="skorkrit9">9.Kedalaman riset dan observasi dalam film</label>
+        <input type="number" id="skorkrit9" name="skorkrit9" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit9}}">
+      </div>
+      <div class="input-field">
+        <label for="skorkrit10">10.Kesesuaian antara gambar dan suara serta estetika dalam film</label>
+        <input type="number" id="skorkrit10" name="skorkrit10" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit10}}">
+      </div>
+        <div class="input-field">
+          <label for="skorkrit11">11.Ketepatan dan kesesuaian teknik cutting</label>
+          <input type="number" id="skorkrit11" name="skorkrit11" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit11}}">
+      </div>
+      <div class="input-field">
+        <label for="skorkrit12">12.Jumlah like video</label>
+        <input type="number" id="skorkrit12" name="skorkrit12" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit12}}">
+    </div>
+                  
                     </div>
-                    <div class="details personal">
-                        <span class="title">5. Kedalaman riset dan observasi dalam film</span>
-                            <div class="fields">
-                              <div class="input-field">
-                                <label for="skorkrit5">Kuantitatif:</label>
-                                <input type="number" id="skorkrit5" name="skorkrit5" oninput="hitungTotal()" value="{{ $edit->skorkrit5 }}">
-                            </div>
-                            <div class="input-field">
-                              <label for="krit5">Kualitatif</label>
-                              <textarea name="krit5" id="krit5" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit5 }}</textarea>
-                          </div>
-                            </div>
-                        </div>
-                        <div class="details personal">
-                            <span class="title">6. Kesesuaian antara fakta dan realita dengan cerita yang diangkat dalam film</span>
-                                <div class="fields">
-                                  <div class="input-field">
-                                    <label for="skorkrit6">Kuantitatif:</label>
-                                    <input type="number" id="skorkrit6" name="skorkrit6" oninput="hitungTotal()" value="{{ $edit->skorkrit6 }}">
-                                </div>
-                                <div class="input-field">
-                                  <label for="krit6">Kualitatif</label>
-                                  <textarea name="krit6" id="krit6" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit6 }}</textarea>
-                              </div>
-                                </div>
-                            </div>
-                    <div class="details personal">
-                    <span class="title">7. Kreatifitas dalam pengambilan gambar yang meliputi sudut kamera, pencahayaan, ruang, dan waktu</span>
-                        <div class="fields">
-                          <div class="input-field">
-                            <label for="skorkrit7">Kuantitatif:</label>
-                            <input type="number" id="skorkrit7" name="skorkrit7" oninput="hitungTotal()" value="{{ $edit->skorkrit7 }}">
-                        </div>
-                        <div class="input-field">
-                          <label for="krit7">Kualitatif</label>
-                          <textarea name="krit7" id="krit7" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit7 }}</textarea>
-                      </div>
-                        </div>
-                    </div>
-                      <div class="details personal">
-                        <span class="title">8. Kreatifitas dalam menggunakan unsur audio untuk memberikan informasi secara jelas serta memberikan suasana (mood) dalam film</span>
-                            <div class="fields">
-                              <div class="input-field">
-                                <label for="skorkrit8">Kuantitatif:</label>
-                                <input type="number" id="skorkrit8" name="skorkrit8" oninput="hitungTotal()" value="{{ $edit->skorkrit8 }}">
-                            </div>
-                            <div class="input-field">
-                              <label for="krit8">Kualitatif</label>
-                              <textarea name="krit8" id="krit8" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit8 }}</textarea>
-                          </div>
-                            </div>
-                      </div>
-                          <div class="details personal">
-                            <span class="title">9. Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realita yang diperoleh menjadi suatu yang menarik untuk ditonton</span>
-                                <div class="fields">
-                                  <div class="input-field">
-                                    <label for="skorkrit9">Kuantitatif:</label>
-                                    <input type="number" id="skorkrit9" name="skorkrit9" oninput="hitungTotal()" value="{{ $edit->skorkrit9 }}">
-                                </div>
-                                <div class="input-field">
-                                  <label for="krit9">Kualitatif</label>
-                                  <textarea name="krit9" id="krit9" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit9 }}</textarea>
-                              </div>
-                                </div>
-                          </div>
-                              <div class="details personal">
-                                <span class="title">10. Kesesuaian antara gambar dan suara serta estetika dalam film</span>
-                                    <div class="fields">
-                                      <div class="input-field">
-                                        <label for="skorkrit10">Kuantitatif:</label>
-                                        <input type="number" id="skorkrit10" name="skorkrit10" oninput="hitungTotal()" value="{{ $edit->skorkrit10 }}">
-                                    </div>
-                                    <div class="input-field">
-                                      <label for="krit10">Kualitatif</label>
-                                      <textarea name="krit10" id="krit10" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit10 }}</textarea>
-                                  </div>
-                                    </div>
-                              </div>
-                              <div class="details personal">
-                                <span class="title">11. Kejelasan dalam menampilkan ide-ide kreatif dalam penyajian visual</span>
-                                    <div class="fields">
-                                      <div class="input-field">
-                                        <label for="skorkrit11">Kuantitatif:</label>
-                                        <input type="number" id="skorkrit11" name="skorkrit11" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit11 }}">
-                                    </div>
-                                    <div class="input-field">
-                                      <label for="krit11">Kualitatif</label>
-                                      <textarea name="krit11" id="krit11" type="text" placeholder="Masukkan Kualitatif" required >{{ $edit->krit11 }}</textarea>
-                                  </div>
-                                    </div>
-                              </div>
-                              <div class="details personal">
-                                <span class="title">12. Kesesuaian storyboard dengan film</span>
-                                    <div class="fields">
-                                      <div class="input-field">
-                                        <label for="skorkrit12">Kuantitatif:</label>
-                                        <input type="number" id="skorkrit12" name="skorkrit12" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit12 }}">
-                                    </div>
-                                    <div class="input-field">
-                                      <label for="krit12">Kualitatif</label>
-                                      <textarea name="krit12" id="krit12" type="text" placeholder="Masukkan Kualitatif" required>{{ $edit->krit12 }}</textarea>
-                                  </div>
-                                    </div>
-                              </div>
+                </div>
                     <div class="details ID">
-                      <span class="title">Hasil Total Score</span>
+                      <span class="title">Catatan dan Hasil Total Score</span>
                           <div class="fields">
                           <div class="input-field">
+                            <div class="input-field">
+                              <label for="note">Catatan</label>
+                              <textarea id="note" name="note"  required >{{ $edit->note }}</textarea>
+                          </div>
                               <label for="total">Total Score Seluruh Kriteria:</label>
                               <input @disabled(true) type="text" id="total" name="total" readonly value="{{ $edit->total }}">
                           </div>
@@ -354,7 +247,7 @@
       const skorkrit9 = parseFloat(form.skorkrit9.value) || 0;
       const skorkrit10 = parseFloat(form.skorkrit10.value) || 0;
       const skorkrit11 = parseFloat(form.skorkrit11.value) || 0;
-      const skorkrit12 = parseFloat(form.skorkrit12.value) || 0;
+      const skorkrit11 = parseFloat(form.skorkrit12.value) || 0;
 
       const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4 + skorkrit5 + skorkrit6 + skorkrit7 + skorkrit8 + skorkrit9 + skorkrit10 + skorkrit11 + skorkrit12;
       form.total.value = total;
@@ -385,5 +278,45 @@ $("body").css(
 );
 });
 </script>
+<script>
+  const pesertaData = @json($peserta);
+const namateamInput = document.getElementById('namateam'); // Elemen input teks
+
+// Mengubah pesertaElements menjadi array of input elements
+const pesertaInputs = [
+    document.getElementById('peserta1'),
+    document.getElementById('peserta2'),
+    document.getElementById('peserta3'),
+    document.getElementById('peserta4'),
+    document.getElementById('peserta5')
+];
+
+namateamInput.addEventListener('input', () => {
+    const searchTerm = namateamInput.value.toLowerCase();
+    const selectedTeamMembers = pesertaData.filter(p => p.namateam.toLowerCase().includes(searchTerm));
+
+    if (selectedTeamMembers.length > 0) {
+        selectedTeamMembers.forEach((member, index) => {
+            if (index < 5) {
+                // Mengisi input teks langsung dengan nama peserta
+                pesertaInputs[index].value = member.nama || member[`nama${index}`] || '';
+
+                // Mengisi input nama1, nama2, nama3, nama4 secara terpisah (jika ada)
+                if (member.nama) pesertaInputs[0].value = member.nama;
+                if (member.nama1) pesertaInputs[1].value = member.nama1;
+                if (member.nama2) pesertaInputs[2].value = member.nama2;
+                if (member.nama3) pesertaInputs[3].value = member.nama3;
+                if (member.nama4) pesertaInputs[4].value = member.nama4;
+            }
+        });
+    } else {
+        // Membersihkan input teks jika tidak ada anggota yang cocok
+        pesertaInputs.forEach(input => {
+            input.value = '';
+        });
+    }
+});
+
+</script> 
 </body>
 </html>

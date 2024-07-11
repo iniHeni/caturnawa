@@ -23,13 +23,13 @@ class LoginadminController extends Controller
             session();
             $matalomba = $request->input('lang');
             if ($matalomba === 'kdbi') {
-                return redirect()->route('mainmenukdbi.show');
+                return view('admin/KDBI/mainmenuKDBI');
             } else if ($matalomba === 'edc') {
-                return redirect()->route('mainmenu.show');
+                return view('admin/EDC/mainmenuEDC');
             } else if ($matalomba === 'spc') {
-                return redirect()->route('spc.mainmenu');
+                return view('admin/LKTI/mainmenuLKTI');
             } else if ($matalomba === 'sm') {
-                return redirect()->route('sm.mainmenu');
+                return view('admin/SM/mainmenuSM');
             } else {
                 return back()->withErrors(['error' => 'Halaman Lomba Tidak bisa di akses']); 
             }

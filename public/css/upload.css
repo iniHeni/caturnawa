@@ -2,7 +2,7 @@
 .konten{
     position: relative;
     max-width: 1350px;
-    width: 200%;
+    width: 100%;
     border-radius: 20px;
     padding: 30px;
     margin: 0 15px;
@@ -145,24 +145,36 @@ form .buttons button , .backBtn{
     color: red;
 }
 @media (max-width: 750px) {
+    .konten{
+        max-width: 400px;
+        margin-top: 100px;
+        
+    }
     .konten form{
         overflow-y: scroll;
+        
     }
     .container form::-webkit-scrollbar{
        display: none;
     }
     form .fields .input-field{
-        width: 100%;    
+        width: 100%; 
+           
     }
+    
     .konten form {
-        min-height: 600px;
+        height: 700px;
     }
 }
 @media (max-width: 412px) {
+    .konten{
+        max-width: 280px;
+        
+    }
     form .fields .input-field{
-        width: 100%;
+        width: 70%;
     }
     .konten form {
-        min-height: 500px;
+        min-height: 1000px;
     }
 }

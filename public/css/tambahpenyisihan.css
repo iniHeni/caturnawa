@@ -7,7 +7,7 @@
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin: 0 auto;
+    margin: 12rem auto;
     top: 6rem;
 }
 .konten header{
@@ -15,16 +15,6 @@
     font-size: 20px;
     font-weight: 600;
     color: #333;
-}
-.konten header::before{
-    content: "";
-    position: static;
-    left: 0;
-    bottom: -2px;
-    height: 3px;
-    width: 27px;
-    border-radius: 8px;
-    background-color: #4070f4;
 }
 .konten form{
     position: static;
@@ -58,7 +48,6 @@ form.secActive .form.first{
     margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
-    margin: 6px 0;
     color: #333;
 }
 .konten form .fields{
@@ -69,17 +58,12 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }
 
-.input-field1{
-    display: flex;
-    width: calc(100% / 1 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-}
+
 
 .input-field label{
     font-size: 12px;

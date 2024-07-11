@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../../css/admin.css">
     <link rel="stylesheet" href="../../../css/navadmin.css">
     <link rel="stylesheet" href="../../../css/tambahspc.css">
+    <link rel="stylesheet" href="../../../css/pagelomba.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
 
@@ -45,7 +46,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 </head>
@@ -55,13 +56,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/smcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
@@ -92,152 +93,68 @@
 </div>
 <div id="data-container">
     <section id="skor">
-        <div class="container" style="display: flex; justify-content: center;height:70rem">
+        <div class="container" style=" justify-content: center;">
+            <div style="width: 100%;">
+                <h1 class="judul" style="color: wheat" >Leaderboard</h1>
+                <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: relative;">
+                    <table class="table table-bordered " style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse; ">
+                        <thead style="position: sticky; top: -1; z-index: 10;">
+                            <tr>
+                                <th scope="col"> @lang('messages.team2')</th>
+                                <th scope="col" >@lang('messages.team1')</th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($tambah as $rank=>$item)
+                          <tr>
+                            <td>{{ $item->namateam }}</td>
+                            <td>{{ $item->total}}</td>
+                          </tr>
+                          @endforeach
+                          
+                        </tbody>
+                    </table>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <section id="skor">
+        <div class="container" style=" justify-content: center;">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Semifinal</h1>
                 <p><a class="add" href="{{ route('sm.pesertap') }}" style="color: white">Tambah Penilaian</a></p>
-                <div class="table-responsive" style="max-height: 1000px;  position: static;">
-                  <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse; " >
-                    @foreach($tambah as $no=>$data)
-                    <thead style="position: static; top: -1; z-index: 10;">
-                       
-                        <tr><th scope="col" colspan="6" style="text-align: left;">Adjudicators: {{ $data->juri }}</th></tr>
-                        
-                        <tr>
-                            <th scope="col">@lang('messages.team1')</th>
-                            <th scope="col">@lang('messages.peserta1')</th>
-                            <th scope="col">@lang('messages.penilaian')</th>
-                            <th scope="col">@lang('messages.kuanti')</th>
-                            <th scope="col">@lang('messages.kuali')</th>
-                            <th scope="col">actions</th>
-                        </tr>
-                       
-                    </thead>
-                    <tbody>
-                     
-                      <tr>
-                        <td rowspan="12">{{ $data->namateam }}</td>
-                        <td rowspan="12">1.{{ $data->peserta1 }}<br>2.{{ $data->peserta2 }}<br>3.{{ $data->peserta3 }}<br>4.{{ $data->peserta4 }}<br>5.{{ $data->peserta5 }}</td>
-                        <td>Ketepatan dan kesesuaian white balance</td>
-                        <td>{{ $data->skorkrit1 }}</td>
-                        <td>{{ $data->krit1 }}</td>
-                        <td rowspan="12">
-                            <a href="{{ route('sm.editsf', $data->id) }}">Edit</a>
-                            <form action="{{ route('sm.hapussf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
-                                @csrf
-                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-
-                        
-                        <td>Ketetapan dan kesesuaian angle, pergerakan kamera, dan komposisi</td>
-                        <td>{{ $data->skorkrit2 }}</td>
-                        <td>{{ $data->krit2 }}</td>
-                       
-                    </tr>
-                    <tr>
-
-                        
-                        <td>Ketepatan dan kesesuaian key light</td>
-                        <td>{{ $data->skorkrit3}}</td>
-                        <td>{{ $data->krit3 }}</td>
-                       
-                    </tr>
-                    <tr>
-
-                       
-                        <td>Ketepatan dan kesesuaian teknik penataan lampu</td>
-                        <td>{{ $data->skorkrit4}}</td>
-                        <td>{{ $data->krit4 }}</td>
-                        
-                    </tr>
-
-                    <tr>
-
-                        <td>Kreatifitas dalam memadukan unsur video dan audio dalam menyusun alur cerita berdasarkan informasi dan realitas yang diperoleh menjadi suatu yang menarik untuk ditonton</td>
-                        <td>{{ $data->skorkrit5}}</td>
-                        <td>{{ $data->krit5 }}</td>
-                      
-                    </tr>
-                    <tr>
-
-                        
-                        <td>Kesesuaian antara gambar dan suara serta estetika dalam film</td>
-                        <td>{{ $data->skorkrit6}}</td>
-                        <td>{{ $data->krit6 }}</td>
-                     
-                    </tr>
-                    <tr>
-
-                      
-                      <td>Kelarasan musik dengan film</td>
-                      <td>{{ $data->skorkrit7}}</td>
-                      <td>{{ $data->krit7 }}</td>
-                    
-                  </tr>
-                  <tr>
-
-                    
-                    <td>Ketepatan dan kesesuaian teknik cutting</td>
-                    <td>{{ $data->skorkrit8}}</td>
-                    <td>{{ $data->krit8 }}</td>
-                    
-                </tr>
-                <tr>
-
-                  
-                  <td>Ketepatan poster dengan film</td>
-                  <td>{{ $data->skorkrit9}}</td>
-                  <td>{{ $data->krit9 }}</td>
-               
-              </tr>
-              <tr>
-
-                
-                <td>Komposisi gambar : warna dan tata letak objek dalam gambar</td>
-                <td>{{ $data->skorkrit10}}</td>
-                <td>{{ $data->krit10 }}</td>
-              
-            </tr>
-            <tr>
-
-              <td>Keindahan/sisi artistik penyajian visual</td>
-              <td>{{ $data->skorkrit11}}</td>
-              <td>{{ $data->krit11 }}</td>
-            
-          </tr>
-          <tr>
-
-            <td>Jumlah like dan view film yang tayang di Youtube</td>
-            <td>{{ $data->skorkrit12}}</td>
-            <td>{{ $data->krit12 }}</td>
-          
-        </tr>
-
-        <tr><td colspan="3">Total Score</td>
-          <td colspan="7">{{ $data->total }}</td>
-          </tr>
-                      
-                    </tbody>
-                    @endforeach
-                </table>
-                </div>
+                @if($tambah->count() > 0)
+  <div class="card-list">
+      @foreach($tambah as $rank => $data)
+          <a href="{{ route('sm.detailsfadmin', $data->namateam) }}" class="card-item"> 
+              <img src="{{ asset($data->logo) }}" class="card-image" loading="lazy">
+              <h3>{{ $data->namateam }}</h3>
+              <div class="arrow">
+                  <i class="card-icon">Detail</i>
+              </div>
+          </a>
+      @endforeach
+  </div>
+@endif
+            </div>
         </div>
-        <style>
-            .table-bordered td,
-            .table-bordered th {
-                border: 2px solid #dee2e6 !important;
-                text-align: left;
-                vertical-align: middle;
-                
-            }
-
-            thead th {
-                background-color: #cecece !important;
-            }
-        </style>
+    </section>
+</div>
+<style>
+    .table-bordered td,
+    .table-bordered th {
+        
+        text-align: center;
+        vertical-align: middle;
+        
+    }
+  
+    thead th {
+        background-color: #cecece !important;
+    }
+  </style>
     </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

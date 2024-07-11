@@ -12,23 +12,13 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../css/back.css">
 
 
       <title>Caturnawa - SPCSemifinalScore</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -40,11 +30,6 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../../../img/loader.gif);
- }
      </style>
    </head>
    <body>
@@ -53,15 +38,18 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../../../../img/spcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
+         <nav class="nav contnav">
+         <img src="../../../../img/spcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo"></a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../../../../locale/ind') }}" height="20"><img src="../../../../img/ind.png"  /></a></li>
 						<li><a href="../../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
 					</div>
+                    <li class="nav__item">
+                  <a href="{{url('matalomba/lkti/sfinal') }}" class="nav__link">Leaderboard</a>
+               </li>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
                </li>
@@ -99,81 +87,60 @@
                     <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                           <tr>
-                            <th>Name @lang('messages.peserta')</th>
+                            <th>@lang('messages.peserta')</th>
                             <th>@lang('messages.penilaian')</th>
-                            <th>@lang('messages.kuanti')</th>
+                            <th class="mid">@lang('messages.kuanti')</th>
                             <th>@lang('messages.kuali')</th>
-                            <th>Total</th>
-                            <th>@lang('messages.juri')</th>
+                            <th class="mid">Total</th>
+                            <th>@lang('messages.jury')</th>
                     
 
                         </tr>
                     </thead>
               <tbody>
-                  @foreach ($data as $item)
-                      <tr>
-                          <td rowspan="3">{{ $item->namapeserta }}</td>
-                          <td>1.@lang('messages.lktisf1')</td>
-                          <td>
-                              @if (is_array(explode(', ', $item->scorepenyajian)))
-                                  @foreach (explode(', ', $item->scorepenyajian) as $score)
-                                      {{ $score }}<br>
-                                  @endforeach
-                              @endif
-                          </td>
-                          <td> @if (is_array(explode(', ', $item->penyajian)))
-                            @foreach (explode(', ', $item->penyajian) as $score)
-                                {{ $score }}<br>
+                @foreach ($data as $item)
+                <tr>
+                    <td rowspan="3">{{ $item->namapeserta }}</td>
+            
+                    @php
+                        $scores = [
+                            ['label' => __('messages.lktisf1'), 'score' => $item->scorepenyajian, 'detail' => $item->penyajian],
+                            ['label' => __('messages.lktisf2'), 'score' => $item->scoresubs, 'detail' => $item->subs],
+                            ['label' => __('messages.lktisf3'), 'score' => $item->scorekualitas, 'detail' => $item->kualitas]
+                        ];
+                    @endphp
+            
+                    @foreach ($scores as $index => $criterion)
+                        <td>{{ $index + 1 }}. {{ $criterion['label'] }}</td>
+                        <td class="mid">
+                            @foreach (explode(', ', $criterion['score']) as $key => $score)
+                                {{ $score }} ({{ $key + 1 }})<br> 
                             @endforeach
-                        @endif</td> 
-                        <td rowspan="3">
-                          @if (is_array(explode(', ', $item->total)))
-                              @foreach (explode(', ', $item->total) as $score)
-                                  {{ $score }}<br>
-                              @endforeach
-                          @endif
-                      </td>
-                          <td rowspan="3">
-                              @if (is_array(explode(', ', $item->juri)))
-                                  @foreach (explode(', ', $item->juri) as $juri)
-                                      {{ $juri }}<br>
-                                  @endforeach
-                              @endif
-                          </td>
-                          
-                      </tr>
-                      <tr>
-                          <td>2.@lang('messages.lktisf2')</td>
-                          <td>
-                              @if (is_array(explode(', ', $item->scoresubs)))
-                                  @foreach (explode(', ', $item->scoresubs) as $score)
-                                      {{ $score }}<br>
-                                  @endforeach
-                              @endif
-                          </td>
-                          <td> @if (is_array(explode(', ', $item->subs)))
-                            @foreach (explode(', ', $item->subs) as $score)
-                                {{ $score }}<br>
+                        </td>
+                        <td>
+                            @foreach (explode(', ', $criterion['detail']) as $key => $detail)
+                                {{ $detail }} ({{ $key + 1 }})<br> 
                             @endforeach
-                        @endif</td>
-                      </tr>
-                      <tr>
-                          <td>3.@lang('messages.lktisf3')</td>
-                          <td>
-                              @if (is_array(explode(', ', $item->scorekualitas)))
-                                  @foreach (explode(', ', $item->scorekualitas) as $score)
-                                      {{ $score }}<br>
-                                  @endforeach
-                              @endif
-                          </td>
-                          <td>@if (is_array(explode(', ', $item->kualitas)))
-                            @foreach (explode(', ', $item->kualitas) as $score)
-                                {{ $score }}<br>
-                            @endforeach
-                        @endif</td>
-                      </tr>
-                      
-                  @endforeach
+                        </td>
+            
+                        @if ($index == 0) 
+                            <td class="mid" rowspan="3">
+                                @foreach (explode(', ', $item->total) as $key => $totalScore)
+                                    {{ $totalScore }}<br> 
+                                @endforeach
+                            </td>
+                            <td rowspan="3">
+                                @php $juriCounter = 1; @endphp 
+                                @foreach (explode(', ', $item->juri) as $juri)
+                                    {{ $juriCounter }}. {{ $juri }}<br>
+                                    @php $juriCounter++; @endphp
+                                @endforeach
+                            </td>
+                        @endif
+                    </tr>
+                @endforeach
+            @endforeach
+            
               </tbody>
                     </table>
                 </div>
@@ -182,11 +149,25 @@
     </section>
 
 <style>
- thead th {
-     background-color: #dee2e6 !important; 
- }
-</style>
+ .table-bordered td,
+            .table-bordered th {
+                border: 2px solid #dee2e6 !important;
+                
+                vertical-align: middle;
+              }
 
+              .mid{
+                text-align: center;
+
+              }
+
+            thead th {
+                background-color: #cecece !important;
+            }
+</style>
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
@@ -234,6 +215,7 @@ else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
           }, 2000)
         );
       });</script>
-      <script src="../../js/nav.js"></script>
+      <script src="../../../js/nav.js"></script>
+      <script src="../../../js/SM.js"></script>
    </body>
 </html>

@@ -137,21 +137,3 @@ $('.clients-carousel').owlCarousel({
     }
   });
 
-const uploadSMBtn = document.getElementById('');
-const uploadSPCBtn = document.getElementById(''); 
-
-uploadSMBtn.addEventListener('click', () => {
-Swal.fire({
-icon: 'error',
-title: 'Oops...',
-text: 'Fitur upload belum tersedia!',
-});
-});
-
-uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
-Swal.fire({
-icon: 'error',
-title: 'Oops...',
-text: 'Fitur upload belum tersedia!',
-});
-});

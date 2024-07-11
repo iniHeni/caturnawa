@@ -11,6 +11,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/midtrans-callback/{type}', [OrderController::class, 'callback'])
-     ->where('type', '(KDBI|LKTI|SM)'); 
+Route::post('/midtrans-callback', [ordersmController::class, 'callback']);
+Route::post('/midtrans-callback/lkti', [orderlktiController::class, 'callbackl']);
 

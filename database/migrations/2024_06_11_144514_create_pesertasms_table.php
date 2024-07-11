@@ -30,11 +30,11 @@ return new class extends Migration
             $table->string('foto2');
             $table->string('foto3');
             $table->string('foto4');
-            $table->biginteger('nohp');
-            $table->biginteger('nohp1');
-            $table->biginteger('nohp2');
-            $table->biginteger('nohp3');
-            $table->biginteger('nohp4');
+            $table->string('nohp');
+            $table->string('nohp1');
+            $table->string('nohp2');
+            $table->string('nohp3');
+            $table->string('nohp4');
             $table->string('logo')->nullable;
             $table->timestamps();
         });

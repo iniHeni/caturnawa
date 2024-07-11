@@ -86,9 +86,15 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-    max-width: 1056px;
-    margin-inline: 1.5rem;
-    margin: -4 auto;
+    max-width: 1200px;
+    margin: 4px auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container1 {
+    max-width: 100%;
+    margin: 4px auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -287,7 +293,7 @@ img {
     }
     .nav__logo,
     .search__form {
-        /* Added .register__form */
+        display: none;
         max-width: 450px;
         margin-inline: auto;
     }
@@ -337,22 +343,34 @@ img {
     font-weight: 700;
     margin-bottom: 10px;
 }
-.homepage .content .text {
-    margin-bottom: 60px;
-    color: #ffffff;
-    font-size: 30px;
-    text-align: center;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
-}
-.homepage .content .texthome {
-    margin-bottom: 60px;
-    color: #ffffff;
-    font-size: 45px;
-    text-align: center;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
-}
-
 /* For large devices */
+@media screen and (min-width: 1433px) {
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+        column-gap: 3rem;
+    }
+
+    .nav__close,
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__menu {
+        margin-left: 1rem;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+
+    .homepage .content h1 {
+        font-size: 77px;
+    }
+    .homepage .content .text {
+        margin-bottom: 50px;
+    }
+}
 @media screen and (min-width: 1143px) {
     .nav {
         height: calc(var(--header-height) + 2rem);
@@ -383,6 +401,9 @@ img {
 
 @media screen and (min-width: 1150px) {
     .container {
+        margin-inline: auto;
+    }
+    .container1 {
         margin-inline: auto;
     }
 }
