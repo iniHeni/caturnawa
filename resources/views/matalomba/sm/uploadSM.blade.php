@@ -15,21 +15,11 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/upload.css">
+      <link rel="stylesheet" href="../../../css/back.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>@lang('messages.daftar')</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -46,6 +36,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../../img/loader.gif);
  }
+ 
      </style>
    </head>
    <body>
@@ -54,11 +45,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 10rem" class="nav__item">
+        <div style="left:200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -70,9 +61,9 @@
                         <a href="#" class="nav__link">@lang('messages.peserta')</a>
                      </li>
    
-                     <li class="nav__item">
+                     <!-- <li class="nav__item">
                         <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.score')</a>
-                     </li>
+                     </li> -->
    
                      <li class="nav__item">
                         <a href="{{url('/matalomba/shortmovie') }}" class="nav__link">@lang('messages.round')</a>
@@ -125,7 +116,7 @@
                             </div>
                             <div class="input-field">
                                 <label for="instansi">@lang('messages.instansi')</label>
-                                <input type="text" name="instansi" id="instansi" placeholder="Masukkan Asal Instansi" @error('instansi') is-invalid @enderror required>
+                                <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
                                 @error('instansi')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -134,13 +125,6 @@
                                 <label for="poster">Poster *PDF Max 3mb</label>
                                 <input type="file" name="poster" id="poster" accept=".pdf, .PDF" @error('poster') is-invalid @enderror  required>
                                 @error('poster')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="input-field">
-                                <label for="original">@lang('messages.orginal') *PDF Max 3mb</label>
-                                <input type="file" name="original" id="original" accept=".pdf, .PDF" @error('original') is-invalid @enderror  required>
-                                @error('original')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -158,24 +142,39 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+                            
                             <div class="input-field">
-                                <label for="cipta">@lang('messages.hakcipta') *PDF Max 3mb</label>
-                                <input type="file" name="cipta" id="cipta" accept=".pdf, .PDF" @error('cipta') is-invalid @enderror  required>
-                                @error('cipta')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="input-field">
-                                <label for="story">Story Board *PDF Max 3mb</label>
+                                <label for="story">Storyboard *PDF Max 3mb</label>
                                 <input type="file" name="story" id="story" accept=".pdf, .PDF" @error('story') is-invalid @enderror  required>
                                 @error('story')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="sipnosis">Sypnosis *PDF Max 3mb</label>
+                                <label for="sipnosis">Sinopsis *PDF Max 3mb</label>
                                 <input type="file" name="sipnosis" id="sipnosis" accept=".pdf, .PDF" @error('sipnosis') is-invalid @enderror  required>
                                 @error('sipnosis')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="shortlist">Shortlist *PDF Max 3mb</label>
+                                <input type="file" name="shortlist" id="shortlist" accept=".pdf, .PDF" @error('shortlist') is-invalid @enderror  required>
+                                @error('shortlist')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="linkvidio">Link Video</label>
+                                <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror required>
+                                @error('linkvidio')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="cipta">@lang('messages.hakcipta') *PDF Max 3mb</label>
+                                <input type="file" name="cipta" id="cipta" accept=".pdf, .PDF" @error('cipta') is-invalid @enderror  required>
+                                @error('cipta')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -186,13 +185,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="input-field">
-                                <label for="linkvidio">Link Video</label>
-                                <input type="text" name="linkvidio" id="linkvidio" placeholder="Masukkan Link Video" @error('linkvidio') is-invalid @enderror required>
-                                @error('linkvidio')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
+                           
                         </div>
     
                     </div>
@@ -208,6 +201,9 @@
 </section>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+    <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
    
@@ -258,5 +254,6 @@
       });</script>
       <script src="../../js/nav.js"></script>
       <script src="../../js/daftarlomba.js"></script>
+      <script src="../../js/SM.js"></script>
    </body>
 </html>

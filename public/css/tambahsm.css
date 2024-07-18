@@ -1,7 +1,7 @@
 .konten{
     position: relative;
     max-width: 700px;
-    width: 100%;
+    width: 120%;
     border-radius: 20px;
     padding: 30px;
     margin: 0 15px;
@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 2300px;
+    min-height: 1300px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -69,7 +69,7 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 2 - 15px);
+    width: calc(100% / 2 - 15px); 
     flex-direction: column;
     margin: 4px 0;
 }
@@ -96,9 +96,10 @@ form .fields .input-field{
     color: #333;
     border-radius: 5px;
     border: 1px solid #aaa;
-    padding: 0 15px;
+    padding: 0 13px;
     height: 60px;
     margin: 8px 0;
+    width: 300px;
 }
 .input-field textarea :focus,
 .input-field input :focus,

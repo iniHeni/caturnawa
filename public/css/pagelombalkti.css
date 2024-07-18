@@ -1,4 +1,51 @@
 /* Start Section  Card Peserta*/
+.floating-button {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; 
+  z-index: 9;
+}
+
+.floating-button i {
+  margin-right: 8px; 
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+@media (max-width: 576px) {
+  .floating-button {
+    left: 10px;
+      padding: 10px;
+      /* border-radius: 50%; */
+      width: 65px;
+      height: 40px;
+      top: 75px;
+      z-index: 9;
+  }
+  .floating-button span {
+      display: none;
+  }
+}
+
+
+
+
+
 .slide-container{
   max-width: 850px;
   width: 100%;
@@ -12,12 +59,19 @@
 .judul{
   text-align: center;
   color: white;
-  margin-top: 6rem;
+  padding: 30px 0px 20px;
 }
+
+.judul1{
+  text-align: center;
+    color: white;
+    padding: 140px 0px 50px;
+}
+
 .card{
   border-radius: 25px;
   background-color: #FFF;
-  height: 24rem;
+  /* height: 24rem; */
 }
 .image-content,
 .card-content{
@@ -48,16 +102,11 @@
   background: #FFF;
   padding: 3px;
 }
-.card-image .card-img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #f6ae31;
-}
+
 .name{
   font-size: 18px;
   font-weight: 500;
+  padding-top: 10;
   color: #333;
 }
 .description{
@@ -102,9 +151,7 @@
 .swiper-button-prev{
   left: 0;
 }
-.swiper-pagination{
-  margin-bottom: 25rem;
-}
+
 .swiper-pagination-bullet{
   background-color: #6E93f7;
   opacity: 1;
@@ -112,21 +159,7 @@
 .swiper-pagination-bullet-active{
   background-color: #4070F4;
 }
-@media screen and (max-width: 768px) {
-  .swiper-pagination{
-    margin-bottom: 25rem;
-  }
-}
-@media screen and (max-width: 540px) {
-  .swiper-pagination{
-    margin-bottom: 27rem;
-  }
-}
-@media screen and (max-width: 430px) {
-  .swiper-pagination{
-    margin-bottom: 30rem;
-  }
-}
+
 @media screen and (max-width: 390px) {
   
   .slide-content{
@@ -138,24 +171,14 @@
   .slide-container{
     max-width: 350px;
   }
-  .swiper-pagination{
-    margin-bottom: 15rem;
-  }
+
   .card{
     justify-content: center;
     align-items: center;
   }
 }
-@media screen and (max-width: 344px) {
-  .swiper-pagination{
-    margin-bottom: 30rem;
-  }
-}
-@media screen and (max-width: 320px) {
-  .swiper-pagination{
-    margin-bottom: 15rem;
-  }
-}
+
+
 
 /* End Section  Card Peserta*/
 
@@ -163,11 +186,11 @@
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  max-width: 1250px;
-  margin: 150px auto;
-  padding: 20px;
-  gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    max-width: 1250px;
+    margin: 0px auto;
+    padding: 20px 20px 100px;
+    gap: 20px;
 }
   .card-list .card-item {
     background: #fff;
@@ -190,13 +213,13 @@
     object-fit: cover;
   }
   .card-list span {
-    display: inline-block;
+    margin: 0px 65px;
+    display: block;
     background: #F7DFF5;
-    margin-top: 32px;
-    padding: 8px 15px;
-    font-size: 1rem;
+    padding: 5px 0px;
     border-radius: 50px;
-    font-weight: 800;
+    font-weight: 600;
+    text-align: center;
   }
   .card-list .developer {
     background-color: #F7DFF5; 
@@ -253,6 +276,199 @@
 
 /* End Section Round */
 
+/* Start Section Juri */
+
+.main{
+  margin: 10px;
+  /* margin-bottom: 50rem; */
+}
+
+.main .title{
+  margin: 100px 0px 40px;
+    font-size: 30px;
+    text-align: center;
+    color: #f6ae31;
+}
+
+.main .card_container{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card_container .card{
+  max-width: 500px;
+  margin-top: 5rem;
+  border-radius: 25px;
+  background: #ffffff;
+  border: 5px solid #f6ae31;
+  padding: 30px;
+  color: #f1f5f9;
+  position: relative;
+}
+
+
+.user_content1 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content1 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content1 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content1 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.user_content2 .name{
+  font-size: 18px;
+  color: #000;
+  
+} 
+
+.user_content2 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content2 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content2 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.user_content3 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content3 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content3 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content3 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.user_content4 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content4 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content4 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content4 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.card .round_box{
+  position: absolute;
+  top: -75px;
+  right: 7%;
+  background: #ffffff !important;
+  width: 130px;
+  height: 130px;
+  border: 4px solid #b68a13;
+  border-radius: 50%;
+}
+
+.card .img_box{
+  position: absolute;
+  top: -75px;
+  right: 7%;
+}
+
+.card .img_box img{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 10px;
+}
 
 
 .testing1 {
@@ -263,12 +479,150 @@
   margin-top: 50px;
   margin-bottom: 90px;
 }
-.title {
-  color: #ffffff;
-  text-align: center;
-  margin: 0 180px;
-  font-size: 40;
-  margin-top: 50px;
-  margin-bottom: 90px;
+@media screen and (max-width: 1024px) {
+  .main {
+      margin-bottom: auto;
+  }
+  .testing1 {
+      margin: 0 150px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+  }
+  .card_container .card{
+    /* height: 1200px; */
+  }
+  .card .round_box{
+    position: absolute;
+    /* top: -8%; */
+  
+  }
+  
+  .card .img_box{
+    position: absolute;
+    top: -75px;
+  
+  }
+  
+  .card .img_box img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+
+
+
+}
+@media screen and (max-width: 500px) {
+  .testing1 {
+      margin: 0 20px;
+      font-size: 17;
+  }
+}
+@media screen and (max-width: 490px) {
+
+  /* .user_content2 {
+    margin-top: 3rem;
+} */
+
+}
+@media screen and (max-width: 390px) {
+  /* .user_content1 {
+      margin-top: -18rem;
+  }
+  .user_content2 {
+    margin-top: -4rem;
+}
+.user_content3 {
+  margin-top: -8rem;
 }
 
+.user_content4 {
+  margin-top: -28rem;
+} */
+}
+@media screen and (max-width: 375px) {
+  /* .user_content1 {
+      margin-top: -15rem;
+  }
+  .user_content2 {
+    margin-top: -2rem;
+}
+.user_content3 {
+  margin-top: 1rem;
+}
+
+.user_content4 {
+  margin-top: -20rem;
+} */
+}
+@media screen and (max-width: 346px) {
+  /* .user_content1 {
+      margin-top: -5rem;
+  }
+  .user_content2 {
+    margin-top: 3rem;
+}
+.user_content3 {
+  margin-top: 3rem;
+}
+
+.user_content4 {
+  margin-top: -20rem;
+} */
+}
+
+.icon{
+  margin: 10 auto;
+  text-align:center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  color: #000000c5;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.icon span{
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.icon span i{
+  line-height: 50px;
+  font-size: 25px;
+}
+
+/* End Section Juri */
+.cont{
+  display: flex;
+  justify-content: center; 
+  padding: 0px 0px 100px;
+  align-items: center;    
+}
+
+.gb{
+  display: inline-block;
+  background: #d1e8ff;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 800;
+  background-color:#f6ae31;
+  color: #fff;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.gb:hover {
+  background-color: #2f61f1; 
+  color: #fff;               
+}

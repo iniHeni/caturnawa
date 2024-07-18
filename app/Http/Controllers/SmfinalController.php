@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\smsemifinal;
 use App\Models\pesertasm;
 use App\Models\smfinal;
-use App\Models\smsfinal;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
@@ -14,11 +13,36 @@ use Illuminate\Support\Collection;
 class SmfinalController extends Controller
 {
     public function tampilf(){  
-        $tambah = smfinal::select(
-            '*',
-        DB::raw('RANK() OVER (ORDER BY total DESC) as rank')
-        )->get();
-        return view('admin/SM/finalSM', compact('tambah'));      
+
+        $final = DB::table('smfinals')
+        ->select(
+            'smfinals.namateam',
+            'pesertasms.logo',
+            DB::raw("
+                ROUND(
+                    (SUM(smfinals.total) / 3 * 30/100) + 
+                    COALESCE((
+                        SELECT ROUND(SUM(smsemifinals.total) / 3 * 70/100) 
+                        FROM smsemifinals 
+                        WHERE smsemifinals.namateam = smfinals.namateam
+                    ), 0)
+                ) as total
+            "),
+            DB::raw('RANK() OVER (ORDER BY 
+                (SUM(smfinals.total) / 3 * 30/100) + 
+                COALESCE((
+                    SELECT ROUND(SUM(smsemifinals.total) / 3 * 70/100) 
+                    FROM smsemifinals 
+                    WHERE smsemifinals.namateam = smfinals.namateam
+                ), 0) DESC) as rank')
+        )
+        ->leftJoin('pesertasms', 'smfinals.namateam', '=', 'pesertasms.namateam')
+        ->groupBy('smfinals.namateam', 'pesertasms.logo')
+        ->orderByDesc('total')
+        ->get();
+    
+    
+        return view('admin/SM/finalSM', compact('final'));      
      }
 
     public function tambahf(Request $request){
@@ -32,14 +56,11 @@ class SmfinalController extends Controller
             'juri' => 'required',
             'skorkrit1' => 'required|integer|min:0|max:100',
             'skorkrit2' => 'required|integer|min:0|max:100',
-            'skorkrit3' => 'required|integer|min:0|max:100',
-            'skorkrit4' => 'required|integer|min:0|max:100',
             'krit1' => 'required',
             'krit2' => 'required',
-            'krit3' => 'required',
-            'krit4' => 'required',
+
         ]);
-        $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] + $tambah['skorkrit3'] + $tambah['skorkrit4'];
+        $tambah['total'] = $tambah['skorkrit1'] + $tambah['skorkrit2'] ;
         smfinal::create($tambah);
         return redirect()->route('sm.tampilf');
 
@@ -47,7 +68,22 @@ class SmfinalController extends Controller
 
     public function editf($id) {
         $edit = smfinal::find($id);
-        $peserta = pesertasm::all();
+        $peserta = DB::table('smsemifinals')
+        ->select(
+            'namateam',
+            DB::raw('SUM(total) as total'), 
+            DB::raw('RANK() OVER (ORDER BY SUM(total) DESC) as rank'),
+            'peserta1',
+            'peserta2',
+            'peserta3',
+            'peserta4',
+            'peserta5'
+        )
+        ->groupBy('namateam', 'peserta1', 'peserta2', 'peserta3', 'peserta4', 'peserta5') // Group by semua kolom yang dipilih
+        ->orderByDesc('total')
+        ->limit(7)
+        ->get();
+
         return view('admin/SM/editsmf', compact('edit', 'peserta'));
     }
 
@@ -62,15 +98,11 @@ class SmfinalController extends Controller
             'juri' => 'required',
             'skorkrit1' => 'required|integer|min:0|max:100',
             'skorkrit2' => 'required|integer|min:0|max:100',
-            'skorkrit3' => 'required|integer|min:0|max:100',
-            'skorkrit4' => 'required|integer|min:0|max:100',
-           'krit1' => 'required',
-            'krit2' => 'required',
-            'krit3' => 'required',
-            'krit4' => 'required',
+          'krit1' => 'required',
+          'krit2' => 'required',
     ]);
     $data = smfinal::find($id);
-    $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] + $update['skorkrit3'] + $update['skorkrit4'];
+    $update['total'] = $update['skorkrit1'] + $update['skorkrit2'] ;
     $data->update($update);
         return redirect()->route('sm.tampilf');
 }
@@ -83,24 +115,94 @@ public function hapusf($id){
 
 public function final()
 {
-    $final = DB::table('smfinals') // Ubah tabel awal menjadi smfinals
-    ->select('smfinals.namateam', DB::raw('SUM(smfinals.total + COALESCE(smsemifinals.total, 0) + COALESCE(smsfinals.total, 0)) as total')) 
-    ->leftJoin('smsemifinals', 'smfinals.namateam', '=', 'smsemifinals.namateam')
-    ->leftJoin('smsfinals', 'smfinals.namateam', '=', 'smsfinals.namateam')
-    ->groupBy('smfinals.namateam')
-    ->orderByDesc('total')
-    ->get();
+    $final = DB::table('smfinals')
+        ->select(
+            'smfinals.namateam',
+            'pesertasms.logo',
+            DB::raw("
+                ROUND(
+                    (SUM(smfinals.total) / 3 * 30/100) + 
+                    COALESCE((
+                        SELECT ROUND(SUM(smsemifinals.total) / 3 * 70/100) 
+                        FROM smsemifinals 
+                        WHERE smsemifinals.namateam = smfinals.namateam
+                    ), 0)
+                ) as total
+            "),
+            DB::raw('RANK() OVER (ORDER BY 
+                (SUM(smfinals.total) / 3 * 30/100) + 
+                COALESCE((
+                    SELECT ROUND(SUM(smsemifinals.total) / 3 * 70/100) 
+                    FROM smsemifinals 
+                    WHERE smsemifinals.namateam = smfinals.namateam
+                ), 0) DESC) as rank')
+        )
+        ->leftJoin('pesertasms', 'smfinals.namateam', '=', 'pesertasms.namateam')
+        ->groupBy('smfinals.namateam', 'pesertasms.logo')
+        ->orderByDesc('total')
+        ->get();
+
 
 return view('matalomba/sm/final', compact('final'));
 
 }
-public function detailf($id){
-    $dataa = smfinal::find($id);
-    return view('matalomba/sm/detail/detailskor2', compact('dataa'));
+public function detailf($namateam){
+    $namateam = strip_tags(trim($namateam));
+    $tambah = smfinal::where('namateam', $namateam)
+    ->select(
+        '*',
+        DB::raw('RANK() OVER (PARTITION BY namateam ORDER BY id) as rank')
+    )
+    ->get();
+    $final = DB::table('smfinals')
+    ->select(
+        'namateam',
+        DB::raw("ROUND(SUM(smfinals.total) / 3 * 30/100) as total"),
+        DB::raw('RANK() OVER (ORDER BY SUM(smfinals.total) DESC) as rank')
+    )
+    ->groupBy('namateam') 
+    ->where('namateam', $namateam)
+    ->get();
+    return view('matalomba/sm/detail/detailskor2', compact('tambah', 'final'));
+}
+
+public function detailfadmin($namateam){
+    $namateam = strip_tags(trim($namateam));
+    $tambah = smfinal::where('namateam', $namateam)
+    ->select(
+        '*',
+        DB::raw('RANK() OVER (PARTITION BY namateam ORDER BY id) as rank')
+    )
+    ->get();
+    $final = DB::table('smfinals')
+    ->select(
+        'namateam',
+        DB::raw("ROUND(SUM(smfinals.total) / 3 * 30/100) as total"),
+        DB::raw('RANK() OVER (ORDER BY SUM(smfinals.total) DESC) as rank')
+    )
+    ->groupBy('namateam') 
+    ->where('namateam', $namateam)
+    ->get();
+    return view('admin/SM/finaldetailSM', compact('tambah', 'final'));
 }
 
  public function pesertaf(){
-    $peserta = pesertasm::all();
+    $peserta = DB::table('smsemifinals')
+    ->select(
+        'namateam',
+        DB::raw('SUM(total) as total'), 
+        DB::raw('RANK() OVER (ORDER BY SUM(total) DESC) as rank'),
+        'peserta1',
+        'peserta2',
+        'peserta3',
+        'peserta4',
+        'peserta5'
+    )
+    ->groupBy('namateam', 'peserta1', 'peserta2', 'peserta3', 'peserta4', 'peserta5') // Group by semua kolom yang dipilih
+    ->orderByDesc('total')
+    ->limit(7)
+    ->get();
+
     
     return view('admin/sm/tambahf', compact('peserta'));
  }

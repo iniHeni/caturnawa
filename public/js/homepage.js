@@ -27,11 +27,11 @@ var x = setInterval(function(){
         clearInterval(x);
         document.getElementById("time").style.display = "none";
         document.querySelector("h1").className = "new-year";
-        document.querySelector("h1").innerText = "UNAS FEST IS OPEN REGIST NOW!";
+        document.querySelector("h1").innerText = "UNAS FEST IS OPEN REGISTER NOW!";
 
 
         //firework animation
-        const fireworkCount = 300;
+        const fireworkCount = 100;
         const fireworkContainer = document.getElementById("firework-container");
 
         for(let i = 0; i < fireworkCount; i++){
@@ -137,21 +137,3 @@ $('.clients-carousel').owlCarousel({
     }
   });
 
-const uploadSMBtn = document.getElementById('');
-const uploadSPCBtn = document.getElementById(''); 
-
-uploadSMBtn.addEventListener('click', () => {
-Swal.fire({
-icon: 'error',
-title: 'Oops...',
-text: 'Fitur upload belum tersedia!',
-});
-});
-
-uploadSPCBtn.addEventListener('click', () => { // Add event listener for UploadSPC
-Swal.fire({
-icon: 'error',
-title: 'Oops...',
-text: 'Fitur upload belum tersedia!',
-});
-});

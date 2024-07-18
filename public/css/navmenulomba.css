@@ -1,6 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -17,14 +17,14 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Syne", sans-serif;
+  --body-font: "Lato", sans-serif;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
-  --font-semi-bold: 1000;
+  --font-semi-bold: 550;
 
   /*========== z index ==========*/
   --z-fixed: 100;
@@ -83,6 +83,12 @@ img {
   height: auto;
 }
 
+.nav_logo{
+  width: 185px !important;
+}
+.nav_logo1{
+  width: 300px !important;
+}
 
 
 
@@ -139,22 +145,34 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header.hidden {
+  top: -40%
+}
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--body);
-  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  background-color: rgba(255, 255, 255, 0.781);
+  box-shadow: 0 16px 16px hsl(0deg 0% 0% / 27%);
   z-index: var(--z-fixed);
+  transition: top 0.5s ease;
 }
-
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  backdrop-filter: blur(4px);  
+  z-index: -1;       
+}
 .nav {
-  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  margin: 0px 50px 0px 0px;
 }
 
 .nav__logo {
@@ -202,14 +220,24 @@ img {
   row-gap: 2rem;
   text-align: center;
   margin-left: 1rem;
-  margin-top: -.1rem;
+  margin: 30;
 }
+
 .nav__list > div {
+  margin: 0px;
+  position: absolute;
+  left: 330px;
+  display: flex;
+  align-items: center;
+  width: 80px;
+  column-gap: .9rem;
+}
+/* .nav__list > div {
   display: flex;
   align-items: center;
   width: 12%;
   column-gap: .9rem;
-}
+} */
 
 
 .gmbar{
@@ -223,6 +251,27 @@ img {
   transition: color .4s;
 }
 @media screen and (max-width: 1020px) {
+  .header{
+    border-radius: 50px;
+    top: 20px;
+    left: 5%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.781);
+    box-shadow: 0px 0px 30px 5px hsl(0deg 0% 0% / 27%);
+    
+  
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    backdrop-filter: blur(4px);  
+    z-index: -1;       
+  }
   .nav__menu {
     position: fixed;
     top: -100%;
@@ -230,15 +279,17 @@ img {
     align-items: center;
     background-color: var(--body);
     width: 100%;
-    padding-block: 4.5rem 4rem;
+    padding-block: 4.5rem rem;
     transition: top .4s;
+    left: -1;
+    box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
   }
   .nav__link{
     margin-left: -1rem;
   }
   .nav__list > div {
-    width: 17%;
-
+    width: 80px;
+    position: static;
   }
   .nav__item{
     align-items: center;
@@ -279,9 +330,14 @@ img {
   .search { /* Added .register to media query */
     padding-top: 10rem;
   }
-
+.nav_logo{
+  width: 100px !important;
+    position: relative;
+    right: 25px;
+}
   .nav{
     margin-right: 2rem;
+    margin: 0px 20px 0px 5px;
   }
   .nav__logo,
   .search__form { /* Added .register__form */
@@ -350,9 +406,9 @@ img {
   
 
 /* For large devices */
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1022px) {
   .nav {
-    height: calc(var(--header-height) + 2rem);
+    height: calc(var(--header-height) + 3rem);
     column-gap: 3rem;
   }
 
@@ -395,4 +451,119 @@ img {
   .contact-page {
 		margin-top: 0px;
 	}
+}
+
+.counter{
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  height: 210px;
+  width: 210px;
+  padding: 7px 4px 0;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.counter:before{
+  content: '';
+  background-color: #fff;
+  height: 157px;
+  width: 157px;
+  border-radius: 15px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+}
+.counter .counter-icon{
+  color: #fff;
+  background: linear-gradient(#F83F83,#E2056F);
+  line-height: 70px;
+  font-size: 35px;
+  height: 70px;
+  width: 70px;
+  margin: 0 auto 8px;
+  border-radius: 19px 0 50px;
+  transform: rotate(45deg);
+}
+.counter .counter-icon i{ transform: rotate(-45deg); }
+.counter .counter-value{
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 13px 0;
+  display: block;
+}
+.counter h3{
+  color: #fff;
+  background: linear-gradient(#F83F83,#E2056F);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 10px 5px;
+  margin: 0;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+}
+.counter h3:before,
+.counter h3:after{
+  content: "";
+  background: linear-gradient(to right bottom, transparent 49%,#c90460 50%);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: -2;
+}
+.counter h3:after{
+  transform: rotateY(180deg);
+  left: auto;
+  right: 0;
+}
+.counter.purple .counter-icon,
+.counter.purple h3{
+  background: linear-gradient(#B05FDF,#7B26DD);
+}
+.counter.purple h3:before,
+.counter.purple h3:after{
+  background: linear-gradient(to right bottom,transparent 49%,#5a07bf 50%);
+}
+.counter.blue .counter-icon,
+.counter.blue h3{
+  background: linear-gradient(#00BCF9,#027AF6);
+}
+.counter.blue h3:before,
+.counter.blue h3:after{
+  background: linear-gradient(to right bottom,transparent 49%,#0466c9 50%);
+}
+.counter.emas .counter-icon,
+.counter.emas h3{
+  background: linear-gradient(#f5ad32,#d88d0d);
+}
+.counter.emas h3:before,
+.counter.emas h3:after{
+  background: linear-gradient(to right bottom,transparent 49%,#f5ad32 50%);
+}
+.counter.silver .counter-icon,
+.counter.silver h3{
+  background: linear-gradient(#e6e7e3,#a2a3a1);
+}
+.counter.silver h3:before,
+.counter.silver h3:after{
+  background: linear-gradient(to right bottom,transparent 49%,#a2a3a1 50%);
+}
+.counter.perunggu .counter-icon,
+.counter.perunggu h3{
+  background: linear-gradient(#996306,#bd8d3b);
+}
+.counter.perunggu h3:before,
+.counter.perunggu h3:after{
+  background: linear-gradient(to right bottom,transparent 49%,#996306 50%);
+}
+@media screen and (max-width:990px){
+  .counter{ margin-bottom: 40px; }
 }

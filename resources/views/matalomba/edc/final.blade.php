@@ -12,7 +12,8 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../../css/navmenu.css">
+      <link rel="stylesheet" href="../../../css/navmenudbt.css">
+      <link rel="stylesheet" href="../../../css/back.css">
       <link rel="stylesheet" href="../../../css/pagelomba.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <link rel="stylesheet" href="../../../css/babak.css">
@@ -20,10 +21,11 @@
         .card-list2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
-    max-width: 900px;
+    max-width: 470px;
     margin: 0 auto;
     padding: 20px;
     gap: 20px;
+    
   }
   
     .card-list2 .card-item {
@@ -107,16 +109,7 @@
     
       </style>
             <style>
-              #loadingDiv {
-         width: 100%;
-         height: 100%;
-         z-index: 99999;
-         position: fixed;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         background-color: white;
-      }
+
        
       #loadingDiv {
          width: 100%;
@@ -145,13 +138,14 @@
     </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../../img/edcaja.png" width="100" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -2rem">Caturnawa</a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 25rem" class="nav__item">
-						
+        <div class="nav__item">
+          <li><a href="../../../locale/ind" height="20"><img src="../../../img/ind.png"  /></a></li>
+          <li><a href="../../../locale/en" height="20"><img src="../../../img/eng.png" /></a></li>
 					</div>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -179,16 +173,18 @@
             </div>
          </nav>
       </header>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="margin-bottom: 80px; margin-top:0px">Leaderboard</h1>
-                <div class="table-responsive" style="max-height: 300px; overflow-x: auto; overflow-y: auto; position: relative;">
-                    <table class="table table-bordered table-striped" style="min-width: 500px; margin-bottom: 0; border-collapse: collapse;">
+                <h1 class="judul" style="margin-bottom: 0px; margin-top:0px">Leaderboard</h1>
+                <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px">
+                    <table class="table table-bordered " style="min-width: 500px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
                             <tr>
-                                <th>Rank</th>
                                 <th>Team</th>
                                 <th>Participant</th>
                                 <th>Victory Point</th>
@@ -197,7 +193,6 @@
                         <tbody>
                           @foreach ($groupedByTeam as $data)
                           <tr>
-                            <td>{{ $data['rank'] }}</td> 
                             <td>{{ $data['team'] }}</td>
                             <td>{{ $data['nama1'] }}<br>{{ $data['nama2'] }}</td>
                             <td>{{ $data['total'] }}</td>
@@ -211,44 +206,113 @@
     </section>
     
     <style>
-       .table-bordered td, .table-bordered th {
-           border: 2px solid black !important;
-           text-align: center;
-           vertical-align: middle;
-       }
-       thead th {
-           background-color: #0d6efd !important;
-           
-       }
-    </style>
+      .table-bordered td{
+        border: 2px solid #dee2e6 !important;
+        text-align: center;
+         vertical-align: middle;
+      }
+                 .table-bordered th {
+                     border: 2px solid #dee2e6 !important;
+                     text-align: center;
+                     vertical-align: middle;
+                     padding-block: 20px;
+                   }
+     
+                 thead th {
+                     background-color: #cecece !important;
+                 }
+     </style>
       <!--==================== Round ====================-->
 <section id="rank">
-    <h1 class="judul">Day 1</h1>
+    <h1 class="judul" style="margin-top: 100px">Day 1</h1>
     <div class="card-list">
-            <a href="{{url('matalomba/edc/finalday1/round1') }}" class="card-item">
-                <img src="../../../img/edc.png" alt="Card Image">
-                <h3>Round 1</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
+      @php
+      use Carbon\Carbon;
+
+      $today = Carbon::now();
+
+
+      $ronde1 = Carbon::parse('2024-06-28');
+      $ronde2 = Carbon::parse('2024-4-15');   
+      $ronde3 = Carbon::parse('2024-06-28');
+  @endphp
+            @if($dataa->count() > 0)
+            <div class="card-item">
+            <img src="../../../img/edc.png" alt="Card Image">
+            <h3>Round 1</h3>
+              <a href="#" onclick="
+                  event.preventDefault(); 
+                  @if (!$today->greaterThanOrEqualTo($ronde1)) 
+            
+                      Swal.fire({
+                          title: '@lang('messages.sweet1')',
+                          text: '@lang('messages.sweet2')',
+                          icon: 'info'
+                      });
+                  @else 
+            
+                      window.location.href = '{{ url('matalomba/edc/finalday1/round1' ) }}'; 
+                  @endif
+              ">
+                            <div class="arrow">
+                                <i class="card-icon1">Detail</i>
+                            </div>
+                        </a>
+              </div>
+              @endif
+              @if($dataa2->count() > 0)
+              <div class="card-item">
+              <img src="../../../img/edc.png" alt="Card Image">
+              <h3>Round 2</h3>
+                <a href="#" onclick="
+                    event.preventDefault(); 
+                    @if (!$today->greaterThanOrEqualTo($ronde2)) 
+              
+                        Swal.fire({
+                            title: '@lang('messages.sweet1')',
+                            text: '@lang('messages.sweet2')',
+                            icon: 'info'
+                        });
+                    @else 
+              
+                        window.location.href = '{{ url('matalomba/edc/finalday1/round2') }}'; 
+                    @endif
+                ">
+                              <div class="arrow">
+                                  <i class="card-icon1">Detail</i>
+                              </div>
+                          </a>
+ 
                 </div>
-            </a>
-            <a href="{{url('matalomba/edc/finalday1/round2') }}" class="card-item" id="round2">
-                <img src="../../../img/edc.png" alt="Card Image">
-                <h3>Round 2</h3>
-                <div class="arrow">
-                    <i class="card-icon">Detail</i>
-                </div>
-            </a>
+                @endif
         </div>
         <h1 class="judul">Day 2</h1>
         <div class="card-list2">
-                <a href="{{url('matalomba/edc/finalday2/round1') }}" class="card-item">
-                    <img src="../../../img/edc.png" alt="Card Image">
-                    <h3>Round 1</h3>
-                    <div class="arrow">
-                        <i class="card-icon">Detail</i>
-                    </div>
-                </a>
+          @if($dataa3->count() > 0)
+          <div class="card-item">
+          <img src="../../../img/edc.png" alt="Card Image">
+          <h3>Round 3</h3>
+            <a href="#" onclick="
+                event.preventDefault(); 
+                @if (!$today->greaterThanOrEqualTo($ronde3)) 
+          
+                    Swal.fire({
+                        title: '@lang('messages.sweet1')',
+                        text: '@lang('messages.sweet2')',
+                        icon: 'info'
+                    });
+                @else 
+          
+                    window.location.href = '{{ url('matalomba/edc/finalday2/round1') }}'; 
+                @endif
+            ">
+                          <div class="arrow">
+                              <i class="card-icon1">Detail</i>
+                          </div>
+                      </a>
+
+            </div>
+            @endif
             </div>
     </section>
 <!--==================== Juri ====================-->
@@ -272,18 +336,6 @@
           }, 2000)
         );
       });</script>
-<script src="../../../js/nav.js"></script>
-      <script type="text/javascript">
-        const round2 = document.getElementById('round2');
-        
-        round2.addEventListener('click', () => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'round2 belum tersedia!',
-          });
-        });
-
-           </script>
    </body>
+   <script src="../../../js/SM.js"></script>
 </html>

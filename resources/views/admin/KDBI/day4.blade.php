@@ -20,17 +20,7 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
+
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -55,13 +45,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -98,40 +88,31 @@
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Final Day 1</h1>
                 <p><a class="add" href="{{ route('kdbi.pesertaday1f') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
-                    @foreach ($groupedByRondeAndSesi as $ronde => $dataSesi)
-    <h2 style="color: white; text-align:center">Ronde {{ $ronde }}</h2>
+                    @foreach ($groupedByRondeAndSesi as $ronde => $teamsData)
+    <h2 style="color: white; text-align:center">{{ $ronde }}</h2>
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 5rem; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
-                                <th scope="col" rowspan="2">Ronde</th>
                                 <th scope="col" rowspan="2">Adjudicators</th>
-                                <th scope="col" rowspan="2">Team</th>
+                                <th scope="col" rowspan="2">ronde</th>
                                 <th scope="col" rowspan="2">Position Team</th>
-                                <th scope="col" rowspan="2">Position Participant</th>
                                 <th scope="col" rowspan="2">Participant Name</th>
-                                <th scope="col"  colspan="2">Score Individu</th>
+                                <th scope="col"  >Score Individu</th>
                                 <th scope="col" rowspan="2">Score team</th>
                                 <th scope="col" rowspan="2">Victory Point</th>
                                 <th scope="col" rowspan="2">Action</th>
                             </tr>
-                            <tr>
-                                <th scope="col" colspan="1">Individu 1</th>
-                                <th scope="col" colspan="1">Individu 2</th>
-                            </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dataSesi as $data)
+                            @foreach ($teamsData as $data)
                         <tr>
+                            <td >{{ $data->juri }}</td>
                             <td>{{ $data->ronde }}</td>
-                            <td>{{ $data->juri}}</td>
-                            <td>{{ $data->team}}</td>
-                            <td>{{ $data->posisi}}</td>
-                            <td>{{ $data->posisi1}}<br>{{ $data->posisi2}}</td>
-                            <td>{{ $data->nama1}}<br>{{ $data->nama2}}</td>
-                            <td>{{ $data->skorindividu1}}</td>
-                            <td>{{ $data->skorindividu2}}</td>
-                            <td>{{ $data->total}}</td>
-                            <td>{{ $data->vp}}</td>
+                            <td>{{ $data->posisi }}</td>
+                            <td>{{ $data->nama1 }}({{ $data->posisi1 }})<br>{{ $data->nama2 }}({{ $data->posisi2 }})</td>
+                            <td>{{ $data->skorindividu1 }}<br>{{ $data->skorindividu2 }}</td>
+                            <td>{{ $data->total }}</td> 
+                            <td>{{ $data->vp }}</td>
                             <td>
                                 <a href="{{ route('kdbi.editkdbi4', $data->id) }}">Edit</a>
                                 <form action="{{ route('kdbi.hapuskdbi4', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">

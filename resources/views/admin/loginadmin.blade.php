@@ -25,7 +25,7 @@
                 <option value="kdbi">KDBI</option>
                 <option value="edc">EDC</option>
                 <option value="spc">SPC</option>
-                <option value="sm">SM</option>
+                <option value="sm">SMC</option>
             </select>
             <br>
             <br>

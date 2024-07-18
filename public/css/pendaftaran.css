@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 .konten{
     position: relative;
-    max-width: 1300px;
+    max-width: 1000px;
     width: 100%;
     border-radius: 20px;
     padding: 30px;
@@ -29,7 +28,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 1100px;
+    min-height: 1500px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -69,7 +68,7 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }
@@ -138,13 +137,17 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
+form input.error,
 .input-field input[is-invalid] {
     border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
 }
 .input-field .text-danger {
     color: red;
 }
-@media (max-width: 750px) {
+@media (max-width: 1024px) {
+    .konten { 
+        margin-top: 100px;
+    }
     .konten form{
         overflow-y: scroll;
     }
@@ -155,8 +158,13 @@ form .buttons button , .backBtn{
         width: calc(100% / 2 - 15px);
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 452px) {
     form .fields .input-field{
         width: 83%;
+    }
+}
+@media (max-width: 388px) {
+    form .fields .input-field{
+        width: 65%;
     }
 }

@@ -62,49 +62,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-// KDBI
-document.addEventListener("DOMContentLoaded", function () {
-    // Fungsi untuk menampilkan konten berdasarkan ID
-    function showContent(sectionId) {
-        const contents = document.querySelectorAll(".main-content > section");
-        contents.forEach((content) => {
-            content.style.display = "none";
-        });
-        document.getElementById(sectionId).style.display = "block";
-    }
-
-    // Muat konten beranda saat halaman utama dimuat
-    $.ajax({
-        url: "/admin/beranda",
-        success: function (result) {
-            $("#home-container").html($(result).find("#home-content").html());
-        },
-        error: function () {
-            $("#home-container").html("Gagal memuat data.");
-        },
-    });
-
-    // Event listener untuk tombol "Dashboard"
-    document
-        .getElementById("beranda")
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            showContent("home");
-
-            // Muat ulang konten beranda saat tombol Dashboard diklik
-            $.ajax({
-                url: "/admin/beranda",
-                success: function (result) {
-                    $("#home-container").html(
-                        $(result).find("#home-content").html()
-                    );
-                },
-                error: function () {
-                    $("#home-container").html("Gagal memuat data.");
-                },
-            });
-        });
-
 
 
         document
@@ -195,4 +152,3 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
             });
         })
-    });

@@ -23,7 +23,7 @@ class PesertaspcController extends Controller
                 'email' => $order->email,
                 'foto' => $order->foto,
                 'nohp' => $order->nomorhp,
-                'logo' => 'null'
+                'logo' => 'nullable',
             ]
         );
     }
@@ -38,23 +38,24 @@ class PesertaspcController extends Controller
 
     public function updatepe(Request $request, $id){
     $update = $request->validate([
-        'instansi' => 'required|string|max:50',
-            'nama' => 'required|string|max:50',
+        'instansi' => 'required|string',
+            'nama' => 'required|string',
             'email' => 'required|email',
             'nohp' => 'required',
-            'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
+            'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
     ]);
     $update = $request->all();
-    if($request->hasFile('logo'))
-    {
-        $destination_path = 'public/images/lkti/peserta/logo';
-        $image = $request->file('logo');
-        $image_name = time() . '.' . $image->getClientOriginalExtension();
-        $path = $request->file('logo')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/lkti/peserta/logo/' . $image_name);
-
+    if ($request->hasFile('logo')) {
+        $originalFileName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('logo')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+        $destinationPath = 'public/images/spc/logo';
+        $request->file('logo')->storeAs($destinationPath, $imageName);
+    
+        $imageUrl = asset('storage/images/spc/logo/' . $imageName);
         $update['logo'] = $imageUrl;
-
     }
     $data = pesertaspc::find($id);
     $data->update($update);

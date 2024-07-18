@@ -14,8 +14,9 @@ return new class extends Migration
     {
         Schema::create('orderkdbis', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('order');
+            $table->string('order');
             $table->string('kompetisi');
+            $table->string('namateam');
             $table->string('nama_1');
             $table->string('email_1');
             $table->string('fakultas_1');
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->string('npm_1');
             $table->string('jeniskelamin_1');
             $table->string('alamatlengkap_1');
-            $table->bigInteger('nomorhp_1');
+            $table->string('nomorhp_1');
             $table->string('ktm_1');
             $table->string('foto_1');
             $table->string('krs_1');
@@ -36,7 +37,7 @@ return new class extends Migration
             $table->string('npm_2');
             $table->string('jeniskelamin_2');
             $table->string('alamatlengkap_2');
-            $table->bigInteger('nomorhp_2');
+            $table->string('nomorhp_2');
             $table->string('ktm_2');
             $table->string('foto_2');
             $table->string('krs_2');
@@ -45,7 +46,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('instansi');
             $table->string('surat_delegasi');
-            $table->enum('status', ['Unpaid', 'Paid']);
+            $table->enum('status', ['Unpaid', 'Paid', 'Khusus']);
             $table->timestamps();
         });
     }

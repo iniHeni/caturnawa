@@ -55,14 +55,14 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
-            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin LKTI </a></h2>
+            <img class="logo" src="../../img/spcaja.png" alt="Logo">
+            <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin SPC </a></h2>
         </div>
     </nav>
 </header>
@@ -70,7 +70,7 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/spcaja.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuLKTI1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaLKTI1')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanLKTI1')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
@@ -99,61 +99,63 @@
                 <p><a class="add" href="{{ route('spc.pesertaaf') }}" style="color: white">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                        @foreach ($groupedData as $namapeserta => $pesertaGroup)
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
-                                <th scope="col" rowspan="4">No</th>
-                                <th scope="col" rowspan="4">Nama Peserta</th>
-                                <th scope="col" colspan="6">Kriteria Penilaian</th>
-                                <th scope="col" rowspan="4">Total</th>
-                                <th scope="col" rowspan="4">Rank</th>
-                                <th scope="col" rowspan="4">Juri</th>
-                                <th scope="col" rowspan="4">actions</th>
-                            </tr>
-                            <tr>
-                                <th scope="col" colspan="2">Pemaparan Materi dan Presentasi Ilmiah</th>
-                                <th scope="col" colspan="2">Pertanyaan dan Jawaban</th>
-                                <th scope="col" colspan="2">Aspek Kesesuaian dengan Tema</th>
-                            </tr>
-                            <tr>
-                                <th scope="col" colspan="3">Skor</th>
-                                <th scope="col" colspan="3">Kualitatif</th>
+                                <th scope="col" >@lang('messages.peserta1')</th>
+                                <th class="mid" scope="col" >@lang('messages.penilaian')</th>
+                                <th class="mid" scope="col" >@lang('messages.score')</th>
+                                <th class="mid" scope="col" >@lang('messages.kuali')</th>
+                                <th class="mid" scope="col" >Total</th>
+                                <th scope="col" >@lang('messages.juri')</th>
+                                <th class="mid" scope="col" >actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tambah as $no=>$data)
+                            @foreach ($pesertaGroup as $peserta)
                             <tr>
-                                <td>{{ $no+1 }}</td>
-                                <td>{{ $data->namapeserta}}</td>
-                                <td>{{ $data->scorepemaparanmateri}}</td>
-                                <td>{{ $data->scorepertanyaandanjawaban}}</td>
-                                <td>{{ $data->scoreaspekkesesuaian}}</td>
-                                <td>{{ $data->materi}}</td>
-                                <td>{{ $data->pertanyaandanjawaban}}</td>
-                                <td>{{ $data->kesesuaian}}</td>
-                                <td>{{ $data->total}}</td>
-                                <td>{{ $data->rank}}</td>
-                                <td>{{ $data->juri}}</td>
-                                <td>
-                                    <a href="{{ route('spc.editf', $data->id) }}">Edit</a>
-                                    <form action="{{ route('spc.hapusf', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                                <td rowspan="3">{{ $peserta->namapeserta }}</td>
+                                <td style="text-align: left">1. Pemaparan Materi dan Presentasi Ilmiah</td>
+                                <td class="mid">{{ $peserta->scorepemaparanmateri}}</td>
+                                <td>{{ $peserta->materi}}</td>
+                                <td class="mid" rowspan="3">{{ $peserta->total}}</td>
+                                <td rowspan="3">{{ $peserta->juri}}</td>   
+                                <td rowspan="3" style="text-align: center">
+                                    <a href="{{ route('spc.editf', $peserta->id) }}">Edit</a>
+                                    <form action="{{ route('spc.hapusf', $peserta->id) }}" method="POST" id="delete-form-{{ $peserta->id }}">
                                         @csrf
-                                        <button  type="submit" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                        <button  type="button" style="color: red" onclick="confirmDelete({{ $peserta->id }})">Hapus</button>
                                     </form>
                                 </td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">2. Pertanyaan dan Jawaban</td>
+                                <td class="mid">{{ $peserta->scorepertanyaandanjawaban}}</td>
+                                <td>{{ $peserta->pertanyaandanjawaban}}</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">3. Aspek Kesesuaian dengan Tema</td>
+                                <td class="mid">{{ $peserta->scoreaspekkesesuaian}}</td>
+                                <td>{{ $peserta->kesesuaian}}</td>
                             </tr>
                             @endforeach
                         </tbody>
+                        @endforeach
                     </table>
                 </div>
         </div>
         <style>
-            .table-bordered td,
-            .table-bordered th {
+                     .table-bordered th {
+                border: 2px solid #dee2e6 !important;
                 
-                text-align: center;
                 vertical-align: middle;
-                
-            }
+              }
+
+              .mid{
+                text-align: center;
+
+              }
 
             thead th {
                 background-color: #cecece !important;

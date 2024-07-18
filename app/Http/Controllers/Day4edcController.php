@@ -13,40 +13,56 @@ use Illuminate\Pagination\Paginator;
 class Day4edcController extends Controller
 {
     public function tampiledc4(){
-        $tambah = DB::table('day4edcs')
+        $groupedByRondeAndSesi = DB::table('day4edcs')
         ->orderBy('ronde', 'asc')
-        ->get();
+        ->get()
+        ->groupBy('team')
+        ->map(function ($group) {
+            return $group->sortBy('ronde')->values()->map(function ($item, $key) {
+                $item = (array) $item;
 
-    $tambahCollection = new Collection($tambah);
-
-    $groupedByRondeAndSesi = $tambahCollection->groupBy('ronde')->map(function ($group, $ronde) { // Pass $ronde as argument
-        return $group->sortByDesc('total')->values()->map(function ($item, $key) use ($ronde) { // Pass $ronde to the inner map
-            $item = (array) $item;
-            $item['rank'] = $key + 1;
-            $item['ronde'] = $ronde; // Tambahkan properti ronde kembali
-            return (object) $item;
+                return (object) $item;
+            });
         });
-    });
+    
+    
 
     return view('admin/EDC/day4', compact('groupedByRondeAndSesi'));
     }
 
     public function tambahedc4(Request $request){
-        $tambah = $request->validate([
-            'ronde' => 'required',
-            'juri' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-            
-        ]);
-        $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
-        day4edc::create($tambah);
+        $validatedData = [];
+
+        for ($i = 1; $i <= 4; $i++) {
+            $validator = Validator::make($request->all(), [
+             
+            ]);
+    
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+    
+            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
+    
+            $day4edc = day4edc::create([
+                'juri' => $request->input('juri.' . $i),
+                'ronde' => $request->input('ronde.' . $i),
+
+                'team' => $request->input('team.' . $i),
+                'posisi' => $request->input('posisi.' . $i),
+                'posisi1' => $request->input('posisi1.' . $i),
+                'posisi2' => $request->input('posisi2.' . $i),
+                'nama1' => $request->input('nama1.' . $i),
+                'nama2' => $request->input('nama2.' . $i),
+                'skorindividu1' => $request->input('skorindividu1.' . $i),
+                'skorindividu2' => $request->input('skorindividu2.' . $i),
+                'total' => $totalSkorTim, 
+            ]);
+    
+            $validatedData[] = $day4edc;
+        }
         return redirect()->route('edc.tampiledc4');
         
     }
@@ -61,7 +77,6 @@ class Day4edcController extends Controller
     $update = $request->validate([
         'ronde' => 'required',
             'juri' => 'required',
-            'room' => 'required',
             'team' => 'required',
             'posisi' => 'required',
             'posisi1' => 'required',
@@ -99,8 +114,8 @@ public function hapusedc4($id){
         DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
         DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
         DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
-        DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
-        DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+        DB::raw('AVG(skorindividu1) as skorindividu1'), 
+        DB::raw('AVG(skorindividu2) as skorindividu2'),
         DB::raw('MAX(vp) as vp')
     )
     ->where('ronde', 1)
@@ -108,7 +123,9 @@ public function hapusedc4($id){
     ->get();
 
 $final = $groupedData->map(function ($row) {
-    $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+    $row->skorindividu1 = number_format($row->skorindividu1, 1, '.', '');
+    $row->skorindividu2 = number_format($row->skorindividu2, 1, '.', '');
+    $row->total = number_format(($row->skorindividu1 + $row->skorindividu2) / 2, 1, '.', '');
     return $row;
 })
 ->sortByDesc('total')
@@ -131,8 +148,8 @@ $final = $groupedData->map(function ($row) {
         DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
         DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
         DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
-        DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
-        DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+        DB::raw('AVG(skorindividu1) as skorindividu1'), 
+        DB::raw('AVG(skorindividu2) as skorindividu2'),
         DB::raw('MAX(vp) as vp')
     )
     ->where('ronde', 2) 
@@ -140,7 +157,9 @@ $final = $groupedData->map(function ($row) {
     ->get();
 
 $final = $groupedData->map(function ($row) {
-    $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+    $row->skorindividu1 = number_format($row->skorindividu1, 1, '.', '');
+    $row->skorindividu2 = number_format($row->skorindividu2, 1, '.', '');
+    $row->total = number_format(($row->skorindividu1 + $row->skorindividu2) / 2, 1, '.', '');
     return $row;
 })
 ->sortByDesc('total')

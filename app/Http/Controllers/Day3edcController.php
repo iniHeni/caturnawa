@@ -17,39 +17,49 @@ class Day3edcController extends Controller
     public function tampiledc3(){
         $tambah = DB::table('day3edcs')
         ->orderBy('ronde', 'asc')
+        ->orderBy('room', 'asc')
+        ->orderBy('total', 'desc') 
         ->get();
-
-    $tambahCollection = new Collection($tambah);
-
-    $groupedByRondeAndSesi = $tambahCollection->groupBy('ronde')->map(function ($group, $ronde) { // Pass $ronde as argument
-        return $group->sortByDesc('total')->values()->map(function ($item, $key) use ($ronde) { // Pass $ronde to the inner map
-            $item = (array) $item;
-            $item['rank'] = $key + 1;
-            $item['ronde'] = $ronde; // Tambahkan properti ronde kembali
-            return (object) $item;
-        });
-    });
+    
+    $groupedByRondeAndSesi = $tambah->groupBy(['ronde', 'room']);
+    
 
     return view('admin/EDC/semifinalEDC', compact('groupedByRondeAndSesi'));
     }
 
     public function tambahedc3(Request $request){
-        $tambah = $request->validate([
-            'ronde' => 'required',
-            'juri' => 'required',
-            'room' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-            
-        ]);
-        $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
-        day3edc::create($tambah);
+        $validatedData = [];
+
+        for ($i = 1; $i <= 4; $i++) {
+            $validator = Validator::make($request->all(), [
+             
+            ]);
+    
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+    
+            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
+    
+            $day3edc = day3edc::create([
+                'juri' => $request->input('juri.' . $i),
+                'ronde' => $request->input('ronde.' . $i),
+                'room' => $request->input('room.' . $i),
+                'team' => $request->input('team.' . $i),
+                'posisi' => $request->input('posisi.' . $i),
+                'posisi1' => $request->input('posisi1.' . $i),
+                'posisi2' => $request->input('posisi2.' . $i),
+                'nama1' => $request->input('nama1.' . $i),
+                'nama2' => $request->input('nama2.' . $i),
+                'skorindividu1' => $request->input('skorindividu1.' . $i),
+                'skorindividu2' => $request->input('skorindividu2.' . $i),
+                'total' => $totalSkorTim, 
+            ]);
+    
+            $validatedData[] = $day3edc;
+        }
         return redirect()->route('edc.tampiledc3');
         
     }
@@ -98,12 +108,13 @@ public function hapusedc3($id){
         DB::raw('RANK() OVER (ORDER BY vp DESC, created_at ASC) as rank')
     )
     ->where('ronde', '1')
+    ->orderBy('room', 'asc') 
     ->orderBy('vp', 'desc')
     ->orderBy('created_at', 'asc') 
     ->get();
+    $dataByRoom = $semifinal->groupBy('room');
 
-
-    return view('matalomba/edc/sfinalronde1', compact('semifinal'));
+    return view('matalomba/edc/sfinalronde1', compact('dataByRoom'));
  }
 
  public function day3round2(){
@@ -113,10 +124,12 @@ public function hapusedc3($id){
         DB::raw('RANK() OVER (ORDER BY vp DESC, created_at ASC) as rank')
     )
     ->where('ronde', '2')
+    ->orderBy('room', 'asc') 
     ->orderBy('vp', 'desc')
     ->orderBy('created_at', 'asc') 
     ->get();
-    return view('matalomba/edc/sfinalronde2', compact('semifinal'));
+    $dataByRoom = $semifinal->groupBy('room');
+    return view('matalomba/edc/sfinalronde2', compact('dataByRoom'));
  }
 
  public function gabungansf(){

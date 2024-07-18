@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 .konten{
     position: relative;
-    max-width: 1300px;
+    max-width: 1500px;
     width: 100%;
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 20px;
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -29,7 +29,7 @@
 .konten{
     position: relative;
     margin-top: 16px;
-    min-height: 2700px;
+    min-height: 3500px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -69,9 +69,9 @@ table.secActive .form.first{
 }
  .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
-    margin: 4px 0;
+    margin: 4px 5;
 }
 .input-field label{
     font-size: 12px;
@@ -87,7 +87,7 @@ table.secActive .form.first{
     border: 1px solid #aaa;
     padding: 0 15px;
     height: 42px;
-    margin: 8px 0;
+    margin: 8px 2;
 }
 .input-field input :focus,
 .input-field select:focus{

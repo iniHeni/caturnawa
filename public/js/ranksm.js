@@ -9,33 +9,39 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateElements = item.querySelectorAll(".num, .day");
         let dateString = Array.from(dateElements).map(el => el.textContent).join(" ");
   
-        // Determine start and end dates based on ticket phase
         let phaseStart, phaseEnd;
         if (index === 0) {
-          phaseStart = new Date(currentYear, 5, 22); // July 23rd
-          phaseEnd = new Date(currentYear, 6, 26, 23, 59, 59); // July 26th, end of day
+          phaseStart = new Date(currentYear, 5, 22); 
+          phaseEnd = new Date(currentYear, 6, 26, 23, 59, 59); 
         } else if (index === 1) {
-          phaseStart = new Date(currentYear, 7, 27); // August 27th
-          phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); // August 11th, end of day
+          phaseStart = new Date(currentYear, 7, 27); 
+          phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
         } else if (index === 2) {
-          phaseStart = new Date(currentYear, 7, 12); // August 12th
-          phaseEnd = new Date(currentYear, 7, 23, 23, 59, 59); // August 23rd, end of day
+          phaseStart = new Date(currentYear, 7, 12); 
+          phaseEnd = new Date(currentYear, 7, 23, 23, 59, 59);
         }
   
-        const ticketsButton = item.querySelector(".tickets, .daftar"); 
-
-        if (now >= phaseStart && now <= phaseEnd && !ticketsButton.classList.contains("daftar")) {
-          ticketsButton.textContent = "Register Now!";
-          ticketsButton.classList.remove("tickets");
-          ticketsButton.classList.add("daftar");
-          ticketsButton.addEventListener("click", function() {
-            window.location.href = "/matalomba/daftarSM"; 
+        const ticketsButtonTutup = item.querySelector(".tickets"); 
+        const ticketsButtonDaftar = item.querySelector(".daftar");
+        const ticketsButtonDaftar1 = item.querySelector(".daftar1");
+  
+        if (now >= phaseStart && now <= phaseEnd) {
+          ticketsButtonDaftar.style.display = "block";
+          ticketsButtonDaftar1.style.display = "block"; 
+          ticketsButtonTutup.style.display = "none";   
+          
+          ticketsButtonDaftar.addEventListener("click", function() {
+              window.location.href = "/matalomba/daftarSM";
           });
-        } else if ((now < phaseStart || now > phaseEnd) && !ticketsButton.classList.contains("tickets")) {
-          ticketsButton.textContent = "Closed";
-          ticketsButton.classList.remove("daftar");
-          ticketsButton.classList.add("tickets");
-          ticketsButton.href = "#";
+          ticketsButtonDaftar1.addEventListener("click", function() {
+            window.location.href = "/matalomba/daftarunasSM";
+        });
+        } else {
+          ticketsButtonTutup.style.display = "block";  
+          ticketsButtonDaftar.style.display = "none";  
+          ticketsButtonDaftar1.style.display = "none";
+  
+          ticketsButtonTutup.href = "#"; 
         }
       });
     }

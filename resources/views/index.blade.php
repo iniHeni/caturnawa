@@ -28,17 +28,81 @@
          
          
       <style>
-         #loadingDiv {
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: white;
+.gelombang{
+   position: relative;
+    top: -100px;
 }
-  
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* .content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+} */
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* /* Shrinking for mobile */
+@media (max-width: 768px) {
+  .waves {
+   top: 65px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  /* .content {
+    height: 30vh;
+  } */
+
+  /* h1 {
+    font-size: 24px;
+  } */
+}
+
 #loadingDiv {
 	width: 100%;
 	height: 100%;
@@ -64,16 +128,18 @@
        </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
-         <img src="../img/uf2.png" width="145" class="nav_gmbar" ></img>
-            <h2><a href="{{url('/') }}" class="nav__logo" style="margin-left: -3rem">Caturnawa</a></h2>
-
+         <nav class="nav contnav">
+         <img src="../img/uf2.png" class="nav_logo" ></img>
+            <h2><a href="{{url('/') }}" class="nav__logo">Caturnawa</a></h2>
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-               <div style="margin-right: 10rem" class="nav__item">
+               <div class="nav__item">
 						<li><a href="../locale/ind"><img src="../img/ind.png"  /></a></li>
 						<li><a href="../locale/en"><img src="../img/eng.png" /></a></li>
 					</div>
+               <li class="nav__item">
+                     
+                  </li>
                   <li class="nav__item">
                      <a href="#" class="nav__link">@lang('messages.beranda')</a>
                   </li>
@@ -109,54 +175,108 @@
       <div class="content">
         <div class="text">
           <h3 class="texthome">@lang('messages.welcome')</h3>
-          <p>
+          <p >
           Caturnawa UNAS FEST</p>
         </div>
+        
       </div>
+      
+    </section>
+    <section>
+      
     </section>
       <!--==================== Countdown ====================-->
+      <div class="gelombang">
+         <svg
+           class="waves"
+           xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           viewBox="0 24 150 28"
+           preserveAspectRatio="none"
+           shape-rendering="auto"
+         >
+           <defs>
+             <path
+               id="gentle-wave"
+               d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+             />
+           </defs>
+           <g class="parallax">
+             <use
+               xlink:href="#gentle-wave"
+               x="48"
+               y="0"
+               fill="hsl(212, 42%, 15%, 0.7)"
+             />
+             <use
+               xlink:href="#gentle-wave"
+               x="48"
+               y="3"
+               fill="hsl(212, 42%, 15%, 0.5)"
+             />
+             <use
+               xlink:href="#gentle-wave"
+               x="48"
+               y="5"
+               fill="hsl(212, 42%, 15%, 0.3)"
+             />
+             <use
+               xlink:href="#gentle-wave"
+               x="48"
+               y="7"
+               fill="hsl(212, 42%, 15%, 1)">
+             />
+           </g>
+         </svg>
+       </div>
+       
+
 <div class="waktu">
+
+<img src="../img/mskot.svg" class="nav_logo1" style="margin-bottom: 50px"></img>
 <h1>@lang('messages.count')<p>UNAS FEST 2024
 </p>
 </h1>
 <div id="time">
-    <div id="days"></div>
+    <div id="days" ></div>
     <div id="hours"></div>
     <div id="minutes"></div>
     <div id="seconds"></div>
 </div>
 <h4>@lang('messages.buka')
-   <span>23 July</span></h4>
+   <span>@lang('messages.julii')</span></h4>
 <div id="firework-container"></div>
 </div>
 
       <!--==================== Mata Lomba ====================-->
+
       <section id="matalomba" class="container">
-         <h5 class="judullomba">@lang('messages.jenislomba')</h5>
+         <h5 class="judullomba" style="font-size: 40px;">@lang('messages.jenislomba')</h5>
+
          <div class="card-list">
              <div id="cardKDBI" class="card-item">
                  <img src="../img/kdbi2.png" alt="Card Image">
-                 <h3>@lang('messages.kdbi')</h3>
-                 <a id="registerButtonKDBI" href="{{url('/periodeKDBI') }}" class="card-icon">Daftar Sekarang</a>
+                 <h3>Kompetisi Debat Bahasa Indonesia</h3>
+                 <a id="registerButtonKDBI" href="{{url('/periodeKDBI') }}" class="card-icon">@lang('messages.Daftar')</a>
                  <a href="{{url('matalomba/kdbi') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardSM" class="card-item">
                  <img src="../img/sm1.png" alt="Card Image">
-                 <h3>@lang('messages.sm')</h3>
+                 <h3>Short Movie Competition</h3>
                  <a id="registerButtonSM" href="{{url('/periodeSM') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">Upload</a>
+                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">@lang('messages.unggah')</a>
                  <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardSPC" class="card-item">
                  <img src="../img/spc.png" alt="Card Image">
-                 <h3>@lang('messages.lkti')</h3>
+                 <h3>Scientific Paper Competition</h3>
                  <a id="registerButtonSPC" href="{{url('/periodeLKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">Upload</a>
+                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">@lang('messages.unggah')</a>
                  <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardEDC" class="card-item">
                  <img src="../img/edc.png" alt="Card Image">
-                 <h3>@lang('messages.edc')</h3>
+                 <h3>English Debate Competition</h3>
                  <a id="registerButtonEDC" href="{{url('/periodeEDC') }}" class="card-icon">@lang('messages.Daftar')</a>
                  <a href="{{url('matalomba/edc') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
@@ -173,6 +293,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h5>@lang('messages.kontakkami')</h5>
+              
             </div>
           </div>
           <div class="col-md-6">
@@ -219,6 +340,7 @@
 </section>
 <!--=============== Social Media ===============-->
 <h2 class="socialmedia">@lang('messages.follow')</h2>
+
 <div class="wrapper">
          <a href="https://id.linkedin.com/company/universitas-nasional-festival-unas-fest" class="icon facebook">
             <div class="tooltip">
@@ -245,7 +367,7 @@
             <span><i class="fab fa-youtube"></i></span>
          </a>
       </div>
-      <h5>@Copyright UNASFEST2024</h5>
+      <h5>@Copyright UNAS FEST 2024</h5>
       @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -270,6 +392,7 @@
       <script src="../js/homepage.js"></script>
       <script src="../js/loader.js"></script>
       <script src="../js/nav.js"></script>
+      <script src="../js/SM.js"></script>
       <script>
          @if(session('success'))
              Swal.fire({

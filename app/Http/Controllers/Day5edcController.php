@@ -11,51 +11,65 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Validation\Rule;
+use Carbon\Carbon;
 
 class Day5edcController extends Controller
 {
     public function tampiledc5(){
-        $tambah = DB::table('day5edcs')
+        $groupedByRondeAndSesi = DB::table('day5edcs')
         ->orderBy('ronde', 'asc')
-        ->get();
-
-    $tambahCollection = new Collection($tambah);
-
-    $groupedByRondeAndSesi = $tambahCollection->groupBy('ronde')->map(function ($group, $ronde) { // Pass $ronde as argument
-        return $group->sortByDesc('total')->values()->map(function ($item, $key) use ($ronde) { // Pass $ronde to the inner map
-            $item = (array) $item;
-            $item['rank'] = $key + 1;
-            $item['ronde'] = $ronde; // Tambahkan properti ronde kembali
-            return (object) $item;
+        ->get()
+        ->groupBy('team')
+        ->map(function ($group) {
+            return $group->sortBy('ronde')->values()->map(function ($item, $key) {
+                $item = (array) $item;
+                
+                return (object) $item;
+            });
         });
-    });
 
     return view('admin/EDC/day5', compact('groupedByRondeAndSesi'));
     }
 
     public function tambahedc5(Request $request){
-        $tambah = $request->validate([
-            'ronde' => 'required',
-            'juri' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-            
-        ]);
-        $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
-        day5edc::create($tambah);
+        $validatedData = [];
+
+        for ($i = 1; $i <= 4; $i++) {
+            $validator = Validator::make($request->all(), [
+             
+            ]);
+    
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+    
+            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
+    
+            $day5edc = day5edc::create([
+                'juri' => $request->input('juri.' . $i),
+                'ronde' => $request->input('ronde.' . $i),
+                'team' => $request->input('team.' . $i),
+                'posisi' => $request->input('posisi.' . $i),
+                'posisi1' => $request->input('posisi1.' . $i),
+                'posisi2' => $request->input('posisi2.' . $i),
+                'nama1' => $request->input('nama1.' . $i),
+                'nama2' => $request->input('nama2.' . $i),
+                'skorindividu1' => $request->input('skorindividu1.' . $i),
+                'skorindividu2' => $request->input('skorindividu2.' . $i),
+                'total' => $totalSkorTim, 
+            ]);
+    
+            $validatedData[] = $day5edc;
+        }
         
         return redirect()->route('edc.tampiledc5');
         
     }
 
     public function editedc5($id) {
-        $edit = day4edc::find($id);
+        $edit = day5edc::find($id);
         $peserta = pesertaedc::all();
         return view('admin/EDC/editday5', compact('edit', 'peserta'));
     }
@@ -64,7 +78,6 @@ class Day5edcController extends Controller
         $update = $request->validate([
             'ronde' => 'required',
                 'juri' => 'required',
-                'room' => 'required',
                 'team' => 'required',
                 'posisi' => 'required',
                 'posisi1' => 'required',
@@ -102,8 +115,10 @@ public function hapusedc5($id){
         DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
         DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
         DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
-        DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
-        DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
+        DB::raw('AVG(skorindividu1) as skorindividu1'), 
+        DB::raw('AVG(skorindividu2) as skorindividu2'),
+        //DB::raw('ROUND(AVG(skorindividu1), 0)::text as skorindividu1'), 
+        //DB::raw('ROUND(AVG(skorindividu2), 0)::text as skorindividu2'),
         DB::raw('MAX(vp) as vp')
     )
     ->where('ronde', 1)
@@ -111,7 +126,9 @@ public function hapusedc5($id){
     ->get();
 
 $final = $groupedData->map(function ($row) {
-    $row->total = round(($row->skorindividu1 + $row->skorindividu2) / 2);
+    $row->skorindividu1 = number_format($row->skorindividu1, 1, '.', '');
+    $row->skorindividu2 = number_format($row->skorindividu2, 1, '.', '');
+    $row->total = number_format(($row->skorindividu1 + $row->skorindividu2) / 2, 1, '.', '');
     return $row;
 })
 ->sortByDesc('total')
@@ -125,38 +142,72 @@ $final = $groupedData->map(function ($row) {
 
  public function gabunganf(){
   
-   $day4Data = day4edc::select('team', 'nama1', 'nama2', 'ronde', DB::raw('MIN(vp) as vp')) 
-   ->groupBy('team', 'nama1', 'nama2', 'ronde')
-   ->get();
+    $now = Carbon::now();
 
+    // Waktu target untuk ronde 2 day4edc (disamakan dengan day2edc ronde 1)
+    $waktuTargetDay1Ronde2 = $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-05-19 15:00:00', 'Asia/Jakarta');
 
-$day5Data = day5edc::select('team', 'nama1', 'nama2', 'ronde', DB::raw('MIN(vp) as vp'))
-   ->groupBy('team', 'nama1', 'nama2', 'ronde')
-   ->get();
+    // Query untuk day4edc ronde 1
+    $totalVpDay1Ronde1 = day4edc::select(
+        'team',
+        'nama1',
+        'nama2',
+        DB::raw('MAX(vp) as total')
+    )
+    ->where('ronde', '1')
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
 
+    // Query untuk day4edc ronde 2 (hanya jika waktunya sudah tiba)
+    $totalVpDay1Ronde2 = collect();
+    if ($now->gte($waktuTargetDay1Ronde2)) {
+        $totalVpDay1Ronde2 = day4edc::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('MAX(vp) as total')
+        )
+        ->where('ronde', '2')
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+    }
 
-$mergedData = $day4Data->concat($day5Data);
+    // Query untuk day5edc ronde 1 (hanya jika waktunya sudah tiba)
+    $totalVpDay2Ronde1 = collect();
+    if ($now->gte($waktuTargetDay2Ronde1)) {
+        $totalVpDay2Ronde1 = day5edc::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('MAX(vp) as total')
+        )
+        ->where('ronde', '1')
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+    }
 
-
-$groupedByTeam = $mergedData->groupBy('team')->map(function ($teamData) {
-   $totalVpPerRonde = $teamData->groupBy('ronde')->map->sum('vp'); 
-   return [
-       'team' => $teamData[0]['team'],
-       'nama1' => $teamData[0]['nama1'],
-       'nama2' => $teamData[0]['nama2'],
-       'total_vp_ronde1' => $totalVpPerRonde->get(1, 0), 
-       'total_vp_ronde2' => $totalVpPerRonde->get(2, 0), 
-       'total' => $totalVpPerRonde->sum(), 
-   ];
-});
-
-
-$groupedByTeam = $groupedByTeam->sortByDesc('total')->values()->map(function ($item, $index) {
-   $item['rank'] = $index + 1;
-   return $item;
-});
-
-        
-    return view('matalomba/edc/final', compact('groupedByTeam'));
+    // Gabungkan semua hasil
+    $groupedByTeam = $totalVpDay1Ronde1
+        ->concat($totalVpDay1Ronde2)
+        ->concat($totalVpDay2Ronde1)
+        ->groupBy('team')
+        ->map(function ($group) {
+            return [
+                'team' => $group[0]['team'],
+                'nama1' => $group[0]['nama1'],
+                'nama2' => $group[0]['nama2'],
+                'total' => $group->sum('total')
+            ];
+        })
+        ->sortByDesc('total')
+        ->values()
+        ->map(function ($item, $index) {
+            $item['rank'] = $index + 1;
+            return $item;
+        });
+        $dataa = day4edc::where('ronde', '1')->get();
+    $dataa2 = $now->gte($waktuTargetDay1Ronde2) ? day4edc::where('ronde', '2')->get() : collect();
+    $dataa3 = $now->gte($waktuTargetDay2Ronde1) ? day5edc::where('ronde', '1')->get() : collect();
+    return view('matalomba/edc/final', compact('groupedByTeam', 'dataa', 'dataa2', 'dataa3'));
  }
 }

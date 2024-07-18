@@ -12,21 +12,12 @@
       
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenulomba.css">
+      <link rel="stylesheet" href="../../css/back.css">
+      <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pendaftaran.css">
 
       <title>@lang('messages.daftar')</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -52,11 +43,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-        <nav class="nav container">
-        <img src="../../img/logokdbi.jpeg" width="145" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
+        <nav class="nav contnav">
+        <img src="../../../img/kdbiaja.png" class="nav_logo"><a href="{{url('matalomba/kdbi') }}" class="nav__logo" ></a>
         <div class="nav__menu" id="nav-menu">
        <ul class="nav__list">
-       <div style="margin-right: 21rem" class="nav__item">
+       <div style="left: 200px" class="nav__item">
                        <li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
                        <li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
                    </div>
@@ -93,6 +84,9 @@
             </div>
          </nav>
       </header>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L120,186.7C240,149,480,75,720,80C960,85,1200,171,1320,213.3L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
       <section>
       <div class="konten">
@@ -101,7 +95,7 @@
             @csrf
             <div class="form first">
                 <div class="details personal">
-                        <span class="title">Peserta 1</span>
+                        <span class="title">@lang('messages.peserta')</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_1">@lang('messages.Name')</label>
@@ -186,13 +180,13 @@
                             </div>
                             <div class="input-field">
                                 <label for="buktifollow_1">@lang('messages.bukti')</label>
-                                <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_1') is-invalid @enderror required>
+                                <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".pdf, .PDF"  @error('buktifollow_1') is-invalid @enderror required>
                                 @error('buktfollow_1')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon">@lang('messages.unggah1') Twibbon *png,jpeg,jpg maks 3mb</label>
                                 <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                                 @error('twibbon')
                                 <div class="text-danger">{{ $message }}</div>
@@ -201,7 +195,7 @@
                         </div>
                     </div>
                     <div class="details ">
-                        <span class="title">Peserta 2</span>
+                        <span class="title">@lang('messages.peserta') 2 </span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_2">@lang('messages.Name')</label>
@@ -286,13 +280,13 @@
                             </div>
                             <div class="input-field">
                                 <label for="buktifollow_2">@lang('messages.bukti')</label>
-                                <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('buktifollow_2') is-invalid @enderror required>
+                                <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".pdf, .PDF" @error('buktifollow_2') is-invalid @enderror required>
                                 @error('buktifollow_2')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="twibbon2">Unggah Twibbon *png,jpeg,jpg maks 5mb</label>
+                                <label for="twibbon2">@lang('messages.unggah1') Twibbon *png,jpeg,jpg maks 3mb</label>
                                 <input name="twibbon2" id="twibbon2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon2') is-invalid @enderror required>
                                 @error('twibbon2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -303,6 +297,13 @@
                     <div class="details ID">
                         <span class="title">@lang('messages.team')</span>
                         <div class="fields">
+                            <div class="input-field">
+                                <label for="namateam">@lang('messages.teamm4')</label>
+                                <input type="text" name="namateam" id="namateam" placeholder="@lang('messages.place') @lang('messages.teamm')"  @error('namateam') is-invalid @enderror required>
+                                @error('namateam')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <div class="input-field">
                                 <label for="instansi">@lang('messages.instansi')</label>
                                 <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
@@ -321,7 +322,7 @@
     
                     </div>
                     <button type="submit" class="nextBtn">
-                        <span class="btnText">Pembayaran</span>
+                        <span class="btnText">@lang('messages.bayar')</span>
                         <i class="uil uil-navigator"></i>
                     </button> 
                 </div>
@@ -381,6 +382,7 @@
       );
     });
       </script>
+      <script src="../../js/SM.js"></script>
 </html>
     
            

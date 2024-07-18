@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--=============== Icon Web ===============-->
-    <link rel="icon" href="../../img/uf1.png">
+    <link rel="icon" href="../../../img/uf1.png">
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../css/nowrap.css">
+    <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/navadmin.css">
+    <link rel="stylesheet" href="../../../css/admin.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <style>
         #loadingDiv {
    width: 100%;
@@ -48,13 +48,13 @@
 
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -87,12 +87,12 @@
 
 <div id="data-container">
     <section id="skor">
-        <h1 class="welcome" style="margin-bottom: -3rem; margin-top:auto">Pilih Hari</h1>
+        <h1 class="welcome">Penyisihan</h1>
     <div class="card-list">
         <a href="{{url('/admin/penyisihankdbi/day1') }}" class="card-item">
-                <img src="../../img/kdbi2.png" alt="Card Image">
+                <img src="../../../img/kdbi2.png" alt="Card Image">
                 <span class="developer">Day 1 </span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>18 September</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>
@@ -100,7 +100,7 @@
             <a href="{{url('/admin/penyisihankdbi/day2') }}" class="card-item">
                 <img src="../../img/kdbi2.png" alt="Card Image">
                 <span class="designer">Day 2</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>19 September</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>

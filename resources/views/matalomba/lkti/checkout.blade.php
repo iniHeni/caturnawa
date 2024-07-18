@@ -14,26 +14,16 @@
       
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/cekoutlkti.css">
+      <link rel="stylesheet" href="../../css/back.css">
       <script type="text/javascript"
-      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      src="{{config('midtrans.snap_url')}}"
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -58,11 +48,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/spcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 19rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -126,7 +116,7 @@
                                 <input disabled placeholder="{{$orderlkti->prodi}}">
                             </div>
                             <div class="input-field">
-                                <label>NPM</label>
+                                <label>@lang('messages.npm')</label>
                                 <input disabled placeholder="{{$orderlkti->npm}}">
                             </div>
                             <div class="input-field">
@@ -142,35 +132,39 @@
                                 <input disabled placeholder="{{$orderlkti->alamatlengkap}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.Nomor')p</label>
+                                <label>@lang('messages.Nomor')</label>
                                 <input disabled placeholder="{{$orderlkti->nomorhp}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$orderlkti->ktm}}">
+                                <input disabled placeholder="{{ basename($orderlkti->ktm) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$orderlkti->foto}}">
+                                <input disabled placeholder="{{ basename($orderlkti->foto) }}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$orderlkti->krs}}">
+                                <label>@lang('messages.krs')</label>
+                                <input disabled placeholder="{{ basename($orderlkti->krs) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$orderlkti->buktifollow}}">
+                                <input disabled placeholder="{{ basename($orderlkti->buktifollow) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$orderlkti->instansi}}" >
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.surat')</label>
-                                <input disabled placeholder="{{$orderlkti->surat_delegasi}}">
+                                <label>Twibbon</label>
+                                <input disabled placeholder="{{ basename($orderlkti->twibbon) }}">
                             </div>
                             <div class="input-field">
-                                <label>Price</label>
+                                <label>@lang('messages.surat')</label>
+                                <input disabled placeholder="{{ basename($orderlkti->surat_delegasi) }}">
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.harga')</label>
                                 <input disabled placeholder="{{$orderlkti->price}}">
                             </div>
                         </div>
@@ -184,21 +178,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected>{{$orderlkti->tingkat_kegiatan}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat}}"  type="file" accept="pdf/*">
+                                <input disabled  placeholder="{{ basename($orderlkti->sertifikat) }}">
                             </div>
                         </div>
                     </div>
@@ -211,21 +209,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan1}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan1}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru1}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected> {{$orderlkti->tingkat_kegiatan1}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat1}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat1) }}">
                             </div>
                         </div>
                     </div>
@@ -238,21 +240,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan2}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan2}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru2}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected>{{$orderlkti->tingkat_kegiatan2}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat2}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat2) }}">
                             </div>
                         </div>
                     </div>
@@ -265,21 +271,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan3}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan3}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru3}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan3}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat3}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat3) }}">
                             </div>
                         </div>
                     </div>
@@ -292,21 +302,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan4}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan4}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru4}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected> {{$orderlkti->tingkat_kegiatan4}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat4}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat4) }}">
                             </div>
                         </div>
                     </div>
@@ -319,21 +333,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan5}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan5}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru5}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan5}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat5}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat5) }}">
                             </div>
                         </div>
                     </div>
@@ -346,21 +364,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan6}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan6}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru6}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan6}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat6}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat6) }}">
                             </div>
                         </div>
                     </div>
@@ -373,21 +395,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan7}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan7}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru7}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan7}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="Rp{{$orderlkti->sertifikat7}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat7) }}">
                             </div>
                         </div>
                     </div>
@@ -400,21 +426,25 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan8}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan8}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru8}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan8}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat8}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat8) }}">
                             </div>
                         </div>
                     </div>          
@@ -427,36 +457,43 @@
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.jenis')</label>
-                                <input disabled placeholder="{{$orderlkti->jenis_kegiatan9}}">
+                                <select disabled>
+                                    <option selected>{{$orderlkti->jenis_kegiatan9}}</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.bidang')</label>
+                                <select disabled>
+                                    <option selected>{{$orderlkti->baru9}}</option>
+                                </select>
                             </div>
                             <div class="input-field">
                                 <label >@lang('messages.tingkat')</label>
                                 <select disabled>
                                     <option selected >{{$orderlkti->tingkat_kegiatan9}}</option>
-                                    <option>@lang('messages.intern')</option>
-                                    <option>@lang('messages.regional')</option>
-                                    <option>@lang('messages.nasional')</option>
-                                    <option>@lang('messages.provinsi')</option>
                                 </select>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.sertif')</label>
-                                <input disabled value="{{$orderlkti->sertifikat9}}"  type="file" accept="pdf/*">
+                                <input disabled placeholder="{{ basename($orderlkti->sertifikat9) }}">
                             </div>  
                         </div>
                         <button type="submit" class="nextBtn" id="pay-button">
                             <span class="btnText">@lang('messages.bayar')</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <button type="submit" class="nextBtn" id="pay-button">
-                            <a href="{{url('matalomba/daftarKTI') }}" class="btnText">@lang('messages.kembali')</a>
+                        <button type="submit" class="nextBtn" onclick="window.history.back();">
+                            <p class="btnText">@lang('messages.kembali')</p>
                         </button>
                     </div> 
                 </div>
                 </table>
 
 </section>
-
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
+      
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="../../js/nav.js"></script>
 <script>
@@ -480,16 +517,14 @@ $("body").css(
 </script>
 <script src="../../js/daftarlomba.js"></script>
 <script type="text/javascript">
-    // For example trigger on button clicked, or any time you need
     var payButton = document.getElementById('pay-button');
     payButton.addEventListener('click', function () {
-      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
       window.snap.pay('{{$snapToken}}', {
         onSuccess: function(result){
             Swal.fire({
     icon: 'success',
     title: 'Pembayaran Berhasil!',
-    text: 'Anda akan diarahkan ke halaman SPC.',
+    text: 'Anda akan diarahkan ke WhatsApp Group.',
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
@@ -498,23 +533,27 @@ $("body").css(
   });
         },
         onPending: function(result){
-          /* You may add your own implementation here */
-          alert("wating your payment!"); console.log(result);
+            location.reload();
         },
-        onError: function(result){
-            Swal.fire({
-    icon: 'info',
-    title: 'Menunggu Pembayaran',
-    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
-    showConfirmButton: false, // Tidak menampilkan tombol OK
-    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
-    didOpen: () => {
-      Swal.showLoading(); // Menampilkan animasi loading
-    },
-  });
-  console.log(result); 
-          
-        },
+                onError: function(result) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
+            showCancelButton: true, 
+            confirmButtonText: 'Coba Lagi',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            
+            } else {
+                window.location.href = '/'; 
+            }
+        });
+
+        console.error("Error pembayaran:", result);
+                
+                },
         onClose: function(){
             Swal.fire({
     icon: 'warning',
@@ -525,7 +564,17 @@ $("body").css(
       })
     });
   </script>
+   <script>
+    fetch('/callback-url') // Ganti dengan URL endpoint callback Anda
+.then(response => response.json())
+.then(data => {
+    if (data.reload_page) {
+        location.reload(); // Reload halaman saat ada instruksi dari backend
+    }
+});
+  </script>
     </body>
+    <script src="../../js/SM.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
 </html>

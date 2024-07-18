@@ -14,42 +14,53 @@ class Day2edcController extends Controller
 {
     public function tampiledc2(){
         $tambah = DB::table('day2edcs')
-        ->orderBy('ronde', 'asc') 
-        ->orderBy('sesi', 'asc') 
+        ->orderBy('ronde', 'asc')
+        ->orderBy('sesi', 'asc')
+        ->orderBy('room', 'asc')
+        ->orderBy('total', 'desc') 
         ->get();
-        
+    
+    $groupedByRondeAndSesi = $tambah->groupBy(['ronde', 'sesi', 'room']);
+    
 
-    $tambahCollection = new Collection($tambah);
-
-    $groupedByRondeAndSesi = $tambahCollection->groupBy(['ronde', 'sesi'])->map(function ($group) {
-        // Reset and calculate rank within each group
-        return $group->sortByDesc('total')->values()->map(function ($item, $key) {
-            $item->rank = $key + 1;
-            return $item;
-        });
-    });
 
     return view('admin/EDC/day2', compact('groupedByRondeAndSesi'));
     }
 
     public function tambahedc2(Request $request){
-        $tambah = $request->validate([
-            'ronde' => 'required',
-            'sesi' => 'required',
-            'juri' => 'required',
-            'room' => 'required',
-            'team' => 'required',
-            'posisi' => 'required',
-            'posisi1' => 'required',
-            'posisi2' => 'required',
-            'nama1' => 'required',
-            'nama2' => 'required',
-            'skorindividu1' => 'required|integer|min:0|max:100',
-            'skorindividu2' => 'required|integer|min:0|max:100',
-            
+        $validatedData = [];
+
+    for ($i = 1; $i <= 4; $i++) {
+        $validator = Validator::make($request->all(), [
+         
         ]);
-        $tambah['total'] = ($tambah['skorindividu1'] + $tambah['skorindividu2']) / 2 ;
-        day2edc::create($tambah);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
+
+        $day2edc = day2edc::create([
+            'juri' => $request->input('juri.' . $i),
+            'ronde' => $request->input('ronde.' . $i),
+            'sesi' => $request->input('sesi.' . $i),
+            'room' => $request->input('room.' . $i),
+            'team' => $request->input('team.' . $i),
+            'posisi' => $request->input('posisi.' . $i),
+            'posisi1' => $request->input('posisi1.' . $i),
+            'posisi2' => $request->input('posisi2.' . $i),
+            'nama1' => $request->input('nama1.' . $i),
+            'nama2' => $request->input('nama2.' . $i),
+            'skorindividu1' => $request->input('skorindividu1.' . $i),
+            'skorindividu2' => $request->input('skorindividu2.' . $i),
+            'total' => $totalSkorTim, 
+        ]);
+
+        $validatedData[] = $day2edc;
+    }
         return redirect()->route('edc.tampiledc2');
         
     }
@@ -98,22 +109,19 @@ public function hapusedc2($id){
  }
  public function detailday2r1($sesi){
     $dataa = DB::table('day2edcs')
-        ->where('ronde', '1')
-        ->where('sesi', $sesi)
-        ->orderBy('total', 'desc')
-        ->get();
+    ->where('ronde', '1')
+    ->where('sesi', $sesi)
+    ->orderBy('room', 'asc') 
+    ->orderBy('total', 'desc')
+    ->get();
 
-    $dataa = $dataa->map(function ($item, $key) {
-        $item->rank = $key + 1;
-        return $item;
-    });
-
-    $perPage = 20; 
-    $currentPage = Paginator::resolveCurrentPage();
-    $dataa = $dataa->slice(($currentPage - 1) * $perPage, $perPage)->all();
-    $paginatedData = new Paginator($dataa, $perPage, $currentPage);
+$dataa = $dataa->map(function ($item, $key) {
+    $item->rank = $key + 1;
+    return $item;
+});
+$dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day2r1', compact('paginatedData'));
+    return view('matalomba/edc/detailskor/day2r1', compact('dataByRoom'));
  }
  public function day2round2(){
     $dataa = day2edc::where('ronde', '2')->orderBy('sesi')->get();
@@ -121,21 +129,18 @@ public function hapusedc2($id){
  }
  public function detailday2r2($sesi){
     $dataa = DB::table('day2edcs')
-        ->where('ronde', '2')
-        ->where('sesi', $sesi)
-        ->orderBy('total', 'desc')
-        ->get();
+    ->where('ronde', '2')
+    ->where('sesi', $sesi)
+    ->orderBy('room', 'asc') 
+    ->orderBy('total', 'desc')
+    ->get();
 
-    $dataa = $dataa->map(function ($item, $key) {
-        $item->rank = $key + 1;
-        return $item;
-    });
-
-    $perPage = 20; 
-    $currentPage = Paginator::resolveCurrentPage();
-    $dataa = $dataa->slice(($currentPage - 1) * $perPage, $perPage)->all();
-    $paginatedData = new Paginator($dataa, $perPage, $currentPage);
+$dataa = $dataa->map(function ($item, $key) {
+    $item->rank = $key + 1;
+    return $item;
+});
+$dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day2r2', compact('paginatedData'));
+    return view('matalomba/edc/detailskor/day2r2', compact('dataByRoom'));
  }
     }

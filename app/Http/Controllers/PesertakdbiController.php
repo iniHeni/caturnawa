@@ -9,7 +9,7 @@ class PesertakdbiController extends Controller
 {
     public function tampilkdbipe(){
         $paidOrders = orderkdbi::where('status', 'Paid')
-        ->select('nama_1', 'nama_2', 'instansi', 'email_1', 'email_2', 'foto_1', 'foto_2', 'nomorhp_1', 'nomorhp_2')
+        ->select('nama_1', 'nama_2', 'instansi', 'email_1', 'email_2', 'foto_1', 'foto_2', 'nomorhp_1', 'nomorhp_2', 'namateam')
         ->get();
 
     foreach ($paidOrders as $order) {
@@ -24,6 +24,7 @@ class PesertakdbiController extends Controller
                 'foto1' => $order->foto_2,
                 'nohp' => $order->nomorhp_1,
                 'nohp1' => $order->nomorhp_2,
+                'namateam' => $order->namateam,
                 'logo' => 'null'
             ]
         );
@@ -39,20 +40,28 @@ class PesertakdbiController extends Controller
 
     public function updatekdbipe(Request $request, $id){
     $update = $request->validate([
-        'instansi' => 'required|string|max:50',
-            'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
+        'instansi' => 'required',
+        'nama' => 'required',
+        'nama1' => 'required',
+        'email' => 'required',
+        'email1' => 'required',
+        'nohp' => 'required',
+        'nohp1' => 'required',
+        'namateam' => 'required',
+        'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
     ]);
     $update = $request->all();
-    if($request->hasFile('logo'))
-    {
-        $destination_path = 'public/images/kdbi/peserta/logo';
-        $image = $request->file('logo');
-        $image_name = time() . '.' . $image->getClientOriginalExtension();
-        $path = $request->file('logo')->storeAS($destination_path,$image_name);
-        $imageUrl = asset('storage/images/kdbi/peserta/logo/' . $image_name);
-
+    if ($request->hasFile('logo')) {
+        $originalFileName = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('logo')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+        $destinationPath = 'public/images/kdbi/logo';
+        $request->file('logo')->storeAs($destinationPath, $imageName);
+    
+        $imageUrl = asset('storage/images/kdbi/logo/' . $imageName);
         $update['logo'] = $imageUrl;
-
     }
     $data = pesertakdbi::find($id);
     $data->update($update);

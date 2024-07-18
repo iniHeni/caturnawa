@@ -1,0 +1,88 @@
+/* Start Section  Card Peserta*/
+.floating-button {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* Fixed height */
+  z-index: 9;
+}
+
+
+.floating-button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+@media (max-width: 576px) {
+  .floating-button {
+    left: 10px;
+    padding: 10px;
+    /* border-radius: 50%; */
+    width: 65px;
+    height: 40px;
+    top: 115px;
+    z-index: 9;
+  }
+  .floating-button span {
+      display: none;
+  }
+}
+
+/* Start Section  Card Peserta*/
+.floating-button1 {
+  position: absolute;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* Fixed height */
+  z-index: 9;
+  left: 350px;
+}
+
+
+.floating-button1 i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.floating-button1:hover {
+  background-color: #0056b3;
+}
+
+
+
+@media (max-width: 576px) {
+  .floating-button1 {
+    left: 10px;
+    padding: 10px;
+    /* border-radius: 50%; */
+    width: 65px;
+    height: 40px;
+    top: 115px;
+    z-index: 9;
+  }
+  .floating-button1 span {
+      display: none;
+  }
+}

@@ -52,13 +52,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/smcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
@@ -67,11 +67,10 @@
 
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
-    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/uf2.png" alt="Logo"></a>
+    <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../../img/sm.png" alt="Logo"></a>
     <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/semifinalSM')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
@@ -90,10 +89,10 @@
 
 <!--==================== Main Content ====================-->
 <div id="main-content" class="main-content">
-    <section id="home" style="display: block;">
+    <section id="home" class="homepage"  style="display: block;">
         <div id="home-container">
-            <h3 class="welcome">@lang('messages.admin')</h3>
-            <h3 class="welcome">@lang('messages.admin1')</h3>
+            <h3 class="welcome2">@lang('messages.admin')</h3>
+            <h3 class="welcome3">@lang('messages.admin1')</h3>
         </div>
     </section>
     <section id="skor" style="display: none;">

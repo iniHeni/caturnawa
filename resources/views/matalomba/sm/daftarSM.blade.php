@@ -15,6 +15,7 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/pendaftaransm.css">
+      <link rel="stylesheet" href="../../../css/back.css">
 
       <title>@lang('messages.daftar')</title>
       <style>
@@ -45,6 +46,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../../img/loader.gif);
  }
+
      </style>
    </head>
    <body>
@@ -53,11 +55,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/smcaja.png" width="160" class="nav_logo"><a href="{{url('matalomba/shortmovie') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 20rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -112,7 +114,7 @@
                                  @enderror
                             </div>
                             <div class="input-field">
-                                <label for="email_1">Email  *For form UploadSM</label>
+                                <label for="email_1">Email </label>
                                 <input type="email" name="email_1" id="email_1" placeholder="@lang('messages.place') Email " @error('email_1') is-invalid @enderror required>
                                 @error('email_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -179,7 +181,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_1">@lang('messages.krs')</label>
+                                <label for="krs_1">@lang('messages.krs1')</label>
                                 <input name="krs_1" id="krs_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_1') is-invalid @enderror required>
                                 @error('krs_1')
                                 <div class="text-danger">{{ $message }}</div>
@@ -279,7 +281,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_2">@lang('messages.krs')</label>
+                                <label for="krs_2">@lang('messages.krs1')</label>
                                 <input name="krs_2" id="krs_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_2') is-invalid @enderror required>
                                 @error('krs_2')
                                 <div class="text-danger">{{ $message }}</div>
@@ -379,7 +381,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_3">@lang('messages.krs')</label>
+                                <label for="krs_3">@lang('messages.krs1')</label>
                                 <input name="krs_3" id="krs_3" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_3') is-invalid @enderror required>
                                 @error('krs_3')
                                 <div class="text-danger">{{ $message }}</div>
@@ -479,7 +481,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_4">@lang('messages.krs')</label>
+                                <label for="krs_4">@lang('messages.krs1')</label>
                                 <input name="krs_4" id="krs_4" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_4') is-invalid @enderror required>
                                 @error('krs_4')
                                 <div class="text-danger">{{ $message }}</div>
@@ -579,7 +581,7 @@
                                 @enderror
                             </div>
                             <div class="input-field">
-                                <label for="krs_5">@lang('messages.krs')</label>
+                                <label for="krs_5">@lang('messages.krs1')</label>
                                 <input name="krs_5" id="krs_5" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_5') is-invalid @enderror required>
                                 @error('krs_5')
                                 <div class="text-danger">{{ $message }}</div>
@@ -618,13 +620,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="input-field">
-                                <label for="linkvidio">Link Video *Optional</label>
-                                <input type="text" name="linkvidio" id="linkvidio" placeholder="@lang('messages.place') Link Video" @error('linkvidio') is-invalid @enderror >
-                                @error('linkvidio')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
+                    
                             <div class="input-field">
                                 <label for="surat_delegasi">@lang('messages.surat') *format: pdf, max 3mb</label>
                                 <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror  required>
@@ -651,6 +647,9 @@
     </div>
 
 </section>
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
@@ -701,6 +700,7 @@
       }
   });
       </script>
+      <script src="../../js/SM.js"></script>
       <script src="../../js/nav.js"></script>
    </body>
 </html>

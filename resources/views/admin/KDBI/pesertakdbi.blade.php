@@ -55,13 +55,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -102,6 +102,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Asal Instansi</th>
+                                <th scope="col">Nama Team</th>
                                 <th scope="col">Nama Peserta 1</th>
                                 <th scope="col">Nama Peserta 2</th>
                                 <th scope="col">Email Peserta 1</th>
@@ -119,6 +120,7 @@
                             <tr>
                                 <td>{{ $no+1 }}</td>
                                 <td>{{ $data->instansi }}</td>
+                                <td>{{ $data->namateam }}</td>
                                 <td>{{ $data->nama}}</td>
                                 <td>{{ $data->nama1}}</td>
                                 <td><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ $data->email }}">{{ $data->email}}</a></td>

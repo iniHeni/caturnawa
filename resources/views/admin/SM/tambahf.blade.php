@@ -20,16 +20,6 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -55,13 +45,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/smcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin Short Movies </a></h2>
         </div>
     </nav>
@@ -74,7 +64,7 @@
     <a href="{{url('/admin/mainmenuSM1')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaSM')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanSM')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/semifinalSM')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    
     <a href="{{url('/admin/finalSM')}}" id="final" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
@@ -93,13 +83,22 @@
 
 <section>
     <div class="konten">
-      <header>Data Penyisihan</header>
+      <header>Data Final</header>
       <form action="/tambahsm/final" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
             <div class="details personal">
                 <span class="title">Data Penilaian</span>
                 <div class="fields"> 
+                  <div class="input-field">
+                    <label for="juri">Nama Juri</label>
+                    <select name="juri" id="juri" is-invalid  required>
+                        <option selected>Pilih Juri</option>
+                        <option>Daniel Wisnu Wardhana</option>
+                        <option>Kusen Dony Hermansyah</option>
+                        <option>Jentoni Pakpahan</option>
+                    </select>
+                    </div>
                   <div class="input-field">
                     <label for="namateam">Nama Team</label>
                     <select name="namateam" id="namateam" is-invalid required >
@@ -110,105 +109,54 @@
                   </select>
                 </div>
                     <div class="input-field">
-                        <label for="peserta1">Nama Peserta 1</label>
-                        <select name="peserta1" id="peserta1" is-invalid required >
-                          <option  selected>Pilih Peserta</option> 
-                      </select>
+                        <label for="peserta1">Nama Peserta 1 *Otomatis terisi</label>
+                        <input type="text" id="peserta1" name="peserta1"  required>
                     </div>
                     <div class="input-field">
-                      <label for="peserta2">Nama Peserta 2</label>
-                      <select name="peserta2" id="peserta2" is-invalid required >
-                        <option selected>Pilih Peserta</option> 
-                    </select>
+                      <label for="peserta2">Nama Peserta 2 *Otomatis terisi</label>
+                      <input type="text" id="peserta2" name="peserta2"  required>
                   </div>
                   <div class="input-field">
-                    <label for="peserta3">Nama Peserta 3</label>
-                    <select name="peserta3" id="peserta3" is-invalid required >
-                      <option selected>Pilih Peserta</option> 
-                  </select>
+                    <label for="peserta3">Nama Peserta 3 *Otomatis terisi</label>
+                    <input type="text" id="peserta3" name="peserta3"  required>
                 </div>
                 <div class="input-field">
-                  <label for="peserta4">Nama Peserta 4</label>
-                  <select name="peserta4" id="peserta4" is-invalid required >
-                    <option selected>Pilih Peserta</option> 
-                </select>
+                  <label for="peserta4">Nama Peserta 4 *Otomatis terisi</label>
+                  <input type="text" id="peserta4" name="peserta4"  required>
               </div>
               <div class="input-field">
-                <label for="peserta5">Nama Peserta 5</label>
-                <select name="peserta5" id="peserta5" is-invalid required >
-                  <option selected>Pilih Peserta</option> 
-              </select>
+                <label for="peserta5">Nama Peserta 5 *Otomatis terisi</label>
+                <input type="text" id="peserta5" name="peserta5"  required>
             </div>
-                    <div class="input-field">
-                      <label for="juri">Nama Juri</label>
-                      <select name="juri" id="juri" is-invalid  required>
-                          <option selected>Pilih Juri</option>
-                          <option>Daniel Wisnu Wardhana</option>
-                          <option>Kusen Dony Hermansyah</option>
-                          <option>Rita Sri Hastuti</option>
-                      </select>
-                      </div>
                 </div>
               </div>
           <div class="details personal">
-          <span class="title">1. Ide cerita dan riset peristiwa dalam film </span>
+          <span class="title">Kuantitatif dan Uraian </span>
               <div class="fields">
               <div class="input-field">
-                <label for="skorkrit1">Kuantitatif:</label>
+                <label for="skorkrit1">1. Presentasi Video</label>
                 <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
             </div>
             <div class="input-field">
-              <label for="krit1">Kualitatif</label>
-              <textarea name="krit1" id="krit1"  required></textarea>
-          </div>
-              </div>
-          </div>
-          <div class="details personal">
-              <span class="title">2. Tujuan film dan pengaruh film</span>
-                  <div class="fields">
-                    <div class="input-field">
-                      <label for="skorkrit2">Kuantitatif:</label>
-                      <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
-                  </div>
-                  <div class="input-field">
-                    <label for="krit2">Kualitatif</label>
-                    <textarea name="krit2" id="krit2"  required></textarea>
-                </div>
-                  </div>
-              </div>
-              <div class="details personal">
-                  <span class="title">3.Kemampuan dan pemahaman membuat film</span>
-                      <div class="fields">
-                        <div class="input-field">
-                          <label for="skorkrit3">Kuantitatif:</label>
-                          <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
-                      </div>
-                      <div class="input-field">
-                        <label for="krit3">Kualitatif</label>
-                        <textarea name="krit3" id="krit3"  required></textarea>
-                    </div>
-                      </div>
-                  </div>
-                  <div class="details personal">
-                    <span class="title">4. Informasi dan pesan yang disampaikan dari film</span>
-                        <div class="fields">
-                          <div class="input-field">
-                            <label for="skorkrit4">Kuantitatif:</label>
-                            <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
-                        </div>
-                        <div class="input-field">
-                          <label for="krit4">Kualitatif</label>
-                          <textarea name="krit4" id="krit4"  required></textarea>
-                      </div>
-                        </div>
-                    </div>
+                <label for="krit1">Uraian 1</label>
+                <textarea id="krit1" name="krit1"  required></textarea>
+            </div>
+            <div class="input-field">
+                <label for="skorkrit2">2.Outline</label>
+                <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
+            </div>
+            <div class="input-field">
+                <label for="krit2">Uraian 2</label>
+                <textarea id="krit2" name="krit2"  required></textarea>
+            </div>
                     <div class="details ID">
-                      <span class="title">Hasil Total Score</span>
+                      <span class="title">Total Score</span>
                           <div class="fields">
-                          <div class="input-field">
-                              <label for="total">Total Score Seluruh Kriteria:</label>
-                              <input @disabled(true) type="text" id="total" name="total" readonly>
-                          </div>
+                            <div class="input-field">
+                                <label for="total">Total Score Seluruh Kriteria:</label>
+                                <input @disabled(true) type="text" id="total" name="total" readonly>
+                            </div>
+                         
                         </div>
                         <button type="submit" class="nextBtn">
                             <span class="btnText">Submit</span>
@@ -236,16 +184,14 @@
         });
     });
     </script>
-<!-- Script untuk memanggil file admin.js -->
+
 <script>
     function hitungTotal() {
       const form = document.getElementById("penilaian");
       const skorkrit1 = parseFloat(form.skorkrit1.value) || 0;
       const skorkrit2 = parseFloat(form.skorkrit2.value) || 0;
-      const skorkrit3 = parseFloat(form.skorkrit3.value) || 0;
-      const skorkrit4 = parseFloat(form.skorkrit4.value) || 0;
 
-      const total = skorkrit1 + skorkrit2 + skorkrit3 + skorkrit4;
+      const total = skorkrit1 + skorkrit2;
       form.total.value = total;
     }
   </script>
@@ -275,54 +221,46 @@ $("body").css(
 });
 </script>
 <script>
-  const pesertaData = @json($peserta);
+const pesertaData = @json($peserta);
+const namateamInput = document.getElementById('namateam'); // Elemen input teks
 
-  const namateamSelect = document.getElementById('namateam');
+// Mengubah pesertaElements menjadi array of input elements
+const pesertaInputs = [
+    document.getElementById('peserta1'),
+    document.getElementById('peserta2'),
+    document.getElementById('peserta3'),
+    document.getElementById('peserta4'),
+    document.getElementById('peserta5')
+];
 
-  const pesertaElements = {
-    peserta1: document.getElementById('peserta1'),
-    peserta2: document.getElementById('peserta2'),
-    peserta3: document.getElementById('peserta3'),
-    peserta4: document.getElementById('peserta4'),
-    peserta5: document.getElementById('peserta5')  // Tambahkan kembali peserta5
-  };
-
-  namateamSelect.addEventListener('change', () => {
-    const selectedNamaTeam = namateamSelect.value;
-    const selectedTeamMembers = pesertaData.filter(p => p.namateam === selectedNamaTeam);
-
-    for (const key in pesertaElements) {
-      while (pesertaElements[key].options.length > 0) {
-        pesertaElements[key].remove(0);
-      }
-    }
+namateamInput.addEventListener('input', () => {
+    const searchTerm = namateamInput.value.toLowerCase();
+    const selectedTeamMembers = pesertaData.filter(p => p.namateam.toLowerCase().includes(searchTerm));
 
     if (selectedTeamMembers.length > 0) {
+        selectedTeamMembers.forEach((member, index) => {
+            if (index < 5) {
+                // Mengisi input teks langsung dengan nama peserta
+                pesertaInputs[index].value = member.peserta || member[`peserta${index}`] || '';
 
-      selectedTeamMembers.forEach(member => {
-        const option1 = document.createElement('option');
-        option1.value = member.nama || '';
-        option1.text = member.nama || '';
-        pesertaElements.peserta1.add(option1);
-
-        for (let i = 2; i <= 5; i++) { 
-          const pesertaKey = `peserta${i}`;
-          const option = document.createElement('option');
-          option.value = member[`nama${i - 1}`] || ''; 
-          option.text = member[`nama${i - 1}`] || '';
-          pesertaElements[pesertaKey].add(option);
-        }
-      });
+                // Mengisi input nama1, nama2, nama3, nama4 secara terpisah (jika ada)
+                if (member.peserta1) pesertaInputs[0].value = member.peserta1;
+                if (member.peserta2) pesertaInputs[1].value = member.peserta2;
+                if (member.peserta3) pesertaInputs[2].value = member.peserta3;
+                if (member.peserta4) pesertaInputs[3].value = member.peserta4;
+                if (member.peserta5) pesertaInputs[4].value = member.peserta5;
+            }
+        });
     } else {
-      for (let i = 1; i <= 5; i++) { 
-        const pesertaKey = `peserta${i}`;
-        const option = document.createElement('option');
-        option.value = '';
-        option.text = 'Tidak ada anggota';
-        pesertaElements[pesertaKey].add(option);
-      }
+        // Membersihkan input teks jika tidak ada anggota yang cocok
+        pesertaInputs.forEach(input => {
+            input.value = '';
+        });
     }
-  });
+});
+
+
+
 </script> 
 </body>
 </html>

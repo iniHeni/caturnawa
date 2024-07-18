@@ -16,23 +16,14 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/cekout.css">
+      <link rel="stylesheet" href="../../css/back.css">
       <script type="text/javascript"
-      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      src="{{config('midtrans.snap_url')}}"
       data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
  
 #loadingDiv {
    width: 100%;
@@ -58,11 +49,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/edcaja.png" width="120" class="nav_logo"><a href="{{url('matalomba/edc') }}" class="nav__logo"></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 23rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -99,6 +90,9 @@
             </div>
          </nav>
       </header>
+      <button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L120,186.7C240,149,480,75,720,80C960,85,1200,171,1320,213.3L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
       <section>
         <div class="konten">
@@ -142,28 +136,28 @@
                                 <input disabled placeholder="{{$order->alamatlengkap_1}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.Nomor')p</label>
+                                <label>@lang('messages.Nomor')</label>
                                 <input disabled placeholder="{{$order->nomorhp_1}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$order->ktm_1}}">
+                                <input disabled placeholder="{{ basename($order->ktm_1) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$order->foto_1}}">
+                                <input disabled placeholder="{{ basename($order->foto_1)}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$order->krs_1}}">
+                                <label>@lang('messages.krs')</label>
+                                <input disabled placeholder="{{ basename($order->krs_1) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$order->buktifollow_1}}">
+                                <input disabled placeholder="{{ basename($order->buktifollow_1) }}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
-                                <input disabled placeholder="{{$order->twibbon}}">
+                                <label>@lang('messages.unggah1') Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{ basename($order->twibbon) }}">
                             </div>
                         </div>
                     </div>
@@ -203,44 +197,48 @@
                                 <input disabled placeholder="{{$order->alamatlengkap_2}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.Nomor')p</label>
+                                <label>@lang('messages.Nomor')</label>
                                 <input disabled placeholder="{{$order->nomorhp_2}}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.ktm')</label>
-                                <input disabled placeholder="{{$order->ktm_2}}">
+                                <input disabled placeholder="{{ basename($order->ktm_2) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.foto')</label>
-                                <input disabled placeholder="{{$order->foto_2}}">
+                                <input disabled placeholder="{{ basename($order->foto_2)}}">
                             </div>
                             <div class="input-field">
-                                <label>@lang('messages.krs')i</label>
-                                <input disabled placeholder="{{$order->krs_2}}">
+                                <label>@lang('messages.krs')</label>
+                                <input disabled placeholder="{{ basename($order->krs_2) }}">
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.bukti')</label>
-                                <input disabled placeholder="{{$order->buktifollow_2}}">
+                                <input disabled placeholder="{{ basename($order->buktifollow_2) }}">
                             </div>
                             <div class="input-field">
-                                <label>Upload Twibbon *png,jpeg,jpg maks 5mb</label>
-                                <input disabled placeholder="{{$order->twibbon2}}">
+                                <label>@lang('messages.unggah1') Twibbon *format:png,jpg maks 5mb</label>
+                                <input disabled placeholder="{{ basename($order->twibbon2) }}">
                             </div>
                         </div>
                     </div>
                     <div class="details ID">
-                        <span class="title">@lang('messages.team')</span>
+                        <span class="title">@lang('messages.team2')</span>
                         <div class="fields">
+                            <div class="input-field">
+                                <label>@lang('messages.team2')</label>
+                                <input disabled placeholder="{{$order->namateam}}" required>
+                            </div>
                             <div class="input-field">
                                 <label>@lang('messages.instansi')</label>
                                 <input disabled placeholder="{{$order->instansi}}" required>
                             </div>
                             <div class="input-field">
                                 <label>@lang('messages.surat')</label>
-                                <input disabled placeholder="{{$order->surat_delegasi}}">
+                                <input disabled placeholder="{{ basename($order->surat_delegasi) }}">
                             </div>
                             <div class="input-field">
-                                <label>Price</label>
+                                <label>@lang('messages.harga')</label>
                                 <input disabled placeholder="IDR{{$order->price}}">
                             </div>
                         </div>
@@ -248,8 +246,8 @@
                             <span class="btnText">@lang('messages.bayar')</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <button type="submit" class="nextBtn" id="pay-button">
-                            <a href="{{url('matalomba/daftarEDC') }}" class="btnText">@lang('messages.kembali')</a>
+                        <button type="submit" class="nextBtn" onclick="window.history.back();">
+                            <p class="btnText">@lang('messages.kembali')</p>
                         </button>
                     </div> 
                 </div>
@@ -286,7 +284,7 @@
             Swal.fire({
     icon: 'success',
     title: 'Pembayaran Berhasil!',
-    text: 'Anda akan diarahkan ke halaman EDC.',
+    text: 'Anda akan diarahkan ke WhatsApp Group.',
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
@@ -295,23 +293,27 @@
   });
         },
         onPending: function(result){
-          /* You may add your own implementation here */
-          alert("wating your payment!"); console.log(result);
+            location.reload();
         },
         onError: function(result){
             Swal.fire({
-    icon: 'info',
-    title: 'Menunggu Pembayaran',
-    text: 'Mohon tunggu sebentar, pembayaran Anda sedang diproses.',
-    showConfirmButton: false, // Tidak menampilkan tombol OK
-    allowOutsideClick: false, // Mencegah pengguna menutup dengan klik di luar
-    didOpen: () => {
-      Swal.showLoading(); // Menampilkan animasi loading
-    },
-  });
-  console.log(result); 
-          
-        },
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
+            showCancelButton: true, 
+            confirmButtonText: 'Coba Lagi',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            
+            } else {
+                window.location.href = '/'; 
+            }
+        });
+
+        console.error("Error pembayaran:", result);
+                
+                },
         onClose: function(){
             Swal.fire({
     icon: 'warning',
@@ -327,4 +329,5 @@
     </body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
+    <script src="../../js/SM.js"></script>
 </html>

@@ -14,16 +14,16 @@ return new class extends Migration
     {
         Schema::create('ordersms', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('order');
+            $table->string('order');
             $table->string('kompetisi');
             $table->string('nama_1');
             $table->string('email_1');
             $table->string('fakultas_1');
             $table->string('prodi_1');
-            $table->bigInteger('npm_1');
+            $table->string('npm_1');
             $table->string('jeniskelamin_1');
             $table->string('alamatlengkap_1');
-            $table->bigInteger('nomorhp_1');
+            $table->string('nomorhp_1');
             $table->string('ktm_1');
             $table->string('foto_1');
             $table->string('krs_1');
@@ -33,10 +33,10 @@ return new class extends Migration
             $table->string('email_2');
             $table->string('fakultas_2');
             $table->string('prodi_2');
-            $table->bigInteger('npm_2');
+            $table->string('npm_2');
             $table->string('jeniskelamin_2');
             $table->string('alamatlengkap_2');
-            $table->bigInteger('nomorhp_2');
+            $table->string('nomorhp_2');
             $table->string('ktm_2');
             $table->string('foto_2');
             $table->string('krs_2');
@@ -46,10 +46,10 @@ return new class extends Migration
             $table->string('email_3');
             $table->string('fakultas_3');
             $table->string('prodi_3');
-            $table->bigInteger('npm_3');
+            $table->string('npm_3');
             $table->string('jeniskelamin_3');
             $table->string('alamatlengkap_3');
-            $table->bigInteger('nomorhp_3');
+            $table->string('nomorhp_3');
             $table->string('ktm_3');
             $table->string('foto_3');
             $table->string('krs_3');
@@ -59,10 +59,10 @@ return new class extends Migration
             $table->string('email_4');
             $table->string('fakultas_4');
             $table->string('prodi_4');
-            $table->bigInteger('npm_4');
+            $table->string('npm_4');
             $table->string('jeniskelamin_4');
             $table->string('alamatlengkap_4');
-            $table->bigInteger('nomorhp_4');
+            $table->string('nomorhp_4');
             $table->string('ktm_4');
             $table->string('foto_4');
             $table->string('krs_4');
@@ -72,10 +72,10 @@ return new class extends Migration
             $table->string('email_5');
             $table->string('fakultas_5');
             $table->string('prodi_5');
-            $table->bigInteger('npm_5');
+            $table->string('npm_5');
             $table->string('jeniskelamin_5');
             $table->string('alamatlengkap_5');
-            $table->bigInteger('nomorhp_5');
+            $table->string('nomorhp_5');
             $table->string('ktm_5');
             $table->string('foto_5');
             $table->string('krs_5');
@@ -84,10 +84,9 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('namateam');
             $table->string('instansi');
-            $table->string('linkvidio')->nullable();
             $table->string('surat_delegasi');
             $table->string('bio');
-            $table->enum('status', ['Unpaid', 'Paid']);
+            $table->enum('status', ['Unpaid', 'Paid', 'Khusus']);
 
             $table->timestamps();
         });

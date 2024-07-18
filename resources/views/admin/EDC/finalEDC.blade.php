@@ -21,16 +21,7 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+
  
 #loadingDiv {
    width: 100%;
@@ -46,7 +37,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 </head>
@@ -56,13 +47,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../img/edcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -99,7 +90,7 @@
         <a href="{{url('/admin/Final/day1') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="developer">Day 1</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>14 Oktober</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>
@@ -107,7 +98,7 @@
             <a href="{{url('/admin/Final/day2') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="designer">Day 2</span>
-                <h3>@lang('messages.dilaksanakan')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>15 Oktober</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>

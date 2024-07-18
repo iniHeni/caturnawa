@@ -13,23 +13,13 @@
       
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../../css/navmenu.css">
+      <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/upload.css">
+      <link rel="stylesheet" href="../../css/back.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>@lang('messages.daftar')</title>
       <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -46,6 +36,7 @@
    height: 9.5rem;
    background: center / contain no-repeat url(../img/loader.gif);
  }
+
      </style>
    </head>
    <body>
@@ -54,11 +45,11 @@
       </div>
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav contnav">
          <img src="../../img/spcaja.png" width="145" class="nav_logo"><a href="{{url('matalomba/lkti') }}" class="nav__logo" ></a>
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-        <div style="margin-right: 19rem" class="nav__item">
+        <div style="left: 200px" class="nav__item">
 						<li><a href="../locale/ind" height="20"><img src="../../img/ind.png"  /></a></li>
 						<li><a href="../locale/en" height="20"><img src="../../img/eng.png" /></a></li>
 					</div>
@@ -99,11 +90,12 @@
       <section>
       <div class="konten">
         <header>Upload Scientific Paper</header>
-        <form action="/lkti/upload" method="POST" enctype="multipart/form-data" >
+        <form action="/lkti/upload" method="POST" enctype="multipart/form-data" style="
+    min-height: 300px;" >
             @csrf
             <div class="form first">
-                <div class="details ID">
-                    <div class="fields"> 
+                <div class="details ID" >
+                    <div class="fields" > 
                         <div class="input-field">
                             <label for="nama">@lang('messages.Name')</label>
                             <input type="text" name="nama" id="nama" placeholder="@lang('messages.place') @lang('messages.Name')" @error('nama') is-invalid @enderror required>
@@ -120,50 +112,51 @@
                         </div>  
                         <div class="input-field">
                             <label for="instansi">@lang('messages.instansi')</label>
-                            <input type="text" name="instansi" id="instansi" placeholder="Masukkan Asal Instansi" @error('instansi') is-invalid @enderror required>
+                            <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
                             @error('instansi')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="judul">Judul/Title</label>
-                            <input type="text" name="judul" id="judul" placeholder="Masukkan Asal Instansi" @error('judul') is-invalid @enderror required>
+                            <label for="judul">@lang('messages.judul')</label>
+                            <input type="text" name="judul" id="judul" placeholder="@lang('messages.place') @lang('messages.judul')" @error('judul') is-invalid @enderror required>
                             @error('judul')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="tema">Tema/Theme</label>
-                            <input type="text" name="tema" id="tema" placeholder="Masukkan Asal Instansi" @error('tema') is-invalid @enderror required>
+                            <label for="tema">@lang('messages.tema')</label>
+                            <input type="text" name="tema" id="tema" placeholder="@lang('messages.place') @lang('messages.tema')" @error('tema') is-invalid @enderror required>
                             @error('tema')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="naskah">Upload Scientific Paper *pdf maks: 5mb</label>
+                            <label for="naskah">@lang('messages.unggah1') Scientific Paper *pdf max: 5mb</label>
                             <input name="naskah" id="naskah" type="file" accept=".pdf, PDF" @error('naskah') is-invalid @enderror required>
                             @error('naskah')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        <button type="submit" class="nextBtn">
+                          <span class="btnText">@lang('messages.Send1')</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
                     </div>
-                    <button type="submit" class="nextBtn">
-                        <span class="btnText">Kirim/Send</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
                 </div> 
             </div>
         </form>
     </div>
 
 </section>
-
+<button class="floating-button" onclick="window.history.back();">
+         <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
+      </button>
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../../js/nav.js"></script>
-    <script src="../../js/daftarlomba.js"></script>
     
        <script>
         function removeLoader() {
@@ -212,5 +205,6 @@
       }
   });
       </script>
+      <script src="../../js/SM.js"></script>
 </html>
 

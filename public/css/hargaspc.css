@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #DDD;
+    font-family: 'Cabin', sans-serif;
+  }
+  .container1 {
+    max-width: 1450px;
+    margin: 0px auto;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+  .upcomming {
+    color: #fff;
+    font-size: 45px;
+    text-transform: uppercase;
+    border-left: 14px solid rgba(255, 235, 59, 0.78);
+    padding-left: 12px;
+    margin: 18px 8px;
+  }
+  .container1 .item {
+    background: #fff;
+    overflow: hidden;
+    margin: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container1 .item-right, .container1 .item-left {
+    padding: 20px;
+  }
+  .container1 .item-right {
+    background-color: #1b6dc9;
+    padding: 195px 20px;
+    flex: 1 1 28%;
+    position: relative;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container1 .item-right .up-border, .container1 .item-right .down-border {
+    padding: 20px 20px;
+    background-color: #0f2636;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .container1 .item-right .up-border {
+    top: -20px;
+    right: -20px;
+  }
+  
+  .leftdown-border{
+    padding: 20px 20px;
+    background-color: #0f2636;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+  }
+  
+  .leftup-border{
+    padding: 20px 20px;
+    background-color: #0f2636;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+  }
+  
+  .container1 .item-right .down-border {
+    bottom: -20px;
+    right: -20px;
+  }
+  .container1 .item-right .num {
+    font-size: 35px;
+    text-align: center;
+    color: #fff;
+  }
+  .container1 .item-right .day {
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+  }
+  .container1 .item-left {
+    flex: 70%;
+    padding: 18px 25px 16px 20px;
+    border-left: 5px dotted #f6ae31;
+  }
+  .item-left1 {
+    flex: 70%;
+    padding: 18px 25px 0px 0px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #666;
+    
+  }
+  .event {
+    color: #111;
+    font-size: 23px;
+    padding: 15px 0px;
+  }
+  .container1 .item-left .title {
+    color: #111;
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+  .container1 .item-left .sce, .container1 .item-left .loc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .container1 .item-left .sce .icon, .container1 .item-left .loc .icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #666;
+  }
+  .container1 .item-left .sce p, .container1 .item-left .loc p {
+    color: #888;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+  }
+  .fix {
+    clear: both;
+  }
+  .container1 .item .tickets, .daftar, .daftar1, .cancel {
+    color: #fff;
+    padding: 6px 14px;
+    margin-top: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  .container1 .item .tickets {
+    background: #777;
+  }
+  .container1 .item .daftar, .daftar1 {
+    background: #3D71E9;
+  }
+  .container1 .item .cancel {
+    background: #DF5454;
+  }
+  .linethrough {
+    text-decoration: line-through;
+  }
+  
+  @media (max-width: 1550px) {
+    .container1 {
+      padding: 0px 90px;
+      margin-top: 80px;
+    }
+    .container1 .item-right {
+      height: auto;
+      padding: 185px 20px;
+    }
+    /* .container1 .item-left {
+      padding: 20px;
+      border-left: none;
+      border-top: 5px dotted #f6ae31;
+    } */
+  }
+  
+  
+  @media (max-width: 420px) {
+    .container1 {
+      padding: 0px 2rem;
+    }
+    .container1 .item {
+      flex-direction: column;
+    }
+    .container1 .item-right {
+      
+      height: auto;
+      padding: 40px 20px;
+    }
+    .container1 .item-left {
+      
+      padding: 20px;
+      border-left: none;
+      border-top: 5px dotted #f6ae31;
+    }
+  }
+  @media (max-width: 768px) {
+    .container1 {
+      padding: 0px 3rem;
+    }
+    .container1 .item {
+      flex-direction: column;
+    }
+    .container1 .item-right {
+      
+      height: auto;
+      padding: 40px 20px;
+    }
+    .container1 .item-left {
+      
+      padding: 20px;
+      border-left: none;
+      border-top: 5px dotted #f6ae31;
+    }
+  }
+  @media (max-width: 480px) {
+    .container1 .item-right {
+      padding: 20px;
+    }
+    .container1 .item-right .num {
+      font-size: 36px;
+    }
+    .container1 .item-right .day {
+      font-size: 18px;
+    }
+    .container1 .item-left .title {
+      font-size: 24px;
+    }
+    .container1 .item-left .event {
+      font-size: 18px;
+    }
+    .container1 .item-left .sce .icon, .container1 .item-left .loc .icon {
+      font-size: 16px;
+    }
+    .container1 .item .tickets, .daftar, .daftar1, .cancel {
+      font-size: 16px;
+    }
+  }
+  

@@ -8,7 +8,7 @@
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin: 0 auto;
-    top: 6rem;
+    top: -5rem;
 }
 .konten header{
     position: relative;
@@ -28,7 +28,6 @@
 }
 .konten form{
     position: relative;
-    margin-top: 16px;
     min-height: 700px;
     background-color: #fff;
     overflow: hidden;
@@ -89,6 +88,18 @@ form .fields .input-field{
     height: 42px;
     margin: 8px 0;
 }
+.input-field textarea{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 50px;
+    margin: 8px 0;
+}
+
 .input-field input :focus,
 .input-field select:focus{
     box-shadow: 0 3px 6px rgba(0,0,0,0.13);
@@ -140,7 +151,11 @@ form .buttons button , .backBtn{
 }
 form input.error,
 .input-field input[is-invalid] {
-    border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
+    border-color: red !important;
+}
+form textarea.error,
+.input-field textarea[is-invalid] {
+    border-color: red !important; 
 }
 .input-field .text-danger {
     color: red;
@@ -159,7 +174,7 @@ form input.error,
         width: 100%;
     }
     .konten form{
-        min-height: 400px;
+        min-height: 800px;
     }
 }
 @media (max-width: 390px) {

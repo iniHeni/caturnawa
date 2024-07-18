@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('pesertakdbis', function (Blueprint $table) {
             $table->id();
             $table->string('instansi');
+            $table->string('namateam');
             $table->string('nama');
             $table->string('nama1');
             $table->string('email');
             $table->string('email1');
             $table->string('foto');
             $table->string('foto1');
-            $table->biginteger('nohp');
-            $table->biginteger('nohp1');
+            $table->string('nohp');
+            $table->string('nohp1');
             $table->string('logo')->nullable;
             $table->timestamps();
 

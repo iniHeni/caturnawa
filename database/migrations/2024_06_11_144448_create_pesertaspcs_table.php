@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('foto');
-            $table->biginteger('nohp');
+            $table->string('nohp');
             $table->string('logo')->nullable;
             $table->timestamps();
         });

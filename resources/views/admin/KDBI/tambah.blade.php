@@ -20,16 +20,7 @@
 
     <title>Caturnawa - Admin</title>
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
+
  
 #loadingDiv {
    width: 100%;
@@ -55,13 +46,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/kdbiaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin KDBI </a></h2>
         </div>
     </nav>
@@ -98,244 +89,261 @@
       <header>Data Penyisihan</header>
       <form action="/tambahkdbi1" method="POST" enctype="multipart/form-data"  id="penilaian" >
           @csrf
+          @for ($i = 1; $i <= 4; $i++)
           <div class="form first">
-            <div class="details personal">
-                <span class="title">Data Penilaian</span>
-                <div class="fields"> 
-                    <div class="input-field">
-                        <label for="ronde">Ronde </label>
-                        <select name="ronde" id="ronde"  required >
-                            <option selected>Pilih Ronde</option>
-                            <option>1</option>   
-                            <option>2</option>  
-                        </select>
+              <div class="details personal">
+                  <span class="title">Data Penilaian Team {{ $i }}</span>
+                  <div class="fields">
+                  <div class="input-field">
+                      <label for="juri[{{ $i }}]">Adjudicators  *data seterusnya akan otomatis</label>
+                      <select name="juri[{{ $i }}]" id="juri_{{ $i }}" class="autofill" required>
+                          <option selected>Pilih Adjudicators</option>
+                          <option>Leonardus Hans, S.T.</option>
+                          <option>Prof.Dr.Wahyu Wibowo</option>
+                          <option>Purwo Besari, S.Pd.</option>
+                      </select>
+                  </div>
+                  
+                  <div class="input-field">
+                      <label for="ronde[{{ $i }}]">Ronde  *data seterusnya akan otomatis</label>
+                      <select name="ronde[{{ $i }}]" id="ronde_{{ $i }}" class="autofill" required>
+                          <option selected>Pilih Ronde</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                      </select>
+                  </div>
+      
+                  <div class="input-field">
+                      <label for="sesi[{{ $i }}]">Session  *data seterusnya akan otomatis</label>
+                      <select name="sesi[{{ $i }}]" id="sesi_{{ $i }}" class="autofill" required>
+                          <option selected>Pilih Sesi</option>
+                          @for ($j = 1; $j <= 2; $j++)
+                              <option value="{{ $j }}">{{ $j }}</option>
+                          @endfor
+                      </select>
+                  </div>
+      
+      
+                  <div class="input-field">
+                      <label for="room[{{ $i }}]">Breakout Room  *data seterusnya akan otomatis</label>
+                      <select name="room[{{ $i }}]" id="room_{{ $i }}" class="autofill" required>
+                          <option selected>Breakout Room</option>
+                          @for ($j = 1; $j <= 3; $j++)
+                              <option value="{{ $j }}">{{ $j }}</option>
+                          @endfor
+                      </select>
+                  </div>
+        
+                            <div class="input-field">
+                                <label for="team[{{ $i }}]">Nama Team</label>
+                                <select name="team[{{ $i }}]" id="team_{{ $i }}" required>
+                                    <option selected>Pilih Team</option>
+                                    @foreach ($peserta as $j)
+                                        <option >{{ $j->namateam }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+        
+                            <div class="input-field">
+                                <label for="posisi[{{ $i }}]">Posisi Team</label>
+                                <select name="posisi[{{ $i }}]" id="posisi_{{ $i }}" required>
+                                    <option selected>Pilih Posisi</option>
+                                    <option value="OG">OG</option>
+                                    <option value="CG">CG</option>
+                                    <option value="OO">OO</option>
+                                    <option value="CO">CO</option>
+                                </select>
+                            </div>
+        
+                            <div class="input-field">
+                                <label for="nama1[{{ $i }}]">Nama Peserta 1 *otomatis dari namateam</label>
+                                <input type="text" id="nama1_{{ $i }}" name="nama1[{{ $i }}]"  required>
+                            </div>
+    
+                              <div class="input-field">
+                                  <label for="posisi1[{{ $i }}]">Posisi Peserta 1</label>
+                                  <select name="posisi1[{{ $i }}]" id="posisi1_{{ $i }}" required>
+                                      <option selected>Pilih Posisi</option>
+                                      <option value="PM">PM</option>
+                                      <option value="DPM">DPM</option>
+                                      <option value="MoG">MoG</option>
+                                      <option value="Whip Gov">Whip Gov</option>
+                                      <option value="LoO">LoO</option>
+                                      <option value="DLoO">DLoO</option>
+                                      <option value="MoO">MoO</option>
+                                      <option value="Whip Opp">Whip Opp</option>
+                                  </select>
+                              </div>
+          
+                              <div class="input-field">
+                                <label for="nama2[{{ $i }}]">Nama Peserta 2 *otomatis dari namateam</label>
+                                <input type="text" id="nama2_{{ $i }}" name="nama2[{{ $i }}]"  required>
+                            </div>
+                            
+                              <div class="input-field">
+                                  <label for="posisi2[{{ $i }}]">Posisi Peserta 2</label>
+                                  <select name="posisi2[{{ $i }}]" id="posisi2_{{ $i }}" required>
+                                      <option selected>Pilih Posisi</option>
+                                      <option value="PM">PM</option>
+                                      <option value="DPM">DPM</option>
+                                      <option value="MoG">MoG</option>
+                                      <option value="Whip Gov">Whip Gov</option>
+                                      <option value="LoO">LoO</option>
+                                      <option value="DLoO">DLoO</option>
+                                      <option value="MoO">MoO</option>
+                                      <option value="Whip Opp">Whip Opp</option>
+                                  </select>
+                              </div>
+          
+                        </div>
                     </div>
-                    @error('ronde')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="sesi">Session </label>
-                        <select name="sesi" id="sesi"  required >
-                            <option selected>Pilih Sesi</option>
-                            <option>1</option> 
-                            <option>2</option> 
-                            <option>3</option> 
-                            <option>4</option> 
-                            <option>5</option> 
-                            <option>6</option>
-                        </select>
+        
+                    <div class="details ID">
+                        <span class="title">Skor Individu dan Team {{ $i }}</span>
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="skorindividu1[{{ $i }}]">Score Peserta 1</label>
+                                <input name="skorindividu1[{{ $i }}]" id="skorindividu1_{{ $i }}" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotal({{ $i }})">
+                            </div>
+                            <div class="input-field">
+                                <label for="skorindividu2[{{ $i }}]">Score Peserta 2</label>
+                                <input name="skorindividu2[{{ $i }}]" id="skorindividu2_{{ $i }}" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotal({{ $i }})">
+                            </div>
+                            <div class="input-field">
+                                <label for="total[{{ $i }}]">Score Team:</label>
+                                <input @disabled(true) type="number" id="total_{{ $i }}" name="total[{{ $i }}]" readonly>
+                            </div>
+                        </div>
                     </div>
-                    @error('sesi')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="juri">Adjudicators </label>
-                        <select name="juri" id="juri"  required >
-                            <option selected>Pilih Adjudicators</option>
-                            <option>Leonardus Hans, S.T.</option> 
-                            <option>Prof.Dr.Wahyu Wibowo</option> 
-                            <option>Purwo Besari, S.Pd.</option> 
-                        </select>
-                    </div>
-                    @error('juri')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="room"> </label>
-                        <select name="room" id="room"  required >
-                            <option selected>Breakout Room</option>
-                            <option>1</option> 
-                            <option>2</option> 
-                            <option>3</option> 
-                        </select>
-                    </div>
-                    @error('room')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="team">Nama Team</label>
-                        <select name="team" id="team"  required >
-                            <option selected>Pilih Team</option> 
-                            @foreach ($peserta as $j)
-                                <option >{{ $j->instansi }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    @error('team')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="posisi">Posisi Team </label>
-                        <select name="posisi" id="posisi"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>OG</option> 
-                            <option>CG</option> 
-                            <option>OO</option> 
-                            <option>CO</option> 
-                        </select>
-                    </div>
-                    @error('posisi')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="posisi1">Posisi Peserta 1 </label>
-                        <select name="posisi1" id="posisi1"  required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>PM</option> 
-                            <option>DPM</option> 
-                            <option>MoG</option> 
-                            <option>Whip Gov</option> 
-                            <option>LoO</option> 
-                            <option>DLoO</option> 
-                            <option>MoO</option> 
-                            <option>Whip Opp</option> 
-                        </select>
-                    </div>
-                    @error('posisi1')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="posisi2">Posisi Peserta 2 </label>
-                        <select name="posisi2" id="posisi2" required >
-                            <option selected>Pilih Posisi</option> 
-                            <option>PM</option> 
-                            <option>DPM</option> 
-                            <option>MoG</option> 
-                            <option>Whip Gov</option> 
-                            <option>LoO</option> 
-                            <option>DLoO</option> 
-                            <option>MoO</option> 
-                            <option>Whip Opp</option> 
-                        </select>
-                    </div>
-                    @error('posisi2')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
-                        <select name="nama1" id="nama1"  required >
-                            <option selected>Pilih Peserta</option> 
-                        </select>
-                    </div>
-                    @error('nama1')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    
-                    <div class="input-field">
-                        <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
-                        <select d name="nama2" id="nama2"  required >
-                            <option selected>Pilih Peserta</option> 
-                        </select>
-                    </div>
-                    @error('nama2')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
                 </div>
-              </div>
-            <div class="details ID">
-                <span class="title">Skor Individu dan Team</span>
-                <div class="fields"> 
-                    <div class="input-field">
-                        <label for="skorindividu1">Score Peserta 1 </label>
-                        <input name="skorindividu1" id="skorindividu1" type="number" placeholder="Score Individu Peserta" required oninput="hitungTotall()">
-                    </div>   
-                    @error('skorindividu')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-field">
-                        <label for="skorindividu2">Score Peserta 2 </label>
-                        <input name="skorindividu2" id="skorindividu2" type="number" placeholder=" Score Individu Peserta" required oninput="hitungTotall()">
-                    </div>  
-                    <div class="input-field">
-                        <label for="total">Score Team:</label>
-                        <input @disabled(true) type="number" id="total" name="total" readonly>
-                    </div>
-                    
-                </div>
-              </div>
-              <button type="submit" class="nextBtn">
-                <span class="btnText">Submit</span>
-                <i class="uil uil-navigator"></i>
-            </button>
-        </div>
+                @endfor
+          <button type="submit" class="nextBtn">
+              <span class="btnText">Submit</span>
+              <i class="uil uil-navigator"></i>
+          </button>
+          
+      </div>
       </form>
-  </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-    document.getElementById('penilaian').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-    
-        Swal.fire({
-            title: 'Success!',
-            text: 'Data berhasil Ditambahkan!',
-            icon: 'success',
-            confirmButtonText: 'Lanjutkan'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.submit(); 
-            }
-        });
-    });
-    </script>
-<!-- Script untuk memanggil file admin.js -->
-<script src="../../../js/adminKDBI.js"></script>
-<script>
-document.getElementById("menu").addEventListener("click", function () {
-    document.body.classList.toggle("sidebar-open");
-});
-</script>
-<script>
-    function removeLoader() {
-$("#loadingDiv").fadeOut(200, () => {
-  $("#loadingDiv").remove();
-});
-}
-
-$(window).on("load", () => {
-setTimeout(removeLoader, 2000);
-
-$("body").css(
-  "overflow-y",
-  "hidden",
-  setTimeout(() => {
-    $("body").css("overflow-y", "visible");
-  }, 2000)
-);
-});
-</script>
-<script>
-    function hitungTotall() {
-      const form = document.getElementById("penilaian");
-      const skorindividu1 = parseFloat(form.skorindividu1.value) || 0;
-      const skorindividu2 = parseFloat(form.skorindividu2.value) || 0;
-
-      const total = (skorindividu1 + skorindividu2) / 2;
-      form.total.value = total;
-    }
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+      document.getElementById('penilaian').addEventListener('submit', function(event) {
+          event.preventDefault(); 
+      
+          Swal.fire({
+              title: 'Success!',
+              text: 'Data berhasil Ditambahkan!',
+              icon: 'success',
+              confirmButtonText: 'Lanjutkan'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  this.submit(); 
+              }
+          });
+      });
+      </script>
+  <!-- Script untuk memanggil file admin.js -->
+  <script src="../../../js/adminKDBI.js"></script>
+  <script>
+  document.getElementById("menu").addEventListener("click", function () {
+      document.body.classList.toggle("sidebar-open");
+  });
   </script>
-<script>
-    const pesertaData = @json($peserta); // Membuat variabel JS dari data peserta
-    
-    const namaPesertaSelect = document.getElementById('team');
-    const universitySelect = document.getElementById('nama1');
-    const universitySelect2 = document.getElementById('nama2');
-    
-    namaPesertaSelect.addEventListener('change', () => {
-        const selectedPesertaId = namaPesertaSelect.value;
-        const selectedPeserta = pesertaData.find(p => p.instansi == selectedPesertaId);
-    
-        universitySelect.innerHTML = ''; 
-        universitySelect.options.add(new Option('Pilih Peserta', ''));
-        universitySelect2.innerHTML = ''; 
-        universitySelect2.options.add(new Option('Pilih Peserta', '')); 
-        if (selectedPeserta) {
-            universitySelect.options.add(new Option(selectedPeserta.nama, selectedPeserta.nama));
-            universitySelect.value = selectedPeserta.nama;
-            universitySelect2.options.add(new Option(selectedPeserta.nama1, selectedPeserta.nama1));
-            universitySelect2.value = selectedPeserta.nama1; 
-        }
-    });
+  <script>
+      function removeLoader() {
+  $("#loadingDiv").fadeOut(200, () => {
+    $("#loadingDiv").remove();
+  });
+  }
+  
+  $(window).on("load", () => {
+  setTimeout(removeLoader, 2000);
+  
+  $("body").css(
+    "overflow-y",
+    "hidden",
+    setTimeout(() => {
+      $("body").css("overflow-y", "visible");
+    }, 2000)
+  );
+  });
+  </script>
+  <script>
+   const pesertaData = @json($peserta);
+  
+  // Ambil semua formulir yang ada
+  const formElements = document.querySelectorAll('.form'); // Pastikan Anda memiliki elemen dengan kelas 'form' yang membungkus setiap set form
+  
+  formElements.forEach((form, index) => {
+      const namaPesertaSelect = form.querySelector(`#team_${index + 1}`);
+      const nama1Input = form.querySelector(`#nama1_${index + 1}`); // Dapatkan input yang ada
+      const nama2Input = form.querySelector(`#nama2_${index + 1}`); // Dapatkan input yang ada
+      const skorIndividu1Input = form.querySelector(`#skorindividu1_${index + 1}`);
+      const skorIndividu2Input = form.querySelector(`#skorindividu2_${index + 1}`);
+      const totalInput = form.querySelector(`#total_${index + 1}`);
+  
+      // Fungsi untuk menghitung total skor (tidak ada perubahan)
+      function hitungTotal() {
+          const skor1 = parseInt(skorIndividu1Input.value) || 0;
+          const skor2 = parseInt(skorIndividu2Input.value) || 0;
+          totalInput.value = (skor1 + skor2) / 2;
+      }
+  
+      namaPesertaSelect.addEventListener('change', () => {
+          const selectedPesertaId = namaPesertaSelect.value;
+          const selectedPeserta = pesertaData.find(p => p.namateam == selectedPesertaId);
+  
+          if (selectedPeserta) {
+              nama1Input.value = selectedPeserta.nama; // Isi input yang ada
+              nama2Input.value = selectedPeserta.nama1; // Isi input yang ada
+          } else {
+              nama1Input.value = ''; // Kosongkan jika tidak ada yang dipilih
+              nama2Input.value = '';
+          }
+  
+          // Reset total setelah memilih peserta baru (tidak ada perubahan)
+          skorIndividu1Input.value = '';
+          skorIndividu2Input.value = '';
+          totalInput.value = '';
+      });
+  
+      // Tambahkan event listener untuk input skor individu (tidak ada perubahan)
+      skorIndividu1Input.addEventListener('input', hitungTotal);
+      skorIndividu2Input.addEventListener('input', hitungTotal);
+  });
+  
     </script>
-</body>
-</html>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const formElements = document.querySelectorAll('.form');
+         const autofillFields = ['juri', 'ronde', 'sesi', 'room']; 
+     
+         formElements.forEach((form, index) => {
+             autofillFields.forEach(fieldType => {
+                 const field = form.querySelector(`#${fieldType}_${index + 1}`);
+                 if (field) {
+                     field.addEventListener('change', () => {
+                         const selectedValue = field.value;
+     
+                         for (let nextForm = index + 2; nextForm <= formElements.length; nextForm++) {
+                             const nextField = document.getElementById(`${fieldType}_${nextForm}`);
+                             if (nextField) {
+                                 nextField.value = selectedValue;
+                                 nextField.dispatchEvent(new Event('change'));
+     
+                                 // Make the field read-only
+                                 nextField.disabled = false; 
+                             }
+                         }
+                     });
+                 }
+             });
+         });
+     });
+     
+     
+         </script>
+  
+  </body>
+  </html>

@@ -54,7 +54,7 @@ public function hapus($id){
 public function penyisihan(){
     $penyisihann = spcpenyisihan::select(
         '*',
-        DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') // Perhitungan rank
+        DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') 
     )->get();
     
     return view('matalomba/lkti/penyisihan', compact('penyisihann'));

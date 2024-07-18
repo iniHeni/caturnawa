@@ -13,176 +13,174 @@ class OrderkdbiController extends Controller
 {
     public function checkout(Request $request){
         $order = $request->validate([
-            'nama_1' => 'required|string|max:50',
-            'nama_2' => 'required|string|max:50',
+            'nama_1' => 'required|string',
+            'nama_2' => 'required|string',
             'email_1' => 'required|email',
             'email_2' => 'required|email',
-            'fakultas_1'=> 'required|string|max:50',
-            'fakultas_2' => 'required|string|max:50',
-            'prodi_1' =>'required|string|max:50',
-            'prodi_2' => 'required|string|max:50',
-            'npm_1' => 'required|string|max:50',
-            'npm_2' => 'required|string|max:50',
+            'fakultas_1'=> 'required|string',
+            'fakultas_2' => 'required|string',
+            'prodi_1' =>'required|string',
+            'prodi_2' => 'required|string',
+            'npm_1' => 'required|string',
+            'npm_2' => 'required|string',
             'jeniskelamin_1' => 'required',
             'jeniskelamin_2' => 'required',
             'alamatlengkap_1' => 'required',
             'alamatlengkap_2' => 'required',
             'nomorhp_1'=> 'required',
             'nomorhp_2' => 'required',
-            'instansi' => 'required|string|max:50',
-            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'foto_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:5000',
-            'krs_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_1' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'buktifollow_2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:5000',
-            'surat_delegasi' => 'required|mimes:pdf|max:5000',
+            'namateam' => 'required',
+            'instansi' => 'required|string',
+            'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'foto_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_1'=> 'required|mimes:png,jpeg,jpg|max:3000',
+            'krs_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'buktifollow_1' => 'required|mimes:pdf|max:3000',
+            'buktifollow_2' => 'required|mimes:pdf|max:3000',
+            'twibbon' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'twibbon2' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'surat_delegasi' => 'required|mimes:pdf|max:3000',
         ]); 
 
         
        
         $orderkdbi = $request->all();
-        if($request->hasFile('ktm_1'))
-        {
-            $destination_path = 'public/images/kdbi/ktm1';
-            $image = $request->file('ktm_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('ktm_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/ktm_1/' . $image_name);
-
+        if ($request->hasFile('ktm_1')) {
+            $originalFileName = pathinfo($request->file('ktm_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('ktm_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/ktm_1/' . $imageName);
             $orderkdbi['ktm_1'] = $imageUrl;
-
         }
-        if($request->hasFile('ktm_2'))
-        {
-            $destination_path = 'public/images/kdbi/ktm2';
-            $image = $request->file('ktm_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('ktm_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/ktm2/' . $image_name);
-
+    
+        if ($request->hasFile('ktm_2')) {
+            $originalFileName = pathinfo($request->file('ktm_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('ktm_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/ktm_2/' . $imageName);
             $orderkdbi['ktm_2'] = $imageUrl;
-
         }
-        if($request->hasFile('foto_1'))
-        {
-            $destination_path = 'public/images/kdbi/foto1';
-            $image = $request->file('foto_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('foto_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/foto1/' . $image_name);
-
+        if ($request->hasFile('foto_1')) {
+            $originalFileName = pathinfo($request->file('foto_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('foto_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+            $imageUrl = asset('storage/images/kdbi/foto_1/' . $imageName);
             $orderkdbi['foto_1'] = $imageUrl;
-
         }
-        if($request->hasFile('foto_2'))
-        {
-            $destination_path = 'public/images/kdbi/foto2';
-            $image = $request->file('foto_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('foto_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/foto2/' . $image_name);
-
+        if ($request->hasFile('foto_2')) {
+            $originalFileName = pathinfo($request->file('foto_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('foto_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/foto_2/' . $imageName);
             $orderkdbi['foto_2'] = $imageUrl;
-
         }
-        if($request->hasFile('krs_1'))
-        {
-            $destination_path = 'public/images/kdbi/krs1';
-            $image = $request->file('krs_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('krs_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/krs1/' . $image_name);
-
+        if ($request->hasFile('krs_1')) {
+            $originalFileName = pathinfo($request->file('krs_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('krs_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/krs_1/' . $imageName);
             $orderkdbi['krs_1'] = $imageUrl;
-
         }
-        if($request->hasFile('krs_2'))
-        {
-            $destination_path = 'public/images/kdbi/krs2';
-            $image = $request->file('krs_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('krs_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/krs2/' . $image_name);
-
+        if ($request->hasFile('krs_2')) {
+            $originalFileName = pathinfo($request->file('krs_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('krs_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+        
+            $imageUrl = asset('storage/images/kdbi/krs_2/' . $imageName);
             $orderkdbi['krs_2'] = $imageUrl;
-
         }
-        if($request->hasFile('buktifollow_1'))
-        {
-            $destination_path = 'public/images/kdbi/bukti1';
-            $image = $request->file('buktifollow_1');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('buktifollow_1')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/bukti1/' . $image_name);
-
+        if ($request->hasFile('buktifollow_1')) {
+            $originalFileName = pathinfo($request->file('buktifollow_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/document/kdbi/buktifollow_1/' . $imageName);
             $orderkdbi['buktifollow_1'] = $imageUrl;
-
         }
-        if($request->hasFile('buktifollow_2'))
-        {
-            $destination_path = 'public/images/kdbi/bukti2';
-            $image = $request->file('buktifollow_2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('buktifollow_2')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/bukti2/' . $image_name);
-
+        if ($request->hasFile('buktifollow_2')) {
+            $originalFileName = pathinfo($request->file('buktifollow_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+          
+        
+            $imageUrl = asset('storage/document/kdbi/buktifollow_2/' . $imageName);
             $orderkdbi['buktifollow_2'] = $imageUrl;
-
         }
-        if($request->hasFile('twibbon'))
-        {
-            $destination_path = 'public/images/kdbi/twibbon';
-            $image = $request->file('twibbon');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('twibbon')->storeAS($destination_path,$image_name);
-            $imageUrl = asset('storage/images/kdbi/twibbon/' . $image_name);
-
-            $orderkdbi['twibbon'] = $imageUrl;
+        if ($request->hasFile('twibbon_1')) {
+            $originalFileName = pathinfo($request->file('twibbon_1')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('twibbon_1')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/twibbon_1/' . $imageName);
+            $orderkdbi['twibbon_1'] = $imageUrl;
         }
-        if($request->hasFile('twibbon2'))
-        {
-            $destination_path = 'public/images/kdbi/twibbon2';
-            $image = $request->file('twibbon2');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('twibbon2')->storeAS($destination_path,$image_name);
-
-            $imageUrl = asset('storage/images/kdbi/twibbon2/' . $image_name);
-
-            $orderkdbi['twibbon2'] = $imageUrl;
-
+        if ($request->hasFile('twibbon_2')) {
+            $originalFileName = pathinfo($request->file('twibbon_2')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('twibbon_2')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/twibbon_2/' . $imageName);
+            $orderkdbi['twibbon_2'] = $imageUrl;
         }
-        if($request->hasFile('surat_delegasi'))
-        {
-            $destination_path = 'public/document/kdbi/surat';
-            $image = $request->file('surat_delegasi');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $path = $request->file('surat_delegasi')->storeAS($destination_path,$image_name);
-
-            $imageUrl = asset('storage/document/kdbi/surat/' . $image_name);
-
+        if ($request->hasFile('surat_delegasi')) {
+            $originalFileName = pathinfo($request->file('surat_delegasi')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+           
+        
+            $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
             $orderkdbi['surat_delegasi'] = $imageUrl;
-
         }
-
         $now = Carbon::now();
         if ($now->between('2024-07-23', '2024-07-26')) {
-            $price = 350000; 
+            $price = 300000; 
         } elseif ($now->between('2024-07-27', '2024-08-11')) {
-            $price = 500000; 
+            $price = 400000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
-            $price = 550000; 
+            $price = 450000; 
         } else {
             $price = 9999999; // Default or registration closed
         }
          $additionalData = [
         'price' => $price,
         'status' => 'Unpaid',
-        'order' => rand(),
+        'order' =>'KDBI' . '-' . rand(),
         'kompetisi' => 'Debate Bahasa Indonesia Competition',
     ];
 
@@ -202,7 +200,7 @@ class OrderkdbiController extends Controller
 
 $params = array(
 'transaction_details' => array(
-    'order_id' => "KDBI" . '-' . $orderkdbi->order,
+    'order_id' => $orderkdbi->order,
     'gross_amount' => $orderkdbi->price,
 ),
 'item_details' => array(
@@ -237,6 +235,192 @@ public function callbackk(Request $request){
 public function homekdbi($id){
     $orderlkti = orderkdbi::find($id);
     $orderlkti->update(['status' => 'Paid']);
-    return view('index',);
+    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    return redirect()->away($whatsappGroupUrl);
+}
+
+public function checkout1(Request $request){
+    $order = $request->validate([
+        'nama_1' => 'required|string',
+        'nama_2' => 'required|string',
+        'email_1' => 'required|email',
+        'email_2' => 'required|email',
+        'fakultas_1'=> 'required|string',
+        'fakultas_2' => 'required|string',
+        'prodi_1' =>'required|string',
+        'prodi_2' => 'required|string',
+        'npm_1' => 'required|string',
+        'npm_2' => 'required|string',
+        'jeniskelamin_1' => 'required',
+        'jeniskelamin_2' => 'required',
+        'alamatlengkap_1' => 'required',
+        'alamatlengkap_2' => 'required',
+        'nomorhp_1'=> 'required',
+        'nomorhp_2' => 'required',
+        'namateam' => 'required',
+        'ktm_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'ktm_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'foto_1' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'foto_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'krs_1'=> 'required|mimes:png,jpeg,jpg|max:3000',
+        'krs_2' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'buktifollow_1' => 'required|mimes:pdf|max:3000',
+        'buktifollow_2' => 'required|mimes:pdf|max:3000',
+        'twibbon' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'twibbon2' => 'required|mimes:png,jpeg,jpg|max:3000',
+        'surat_delegasi' => 'required|mimes:pdf|max:3000',
+    ]); 
+
+    
+   
+    $orderkdbi = $request->all();
+    if ($request->hasFile('ktm_1')) {
+        $originalFileName = pathinfo($request->file('ktm_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('ktm_1')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/ktm_1/' . $imageName);
+        $orderkdbi['ktm_1'] = $imageUrl;
+    }
+
+    if ($request->hasFile('ktm_2')) {
+        $originalFileName = pathinfo($request->file('ktm_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('ktm_2')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/ktm_2/' . $imageName);
+        $orderkdbi['ktm_2'] = $imageUrl;
+    }
+    if ($request->hasFile('foto_1')) {
+        $originalFileName = pathinfo($request->file('foto_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('foto_1')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+        $imageUrl = asset('storage/images/kdbi/foto_1/' . $imageName);
+        $orderkdbi['foto_1'] = $imageUrl;
+    }
+    if ($request->hasFile('foto_2')) {
+        $originalFileName = pathinfo($request->file('foto_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('foto_2')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/foto_2/' . $imageName);
+        $orderkdbi['foto_2'] = $imageUrl;
+    }
+    if ($request->hasFile('krs_1')) {
+        $originalFileName = pathinfo($request->file('krs_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('krs_1')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/krs_1/' . $imageName);
+        $orderkdbi['krs_1'] = $imageUrl;
+    }
+    if ($request->hasFile('krs_2')) {
+        $originalFileName = pathinfo($request->file('krs_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('krs_2')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+    
+        $imageUrl = asset('storage/images/kdbi/krs_2/' . $imageName);
+        $orderkdbi['krs_2'] = $imageUrl;
+    }
+    if ($request->hasFile('buktifollow_1')) {
+        $originalFileName = pathinfo($request->file('buktifollow_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/document/kdbi/buktifollow_1/' . $imageName);
+        $orderkdbi['buktifollow_1'] = $imageUrl;
+    }
+    if ($request->hasFile('buktifollow_2')) {
+        $originalFileName = pathinfo($request->file('buktifollow_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+      
+    
+        $imageUrl = asset('storage/document/kdbi/buktifollow_2/' . $imageName);
+        $orderkdbi['buktifollow_2'] = $imageUrl;
+    }
+    if ($request->hasFile('twibbon_1')) {
+        $originalFileName = pathinfo($request->file('twibbon_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('twibbon_1')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/twibbon_1/' . $imageName);
+        $orderkdbi['twibbon_1'] = $imageUrl;
+    }
+    if ($request->hasFile('twibbon_2')) {
+        $originalFileName = pathinfo($request->file('twibbon_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('twibbon_2')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/twibbon_2/' . $imageName);
+        $orderkdbi['twibbon_2'] = $imageUrl;
+    }
+    if ($request->hasFile('surat_delegasi')) {
+        $originalFileName = pathinfo($request->file('surat_delegasi')->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+        $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
+        $imageName = $safeFileName . '.' . $extension;
+    
+       
+    
+        $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
+        $orderkdbi['surat_delegasi'] = $imageUrl;
+    }
+    $now = Carbon::now();
+    if ($now->between('2024-07-23', '2024-07-26')) {
+        $price = 300000; 
+    } elseif ($now->between('2024-07-27', '2024-08-11')) {
+        $price = 400000; 
+    } elseif ($now->between('2024-08-12', '2024-08-23')) {
+        $price = 450000; 
+    } else {
+        $price = 9999999; // Default or registration closed
+    }
+     $additionalData = [
+    'price' => $price,
+    'status' => 'Unpaid',
+    'instansi' => 'Universitas Nasional',
+    'order' =>'KDBI' . '-' . rand(),
+    'kompetisi' => 'Debate Bahasa Indonesia Competition',
+];
+
+$orderkdbi = array_merge($orderkdbi, $additionalData);
+    $orderkdbi = orderkdbi::create($orderkdbi);
+
+return view('matalomba/kdbi/checkoutunas', compact('orderkdbi'));
+}
+public function homekdbi1($id){
+    $orderlkti = orderkdbi::find($id);
+    $orderlkti->update(['status' => 'Khusus']);
+    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    return redirect()->away($whatsappGroupUrl);
 }
 }

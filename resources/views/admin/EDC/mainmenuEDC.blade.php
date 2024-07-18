@@ -4,27 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--=============== Icon Web ===============-->
-    <link rel="icon" href="../../img/uf1.png">
+    <link rel="icon" href="../../../img/uf1.png">
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="../css/nowrap.css">
+    <link rel="stylesheet" href="../../../css/nowrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/navadmin.css">
+    <link rel="stylesheet" href="../../../css/admin.css">
+    <link rel="stylesheet" href="../../../css/navadmin.css">
     <style>
-        #loadingDiv {
-   width: 100%;
-   height: 100%;
-   z-index: 99999;
-   position: fixed;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: white;
-}
- 
+
 #loadingDiv {
    width: 100%;
    height: 100%;
@@ -39,7 +29,7 @@
  .loader {
    width: 9.5rem;
    height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
+   background: center / contain no-repeat url(../../../img/loader.gif);
  }
      </style>
 
@@ -51,13 +41,13 @@
       </div>
 <!--==================== Navbar ====================-->
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container1">
         <div class="nav_menu" id="nav-menu">
             <i id="menu" class="fa fa-bars" aria-hidden="true"></i>
 
         </div>
         <div class="nav_logo" id="nav-logo">
-            <img class="logo" src="../../img/uf2.png" alt="Logo">
+            <img class="logo" src="../../../img/edcaja.png" alt="Logo">
             <h2><a href="#" class="nav__logo"  style="margin-left: -3rem">Admin EDC </a></h2>
         </div>
     </nav>
@@ -70,9 +60,10 @@
     <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalEDC')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
-    
+
+
     
     <!-- resources/views/mainmenu.blade.php -->
 
@@ -89,10 +80,10 @@
 
 <!--==================== Main Content ====================-->
 <div id="main-content" class="main-content">
-    <section id="home" style="display: block;">
+    <section id="home" class="homepage" style="display: block;">
         <div id="home-container">
-            <h3 class="welcome">@lang('messages.admin')</h3>
-            <h3 class="welcome">@lang('messages.admin1')</h3>
+            <h3 class="welcome2">@lang('messages.admin')</h3>
+            <h3 class="welcome3">@lang('messages.admin1')</h3>
         </div>
     </section>
     <section id="skor" style="display: none;">
