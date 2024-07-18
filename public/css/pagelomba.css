@@ -2,7 +2,7 @@
 .slide-container{
   max-width: 850px;
   width: 100%;
-  padding: 40px 0;
+  padding: 10px 0px 65px 0px;
 }
 .slide-content{
   margin: 0 20px;
@@ -12,7 +12,7 @@
 .judul{
   text-align: center;
   color: white;
-  margin-top: 2rem;
+  padding: 25px 0px 40px 0px;
 }
 .card{
   border-radius: 25px;
@@ -102,7 +102,9 @@
 .swiper-button-prev{
   left: 0;
 }
-.swiper-pagination{margin-bottom: 350px;position: absolute;}
+.swiper-pagination{
+  margin-bottom: 25rem;
+}
 .swiper-pagination-bullet{
   background-color: #6E93f7;
   opacity: 1;
@@ -112,20 +114,17 @@
 }
 @media screen and (max-width: 768px) {
   .swiper-pagination{
-  margin-bottom: 350px;
-  position: absolute;
+    margin-bottom: 25rem;
   }
 }
 @media screen and (max-width: 540px) {
   .swiper-pagination{
-  margin-bottom: 350px;
-  position: absolute;
+    margin-bottom: 27rem;
   }
 }
 @media screen and (max-width: 430px) {
   .swiper-pagination{
-    margin-bottom: 350px;
-    position: absolute;
+    margin-bottom: 30rem;
   }
 }
 @media screen and (max-width: 390px) {
@@ -140,8 +139,7 @@
     max-width: 350px;
   }
   .swiper-pagination{
-    margin-bottom: 350px;
-    position: absolute;
+    margin-bottom: 15rem;
   }
   .card{
     justify-content: center;
@@ -150,14 +148,12 @@
 }
 @media screen and (max-width: 344px) {
   .swiper-pagination{
-  margin-bottom: 350px;
-  position: absolute;
+    margin-bottom: 30rem;
   }
 }
 @media screen and (max-width: 320px) {
   .swiper-pagination{
-  margin-bottom: 350px;
-  position: absolute;
+    margin-bottom: 15rem;
   }
 }
 
@@ -167,10 +163,10 @@
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 1250px;
-  margin: 150px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 20px 20px 70px;
   gap: 20px;
 }
   .card-list .card-item {
@@ -200,7 +196,7 @@
     padding: 8px 15px;
     font-size: 1rem;
     border-radius: 50px;
-    font-weight: 800;
+    font-weight: 600;
   }
   .card-list .developer {
     background-color: #F7DFF5; 
@@ -264,8 +260,8 @@
 }
 
 .main .title{
+  padding: 95px 0px 25px 0px;
   font-size: 30px;
-  margin-top: 25rem;
   text-align: center;
   color: #f6ae31;
 }
@@ -280,7 +276,7 @@
 
 .card_container .card{
   max-width: 500px;
-  height: 640px;
+  height: 620px;
   margin-top: 5rem;
   border-radius: 25px;
   background: #ffffff;
@@ -290,38 +286,10 @@
   position: relative;
 }
 
-.user_content .name{
-  font-size: 20px;
-} 
-
-.user_content .post{
-  font-size: 15px;
-  color: #6e77d3;
-  margin: 15px 0;
-  font-weight: 400;
-  position: relative;
-  left: 16px;
-}
-
-.user_content .post::before{
-  content: "";
-  height: 1px;
-  width: 15px;
-  background: #6c77d3;
-  position: absolute;
-  top: 50%;
-  left: -16px;
-}
-
-.user_content .about{
-  color: #000000;
-  margin-top: 35px;
-  font-size: 15px;
-  text-align: justify;
-}
-
 .user_content1 .name{
   font-size: 20px;
+  color: #000;
+  
 } 
 
 .user_content1 .post{
@@ -344,6 +312,7 @@
 }
 
 
+
 .user_content1 .about{
   color: #000000;
   margin-top: 35px;
@@ -352,7 +321,9 @@
 }
 
 .user_content2 .name{
-  font-size: 20px;
+  font-size: 18px;
+  color: #000;
+  
 } 
 
 .user_content2 .post{
@@ -383,9 +354,44 @@
   text-align: justify;
 }
 
+.user_content3 .name{
+  font-size: 20px;
+  color: #000;
+  
+} 
+
+.user_content3 .post{
+  font-size: 15px;
+  color: #6e77d3;
+  margin: 15px 0;
+  font-weight: 400;
+  position: relative;
+  left: 16px;
+}
+
+.user_content3 .post::before{
+  content: "";
+  height: 1px;
+  width: 15px;
+  background: #6c77d3;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+}
+
+
+
+.user_content3 .about{
+  color: #000000;
+  margin-top: 35px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+
 .card .round_box{
   position: absolute;
-  top: -9%;
+  top: -12%;
   right: 7%;
   background: #ffffff !important;
   width: 130px;
@@ -396,7 +402,7 @@
 
 .card .img_box{
   position: absolute;
-  top: -9%;
+  top: -12%;
   right: 7%;
 
 }
@@ -412,59 +418,104 @@
 .testing1 {
   color: #f6ae31;
   text-align: center;
-  margin: 0 180px;
   font-size: 25;
-  margin-top: 50px;
-  margin-bottom: 90px;
+  padding: 20px 38px 70px;
 }
 @media screen and (max-width: 1024px) {
   .main {
-      margin-bottom: 50rem;
+      margin-bottom: auto;
   }
-  .testing1 {
-      margin: 0 150px;
-      margin-top: 40px;
-      margin-bottom: 50px;
+
+  .card_container .card{
+    height: 900px;
   }
+  .card .round_box{
+    position: absolute;
+    top: -8%;
+  
+  }
+  
+  .card .img_box{
+    position: absolute;
+    top: -8%;
+  
+  }
+  
+  .card .img_box img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+
+
+
 }
 @media screen and (max-width: 500px) {
   .testing1 {
-      margin: 0 20px;
-      margin-top: 40px;
-      margin-bottom: 50px;
       font-size: 17;
   }
-  .card_container .card{
-    height: 1000px;
+}
+@media screen and (max-width: 430px) {
 
-  }
+  .user_content1 {
+    margin-top: 2rem;
+}
+  .user_content2 {
+    margin-top: 2rem;
+}
+
 }
 @media screen and (max-width: 390px) {
-  .user_content{
-    margin-top: -32rem;
+  .user_content1 {
+      margin-top: 2rem;
   }
-  .user_content1{
-    margin-top: -8rem;
-  }
-  .user_content2{
-    margin-top: -30rem;
-  }
-} 
-@media screen and (max-width: 348px) {
-  .user_content{
-    margin-top: -28rem;
-  }
-  .user_content1{
-    margin-top: -2rem;
-  }
+  .user_content2 {
+    margin-top: -5rem;
 }
-@media screen and (max-width: 335px) {
-  .user_content1{
-    margin-top: 4rem;
+.user_content3 {
+  margin-top: 5rem;
+}
+
+.card_container .card{
+  height: 750px;
+}
+}
+@media screen and (max-width: 385px) {
+  .user_content1 {
+      margin-top: -9rem;
   }
-  .user_content2{
-    margin-top: -22rem;
+  .user_content2 {
+    margin-top: -23rem;
+}
+.user_content3 {
+  margin-top: 8rem;
+}
+.card_container .card{
+  height: 1000px;
+}
+}
+
+
+@media screen and (max-width: 344px) {
+  .user_content1 {
+      margin-top: -9rem;
   }
+  .user_content2 {
+    margin-top: -23rem;
+}
+.user_content3 {
+  margin-top: 1rem;
+}
+
+.user_content4 {
+  margin-top: -20rem;
+}
+.card_container .card{
+  height: 1100px;
+}
+
 }
 
 .icon{
