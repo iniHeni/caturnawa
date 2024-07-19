@@ -32,8 +32,10 @@ class UploadlktiController extends Controller
         $uploadlkti = $request->all();
         if($request->hasFile('naskah'))
         {
+            $destination_path = 'public/document/lkti/naskah';
             $image = $request->file('naskah');
             $image_name = time() . '.' . $image->getClientOriginalExtension();
+            $path = $request->file('naskah')->storeAS($destination_path,$image_name);
             $imageUrl = asset('storage/document/lkti/naskah/' . $image_name);
 
             $uploadlkti['naskah'] = $imageUrl;

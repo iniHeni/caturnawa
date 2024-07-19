@@ -89,7 +89,8 @@ class OrdersmController extends Controller
             $extension = $request->file('ktm_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/ktm_1';
+            $request->file('ktm_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/ktm_1/' . $imageName);
             $ordersm['ktm_1'] = $imageUrl;
@@ -101,7 +102,8 @@ class OrdersmController extends Controller
             $extension = $request->file('ktm_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/images/sm/ktm_2';
+            $request->file('ktm_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/ktm_2/' . $imageName);
             $ordersm['ktm_2'] = $imageUrl;
@@ -113,7 +115,8 @@ class OrdersmController extends Controller
             $extension = $request->file('ktm_3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/ktm_3';
+            $request->file('ktm_3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/ktm_3/' . $imageName);
             $ordersm['ktm_3'] = $imageUrl;
@@ -124,7 +127,8 @@ class OrdersmController extends Controller
             $extension = $request->file('ktm_4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/ktm_4';
+            $request->file('ktm_4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/ktm_4/' . $imageName);
             $ordersm['ktm_4'] = $imageUrl;
@@ -135,7 +139,8 @@ class OrdersmController extends Controller
             $extension = $request->file('ktm_5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/images/sm/ktm_5';
+            $request->file('ktm_5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/ktm_5/' . $imageName);
             $ordersm['ktm_5'] = $imageUrl;
@@ -146,7 +151,8 @@ class OrdersmController extends Controller
             $extension = $request->file('foto_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/images/sm/foto_1';
+            $request->file('foto_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/foto_1/' . $imageName);
             $ordersm['foto_1'] = $imageUrl;
@@ -157,7 +163,8 @@ class OrdersmController extends Controller
             $extension = $request->file('foto_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/images/sm/foto_2';
+            $request->file('foto_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/foto_2/' . $imageName);
             $ordersm['foto_2'] = $imageUrl;
@@ -168,7 +175,8 @@ class OrdersmController extends Controller
             $extension = $request->file('foto_3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/foto_3';
+            $request->file('foto_3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/foto_3/' . $imageName);
             $ordersm['foto_3'] = $imageUrl;
@@ -179,7 +187,8 @@ class OrdersmController extends Controller
             $extension = $request->file('foto_4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/images/sm/foto_4';
+            $request->file('foto_4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/foto_4/' . $imageName);
             $ordersm['foto_4'] = $imageUrl;
@@ -190,7 +199,8 @@ class OrdersmController extends Controller
             $extension = $request->file('foto_5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/foto_5';
+            $request->file('foto_5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/foto_5/' . $imageName);
             $ordersm['foto_5'] = $imageUrl;
@@ -201,7 +211,8 @@ class OrdersmController extends Controller
             $extension = $request->file('krs_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/krs_1';
+            $request->file('krs_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/krs_1/' . $imageName);
             $ordersm['krs_1'] = $imageUrl;
@@ -212,7 +223,8 @@ class OrdersmController extends Controller
             $extension = $request->file('krs_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/images/sm/krs_2';
+            $request->file('krs_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/krs_2/' . $imageName);
             $ordersm['krs_2'] = $imageUrl;
@@ -223,7 +235,8 @@ class OrdersmController extends Controller
             $extension = $request->file('krs_3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/krs_3';
+            $request->file('krs_3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/krs_3/' . $imageName);
             $ordersm['krs_3'] = $imageUrl;
@@ -234,7 +247,8 @@ class OrdersmController extends Controller
             $extension = $request->file('krs_4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/krs_4';
+            $request->file('krs_4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/krs_4/' . $imageName);
             $ordersm['krs_4'] = $imageUrl;
@@ -245,7 +259,8 @@ class OrdersmController extends Controller
             $extension = $request->file('krs_5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/images/sm/krs_5';
+            $request->file('krs_5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/krs_5/' . $imageName);
             $ordersm['krs_5'] = $imageUrl;
@@ -256,7 +271,8 @@ class OrdersmController extends Controller
             $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/document/sm/buktifollow_1';
+            $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/buktifollow_1/' . $imageName);
             $ordersm['buktifollow_1'] = $imageUrl;
@@ -267,7 +283,8 @@ class OrdersmController extends Controller
             $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/buktifollow_2';
+            $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/buktifollow_2/' . $imageName);
             $ordersm['buktifollow_2'] = $imageUrl;
@@ -278,7 +295,8 @@ class OrdersmController extends Controller
             $extension = $request->file('buktifollow_3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/document/sm/buktifollow_3';
+            $request->file('buktifollow_3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/buktifollow_3/' . $imageName);
             $ordersm['buktifollow_3'] = $imageUrl;
@@ -289,7 +307,8 @@ class OrdersmController extends Controller
             $extension = $request->file('buktifollow_4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/buktifollow_4';
+            $request->file('buktifollow_4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/buktifollow_4/' . $imageName);
             $ordersm['buktifollow_4'] = $imageUrl;
@@ -300,7 +319,8 @@ class OrdersmController extends Controller
             $extension = $request->file('buktifollow_5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/sm/buktifollow_5';
+            $request->file('buktifollow_5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/buktifollow_5/' . $imageName);
             $ordersm['buktifollow_5'] = $imageUrl;
@@ -311,7 +331,8 @@ class OrdersmController extends Controller
             $extension = $request->file('twibbon_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/twibbon_1';
+            $request->file('twibbon_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/twibbon_1/' . $imageName);
             $ordersm['twibbon_1'] = $imageUrl;
@@ -322,7 +343,8 @@ class OrdersmController extends Controller
             $extension = $request->file('twibbon_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/twibbon_2';
+            $request->file('twibbon_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/twibbon_2/' . $imageName);
             $ordersm['twibbon_2'] = $imageUrl;
@@ -333,7 +355,8 @@ class OrdersmController extends Controller
             $extension = $request->file('twibbon_3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/twibbon_3';
+            $request->file('twibbon_3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/twibbon_3/' . $imageName);
             $ordersm['twibbon_3'] = $imageUrl;
@@ -344,7 +367,8 @@ class OrdersmController extends Controller
             $extension = $request->file('twibbon_4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-         
+            $destinationPath = 'public/images/sm/twibbon_4';
+            $request->file('twibbon_4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/twibbon_4/' . $imageName);
             $ordersm['twibbon_4'] = $imageUrl;
@@ -355,7 +379,8 @@ class OrdersmController extends Controller
             $extension = $request->file('twibbon_5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/twibbon_5';
+            $request->file('twibbon_5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/twibbon_5/' . $imageName);
             $ordersm['twibbon_5'] = $imageUrl;
@@ -366,7 +391,8 @@ class OrdersmController extends Controller
             $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/sm/surat_delegasi/' . $imageName);
             $ordersm['surat_delegasi'] = $imageUrl;
@@ -377,9 +403,10 @@ class OrdersmController extends Controller
             $extension = $request->file('bio')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/sm/bio';
+            $request->file('bio')->storeAs($destinationPath, $imageName);
         
-            $imageUrl = asset('storage/document/sm/bio/' . $imageName);
+            $imageUrl = asset('storage/images/sm/bio/' . $imageName);
             $ordersm['bio'] = $imageUrl;
         }
 
@@ -537,7 +564,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/ktm_1';
+        $request->file('ktm_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/ktm_1/' . $imageName);
         $ordersm['ktm_1'] = $imageUrl;
@@ -549,7 +577,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/images/sm/ktm_2';
+        $request->file('ktm_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/ktm_2/' . $imageName);
         $ordersm['ktm_2'] = $imageUrl;
@@ -561,7 +590,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/ktm_3';
+        $request->file('ktm_3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/ktm_3/' . $imageName);
         $ordersm['ktm_3'] = $imageUrl;
@@ -572,7 +602,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/ktm_4';
+        $request->file('ktm_4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/ktm_4/' . $imageName);
         $ordersm['ktm_4'] = $imageUrl;
@@ -583,7 +614,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/images/sm/ktm_5';
+        $request->file('ktm_5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/ktm_5/' . $imageName);
         $ordersm['ktm_5'] = $imageUrl;
@@ -594,7 +626,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/images/sm/foto_1';
+        $request->file('foto_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/foto_1/' . $imageName);
         $ordersm['foto_1'] = $imageUrl;
@@ -605,7 +638,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/images/sm/foto_2';
+        $request->file('foto_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/foto_2/' . $imageName);
         $ordersm['foto_2'] = $imageUrl;
@@ -616,7 +650,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/foto_3';
+        $request->file('foto_3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/foto_3/' . $imageName);
         $ordersm['foto_3'] = $imageUrl;
@@ -627,7 +662,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/images/sm/foto_4';
+        $request->file('foto_4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/foto_4/' . $imageName);
         $ordersm['foto_4'] = $imageUrl;
@@ -638,7 +674,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/foto_5';
+        $request->file('foto_5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/foto_5/' . $imageName);
         $ordersm['foto_5'] = $imageUrl;
@@ -649,7 +686,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/krs_1';
+        $request->file('krs_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/krs_1/' . $imageName);
         $ordersm['krs_1'] = $imageUrl;
@@ -660,7 +698,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/images/sm/krs_2';
+        $request->file('krs_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/krs_2/' . $imageName);
         $ordersm['krs_2'] = $imageUrl;
@@ -671,7 +710,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/krs_3';
+        $request->file('krs_3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/krs_3/' . $imageName);
         $ordersm['krs_3'] = $imageUrl;
@@ -682,7 +722,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/krs_4';
+        $request->file('krs_4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/krs_4/' . $imageName);
         $ordersm['krs_4'] = $imageUrl;
@@ -693,7 +734,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/images/sm/krs_5';
+        $request->file('krs_5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/krs_5/' . $imageName);
         $ordersm['krs_5'] = $imageUrl;
@@ -704,7 +746,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/document/sm/buktifollow_1';
+        $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/sm/buktifollow_1/' . $imageName);
         $ordersm['buktifollow_1'] = $imageUrl;
@@ -715,7 +758,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/sm/buktifollow_2';
+        $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/sm/buktifollow_2/' . $imageName);
         $ordersm['buktifollow_2'] = $imageUrl;
@@ -726,7 +770,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/document/sm/buktifollow_3';
+        $request->file('buktifollow_3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/sm/buktifollow_3/' . $imageName);
         $ordersm['buktifollow_3'] = $imageUrl;
@@ -737,7 +782,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/sm/buktifollow_4';
+        $request->file('buktifollow_4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/sm/buktifollow_4/' . $imageName);
         $ordersm['buktifollow_4'] = $imageUrl;
@@ -748,7 +794,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/document/sm/buktifollow_5';
+        $request->file('buktifollow_5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/sm/buktifollow_5/' . $imageName);
         $ordersm['buktifollow_5'] = $imageUrl;
@@ -759,7 +806,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/twibbon_1';
+        $request->file('twibbon_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/twibbon_1/' . $imageName);
         $ordersm['twibbon_1'] = $imageUrl;
@@ -770,7 +818,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/twibbon_2';
+        $request->file('twibbon_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/twibbon_2/' . $imageName);
         $ordersm['twibbon_2'] = $imageUrl;
@@ -781,7 +830,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/twibbon_3';
+        $request->file('twibbon_3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/twibbon_3/' . $imageName);
         $ordersm['twibbon_3'] = $imageUrl;
@@ -792,7 +842,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-     
+        $destinationPath = 'public/images/sm/twibbon_4';
+        $request->file('twibbon_4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/twibbon_4/' . $imageName);
         $ordersm['twibbon_4'] = $imageUrl;
@@ -803,7 +854,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/twibbon_5';
+        $request->file('twibbon_5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/twibbon_5/' . $imageName);
         $ordersm['twibbon_5'] = $imageUrl;
@@ -814,7 +866,8 @@ public function checkout1(Request $request){
         $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/surat_delegasi';
+        $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/sm/surat_delegasi/' . $imageName);
         $ordersm['surat_delegasi'] = $imageUrl;
@@ -825,9 +878,10 @@ public function checkout1(Request $request){
         $extension = $request->file('bio')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/sm/bio';
+        $request->file('bio')->storeAs($destinationPath, $imageName);
     
-        $imageUrl = asset('storage/document/sm/bio/' . $imageName);
+        $imageUrl = asset('storage/images/sm/bio/' . $imageName);
         $ordersm['bio'] = $imageUrl;
     }
 

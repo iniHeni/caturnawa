@@ -90,7 +90,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('ktm')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/lkti/ktm';
+            $request->file('ktm')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/lkti/ktm/' . $imageName);
             $orderlkti['ktm'] = $imageUrl;
@@ -101,7 +102,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('foto')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/lkti/foto';
+            $request->file('foto')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/lkti/foto/' . $imageName);
             $orderlkti['foto'] = $imageUrl;
@@ -112,7 +114,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('krs')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/images/lkti/krs';
+            $request->file('krs')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/lkti/krs/' . $imageName);
             $orderlkti['krs'] = $imageUrl;
@@ -123,9 +126,10 @@ class OrderlktiController extends Controller
             $extension = $request->file('buktifollow')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/document/lkti/bukti';
+            $request->file('buktifollow')->storeAs($destinationPath, $imageName);
         
-            $imageUrl = asset('storage/document/lkti/buktifollow/' . $imageName);
+            $imageUrl = asset('storage/document/lkti/bukti/' . $imageName);
             $orderlkti['buktifollow'] = $imageUrl;
         }
         if ($request->hasFile('twibbon')) {
@@ -134,7 +138,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('twibbon')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/lkti/twibbon';
+            $request->file('twibbon')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/lkti/twibbon/' . $imageName);
             $orderlkti['twibbon'] = $imageUrl;
@@ -145,7 +150,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/surat_delegasi/' . $imageName);
             $orderlkti['surat_delegasi'] = $imageUrl;
@@ -156,7 +162,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/lkti/sertifikat';
+            $request->file('sertifikat')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat/' . $imageName);
             $orderlkti['sertifikat'] = $imageUrl;
@@ -167,7 +174,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat1';
+            $request->file('sertifikat1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat1/' . $imageName);
             $orderlkti['sertifikat1'] = $imageUrl;
@@ -181,7 +189,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat2';
+            $request->file('sertifikat2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat2/' . $imageName);
             $orderlkti['sertifikat2'] = $imageUrl;
@@ -195,7 +204,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat3')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/lkti/sertifikat3';
+            $request->file('sertifikat3')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat3/' . $imageName);
             $orderlkti['sertifikat3'] = $imageUrl;
@@ -209,7 +219,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat4')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat4';
+            $request->file('sertifikat4')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat4/' . $imageName);
             $orderlkti['sertifikat4'] = $imageUrl;
@@ -223,7 +234,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat5')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/lkti/sertifikat5';
+            $request->file('sertifikat5')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat5/' . $imageName);
             $orderlkti['sertifikat5'] = $imageUrl;
@@ -237,7 +249,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat6')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat6';
+            $request->file('sertifikat6')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat6/' . $imageName);
             $orderlkti['sertifikat6'] = $imageUrl;
@@ -251,7 +264,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat7')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/lkti/sertifikat7';
+            $request->file('sertifikat7')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat7/' . $imageName);
             $orderlkti['sertifikat7'] = $imageUrl;
@@ -265,7 +279,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat8')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat8';
+            $request->file('sertifikat8')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat8/' . $imageName);
             $orderlkti['sertifikat8'] = $imageUrl;
@@ -279,7 +294,8 @@ class OrderlktiController extends Controller
             $extension = $request->file('sertifikat9')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/lkti/sertifikat9';
+            $request->file('sertifikat9')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/lkti/sertifikat9/' . $imageName);
             $orderlkti['sertifikat9'] = $imageUrl;
@@ -442,7 +458,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/lkti/ktm';
+        $request->file('ktm')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/lkti/ktm/' . $imageName);
         $orderlkti['ktm'] = $imageUrl;
@@ -453,7 +470,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/images/lkti/foto';
+        $request->file('foto')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/lkti/foto/' . $imageName);
         $orderlkti['foto'] = $imageUrl;
@@ -464,7 +482,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/lkti/krs';
+        $request->file('krs')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/lkti/krs/' . $imageName);
         $orderlkti['krs'] = $imageUrl;
@@ -475,9 +494,10 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/bukti';
+        $request->file('buktifollow')->storeAs($destinationPath, $imageName);
     
-        $imageUrl = asset('storage/document/lkti/buktifollow/' . $imageName);
+        $imageUrl = asset('storage/document/lkti/bukti/' . $imageName);
         $orderlkti['buktifollow'] = $imageUrl;
     }
     if ($request->hasFile('twibbon')) {
@@ -486,7 +506,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/lkti/twibbon';
+        $request->file('twibbon')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/lkti/twibbon/' . $imageName);
         $orderlkti['twibbon'] = $imageUrl;
@@ -497,7 +518,8 @@ public function checkout1(Request $request){
         $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/surat_delegasi';
+        $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/surat_delegasi/' . $imageName);
         $orderlkti['surat_delegasi'] = $imageUrl;
@@ -508,7 +530,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat';
+        $request->file('sertifikat')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat/' . $imageName);
         $orderlkti['sertifikat'] = $imageUrl;
@@ -519,7 +542,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/document/lkti/sertifikat1';
+        $request->file('sertifikat1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat1/' . $imageName);
         $orderlkti['sertifikat1'] = $imageUrl;
@@ -533,7 +557,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/document/lkti/sertifikat2';
+        $request->file('sertifikat2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat2/' . $imageName);
         $orderlkti['sertifikat2'] = $imageUrl;
@@ -547,7 +572,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat3')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/document/lkti/sertifikat3';
+        $request->file('sertifikat3')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat3/' . $imageName);
         $orderlkti['sertifikat3'] = $imageUrl;
@@ -561,7 +587,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat4')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat4';
+        $request->file('sertifikat4')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat4/' . $imageName);
         $orderlkti['sertifikat4'] = $imageUrl;
@@ -575,7 +602,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat5')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat5';
+        $request->file('sertifikat5')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat5/' . $imageName);
         $orderlkti['sertifikat5'] = $imageUrl;
@@ -589,7 +617,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat6')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat6';
+        $request->file('sertifikat6')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat6/' . $imageName);
         $orderlkti['sertifikat6'] = $imageUrl;
@@ -603,7 +632,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat7')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-        
+        $destinationPath = 'public/document/lkti/sertifikat7';
+        $request->file('sertifikat7')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat7/' . $imageName);
         $orderlkti['sertifikat7'] = $imageUrl;
@@ -617,7 +647,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat8')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat8';
+        $request->file('sertifikat8')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat8/' . $imageName);
         $orderlkti['sertifikat8'] = $imageUrl;
@@ -631,7 +662,8 @@ public function checkout1(Request $request){
         $extension = $request->file('sertifikat9')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/lkti/sertifikat9';
+        $request->file('sertifikat9')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/lkti/sertifikat9/' . $imageName);
         $orderlkti['sertifikat9'] = $imageUrl;

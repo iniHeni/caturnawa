@@ -53,7 +53,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('ktm_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/kdbi/ktm_1';
+            $request->file('ktm_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/ktm_1/' . $imageName);
             $orderkdbi['ktm_1'] = $imageUrl;
@@ -65,7 +66,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('ktm_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/kdbi/ktm_2';
+            $request->file('ktm_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/ktm_2/' . $imageName);
             $orderkdbi['ktm_2'] = $imageUrl;
@@ -76,7 +78,9 @@ class OrderkdbiController extends Controller
             $extension = $request->file('foto_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/kdbi/foto_1';
+            $request->file('foto_1')->storeAs($destinationPath, $imageName);
+        
             $imageUrl = asset('storage/images/kdbi/foto_1/' . $imageName);
             $orderkdbi['foto_1'] = $imageUrl;
         }
@@ -86,7 +90,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('foto_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/kdbi/foto_2';
+            $request->file('foto_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/foto_2/' . $imageName);
             $orderkdbi['foto_2'] = $imageUrl;
@@ -97,7 +102,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('krs_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/kdbi/krs_1';
+            $request->file('krs_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/krs_1/' . $imageName);
             $orderkdbi['krs_1'] = $imageUrl;
@@ -108,6 +114,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('krs_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
+            $destinationPath = 'public/images/kdbi/krs_2';
+            $request->file('krs_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/krs_2/' . $imageName);
             $orderkdbi['krs_2'] = $imageUrl;
@@ -118,7 +126,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/kdbi/buktifollow_1';
+            $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/kdbi/buktifollow_1/' . $imageName);
             $orderkdbi['buktifollow_1'] = $imageUrl;
@@ -129,7 +138,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'public/document/kdbi/buktifollow_2';
+            $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/kdbi/buktifollow_2/' . $imageName);
             $orderkdbi['buktifollow_2'] = $imageUrl;
@@ -140,7 +150,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('twibbon_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/kdbi/twibbon_1';
+            $request->file('twibbon_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/twibbon_1/' . $imageName);
             $orderkdbi['twibbon_1'] = $imageUrl;
@@ -151,7 +162,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('twibbon_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/kdbi/twibbon_2';
+            $request->file('twibbon_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/twibbon_2/' . $imageName);
             $orderkdbi['twibbon_2'] = $imageUrl;
@@ -162,7 +174,8 @@ class OrderkdbiController extends Controller
             $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/images/kdbi/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
             $orderkdbi['surat_delegasi'] = $imageUrl;
@@ -280,7 +293,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/ktm_1';
+        $request->file('ktm_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/ktm_1/' . $imageName);
         $orderkdbi['ktm_1'] = $imageUrl;
@@ -292,7 +306,8 @@ public function checkout1(Request $request){
         $extension = $request->file('ktm_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/ktm_2';
+        $request->file('ktm_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/ktm_2/' . $imageName);
         $orderkdbi['ktm_2'] = $imageUrl;
@@ -303,7 +318,9 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/foto_1';
+        $request->file('foto_1')->storeAs($destinationPath, $imageName);
+    
         $imageUrl = asset('storage/images/kdbi/foto_1/' . $imageName);
         $orderkdbi['foto_1'] = $imageUrl;
     }
@@ -313,7 +330,8 @@ public function checkout1(Request $request){
         $extension = $request->file('foto_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/foto_2';
+        $request->file('foto_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/foto_2/' . $imageName);
         $orderkdbi['foto_2'] = $imageUrl;
@@ -324,7 +342,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/krs_1';
+        $request->file('krs_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/krs_1/' . $imageName);
         $orderkdbi['krs_1'] = $imageUrl;
@@ -335,6 +354,8 @@ public function checkout1(Request $request){
         $extension = $request->file('krs_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
+        $destinationPath = 'public/images/kdbi/krs_2';
+        $request->file('krs_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/krs_2/' . $imageName);
         $orderkdbi['krs_2'] = $imageUrl;
@@ -345,7 +366,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/document/kdbi/buktifollow_1';
+        $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/kdbi/buktifollow_1/' . $imageName);
         $orderkdbi['buktifollow_1'] = $imageUrl;
@@ -356,7 +378,8 @@ public function checkout1(Request $request){
         $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-      
+        $destinationPath = 'public/document/kdbi/buktifollow_2';
+        $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/document/kdbi/buktifollow_2/' . $imageName);
         $orderkdbi['buktifollow_2'] = $imageUrl;
@@ -367,7 +390,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_1')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/twibbon_1';
+        $request->file('twibbon_1')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/twibbon_1/' . $imageName);
         $orderkdbi['twibbon_1'] = $imageUrl;
@@ -378,7 +402,8 @@ public function checkout1(Request $request){
         $extension = $request->file('twibbon_2')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/twibbon_2';
+        $request->file('twibbon_2')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/twibbon_2/' . $imageName);
         $orderkdbi['twibbon_2'] = $imageUrl;
@@ -389,7 +414,8 @@ public function checkout1(Request $request){
         $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
         $imageName = $safeFileName . '.' . $extension;
     
-       
+        $destinationPath = 'public/images/kdbi/surat_delegasi';
+        $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
     
         $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
         $orderkdbi['surat_delegasi'] = $imageUrl;

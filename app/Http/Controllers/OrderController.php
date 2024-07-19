@@ -53,7 +53,8 @@ class OrderController extends Controller
             $extension = $request->file('ktm_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'storage/public/images/edc/ktm_1';
+            $request->file('ktm_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/ktm_1/' . $imageName);
             $order['ktm_1'] = $imageUrl;
@@ -64,7 +65,8 @@ class OrderController extends Controller
             $extension = $request->file('ktm_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/ktm_2';
+            $request->file('ktm_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/ktm_2/' . $imageName);
             $order['ktm_2'] = $imageUrl;
@@ -75,7 +77,8 @@ class OrderController extends Controller
             $extension = $request->file('foto_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/images/edc/foto_1';
+            $request->file('foto_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/foto_1/' . $imageName);
             $order['foto_1'] = $imageUrl;
@@ -86,7 +89,8 @@ class OrderController extends Controller
             $extension = $request->file('foto_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/foto_2';
+            $request->file('foto_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/foto_2/' . $imageName);
             $order['foto_2'] = $imageUrl;
@@ -97,7 +101,8 @@ class OrderController extends Controller
             $extension = $request->file('krs_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/krs_1';
+            $request->file('krs_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/krs_1/' . $imageName);
             $order['krs_1'] = $imageUrl;
@@ -108,7 +113,8 @@ class OrderController extends Controller
             $extension = $request->file('krs_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/krs_2';
+            $request->file('krs_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/krs_2/' . $imageName);
             $order['krs_2'] = $imageUrl;
@@ -119,7 +125,8 @@ class OrderController extends Controller
             $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/document/edc/buktifollow_1';
+            $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/buktifollow_1/' . $imageName);
             $order['buktifollow_1'] = $imageUrl;
@@ -130,7 +137,8 @@ class OrderController extends Controller
             $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/document/edc/buktifollow_2';
+            $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/buktifollow_2/' . $imageName);
             $order['buktifollow_2'] = $imageUrl;
@@ -141,7 +149,8 @@ class OrderController extends Controller
             $extension = $request->file('twibbon')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/twibbon';
+            $request->file('twibbon')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/twibbon/' . $imageName);
             $order['twibbon'] = $imageUrl;
@@ -152,7 +161,8 @@ class OrderController extends Controller
             $extension = $request->file('twibbon2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/images/edc/twibbon2';
+            $request->file('twibbon2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/twibbon2/' . $imageName);
             $order['twibbon2'] = $imageUrl;
@@ -163,7 +173,8 @@ class OrderController extends Controller
             $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/document/edc/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/surat_delegasi/' . $imageName);
             $order['surat_delegasi'] = $imageUrl;
@@ -291,7 +302,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('ktm_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-          
+            $destinationPath = 'storage/public/images/edc/ktm_1';
+            $request->file('ktm_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/ktm_1/' . $imageName);
             $order['ktm_1'] = $imageUrl;
@@ -302,7 +314,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('ktm_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/ktm_2';
+            $request->file('ktm_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/ktm_2/' . $imageName);
             $order['ktm_2'] = $imageUrl;
@@ -313,7 +326,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('foto_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/images/edc/foto_1';
+            $request->file('foto_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/foto_1/' . $imageName);
             $order['foto_1'] = $imageUrl;
@@ -324,7 +338,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('foto_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/foto_2';
+            $request->file('foto_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/foto_2/' . $imageName);
             $order['foto_2'] = $imageUrl;
@@ -335,7 +350,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('krs_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/krs_1';
+            $request->file('krs_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/krs_1/' . $imageName);
             $order['krs_1'] = $imageUrl;
@@ -346,7 +362,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('krs_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/krs_2';
+            $request->file('krs_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/krs_2/' . $imageName);
             $order['krs_2'] = $imageUrl;
@@ -357,7 +374,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('buktifollow_1')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/document/edc/buktifollow_1';
+            $request->file('buktifollow_1')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/buktifollow_1/' . $imageName);
             $order['buktifollow_1'] = $imageUrl;
@@ -368,7 +386,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('buktifollow_2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/document/edc/buktifollow_2';
+            $request->file('buktifollow_2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/buktifollow_2/' . $imageName);
             $order['buktifollow_2'] = $imageUrl;
@@ -379,7 +398,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('twibbon')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'storage/public/images/edc/twibbon';
+            $request->file('twibbon')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/twibbon/' . $imageName);
             $order['twibbon'] = $imageUrl;
@@ -390,7 +410,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('twibbon2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/images/edc/twibbon2';
+            $request->file('twibbon2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/edc/twibbon2/' . $imageName);
             $order['twibbon2'] = $imageUrl;
@@ -401,7 +422,8 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $extension = $request->file('surat_delegasi')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'storage/public/document/edc/surat_delegasi';
+            $request->file('surat_delegasi')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/edc/surat_delegasi/' . $imageName);
             $order['surat_delegasi'] = $imageUrl;

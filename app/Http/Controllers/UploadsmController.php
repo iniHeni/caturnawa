@@ -47,7 +47,8 @@ class UploadsmController extends Controller
             $extension = $request->file('poster')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/poster';
+            $request->file('poster')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/poster/' . $imageName);
             $uploadsm['poster'] = $imageUrl;
@@ -58,7 +59,8 @@ class UploadsmController extends Controller
             $extension = $request->file('script')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/document/sm/script';
+            $request->file('script')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/script/' . $imageName);
             $uploadsm['script'] = $imageUrl;
@@ -69,7 +71,8 @@ class UploadsmController extends Controller
             $extension = $request->file('karya')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/karya';
+            $request->file('karya')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/karya/' . $imageName);
             $uploadsm['karya'] = $imageUrl;
@@ -80,7 +83,8 @@ class UploadsmController extends Controller
             $extension = $request->file('cipta')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/cipta';
+            $request->file('cipta')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/cipta/' . $imageName);
             $uploadsm['cipta'] = $imageUrl;
@@ -91,7 +95,8 @@ class UploadsmController extends Controller
             $extension = $request->file('story')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/story';
+            $request->file('story')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/story/' . $imageName);
             $uploadsm['story'] = $imageUrl;
@@ -102,7 +107,8 @@ class UploadsmController extends Controller
             $extension = $request->file('sipnosis')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-            
+            $destinationPath = 'public/document/sm/sipnosis';
+            $request->file('sipnosis')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/sipnosis/' . $imageName);
             $uploadsm['sipnosis'] = $imageUrl;
@@ -113,7 +119,8 @@ class UploadsmController extends Controller
             $extension = $request->file('ori')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/ori';
+            $request->file('ori')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/ori/' . $imageName);
             $uploadsm['ori'] = $imageUrl;
@@ -124,7 +131,8 @@ class UploadsmController extends Controller
             $extension = $request->file('shortlist')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
-           
+            $destinationPath = 'public/document/sm/shortlist';
+            $request->file('shortlist')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/document/sm/shortlist/' . $imageName);
             $uploadsm['shortlist'] = $imageUrl;
