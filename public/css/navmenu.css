@@ -87,7 +87,6 @@ img {
   width:200px !important;
 }
 .nav_logo1 {
-  width: 200px !important;
   animation: bounceUpDown 4s infinite; /* Tambahkan animasi */
 }
 
@@ -397,9 +396,7 @@ img {
     margin-inline: auto;
     font-size: 2rem;
   }
-  .text{
-    /* margin-top: 150px; */
-  }
+
 }
 
 .homepage {

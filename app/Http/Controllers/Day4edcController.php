@@ -44,7 +44,7 @@ class Day4edcController extends Controller
                     ->withInput();
             }
     
-            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i));
+            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
     
             $day4edc = day4edc::create([
                 'juri' => $request->input('juri.' . $i),
@@ -86,7 +86,7 @@ class Day4edcController extends Controller
             'skorindividu1' => 'required|integer|min:0|max:100',
             'skorindividu2' => 'required|integer|min:0|max:100',
     ]);
-    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) ;
+    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2 ;
     $data = day4edc::find($id);
     $data->update($update);
         return redirect()->route('edc.tampiledc4');

@@ -134,7 +134,61 @@
                      background-color: #cecece !important;
                  }
      </style>
-     
+     <section id="rank">
+      <h1 class="judul" style="margin-bottom: 0px; margin-top:0px">Round</h1>  
+        <div class="card-list">
+          <div class="card-list">
+            @php
+            use Carbon\Carbon;
+      
+            $today = Carbon::now();
+      
+      
+            $ronde1 = Carbon::parse('2024-06-28');
+            $ronde2 = Carbon::parse('2024-4-15');
+        @endphp
+               <a href="#" class="card-item" onclick="
+               event.preventDefault(); 
+               @if (!$today->greaterThanOrEqualTo($ronde1)) 
+         
+                   Swal.fire({
+                       title: '@lang('messages.sweet1')',
+                       text: '@lang('messages.sweet2')',
+                       icon: 'info'
+                   });
+               @else 
+         
+                   window.location.href = '{{url('matalomba/kdbi/semifinal/round1') }}'; 
+               @endif
+           ">
+                    <img src="../../../img/kdbi2.png" alt="Card Image">
+                    <h3>Round 1</h3>
+                    <div class="arrow">
+                        <i class="card-icon">Detail</i>
+                    </div>
+                </a>
+                <a href="#" class="card-item" onclick="
+                event.preventDefault(); 
+                @if (!$today->greaterThanOrEqualTo($ronde1)) 
+          
+                    Swal.fire({
+                        title: '@lang('messages.sweet1')',
+                        text: '@lang('messages.sweet2')',
+                        icon: 'info'
+                    });
+                @else 
+          
+                    window.location.href = '{{url('matalomba/kdbi/semifinal/round2') }}'; 
+                @endif
+            ">
+                    <img src="../../../img/kdbi2.png" alt="Card Image">
+                    <h3>Round 2</h3>
+                    <div class="arrow">
+                        <i class="card-icon">Detail</i>
+                    </div>
+                </a>
+            </div>
+        </section>
 <!--==================== Juri ====================-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

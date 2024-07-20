@@ -263,7 +263,7 @@ $("body").css(
        function hitungTotal() {
            const skor1 = parseInt(skorIndividu1Input.value) || 0;
            const skor2 = parseInt(skorIndividu2Input.value) || 0;
-           totalInput.value = skor1 + skor2;
+           totalInput.value = (skor1 + skor2) / 2;
        }
    
        namaPesertaSelect.addEventListener('change', () => {

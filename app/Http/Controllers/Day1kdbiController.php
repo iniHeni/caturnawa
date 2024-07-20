@@ -42,7 +42,7 @@ class Day1kdbiController extends Controller
                     ->withInput();
             }
     
-            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i));
+            $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
     
             $day1kdbi = day1kdbi::create([
                 'juri' => $request->input('juri.' . $i),
@@ -87,7 +87,7 @@ class Day1kdbiController extends Controller
             'skorindividu1' => 'required|integer|min:0|max:100',
             'skorindividu2' => 'required|integer|min:0|max:100',
     ]);
-    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']);
+    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2;
     $data = day1kdbi::find($id);
     $data->update($update);
         return redirect()->route('kdbi.tampilkdbi');

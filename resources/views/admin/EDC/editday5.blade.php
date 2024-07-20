@@ -244,7 +244,7 @@ $("body").css(
       const skorindividu1 = parseFloat(form.skorindividu1.value) || 0;
       const skorindividu2 = parseFloat(form.skorindividu2.value) || 0;
 
-      const total = skorindividu1 + skorindividu2;
+      const total = (skorindividu1 + skorindividu2) / 2;
       form.total.value = total;
     }
   </script>

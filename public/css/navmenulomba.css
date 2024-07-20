@@ -91,7 +91,7 @@ img {
 }
 
 .nav_logo1:hover {
-  transform: scale(1.1); /* Memperbesar logo sebesar 110% saat dihover */
+  transform: scale(1.1);
 }
 
 
