@@ -13,13 +13,13 @@
 
 .waktu {
     font-family:"Lato", sans-serif;
-    min-height: 100vh;
+    min-height: 150vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    margin-top: 10rem;
+
 }
 
 h1{

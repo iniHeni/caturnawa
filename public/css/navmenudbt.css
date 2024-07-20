@@ -90,6 +90,13 @@ img {
 .nav_logo{
   width:140px !important;
 }
+.nav_logo1 {
+  transition: transform 0.3s ease; /* Menambahkan transisi untuk efek halus */
+}
+
+.nav_logo1:hover {
+  transform: scale(1.1); /* Memperbesar logo sebesar 110% saat dihover */
+}
 
 
 

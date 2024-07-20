@@ -41,7 +41,7 @@ class Day2edcController extends Controller
                 ->withInput();
         }
 
-        $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) / 2;
+        $totalSkorTim = ($request->input('skorindividu1.' . $i) + $request->input('skorindividu2.' . $i)) ;
 
         $day2edc = day2edc::create([
             'juri' => $request->input('juri.' . $i),
@@ -86,7 +86,7 @@ class Day2edcController extends Controller
             'skorindividu1' => 'required|integer|min:0|max:100',
             'skorindividu2' => 'required|integer|min:0|max:100',
     ]);
-    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) / 2 ;
+    $update['total'] = ($update['skorindividu1'] + $update['skorindividu2']) ;
     $data = day2edc::find($id);
     $data->update($update);
         return redirect()->route('edc.tampiledc2');

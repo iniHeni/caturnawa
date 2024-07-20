@@ -94,9 +94,9 @@
                     <label for="juri[{{ $i }}]">Adjudicators *data seterusnya akan otomatis</label>
                     <select name="juri[{{ $i }}]" id="juri_{{ $i }}" class="autofill" required>
                         <option selected>Pilih Adjudicators</option>
-                        <option>Aldifikri Kevin Marvel</option>
+                        <option>Hezron Kowardi</option>
                         <option>Ahmad Kushay</option>
-                        <option>Muhammad Aditya Muchtar</option>
+                        <option>Mouliza Kristhopher Donna</option>
                     </select>
                 </div>
                 
@@ -107,7 +107,7 @@
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
-                </div>
+                  </div>
     
                 <div class="input-field">
                     <label for="sesi[{{ $i }}]">Session *data seterusnya akan otomatis</label>
@@ -283,7 +283,7 @@ formElements.forEach((form, index) => {
     function hitungTotal() {
         const skor1 = parseInt(skorIndividu1Input.value) || 0;
         const skor2 = parseInt(skorIndividu2Input.value) || 0;
-        totalInput.value = (skor1 + skor2) / 2;
+        totalInput.value = skor1 + skor2;
     }
 
     namaPesertaSelect.addEventListener('change', () => {

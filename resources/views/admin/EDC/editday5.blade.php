@@ -103,9 +103,9 @@
                         <label for="juri">Adjudicators </label>
                         <select name="juri" id="juri"  required >
                             <option selected>{{ $edit->juri }}</option>
-                            <option>Aldifikri Kevin Marvel</option>
-                            <option>Ahmad Kushay</option>
-                            <option>Muhammad Aditya Muchtar</option>
+                            <option>Hezron Kowardi</option>
+                        <option>Ahmad Kushay</option>
+                        <option>Mouliza Kristhopher Donna</option>
                         </select>
                     </div>
                     <div class="input-field">
@@ -244,7 +244,7 @@ $("body").css(
       const skorindividu1 = parseFloat(form.skorindividu1.value) || 0;
       const skorindividu2 = parseFloat(form.skorindividu2.value) || 0;
 
-      const total = (skorindividu1 + skorindividu2) / 2;
+      const total = skorindividu1 + skorindividu2;
       form.total.value = total;
     }
   </script>

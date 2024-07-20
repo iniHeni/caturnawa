@@ -175,7 +175,7 @@
                 </div>
 
                 <div class="user_content1">
-                    <h5 class="name">Aldifikri Kevin Marvel</h5>
+                    <h5 class="name">Hezron Kowardi</h5>
                     <p class="post">@lang('messages.juriposisi1')</p>
                     <p class="about">@lang('messages.juribio1')</p>
                     <a href="https://www.linkedin.com/in/marvelkevin" class="icon facebook">
@@ -209,7 +209,7 @@
                 </div>
 
                 <div class="user_content3">
-                    <h5 class="name">Muhammad Aditya Muchtar</h5>
+                    <h5 class="name">Mouliza Kristhopher Donna</h5>
                     <p class="post">@lang('messages.juriposisi3')</p>
                     <p class="about">@lang('messages.juribio3')</p>
                     <a href="https://www.linkedin.com/in/muchaditya/?jobid=1234" class="icon facebook">

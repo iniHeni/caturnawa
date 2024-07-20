@@ -204,10 +204,13 @@
                   </div>
                   @endif
                 
-                  <div class="card-item">
-                    <img src="../../../img/kdbi2.png" alt="Card Image">
-                    <h3>Round 4</h3>
+
+                    
                     @if($dataa4->count() > 0)
+                   
+                    <div class="card-item">
+                      <img src="../../../img/kdbi2.png" alt="Card Image">
+                      <h3>Round 4</h3>
                     @foreach($dataa4->groupBy('sesi') as $sesi4 => $dataPerSesi4)
                       <a href="#" onclick="
                           event.preventDefault(); 

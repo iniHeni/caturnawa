@@ -86,8 +86,18 @@ img {
 .nav_logo{
   width:200px !important;
 }
-.nav_logo1{
-  width:200px !important;
+.nav_logo1 {
+  width: 200px !important;
+  animation: bounceUpDown 4s infinite; /* Tambahkan animasi */
+}
+
+@keyframes bounceUpDown { /* Definisikan animasi */
+  0%, 100% {
+    transform: translateY(0); /* Posisi awal dan akhir */
+  }
+  50% {
+    transform: translateY(-20px); /* Bergerak ke atas */
+  }
 }
 
 
