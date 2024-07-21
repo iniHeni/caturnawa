@@ -95,7 +95,7 @@ img {
     transform: translateY(0); /* Posisi awal dan akhir */
   }
   50% {
-    transform: translateY(-20px); /* Bergerak ke atas */
+    transform: translateY(-100px); /* Bergerak ke atas */
   }
 }
 

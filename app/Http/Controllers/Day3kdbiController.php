@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
+use Carbon\Carbon;
 
 class Day3kdbiController extends Controller
 {
@@ -133,6 +134,10 @@ public function hapuskdbi3($id){
  }
 
  public function gabungankdbisf(){
+    $now = Carbon::now();
+
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+
     $totalVpDay1 = day1kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
@@ -142,9 +147,17 @@ $totalVpDay2 = day2kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as to
     ->get();
 
 $totalVpDay3 = day3kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
-    ->groupBy('team', 'nama1', 'nama2')
+->where('ronde', '1')    
+->groupBy('team', 'nama1', 'nama2')
     ->get();
 
+$totalVpDay3r2 = collect();
+if ($now->gte($waktuTargetDay1Ronde2)) {
+$totalVpDay3 = day3kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+    ->where('ronde', '2')
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
+}
 $groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)
     ->groupBy('team')
     ->map(function ($group) {
@@ -161,7 +174,7 @@ $groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)
         $item['rank'] = $index + 1;
         return $item;
     });
-        
-    return view('matalomba/kdbi/sfinal', compact('groupedByTeam'));
+    $dataa2 = $now->gte($waktuTargetDay1Ronde2) ? day3kdbi::where('ronde', '2')->get() : collect();
+    return view('matalomba/kdbi/sfinal', compact('groupedByTeam', 'dataa2'));
  }
 }

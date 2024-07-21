@@ -101,7 +101,7 @@
                 <table>
                 <div class="form first">
                 <div class="details personal">
-                        <span class="title">Debater 1</span>
+                        <span class="title">Debater 1 *@lang('messages.keterangan')</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                     <div class="details ">
-                        <span class="title">Debater 2</span>
+                        <span class="title">Debater 2 *@lang('messages.keterangan')</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label>@lang('messages.Name')</label>

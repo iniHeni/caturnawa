@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
+use Carbon\Carbon;
 
 class Day3edcController extends Controller
 {
@@ -133,6 +134,12 @@ public function hapusedc3($id){
  }
 
  public function gabungansf(){
+
+    $now = Carbon::now();
+
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+
+ 
     $totalVpDay1 = day1edc::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
@@ -142,10 +149,18 @@ $totalVpDay2 = day2edc::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as tot
     ->get();
 
 $totalVpDay3 = day3edc::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+    ->where('ronde', '1')
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
 
-$groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)
+$totalVpDay3r2 = collect();
+if ($now->gte($waktuTargetDay1Ronde2)) {
+$totalVpDay3 = day3edc::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+    ->where('ronde', '2')
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
+}
+$groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)->concat($totalVpDay3r2)
     ->groupBy('team')
     ->map(function ($group) {
         return [
@@ -161,7 +176,7 @@ $groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)
         $item['rank'] = $index + 1;
         return $item;
     });
-        
-    return view('matalomba/edc/sfinal', compact('groupedByTeam'));
+    $dataa2 = $now->gte($waktuTargetDay1Ronde2) ? day3edc::where('ronde', '2')->get() : collect();
+    return view('matalomba/edc/sfinal', compact('groupedByTeam', 'dataa2'));
  }
 }

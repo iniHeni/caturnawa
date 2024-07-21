@@ -167,6 +167,9 @@
                         <i class="card-icon">Detail</i>
                     </div>
                 </a>
+                @if($dataa2->count() > 0)
+                <img src="../../../img/kdbi2.png" alt="Card Image">
+                <h3>Round 2</h3>
                 <a href="#" class="card-item" onclick="
                 event.preventDefault(); 
                 @if (!$today->greaterThanOrEqualTo($ronde1)) 
@@ -181,12 +184,11 @@
                     window.location.href = '{{url('matalomba/kdbi/semifinal/round2') }}'; 
                 @endif
             ">
-                    <img src="../../../img/kdbi2.png" alt="Card Image">
-                    <h3>Round 2</h3>
                     <div class="arrow">
                         <i class="card-icon">Detail</i>
                     </div>
                 </a>
+                @endif
             </div>
         </section>
 <!--==================== Juri ====================-->

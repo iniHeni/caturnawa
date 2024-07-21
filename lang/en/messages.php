@@ -290,5 +290,6 @@ contributions to social and economic development in the future.',
      'rata' =>  'Avarage Team Score',
      'unass' =>  'Register (UNAS Student)',
      'oopen' => 'Opened On',
+     'keterangan' => 'this position will not change until the competition ends.',
      ]
 ?>

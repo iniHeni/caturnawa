@@ -310,6 +310,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'rata' =>  'Rata - rata tim skor',
     'unass' =>  'Khusus Mahasiswa UNAS',
     'oopen' => 'Dibuka Pada Tanggal',
+    'keterangan' => 'Posisi ini tidak akan berubah hingga kompetisi berakhir',
 
      
 
