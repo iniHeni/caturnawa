@@ -19,6 +19,7 @@
       <link rel="stylesheet" href="../../css/back.css">
       <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pagelombaedc.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - EDC</title>
       <style>
@@ -132,10 +133,34 @@
           </div>
   </section>
 <!--==================== Round ====================-->
+@php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanEnd = Carbon::parse('2024-12-29');
+$semiFinalDate = Carbon::parse('2024-08-20');
+$finalDate = Carbon::parse('2024-09-16');
+@endphp
 <section id="rank">
     <h1 class="judul">@lang('messages.babak')</h1>
     <div class="card-list">
-            <a href="{{url('matalomba/edc/penyisihan') }}" class="card-item">
+            <a href="#" class="card-item" onclick="
+            event.preventDefault(); 
+            @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
+    
+                Swal.fire({
+                    title: '@lang('messages.sweet1')',
+                    text: '@lang('messages.bukaedc')',
+                    icon: 'info'
+                });
+            @else 
+     
+                window.location.href = '{{url('matalomba/edc/penyisihan') }}'; 
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
                 <h3>@lang('messages.dilaksanakan')<br>18 - 19 September</h3>
@@ -143,7 +168,14 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="{{url('matalomba/edc/Semifinal') }}" class="card-item">
+            <a href="#" class="card-item" onclick="
+            event.preventDefault();
+            @if (!$today->greaterThanOrEqualTo($semiFinalDate))
+                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+            @else
+                window.location.href = '{{url('matalomba/edc/Semifinal') }}';
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="designer">Semifinal</span>
                 <h3>@lang('messages.dilaksanakan')<br>20 September</h3>
@@ -151,7 +183,14 @@
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="{{url('matalomba/edc/Final') }}" class="card-item">
+            <a href="{{url('matalomba/edc/Final') }}" class="card-item" onclick="
+            event.preventDefault();
+            @if (!$today->greaterThanOrEqualTo($finalDate))
+                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+            @else
+                window.location.href = '{{url('matalomba/edc/Final') }}';
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="editor">Final</span>
                 <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1')</h3>
@@ -171,7 +210,7 @@
             <div class="card">
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/JuriEDC.jpg" alt="">
+                    <img src="../../img/juriedcbaru2.jpg" alt="">
                 </div>
 
                 <div class="user_content1">
@@ -205,7 +244,7 @@
                 <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/JuriEDC3.jpg" alt="">
+                    <img src="../../img/juriedcbaru3.jpeg" alt="">
                 </div>
 
                 <div class="user_content3">

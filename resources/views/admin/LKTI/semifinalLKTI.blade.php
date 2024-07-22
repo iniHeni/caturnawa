@@ -91,13 +91,28 @@
         @csrf
     </form>
 </div>
+@php
+use Carbon\Carbon;
 
+$today = Carbon::now();
+
+
+$tambah = Carbon::parse('2024-05-28');
+
+@endphp
 <div id="data-container">
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Semifinal</h1>
-                <p><a class="add" href="{{ route('spc.pesertaasf') }}" style="color: white">Tambah Penilaian</a></p>
+                <p><a class="add" href="#" style="color: white" onclick="
+                    event.preventDefault();
+                    @if (!$today->greaterThanOrEqualTo($tambah))
+                        Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                    @else
+                        window.location.href = '{{ route('spc.pesertaasf') }}';
+                    @endif
+                ">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         @foreach ($groupedData as $namapeserta => $pesertaGroup)
@@ -124,10 +139,24 @@
                                 <td class="mid" rowspan="3">{{ $peserta->total}}</td>
                                 <td rowspan="3">{{ $peserta->juri}}</td>   
                                 <td rowspan="3" style="text-align: center">
-                                    <a href="{{ route('spc.editsf', $peserta->id) }}">Edit</a>
+                                    <a href="#" onclick="
+                                        event.preventDefault();
+                                        @if (!$today->greaterThanOrEqualTo($tambah))
+                                            Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                                        @else
+                                            window.location.href = '{{ route('spc.editsf', $peserta->id) }}';
+                                        @endif
+                                    ">Edit</a>
                                     <form action="{{ route('spc.hapussf', $peserta->id) }}" method="POST" id="delete-form-{{ $peserta->id }}">
                                         @csrf
-                                        <button  type="button" style="color: red" onclick="confirmDelete({{ $peserta->id }})">Hapus</button>
+                                        <button  type="button" style="color: red" onclick="
+                                        event.preventDefault();
+                                        @if (!$today->greaterThanOrEqualTo($tambah))
+                                            Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
+                                        @else
+                                            confirmDelete({{ $peserta->id }})
+                                        @endif
+                                    ">Hapus</button>
                                     </form>
                                 </td>
 

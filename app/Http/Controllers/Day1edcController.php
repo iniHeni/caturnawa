@@ -137,13 +137,13 @@ $dataByRoom = $dataa->groupBy('room');
     $now = Carbon::now();
 
     // Waktu target untuk ronde 2 day1edc
-    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 20:00:00', 'Asia/Jakarta'); 
 
     // Waktu target untuk ronde 1 day2edc
-    $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 20:00:00', 'Asia/Jakarta'); 
 
     // Waktu target untuk ronde 2 day2edc
-    $waktuTargetDay2Ronde2s2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay2Ronde2s2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 20:00:00', 'Asia/Jakarta'); 
 
     // Query untuk day1edc ronde 1
     $totalVpDay1Ronde1 = day1edc::select(

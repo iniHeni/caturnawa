@@ -91,6 +91,7 @@
         @csrf
     </form>
 </div>
+
 <div id="data-container">
     <section id="skor">
         <div class="container" style=" justify-content: center;">
@@ -120,11 +121,27 @@
             </div>
         </div>
     </section>
+    @php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$tambahedit = Carbon::parse('2024-05-28');
+
+@endphp
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
-                <p><a class="add" href="{{ route('sm.pesertasf') }}" style="color: white">Tambah Penilaian</a></p>
+                <p><a class="add" href="#" style="color: white" onclick="
+                    event.preventDefault();
+                    @if (!$today->greaterThanOrEqualTo($tambahedit))
+                        Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                    @else
+                        window.location.href = '{{ route('sm.pesertasf') }}';
+                    @endif
+                ">Tambah Penilaian</a></p>
                 @if($penyisihann->count() > 0)
   <div class="card-list">
       @foreach($penyisihann as $rank => $data)

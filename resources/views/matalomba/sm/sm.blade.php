@@ -124,9 +124,9 @@
             @php
             use Carbon\Carbon;
             $today = Carbon::now();
-            $penyisihanStart = Carbon::parse('2024-05-29');
-            $penyisihanEnd = Carbon::parse('2024-09-28');
-            $finalDate = Carbon::parse('2024-04-18');
+            $penyisihanStart = Carbon::parse('2024-08-30');
+            $penyisihanEnd = Carbon::parse('2024-12-19');
+            $finalDate = Carbon::parse('2024-09-19');
             @endphp
             <a href="#" class="card-item" onclick="
               event.preventDefault(); 
@@ -175,7 +175,7 @@
                      <img src="../../img/daniel.png" alt="">
                   </div>
                   <div class="user_content1">
-                     <h5 class="name">Daniel Wisnu Wardhana</h5>
+                     <h5 class="name"> Raden Daniel Wisnu Wardhana</h5>
                      <p class="post">@lang('messages.jurismposisi1')</p>
                      <p class="about">@lang('messages.jurismbio1')</p>
                      <a href="https://www.linkedin.com/in/raden-wardana-a737992b9/?jobid=1234" class="icon facebook">

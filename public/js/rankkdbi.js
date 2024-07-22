@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
         let phaseStart, phaseEnd;
         if (index === 0) {
-          phaseStart = new Date(currentYear, 6, 23); 
+          phaseStart = new Date(currentYear, 5, 23); 
           phaseEnd = new Date(currentYear, 6, 28, 23, 59, 59); 
         } else if (index === 1) {
           phaseStart = new Date(currentYear, 6, 29); 

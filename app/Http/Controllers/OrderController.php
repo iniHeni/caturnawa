@@ -240,7 +240,7 @@ return view('matalomba/edc/checkout', compact('order'));
     public function homeedc($id){
         $orderlkti = Order::find($id);
         $orderlkti->update(['status' => 'Paid']);
-        $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+        $whatsappGroupUrl = "https://chat.whatsapp.com/CbPvKbhyirI5Pi8mlekEnl"; 
 
     return redirect()->away($whatsappGroupUrl);
     }
@@ -436,7 +436,7 @@ return view('matalomba/edc/unascheckout', compact('order'));
     public function homeedc1($id){
         $orderlkti = Order::find($id);
         $orderlkti->update(['status' => 'Khusus']);
-        $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+        $whatsappGroupUrl = "https://chat.whatsapp.com/CbPvKbhyirI5Pi8mlekEnl"; 
 
     return redirect()->away($whatsappGroupUrl);
     }

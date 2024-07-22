@@ -138,10 +138,10 @@
               $today = Carbon::now();
       
         
-              $penyisihanStart = Carbon::parse('2024-06-28');
-              $penyisihanEnd = Carbon::parse('2024-09-29');
-              $semiFinalDate = Carbon::parse('2024-06-29');
-              $finalDate = Carbon::parse('2024-04-18');
+              $penyisihanStart = Carbon::parse('2024-08-29');
+              $penyisihanEnd = Carbon::parse('2024-12-29');
+              $semiFinalDate = Carbon::parse('2024-09-29');
+              $finalDate = Carbon::parse('2024-10-18');
           @endphp
       
 
@@ -214,7 +214,7 @@
                 <div class="card">
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurispc1.jpg" alt="">
+                        <img src="../../img/jurispcbaru1.jpeg" alt="">
                     </div>
     
                     <div class="user_content1">
@@ -228,7 +228,7 @@
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurispc4.png" alt="">
+                        <img src="../../img/jurispcbaru2.jpeg" alt="">
                     </div>
     
                     <div class="user_content2">

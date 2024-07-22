@@ -2,6 +2,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran."> 
       <!--=============== Icon Web ===============-->
       <link rel="icon" href="../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -19,6 +20,28 @@
          
       <link rel="stylesheet" href="../css/navmenu.css">
       <link rel="stylesheet" href="../css/homepage.css">
+      <meta name="keywords" content="UNAS FEST, Caturnawa, lomba, kompetisi, debat, film pendek, paper ilmiah, Shortmovie, Scientific paper competittion, Debat Bahasa Indonesia,Debat, English debat competition"> <meta property="og:title" content="Caturnawa - UNAS FEST 2024"> <meta property="og:description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran.">
+      <meta property="og:image" content="https://ugc.production.linktr.ee/08160005-8bb4-4b97-9ac7-f4e402be19af_Logo-UNAS-FEST.png?io=true&size=avatar-v3_0"> 
+      <meta property="og:url" content="caturnawa.unasfest.com">
+      <meta name="twitter:card" content="summary_large_image"> <script type="application/ld+json">
+          {
+              "@context": "https://caturnawa.unasfest.com/",
+              "@type": "Event",
+              "name": "Caturnawa UNAS FEST 2024",
+              "startDate": "2024-07-28",  "location": {
+                  "@type": "Place",
+                  "name": "Universitas Nasional",
+                  "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "Jl. Sawo Manila No.61, RT.8/RW.3, Ps. Minggu",
+                      "addressLocality": "Jakarta Selatan",
+                      "addressRegion": "DKI Jakarta",
+                      "postalCode": "12520",
+                      "addressCountry": "ID"
+                  }
+              }
+          }
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -249,7 +272,12 @@
 </div>
 
       <!--==================== Mata Lomba ====================-->
-
+      @php
+      use Carbon\Carbon;
+      $today = Carbon::now();
+      $penyisihanStart = Carbon::parse('2024-08-24');
+      $finalDate = Carbon::parse('2024-09-29');
+      @endphp
       <section id="matalomba" class="container">
          <h5 class="judullomba" style="font-size: 40px;">@lang('messages.jenislomba')</h5>
 
@@ -264,14 +292,28 @@
                  <img src="../img/sm1.png" alt="Card Image">
                  <h3>Short Movie Competition</h3>
                  <a id="registerButtonSM" href="{{url('/periodeSM') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSM') }}" class="card-icon" id="uploadBtnSM">@lang('messages.unggah')</a>
+                 <a href="#" class="card-icon" id="uploadBtnSM" onclick="
+                 event.preventDefault();
+                 @if (!$today->greaterThanOrEqualTo($penyisihanStart))
+                     Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaunggah')', 'info');
+                 @else
+                     window.location.href = '{{url('/matalomba/UploadSM') }}';
+                 @endif
+             ">@lang('messages.unggah')</a>
                  <a href="{{route('sm.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardSPC" class="card-item">
                  <img src="../img/spc.png" alt="Card Image">
                  <h3>Scientific Paper Competition</h3>
                  <a id="registerButtonSPC" href="{{url('/periodeLKTI') }}" class="card-icon">@lang('messages.Daftar')</a>
-                 <a href="{{url('/matalomba/UploadSPC') }}" class="card-icon" id="uploadBtnSPC">@lang('messages.unggah')</a>
+                 <a href="#" class="card-icon" id="uploadBtnSPC" onclick="
+                 event.preventDefault();
+                 @if (!$today->greaterThanOrEqualTo($finalDate))
+                     Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaunggah')', 'info');
+                 @else
+                     window.location.href = '{{url('/matalomba/UploadSPC') }}';
+                 @endif
+             ">@lang('messages.unggah')</a>
                  <a href="{{route('spc.page') }}" class="card-icon">@lang('messages.Web')</a>
              </div>
              <div id="cardEDC" class="card-item">

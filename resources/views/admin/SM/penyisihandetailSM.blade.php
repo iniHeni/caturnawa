@@ -90,6 +90,15 @@
         @csrf
     </form>
 </div>
+@php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$tambah = Carbon::parse('2024-05-28');
+
+@endphp
 <div id="data-container">
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
@@ -121,10 +130,24 @@
                         <td style="text-align: left">{{ $data->krit1 }}</td>
 
                         <td rowspan="6">
-                            <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
+                            <a href="#" onclick="
+                                event.preventDefault();
+                                @if (!$today->greaterThanOrEqualTo($tambah))
+                                    Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                                @else
+                                    window.location.href = '{{ route('sm.editp', $data->id) }}';
+                                @endif
+                            ">Edit</a>
                             <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                 @csrf
-                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                <button  type="button" style="color: red" onclick="
+                                event.preventDefault();
+                                @if (!$today->greaterThanOrEqualTo($tambahedit))
+                                    Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
+                                @else
+                                    confirmDelete({{ $data->id }})
+                                @endif
+                            ">Hapus</button>
                             </form>
                         </td>
                     </tr>
