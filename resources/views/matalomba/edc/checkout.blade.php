@@ -17,9 +17,6 @@
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/cekout.css">
       <link rel="stylesheet" href="../../css/back.css">
-      <script type="text/javascript"
-      src="{{config('midtrans.snap_url')}}"
-      data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -238,12 +235,16 @@
                                 <input disabled placeholder="{{ basename($order->surat_delegasi) }}">
                             </div>
                             <div class="input-field">
+                                <label>@lang('messages.buktibayar')</label>
+                                <input disabled placeholder="{{ basename($order->buktibayar) }}">
+                            </div>
+                            <div class="input-field">
                                 <label>@lang('messages.harga')</label>
                                 <input disabled placeholder="IDR{{$order->price}}">
                             </div>
                         </div>
-                        <button type="submit" class="nextBtn" id="pay-button">
-                            <span class="btnText">@lang('messages.bayar')</span>
+                        <button type="submit" class="nextBtn">
+                            <a class="btnText" href="{{route('edc.paid',  $order->id) }}">@lang('messages.bayar')</a>
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" onclick="window.history.back();">
@@ -274,56 +275,6 @@
       });</script>
 <script> src="../../js/nav.js"></script>
 <script src="../../js/daftarlomba.js"></script>
-<script type="text/javascript">
-    // For example trigger on button clicked, or any time you need
-    var payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function () {
-      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-      window.snap.pay('{{$snapToken}}', {
-        onSuccess: function(result){
-            Swal.fire({
-    icon: 'success',
-    title: 'Pembayaran Berhasil!',
-    text: 'Anda akan diarahkan ke WhatsApp Group.',
-    showConfirmButton: false, 
-    timer: 2000,
-  }).then(() => {
-    window.location.href = '/homeedc/{{$order->id}}'; 
-    console.log(result); 
-  });
-        },
-        onPending: function(result){
-            location.reload();
-        },
-        onError: function(result){
-            Swal.fire({
-            icon: 'error',
-            title: 'Terjadi Kesalahan',
-            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
-            showCancelButton: true, 
-            confirmButtonText: 'Coba Lagi',
-            cancelButtonText: 'Batal',
-        }).then((result) => {
-            if (result.isConfirmed) {
-            
-            } else {
-                window.location.href = '/'; 
-            }
-        });
-
-        console.error("Error pembayaran:", result);
-                
-                },
-        onClose: function(){
-            Swal.fire({
-    icon: 'warning',
-    title: 'Pembayaran Dibatalkan',
-    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
-  });
-        }
-      })
-    });
-  </script>
 
         
     </body>

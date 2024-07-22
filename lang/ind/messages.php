@@ -311,6 +311,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'unass' =>  'Khusus Mahasiswa UNAS',
     'oopen' => 'Dibuka Pada Tanggal',
     'keterangan' => 'Posisi ini tidak akan berubah hingga kompetisi berakhir',
+    'buktibayar' => 'Bukti Bayar<br> *Kirimkan Ke Bank BCA.No Rekening 2941108361 Atas Nama NABILA DEA FIKRIANI',
 
      
 

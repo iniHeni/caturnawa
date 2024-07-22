@@ -96,7 +96,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
-                <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
+                <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
@@ -107,6 +107,7 @@
                                 <th scope="col">No Handphone</th>
                                 <th scope="col">Foto Peserta</th>
                                 <th scope="col">Logo Instansi</th>
+                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -120,6 +121,7 @@
                                 <td><a href="https://wa.me/{{ $data->nohp }}">{{ $data->nohp}}</a></td>
                                 <td><a href="{{ $data->foto }}">{{ $data->foto }}</a></td>
                                 <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
+                                <td><a href="#">{{ $data->status}}</a></td>
                                 <td>
                                     <a href="{{ route('spc.editpe', $data->id) }}">Edit</a>
                                     <form action="{{ route('spc.hapuspe', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

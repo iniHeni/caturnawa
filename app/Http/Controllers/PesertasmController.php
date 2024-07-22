@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\DB;
 class PesertasmController extends Controller
 {
     public function tampilpee(){
-        $paidOrders = ordersm::where('status', 'Paid')
-        ->select('nama_1', 'nama_2', 'nama_3', 'nama_4', 'nama_5' , 'instansi', 'namateam', 'email_1', 'email_2', 'email_3', 'email_4', 'email_5', 'foto_1', 'foto_2', 'foto_3', 'foto_4', 'foto_5', 'nomorhp_1', 'nomorhp_2', 'nomorhp_3', 'nomorhp_4', 'nomorhp_5',)
+        $paidOrders = ordersm::select('nama_1', 'nama_2', 'nama_3', 'nama_4', 'nama_5' , 'instansi', 'namateam', 'email_1', 'email_2', 'email_3', 'email_4', 'email_5', 'foto_1', 'foto_2', 'foto_3', 'foto_4', 'foto_5', 'nomorhp_1', 'nomorhp_2', 'nomorhp_3', 'nomorhp_4', 'nomorhp_5', 'status')
         ->get();
 
     foreach ($paidOrders as $order) {
@@ -40,7 +39,9 @@ class PesertasmController extends Controller
             'nohp2' => $order->nomorhp_3,
             'nohp3' => $order->nomorhp_4,
             'nohp4' => $order->nomorhp_5,
+            'status' => $order->status,
             'logo' => 'nullable',
+
         ]);
     }
         $tambah = pesertasm::select()->get();
@@ -73,6 +74,7 @@ class PesertasmController extends Controller
             'nohp3' => 'required',
             'nohp4' => 'required',
             'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'status' => 'required',
     ]);
     $update = $request->all();
     if ($request->hasFile('logo')) {

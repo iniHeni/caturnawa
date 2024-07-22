@@ -96,7 +96,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
-                <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
+                <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
@@ -124,6 +124,7 @@
                                 <th scope="col">Foto 4</th>
                                 <th scope="col">Foto 5 </th>
                                 <th scope="col">Logo Instansi</th>
+                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -154,6 +155,7 @@
                                 <td><a href="{{ $data->foto3}}">{{ $data->foto3}}</a></td>
                                 <td><a href="{{ $data->foto4}}">{{ $data->foto4}}</a></td>
                                 <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
+                                <td><a href="#">{{ $data->status}}</a></td>
                                 <td>
                                     <a href="{{ route('sm.editpee', $data->id) }}">Edit</a>
                                     <form action="{{ route('sm.hapuspee', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

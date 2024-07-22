@@ -60,7 +60,7 @@ public function penyisihan(){
     return view('matalomba/lkti/penyisihan', compact('penyisihann'));
  }
  public function pesertaa(){
-    $peserta = pesertaspc::all();
+    $peserta = pesertaspc::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
     
     return view('admin/LKTI/tambah', compact('peserta'));
  }

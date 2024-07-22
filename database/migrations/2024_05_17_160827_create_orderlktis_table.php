@@ -82,6 +82,7 @@ return new class extends Migration
             $table->string('baru8')->nullable();
             $table->string('baru9')->nullable();
             $table->bigInteger('price');
+            $table->string('buktibayar');
             $table->enum('status', ['Unpaid', 'Paid', 'Khusus']);
             $table->timestamps();
         });

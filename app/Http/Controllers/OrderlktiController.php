@@ -81,6 +81,7 @@ class OrderlktiController extends Controller
             'baru7' => 'nullable',
             'baru8' => 'nullable',
             'baru9' => 'nullable',
+            'buktibayar' => 'required|mimes:png,jpeg,jpg|max:3000',
             
         ]); 
         $orderlkti = $request->all();
@@ -303,6 +304,18 @@ class OrderlktiController extends Controller
             
             $orderlkti['sertifikat9'] = null; 
         }
+        if ($request->hasFile('buktibayar')) {
+            $originalFileName = pathinfo($request->file('buktibayar')->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
+            $extension = $request->file('buktibayar')->getClientOriginalExtension();
+            $imageName = $safeFileName . '.' . $extension;
+        
+            $destinationPath = 'public/images/lkti/buktibayar';
+            $request->file('buktibayar')->storeAs($destinationPath, $imageName);
+        
+            $imageUrl = asset('storage/images/lkti/buktibayar/' . $imageName);
+            $orderlkti['buktibayar'] = $imageUrl;
+        }
 
         $now = Carbon::now();
         
@@ -331,40 +344,7 @@ if ($asalInstansi === 'universitasnasional' && $now->between('2024-07-23', '2024
     $orderlkti = array_merge($orderlkti, $additionalData);
     $orderlkti = orderlkti::create($orderlkti);
 
-        
-       
-
-   // Set your Merchant Server Key
-\Midtrans\Config::$serverKey = config('midtrans.server_key');
-// Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-\Midtrans\Config::$isProduction = false;
-// Set sanitization on (default)
-\Midtrans\Config::$isSanitized = true;
-// Set 3DS transaction for credit card to true
-\Midtrans\Config::$is3ds = true;
-
-$params = array(
-'transaction_details' => array(
-    'order_id' => $orderlkti->order,
-    'gross_amount' => $orderlkti->price,
-),
-'item_details' => array(
-    array(
-    'id' => $orderlkti->id,
-    'price' => $orderlkti->price,
-    'quantity' => 1,
-    'name' =>  "Scientific Paper Competition",
-    ),
-),
-'customer_details' => array(
-    'first_name' => $request->nama,
-    'email' => $request->email,
-    'phone' => $request->nomorhp,
-),
-);
-
-$snapToken = \Midtrans\Snap::getSnapToken($params);
-return view('matalomba/lkti/checkout', compact('snapToken', 'orderlkti'));
+return view('matalomba/lkti/checkout', compact('orderlkti'));
 }
 public function callbackl(Request $request){
     $serverKey = config('midtrans.server_key');

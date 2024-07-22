@@ -127,6 +127,17 @@
                             <input name="logo" id="logo" type="file"  accept=".png, .jpg, .jpeg, .PNG" required>
                         </div>
                   </div>
+                  <div class="input-field">
+                    <label for="status">Status Pembayaran</label>
+                    <select name="status" id="status" @error('status') is-invalid @enderror required>
+                        <option selected>@lang('messages.pilih')</option>
+                        <option>Paid</option>
+                        <option>KhususUNAS</option>
+                        @error('status')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </select>
+                </div>
  
                 </div>
                 <button type="submit" class="nextBtn">

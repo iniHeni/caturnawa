@@ -46,6 +46,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('instansi');
             $table->string('surat_delegasi')->nullable;
+            $table->string('buktibayar');
             $table->enum('status', ['Unpaid', 'Paid', 'Khusus']);
             $table->timestamps();
         });

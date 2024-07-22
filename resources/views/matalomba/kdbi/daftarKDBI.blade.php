@@ -95,7 +95,7 @@
             @csrf
             <div class="form first">
                 <div class="details personal">
-                        <span class="title">@lang('messages.peserta')</span>
+                        <span class="title">Debater 1 *@lang('messages.keterangan')</span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_1">@lang('messages.Name')</label>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <div class="details ">
-                        <span class="title">@lang('messages.peserta') 2 </span>
+                        <span class="title">Debater 2 *@lang('messages.keterangan') </span>
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nama_2">@lang('messages.Name')</label>
@@ -315,6 +315,13 @@
                                 <label for="surat_delegasi">@lang('messages.surat')</label>
                                 <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror  required>
                                 @error('surat_delegasi')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-field">
+                                <label for="buktibayar">@lang('messages.buktibayar')</label>
+                                <input type="file" name="buktibayar" id="buktibayar" accept=".png, .jpg, .jpeg, .PNG" @error('buktibayar') is-invalid @enderror  required>
+                                @error('buktibayar')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

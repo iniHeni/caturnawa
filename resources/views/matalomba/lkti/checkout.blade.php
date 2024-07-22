@@ -17,9 +17,7 @@
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/cekoutlkti.css">
       <link rel="stylesheet" href="../../css/back.css">
-      <script type="text/javascript"
-      src="{{config('midtrans.snap_url')}}"
-      data-client-key="{{config('midtrans.client_key')}}"></script>
+      
 
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -166,6 +164,10 @@
                             <div class="input-field">
                                 <label>@lang('messages.harga')</label>
                                 <input disabled placeholder="{{$orderlkti->price}}">
+                            </div>
+                            <div class="input-field">
+                                <label>@lang('messages.buktibayar')</label>
+                                <input disabled placeholder="{{ basename($orderlkti->buktibayar) }}">
                             </div>
                         </div>
                     </div>
@@ -477,9 +479,10 @@
                                 <label>@lang('messages.sertif')</label>
                                 <input disabled placeholder="{{ basename($orderlkti->sertifikat9) }}">
                             </div>  
+
                         </div>
-                        <button type="submit" class="nextBtn" id="pay-button">
-                            <span class="btnText">@lang('messages.bayar')</span>
+                        <button type="submit" class="nextBtn">
+                            <a class="btnText" href="{{route('spc.paid',  $orderlkti->id) }}">@lang('messages.bayar')</a>
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" onclick="window.history.back();">
@@ -516,63 +519,6 @@ $("body").css(
 });
 </script>
 <script src="../../js/daftarlomba.js"></script>
-<script type="text/javascript">
-    var payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function () {
-      window.snap.pay('{{$snapToken}}', {
-        onSuccess: function(result){
-            Swal.fire({
-    icon: 'success',
-    title: 'Pembayaran Berhasil!',
-    text: 'Anda akan diarahkan ke WhatsApp Group.',
-    showConfirmButton: false, 
-    timer: 2000,
-  }).then(() => {
-    window.location.href = '/homespc/{{$orderlkti->id}}'; 
-    console.log(result); 
-  });
-        },
-        onPending: function(result){
-            location.reload();
-        },
-                onError: function(result) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Terjadi Kesalahan',
-            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
-            showCancelButton: true, 
-            confirmButtonText: 'Coba Lagi',
-            cancelButtonText: 'Batal',
-        }).then((result) => {
-            if (result.isConfirmed) {
-            
-            } else {
-                window.location.href = '/'; 
-            }
-        });
-
-        console.error("Error pembayaran:", result);
-                
-                },
-        onClose: function(){
-            Swal.fire({
-    icon: 'warning',
-    title: 'Pembayaran Dibatalkan',
-    text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
-  });
-        }
-      })
-    });
-  </script>
-   <script>
-    fetch('/callback-url') // Ganti dengan URL endpoint callback Anda
-.then(response => response.json())
-.then(data => {
-    if (data.reload_page) {
-        location.reload(); // Reload halaman saat ada instruksi dari backend
-    }
-});
-  </script>
     </body>
     <script src="../../js/SM.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>

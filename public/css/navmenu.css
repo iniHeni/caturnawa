@@ -87,8 +87,11 @@ img {
   width:200px !important;
 }
 .nav_logo1 {
-  animation: bounceUpDown 4s infinite; /* Tambahkan animasi */
+
+  animation: bounceUpDown 4s infinite;
+   /* Tambahkan animasi */
 }
+
 
 @keyframes bounceUpDown { /* Definisikan animasi */
   0%, 100% {

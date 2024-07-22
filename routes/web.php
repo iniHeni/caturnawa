@@ -226,13 +226,13 @@ Route::post('/unasspc/checkout', [OrderlktiController::class, 'checkout1']);
 Route::post('/sm/checkout', [OrdersmController::class, 'checkout']);
 Route::post('/unassm/checkout', [OrdersmController::class, 'checkout1']);
 
-Route::get('/homespc/{id}', [OrderlktiController::class, 'homespc']);
+Route::get('/homespc/{id}', [OrderlktiController::class, 'homespc'])->name('spc.paid');
 Route::get('/homespcunas/{id}', [OrderlktiController::class, 'homespc1'])->name('spc.khusus');
-Route::get('/homesm/{id}', [OrdersmController::class, 'homesm']);
+Route::get('/homesm/{id}', [OrdersmController::class, 'homesm'])->name('sm.paid');
 Route::get('/homesmunas/{id}', [OrdersmController::class, 'homesm1'])->name('sm.khusus');
-Route::get('/homekdbi/{id}', [OrderkdbiController::class, 'homekdbi']);
+Route::get('/homekdbi/{id}', [OrderkdbiController::class, 'homekdbi'])->name('kdbi.paid');
 Route::get('/homekdbiunas/{id}', [OrderkdbiController::class, 'homekdbi1'])->name('kdbi.khusus');
-Route::get('/homeedc/{id}', [OrderController::class, 'homeedc']);
+Route::get('/homeedc/{id}', [OrderController::class, 'homeedc'])->name('edc.paid');
 Route::get('/homeedcunas/{id}', [OrderController::class, 'homeedc1'])->name('edc.khusus');
 
 Route::get('matalomba/spc/detailpeserta/{id}', [PesertaspcController::class, 'detailpesertaspc'])->name('spc.detailpeserta');

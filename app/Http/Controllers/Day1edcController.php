@@ -96,7 +96,7 @@ public function editedc($id) {
     return view('admin/EDC/editday1', compact('edit', 'peserta'));
 }
  public function pesertaday1(){
-    $peserta = pesertaedc::all();
+    $peserta = pesertaedc::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
     
     return view('admin/EDC/tambah', compact('peserta'));
  }

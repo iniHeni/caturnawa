@@ -151,7 +151,7 @@ public function penyisihan(){
     return view('admin/SM/penyisihandetailSM', compact('tambah', 'penyisihan'));
  }
  public function pesertasf(){
-    $peserta = pesertasm::all();
+    $peserta = pesertasm::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
     
     return view('admin/sm/tambah', compact('peserta'));
  }

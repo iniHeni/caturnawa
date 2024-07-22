@@ -291,5 +291,6 @@ contributions to social and economic development in the future.',
      'unass' =>  'Register (UNAS Student)',
      'oopen' => 'Opened On',
      'keterangan' => 'this position will not change until the competition ends.',
+     'buktibayar' => 'Proof of payment<br> *Send to bank BCA.No account 2941108361 in the name of NABILA DEA FIKRIANI',
      ]
 ?>

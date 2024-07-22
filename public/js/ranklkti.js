@@ -12,12 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
    
         let phaseStart, phaseEnd;
         if (index === 0) {
-          phaseStart = new Date(currentYear, 5, 18); 
-          phaseEnd = new Date(currentYear, 6, 26, 23, 59, 59); 
-        } else if (index === 1) {
-          phaseStart = new Date(currentYear, 7, 27); 
+          phaseStart = new Date(currentYear, 6, 23); 
           phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
-        } else if (index === 2) {
+        } else if (index === 1) {
           phaseStart = new Date(currentYear, 7, 12); 
           phaseEnd = new Date(currentYear, 7, 23, 23, 59, 59); 
         }

@@ -172,7 +172,7 @@
                <div class="card">
                   <div class="round_box"></div>
                   <div class="img_box">
-                     <img src="../../img/jurism.jpg" alt="">
+                     <img src="../../img/daniel.png" alt="">
                   </div>
                   <div class="user_content1">
                      <h5 class="name">Daniel Wisnu Wardhana</h5>
@@ -187,7 +187,7 @@
                   <div class="squareBox"></div>
                   <div class="round_box"></div>
                   <div class="img_box">
-                     <img src="../../img/jurism1.jpg" alt="">
+                     <img src="../../img/kusen.png" alt="">
                   </div>
                   <div class="user_content2">
                      <h5 class="name">Kusen Dony Hermansyah</h5>
