@@ -23,11 +23,11 @@
     <meta name="description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran.">
     <meta name="keywords" content="UNAS FEST, Caturnawa, lomba, kompetisi, debat, film pendek, paper ilmiah, Shortmovie, Scientific paper competittion, Debat Bahasa Indonesia, Debat, English debate competition, festival, acara, mahasiswa, Universitas Nasional, Jakarta">
 	<meta name="google-site-verification" content="Xz8ig2qSEsx4oM-BXhg273JSMQV3JCg-XRFiBBC1AHY" />
-    <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
     <meta property="og:description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran.">
+    <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
     <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
     <meta property="og:url" content="https://caturnawa.unasfest.com">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="Caturnawa - UNAS FEST 2024">
      <script>
           {
               "@context": "https://caturnawa.unasfest.com/",

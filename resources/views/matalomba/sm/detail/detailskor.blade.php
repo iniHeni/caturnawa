@@ -2,6 +2,8 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
+      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
