@@ -18,6 +18,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pagelombaedc.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - KDBI</title>
       <style>
@@ -33,11 +34,20 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
- }
+   .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -94,7 +104,7 @@
       <p class="testing1">@lang('messages.teks')
         @lang('messages.teks1')</p>
         <div class="cont">
-            <a class="gb" href="https://drive.google.com/drive/folders/1TVhm_ayI7emGH-VVc2UvkRuB7yqldqcE">@lang('messages.gb')</a>
+            <a class="gb" href="https://drive.google.com/file/d/14nrL990Y_JlewA1cydvI5dKtsC-sJz5O/view">@lang('messages.gb')</a>
          </div>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
@@ -125,29 +135,67 @@
           </div>
   </section>
 <!--==================== Round ====================-->
+@php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanEnd = Carbon::parse('2024-12-29');
+$semiFinalDate = Carbon::parse('2024-08-20');
+$finalDate = Carbon::parse('2024-09-16');
+@endphp
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
-        <a href="{{url('matalomba/kdbi/penyisihan') }}" class="card-item">
+        <a href="{{url('matalomba/kdbi/penyisihan') }}" class="card-item" onclick="
+        event.preventDefault(); 
+        @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
+
+            Swal.fire({
+                title: '@lang('messages.sweet1')',
+                text: '@lang('messages.bukaedc')',
+                icon: 'info'
+            });
+        @else 
+ 
+            window.location.href = '{{url('matalomba/kdbi/penyisihan') }}'; 
+        @endif
+    ">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="developer">@lang('messages.penyisihan')</span>
-            <h3>@lang('messages.dilaksanakan')<br>18 - 19 September</h3>
+            <h3>@lang('messages.dilaksanakan')<br>18 - 19 September 2024</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/kdbi/Semifinal') }}" class="card-item">
+        <a href="#" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($semiFinalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
+        @endif
+    ">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="designer">Semifinal</span>
-            <h3>@lang('messages.dilaksanakan')<br>20 September</h3>
+            <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
-        <a href="{{url('matalomba/kdbi/Final') }}" class="card-item">
+        <a href="{{url('matalomba/kdbi/Final') }}" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($finalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Final') }}';
+        @endif
+    ">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="editor">Final</span>
-            <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1')</h3>
+            <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1') 2024</h3>
             <div class="arrow">
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
@@ -158,21 +206,21 @@
 <!--==================== Juri ====================-->
 <section id="juri">
     <div class="main">
-            <div class="title">Adjudicators</div>
+            <div class="title">@lang('messages.juri')</div>
     
             <div class="card_container">
     
                 <div class="card">
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbi.jpg" alt="">
+                        <img src="../../img/jurikdbibaru1.png" alt="">
                     </div>
     
                     <div class="user_content1">
-                        <h5 class="name">Leonardus Hans, S.T.</h5>
+                        <h5 class="name">Fullah Jumaynah., S.Sos., M.IP</h5>
                         <p class="post">@lang('messages.jurikdbiposisi1')</p>
                         <p class="about">@lang('messages.jurikdbibio1')</p>
-                        <a href="https://www.linkedin.com/in/leonardus-hans-sebastian/?jobid=1234" class="icon facebook">
+                        <a href="https://www.linkedin.com/in/fullahjm/?originalSubdomain=id" class="icon facebook">
                             <span><i class="fa-brands fa-linkedin"></i></span>
                          </a>
                     </div>
@@ -182,11 +230,11 @@
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbi2.JPG" alt="">
+                        <img src="../../img/jurikdbibaru2.jpg" alt="">
                     </div>
     
                     <div class="user_content1">
-                        <h5 class="name">Prof. Dr.Wahyu Wibowo</h5>
+                        <h5 class="name">Prof. Dr. Wahyu Wibowo</h5>
                         <p class="post">@lang('messages.jurikdbiposisi3')</p>
                         <p class="about">@lang('messages.jurikdbibio3')</p>
                         <a href="https://menuliswahyuwibowo.wordpress.com/" class="icon facebook">
@@ -199,7 +247,7 @@
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbi3.jpg" alt="">
+                        <img src="../../img/jurikdbibaru3.jpg" alt="">
                     </div>
     
                     <div class="user_content2">
@@ -243,31 +291,6 @@
 <script src="../../js/swiper.js"></script>
 <script src="../../js/car2.js"></script>
       <script src="../../js/nav.js"></script>
-      <script type="text/javascript">
-        $(function() {
-            $(this).bind("contextmenu", function(e) {
-                e.preventDefault();
-            });
-        }); 
-        </script>
-        <script type="text/JavaScript"> 
-            function killCopy(e){ return false } 
-            function reEnable(){ return true } 
-            document.onselectstart=new Function ("return false"); 
-            if (window.sidebar)
-            { 
-                document.onmousedown=killCopy; 
-                document.onclick=reEnable; 
-            } 
-        </script>
-        <script type="text/Javascript">
-        $(document).keydown(function(event){
-      if(event.keyCode==123){
-          return false;
-      }
-      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-      }
-  });
-      </script>
+
+
       <script src="../../js/SM.js"></script>

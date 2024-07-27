@@ -15,7 +15,9 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../css/cekoutsm.css">
-      
+      <script type="text/javascript"
+      src="{{config('midtrans.snap_url')}}"
+      data-client-key="{{config('midtrans.client_key')}}"></script>
 
       <title>@lang('messages.daftar')</title>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -33,10 +35,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -423,13 +434,9 @@
                                 <label>@lang('messages.surat')</label>
                                 <input disabled placeholder="{{ basename($ordersm->surat_delegasi) }}">
                             </div>
-                            <div class="input-field">
-                                <label>@lang('messages.buktibayar')</label>
-                                <input disabled placeholder="{{ basename($ordersm->buktibayar) }}">
-                            </div>
                         </div>
-                        <button type="submit" class="nextBtn">
-                            <a class="btnText" href="{{route('sm.paid',  $ordersm->id) }}">@lang('messages.bayar')</a>
+                        <button type="submit" class="nextBtn" id="pay-button">
+                            <span class="btnText">@lang('messages.bayar')</span>
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" onclick="window.history.back();">
@@ -463,7 +470,67 @@
       });</script>
       <script src="../../js/loader.js"></script>
       <script src="../../js/daftarlomba.js"></script>
+            <script type="text/javascript">
+                // For example trigger on button clicked, or any time you need
+                var payButton = document.getElementById('pay-button');
+                payButton.addEventListener('click', function () {
+                // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+                window.snap.pay('{{$snapToken}}', {
+                onSuccess: function(result){
+                    Swal.fire({
+            icon: 'success',
+            title: 'Payment Succes!',
+            text: 'Anda akan diarahkan ke Link Whatssap Group',
+            showConfirmButton: false, 
+            timer: 2000,
+        }).then(() => {
+            window.location.href = '/homesm/{{$ordersm->id}}'; 
+            console.log(result); 
+        });
+                },
+                onPending: function(result) {
+    location.reload();
+},
            
+                onError: function(result) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Pembayaran gagal diproses. Silakan coba lagi.', 
+            showCancelButton: true, 
+            confirmButtonText: 'Coba Lagi',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+            
+            } else {
+                window.location.href = '/'; 
+            }
+        });
+
+        console.error("Error pembayaran:", result);
+                
+                },
+                onClose: function(){
+                    Swal.fire({
+            icon: 'warning',
+            title: 'Payment Canceled',
+            text: 'Anda telah menutup jendela pembayaran sebelum menyelesaikan proses.',
+        });
+                }
+            })
+            });
+            
+      </script>
+      <script>
+        fetch('/callback-url') // Ganti dengan URL endpoint callback Anda
+    .then(response => response.json())
+    .then(data => {
+        if (data.reload_page) {
+            location.reload(); // Reload halaman saat ada instruksi dari backend
+        }
+    });
+      </script>
       <script src="../../js/SM.js"></script>
    </body>
 </html>

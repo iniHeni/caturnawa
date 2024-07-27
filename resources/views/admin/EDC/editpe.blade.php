@@ -33,10 +33,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
 </head>
 <body>
@@ -128,17 +137,6 @@
                             <input name="logo" id="logo" type="file"  accept=".png, .jpg, .jpeg, .PNG" required>
                         </div>
                   </div>
-                  <div class="input-field">
-                    <label for="status">Status Pembayaran</label>
-                    <select name="status" id="status" @error('status') is-invalid @enderror required>
-                        <option selected>@lang('messages.pilih')</option>
-                        <option>Paid</option>
-                        <option>KhususUNAS</option>
-                        @error('status')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </select>
-                </div>
  
                 </div>
                 <button type="submit" class="nextBtn">

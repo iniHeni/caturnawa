@@ -81,7 +81,6 @@ class OrdersmController extends Controller
             'twibbon_5' => 'required|mimes:png,jpeg,jpg|max:3000',
             'surat_delegasi' => 'required|mimes:pdf|max:3000',
             'bio' => 'required|mimes:pdf|max:3000',
-            'buktibayar' => 'required|mimes:png,jpeg,jpg|max:3000',
         ]);     
         $ordersm = $request->all();
         if ($request->hasFile('ktm_1')) {
@@ -410,18 +409,7 @@ class OrdersmController extends Controller
             $imageUrl = asset('storage/images/sm/bio/' . $imageName);
             $ordersm['bio'] = $imageUrl;
         }
-        if ($request->hasFile('buktibayar')) {
-            $originalFileName = pathinfo($request->file('buktibayar')->getClientOriginalName(), PATHINFO_FILENAME);
-            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
-            $extension = $request->file('buktibayar')->getClientOriginalExtension();
-            $imageName = $safeFileName . '.' . $extension;
-        
-            $destinationPath = 'public/images/sm/buktibayar';
-            $request->file('buktibayar')->storeAs($destinationPath, $imageName);
-        
-            $imageUrl = asset('storage/images/sm/buktibayar/' . $imageName);
-            $ordersm['buktibayar'] = $imageUrl;
-        }
+
         $now = Carbon::now();
         if ($now->between('2024-07-23', '2024-07-28')) {
             $price = 300000; 
@@ -443,7 +431,38 @@ class OrdersmController extends Controller
     $ordersm = ordersm::create($ordersm);
 
        
-return view('matalomba/sm/checkout', compact('ordersm'));
+
+   // Set your Merchant Server Key
+\Midtrans\Config::$serverKey = config('midtrans.server_key');
+// Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+\Midtrans\Config::$isProduction = false;
+// Set sanitization on (default)
+\Midtrans\Config::$isSanitized = true;
+// Set 3DS transaction for credit card to true
+\Midtrans\Config::$is3ds = true;
+
+$params = array(
+'transaction_details' => array(
+    'order_id' => $ordersm->order,
+    'gross_amount' => $ordersm->price,
+),
+'item_details' => array(
+    array(
+    'id' => $ordersm->id,
+    'price' => $ordersm->price,
+    'quantity' => 1,
+    'name' =>  "Short Movie Competition",
+    ),
+),
+'customer_details' => array(
+    'first_name' => $ordersm->instansi . '-' . $ordersm->namateam,
+    'email' => $request->email_1,
+    'phone' => $request->nomorhp_1,
+),
+);
+
+$snapToken = \Midtrans\Snap::getSnapToken($params); 
+return view('matalomba/sm/checkout', compact('snapToken', 'ordersm'));
 }
 public function callback(Request $request){
     $serverKey = config('midtrans.server_key');

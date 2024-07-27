@@ -31,10 +31,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -201,13 +210,6 @@
                             <label for="surat_delegasi">@lang('messages.surat')</label>
                             <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror required>
                             @error('surat_delegasi')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="input-field">
-                            <label for="buktibayar">@lang('messages.buktibayar')</label>
-                            <input type="file" name="buktibayar" id="buktibayar" accept=".png, .jpg, .jpeg, .PNG" @error('buktibayar') is-invalid @enderror  required>
-                            @error('buktibayar')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

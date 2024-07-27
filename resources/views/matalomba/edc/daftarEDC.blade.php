@@ -30,11 +30,20 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
- }
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -95,6 +104,7 @@
             @csrf
             <div class="form first">
             <div class="details personal">
+             
                     <span class="title">Debater 1 *@lang('messages.keterangan')</span>
                     <div class="fields">
                         <div class="input-field">
@@ -158,35 +168,36 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="ktm_1">@lang('messages.ktm')</label>
+                            <label for="ktm_1">@lang('messages.ktm') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="ktm_1" id="ktm_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('ktm_1') is-invalid @enderror required>
                             @error('ktm_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="foto_1">@lang('messages.foto')</label>
+                            <label for="foto_1">@lang('messages.foto') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="foto_1" id="foto_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('foto_1') is-invalid @enderror required>
                             @error('foto_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="krs_1">@lang('messages.krs')</label>
+                            <label for="krs_1">@lang('messages.krs') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="krs_1" id="krs_1" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_1') is-invalid @enderror required>
                             @error('krs_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="buktifollow_1">@lang('messages.bukti')</label>
+                            <label for="buktifollow_1">@lang('messages.bukti') *format: pdf @lang('messages.max')</label>
                             <input name="buktifollow_1" id="buktifollow_1" type="file" accept=".pdf, .PDF" @error('buktifollow_1') is-invalid @enderror required>
                             @error('buktfollow_1')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="twibbon">@lang('messages.unggah1') Twibbon *format:png,jpg maks 3mb</label>
+                          <a href="https://drive.google.com/drive/folders/1yZ9-xiJoF2-Ybaa_GGrZdidOiWpQYHW8"><span class="title" style="color:blue">(Link Twibbon)</span></a>
+                            <label for="twibbon">@lang('messages.unggah1') Twibbon *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="twibbon" id="twibbon" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon') is-invalid @enderror required>
                             @error('twibbon')
                             <div class="text-danger">{{ $message }}</div>
@@ -258,35 +269,36 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="ktm_2">@lang('messages.ktm')</label>
+                            <label for="ktm_2">@lang('messages.ktm') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="ktm_2" id="ktm_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('ktm_2') is-invalid @enderror required>
                             @error('ktm_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="foto_2">@lang('messages.foto')</label>
+                            <label for="foto_2">@lang('messages.foto') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="foto_2" id="foto_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('foto_2') is-invalid @enderror required>
                             @error('foto_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="krs_2">@lang('messages.krs')</label>
+                            <label for="krs_2">@lang('messages.krs') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="krs_2" id="krs_2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('krs_2') is-invalid @enderror required>
                             @error('krs_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="buktifollow_2">@lang('messages.bukti')</label>
+                            <label for="buktifollow_2">@lang('messages.bukti') *format: pdf @lang('messages.max')</label>
                             <input name="buktifollow_2" id="buktifollow_2" type="file" accept=".pdf, .PDF" @error('buktifollow_2') is-invalid @enderror  required>
                             @error('buktifollow_2')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="twibbon2">@lang('messages.unggah1') Twibbon *format:png,jpg maks 3mb</label>
+                           <a href="https://drive.google.com/drive/folders/1yZ9-xiJoF2-Ybaa_GGrZdidOiWpQYHW8"><span class="title" style="color:blue">(Link Twibbon)</span></a>
+                            <label for="twibbon2">@lang('messages.unggah1') Twibbon *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input name="twibbon2" id="twibbon2" type="file" accept=".png, .jpg, .jpeg, .PNG" @error('twibbon2') is-invalid @enderror required>
                             @error('twibbon2')
                             <div class="text-danger">{{ $message }}</div>
@@ -305,21 +317,21 @@
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="instansi">@lang('messages.instansi')</label>
+                            <label for="instansi">@lang('messages.instansi') </label>
                             <input type="text" name="instansi" id="instansi" placeholder="@lang('messages.place') @lang('messages.instansi')" @error('instansi') is-invalid @enderror required>
                             @error('instansi')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="surat_delegasi">@lang('messages.surat')</label>
+                            <label for="surat_delegasi">@lang('messages.surat') *format: pdf @lang('messages.max')</label>
                             <input type="file" name="surat_delegasi" id="surat_delegasi" accept=".pdf, .PDF" @error('surat_delegasi') is-invalid @enderror  required>
                             @error('surat_delegasi')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input-field">
-                            <label for="buktibayar">@lang('messages.buktibayar')</label>
+                            <label for="buktibayar">@lang('messages.buktibayar') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
                             <input type="file" name="buktibayar" id="buktibayar" accept=".png, .jpg, .jpeg, .PNG" @error('buktibayar') is-invalid @enderror  required>
                             @error('buktibayar')
                             <div class="text-danger">{{ $message }}</div>
@@ -343,33 +355,6 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $(this).bind("contextmenu", function(e) {
-                e.preventDefault();
-            });
-        }); 
-        </script>
-        <script type="text/JavaScript"> 
-            function killCopy(e){ return false } 
-            function reEnable(){ return true } 
-            document.onselectstart=new Function ("return false"); 
-            if (window.sidebar)
-            { 
-                document.onmousedown=killCopy; 
-                document.onclick=reEnable; 
-            } 
-        </script>
-        <script type="text/Javascript">
-        $(document).keydown(function(event){
-      if(event.keyCode==123){
-          return false;
-      }
-      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-      }
-  });
-      </script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
           $("#loadingDiv").remove();

@@ -36,11 +36,21 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
- }
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
+        
      </style>
    </head>
    <body>
@@ -125,7 +135,7 @@
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Barat, Ps. Minggu, Kota Jakarta Selatan,<br>Daerah Khusus Ibukota Jakarta 12520</p>
       </div>
 
       <div class="fix"></div>
@@ -161,7 +171,7 @@
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Barat, Ps. Minggu, Kota Jakarta Selatan,<br>Daerah Khusus Ibukota Jakarta 12520</p>
       </div>
 
       <div class="fix"></div>
@@ -197,7 +207,7 @@
         <div class="icon">
           <i class="fa fa-map-marker"></i>
         </div>
-        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Bar., Daerah Khusus Ibukota Jakarta 12520<br>Ps. Minggu, Kota Jakarta Selatan</p>
+        <p>Jl. Sawo Manila No.61, RT.14/RW.7, Pejaten Barat, Ps. Minggu, Kota Jakarta Selatan,<br>Daerah Khusus Ibukota Jakarta 12520</p>
       </div>
       
       <div class="fix"></div>
@@ -229,6 +239,7 @@
           }, 2000)
         );
       });</script>
+
 <script src="../../js/rankkdbi.js"></script>
 <script src="../../js/SM.js"></script>
       <script src="../../js/nav.js"></script>

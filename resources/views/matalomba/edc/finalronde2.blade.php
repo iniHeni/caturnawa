@@ -123,10 +123,19 @@ justify-content: center;
 background-color: white;
 }
 
-.loader {
-width: 9.5rem;
-height: 9.5rem;
-background: center / contain no-repeat url(../../../img/loader.gif);
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
 }
 </style>
       <title>Caturnawa - EDCFinalRound2</title>
@@ -255,6 +264,7 @@ background: center / contain no-repeat url(../../../img/loader.gif);
           }, 2000)
         );
       });</script>
+   
 <script src="../../../js/rank.js"></script>
       <script src="../../../js/nav.js"></script>
       <script src="../../../js/SM.js"></script>

@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class PesertakdbiController extends Controller
 {
     public function tampilkdbipe(){
-        $paidOrders = orderkdbi::select('nama_1', 'nama_2', 'instansi', 'email_1', 'email_2', 'foto_1', 'foto_2', 'nomorhp_1', 'nomorhp_2', 'namateam', 'status')
+        $paidOrders = orderkdbi::where('status', 'Paid')->OrWhere('status', 'Khusus')
+        ->select('nama_1', 'nama_2', 'instansi', 'email_1', 'email_2', 'foto_1', 'foto_2', 'nomorhp_1', 'nomorhp_2', 'namateam')
         ->get();
 
     foreach ($paidOrders as $order) {
@@ -24,7 +25,6 @@ class PesertakdbiController extends Controller
                 'nohp' => $order->nomorhp_1,
                 'nohp1' => $order->nomorhp_2,
                 'namateam' => $order->namateam,
-                'status' => $order->status,
                 'logo' => 'null'
             ]
         );
@@ -49,7 +49,6 @@ class PesertakdbiController extends Controller
         'nohp1' => 'required',
         'namateam' => 'required',
         'logo' => 'required|mimes:png,jpeg,jpg|max:5000',
-        'status' => 'required',
     ]);
     $update = $request->all();
     if ($request->hasFile('logo')) {

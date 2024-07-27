@@ -29,11 +29,20 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../../img/loader.gif);
- }
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -165,33 +174,8 @@
       });</script>
 
       <script src="../../../js/nav.js"></script>
-      <script type="text/javascript">
-        $(function() {
-            $(this).bind("contextmenu", function(e) {
-                e.preventDefault();
-            });
-        }); 
-        </script>
-        <script type="text/JavaScript"> 
-            function killCopy(e){ return false } 
-            function reEnable(){ return true } 
-            document.onselectstart=new Function ("return false"); 
-            if (window.sidebar)
-            { 
-                document.onmousedown=killCopy; 
-                document.onclick=reEnable; 
-            } 
-        </script>
-        <script type="text/Javascript">
-        $(document).keydown(function(event){
-      if(event.keyCode==123){
-          return false;
-      }
-      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-      }
-  });
-</script>
+
+
 <script src="../../../js/SM.js"></script>
    </body>
 </html>

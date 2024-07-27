@@ -13,12 +13,40 @@
         <link rel="stylesheet" href="../../css/swiper.css">
 
       <!--=============== CSS ===============-->
+      <meta name="description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran.">
+    <meta name="keywords" content="UNAS FEST, Caturnawa, lomba, kompetisi, debat, film pendek, paper ilmiah, Shortmovie, Scientific paper competittion, Debat Bahasa Indonesia, Debat, English debate competition, festival, acara, mahasiswa, Universitas Nasional, Jakarta">
+	<meta name="google-site-verification" content="Xz8ig2qSEsx4oM-BXhg273JSMQV3JCg-XRFiBBC1AHY" />
+    <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
+    <meta property="og:description" content="Website resmi Caturnawa UNAS FEST 2024. Informasi lengkap mengenai lomba, jadwal, dan pendaftaran.">
+    <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
+    <meta property="og:url" content="https://caturnawa.unasfest.com">
+    <meta name="twitter:card" content="summary_large_image">
+     <script>
+          {
+              "@context": "https://caturnawa.unasfest.com/",
+              "@type": "Event",
+              "name": "Caturnawa UNAS FEST 2024",
+              "startDate": "2024-07-28",  "location": {
+                  "@type": "Place",
+                  "name": "Universitas Nasional",
+                  "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "Jl. Sawo Manila No.61, RT.8/RW.3, Ps. Minggu",
+                      "addressLocality": "Jakarta Selatan",
+                      "addressRegion": "DKI Jakarta",
+                      "postalCode": "12520",
+                      "addressCountry": "ID"
+                  }
+              }
+          }
+      </script>
 
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/back.css">
       <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pagelombaedc.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - EDC</title>
       <style>
@@ -35,11 +63,20 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
- }
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
      </style>
    </head>
    <body>
@@ -100,7 +137,7 @@
       <p class="testing1">@lang('messages.teks')
             @lang('messages.teks1')</p>
             <div class="cont">
-                <a class="gb" href="https://drive.google.com/drive/folders/1TVhm_ayI7emGH-VVc2UvkRuB7yqldqcE">@lang('messages.gb')</a>
+                <a class="gb" href="https://drive.google.com/file/d/1vM-oYcfES7wNuqSUDnvCayOKML1Fb7tK/view?usp=drive_link">@lang('messages.gb')</a>
              </div>
     
       <!--==================== Peserta Lomba ====================-->
@@ -132,29 +169,67 @@
           </div>
   </section>
 <!--==================== Round ====================-->
+@php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanEnd = Carbon::parse('2024-12-29');
+$semiFinalDate = Carbon::parse('2024-08-20');
+$finalDate = Carbon::parse('2024-09-16');
+@endphp
 <section id="rank">
     <h1 class="judul">@lang('messages.babak')</h1>
     <div class="card-list">
-            <a href="{{url('matalomba/edc/penyisihan') }}" class="card-item">
+            <a href="#" class="card-item" onclick="
+            event.preventDefault(); 
+            @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
+    
+                Swal.fire({
+                    title: '@lang('messages.sweet1')',
+                    text: '@lang('messages.bukaedc')',
+                    icon: 'info'
+                });
+            @else 
+     
+                window.location.href = '{{url('matalomba/edc/penyisihan') }}'; 
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
-                <h3>@lang('messages.dilaksanakan')<br>18 - 19 September</h3>
+                <h3>@lang('messages.dilaksanakan')<br>18 - 19 September 2024</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="{{url('matalomba/edc/Semifinal') }}" class="card-item">
+            <a href="#" class="card-item" onclick="
+            event.preventDefault();
+            @if (!$today->greaterThanOrEqualTo($semiFinalDate))
+                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+            @else
+                window.location.href = '{{url('matalomba/edc/Semifinal') }}';
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="designer">Semifinal</span>
-                <h3>@lang('messages.dilaksanakan')<br>20 September</h3>
+                <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="{{url('matalomba/edc/Final') }}" class="card-item">
+            <a href="{{url('matalomba/edc/Final') }}" class="card-item" onclick="
+            event.preventDefault();
+            @if (!$today->greaterThanOrEqualTo($finalDate))
+                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+            @else
+                window.location.href = '{{url('matalomba/edc/Final') }}';
+            @endif
+        ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="editor">Final</span>
-                <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1')</h3>
+                <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1') 2024</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
@@ -171,14 +246,14 @@
             <div class="card">
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/JuriEDC.jpg" alt="">
+                    <img src="../../img/juriedcbaru2.jpg" alt="">
                 </div>
 
                 <div class="user_content1">
                     <h5 class="name">Hezron Kowardi</h5>
                     <p class="post">@lang('messages.juriposisi1')</p>
                     <p class="about">@lang('messages.juribio1')</p>
-                    <a href="https://www.linkedin.com/in/marvelkevin" class="icon facebook">
+                    <a href="https://www.linkedin.com/in/hezron-kowardi-b27b19206/?originalSubdomain=id" class="icon facebook">
                         <span><i class="fa-brands fa-linkedin"></i></span>
                      </a>
                 </div>
@@ -192,7 +267,7 @@
                 </div>
 
                 <div class="user_content2">
-                    <h5 class="name">Ahmad Kushay</h5>
+                    <h5 class="name">Ahmad Kushay S.H, S.Si</h5>
                     <p class="post">@lang('messages.juriposisi2')</p>
                     <p class="about">@lang('messages.juribio2')</p>
                     <a href="https://www.linkedin.com/in/ahmad-kushay-9a57a8104/?jobid=1234" class="icon facebook">
@@ -205,14 +280,14 @@
                 <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/JuriEDC3.jpg" alt="">
+                    <img src="../../img/juriedcbaru3.jpeg" alt="">
                 </div>
 
                 <div class="user_content3">
-                    <h5 class="name">Mouliza Kristhopher Donna</h5>
+                    <h5 class="name">Mouliza Kristhopher<br>Donna S.IP., M.IP</h5>
                     <p class="post">@lang('messages.juriposisi3')</p>
                     <p class="about">@lang('messages.juribio3')</p>
-                    <a href="https://www.linkedin.com/in/muchaditya/?jobid=1234" class="icon facebook">
+                    <a href="https://www.linkedin.com/in/mouliza-kristhopher-donna-sweinstani-a3ba6470/?originalSubdomain=id" class="icon facebook">
                         <span><i class="fa-brands fa-linkedin"></i></span>
                      </a>
                 </div>
@@ -249,32 +324,8 @@
         <script src="../../js/nav.js"></script>
 
         
-        <script type="text/javascript">
-           $(function() {
-               $(this).bind("contextmenu", function(e) {
-                   e.preventDefault();
-               });
-           }); 
-           </script>
-           <script type="text/JavaScript"> 
-               function killCopy(e){ return false } 
-               function reEnable(){ return true } 
-               document.onselectstart=new Function ("return false"); 
-               if (window.sidebar)
-               { 
-                   document.onmousedown=killCopy; 
-                   document.onclick=reEnable; 
-               } 
-           </script>
-           <script type="text/Javascript">
-           $(document).keydown(function(event){
-         if(event.keyCode==123){
-             return false;
-         }
-         else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-                  return false;
-         }
-     });
-         </script>
+ 
+           
+           
          <script src="../../js/SM.js"></script>
 </html>

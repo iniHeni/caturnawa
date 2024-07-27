@@ -99,7 +99,7 @@ public function hapuskdbi($id){
     return redirect()->route('kdbi.tampilkdbi');
 }
  public function pesertaday1(){
-    $peserta = pesertakdbi::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
+    $peserta = pesertakdbi::all();
     
     return view('admin/KDBI/tambah', compact('peserta'));
  }

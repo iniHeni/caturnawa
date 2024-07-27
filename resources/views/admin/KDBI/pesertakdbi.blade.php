@@ -43,10 +43,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
 </head>
 <body>
@@ -96,7 +105,7 @@
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Data Peserta</h1>
-                <div class="table-responsive" style="overflow-x: auto; overflow-y: auto; position: static;">
+                <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: static;">
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
@@ -112,7 +121,6 @@
                                 <th scope="col">Foto Peserta 1</th>
                                 <th scope="col">Foto Peserta 2</th>
                                 <th scope="col">Logo Instansi</th>
-                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -131,7 +139,6 @@
                                 <td>{{ $data->foto}}</td>
                                 <td>{{ $data->foto1}}</td>
                                 <td>{{ $data->logo}}</td>
-                                <td>{{ $data->status}}</td>
                                 <td>
                                     <a href="{{ route('kdbi.editkdbipe', $data->id) }}">Edit</a>
                                     <form action="{{ route('kdbi.hapuskdbipe', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

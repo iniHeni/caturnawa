@@ -14,11 +14,14 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../css/rank.css">
+      <link rel="stylesheet" href="../../../css/babak.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
 
       <title>Caturnawa - EDCElimination</title>
       <style>
+
  
 #loadingDiv {
    width: 100%;
@@ -31,11 +34,20 @@
    background-color: white;
  }
  
- .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../../img/loader.gif);
- }
+  .loader {
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
    </head>
    <body>
@@ -85,7 +97,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       
       <h3 style="color: white; text-align:center">Mosi</h3>
-      
+
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
@@ -109,8 +121,8 @@
                                       </thead>
                                       <tbody>
                                         @if ($dataa->isNotEmpty()) 
-                                        <tr>
-                                            <td rowspan="20">{{ $dataa->first()->juri }}</td> 
+                          <tr>
+                              <td rowspan="20">{{ $dataa->first()->juri }}</td> 
                                           @foreach ($dataa as $data)
                                           <tr>
                                               <td>{{ $data->team}}</td>
@@ -124,12 +136,12 @@
                                           @endif
                                       </tbody>
                                   </table>
-                                  </div>
+                                 </div>
                                   @endforeach
                               </div>
                       </div>
                       <style>
-             .table-bordered td{
+              .table-bordered td{
         border: 2px solid #dee2e6 !important;
         text-align: center;
          vertical-align: middle;
@@ -188,6 +200,7 @@
       });
     });
        </script>
+
       <script src="../../../js/nav.js"></script>
    </body>
    <script src="../../js/SM.js"></script>

@@ -43,10 +43,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
      </style>
 </head>
 <body>
@@ -124,7 +133,6 @@
                                 <th scope="col">Foto 4</th>
                                 <th scope="col">Foto 5 </th>
                                 <th scope="col">Logo Instansi</th>
-                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -155,7 +163,6 @@
                                 <td><a href="{{ $data->foto3}}">{{ $data->foto3}}</a></td>
                                 <td><a href="{{ $data->foto4}}">{{ $data->foto4}}</a></td>
                                 <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
-                                <td><a href="#">{{ $data->status}}</a></td>
                                 <td>
                                     <a href="{{ route('sm.editpee', $data->id) }}">Edit</a>
                                     <form action="{{ route('sm.hapuspee', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

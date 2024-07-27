@@ -86,7 +86,6 @@ return new class extends Migration
             $table->string('instansi');
             $table->string('surat_delegasi');
             $table->string('bio');
-            $table->string('buktibayar');
             $table->enum('status', ['Unpaid', 'Paid', 'Khusus']);
 
             $table->timestamps();

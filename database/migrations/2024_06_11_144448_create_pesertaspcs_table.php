@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('foto');
             $table->string('nohp');
             $table->string('logo')->nullable;
-            $table->string('status');
             $table->timestamps();
         });
     }

@@ -45,7 +45,6 @@ class OrderController extends Controller
             'twibbon' => 'required|mimes:png,jpeg,jpg|max:3000',
             'twibbon2' => 'required|mimes:png,jpeg,jpg|max:3000',
             'surat_delegasi' => 'required|mimes:pdf|max:3000',
-            'buktibayar' => 'required|mimes:png,jpeg,jpg|max:3000',
         ]);     
         $order = $request->all();
         if ($request->hasFile('ktm_1')) {
@@ -180,18 +179,6 @@ class OrderController extends Controller
             $imageUrl = asset('storage/document/edc/surat_delegasi/' . $imageName);
             $order['surat_delegasi'] = $imageUrl;
         }
-        if ($request->hasFile('buktibayar')) {
-            $originalFileName = pathinfo($request->file('buktibayar')->getClientOriginalName(), PATHINFO_FILENAME);
-            $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
-            $extension = $request->file('buktibayar')->getClientOriginalExtension();
-            $imageName = $safeFileName . '.' . $extension;
-        
-            $destinationPath = 'storage/public/images/edc/buktibayar';
-            $request->file('buktibayar')->storeAs($destinationPath, $imageName);
-        
-            $imageUrl = asset('storage/images/edc/buktibayar/' . $imageName);
-            $order['buktibayar'] = $imageUrl;
-        }
 
         $now = Carbon::now();
         if ($now->between('2024-07-23', '2024-07-26')) {
@@ -213,26 +200,52 @@ class OrderController extends Controller
     $order = array_merge($order, $additionalData);
     $order = Order::create($order);
 
+      
 
-return view('matalomba/edc/checkout', compact('order'));
+       // Set your Merchant Server Key
+\Midtrans\Config::$serverKey = config('midtrans.server_key');
+// Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+\Midtrans\Config::$isProduction = false;
+// Set sanitization on (default)
+\Midtrans\Config::$isSanitized = true;
+// Set 3DS transaction for credit card to true
+\Midtrans\Config::$is3ds = true;
+
+$paramss = array(
+    'transaction_details' => array(
+        'order_id' => $order->order,
+        'gross_amount' => $order->price,
+    ),
+    'item_details' => array(
+        array(
+        'id' => $order->id,
+        'price' => $order->price,
+        'quantity' => 1,
+        'name' =>  "English Debate Competition",
+        ),
+    ),
+    'customer_details' => array(
+        'first_name' => $request->nama_1,
+        'email' => $request->email_1,
+        'last_name' => $request->nama_2,
+        'phone' => $request->nomorhp_2,
+    ),
+);
+
+$snapToken = \Midtrans\Snap::getSnapToken($paramss);
+return view('matalomba/edc/checkout', compact('snapToken', 'order'));
     }
     public function callback(Request $request, $type){
-        switch ($type) {
-            case 'KDBI':
-                return app(orderkdbiController::class)->callbackk($request);
-            case 'LKTI':
-                return app(orderlktiController::class)->callbackl($request);
-            case 'SM':
-                return app(ordersmController::class)->callbacks($request);
-            default:
-                return $this->callback($request);
-        }
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            if($request->transaction_status == 'settlement'){
-                $orderlkti = Order::find ($request->order_id);
-                $orderlkti->update(['status' => 'Paid']);
+            if($request->transaction_status == 'capture'){
+                $order = Order::find ($request->order_id);
+                $order->update(['status' => 'Paid']);
+            } elseif ($request->transaction_status == 'expire' || $request->transaction_status == 'deny') {
+                return response()->json([
+                    'reload_page' => true
+                ]);
             }
         }
     }

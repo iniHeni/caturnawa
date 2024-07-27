@@ -42,10 +42,19 @@
  }
  
  .loader {
-   width: 9.5rem;
-   height: 9.5rem;
-   background: center / contain no-repeat url(../../img/loader.gif);
- }
+  width: 40%;
+  height: 40%;
+  background: center / contain no-repeat url(../img/mskt1.svg);
+
+ 
+  animation: blink 2s infinite; 
+}
+
+@keyframes blink { 
+  0% { opacity: 1; } 
+  50% { opacity: 0.2; } 
+  100% { opacity: 1; } 
+}
 
      </style>
    </head>
@@ -632,13 +641,6 @@
                                 <label for="bio">@lang('messages.lembarbio') *format: pdf, max 3mb</label>
                                 <input type="file" name="bio" id="bio" accept=".pdf, .PDF" @error('bio') is-invalid @enderror  required>
                                 @error('bio')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="input-field">
-                                <label for="buktibayar">@lang('messages.buktibayar')</label>
-                                <input type="file" name="buktibayar" id="buktibayar" accept=".png, .jpg, .jpeg, .PNG" @error('buktibayar') is-invalid @enderror  required>
-                                @error('buktibayar')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
