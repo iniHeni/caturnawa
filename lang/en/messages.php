@@ -33,7 +33,7 @@ return [
     'teks1' => '"Exploring The Potential Of Renewable Energy Technology Innovation To Achieve Global Green Momentum"',
     'pesertalomba' => 'Participant Competition',
     'babak' => 'Round',
-    'penyisihan' => 'Elimination',
+    'penyisihan' => 'Preliminary',
     'dilaksanakan' => 'Held On',
     'jury' => 'Our Adjudicators',
     'view' => 'View More',
@@ -52,14 +52,14 @@ return [
     'pria' => 'Male',
     'wanita' => 'Female',
     'alamat' => 'Full Address',
-    'ktm' => 'Student ID Card *format:jpg,png,jpeg, Max 3MB' ,
-    'foto' => 'Formal Photograph With Red Background *format:jpg,png,jpeg, Max 3MB',
-    'krs' => 'Student Record *format:jpg,png,jpeg, Max 3MB',
-    'krs1' => 'Study Plan Card *format:jpg,png,jpeg, Max 3MB',
-    'bukti' => 'Proof of following UNAS FEST Social Media, such as: TikTok, YouTube, Instagram *format:pdf',
+    'ktm' => 'Student ID Card ' ,
+    'foto' => 'Formal Photograph With Red Background ',
+    'krs' => 'Student Record ',
+    'krs1' => 'Study Plan Card ',
+    'bukti' => 'Proof of following UNAS FEST Social Media, such as: TikTok, YouTube, Instagram',
     'team' => 'File Team',
     'instansi' => 'Origin Institution',
-    'surat' => 'Delegation Letter From Institution',
+    'surat' => 'Delegation Letter From University',
     'Capaian' => 'Achievements',
     'namakegiatan' => 'Event Name',
     'jenis' => 'Type Event',
@@ -69,8 +69,8 @@ return [
     'regional' => 'Regional',
     'nasional' => 'National',
     'provinsi' => 'Province',
-    'sertif' => 'Certificate scan:pdf , Max 3MB',
-    'bayar' => 'Payment',
+    'sertif' => 'Certificate ',
+    'bayar' => 'Submit',
     'kembali' => 'Back',
     'Pesan' =>'Message',
     'Send' =>'Send Message',
@@ -91,115 +91,120 @@ return [
     'tahap1' => 'Phase 1',
     'tahap2' => 'Phase 2',
     'tahap3' => 'Phase 3',
-    'Rp' => 'IDR 300.000<br>USD $20 (International Participant)',
-    'Rp1' => 'IDR 400.000<br>USD $25 (International Participant)',
-    'Rp2' => 'IDR 450.000<br>USD $28 (International Participant)',
-    'Rp3' => 'Rp 170.000',
-    'Rp4' => 'Rp 200.000',
-    'Rp5' => 'IDR 350.000<br>USD $23 (International Participant)',
-    'Rp6' => 'IDR 500.000<br>USD $31 (International Participant)',
-    'Rp7' => 'IDR 550.000<br>USD $34 (International Participant)',
+    'Rp' => 'Rp300.000/Team',
+    'Rp1' => 'Rp400.000/Team',
+    'Rp2' => 'Rp450.000/Team',
+    'Rp3' => 'Rp170.000',
+    'Rp4' => 'Rp200.000',
+    'Rp5' => 'IDR350.000<br>USD $23 (International Participant)/Team',
+    'Rp6' => 'IDR500.000<br>USD $31 (International Participant)/Team',
+    'Rp7' => 'IDR550.000<br>USD $34 (International Participant)/Team',
+  'Rp8' => 'IDR300.000<br>(National Participant)/Team',
+    'Rp9' => 'IDR400.000<br>(National Participant)/Team',
+    'Rp10' => 'IDR450.000<br>(National Participant)/Team',
     'tgl' => 'July',
     'tgl1' => 'August',
     'tutup' => 'Closed',
-    'khusus' => 'Special Price for National University Students Click Button special UNAS',
+    'khusus' => 'Special price for Universitas Nasional students, click "Register (UNAS Student)" button',
 
 
 
     // Data Juri Start
     //EDC
-    'juriposisi1' => 'Diplomat Ministry of Foreign Affairs of the Republic Indonesia',
-    'juribio1' => 'Working at Ministry of Foreign Affairs of the Republic of Indonesia
-    since February 2019, previously a competitive parliamentary debater
-    from Universitas Indonesia who has won national and international
-    tournaments. Represented Indonesia in multiple international
-    competitions, among others is a full-sponsorship from Indonesia
-    government to World University Debating Championship 2019
-    in Cape Town, competing against more than 250 teams from all
-    elite universities across the world. Managed to get the team to the
-    elimination rounds in English as Second Language (ESL) category,
-    which is a language category higher than English as Foreign
-    Language (EFL) category assigned to me and my team. Snatching
-    Worlds 6th Best EFL speaker in the same tournament.<br></br>Interested in vast arrays of issues, such as: International Relations,
-    Philosophy, US Politics, UK Politics, BRI, Economics, social issues,
-    etc.',
+    'juriposisi1' => 'Major in Psychology',
+    'juribio1' => ' He is an undergraduate psychology student at the Universitas Indonesia. He
+ has a background in various leadership roles, including as President of the
+ English Debating Society (EDS UI). He has interned as an Internal Recruiter at
+ Monroe Consulting Group and in HR Recruitment at Akulaku Indonesia. He has a
+ keen interest in human resources, social welfare, and mental health issues. He
+ has experience as a Grandfinalist in the English as a Foreign Language (EFL)
+ category at the 2024 World Universities Debating Championships, a Semifinalist
+ in the English as a Secondary Language (ESL) category at the 2023 Australasian
+ Intervarsity Debating Championships in Krabi, Thailand, and an Accredited Judge
+ at the 2021 Thailand Speech and Debate International Competition.',
 
     'juriposisi2' => 'Debate Coach',
-    'juribio2' => 'Desfara Anggreani is a social activist and young 
-entrepreneur currently pursuing a Bachelor degree in Nursing 
-at Universitas Nasional since 2021. In addition, she is taking 
-an Information Systems course at the National University of 
-Singapore. Desfara is known as a skilled public speaker, which 
-has led her to achieve various accomplishments in debate 
-competitions and international conferences.
-Desfara achievements span various fields, including winning 1st place in the SDGs 
-project at the International Youth Experience 2024, 2nd place in the National Scientific Writing 
-Competition at UNAS FEST 2023, as well as several other championships in public speaking, 
-essay writing, and english olympiads. Her active involvement in organizations has fostered her 
-attention to social issues, which she has realized through the establishment of Rumah Belajar, 
-a tutoring center she leads.
-Desfara professional experience is diverse. She is the founder of Runut Waktu, an 
-initiative focused on social issues in education, health, and the environment. Desfara also 
-serves as the CEO of The Eternals Indonesia, a local perfume brand. Additionally
-she was a mentor at Twinkling Stars, a partnership at World Inspiration Indonesia, and held 
-various important positions in organizations such as Get Wellness Soon, Indonesia Millennial 
-Connect, and ASEAN Youth Organization.
-The diversity of Desfara experiences and achievements demonstrates her strong 
-commitment to social issues, education, and leadership. With this rich background, Desfara 
-Anggreani positions herself as an inspiring young figure with the potential to make significant 
-contributions to social and economic development in the future.',
+    'juribio2' => ' He is a debate coach with degrees from Universitas Islam Indonesia and
+ Institut Teknologi Bandung. His interests include research, teaching, public
+ speaking, and critical thinking. These interests are primarily expressed through
+ his active involvement in parliamentary debates and his experience coaching 35
+ different university and high school debate teams. He has also served as a
+ Breaking Adjudicator at the Malaysia Debate Open (MDO) 2016, EFL Champion
+ at the Cambodia United Asian Debating Championship (UADC) 2017, Champion
+at the Java Overland Intervarsities English Debate (JOVED) 2018, 1st Runner-up
+ at the Universitas National Universities Debating Championship (NUDC) 2018, and an EFL
+ Grandfinalist and co-6th Best EFL Speaker at the Cape Town World Universities
+ Debating Championship (WUDC) 2019.',
 
-    'juriposisi3' => 'Consultant at ABeam Consulting',
-    'juribio3' => 'Professional Consultant focusing on Customer Experience (CX),
-    Project Management and Digital Transformation area. Having
-    experience in working for various industries such as FMCG,
-    Automotive, Manufacturing and Multi Finance companies.
-    Supported by strong engineering educational background to sustain
-    a comprehensive logical thinking and sharp problem solving.',
+    'juriposisi3' => 'First Research Expert at Indonesian Institute of Sciences (LIPI)',
+    'juribio3' => ' She graduated from the Political Science Study Program at the Universitas Indonesia with Cum Laude honors (GPA: 3.86). She was a researcher at the
+ Center for Political Studies- Institute of Indonesia and graduated as the best
+ student at Universitas Diponegoro with Cum Laude honors (GPA: 4.00) and as the
+ best writer of Batch 137, 2015. She has been active in organizations, having
+ served as the chairman of the Internal Department of the UNDIP Government
+ Science Student Association. She represented the university as an exchange
+ student at Chulalongkorn University, studying Political Science and Government
+ (2013), and at Chiang Mai University, studying Cultural Studies / Critical Theory
+ and Analysis (2012). She also has skills in writing, speaking, and MCing.
+ Additionally, she has experience as a judge for the UNAS FEST 2023 KDBI
+ debate.',
     // EDC
 
     //KDBI
     'jurikdbiposisi1' => 'Tabulation Director',
-    'jurikdbibio1' => 'I am a researcher who focuses on studies and research on political, democracy and gender issues at The Habibie Center. He also has 3 years of experience as a practitioner in the field of political research and analysis, political communication strategy consulting and branding at a political consulting agency. Apart from that, he is often involved in programs and research at several NGOs and universities.',
+    'jurikdbibio1' => 'Fullah Jumaynah  is a researcher who focuses on politics, democracy, and gender issues at 
+The Habibie Center. She has 3 years of experience as a practitioner in the field of political 
+research and analysis, political communication strategy consulting, and branding in 
+political consulting agencies. In addition, she is often involved in programs and research 
+at several NGOs and universities. She is also active in conducting research on the topic of 
+politics and democracy, with output results in the form of policy documents (2024), as well 
+as running and managing programs in the Institute of Democracy and Human Rights 
+department (since 2024). Conducts quantitative and qualitative research on the evaluation 
+of the 2024 Presidential Election and analysis of democracy in Indonesia (2023-Present). 
+In addition, he also analyzes, writes, and publishes research results in a book and policy 
+document (since 2023).',
 
     'jurikdbiposisi2' => 'Learning Support Assistant at <br> PT Bank Mandiri (Persero) Tbk.',
-    'jurikdbibio2' => 'Purwo is passionate about education, with a keen interest in
-    human development and the dynamics of social media content. His
-    expertise in the learning and development sector is evidenced by his
-    roles as a public speaker and tutor. Purwo is deeply invested in the
-    realm of human development and aspires to simultaneously excel as
-    a specialist in learning, training, and content creation.',
+    'jurikdbibio2' => 'Purwo Besari graduated from Education Management at the State University of Jakarta 
+(UNJ). He is passionate about education, human development and the dynamics of social 
+media content. His expertise in the learning and development sector is evidenced by her 
+role as a public speaker and tutor. He has experience as a judge of the Kompetisi Debat 
+Bahasa Indonesi UNAS FEST 2023, participant of Asia University Summer Program 2019, 
+winner of Bakti Nusa 9 2019, and 1st place winner of National Education Debate 
+Competition 2018.
+',
 
-    'jurikdbiposisi3' => 'Lecturers at National University',
-    'jurikdbibio3' => 'The S-3 Ilmu Filsafat UGM Yogyakarta focuses on the Analytical Study of Language and Jurnalistics, 
-    highlighting its relevance for the development of the Indonesian Language. 
-    The author has completed various nonformal education, including a public relations course in Leiden, Belgium,
-     and a graphic design course in Dusseldorf, Germany. They have also held positions at the National University of Jakarta, as a researcher, and as a reviewer for various research programs. 
-     Their academic activities include teaching in various fields such as literature, journalism, communication, and research. They have also contributed to various publications, such as the Subagio Sastrowardoyo, Konglomerasi Sastra, and the Model Waktu in the Djoko Damono 2 case study. They have also contributed to the development of the Indonesian language, including the publication of the Indonesian National Language 2000, the certification of the Jurnal Jurnal, and the publication of the Indonesian Language Year 2000. Their interests include writing, organizing, and traveling.',
+    'jurikdbiposisi3' => 'Lecturers at Universitas Nasional',
+    'jurikdbibio3' => 'Prof. Dr. Wahyu Wibowo is a doctoral graduate of Philosophy at Gadjah Mada University. 
+He is currently active as a lecturer at Universitas Nasional, Jakarta, in the subjects of 
+Philosophy of Language, Philosophy of Science, creative writing, writing skills, and 
+journalism (he has been a lecturer since 1986 and also teaches at the S1, S2, and S3 levels). 
+He is listed as an Indonesian writer of the Class of 2000, the best lecturer of the Faculty of 
+Language and Literature UNAS (2004 & 2008), obtained Journalist Certification as a 
+Principal Journalist from the Press Council (No.092-WU/DP//2011, May 2011), Junior 
+lecturer, Kopertis Region III Jakarta (2008-current), senior editor of Solusi Investasi 
+magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
     //KDBI
 
     // SM
     'jurismposisi1' => 'Chief Operational Officer at <br> PT Aksara Dimensi Perkasa',
-    'jurismbio1' => 'World of Broadcasting, cinematography, and photography have been my focus for almost 25 years. I have had experiences in the broadcast world such as producing several TV programs at the Triwarsana Production house (Helmi Yahya). I was involved in the Production house that I founded for almost 5 years from 2003. I served as a product specialist at Canon Indonesia for almost 3 years. Photography and Videography are my majors in teaching at several campuses, such as Universitas Mercubuana, Universitas Sahid, Sekolah Tinggi Media Komunikasi Trisakti, and at Universitas Nasional, from 2011 until now. Since 2021, I have returned to establish a company in the audio-visual field that collaborates with more than 150 digital platforms such as Spotify, Apple Music, YouTube Music, and others.
-',
+    'jurismbio1' => 'Raden Daniel Wisnu Wardana has been in broadcasting, cinematography and photography for almost 25 years. He also has several experiences in the broadcast world including being a producer for several TV programmes at Production House Triwarsana led by Helmi Yahya. He has also been involved in the world of Production House for almost 5 years since 2003. In addition, he was a product specialist at Canon Indonesia for almost 3 years. Photography and videography are the main fields that he teaches at several campuses such as Universitas Mercubuana, Universitas Sahid, Universitas Trisakti , and Universitas Nasional since 2011 until now. Since 2021, he has returned to establish a startup company in the audio visual field that collaborates with more than 150 digital platforms such as Spotify, Apple Music, YouTube Music, and others.',
 
-    'jurismposisi2' => 'Lecture at National University',
-    'jurismbio2' => 'Kusen Dony Hermansyah, better known as Dony or Kusdon, is a graduate of the Faculty of Film and Television from the Jakarta Institute of Arts and the Postgraduate Program of the Indonesian Institute of Art in Surakarta. He began his career as a film editor in 1994, especially in documentary films, and after graduating from a diploma program in 2000, he began to pursue two professions as a lecturer and film editor. Dony also teaches at several institutions, including the Jakarta Institute of Arts and the Jakarta Creative Media State Polytechnic, and has worked in various film genres, including documentaries, soap operas, experimental films, fiction films, and music videos.
+    'jurismposisi2' => 'Lecture at Institut Kesenian Jakarta',
+    'jurismbio2' => 'Kusen Dony Hermansyah, better known as Dony or Kusdon, he is a graduate of the Faculty of Film and Television from the Institut Kesenian Jakarta and the Postgraduate Program of the Intititut Seni Indonesia Surakarta. He began his career as a film editor in 1994, especially in documentary films, and after graduating from a diploma program in 2000, he began to pursue two professions as a lecturer and film editor. Dony also teaches at several institutions, including the Institut Kesenian Jakarta and the Politeknik Negeri Media Kreatif Jakarta, and has worked in various film genres, including documentaries, soap operas, experimental films, fiction films, and music videos.
 ',
 
     'jurismposisi4' => 'Line Producer At PT MNC Pictures',
-     'jurismbio4' => 'Jentoni Pakpahan is a graduate of the Faculty of English Language and Literature from the Universitas Nasional (UNAS). He is a professional in the Indonesian entertainment industry with extensive experience in film and television production. Currently, he works as a Line Producer at PT MNC Pictures since October 2020, and in the same place, he also has work experience as an Assistant Producer from April 2015 to October 2020. In addition, he also has work experience at MD Entertainment as an Assistant Production Manager from 2010 to 2013, and experience working as a freelancer on various film, advertising, and commercial projects. Jentoni Pakpahan has been involved in several successful film projects, including "Kamu Tidak Sendiri" (2021), "Mars and Venus (Collabs Version)" (2020), and "Meet Me After Sunset" (2018). He has also been involved in several other television and film projects. In addition to his experience in the entertainment industry, Jentoni Pakpahan also has skills in drumming, Microsoft Office, Microsoft Excel, and social media.',
+     'jurismbio4' => 'Jentoni Pakpahan is a graduate of the Faculty of English Language and Literature from the Universitas Nasional (UNAS). He is a professional in the Indonesian entertainment industry with extensive experience in film and television production. Currently, he works as a Line Producer at PT MNC Pictures since October 2020, and in the same place, he also has work experience as an Assistant Producer from April 2015 to October 2020. In addition, he also has work experience at MD Entertainment as an Assistant Production Manager from 2010 to 2013, and experience working as a freelancer on various film, advertising, and commercial projects. Jentoni Pakpahan has been involved in several successful film projects, including "Kamu Tidak Sendiri" (2021), "Mars and Venus (Collabs Version)" (2020), and "Meet Me After Sunset" (2018). He has also been involved in several other television and film projects.',
     // SM
      // SPC
      'jurispcposisi1' => 'Lecture at Pamulang University PSDKU',
-     'jurispcbio1' => 'Efriza, S.I.P., M.Si. is a graduate of S1 Political Sciences of National University and S2 Political Science at the Institute of Social Sciences and Political sciences of Jakarta. (IISIP). Currently, Efriza has served as a Permanent Lecturer of Government Sciences at the University of Pamulang Program of Study Outside the Main Campus (UNPAM PSDKU), Serang, Banten, since March 2022, as well as as as a permanent lecturer of Political Science at the Higher School of State Administration Sciences (STIP-AN) since October 2016. 
-     Efriza has written 13 books, including Sociology of Power Theory and Development (2023), Political Introduction: An Empirical and Scientific Review (2021) and Political Science: From Political Sciences to Governance Systems. (2009). 
+     'jurispcbio1' => 'Efriza, S.I.P., M.Si. is a graduate of S1 Political Sciences of Universitas Nasional and S2 Political Science at the Institut Ilmu Sosial dan Ilmu Politik Jakarta (IISIP). Currently, Efriza has served as a Permanent Lecturer of Government Sciences at the Universitas Pamulang Program of Study Outside the Main Campus (UNPAM PSDKU), Serang, Banten, since March 2022, as well as as as a permanent lecturer of Political Science at the Higher School of State Administration Sciences (STIP-AN) since October 2016. 
+     Efriza has written 13 books, including Sociology of Power Theory and Development (2023), Political Introduction: An Empirical and Scientific Review (2021) and Political Science: From Political Sciences to Governance Systems (2009). 
      ',
  
-     'jurispcposisi2' => 'Chief Execitove Officer PT. Barata Indonesia',
-     'jurispcbio2' => 'Former high-ranking government official with experience in leading a wide range of strategic manufacturing and defence industries belonging to the country. Have a solid academic background ranging from Monash University to Cambridge University executive education focused on Disruptive Innovation. 
-     He has a lot of experience, one of which is as Chief Executive Officer / President at PT. Barata Indonesia. He also served as Deputy Minister of Mining, Strategic Industry & Media in the Ministry of State-owned enterprises from July 2015 to November 2019. It is his duty to assist the Minister in formulating policies and synchronizing the implementation of strategic business initiatives, competitiveness, performance and sustainable development for state-owned enterprises in the Mining, Oil & Gas, Strategic Industries, Security Printing, Perum Perum, Publishing & Printing sectors.
-     ',
+     'jurispcposisi2' => 'Social Activist | Entrepreneur',
+     'jurispcbio2' => 'Desfara Anggreani is a social activist and young entrepreneur who is currently studying 51 Nursing at the National University since 2021. In addition, she is also taking an Information Systems course at the National University of Singapore. Desfara is known as a student who is skilled in public speaking, which has led her to various achievements in debate competitions and international conferences. Desfara achievements cover a wide range of fields, including winning 1st place in the SDGs project at the International Youth Experience 2024, 2nd place in National Scientific Writing at UNAS FEST 2023, as well as several other championships in public speaking, essay writing, and English Olympiad. Her activity in organizations has nurtured her attention to social issues, which was later manifested through the establishment of Rumah Belajar, a tutoring center that she leads. Desfaras professional experience is diverse. She is the founder of Runut Waktu, an initiative that focuses on social issues in education, health, and the environment. Desfara is also the CEO of The Eternals Indonesia, a local perfume brand. In addition, she has been a mentor at Twinkling Stars, a partner at World Inspiration Indonesia, and held various important positions in organizations such as Get Wellness Soon, Indonesia Millennial Connect, and ASEAN Youth Organization. Desfara diverse experiences and achievements demonstrate her strong commitment to social issues, education, and leadership. With this background, Desfara Anggreani positions herself as an inspiring young figure who has the potential to make significant contributions to social and economic development in the future.',
  
      'jurispcposisi3' => 'Director General of New Energy at the Ministry of Energy and Mineral Resources (ESDM)',
      'jurispcbio3' => 'Prof. Dr. Eng. Eniya Listiani Dewi is one of the Indonesian women scientists. He is a S1-S3 alumnus of Waseda University in Japan. The S1 program was completed using the Science and Technology Advance Industrial Development (STAID) scholarship of the State Ministry of Research and Technology. Eniya invented the Zinc-Air Fuel Cell (ZAFC), a generator that generates electricity from metal and oxygen. 
@@ -256,7 +261,7 @@ contributions to social and economic development in the future.',
      'lembarbio' =>  'Biodata Team Sheet',
      'asal' =>  'Choose Country',
      'teamm' =>  'Team Name',
-     'teamm4' =>  'All teams must create a group name related to the theme, without relating to race, religion, and disrespect others.',
+     'teamm4' =>  'All participants must create a group name that relates to the theme, with the condition that it should not offend any ethnic group, religion and disrespect others',
 
      'kab' =>  'Regency/City/PT',
      'kompe' =>  'Competition',
@@ -287,7 +292,9 @@ contributions to social and economic development in the future.',
      'unass' =>  'Register (UNAS Student)',
      'oopen' => 'Opened On',
      'keterangan' => 'this position will not change until the competition ends.',
-     'buktibayar' => 'Proof of payment<br> *Send to bank BCA.No account 2941108361 in the name of NABILA DEA FIKRIANI',
+     'buktibayar' => 'Proof of payment<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)',
     'bukaunggah' => 'Upload Works Still Closed',
+  'bukaedc' => 'The Round Is Still Closed',
+  'max' => 'Max 3mb',
      ]
 ?>

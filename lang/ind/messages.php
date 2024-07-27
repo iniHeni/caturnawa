@@ -12,7 +12,7 @@ return [
     'juri' => 'Juri',
     // Nav End Menu
     // Home Start
-    'welcome' => 'Selamat Datang di Caturnawa<br>Daftar Sekarang dan jadilah Pemenang!',
+    'welcome' => 'Selamat Datang di Caturnawa<br>Daftar Sekarang dan Jadilah Pemenang!',
     'buka' =>'Pendaftaran Dibuka Pada',
     
     'sponsor' =>'Sponsor Kami',
@@ -37,8 +37,8 @@ return [
     'ronde3' => 'Ronde 3',
     // Admin Page End
     // Page Start Lomba
-    'teks' => 'Dalam memeriahkan Dies Natalies Universitas Nasional ke-75',
-    'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema "Mengeksplorasi potensi inovasi teknologi energi terbarukan untuk mencapai momentum hijau global"',
+    'teks' => 'Dalam memeriahkan Dies Natalis Universitas Nasional ke-75,',
+    'teks1' => 'UNAS FEST membuka pendaftaran kompetisi dengan tema "Mengeksplorasi Potensi Inovasi Teknologi Energi Terbarukan Untuk Mencapai Momentum Hijau Global"',
     'pesertalomba' => 'Peserta Kompetisi',
     'babak' => 'Pilih Babak',
     'penyisihan' => 'Penyisihan',
@@ -59,14 +59,14 @@ return [
     'pria' => 'Laki - Laki',
     'wanita' => 'Perempuan',
     'alamat' => 'Alamat Lengkap',
-    'ktm' => 'Kartu Tanda Mahasiswa *format:jpg,png,jpeg, Max 3MB',
-    'foto' => 'Foto Formal Background Merah *format:jpg,png,jpeg, Max 3MB',
-    'krs' => 'Kartu Hasil Studi *format:jpg,png,jpeg, Max 3MB',
-    'krs1' => 'Kartu Rencana Studi *format:jpg,png,jpeg, Max 3MB',
-    'bukti' => 'Bukti mengikuti Media Sosial UNAS FEST seperti: TikTok, YouTube, Instagram. *format:pdf',
+    'ktm' => 'Kartu Tanda Mahasiswa ',
+    'foto' => 'Foto Formal Background Merah ',
+    'krs' => 'Kartu Hasil Studi ',
+    'krs1' => 'Kartu Rencana Studi ',
+    'bukti' => 'Bukti mengikuti Media Sosial UNAS FEST seperti: TikTok, YouTube, Instagram. ',
     'team' => 'Berkas Team',
     'instansi' => 'Asal Instansi',
-    'surat' => 'Surat Delegasi Kampus scan:pdf , Max 3MB',
+    'surat' => 'Surat Delegasi Universitas ',
     'Capaian' => 'Capaian Unggulan',
     'namakegiatan' => 'Nama Kegiatan',
     'jenis' => 'Jenis Kegiatan',
@@ -76,8 +76,8 @@ return [
     'regional' => 'Regional',
     'nasional' => 'Nasional',
     'provinsi' => 'Provinsi',
-    'sertif' => 'Sertifikat scan:pdf , Max 3MB' ,
-    'bayar' => 'Pembayaran',
+    'sertif' => 'Sertifikat  ' ,
+    'bayar' => 'Kirim',
     'kembali' => 'Kembali',
     'Pesan' => 'Pesan',
     'Send' => 'Kirim Pesan',
@@ -97,19 +97,22 @@ return [
     'tahap1' => 'Tahap 1',
     'tahap2' => 'Tahap 2',
     'tahap3' => 'Tahap 3',
-    'Rp' => 'Rp 300.000/Tim',
-    'Rp1' => 'Rp 400.000/Tim',
-    'Rp2' => 'Rp 450.000/Tim',
-    'Rp3' => 'Rp 170.000',
-    'Rp4' => 'Rp 200.000',
-    'Rp5' => 'Rp 350.000/Tim',
-    'Rp6' => 'Rp 500.000/Tim',
-    'Rp7' => 'Rp 550.000/Tim',
+    'Rp' => 'Rp300.000/Tim',
+    'Rp1' => 'Rp400.000/Tim',
+    'Rp2' => 'Rp450.000/Tim',
+    'Rp3' => 'Rp170.000',
+    'Rp4' => 'Rp200.000',
+    'Rp5' => 'Rp350.000/Tim',
+    'Rp6' => 'Rp500.000/Tim',
+    'Rp7' => 'Rp550.000/Tim',
+    'Rp8' => 'Rp300.000/Tim',
+    'Rp9' => 'Rp400.000/Tim',
+    'Rp10' => 'Rp450.000/Tim',
     'tgl' => 'Juli',
     'tgl1' => 'Agustus',
     'tgl2' => 'S',
     'tutup' => 'Tutup',
-    'khusus' => 'Khusus Mahasiswa Universitas Nasional Klik Tombol Khusus UNAS',
+    'khusus' => 'Khusus Mahasiswa Universitas Nasional Klik Tombol Khusus Mahasiswa UNAS',
     'instansi1' => 'Instansi',
 
     
@@ -121,59 +124,87 @@ return [
      // Data Juri Start
 
      // EDC
-     'juriposisi1' => 'Diplomat Kementrian Luar Negeri',
-     'juribio1' => 'Bekerja di Kementerian Luar Negeri sejak Februari 2019, sebelumnya menjadi debitur parlemen kompetitif dari Universitas Indonesia yang telah memenangkan turnamen nasional dan internasional. Mewakili Indonesia dalam berbagai kompetisi internasional, di antaranya World University Debating Championship 2019 di Cape Town, bersaing melawan lebih dari 250 tim dari semua universitas elit di seluruh dunia. Sukses membawa tim ke putaran eliminasi dalam bahasa Inggris sebagai Bahasa Kedua (ESL) kategori, Snatching Worlds 6th Best EFL speaker di turnamen yang sama.<br></br>Tertarik pada berbagai isu, seperti: Hubungan Internasional, Filsafat, Politik AS, Politik Inggris, BRI, Ekonomi, Masalah Sosial, dll.',
+     'juriposisi1' => 'Mahasiswa Psikologi',
+     'juribio1' => ' Beliau adalah mahasiswa psikologi tingkat sarjana di Universitas Indonesia.
+ Beliau memiliki latar belakang dalam berbagai peran kepemimpinan, termasuk
+ sebagai Presiden <i>English Debating Society</i> (EDS UI). Beliau telah magang
+ sebagai <i>Internal Recruiter</i> di <i>Monroe Consulting Group</i> dan dalam <i>HR
+ Recruitment</i> di Akulaku Indonesia. Beliau memiliki minat yang besar dalam
+ sumber daya manusia, kesejahteraan sosial, dan masalah kesehatan mental.
+ Beliau memiliki pengalaman debat dalam Grandfinalis kategori <i>English as
+ Foreign Language</i> (EFL) pada <i>World Universities Debating Championships</i> 2024,
+ Semifinalis kategori <i>English as Secondary Language</i> (ESL) pada <i>Australasian
+ Intervarsity Debating Championships</i> 2023 di Krabi, Thailand dan Menjadi Juri
+ Terakreditasi pada <i>Thailands Speech and Debate International Competition </i> 2021.',
      'juriposisi2' => 'Pelatih Debat',
-     'juribio2' => 'Saya tertarik dengan penelitian, pengajaran, berbicara di depan umum dan berpikir kritis. Minat ini terutama tercermin dalam bentuk aktif dalam debat parlemen, di mana saya bergabung dengan berbagai kompetisi, mengajar banyak institusi, dan membuat inisiatif untuk menyebarkan debat di seluruh Indonesia.',
-     'juriposisi3' => 'Konsultan di ABeam Consulting',
-     'juribio3' => 'Konsultan profesional yang berfokus pada Customer Experience (CX), Manajemen Proyek dan Digital Transformation area. Memiliki pengalaman bekerja untuk berbagai industri seperti FMCG, Automotive, Manufacturing dan Multi Finance perusahaan.
-     Didukung oleh latar belakang pendidikan teknik yang kuat untuk mempertahankan pemikiran logis yang komprehensif dan pemecahan masalah yang tajam.
-     Silakan lihat profil saya untuk detailnya. Kami selalu terbuka untuk diskusi apa pun yang berkaitan dengan hal-hal profesional.',
+     'juribio2' => ' Beliau merupakan seorang pelatih debat dengan lulusan Universitas Islam
+ Indonesia dan Institut Teknologi Bandung. Beliau memiliki minat penelitian,
+ mengajar, berbicara di depan umum, dan berpikir kritis. Ketertarikan ini terutama
+ terwujud dalam bentuk keaktifan beliau dalam debat parlementer, mempunyai
+ pengalaman melatih 35 tim debat kompetitif universitas atau sekolah menengah
+ yang berbeda. Beliau juga memiliki pengalaman menjadi <i>Breaking Adjudicator of
+ Malaysia Debate Open</i> (MDO) 2016, EFL <i>Champion of Cambodia United Asian
+ Debating Championship</i> (UADC) 2017, <i>Champion of Java Overland Intervarsities
+ English Debate</i> (JOVED) 2018, <i>1st Runner-up of National University Debating
+ Championship</i> (NUDC) 2018, EFL <i>Grandfinalist & co-6th best</i> EFL <i>speaker of
+ Cape Town World Universities Debating Championship</i>  (WUDC) 2019.',
+     'juriposisi3' => 'First Research Expert at Indonesian Institute of Sciences (LIPI)',
+     'juribio3' => 'Beliau merupakan lulusan dari Program Studi Ilmu Politik di Universitas
+ Indonesia dengan predikat Cumlaude (IPK: 3.86). Beliau pernah menjadi peneliti
+ di Pusat Kajian Politik-Institut Indonesia, dan menjadi mahasiswa berprestasi
+ lulusan terbaik di Universitas Diponegoro predikat Cumlaude (IPK: 4.00) dan
+ penulis terbaik batch 137 2015. Beliau aktif dalam organisasi pernah menjabat
+ sebagai ketua departemen internal Himpunan Mahasiswa Ilmu Pemerintahan
+ UNDIP. Beliau menjadi perwakilan pertukaran mahasiswa Universitas
+ Chulalongkorn, Ilmu Politik dan Pemerintahan (2013), dan pertukaran mahasiswa
+ Universitas Chiang Mai, Kajian Budaya/Teori Kritis dan Analisis (2012),
+ Kemahiran menulis, dan menjadi pembicara/MC. Beliau juga memiliki
+ pengalaman menjadi juri debat KDBI UNAS FEST 2023.',
      // EDC
     //KDBI
-    'jurikdbiposisi1' => 'Director Tabulator',
-    'jurikdbibio1' => 'Saya adalah seorang peneliti yang memiliki fokus studi dan penelitian pada isu politik, demokrasi, dan
-gender di The Habibie Center. Memiliki pengalaman juga selama 3 tahun sebagai praktisi di bidang
-penelitian dan analisis politik, konsultasi strategi komunikasi politik dan branding di agensi konsultan
-politik. Selain itu, kerap terlibat dalam program dan penelitian di beberapa NGO dan Universitas.',
+    'jurikdbiposisi1' => 'Democracy and Political Researcher',
+    'jurikdbibio1' => 'Beliau merupakan seorang peneliti yang memiliki fokus studi dan penelitian pada isu 
+politik, demokrasi, dan gender di <i>The Habibie Center</i>. Memiliki pengalaman selama 3 
+tahun sebagai praktisi di bidang penelitian dan analisis politik, konsultasi strategi 
+komunikasi politik, dan branding di agensi konsultan politik. Selain itu, beliau kerap 
+terlibat dalam program dan penelitian di beberapa NGO dan Universitas. Aktif pula dalam 
+melakukan penelitian pada topik politik dan demokrasi, dengan hasil berupa dokumen 
+kebijakan (2024), serta menjalankan dan mengelola program di departemen Institut 
+Demokrasi dan HAM (sejak 2024). Melakukan penelitian kuantitatif dan kualitatif 
+mengenai evaluasi penyelenggaraan pemilihan presiden 2024 dan analisis demokrasi di 
+Indonesia (2023-Sekarang).',
     'jurikdbiposisi2' => 'Learning Support Assistant di <br> PT Bank Mandiri (Persero) Tbk.',
-    'jurikdbibio2' => 'Purwo sangat passion  tentang pendidikan, dengan minat yang kuat dalam pengembangan manusia dan dinamika konten media sosial. Keahlian di sektor pembelajaran dan pengembangan dibuktikan oleh perannya sebagai pembicara publik dan tutor. Purwo sangat berinvestasi dalam bidang pengembangan manusia dan bercita-cita untuk bersamaan unggul sebagai spesialis dalam pembelajaran, pelatihan, dan penciptaan konten.',
+    'jurikdbibio2' => 'Beliau merupakan lulusan dari Manajemen Pendidikan di Universitas Negeri Jakarta (UNJ). 
+Memiliki ketertarikan dengan dunia pendidikan, perkembangan manusia dan dinamika 
+konten media sosial. Keahliannya di sektor pembelajaran dan pengembangan dibuktikan 
+dengan perannya sebagai pembicara publik dan tutor. Beliau memiliki pengalaman 
+menjadi juri Kompetisi Debat Bahasa Indonesia (KDBI) di UNAS FEST 2023, peserta 
+<i>Asia University Summer Program 2019</i>, pemenang Bakti Nusa 9 2019, dan juara 1 Lomba 
+Debat Pendidikan Nasional 2018.',
 
     'jurikdbiposisi3' => 'Dosen Universitas Nasional',
-    'jurikdbibio3' => 'S-3 Ilmu Filsafat UGM Yogyakarta berfokus pada Studi Analisis Bahasa dan Jurnalisme, menekankan relevansinya untuk pengembangan bahasa Indonesia. 
-    Penulis telah menyelesaikan berbagai pendidikan nonformal, termasuk kursus hubungan publik di Leiden, Belgia, dan kursus desain grafis di Düsseldorf, Jerman. Mereka juga telah memegang posisi di Universitas Nasional Jakarta, sebagai peneliti, dan sebagai reviewer untuk berbagai program penelitian. 
-    Kegiatan akademik mereka meliputi pengajaran di berbagai bidang seperti sastra, jurnalisme, komunikasi, dan penelitian. Mereka juga telah berkontribusi pada berbagai publikasi, seperti Subagio Sastrowardoyo, Konglomerasi Sastra, dan Model Waktu dalam studi kasus Djoko Damono 2. Mereka juga telah berkontribusi pada pengembangan bahasa Indonesia, termasuk penerbitan Bahasa Nasional Indonesia 2000, sertifikasi Jurnal, dan penerbitan Tahun Bahasa Indonesia 2000. Minat mereka termasuk menulis, mengatur, dan bepergian.',
+    'jurikdbibio3' => 'Beliau merupakan lulusan S3 Ilmu Filsafat di Universitas Gadjah Mada. Saat ini aktif 
+sebagai dosen di Universitas Nasional, Jakarta, dalam mata kuliah Filsafat Bahasa, Filsafat 
+Ilmu Pengetahuan, penulisan kreatif, kemahiran menulis, dan kewartawanan (menjadi 
+dosen sejak 1986 dan juga mengajar di jenjang S1, S2, dan S3). Beliau tercatat sebagai 
+sastrawan Indonesia angkatan 2000, dosen terbaik Fakultas Bahasa dan Sastra UNAS 
+(2004 & 2008), memperoleh Sertifikasi Wartawan sebagai Wartawan Utama dari Dewan 
+Pers (No.092-WU/DP//2011, Mei 2011), dosen Muda, Kopertis Wilayah III Jakarta (2008-kini), redaktur senior majalah Solusi Investasi (2000-kini), pendiri Pusat Studi Betawi 
+UNAS (2004).',
     //KDBI
 
      // SM
      'jurismposisi1' => 'Chief Operational Officer at <br> PT Aksara Dimensi Perkasa',
-     'jurismbio1' => 'Dunia Broadcasting, sinematografi dan fotografitelah saya geluti
-     selama hampir 25 tahun ini. Beberapa pengalaman di dunia
-     broadcast seperti meproduseri beberapa program TV di Production
-     house Triwarsana (Helmi Yahya). Berkecimpung di Production
-     house yang saya dirikan selama hampir 5 tahun dari tahun 2003.
-     Menjadi product specialist di Canon Indonesia selama hampir 3
-     tahun. Fotografi dan Videografi adalah major saya dalam mengajar
-     dibeberapa kampus, seperti Universitas Mercubuana, Universitas
-     Sahid,Sekolah Tinggi Media Komunikasi Trisakti, dan di Universitas
-     Nasional, sejak tahun 2011 hingga saat ini.
-     Sejak tahun 2021, kembali saya membangun sebuah sebuah
-     perusahaan dibidang audio visual yang bekerjasama dengan lebih
-     dari 150platform digital seperti, spotify, apple music, youtube music
-     dan lain-lain.',
+     'jurismbio1' => 'Raden Daniel Wisnu Wardana telah menggeluti dunia broadcasting, sinematografi, dan fotografi selama hampir 25 tahun. Ia juga memiliki beberapa pengalaman di dunia broadcast termasuk menjadi produser untuk beberapa program TV di Production House Triwarsana yang dipimpin oleh Helmi Yahya. Ia juga pernah berkecimpung di dunia Production House selama hampir 5 tahun sejak tahun 2003. Selain itu, ia pernah menjadi product specialist di Canon Indonesia selama hampir 3 tahun. Fotografi dan videografi adalah bidang utama yang ia ajarkan di beberapa kampus seperti Universitas Mercubuana, Universitas Sahid, Sekolah Tinggi Media Komunikasi Trisakti, dan Universitas Nasional sejak tahun 2011 hingga saat ini. Sejak tahun 2021, ia kembali membangun sebuah perusahaan di bidang audio visual yang bekerja sama dengan lebih dari 150 platform digital seperti Spotify, Apple Music, YouTube Music, dan lain-lain.
+',
  
-     'jurismposisi2' => 'Dosen Universitas Nasional',
-     'jurismbio2' => 'Kusen Dony Hermansyah, lebih dikenal dengan Dony atau Kusdon adalah lulusan
-     Fakultas Film dan Televisi dari Institut Kesenian Jakarta dan Program Pascasarjana
-     Institut Seni Indonesia di Surakarta. Ia memulai karir sebagai editor film pada tahun
-     1994, khususnya dalam film dokumenter, dan setelah lulus program diploma pada
-     tahun 2000, ia memulai menjalani dua profesi sebagai dosen dan editor film. Dony juga
-     mengajar di beberapa institusi, termasuk Institut Kesenian Jakarta dan Politeknik
-     Negeri Media Kreatif Jakarta, dan telah bekerja dalam berbagai genre film, termasuk
-     dokumenter, sinetron, film eksperimental, film fiksi, dan video musik.',
+     'jurismposisi2' => 'Dosen Institut Kesenian Jakarta',
+     'jurismbio2' => 'Kusen Dony Hermansyah, lebih dikenal dengan Dony atau Kusdon adalah lulusan Fakultas Film dan Televisi dari Institut Kesenian Jakarta dan Program Pascasarjana Institut Seni Indonesia di Surakarta. Ia memulai karir sebagai editor film pada tahun 1994, khususnya dalam film dokumenter, dan setelah lulus program diploma pada tahun 2000, ia mulai menjalani dua profesi sebagai dosen dan editor film. Dony juga mengajar di beberapa institusi, termasuk Institut Kesenian Jakarta dan Politeknik Negeri Media Kreatif Jakarta, dan telah bekerja dalam berbagai genre film, termasuk dokumenter, sinetron, film eksperimental, film fiksi, dan video musik.
+
+',
  
      'jurismposisi4' => 'Line Producer di PT MNC Pictures',
-     'jurismbio4' => 'Jentoni Pakpahan merupakan lulusan Fakultas Bahasa dan Sastra Inggris dari Universitas Nasional (UNAS). Ia adalah seorang profesional di industri hiburan Indonesia yang memiliki pengalaman yang luas dalam produksi film dan televisi. Saat ini ia bekerja sebagai Line Producer di PT MNC Pictures sejak Oktober 2020, dan pada tempat yang sama beliau juga mempunyai pengalaman kerja sebagai Asisten Produser sejak April 2015 - Oktober 2020. Selain itu, beliau juga mempunyai pengalaman kerja di MD Entertaiment sebagai Asisten Manager Produksi sejak tahun 2010-2013, dan pengalaman bekerja sebagai freelancer dalam berbagai proyek film, iklan, dan komersial. Jentoni Pakpahan telah terlibat dalam beberapa proyek film yang sukses, termasuk "Kamu Tidak Sendiri" (2021), "Mars and Venus (Collabs Version)" (2020), dan "Meet Me After Sunset" (2018). Ia juga terlibat dalam beberapa proyek televisi dan film lainnya. Selain memiliki pengalaman dalam industri hiburan, Jentoni Pakpahan juga memiliki keterampilan pada bidang drummer, microsoft office, microsoft excel, dan sosial media.',
+     'jurismbio4' => 'Jentoni Pakpahan merupakan lulusan Fakultas Bahasa dan Sastra Inggris dari Universitas Nasional (UNAS). Ia adalah seorang profesional di industri hiburan Indonesia yang memiliki pengalaman yang luas dalam produksi film dan televisi. Saat ini ia bekerja sebagai Line Producer di PT MNC Pictures sejak Oktober 2020, dan pada tempat yang sama ia juga mempunyai pengalaman kerja sebagai Asisten Produser sejak April 2015 - Oktober 2020. Selain itu, ia juga mempunyai pengalaman kerja di MD Entertaiment sebagai Asisten Manager Produksi sejak tahun 2010-2013, dan pengalaman bekerja sebagai freelancer dalam berbagai proyek film, iklan, dan komersial. Ia telah terlibat dalam beberapa proyek film yang sukses, termasuk "Kamu Tidak Sendiri" (2021), "Mars and Venus (Collabs Version)" (2020), dan "Meet Me After Sunset" (2018). Ia juga terlibat dalam beberapa proyek televisi dan film lainnya.',
      // SM
 
          // SPC
@@ -198,7 +229,7 @@ bagi kemajuan ilmu politik di Indonesia. Beliau adalah sosok yang inspiratif bag
 peneliti muda yang ingin berkarya di bidang politik.
          ',
      
-         'jurispcposisi2' => 'Pelatih Debat',
+         'jurispcposisi2' => 'Social Activist | Entrepreneur',
          'jurispcbio2' => 'Desfara Anggreani adalah seorang aktivis sosial dan 
 pengusaha muda yang saat ini sedang menempuh pendidikan S1 
 Keperawatan di Universitas Nasional sejak tahun 2021. Selain itu, ia 
@@ -312,9 +343,10 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'unass' =>  'Khusus Mahasiswa UNAS',
     'oopen' => 'Dibuka Pada Tanggal',
     'keterangan' => 'Posisi ini tidak akan berubah hingga kompetisi berakhir',
-    'buktibayar' => 'Bukti Bayar<br> *Kirimkan Ke Bank BCA.No Rekening 2941108361 Atas Nama NABILA DEA FIKRIANI',
+    'buktibayar' => 'Bukti Bayar<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)',
     'bukaedc' => 'Babak Masih Ditutup',
     'bukaunggah' => 'Unggah Karya Masih Ditutup',
+ 	 'max' => 'Maks 3mb',
 
      
 
