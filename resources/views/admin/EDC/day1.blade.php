@@ -106,7 +106,7 @@ $tambahedit = Carbon::parse('2024-05-28');
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan Day 1</h1>
                 <p><a class="add" href="#" style="color: white" onclick="
                     event.preventDefault();
-                    @if (!$today->greaterThanOrEqualTo($tambah))
+                    @if (!$today->greaterThanOrEqualTo($tambahedit))
                         Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
                     @else
                         window.location.href = '{{ route('edc.pesertaday1') }}';
@@ -149,7 +149,7 @@ $tambahedit = Carbon::parse('2024-05-28');
                             <td>
                                 <a href="#" onclick="
                                     event.preventDefault();
-                                    @if (!$today->greaterThanOrEqualTo($tambah))
+                                    @if (!$today->greaterThanOrEqualTo($tambahedit))
                                         Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
                                     @else
                                         window.location.href = '{{ route('edc.editedc', $item->id) }}';
@@ -159,7 +159,7 @@ $tambahedit = Carbon::parse('2024-05-28');
                                     @csrf 
                                     <button type="button" style="color: red" onclick="
                                         event.preventDefault();
-                                        @if (!$today->greaterThanOrEqualTo($tambah))
+                                        @if (!$today->greaterThanOrEqualTo($tambahedit))
                                             Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
                                         @else
                                             confirmDelete({{ $item->id }})

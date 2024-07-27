@@ -132,9 +132,10 @@ return [
      // EDC
     //KDBI
     'jurikdbiposisi1' => 'Director Tabulator',
-    'jurikdbibio1' => 'Saat ini sedang belajar di Fakultas Teknik Pertambangan dan Minyak.
-    Ambisius dan cepat belajar. Memiliki minat yang tinggi dalam organisasi acara dan kegiatan organisasi. Menjadi bagian dari tim konsultan/teknologi Pusat Prestasi Nasional (Puspresnas) oleh Kementrian Pendidikan dan Kebudayaan (Kemdikbud)',
-
+    'jurikdbibio1' => 'Saya adalah seorang peneliti yang memiliki fokus studi dan penelitian pada isu politik, demokrasi, dan
+gender di The Habibie Center. Memiliki pengalaman juga selama 3 tahun sebagai praktisi di bidang
+penelitian dan analisis politik, konsultasi strategi komunikasi politik dan branding di agensi konsultan
+politik. Selain itu, kerap terlibat dalam program dan penelitian di beberapa NGO dan Universitas.',
     'jurikdbiposisi2' => 'Learning Support Assistant di <br> PT Bank Mandiri (Persero) Tbk.',
     'jurikdbibio2' => 'Purwo sangat passion  tentang pendidikan, dengan minat yang kuat dalam pengembangan manusia dan dinamika konten media sosial. Keahlian di sektor pembelajaran dan pengembangan dibuktikan oleh perannya sebagai pembicara publik dan tutor. Purwo sangat berinvestasi dalam bidang pengembangan manusia dan bercita-cita untuk bersamaan unggul sebagai spesialis dalam pembelajaran, pelatihan, dan penciptaan konten.',
 
@@ -312,6 +313,8 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'oopen' => 'Dibuka Pada Tanggal',
     'keterangan' => 'Posisi ini tidak akan berubah hingga kompetisi berakhir',
     'buktibayar' => 'Bukti Bayar<br> *Kirimkan Ke Bank BCA.No Rekening 2941108361 Atas Nama NABILA DEA FIKRIANI',
+    'bukaedc' => 'Babak Masih Ditutup',
+    'bukaunggah' => 'Unggah Karya Masih Ditutup',
 
      
 

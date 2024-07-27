@@ -90,13 +90,28 @@
         @csrf
     </form>
 </div>
+@php
+use Carbon\Carbon;
 
+$today = Carbon::now();
+
+
+$tambahedit = Carbon::parse('2024-05-28');
+
+@endphp
 <div id="data-container">
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                 <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan Day 2</h1>
-                <p><a class="add" href="{{ route('kdbi.pesertaday2') }}" style="color: white">Tambah Penilaian</a></p>
+                <p><a class="add" href="#" style="color: white" onclick="
+                    event.preventDefault();
+                    @if (!$today->greaterThanOrEqualTo($tambahedit))
+                        Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                    @else
+                        window.location.href = '{{ route('kdbi.pesertaday2') }}';
+                    @endif
+                ">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
                     @foreach ($groupedByRondeAndSesi as $ronde => $sesiChunks)
                     @foreach ($sesiChunks as $sesi => $dataSesi)
@@ -132,10 +147,24 @@
                                             <td>{{ $item->total}}</td>
                                             <td>{{ $item->vp}}</td>
                                             <td>
-                                                <a href="{{ route('kdbi.editkdbi2', $item->id) }}">Edit</a>
+                                                <a href="#" onclick="
+                                                    event.preventDefault();
+                                                    @if (!$today->greaterThanOrEqualTo($tambahedit))
+                                                        Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
+                                                    @else
+                                                        window.location.href = '{{ route('kdbi.editkdbi2', $item->id) }}';
+                                                    @endif
+                                                ">Edit</a>
                                                 <form action="{{ route('kdbi.hapuskdbi2', $item->id) }}" method="POST" id="delete-form-{{ $item->id }}">
                                                     @csrf 
-                                                    <button type="button" style="color: red" onclick="confirmDelete({{ $item->id }})">Hapus</button>
+                                                    <button type="button" style="color: red" onclick="
+                                                    event.preventDefault();
+                                                    @if (!$today->greaterThanOrEqualTo($tambahedit))
+                                                        Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
+                                                    @else
+                                                        confirmDelete({{ $item->id }})
+                                                    @endif
+                                                ">Hapus</button>
                                                 </form>
                                             </td>
                                         </tr>

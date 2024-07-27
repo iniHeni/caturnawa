@@ -137,7 +137,7 @@ public function hapusedc3($id){
 
     $now = Carbon::now();
 
-    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 15:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-20 20:00:00', 'Asia/Jakarta'); 
 
  
     $totalVpDay1 = day1edc::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))

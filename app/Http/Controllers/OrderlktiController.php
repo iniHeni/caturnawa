@@ -383,7 +383,7 @@ public function callbackl(Request $request){
 public function homespc($id){
     $orderlkti = orderlkti::find($id);
     $orderlkti->update(['status' => 'Paid']);
-    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    $whatsappGroupUrl = "https://chat.whatsapp.com/BK3iznWJNxt0UJHA66pAFL"; 
 
     return redirect()->away($whatsappGroupUrl);
 }
@@ -701,7 +701,7 @@ return view('matalomba/lkti/checkoutunas', compact('orderlkti'));
 public function homespc1($id){
     $orderlkti = orderlkti::find($id);
     $orderlkti->update(['status' => 'Khusus']);
-    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    $whatsappGroupUrl = "https://chat.whatsapp.com/BK3iznWJNxt0UJHA66pAFL"; 
     return redirect()->away($whatsappGroupUrl);
 }
 

@@ -160,11 +160,7 @@ contributions to social and economic development in the future.',
 
     //KDBI
     'jurikdbiposisi1' => 'Tabulation Director',
-    'jurikdbibio1' => 'Currently studying in Mining and Petroleum Engineering Faculty.
-    Ambitious and fast learner. Have high-interest in event organizing
-    and organitational works. Been in consultant/tech team for Pusat
-    Prestasi Nasional (Puspresnas) by Kementrian Pendidikan dan
-    Kebudayaan (Kemdikbud)',
+    'jurikdbibio1' => 'I am a researcher who focuses on studies and research on political, democracy and gender issues at The Habibie Center. He also has 3 years of experience as a practitioner in the field of political research and analysis, political communication strategy consulting and branding at a political consulting agency. Apart from that, he is often involved in programs and research at several NGOs and universities.',
 
     'jurikdbiposisi2' => 'Learning Support Assistant at <br> PT Bank Mandiri (Persero) Tbk.',
     'jurikdbibio2' => 'Purwo is passionate about education, with a keen interest in
@@ -292,5 +288,6 @@ contributions to social and economic development in the future.',
      'oopen' => 'Opened On',
      'keterangan' => 'this position will not change until the competition ends.',
      'buktibayar' => 'Proof of payment<br> *Send to bank BCA.No account 2941108361 in the name of NABILA DEA FIKRIANI',
+    'bukaunggah' => 'Upload Works Still Closed',
      ]
 ?>

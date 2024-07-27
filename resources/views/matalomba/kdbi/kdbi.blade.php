@@ -19,6 +19,7 @@
       <link rel="stylesheet" href="../../css/navmenudbt.css">
       <link rel="stylesheet" href="../../css/pagelombaedc.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - KDBI</title>
       <style>
@@ -146,9 +147,34 @@ $penyisihanEnd = Carbon::parse('2024-12-29');
 $semiFinalDate = Carbon::parse('2024-08-20');
 $finalDate = Carbon::parse('2024-09-16');
 @endphp
+@php
+use Carbon\Carbon;
+
+$today = Carbon::now();
+
+
+$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanEnd = Carbon::parse('2024-12-29');
+$semiFinalDate = Carbon::parse('2024-08-20');
+$finalDate = Carbon::parse('2024-09-16');
+@endphp
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
+        <a href="{{url('matalomba/kdbi/penyisihan') }}" class="card-item" onclick="
+        event.preventDefault(); 
+        @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
+
+            Swal.fire({
+                title: '@lang('messages.sweet1')',
+                text: '@lang('messages.bukaedc')',
+                icon: 'info'
+            });
+        @else 
+ 
+            window.location.href = '{{url('matalomba/kdbi/penyisihan') }}'; 
+        @endif
+    ">
         <a href="{{url('matalomba/kdbi/penyisihan') }}" class="card-item" onclick="
         event.preventDefault(); 
         @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
@@ -178,6 +204,14 @@ $finalDate = Carbon::parse('2024-09-16');
             window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
         @endif
     ">
+        <a href="#" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($semiFinalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
+        @endif
+    ">
             <img src="../../img/kdbi2.png" alt="Card Image">
             <span class="designer">Semifinal</span>
             <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
@@ -185,6 +219,14 @@ $finalDate = Carbon::parse('2024-09-16');
                 <i class="fas fa-arrow-right card-icon"></i>
             </div>
         </a>
+        <a href="{{url('matalomba/kdbi/Final') }}" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($finalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Final') }}';
+        @endif
+    ">
         <a href="{{url('matalomba/kdbi/Final') }}" class="card-item" onclick="
         event.preventDefault();
         @if (!$today->greaterThanOrEqualTo($finalDate))
@@ -214,6 +256,7 @@ $finalDate = Carbon::parse('2024-09-16');
                     <div class="round_box"></div>
                     <div class="img_box">
                         <img src="../../img/jurikdbibaru1.png" alt="">
+                        <img src="../../img/jurikdbibaru1.png" alt="">
                     </div>
     
                     <div class="user_content1">
@@ -231,6 +274,7 @@ $finalDate = Carbon::parse('2024-09-16');
                     <div class="round_box"></div>
                     <div class="img_box">
                         <img src="../../img/jurikdbibaru2.jpg" alt="">
+                        <img src="../../img/jurikdbibaru2.jpg" alt="">
                     </div>
     
                     <div class="user_content1">
@@ -247,6 +291,7 @@ $finalDate = Carbon::parse('2024-09-16');
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
+                        <img src="../../img/jurikdbibaru3.jpg" alt="">
                         <img src="../../img/jurikdbibaru3.jpg" alt="">
                     </div>
     

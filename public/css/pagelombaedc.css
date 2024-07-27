@@ -355,7 +355,7 @@
 .main .card_container{
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 40px;
 }

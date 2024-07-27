@@ -252,7 +252,7 @@ public function callbackk(Request $request){
 public function homekdbi($id){
     $orderlkti = orderkdbi::find($id);
     $orderlkti->update(['status' => 'Paid']);
-    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    $whatsappGroupUrl = "https://chat.whatsapp.com/L7QJ06WRs4tEZwVyP58SMB"; 
     return redirect()->away($whatsappGroupUrl);
 }
 
@@ -450,7 +450,7 @@ return view('matalomba/kdbi/checkoutunas', compact('orderkdbi'));
 public function homekdbi1($id){
     $orderlkti = orderkdbi::find($id);
     $orderlkti->update(['status' => 'Khusus']);
-    $whatsappGroupUrl = "https://chat.whatsapp.com/BQFJQw63gC20FT4BkmbOBk"; 
+    $whatsappGroupUrl = "https://chat.whatsapp.com/L7QJ06WRs4tEZwVyP58SMB"; 
     return redirect()->away($whatsappGroupUrl);
 }
 }
