@@ -53,6 +53,8 @@ form.secActive .form.first{
     transform: translateX(-100%);
 }
 .konten form .title{
+  /*padding: 0px 105px 0px 0px;*/
+  width: 65%;
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
