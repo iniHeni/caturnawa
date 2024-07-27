@@ -347,6 +347,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'bukaedc' => 'Babak Masih Ditutup',
     'bukaunggah' => 'Unggah Karya Masih Ditutup',
  	 'max' => 'Maks 3mb',
+      'erorrp' => 'Anda tidak di izinkan masuk ke Halaman ini!',
 
      
 

@@ -296,5 +296,6 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
     'bukaunggah' => 'Upload Works Still Closed',
   'bukaedc' => 'The Round Is Still Closed',
   'max' => 'Max 3mb',
+  'erorrp' => 'You are not allowed to enter here',
      ]
 ?>
