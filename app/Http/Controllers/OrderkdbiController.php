@@ -180,10 +180,10 @@ class OrderkdbiController extends Controller
             $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
             $orderkdbi['surat_delegasi'] = $imageUrl;
         }
-        $now = Carbon::now();
-        if ($now->between('2024-07-23', '2024-07-26')) {
+        $now = Carbon::now('Asia/Jakarta');
+        if ($now->between('2024-07-23', '2024-07-28')) {
             $price = 300000; 
-        } elseif ($now->between('2024-07-27', '2024-08-11')) {
+        } elseif ($now->between('2024-07-29', '2024-08-11')) {
             $price = 400000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
             $price = 450000; 
@@ -424,10 +424,10 @@ public function checkout1(Request $request){
         $imageUrl = asset('storage/images/kdbi/surat_delegasi/' . $imageName);
         $orderkdbi['surat_delegasi'] = $imageUrl;
     }
-    $now = Carbon::now();
-    if ($now->between('2024-07-23', '2024-07-26')) {
+    $now = Carbon::now('Asia/Jakarta');
+    if ($now->between('2024-07-23', '2024-07-28')) {
         $price = 300000; 
-    } elseif ($now->between('2024-07-27', '2024-08-11')) {
+    } elseif ($now->between('2024-07-29', '2024-08-11')) {
         $price = 400000; 
     } elseif ($now->between('2024-08-12', '2024-08-23')) {
         $price = 450000; 

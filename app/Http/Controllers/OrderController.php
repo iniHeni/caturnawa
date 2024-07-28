@@ -180,10 +180,11 @@ class OrderController extends Controller
             $order['surat_delegasi'] = $imageUrl;
         }
 
-        $now = Carbon::now();
-        if ($now->between('2024-07-23', '2024-07-26')) {
+        $now = Carbon::now('Asia/Jakarta');
+
+        if ($now->between('2024-07-23', '2024-07-28')) {
             $price = 350000; 
-        } elseif ($now->between('2024-07-27', '2024-08-11')) {
+        } elseif ($now->between('2024-07-29', '2024-08-11')) {
             $price = 500000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
             $price = 550000; 
@@ -423,10 +424,11 @@ return view('matalomba/edc/checkout', compact('snapToken', 'order'));
             $order['surat_delegasi'] = $imageUrl;
         }
 
-        $now = Carbon::now();
-        if ($now->between('2024-07-23', '2024-07-26')) {
+        $now = Carbon::now('Asia/Jakarta');
+
+        if ($now->between('2024-07-23', '2024-07-28')) {
             $price = 350000; 
-        } elseif ($now->between('2024-07-27', '2024-08-11')) {
+        } elseif ($now->between('2024-07-29', '2024-08-11')) {
             $price = 500000; 
         } elseif ($now->between('2024-08-12', '2024-08-23')) {
             $price = 550000; 

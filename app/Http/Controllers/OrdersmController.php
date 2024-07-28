@@ -410,7 +410,7 @@ class OrdersmController extends Controller
             $ordersm['bio'] = $imageUrl;
         }
 
-        $now = Carbon::now();
+        $now = Carbon::now('Asia/Jakarta');
         if ($now->between('2024-07-23', '2024-07-28')) {
             $price = 300000; 
         } elseif ($now->between('2024-07-29', '2024-08-11')) {
@@ -885,7 +885,7 @@ public function checkout1(Request $request){
         $ordersm['bio'] = $imageUrl;
     }
 
-    $now = Carbon::now();
+    $now = Carbon::now('Asia/Jakarta');
     if ($now->between('2024-07-23', '2024-07-28')) {
         $price = 300000; 
     } elseif ($now->between('2024-07-29', '2024-08-11')) {

@@ -304,23 +304,15 @@ class OrderlktiController extends Controller
             $orderlkti['sertifikat9'] = null; 
         }
 
-        $now = Carbon::now();
-        
-        $asalInstansi = $request->input('instansi'); 
-        $asalInstansi = Str::lower($asalInstansi); 
-        $asalInstansi = str_replace(' ', '', $asalInstansi);
+        $now = Carbon::now('Asia/Jakarta');
 
-if ($asalInstansi === 'universitasnasional' && $now->between('2024-07-23', '2024-07-26')) {
-    $price = 85000;
-} elseif ($asalInstansi === 'universitasnasional') {
-    $price = 100000;
-} elseif ($now->between('2024-07-23', '2024-08-11')) {
-            $price = 170000; 
-        } elseif ($now->between('2024-08-12', '2024-08-23')) {
-            $price = 200000; 
-        }else {
-            $price = 9999999; 
-        }
+        if ($now->between('2024-07-23', '2024-08-11')) {
+                $price = 170000; 
+            } elseif ($now->between('2024-08-12', '2024-08-23')) {
+                $price = 200000; 
+            }else {
+                $price = 9999999; 
+            }
          $additionalData = [
         'price' => $price,
         'status' => 'Unpaid',
@@ -676,15 +668,15 @@ public function checkout1(Request $request){
         $orderlkti['sertifikat9'] = null; 
     }
 
-    $now = Carbon::now();
+    $now = Carbon::now('Asia/Jakarta');
 
-if ($now->between('2024-07-23', '2024-08-11')) {
-        $price = 170000; 
-    } elseif ($now->between('2024-08-12', '2024-08-23')) {
-        $price = 200000; 
-    }else {
-        $price = 9999999; 
-    }
+    if ($now->between('2024-07-23', '2024-08-11')) {
+            $price = 170000; 
+        } elseif ($now->between('2024-08-12', '2024-08-23')) {
+            $price = 200000; 
+        }else {
+            $price = 9999999; 
+        }
      $additionalData = [
     'instansi' => 'Universitas Nasional',
     'price' => $price,
