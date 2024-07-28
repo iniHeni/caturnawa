@@ -23,7 +23,7 @@ class smcSubmission extends Mailable
     {
         return new Envelope(
             subject: 'Upload SMC Submission',
-            from: 'royalsquad9@gmail.com',
+            from: 'unasfest@gmail.com',
         );
     }
 

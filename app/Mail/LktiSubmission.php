@@ -26,7 +26,7 @@ class LktiSubmission extends Mailable
     {
         return new Envelope(
             subject: 'Upload SPC Submission',
-            from: 'royalsquad9@gmail.com',
+            from: 'unasfest@gmail.com',
         );
     }
 
