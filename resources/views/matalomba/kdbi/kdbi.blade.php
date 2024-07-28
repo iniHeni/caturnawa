@@ -149,17 +149,7 @@ $penyisihanEnd = Carbon::parse('2024-12-29');
 $semiFinalDate = Carbon::parse('2024-08-20');
 $finalDate = Carbon::parse('2024-09-16');
 @endphp
-@php
-use Carbon\Carbon;
 
-$today = Carbon::now();
-
-
-$penyisihanStart = Carbon::parse('2024-08-18');
-$penyisihanEnd = Carbon::parse('2024-12-29');
-$semiFinalDate = Carbon::parse('2024-08-20');
-$finalDate = Carbon::parse('2024-09-16');
-@endphp
 <section id="rank">
 <h1 class="judul">@lang('messages.babak')</h1>
 <div class="card-list">
