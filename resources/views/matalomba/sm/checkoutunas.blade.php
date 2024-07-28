@@ -433,8 +433,8 @@
                                 <input disabled placeholder="{{ basename($ordersm->surat_delegasi) }}">
                             </div>
                         </div>
-                        <button type="submit" class="nextBtn" >
-                            <a class="btnText" href="{{route('sm.khusus',  $ordersm->id) }}">@lang('messages.bayar')</a>
+                        <button type="submit" class="nextBtn" id="penilaian">
+                            <a class="btnText" href="#">@lang('messages.bayar')</a>
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" onclick="window.history.back();">
@@ -449,6 +449,23 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <!-- JavaScript -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+        document.getElementById('penilaian').addEventListener('click', function(event) {
+       event.preventDefault();
+     
+       Swal.fire({
+         title: 'Terima kasih sudah mendaftar!',
+         text: 'nama/tim anda akan muncul di website caturnawa.unasfest.com selama 1x24 jam setelah mendaftar. Jika verifikasi data gagal, kami akan mengirimkan informasi lebih lanjut ke email atau nomor WhatsApp yang terdaftar. Bergabunglah ke Whatsapp Group Kami Klik Tombol Lanjutkan',
+         icon: 'info',
+         confirmButtonText: 'Lanjutkan'
+       }).then((result) => {
+         if (result.isConfirmed) {
+         
+           window.location.href = '/homesmunas/{{$ordersm->id}}'; 
+         }
+       });
+     });
+         </script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
           $("#loadingDiv").remove();

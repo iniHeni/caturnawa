@@ -251,8 +251,8 @@
                                 <input disabled placeholder="IDR{{$order->price}}">
                             </div>
                         </div>
-                        <button type="submit" class="nextBtn">
-                            <a class="btnText" href="{{route('edc.khusus',  $orderlkti->id) }}">@lang('messages.bayar')</a>
+                        <button type="submit" class="nextBtn" id="penilaian">
+                            <a class="btnText" href="#">@lang('messages.bayar')</a>
                             <i class="uil uil-navigator"></i>
                         </button>
                         <button type="submit" class="nextBtn" onclick="window.history.back();">
@@ -264,6 +264,23 @@
 
 </section>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    document.getElementById('penilaian').addEventListener('click', function(event) {
+   event.preventDefault();
+ 
+   Swal.fire({
+     title: 'Terima kasih sudah mendaftar!',
+     text: 'nama/tim anda akan muncul di website caturnawa.unasfest.com selama 1x24 jam setelah mendaftar. Jika verifikasi data gagal, kami akan mengirimkan informasi lebih lanjut ke email atau nomor WhatsApp yang terdaftar. Bergabunglah ke Whatsapp Group Kami Klik Tombol Lanjutkan',
+     icon: 'info',
+     confirmButtonText: 'Lanjutkan'
+   }).then((result) => {
+     if (result.isConfirmed) {
+     
+       window.location.href = '/homeedcunas/{{$order->id}}'; 
+     }
+   });
+ });
+     </script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
           $("#loadingDiv").remove();

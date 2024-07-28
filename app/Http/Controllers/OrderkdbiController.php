@@ -144,26 +144,26 @@ class OrderkdbiController extends Controller
             $imageUrl = asset('storage/document/kdbi/buktifollow_2/' . $imageName);
             $orderkdbi['buktifollow_2'] = $imageUrl;
         }
-        if ($request->hasFile('twibbon_1')) {
-            $originalFileName = pathinfo($request->file('twibbon_1')->getClientOriginalName(), PATHINFO_FILENAME);
+        if ($request->hasFile('twibbon')) {
+            $originalFileName = pathinfo($request->file('twibbon')->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
-            $extension = $request->file('twibbon_1')->getClientOriginalExtension();
+            $extension = $request->file('twibbon')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
             $destinationPath = 'public/images/kdbi/twibbon_1';
-            $request->file('twibbon_1')->storeAs($destinationPath, $imageName);
+            $request->file('twibbon')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/twibbon_1/' . $imageName);
             $orderkdbi['twibbon_1'] = $imageUrl;
         }
-        if ($request->hasFile('twibbon_2')) {
-            $originalFileName = pathinfo($request->file('twibbon_2')->getClientOriginalName(), PATHINFO_FILENAME);
+        if ($request->hasFile('twibbon2')) {
+            $originalFileName = pathinfo($request->file('twibbon2')->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFileName = preg_replace('/[^A-Za-z0-9\-]/', '', $originalFileName);
-            $extension = $request->file('twibbon_2')->getClientOriginalExtension();
+            $extension = $request->file('twibbon2')->getClientOriginalExtension();
             $imageName = $safeFileName . '.' . $extension;
         
             $destinationPath = 'public/images/kdbi/twibbon_2';
-            $request->file('twibbon_2')->storeAs($destinationPath, $imageName);
+            $request->file('twibbon2')->storeAs($destinationPath, $imageName);
         
             $imageUrl = asset('storage/images/kdbi/twibbon_2/' . $imageName);
             $orderkdbi['twibbon_2'] = $imageUrl;

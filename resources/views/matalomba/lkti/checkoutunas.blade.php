@@ -484,7 +484,7 @@
                                 <input disabled placeholder="{{ basename($orderlkti->sertifikat9) }}">
                             </div>  
                         </div>
-                        <button type="submit" class="nextBtn">
+                        <button type="submit" class="nextBtn" id="penilaian">
                             <a class="btnText" href="{{route('spc.khusus',  $orderlkti->id) }}">@lang('messages.bayar')</a>
                             <i class="uil uil-navigator"></i>
                         </button>
@@ -501,6 +501,23 @@
       </button>
       
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    document.getElementById('penilaian').addEventListener('click', function(event) {
+   event.preventDefault();
+ 
+   Swal.fire({
+     title: 'Terima kasih sudah mendaftar!',
+     text: 'nama/tim anda akan muncul di website caturnawa.unasfest.com selama 1x24 jam setelah mendaftar. Jika verifikasi data gagal, kami akan mengirimkan informasi lebih lanjut ke email atau nomor WhatsApp yang terdaftar. Bergabunglah ke Whatsapp Group Kami Klik Tombol Lanjutkan',
+     icon: 'info',
+     confirmButtonText: 'Lanjutkan'
+   }).then((result) => {
+     if (result.isConfirmed) {
+     
+       window.location.href = '/homespcunas/{{$orderlkti->id}}'; 
+     }
+   });
+ });
+     </script>
 <script src="../../js/nav.js"></script>
 <script>
     function removeLoader() {

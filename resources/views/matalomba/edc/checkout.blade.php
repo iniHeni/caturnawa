@@ -294,8 +294,8 @@
         onSuccess: function(result){
             Swal.fire({
     icon: 'success',
-    title: 'Pembayaran Berhasil!',
-    text: 'Anda akan diarahkan ke WhatsApp Group.',
+    title: 'Thank you for signing up!',
+    text: 'Your name or your teams name will appear on caturnawa.unasfest.com for 1x24 hours after registration. If the data verification fails, we will send further information to the registered email or WhatsApp number.',
     showConfirmButton: false, 
     timer: 2000,
   }).then(() => {
