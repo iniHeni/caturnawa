@@ -256,9 +256,9 @@ memposisikan dirinya sebagai figur muda yang inspiratif dan berpotensi memberika
 dalam pembangunan sosial dan ekonomi di masa depan.
          ',
      
-         'jurispcposisi3' => 'Direktur Jenderal Energi Baru di<br>Kementerian Energi dan Sumber Daya Mineral (ESDM)',
-         'jurispcbio3' => 'Prof. Dr. Eng. Eniya Listiani Dewi adalah salah satu ilmuwan wanita Indonesia. Ia adalah alumnus S1-S3 dari Waseda University di Jepang. Program S1 ditempuh dengan menggunakan beasiswa dari Science and Technology Advance Industrial Development (STAID) Kementerian Negara Riset dan Teknologi. Eniya telah membuat penemuan zinc-air fuel cell (ZAFC) yakni, suatu generator penghasil listrik berbahan bakar logam dan oksigen. 
-         Eniya Listiani Dewi menjabat sebagai Peneliti Ahli Utama di Badan Riset dan Inovasi Nasional (BRIN) dan pada tanggal 14 Maret 2024, Eniya resmi menduduki jabatan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi (Dirjen EBTKE) di Kementerian Energi dan Sumber Daya Mineral (ESDM) Republik Indonesia. Sebagai seorang ilmuwan, Eniya telah mengharumkan nama Indonesia di dunia internasional melalui kontribusinya yang bermanfaat bagi pengembangan ilmu pengetahuan dan teknologi. 
+         'jurispcposisi3' => 'Dosen Universitas Nasional',
+         'jurispcbio3' => 'Dr. Tatang Mitra Setia, M.Si. adalah salah satu Dosen Universitas Nasional. Ia adalah alumni S1 di Universitas Nasional dan S2-S3 di Universitas Indonesia, pernah melakukan kerjasama penelitian dengan berbagai lembaga dari pemerintah maupun di luar pemerintah.dalam 5 tahun terakhir mempublikasikan 18 Jurnal Ilmiah dan menerbitkan 6 Buku.
+         Dr. Tatang Mitra Setia, M.Si. menjabat sebagai lektor kepala Fakultas Biologi dan Pertanian Prodi Magister Biologi.Bidang Keahlian Biologi konservasi dan prilaku hewan.
          ',
 
          'jurispcposisi4' => 'Mahasiswi Universitas Nasional',

@@ -74,16 +74,14 @@ h4{
     text-align: center;
     color: white;
     margin-top: 40px;
-    margin-right: -10rem;
-    display: flex;
+    position: relative;
 }
 
 h4 span{
     font-size: 3rem;
     color: transparent;
     -webkit-text-stroke: 1px #f6ae31;
-    top: 60px;
-    left: -22.6rem;
+    top: 20px;
     position: relative;
     display: block;
 }
@@ -202,11 +200,9 @@ display: flex;
 
     h4 {
         font-size: calc(2rem * var(--smaller));
-        margin-right: -16rem;
     }
     h4 span {
         font-size: calc(2.8rem * var(--smaller));
-        margin-left: 10rem;
     }
   }
 /* End Section Peserta*/

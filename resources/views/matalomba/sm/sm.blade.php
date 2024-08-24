@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -33,7 +31,7 @@
             background-color: white;
          }
          
-         .loader {
+          .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../img/mskt1.svg);
@@ -98,7 +96,7 @@
       <p class="testing1">@lang('messages.teks')
       @lang('messages.teks1')</p>
       <div class="cont">
-         <a class="gb" href="https://drive.google.com/file/d/1LCkJG1Pi7UyJmE4zDz8Bx9IQJ6e9uTVC/view">@lang('messages.gb')</a>
+         <a class="gb" href="https://drive.google.com/file/d/1SYn9ZbQL6y1yL3Dw0pGngWtqkG4uwlZv/view">@lang('messages.gb')</a>
       </div>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
@@ -135,9 +133,9 @@
             @php
             use Carbon\Carbon;
             $today = Carbon::now();
-            $penyisihanStart = Carbon::parse('2024-08-30');
+            $penyisihanStart = Carbon::parse('2024-10-01');
             $penyisihanEnd = Carbon::parse('2024-12-19');
-            $finalDate = Carbon::parse('2024-09-19');
+            $finalDate = Carbon::parse('2024-10-17');
             @endphp
             <a href="#" class="card-item" onclick="
               event.preventDefault(); 
@@ -153,7 +151,7 @@
           ">
                <img src="../../img/sm1.png" alt="Card Image">
                <span class="developer">@lang('messages.penyisihan')</span>
-               <h3>@lang('messages.oopen')<br>29 September 2024</h3>
+               <h3>@lang('messages.oopen')<br>01 @lang('messages.ok1') 2024</h3>
                <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                </div>
@@ -168,7 +166,7 @@
           ">
                <img src="../../img/sm1.png" alt="Card Image">
                <span class="editor">Final</span>
-               <h3>@lang('messages.oopen')<br>18 Oktober 2024</h3>
+               <h3>@lang('messages.oopen')<br>17 @lang('messages.ok1') 2024</h3>
                <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="final"></i>
                </div>
@@ -186,22 +184,19 @@
                      <img src="../../img/daniel.png" alt="">
                   </div>
                   <div class="user_content1">
-                     <h5 class="name"> Raden Daniel Wisnu Wardhana</h5>
+                     <h5 class="name"> Raden Daniel Wisnu <br>Wardhana, S.IP., M.F.Tv.</h5>
                      <p class="post">@lang('messages.jurismposisi1')</p>
                      <p class="about">@lang('messages.jurismbio1')</p>
-                     <a href="https://www.linkedin.com/in/raden-wardana-a737992b9/?jobid=1234" class="icon facebook">
-                        <span><i class="fa-brands fa-linkedin"></i></span>
-                     </a>
                   </div>
                </div>
                <div class="card">
                   <div class="squareBox"></div>
                   <div class="round_box"></div>
                   <div class="img_box">
-                     <img src="../../img/kusen.png" alt="">
+                     <img src="../../img/jurism1.jpg" alt="">
                   </div>
                   <div class="user_content2">
-                     <h5 class="name">Kusen Dony Hermansyah</h5>
+                     <h5 class="name">Kusen Dony Hermansyah, <br>A.Md., S.Sn., M.Sn.</h5>
                      <p class="post">@lang('messages.jurismposisi2')</p>
                      <p class="about">@lang('messages.jurismbio2')</p>
                   </div>
@@ -213,7 +208,7 @@
                      <img src="../../img/jurism4.jpg" alt="">
                   </div>
                   <div class="user_content3">
-                     <h5 class="name">Jentoni Pakpahan</h5>
+                     <h5 class="name">Jentoni Pakpahan, S.S.</h5>
                      <p class="post">@lang('messages.jurismposisi4')</p>
                      <p class="about">@lang('messages.jurismbio4')</p>
                   </div>
@@ -243,32 +238,6 @@
       <script src="../../js/car2.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="../../js/nav.js"></script>
-      <script type="text/javascript">
-         $(function() {
-            $(this).bind("contextmenu", function(e) {
-               e.preventDefault();
-            });
-         }); 
-      </script>
-      <script type="text/JavaScript"> 
-         function killCopy(e){ return false } 
-         function reEnable(){ return true } 
-         document.onselectstart=new Function ("return false"); 
-         if (window.sidebar)
-         { 
-            document.onmousedown=killCopy; 
-            document.onclick=reEnable; 
-         } 
-      </script>
-      <script type="text/Javascript">
-         $(document).keydown(function(event){
-            if(event.keyCode==123){
-               return false;
-            }
-            else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-            }
-         });
-      </script>
+  
    </body>
 </html>

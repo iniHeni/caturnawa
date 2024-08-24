@@ -195,7 +195,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 style="font-size:32px" class="num">12 - 23 @lang('messages.tgl1')</h2>
+      <h2 style="font-size:32px" class="num">12 - 30 @lang('messages.tgl1')</h2>
       <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>

@@ -3,8 +3,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -106,7 +104,7 @@
       <p class="testing1">@lang('messages.teks')
         @lang('messages.teks1')</p>
         <div class="cont">
-            <a class="gb" href="https://drive.google.com/file/d/1skeYKALJM3srkOI9PIT4XVch1w5pMhsX/view?usp=drivesdk">@lang('messages.gb')</a>
+            <a class="gb" href="https://drive.google.com/file/d/1K1wxeFi-U8UvcoLFV-wm_NLbqRWzpAQ9/view?usp=drivesdk">@lang('messages.gb')</a>
          </div>
 
  <!--==================== Participant ====================-->
@@ -149,7 +147,7 @@
               $today = Carbon::now();
       
         
-              $penyisihanStart = Carbon::parse('2024-08-27');
+              $penyisihanStart = Carbon::parse('2024-09-27');
               $penyisihanEnd = Carbon::parse('2024-12-29');
               $semiFinalDate = Carbon::parse('2024-09-24');
               $finalDate = Carbon::parse('2024-10-17');
@@ -249,7 +247,7 @@
                     </div>
                 </div>
     
-                <!-- <div class="card">
+					 <div class="card">
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
@@ -257,17 +255,17 @@
                     </div>
     
                     <div class="user_content3">
-                        <h5 class="name">Prof. Dr. Eng. Eniya<br>Listiani Dewi</h5>
+                        <h5 class="name">Dr.Tatang Mitra<br>Setia, M.Si.</h5>
                         <p class="post">@lang('messages.jurispcposisi3')</p>
                         <p class="about">@lang('messages.jurispcbio3')</p>
                     </div>
-                </div> -->
+                </div> 
 
                 <!-- <div class="card">
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurispc4.png" alt="">
+                        <img src="../../img/jurispc3.png" alt="">
                     </div>
     
                     <div class="user_content4">
