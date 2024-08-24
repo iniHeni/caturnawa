@@ -54,7 +54,7 @@ thead th {
        .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 

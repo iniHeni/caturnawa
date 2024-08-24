@@ -13,7 +13,7 @@ return [
     // Nav End Menu
     // Home Start
     'welcome' => 'Welcome To Caturnawa<br>Register Now and Be The Winner!',
-    'buka' =>'Registration Will Open on',
+    'buka' =>'Registration Will Closed on',
     'unggah1' =>  'Upload',
  
     'sponsor' =>'Thankyou, To Our Sponsor',
@@ -280,7 +280,7 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
      'sweet3' =>  'Semifinal Results Not Yet Released!',
      'sweet4' =>  'Final Results Not Yet Released!',
      'note' =>  'Notes',
-     'julii' =>  'July 23',
+     'julii' =>  'August 30',
      'bidang' =>  'Manifestation of Achievements',
      'back' =>  'Back',
      'pteam' =>  'Team Position',

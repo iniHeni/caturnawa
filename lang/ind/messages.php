@@ -13,7 +13,7 @@ return [
     // Nav End Menu
     // Home Start
     'welcome' => 'Selamat Datang di Caturnawa<br>Daftar Sekarang dan Jadilah Pemenang!',
-    'buka' =>'Pendaftaran Dibuka Pada',
+    'buka' =>'Pendaftaran Ditutup Pada',
     
     'sponsor' =>'Sponsor Kami',
     'follow' =>'Ikuti kami di media Sosial!',
@@ -332,7 +332,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
      'sweet3' =>  'Hasil Semifinal Belum Keluar!',
      'sweet4' =>  'Hasil Final Belum Keluar!',
      'note' =>  'Catatan',
-     'julii' =>  '23 Juli',
+     'julii' =>  '30 Agustus',
     'bidang' =>  'Wujud Capaian Unggulan',
     'back' =>  'Kembali',
     'pteam' =>  'Posisi Tim',

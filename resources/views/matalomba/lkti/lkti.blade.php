@@ -147,10 +147,10 @@
               $today = Carbon::now();
       
         
-              $penyisihanStart = Carbon::parse('2024-09-27');
+              $penyisihanStart = Carbon::parse('2024-06-27');
               $penyisihanEnd = Carbon::parse('2024-12-29');
-              $semiFinalDate = Carbon::parse('2024-09-24');
-              $finalDate = Carbon::parse('2024-10-17');
+              $semiFinalDate = Carbon::parse('2024-06-24');
+              $finalDate = Carbon::parse('2024-06-17');
           @endphp
       
 

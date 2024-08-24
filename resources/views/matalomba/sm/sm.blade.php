@@ -34,7 +34,7 @@
           .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -133,9 +133,9 @@
             @php
             use Carbon\Carbon;
             $today = Carbon::now();
-            $penyisihanStart = Carbon::parse('2024-10-01');
+            $penyisihanStart = Carbon::parse('2024-06-01');
             $penyisihanEnd = Carbon::parse('2024-12-19');
-            $finalDate = Carbon::parse('2024-10-17');
+            $finalDate = Carbon::parse('2024-06-17');
             @endphp
             <a href="#" class="card-item" onclick="
               event.preventDefault(); 

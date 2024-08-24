@@ -293,8 +293,8 @@
       @php
       use Carbon\Carbon;
       $today = Carbon::now();
-      $penyisihanStart = Carbon::parse('2024-09-02');
-      $finalDate = Carbon::parse('2024-09-02');
+      $penyisihanStart = Carbon::parse('2024-06-02');
+      $finalDate = Carbon::parse('2024-06-02');
       @endphp
       <section id="matalomba" class="container">
          <h5 class="judullomba" style="font-size: 40px;">@lang('messages.jenislomba')</h5>
