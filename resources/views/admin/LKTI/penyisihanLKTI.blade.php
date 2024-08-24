@@ -133,7 +133,7 @@ $tambah = Carbon::parse('2024-05-28');
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tambah as $no=>$data)
+                            @foreach($tambahhh as $no=>$data)
                             <tr>
                                 <td>{{ $data->namapeserta }}</td>
                                 <td>{{ $data->university}}</td>

@@ -544,13 +544,6 @@
                               <div class="text-danger">{{ $message }}</div>
                               @enderror
                           </div>
-                          <div class="input-field">
-                              <label for="buktibayar">@lang('messages.buktibayar') *format: Png, jpg, jpeg, png @lang('messages.max')</label>
-                              <input type="file" name="buktibayar" id="buktibayar" accept=".png, .jpg, .jpeg, .PNG" @error('buktibayar') is-invalid @enderror  required>
-                              @error('buktibayar')
-                              <div class="text-danger">{{ $message }}</div>
-                              @enderror
-                          </div>
                       </div>
   
                   </div>

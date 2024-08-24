@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('foto1');
             $table->string('nohp');
             $table->string('nohp1');
+            $table->string('status');
             $table->string('logo')->nullable;
             $table->timestamps();
 

@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\DB;
 class SpcpenyisihanController extends Controller
 {
     public function tampil(){
-        $tambah = spcpenyisihan::select(
+        $tambahhh = spcpenyisihan::select(
             '*',
             DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') 
         )->get();
-        return view('admin/LKTI/penyisihanLKTI', compact('tambah'));
+        
+        return view('admin/LKTI/penyisihanLKTI', compact('tambahhh'));
      }
 
     public function tambah(Request $request){
@@ -60,7 +61,7 @@ public function penyisihan(){
     return view('matalomba/lkti/penyisihan', compact('penyisihann'));
  }
  public function pesertaa(){
-    $peserta = pesertaspc::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
+    $peserta = pesertaspc::where('status', 'Paid')->orWhere('status', 'KhususUNAS')->get();
     
     return view('admin/LKTI/tambah', compact('peserta'));
  }

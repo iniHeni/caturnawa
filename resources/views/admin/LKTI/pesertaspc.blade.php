@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../img/mskt1.svg);
@@ -116,6 +116,7 @@
                                 <th scope="col">No Handphone</th>
                                 <th scope="col">Foto Peserta</th>
                                 <th scope="col">Logo Instansi</th>
+                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -129,6 +130,7 @@
                                 <td><a href="https://wa.me/{{ $data->nohp }}">{{ $data->nohp}}</a></td>
                                 <td><a href="{{ $data->foto }}">{{ $data->foto }}</a></td>
                                 <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
+                                <td><a href="#">{{ $data->status}}</a></td>
                                 <td>
                                     <a href="{{ route('spc.editpe', $data->id) }}">Edit</a>
                                     <form action="{{ route('spc.hapuspe', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

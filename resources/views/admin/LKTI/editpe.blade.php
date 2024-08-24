@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../img/mskt1.svg);
@@ -132,6 +132,18 @@
                             <input name="logo" id="logo" type="file"  accept=".png, .jpg, .jpeg, .PNG" required>
                         </div>
                   </div>
+                  <div class="input-field">
+                    <label for="status">Status Pembayaran</label>
+                    <select name="status" id="status" @error('status') is-invalid @enderror required>
+                        <option selected>@lang('messages.pilih')</option>
+                      <option>Unpaid</option>
+                        <option>Paid</option>
+                        <option>KhususUNAS</option>
+                        @error('status')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </select>
+                </div>
                 </div>
                 <button type="submit" class="nextBtn">
                     <span class="btnText">Submit</span>

@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\DB;
 class PesertaspcController extends Controller
 {
     public function tampilpe(){
-        $paidOrders = orderlkti::where('status', 'Paid')->OrWhere('status', 'Khusus')
-        ->select('nama', 'instansi', 'email', 'foto', 'nomorhp')
+        $paidOrders = orderlkti::select('nama', 'instansi', 'email', 'foto', 'nomorhp', 'status')
         ->get();
 
     foreach ($paidOrders as $order) {
@@ -23,6 +22,7 @@ class PesertaspcController extends Controller
                 'email' => $order->email,
                 'foto' => $order->foto,
                 'nohp' => $order->nomorhp,
+                'status' => $order->status,
                 'logo' => 'nullable',
             ]
         );
@@ -43,6 +43,7 @@ class PesertaspcController extends Controller
             'email' => 'required|email',
             'nohp' => 'required',
             'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'status' => 'required',
     ]);
     $update = $request->all();
     if ($request->hasFile('logo')) {
@@ -68,7 +69,7 @@ public function hapuspe($id){
     return redirect()->route('spc.tampilpe');
 }
 public function pesertaspc(){
-    $peserta = pesertaspc::all();
+    $peserta = pesertaspc::where('status', 'Paid')->orWhere('status', 'KhususUNAS')->get();
     
     return view('matalomba/lkti/lkti', compact('peserta'));
  }
