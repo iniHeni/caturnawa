@@ -27,21 +27,21 @@ class LoginAdminController extends Controller
 
             
             if ($request->user === 'SMC2024') {
-                if ($request->input('lang') === 'sm') {
+                if ($request->input('lang') === 'sm' && $request->input('password') === 'Ufest2024' ) {
                 return redirect()->route('mainmenu.showsm'); 
                 } else {
                     return back()->withErrors(['error' => 'Halaman Lomba Tidak bisa diakses']);
                 }
             } elseif ($request->user === 'SPC2024') {
-                if ($request->input('lang') === 'spc') {
+                if ($request->input('lang') === 'spc' && $request->input('password') === 'Ufest2024') {
                     return redirect()->route('mainmenu.showlkti'); 
                     } else {
                         return back()->withErrors(['error' => 'Halaman Lomba Tidak bisa diakses']);
                     }
             } elseif ($request->user === 'DEBAT2024') {
-                if ($request->input('lang') === 'edc') {
+                if ($request->input('lang') === 'edc' && $request->input('password') === 'Ufest2024') {
                     return redirect()->route('mainmenu.showedc');
-                } elseif ($request->input('lang') === 'kdbi') {
+                } elseif ($request->input('lang') === 'kdbi' && $request->input('password') === 'Ufest2024') {
                     return redirect()->route('mainmenukdbi.showkdbi');
                 } else {
                     return back()->withErrors(['error' => 'Halaman Lomba Tidak bisa diakses']);

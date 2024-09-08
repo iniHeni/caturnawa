@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('nohp');
             $table->string('nohp1');
             $table->string('logo')->nullable;
+            $table->string('status');
             $table->timestamps();
         });
     }

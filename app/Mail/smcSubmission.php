@@ -14,7 +14,7 @@ class smcSubmission extends Mailable
     use Queueable, SerializesModels;
 
     public $uploadData;
-    public function __construct()
+    public function __construct($uploadData)
     {
         $this->uploadData = $uploadData;
     }

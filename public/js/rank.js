@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
           phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
         } else if (index === 2) {
           phaseStart = new Date(currentYear, 7, 12); 
-          phaseEnd = new Date(currentYear, 7, 30, 23, 59, 59); 
+          phaseEnd = new Date(currentYear, 9, 30, 23, 59, 59); 
         }
   
         const ticketsButtonTutup = item.querySelector(".tickets"); 

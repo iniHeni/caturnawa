@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\uploadsm;
-use App\Models\ordersm;
+use App\Models\pesertasm;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\smcSubmission;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -13,12 +13,12 @@ use RealRashid\SweetAlert\Facades\Alert;
 class UploadsmController extends Controller
 {
     public function uploadsm(Request $request){
-        $validemail = ordersm::where(function ($query) use ($request) {
-            $query->where('email_1', $request['email'])
-                  ->orWhere('email_2', $request['email'])
-                  ->orWhere('email_3', $request['email'])
-                  ->orWhere('email_4', $request['email'])
-                  ->orWhere('email_5', $request['email']);
+        $validemail = pesertasm::where(function ($query) use ($request) {
+            $query->where('email', $request['email'])
+                  ->orWhere('email1', $request['email'])
+                  ->orWhere('email2', $request['email'])
+                  ->orWhere('email3', $request['email'])
+                  ->orWhere('email4', $request['email']);
         })->first();
         if (!$validemail) { 
             return back()->withErrors(['email' => 'Email Not Registered. Please Register first.'])->withInput();
@@ -138,7 +138,7 @@ class UploadsmController extends Controller
             $uploadsm['shortlist'] = $imageUrl;
         }
         $uploadsm = uploadsm::create($uploadsm);
-        Mail::to($request['email'])->send(new smcSubmission($uploadlkti));
+        Mail::to($request['email'])->send(new smcSubmission($uploadsm));
         session()->flash('success', 'Terimakasih!, Tunggu Informasi Selanjutnya dari kami');
 
         return redirect()->route('utama');

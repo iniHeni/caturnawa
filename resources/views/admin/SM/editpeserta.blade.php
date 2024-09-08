@@ -45,7 +45,7 @@
  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -182,6 +182,18 @@
                         <div class="input-field">
                             <label for="logo">Logo Instansi *jpg,png.jpeg</label>
                             <input name="logo" id="logo" type="file"  accept=".png, .jpg, .jpeg, .PNG" required value="{{ $edit->logo }}">
+                        </div>
+                        <div class="input-field">
+                            <label for="status">Status Pembayaran</label>
+                            <select name="status" id="status" @error('status') is-invalid @enderror required>
+                                <option selected>@lang('messages.pilih')</option>
+                              <option>Unpaid</option>
+                                <option>Paid</option>
+                                <option>KhususUNAS</option>
+                                @error('status')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </select>
                         </div>
                   </div>
  

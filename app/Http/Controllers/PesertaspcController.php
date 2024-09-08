@@ -24,6 +24,7 @@ class PesertaspcController extends Controller
                 'nohp' => $order->nomorhp,
                 'status' => $order->status,
                 'logo' => 'nullable',
+                'status' => $order->status,
             ]
         );
     }

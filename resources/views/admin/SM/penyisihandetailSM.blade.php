@@ -45,7 +45,7 @@
  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -105,7 +105,7 @@ use Carbon\Carbon;
 $today = Carbon::now();
 
 
-$tambah = Carbon::parse('2024-05-28');
+$tambahh = Carbon::parse('2024-05-28');
 
 @endphp
 <div id="data-container">
@@ -141,7 +141,7 @@ $tambah = Carbon::parse('2024-05-28');
                         <td rowspan="6">
                             <a href="#" onclick="
                                 event.preventDefault();
-                                @if (!$today->greaterThanOrEqualTo($tambah))
+                                @if (!$today->greaterThanOrEqualTo($tambahh))
                                     Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
                                 @else
                                     window.location.href = '{{ route('sm.editp', $data->id) }}';
@@ -151,7 +151,7 @@ $tambah = Carbon::parse('2024-05-28');
                                 @csrf
                                 <button  type="button" style="color: red" onclick="
                                 event.preventDefault();
-                                @if (!$today->greaterThanOrEqualTo($tambahedit))
+                                @if (!$today->greaterThanOrEqualTo($tambahh))
                                     Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
                                 @else
                                     confirmDelete({{ $data->id }})

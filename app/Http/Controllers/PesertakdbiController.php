@@ -25,7 +25,8 @@ class PesertakdbiController extends Controller
                 'nohp' => $order->nomorhp_1,
                 'nohp1' => $order->nomorhp_2,
                 'namateam' => $order->namateam,
-                'logo' => 'null'
+                'logo' => 'null',
+                'status' => $order->status,
             ]
         );
     }

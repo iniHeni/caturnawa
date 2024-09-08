@@ -12,7 +12,7 @@ class PesertasmController extends Controller
 {
     public function tampilpee(){
         $paidOrders = ordersm::where('status', 'Paid')->OrWhere('status', 'Khusus')
-        ->select('nama_1', 'nama_2', 'nama_3', 'nama_4', 'nama_5' , 'instansi', 'namateam', 'email_1', 'email_2', 'email_3', 'email_4', 'email_5', 'foto_1', 'foto_2', 'foto_3', 'foto_4', 'foto_5', 'nomorhp_1', 'nomorhp_2', 'nomorhp_3', 'nomorhp_4', 'nomorhp_5',)
+        ->select('nama_1', 'nama_2', 'nama_3', 'nama_4', 'nama_5' , 'instansi', 'namateam', 'email_1', 'email_2', 'email_3', 'email_4', 'email_5', 'foto_1', 'foto_2', 'foto_3', 'foto_4', 'foto_5', 'nomorhp_1', 'nomorhp_2', 'nomorhp_3', 'nomorhp_4', 'nomorhp_5', 'status')
         ->get();
 
     foreach ($paidOrders as $order) {
@@ -41,6 +41,7 @@ class PesertasmController extends Controller
             'nohp3' => $order->nomorhp_4,
             'nohp4' => $order->nomorhp_5,
             'logo' => 'nullable',
+            'status' => $order->status,
         ]);
     }
         $tambah = pesertasm::select()->get();
@@ -98,7 +99,7 @@ public function hapuspee($id){
     return redirect()->route('sm.tampilpee');
 }
 public function peserta(){
-    $peserta = pesertasm::all();
+    $peserta = pesertasm::where('status', 'Paid')->orWhere('status', 'Khusus')->get();
     
     return view('matalomba/sm/sm', compact('peserta'));
  }
