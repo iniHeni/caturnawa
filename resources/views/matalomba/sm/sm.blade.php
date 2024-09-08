@@ -151,7 +151,7 @@
           ">
                <img src="../../img/sm1.png" alt="Card Image">
                <span class="developer">@lang('messages.penyisihan')</span>
-               <h3>@lang('messages.oopen')<br>01 @lang('messages.ok1') 2024</h3>
+               <h3>@lang('messages.oopen')<br>26 @lang('messages.ok1') 2024</h3>
                <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
                </div>
@@ -166,7 +166,7 @@
           ">
                <img src="../../img/sm1.png" alt="Card Image">
                <span class="editor">Final</span>
-               <h3>@lang('messages.oopen')<br>17 @lang('messages.ok1') 2024</h3>
+               <h3>@lang('messages.oopen')<br>07 November 2024</h3>
                <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="final"></i>
                </div>

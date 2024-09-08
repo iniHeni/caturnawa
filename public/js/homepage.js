@@ -27,7 +27,7 @@ var x = setInterval(function(){
         clearInterval(x);
         document.getElementById("time").style.display = "none";
         document.querySelector("h1").className = "new-year";
-        document.querySelector("h1").innerText = "UNAS FEST IS OPEN REGISTER NOW!";
+        document.querySelector("h1").innerHTML = "Registration for EDC and KDBI is closed<br>SMC and SPC still open! ";
 
 
         //firework animation

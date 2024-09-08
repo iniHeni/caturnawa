@@ -150,7 +150,7 @@
     <div class="item-right">
       <span class="leftup-border"></span>
       <span class="leftdown-border"></span>
-      <h2 class="num">12 - 30 @lang('messages.tgl1') </h2>
+      <h2 class="num">12 @lang('messages.tgl1') - 14 September </h2>
       <!-- <p class="day">2024</p> -->
       <span class="up-border"></span>
       <span class="down-border"></span>

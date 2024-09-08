@@ -74,6 +74,7 @@ class PesertasmController extends Controller
             'nohp3' => 'required',
             'nohp4' => 'required',
             'logo' => 'required|mimes:png,jpeg,jpg|max:3000',
+            'status' => 'required',
     ]);
     $update = $request->all();
     if ($request->hasFile('logo')) {

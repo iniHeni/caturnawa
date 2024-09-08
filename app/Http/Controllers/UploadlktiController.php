@@ -43,7 +43,7 @@ class UploadlktiController extends Controller
         }
         $uploadlkti = uploadlkti::create($uploadlkti);
         Mail::to($request['email'])->send(new LktiSubmission($uploadlkti));
-        session()->flash('success', 'Terimakasih!, Tunggu Informasi Selanjutnya dari kami');
+        session()->flash('success', 'Terimakasih!, Silahkan Cek email di inbox/spam untuk bukti submit form');
         return redirect()->route('utama');
     }
 }

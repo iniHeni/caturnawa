@@ -139,7 +139,7 @@ class UploadsmController extends Controller
         }
         $uploadsm = uploadsm::create($uploadsm);
         Mail::to($request['email'])->send(new smcSubmission($uploadsm));
-        session()->flash('success', 'Terimakasih!, Tunggu Informasi Selanjutnya dari kami');
+        session()->flash('success', 'Terimakasih!, Silahkan Cek email di inbox/spam untuk bukti submit form');
 
         return redirect()->route('utama');
     }

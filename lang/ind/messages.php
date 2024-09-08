@@ -332,7 +332,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
      'sweet3' =>  'Hasil Semifinal Belum Keluar!',
      'sweet4' =>  'Hasil Final Belum Keluar!',
      'note' =>  'Catatan',
-     'julii' =>  '30 Agustus',
+     'julii' =>  '14 September',
     'bidang' =>  'Wujud Capaian Unggulan',
     'back' =>  'Kembali',
     'pteam' =>  'Posisi Tim',
