@@ -35,7 +35,7 @@
  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -122,7 +122,7 @@
                         <label for="juri">Adjudicators </label>
                         <select name="juri" id="juri"  required >
                             <option selected>{{ $edit->juri }}</option>
-                            <option>Leonardus Hans, S.T.</option> 
+                            <option>Al Ayubi, S.Sos., M.IP</option> 
                             <option>Prof.Dr.Wahyu Wibowo</option> 
                             <option>Purwo Besari, S.Pd.</option> 
                         </select>

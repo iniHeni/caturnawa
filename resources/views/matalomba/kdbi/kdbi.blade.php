@@ -216,16 +216,14 @@ $finalDate = Carbon::parse('2024-09-16');
                 <div class="card">
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbibaru1.png" alt="">
+                        <img src="../../img/jurikdbibaru1.jpg" alt="">
                     </div>
     
                     <div class="user_content1">
-                        <h5 class="name">Fullah Jumaynah., S.Sos., M.IP</h5>
+                        <h5 class="name">Al Ayubi, S.Sos., M.IP</h5>
                         <p class="post">@lang('messages.jurikdbiposisi1')</p>
                         <p class="about">@lang('messages.jurikdbibio1')</p>
-                        <a href="https://www.linkedin.com/in/fullahjm/?originalSubdomain=id" class="icon facebook">
-                            <span><i class="fa-brands fa-linkedin"></i></span>
-                         </a>
+                       
                     </div>
                 </div>
     

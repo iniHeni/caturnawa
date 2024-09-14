@@ -162,17 +162,10 @@ return [
  pengalaman menjadi juri debat KDBI UNAS FEST 2023.',
      // EDC
     //KDBI
-    'jurikdbiposisi1' => 'Democracy and Political Researcher',
-    'jurikdbibio1' => 'Beliau merupakan seorang peneliti yang memiliki fokus studi dan penelitian pada isu 
-politik, demokrasi, dan gender di <i>The Habibie Center</i>. Memiliki pengalaman selama 3 
-tahun sebagai praktisi di bidang penelitian dan analisis politik, konsultasi strategi 
-komunikasi politik, dan branding di agensi konsultan politik. Selain itu, beliau kerap 
-terlibat dalam program dan penelitian di beberapa NGO dan Universitas. Aktif pula dalam 
-melakukan penelitian pada topik politik dan demokrasi, dengan hasil berupa dokumen 
-kebijakan (2024), serta menjalankan dan mengelola program di departemen Institut 
-Demokrasi dan HAM (sejak 2024). Melakukan penelitian kuantitatif dan kualitatif 
-mengenai evaluasi penyelenggaraan pemilihan presiden 2024 dan analisis demokrasi di 
-Indonesia (2023-Sekarang).',
+    'jurikdbiposisi1' => 'Manajer Proyek Keadilan Iklim di Indonesia Cerah | LSM Global',
+    'jurikdbibio1' => 'Berpengalaman sebagai manajer program, analis kebijakan, dan juru kampanye dengan pengalaman kerja selama 7 tahun di organisasi masyarakat sipil (OMS) yang berfokus pada isu-
+isu energi dan sumber daya alam. Memiliki gelar master di bidang ilmu politik dengan keahlian
+menulis, penelitian, produksi konten, dan pengorganisasian acara.',
     'jurikdbiposisi2' => 'Learning Support Assistant di <br> PT Bank Mandiri (Persero) Tbk.',
     'jurikdbibio2' => 'Beliau merupakan lulusan dari Manajemen Pendidikan di Universitas Negeri Jakarta (UNJ). 
 Memiliki ketertarikan dengan dunia pendidikan, perkembangan manusia dan dinamika 

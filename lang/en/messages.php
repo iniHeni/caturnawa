@@ -151,18 +151,13 @@ at the Java Overland Intervarsities English Debate (JOVED) 2018, 1st Runner-up
     // EDC
 
     //KDBI
-    'jurikdbiposisi1' => 'Tabulation Director',
-    'jurikdbibio1' => 'Fullah Jumaynah  is a researcher who focuses on politics, democracy, and gender issues at 
-The Habibie Center. She has 3 years of experience as a practitioner in the field of political 
-research and analysis, political communication strategy consulting, and branding in 
-political consulting agencies. In addition, she is often involved in programs and research 
-at several NGOs and universities. She is also active in conducting research on the topic of 
-politics and democracy, with output results in the form of policy documents (2024), as well 
-as running and managing programs in the Institute of Democracy and Human Rights 
-department (since 2024). Conducts quantitative and qualitative research on the evaluation 
-of the 2024 Presidential Election and analysis of democracy in Indonesia (2023-Present). 
-In addition, he also analyzes, writes, and publishes research results in a book and policy 
-document (since 2023).',
+    //KDBI
+    'jurikdbiposisi1' => 'Climate Justice Associate & Project Manager at Indonesia Cerah | Global
+NGO',
+    'jurikdbibio1' => 'Experienced as a program manager, policy analyst, and campaigner with 7 years working history
+in civil society organizations (CSOs) focusing on energy and natural resources management issues.
+Holds a master degree in political science with expertise in writing, research, content production,
+and event organizing.',
 
     'jurikdbiposisi2' => 'Learning Support Assistant at <br> PT Bank Mandiri (Persero) Tbk.',
     'jurikdbibio2' => 'Purwo Besari graduated from Education Management at the State University of Jakarta 
