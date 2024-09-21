@@ -230,7 +230,6 @@
     width: 100%;
     aspect-ratio: 8/8;
     border-radius: 8px;
-    object-fit: cover;
     display: block;
     height: 70%;
   }
