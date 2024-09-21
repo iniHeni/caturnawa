@@ -341,7 +341,50 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'bukaunggah' => 'Unggah Karya Masih Ditutup',
  	 'max' => 'Maks 3mb',
       'erorrp' => 'Anda tidak di izinkan masuk ke Halaman ini!',
-
+  	'mosir1' => 'Dewan ini percaya bahwa
+ kendaraan listrik secara
+ signifikan berkontribusi pada
+ komitmen transisi energi
+ Indonesia untuk mengurangi
+ emisi di sektor transportasi',
+  	'mosir2' => 'Dewan ini akan mewajibkan
+ negara-negara dengan emisi
+ karbon tinggi untuk memberikan
+ kompensasi kepada
+ negara-negara yang paling
+ dirugikan oleh perubahan iklim',
+  	'mosir3' => ' Sebagai pemerintah Indonesia,
+ Dewan ini seharusnya
+ memprioritaskan
+ pengembangan Pembangkit
+ Listrik Tenaga Panas Bumi
+ (PLTP) untuk mencapai
+ momentum hijau global dan
+ mengurangi emisi gas rumah
+ kaca',
+  	'mosir4' => ' Dewan ini menyatakan bahwa
+ penggunaan gas sebagai bahan
+ bakar alternatif dalam transisi
+ energi dapat merugikan masa
+ depan energi di Indonesia',
+  	'moosi' => 'Mosi',
+  'mosir6' => 'Dewan ini melarang produksi dan penjualan plastik sekali pakai di mana plastik sekali pakai dapat memengaruhi perubahan iklim',
+    	'mosir7' => 'Dewan ini, sebagai
+ pemerintah Indonesia, akan
+ secara signifikan relokasi
+ dana untuk pengembangan
+ transportasi umum (LRT,
+ KRL, dll.) ke pendanaan
+ iklim untuk energi
+ terbarukan',
+      	'mosir8' => 'Dewan ini mewajibkan
+ partai politik untuk
+ memasukkan inovasi energi
+ terbarukan sebagai
+ komponen inti dari landasan
+ mereka untuk mencapai
+ pertumbuhan global yang
+ berkelanjutan',
      
 
 

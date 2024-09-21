@@ -53,7 +53,7 @@ $peserta->rank = $tambah->where('namapeserta', $namapeserta)->pluck('rank')[$ind
             DB::raw("string_agg(subs::text, ', ') as subs"),
             DB::raw("string_agg(kualitas::text, ', ') as kualitas"),
             DB::raw('SUM(scorepenyajian + scoresubs + scorekualitas) as total'),
-            DB::raw("string_agg(juri::text, ', ') as juri"),
+            DB::raw("string_agg(juri::text, '! ') as juri"),
             )
     ->where('namapeserta')
     ->groupBy('namapeserta')
@@ -127,7 +127,7 @@ public function final(){
                 DB::raw("string_agg(pertanyaandanjawaban::text, ', ') as pertanyaandanjawaban"),
                 DB::raw("string_agg(kesesuaian::text, ', ') as kesesuaian"),
                 DB::raw('SUM(scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian) as total'),
-                DB::raw("string_agg(juri::text, ', ') as juri"),
+                DB::raw("string_agg(juri::text, '! ') as juri"),
                 )
         ->where('namapeserta', $namapeserta)
         ->groupBy('namapeserta')

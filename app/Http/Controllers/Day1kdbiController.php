@@ -136,7 +136,7 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/kdbi/detailskor/day1r2', compact('dataByRoom'));
+    return view('matalomba/kdbi/detailskor/day1r2', compact('dataByRoom', 'sesi'));
  }
  public function gabungankdbi(){
     $now = Carbon::now();

@@ -95,11 +95,14 @@
          <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
       </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <h3 style="color: white; text-align:center">Mosi</h3>
+      <h3 style="color: white; text-align:center"></h3>
+      <h4>
+        @lang('messages.mosir'. $sesi)</h4>
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                   @foreach ($dataByRoom as $room => $dataa)
+                  
                   <h3 style="color: white; text-align:center">Breakout Room {{ $room }}</h3>
                   <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px">
                                 <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">

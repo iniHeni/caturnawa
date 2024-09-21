@@ -146,7 +146,7 @@
                             </td>
                             <td rowspan="3">
                                 @php $juriCounter = 1; @endphp 
-                                @foreach (explode(', ', $item->juri) as $juri)
+                                @foreach (explode('! ', $item->juri) as $juri)
                                     {{ $juriCounter }}. {{ $juri }}<br>
                                     @php $juriCounter++; @endphp
                                 @endforeach

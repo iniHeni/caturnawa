@@ -117,7 +117,7 @@ public function semifinal(){
                 DB::raw("string_agg(subs::text, ', ') as subs"),
                 DB::raw("string_agg(kualitas::text, ', ') as kualitas"),
                 DB::raw('SUM(scorepenyajian + scoresubs + scorekualitas) as total'),
-                DB::raw("string_agg(juri::text, ', ') as juri"),
+                DB::raw("string_agg(juri::text, '! ') as juri"),
                 )
         ->where('namapeserta', $namapeserta)
         ->groupBy('namapeserta')

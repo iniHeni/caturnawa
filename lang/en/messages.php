@@ -292,5 +292,38 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
   'bukaedc' => 'The Round Is Still Closed',
   'max' => 'Max 3mb',
   'erorrp' => 'You are not allowed to enter here',
+  'mosir1' => 'This house believes that electric
+  vehicles significantly contribute to
+  Indonesia energy transition
+  commitment to reduce emissions in
+  the transport sector.',
+   'mosir2' => 'This house believes that countries
+  with high carbon emissions should be
+  required to compensatenations most
+  affected by climate change',
+   'mosir3' => 'As an Indonesia Government, this
+  house should prioritize the
+  development of Geothermal Power
+  Plants(PLTP) to achieve global green
+  momentum and reduce greenhouse
+  gas emissions.',
+   'mosir4' => ' This house declares that the use of
+  gas as an alternative fuel in the
+  energy transition could harm the
+  future of Indonesia energy',
+   'mosir6' => 'The council prohibits the production and sale of single-use plastics where single-use plastics can affect climate change',
+    'mosir7' => ' This house, as the Indonesian
+  government, will significantly
+  reallocate funds for the
+  development of public
+  transportation (LRT,KRL, etc.)
+  to climate finance for renewable
+  energy.',
+    'mosir8' => 'This house would mandate
+  political parties to include
+  renewable energy innovationas
+  a core component of their
+  platform to achieve sustainable
+  global growth',
      ]
 ?>

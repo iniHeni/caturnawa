@@ -163,10 +163,10 @@ $finalDate = Carbon::parse('2024-09-16');
                 });
             @else 
      
-                window.location.href = '{{url('matalomba/edc/penyisihan') }}'; 
+                window.location.href = '{{url('matalomba/kdbi/penyisihan') }}'; 
             @endif
         ">
-                <img src="../../img/edc.png" alt="Card Image">
+                <img src="../../img/kdbi.png" alt="Card Image">
                 <span class="developer">@lang('messages.penyisihan')</span>
                 <h3>@lang('messages.dilaksanakan')<br>18 - 19 September 2024</h3>
                 <div class="arrow">
@@ -178,25 +178,25 @@ $finalDate = Carbon::parse('2024-09-16');
             @if (!$today->greaterThanOrEqualTo($semiFinalDate))
                 Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
             @else
-                window.location.href = '{{url('matalomba/edc/Semifinal') }}';
+                window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
             @endif
         ">
-                <img src="../../img/edc.png" alt="Card Image">
+                <img src="../../img/kdbi.png" alt="Card Image">
                 <span class="designer">Semifinal</span>
                 <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
             </a>
-            <a href="{{url('matalomba/edc/Final') }}" class="card-item" onclick="
+            <a href="{{url('matalomba/kdbi/Final') }}" class="card-item" onclick="
             event.preventDefault();
             @if (!$today->greaterThanOrEqualTo($finalDate))
                 Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
             @else
-                window.location.href = '{{url('matalomba/edc/Final') }}';
+                window.location.href = '{{url('matalomba/kdbi/Final') }}';
             @endif
         ">
-                <img src="../../img/edc.png" alt="Card Image">
+                <img src="../../img/kdbi.png" alt="Card Image">
                 <span class="editor">Final</span>
                 <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1') 2024</h3>
                 <div class="arrow">

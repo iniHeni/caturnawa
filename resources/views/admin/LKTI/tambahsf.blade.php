@@ -127,8 +127,9 @@
                         <select name="juri" id="juri" is-invalid  required>
                             <option selected>Pilih Juri</option>
                             <option>Efriza S.I.P. M.Si</option>
-                            <option>Fajar Harry Sampurno MBA Ph.D.</option>
-                            <option>Prof. Dr.Eng. Eniya Listiani Dewi</option>
+                            <option>Desfara Anggreani</option>
+                            <option>Dr.Tatang Mitra
+                                Setia, M.Si.</option>
                         </select>
                         </div>
                   </div>
