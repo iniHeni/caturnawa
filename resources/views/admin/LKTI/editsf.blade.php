@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -102,7 +102,7 @@
 
 <section>
     <div class="konten">
-      <header>Data Penyisihan</header>
+      <header>Data Semifinal</header>
       <form action="{{ route('spc.updatesf', $edit->id) }}" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
@@ -122,10 +122,9 @@
                       <label for="juri">Nama Juri</label>
                       <select name="juri" id="juri" is-invalid  required>
                           <option selected>{{ $edit->juri }}</option>
-                          <option>Efriza S.I.P. M.Si</option>
-                          <option>Desfara Anggreani</option>
-                          <option>Dr.Tatang Mitra
-                              Setia, M.Si.</option>
+                            <option>Efriza S.I.P. M.Si</option>
+                            <option>Desfara Anggreani</option>
+                        <option>Dr. Tatang Mitra Setia, M.Si</option>
                       </select>
                       </div>
                 </div>
@@ -135,11 +134,15 @@
               <div class="fields">
               <div class="input-field">
                 <label for="scorepenyajian">Score:</label>
-                <input type="number" id="scorepenyajian" name="scorepenyajian" oninput="hitungTotall()" value="{{ $edit->scorepenyajian }}">
+                <input type="number" id="scorepenyajian" name="scorepenyajian" oninput="hitungTotall()" value="{{ $edit->scorepenyajian }}" @error('scorepenyajian') is-invalid @enderror  required>
+                @error('scorepenyajian')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
             </div>
+                                   
             <div class="input-field">
               <label for="penyajian">Kualitatif:</label>
-              <textarea type="text" id="penyajian" name="penyajian" >{{ $edit->penyajian }}</textarea>
+              <textarea type="text" id="penyajian" name="penyajian"  required>{{ $edit->penyajian }} </textarea>
           </div>
           </div>
           </div>
@@ -148,11 +151,15 @@
                   <div class="fields">
                   <div class="input-field">
                     <label for="scoresubs">Score:</label>
-                    <input type="number" id="scoresubs" name="scoresubs" oninput="hitungTotall()"  value="{{ $edit->scoresubs }}">
-                </div>
+                    <input type="number" id="scoresubs" name="scoresubs" oninput="hitungTotall()"  value="{{ $edit->scoresubs }}" @error('scoresubs') is-invalid @enderror  required>
+                  @error('scoresubs')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                    </div>
+                                     
                 <div class="input-field">
                   <label for="subs">Kualitatif:</label>
-                  <textarea type="text" id="subs" name="subs" >{{ $edit->subs }}</textarea>
+                  <textarea type="text" id="subs" name="subs"  required>{{ $edit->subs }}</textarea>
               </div>
                   </div>
               </div>
@@ -161,11 +168,15 @@
                       <div class="fields">
                       <div class="input-field">
                         <label for="scorekualitas">Score:</label>
-                        <input type="number" id="scorekualitas" name="scorekualitas" oninput="hitungTotall()" value="{{ $edit->scorekualitas }}">
-                    </div>
+                        <input type="number" id="scorekualitas" name="scorekualitas" oninput="hitungTotall()" value="{{ $edit->scorekualitas }}" @error('scorekualitas') is-invalid @enderror  required>
+                   @error('scorekualitas')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
+                        
                     <div class="input-field">
                       <label for="kualitas">Kualitatif:</label>
-                      <textarea type="text" id="kualitas" name="kualitas" >{{ $edit->kualitas }}</textarea>
+                      <textarea type="text" id="kualitas" name="kualitas"  required>{{ $edit->kualitas }}</textarea>
                   </div>
                       </div>
               </div>

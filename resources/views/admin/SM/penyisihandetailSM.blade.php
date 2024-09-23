@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -99,20 +99,11 @@
         @csrf
     </form>
 </div>
-@php
-use Carbon\Carbon;
-
-$today = Carbon::now();
-
-
-$tambahh = Carbon::parse('2024-05-28');
-
-@endphp
 <div id="data-container">
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
-                <div class="table-responsive" style="max-height: 1000px;  position: static;">
+                <div class="table-responsive" style="max-height: 1000px;  position: static; padding-top: 100px;">
                   <table class="table table-bordered" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     @foreach($tambah as $no=>$data)
                     <thead style="position: static; top: -1; z-index: 10;">
@@ -139,24 +130,10 @@ $tambahh = Carbon::parse('2024-05-28');
                         <td style="text-align: left">{{ $data->krit1 }}</td>
 
                         <td rowspan="6">
-                            <a href="#" onclick="
-                                event.preventDefault();
-                                @if (!$today->greaterThanOrEqualTo($tambahh))
-                                    Swal.fire('Ditutup', 'Pengeditan Nilai sudah ditutup,jika ada kendala silahkan menghubungi pihak terkait', 'info');
-                                @else
-                                    window.location.href = '{{ route('sm.editp', $data->id) }}';
-                                @endif
-                            ">Edit</a>
+                            <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
                             <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                                 @csrf
-                                <button  type="button" style="color: red" onclick="
-                                event.preventDefault();
-                                @if (!$today->greaterThanOrEqualTo($tambahh))
-                                    Swal.fire('@lang('messages.sweet1')', '@lang('messages.sweet3')', 'info');
-                                @else
-                                    confirmDelete({{ $data->id }})
-                                @endif
-                            ">Hapus</button>
+                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
                             </form>
                         </td>
                     </tr>

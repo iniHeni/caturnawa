@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -126,7 +126,10 @@
                     </div>
                     <div class="input-field">
                         <label for="scorecp">Score capaian Unggulan </label>
-                        <input name="scorecp" id="scorecp" type="number" placeholder=" Score Capaian" required >
+                        <input name="scorecp" id="scorecp" type="number" placeholder=" Score Capaian"  @error('scorecp') is-invalid @enderror required >
+                       @error('scorecp')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                     </div>    
                 </div>
                 <button type="submit" class="nextBtn">

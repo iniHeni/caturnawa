@@ -32,7 +32,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -144,16 +144,22 @@
               <div class="fields">
               <div class="input-field">
                 <label for="skorkrit1">1. Presentasi Video</label>
-                <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
-            </div>
+                <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" @error('skorkrit1') is-invalid @enderror required>
+             @error('skorkrit1')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                </div>
             <div class="input-field">
                 <label for="krit1">Uraian 1</label>
                 <textarea id="krit1" name="krit1"  required></textarea>
             </div>
             <div class="input-field">
                 <label for="skorkrit2">2.Outline</label>
-                <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required>
-            </div>
+                <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" @error('skorkrit2') is-invalid @enderror required>
+             @error('skorkrit2')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                </div>
             <div class="input-field">
                 <label for="krit2">Uraian 2</label>
                 <textarea id="krit2" name="krit2"  required></textarea>

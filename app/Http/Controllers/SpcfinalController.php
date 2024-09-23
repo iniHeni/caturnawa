@@ -53,7 +53,7 @@ $peserta->rank = $tambah->where('namapeserta', $namapeserta)->pluck('rank')[$ind
             DB::raw("string_agg(subs::text, ', ') as subs"),
             DB::raw("string_agg(kualitas::text, ', ') as kualitas"),
             DB::raw('SUM(scorepenyajian + scoresubs + scorekualitas) as total'),
-            DB::raw("string_agg(juri::text, '! ') as juri"),
+            DB::raw("string_agg(juri::text, ', ') as juri"),
             )
     ->where('namapeserta')
     ->groupBy('namapeserta')
@@ -120,12 +120,12 @@ public function final(){
     // 2. Ambil data peserta dari database
     $data = DB::table('spcfinals')
         ->select('namapeserta',
-                DB::raw("string_agg(scorepemaparanmateri::text, ', ') as scorepemaparanmateri"),
-                DB::raw("string_agg(scorepertanyaandanjawaban::text, ', ') as scorepertanyaandanjawaban"),
-                DB::raw("string_agg(scoreaspekkesesuaian::text, ', ') as scoreaspekkesesuaian"),
-                DB::raw("string_agg(materi::text, ', ') as materi"),
-                DB::raw("string_agg(pertanyaandanjawaban::text, ', ') as pertanyaandanjawaban"),
-                DB::raw("string_agg(kesesuaian::text, ', ') as kesesuaian"),
+                DB::raw("string_agg(scorepemaparanmateri::text, '! ') as scorepemaparanmateri"),
+                DB::raw("string_agg(scorepertanyaandanjawaban::text, '! ') as scorepertanyaandanjawaban"),
+                DB::raw("string_agg(scoreaspekkesesuaian::text, '! ') as scoreaspekkesesuaian"),
+                DB::raw("string_agg(materi::text, '! ') as materi"),
+                DB::raw("string_agg(pertanyaandanjawaban::text, '! ') as pertanyaandanjawaban"),
+                DB::raw("string_agg(kesesuaian::text, '! ') as kesesuaian"),
                 DB::raw('SUM(scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian) as total'),
                 DB::raw("string_agg(juri::text, '! ') as juri"),
                 )

@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -125,11 +125,10 @@
                     <div class="input-field">
                       <label for="juri">Nama Juri</label>
                       <select name="juri" id="juri" is-invalid  required>
-                        <option selected>Pilih Juri</option>
-                        <option>Efriza S.I.P. M.Si</option>
-                        <option>Desfara Anggreani</option>
-                        <option>Dr.Tatang Mitra
-                            Setia, M.Si.</option>
+                          <option selected>Pilih Juri</option>
+                            <option>Efriza S.I.P. M.Si</option>
+                            <option>Desfara Anggreani</option>
+                        	<option>Dr. Tatang Mitra Setia, M.Si</option>
                       </select>
                       </div>
                 </div>
@@ -139,11 +138,14 @@
               <div class="fields">
               <div class="input-field">
                 <label for="scorepemaparanmateri">Score:</label>
-                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" >
+                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" @error('scorepemaparanmateri') is-invalid @enderror required>
+                @error('scorepemaparanmateri')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
             </div>
             <div class="input-field">
                 <label for="materi">Kualitatif:</label>
-                <textarea type="text" id="materi" name="materi"></textarea>
+                <textarea type="text" id="materi" name="materi" required></textarea>
             </div>
               </div>
           </div>
@@ -152,11 +154,14 @@
                   <div class="fields">
                   <div class="input-field">
                     <label for="scorepertanyaandanjawaban">Score:</label>
-                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" >
+                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" @error('scorepertanyaandanjawaban') is-invalid @enderror required>
+                                    @error('scorepertanyaandanjawaban')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                 </div>
                 <div class="input-field">
                     <label for="pertanyaandanjawaban">Kualitatif:</label>
-                    <textarea type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban"></textarea>
+                    <textarea type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban" required></textarea>
                 </div>
                   </div>
               </div>
@@ -165,11 +170,14 @@
                       <div class="fields">
                       <div class="input-field">
                         <label for="scoreaspekkesesuaian">Score:</label>
-                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" >
+                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" @error('scoreaspekkesesuaian') is-invalid @enderror required>
+                          @error('scoreaspekkesesuaian')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                     </div>
                     <div class="input-field">
                         <label for="kesesuaian">Kualitatif:</label>
-                        <textarea type="text" id="kesesuaian" name="kesesuaian"></textarea>
+                        <textarea type="text" id="kesesuaian" name="kesesuaian" required></textarea>
                     </div>
                       </div>
                   </div>

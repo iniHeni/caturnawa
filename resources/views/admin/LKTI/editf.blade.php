@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -102,7 +102,7 @@
 
 <section>
     <div class="konten">
-      <header>Data Penyisihan</header>
+      <header>Data Final</header>
       <form action="{{ route('spc.updatef', $edit->id) }}" method="POST" enctype="multipart/form-data" id="penilaian" >
           @csrf
           <div class="form first">
@@ -122,10 +122,9 @@
                       <label for="juri">Nama Juri</label>
                       <select name="juri" id="juri" is-invalid  required>
                           <option selected>{{ $edit->juri }}</option>
-                          <option>Efriza S.I.P. M.Si</option>
-                          <option>Desfara Anggreani</option>
-                          <option>Dr.Tatang Mitra
-                              Setia, M.Si.</option>
+                            <option>Efriza S.I.P. M.Si</option>
+                            <option>Desfara Anggreani</option>
+                        <option>Dr. Tatang Mitra Setia, M.Si</option>
                       </select>
                       </div>
                 </div>
@@ -135,11 +134,14 @@
               <div class="fields">
               <div class="input-field">
                 <label for="scorepemaparanmateri">Score:</label>
-                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" value="{{ $edit->scorepemaparanmateri }}">
+                <input type="number" id="scorepemaparanmateri" name="scorepemaparanmateri" oninput="hitungTotal()" value="{{ $edit->scorepemaparanmateri }}" @error('scorepemaparanmateri') is-invalid @enderror required>
+                @error('scorepemaparanmateri')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
             </div>
             <div class="input-field">
                 <label for="materi">Kualitatif:</label>
-                <textarea type="text" id="materi" name="materi" >{{ $edit->materi }}</textarea>
+                <textarea type="text" id="materi" name="materi" required>{{ $edit->materi }}</textarea>
             </div>
               </div>
           </div>
@@ -148,11 +150,14 @@
                   <div class="fields">
                   <div class="input-field">
                     <label for="scorepertanyaandanjawaban">Score:</label>
-                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" value="{{ $edit->scorepertanyaandanjawaban }}">
+                    <input type="number" id="scorepertanyaandanjawaban" name="scorepertanyaandanjawaban" oninput="hitungTotal()" value="{{ $edit->scorepertanyaandanjawaban }}" @error('scorepertanyaandanjawaban') is-invalid @enderror required>
+                         @error('scorepertanyaandanjawaban')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                 </div>
                 <div class="input-field">
                     <label for="pertanyaandanjawaban">Kualitatif:</label>
-                    <textarea type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban" >{{ $edit->pertanyaandanjawaban }}</textarea>
+                    <textarea type="text" id="pertanyaandanjawaban" name="pertanyaandanjawaban" required>{{ $edit->pertanyaandanjawaban }}</textarea>
                 </div>
                   </div>
               </div>
@@ -161,11 +166,14 @@
                       <div class="fields">
                       <div class="input-field">
                         <label for="scoreaspekkesesuaian">Score:</label>
-                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" value="{{ $edit->scoreaspekkesesuaian }}">
+                        <input type="number" id="scoreaspekkesesuaian" name="scoreaspekkesesuaian" oninput="hitungTotal()" value="{{ $edit->scoreaspekkesesuaian }}" @error('scoreaspekkesesuaian') is-invalid @enderror required>
+                         @error('scoreaspekkesesuaian')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                     </div>
                     <div class="input-field">
                         <label for="kesesuaian">Kualitatif:</label>
-                        <textarea type="text" id="kesesuaian" name="kesesuaian" >{{ $edit->kesesuaian }}</textarea>
+                        <textarea type="text" id="kesesuaian" name="kesesuaian" required>{{ $edit->kesesuaian }}</textarea>
                     </div>
                       </div>
                   </div>

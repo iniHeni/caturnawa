@@ -1,14 +1,13 @@
 .konten{
     position: relative;
-    max-width: 500px;
-    width: 50%;
+    max-width: 850px;
+    width: 100%;
     border-radius: 20px;
     padding: 30px;
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin: 0 auto;
-    top: -5rem;
 }
 .konten header{
     position: relative;
@@ -28,7 +27,7 @@
 }
 .konten form{
     position: relative;
-    min-height: 700px;
+    min-height: 900px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -68,7 +67,7 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 2 - 15px);
+    width: calc(100% / 2 - 50px); 
     flex-direction: column;
     margin: 4px 0;
 }
@@ -86,6 +85,7 @@ form .fields .input-field{
     border: 1px solid #aaa;
     padding: 0 15px;
     height: 42px;
+   width: 330px;
     margin: 8px 0;
 }
 .input-field textarea{
@@ -95,11 +95,12 @@ form .fields .input-field{
     color: #333;
     border-radius: 5px;
     border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 50px;
+    padding: 0 13px;
+    height: 100px;
     margin: 8px 0;
+    width: 330px;
 }
-
+.input-field textarea :focus,
 .input-field input :focus,
 .input-field select:focus{
     box-shadow: 0 3px 6px rgba(0,0,0,0.13);
@@ -151,11 +152,12 @@ form .buttons button , .backBtn{
 }
 form input.error,
 .input-field input[is-invalid] {
-    border-color: red !important;
+    border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
 }
-form textarea.error,
+
+form input.error,
 .input-field textarea[is-invalid] {
-    border-color: red !important; 
+    border-color: red !important; /* Pastikan menggunakan !important untuk override style Bootstrap */
 }
 .input-field .text-danger {
     color: red;
@@ -168,13 +170,13 @@ form textarea.error,
        display: none;
     }
     form .fields .input-field{
-        width: calc(100% / 2 - 15px);
+        width: calc(100% / 2 - 50px);
     }
     .konten{
         width: 100%;
     }
     .konten form{
-        min-height: 800px;
+        min-height: 400px;
     }
 }
 @media (max-width: 390px) {

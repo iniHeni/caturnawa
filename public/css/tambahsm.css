@@ -29,7 +29,7 @@
 .konten form{
     position: relative;
     margin-top: 16px;
-    min-height: 1300px;
+    min-height: 1600px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -97,7 +97,7 @@ form .fields .input-field{
     border-radius: 5px;
     border: 1px solid #aaa;
     padding: 0 13px;
-    height: 60px;
+    height: 150px;
     margin: 8px 0;
     width: 300px;
 }

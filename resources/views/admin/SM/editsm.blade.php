@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -154,40 +154,55 @@
                     <div class="fields">
                     <div class="input-field">
                       <label for="skorkrit1">1.Bentuk</label>
-                      <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit1}}">
-                  </div>
+                      <input type="number" id="skorkrit1" name="skorkrit1" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit1}}" @error('skorkrit1') is-invalid @enderror>
+                  @error('skorkrit1')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </div>
                   <div class="input-field">
                     <label for="krit1">Uraian 1</label>
                     <textarea id="krit1" name="krit1"  required >{{ $edit->krit1 }}</textarea>
                 </div>
                   <div class="input-field">
                     <label for="skorkrit2">2.Visual</label>
-                    <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit2}}">
-                </div>
+                    <input type="number" id="skorkrit2" name="skorkrit2" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit2}}" @error('skorkrit2') is-invalid @enderror>
+                @error('skorkrit2')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </div>
                 <div class="input-field">
                   <label for="krit2">Uraian 2</label>
                   <textarea id="krit2" name="krit2"  required >{{ $edit->krit2 }}</textarea>
               </div>
                 <div class="input-field">
                   <label for="skorkrit3">3.Sinematografi</label>
-                  <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit3}}">
-              </div>
+                  <input type="number" id="skorkrit3" name="skorkrit3" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit3}}" @error('skorkrit3') is-invalid @enderror>
+             @error('skorkrit3')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </div>
               <div class="input-field">
                 <label for="krit3">Uraian 3</label>
                 <textarea id="krit3" name="krit3"  required >{{ $edit->krit3 }}</textarea>
             </div>
               <div class="input-field">
                 <label for="skorkrit4">4.Editing</label>
-                <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit4}}">
-            </div>
+                <input type="number" id="skorkrit4" name="skorkrit4" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit4}}" @error('skorkrit4') is-invalid @enderror>
+            @error('skorkrit4')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </div>
             <div class="input-field">
                   <label for="krit4">Uraian 4</label>
                   <textarea id="krit4" name="krit4"  required >{{ $edit->krit4 }}</textarea>
               </div>
               <div class="input-field">
                 <label for="skorkrit5">5.Suara</label>
-                <input type="number" id="skorkrit5" name="skorkrit5" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit5}}">
-            </div>
+                <input type="number" id="skorkrit5" name="skorkrit5" oninput="hitungTotal()" placeholder=" Masukkan Kuantitatif" required value="{{ $edit->skorkrit5}}" @error('skorkrit5') is-invalid @enderror>
+            @error('skorkrit5')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
+                      </div>
             <div class="input-field">
               <label for="krit5">Uraian 5</label>
               <textarea id="krit5" name="krit5"  required >{{ $edit->krit5 }}</textarea>

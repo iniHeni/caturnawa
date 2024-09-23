@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -128,8 +128,7 @@
                             <option selected>Pilih Juri</option>
                             <option>Efriza S.I.P. M.Si</option>
                             <option>Desfara Anggreani</option>
-                            <option>Dr.Tatang Mitra
-                                Setia, M.Si.</option>
+           					<option>Dr. Tatang Mitra Setia, M.Si</option>
                         </select>
                         </div>
                   </div>
@@ -139,11 +138,14 @@
                 <div class="fields">
                 <div class="input-field">
                   <label for="scorepenyajian">Score:</label>
-                  <input type="number" id="scorepenyajian" name="scorepenyajian" oninput="hitungTotall()" >
+                  <input type="number" id="scorepenyajian" name="scorepenyajian" oninput="hitungTotall()" @error('scorepenyajian') is-invalid @enderror required>
+                   @error('scorepenyajian')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
               </div>
               <div class="input-field">
                 <label for="penyajian">Kualitatif:</label>
-                <textarea type="text" id="penyajian" name="penyajian"></textarea>
+                <textarea type="text" id="penyajian" name="penyajian" required></textarea>
             </div>
             </div>
             </div>
@@ -152,11 +154,14 @@
                     <div class="fields">
                     <div class="input-field">
                       <label for="scoresubs">Score:</label>
-                      <input type="number" id="scoresubs" name="scoresubs" oninput="hitungTotall()" >
+                      <input type="number" id="scoresubs" name="scoresubs" oninput="hitungTotall()" @error('scoresubs') is-invalid @enderror required>
+                      @error('scoresubs')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                   </div>
                   <div class="input-field">
                     <label for="subs">Kualitatif:</label>
-                    <textarea type="text" id="subs" name="subs"></textarea>
+                    <textarea type="text" id="subs" name="subs" required></textarea>
                 </div>
                     </div>
                 </div>
@@ -165,11 +170,14 @@
                         <div class="fields">
                         <div class="input-field">
                           <label for="scorekualitas">Score:</label>
-                          <input type="number" id="scorekualitas" name="scorekualitas" oninput="hitungTotall()" >
+                          <input type="number" id="scorekualitas" name="scorekualitas" oninput="hitungTotall()" @error('scorekualitas') is-invalid @enderror  required>
+                          @error('scorekualitas')
+                          <div class="text-danger">{{ $message }}</div>
+                          @enderror
                       </div>
                       <div class="input-field">
                         <label for="kualitas">Kualitatif:</label>
-                        <textarea type="text" id="kualitas" name="kualitas"></textarea>
+                        <textarea type="text" id="kualitas" name="kualitas" required></textarea>
                     </div>
                         </div>
                 </div>
