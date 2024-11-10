@@ -43,7 +43,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -266,3 +266,4 @@ $tambah = Carbon::parse('2024-05-28');
         </script>
 </body>
 </html>
+    

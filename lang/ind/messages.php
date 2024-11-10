@@ -13,7 +13,7 @@ return [
     // Nav End Menu
     // Home Start
     'welcome' => 'Selamat Datang di Caturnawa<br>Daftar Sekarang dan Jadilah Pemenang!',
-    'buka' =>'Pendaftaran Ditutup Pada',
+    'buka' =>'Babak Penyisihan SMC dibuka pada',
     
     'sponsor' =>'Sponsor Kami',
     'follow' =>'Ikuti kami di media Sosial!',
@@ -113,7 +113,7 @@ return [
     'tgl2' => 'S',
     'tutup' => 'Tutup',
     'khusus' => 'Khusus Mahasiswa Universitas Nasional Klik Tombol Khusus Mahasiswa UNAS',
-    'instansi1' => 'Instansi',
+    'instansi1' => 'Nama Tim',
 
     
 
@@ -124,7 +124,7 @@ return [
      // Data Juri Start
 
      // EDC
-     'juriposisi1' => 'Mahasiswa Psikologi',
+     'juriposisi1' => 'Mahasiswa Psikologi di Universitas Indonesia',
      'juribio1' => ' Beliau adalah mahasiswa psikologi tingkat sarjana di Universitas Indonesia.
  Beliau memiliki latar belakang dalam berbagai peran kepemimpinan, termasuk
  sebagai Presiden <i>English Debating Society</i> (EDS UI). Beliau telah magang
@@ -136,18 +136,15 @@ return [
  Semifinalis kategori <i>English as Secondary Language</i> (ESL) pada <i>Australasian
  Intervarsity Debating Championships</i> 2023 di Krabi, Thailand dan Menjadi Juri
  Terakreditasi pada <i>Thailands Speech and Debate International Competition </i> 2021.',
-     'juriposisi2' => 'Pelatih Debat',
-     'juribio2' => ' Beliau merupakan seorang pelatih debat dengan lulusan Universitas Islam
- Indonesia dan Institut Teknologi Bandung. Beliau memiliki minat penelitian,
- mengajar, berbicara di depan umum, dan berpikir kritis. Ketertarikan ini terutama
- terwujud dalam bentuk keaktifan beliau dalam debat parlementer, mempunyai
- pengalaman melatih 35 tim debat kompetitif universitas atau sekolah menengah
- yang berbeda. Beliau juga memiliki pengalaman menjadi <i>Breaking Adjudicator of
- Malaysia Debate Open</i> (MDO) 2016, EFL <i>Champion of Cambodia United Asian
- Debating Championship</i> (UADC) 2017, <i>Champion of Java Overland Intervarsities
- English Debate</i> (JOVED) 2018, <i>1st Runner-up of National University Debating
- Championship</i> (NUDC) 2018, EFL <i>Grandfinalist & co-6th best</i> EFL <i>speaker of
- Cape Town World Universities Debating Championship</i>  (WUDC) 2019.',
+     'juriposisi2' => 'Mahasiswa Studi Korea di Universitas Indonesia',
+     'juribio2' => 'Cecilia Tiara Liong, seorang mahasiswi Studi Korea di Universitas Indonesia, memiliki minat di
+bidang Hubungan Masyarakat dan pengalaman yang luas di bidang tersebut. Ia pernah menjadi
+<i>Public Relations Intern</i> di Sunday, mengelola materi pemasaran dan pemantauan media, sebagai
+salah satu Dewan Pakar Tim Kampanye Nasional dalam persiapan debat kampanye presiden.
+Sebagai Kepala Bidang Eksternal di <i>English Debating Society</i> (EDS UI) dan Manajer Media
+<i>Sosial di Indonesia Youth for SMEs</i>. Di bidang debat, ia telah meraih penghargaan sebagai <i>Grand
+Finalist & 5th Best Speaker di Asian English Olympics</i> 2023 dan <i>1st Runner Up & 3rd Best
+Speaker</i> di ALSA Universitas Diponegoro 2022.',
      'juriposisi3' => 'First Research Expert at Indonesian Institute of Sciences (LIPI)',
      'juribio3' => 'Beliau merupakan lulusan dari Program Studi Ilmu Politik di Universitas
  Indonesia dengan predikat Cumlaude (IPK: 3.86). Beliau pernah menjadi peneliti
@@ -162,28 +159,25 @@ return [
  pengalaman menjadi juri debat KDBI UNAS FEST 2023.',
      // EDC
     //KDBI
-    'jurikdbiposisi1' => 'Manajer Proyek Keadilan Iklim di Indonesia Cerah | LSM Global',
-    'jurikdbibio1' => 'Berpengalaman sebagai manajer program, analis kebijakan, dan juru kampanye dengan pengalaman kerja selama 7 tahun di organisasi masyarakat sipil (OMS) yang berfokus pada isu-
-isu energi dan sumber daya alam. Memiliki gelar master di bidang ilmu politik dengan keahlian
-menulis, penelitian, produksi konten, dan pengorganisasian acara.',
-    'jurikdbiposisi2' => 'Learning Support Assistant di <br> PT Bank Mandiri (Persero) Tbk.',
-    'jurikdbibio2' => 'Beliau merupakan lulusan dari Manajemen Pendidikan di Universitas Negeri Jakarta (UNJ). 
-Memiliki ketertarikan dengan dunia pendidikan, perkembangan manusia dan dinamika 
-konten media sosial. Keahliannya di sektor pembelajaran dan pengembangan dibuktikan 
-dengan perannya sebagai pembicara publik dan tutor. Beliau memiliki pengalaman 
-menjadi juri Kompetisi Debat Bahasa Indonesia (KDBI) di UNAS FEST 2023, peserta 
-<i>Asia University Summer Program 2019</i>, pemenang Bakti Nusa 9 2019, dan juara 1 Lomba 
-Debat Pendidikan Nasional 2018.',
+    'jurikdbiposisi1' => 'Mahasiswa Hukum Universitas Pembangunan Nasional “Veteran” Jakarta',
+    'jurikdbibio1' => 'Fairuz Mumtaz Abafiyah Putri beliau seorang mahasiswa Hukum di Universitas
+Pembangunan Nasional “Veteran” Jakarta yang berpengalaman luas dan berdedikasi tinggi
+dalam dunia debat dan adjudikasi. Memiliki keahlian dalam analisis kritis, komunikasi
+publik, dan kepemimpinan tim, yang terbukti melalui berbagai pencapaian nasional sebagai
+peserta dan juri debat. Sebagai Core Adjudicator Panelist dan Invited Adjudicator di
+kompetisi-kompetisi terkemuka, beliau telah dipercaya menilai kualitas debat di ajang seperti
+LDBI Festival dan National Debate Competitions. Di sisi lain, pengalaman sebagai pelatih
+memperkuat kemampuan beliau dalam membimbing tim untuk meraih prestasi. Berorientasi
+pada hasil, profesional, dan berkomitmen dalam mengembangkan budaya debat di tingkat
+pendidikan tinggi.',
+    'jurikdbiposisi3' => 'RESEARCHERHISTORIA.ID PT. MERAHCIPTA MEDIA',
+    'jurikdbibio3' => 'Laila Amalia Khaerani adalah peserta dan juri debat berprestasi dari Cirebon, lahir pada 21 April
+ 2001. Ia memiliki rekor yang luar biasa dalam berbagai kompetisi debat nasional, secara konsisten
+ memenangkan dan menerima penghargaan Pembicara Terbaik. Laila juga pernah menjadi juri debat
+ untuk kompetisi nasional, sehingga ia memiliki pengalaman yang luas di bidang debat.',
 
-    'jurikdbiposisi3' => 'Dosen Universitas Nasional',
-    'jurikdbibio3' => 'Beliau merupakan lulusan S3 Ilmu Filsafat di Universitas Gadjah Mada. Saat ini aktif 
-sebagai dosen di Universitas Nasional, Jakarta, dalam mata kuliah Filsafat Bahasa, Filsafat 
-Ilmu Pengetahuan, penulisan kreatif, kemahiran menulis, dan kewartawanan (menjadi 
-dosen sejak 1986 dan juga mengajar di jenjang S1, S2, dan S3). Beliau tercatat sebagai 
-sastrawan Indonesia angkatan 2000, dosen terbaik Fakultas Bahasa dan Sastra UNAS 
-(2004 & 2008), memperoleh Sertifikasi Wartawan sebagai Wartawan Utama dari Dewan 
-Pers (No.092-WU/DP//2011, Mei 2011), dosen Muda, Kopertis Wilayah III Jakarta (2008-kini), redaktur senior majalah Solusi Investasi (2000-kini), pendiri Pusat Studi Betawi 
-UNAS (2004).',
+    'jurikdbiposisi2' => 'Learning Support Assistant at <br> PT Bank Mandiri (Persero) Tbk.',
+    'jurikdbibio2' => 'Purwo Besari lulus dari Manajemen Pendidikan di Universitas Negeri Jakarta (UNJ). Dia bersemangat tentang pendidikan, pengembangan manusia, dan dinamika konten media sosial. Keahliannya di bidang pembelajaran dan pengembangan dibuktikan dengan perannya sebagai pembicara publik dan tutor. Beliau memiliki pengalaman sebagai juri Kompetisi Debat Bahasa Indonesi UNAS FEST 2023, peserta Asia University Summer Program 2019, pemenang Bakti Nusa 9 2019, dan juara 1 Kompetisi Debat Pendidikan Nasional 2018.',
     //KDBI
 
      // SM
@@ -249,10 +243,8 @@ memposisikan dirinya sebagai figur muda yang inspiratif dan berpotensi memberika
 dalam pembangunan sosial dan ekonomi di masa depan.
          ',
      
-         'jurispcposisi3' => 'Dosen Universitas Nasional',
-         'jurispcbio3' => 'Dr. Tatang Mitra Setia, M.Si. adalah salah satu Dosen Universitas Nasional. Ia adalah alumni S1 di Universitas Nasional dan S2-S3 di Universitas Indonesia, pernah melakukan kerjasama penelitian dengan berbagai lembaga dari pemerintah maupun di luar pemerintah.dalam 5 tahun terakhir mempublikasikan 18 Jurnal Ilmiah dan menerbitkan 6 Buku.
-         Dr. Tatang Mitra Setia, M.Si. menjabat sebagai lektor kepala Fakultas Biologi dan Pertanian Prodi Magister Biologi.Bidang Keahlian Biologi konservasi dan prilaku hewan.
-         ',
+         'jurispcposisi3' => 'Consultant di Aquatera, Ltd.',
+         'jurispcbio3' => 'Agung Iswandi merupakan seorang insinyur material dan ahli energi terbarukan dengan fokus penelitian pada biofouling dan korosi pada infrastruktur energi terbarukan laut. Saat ini, ia menjabat sebagai Peneliti di Centre for Sustainable Energy and Resources Management (CSERM) Universitas Nasional (UNAS) dan terlibat dalam sejumlah proyek yang didanai oleh Global Challenge Research Fund - UKRI, British Council Newton Fund, serta Department for International Development (DfID), Inggris. Agung pernah menjabat sebagai Manajer Proyek untuk Proyek GCRF Blue Communities – Studi Kasus Indonesia (2017-2019) di Cagar Biosfer Takabonerate, Kepulauan Selayar, yang mencakup pengembangan energi terbarukan laut. Pada tahun 2014, ia menjadi <i>Visiting Fellow</i> di Robert Gordon University, Inggris, di mana ia mengerjakan studi kelayakan energi laut di Indonesia yang didanai oleh British Council. Saat ini, ia juga bekerja sebagai konsultan paruh waktu di Aquatera, Ltd, dengan fokus pada transisi energi, energi terbarukan, serta energi laut untuk mendukung Ekonomi Biru di Indonesia, dan turut mendukung program Mentari – Prosperity Fund, khususnya inisiatif Energi Laut.',
 
          'jurispcposisi4' => 'Mahasiswi Universitas Nasional',
          'jurispcbio4' => 'Saya seorang mahasiswa sarjana di Fakultas Ilmu Kesehatan. Saya belajar banyak dari orang-orang, terutama bagaimana koneksi dibuat melalui acara. Saya mahir berbicara di depan umum, yang menyebabkan saya memenangkan kontes debat, konferensi internasional, berpartisipasi dalam beberapa organisasi, dan dari itu, saya sangat memperhatikan isu-isu sosial. Untuk menunjukkan minat itu, saya memimpin panduan belajar yang disebut Rumah Belajar.',
@@ -297,6 +289,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
      'lktif1' => 'Pemaparan Materi dan Presentasi Ilmiah',
      'lktif2' => 'Pertanyaan dan Jawaban',
      'lktif3' => 'Aspek Kesesuaian dengan Tema',
+  'lktif4' => 'Keterampilan dalam Bahasa Inggris',
      'orginal' => 'Originalitas Karya',
      'pengesahan' => 'Pengesahan Karya',
      'hakcipta' =>  'Surat Pernyataan Pengalihan Hak Cipta Publikasi Ilmiah',
@@ -325,7 +318,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
      'sweet3' =>  'Hasil Semifinal Belum Keluar!',
      'sweet4' =>  'Hasil Final Belum Keluar!',
      'note' =>  'Catatan',
-     'julii' =>  '14 September',
+     'julii' =>  '26 Oktober',
     'bidang' =>  'Wujud Capaian Unggulan',
     'back' =>  'Kembali',
     'pteam' =>  'Posisi Tim',
@@ -334,13 +327,13 @@ dalam pembangunan sosial dan ekonomi di masa depan.
     'ok1' =>  'Oktober',
     'rata' =>  'Rata - rata tim skor',
     'unass' =>  'Khusus Mahasiswa UNAS',
-    'oopen' => 'Dibuka Pada Tanggal',
+    'oopen' => 'Dibuka pada tanggal',
     'keterangan' => 'Posisi ini tidak akan berubah hingga kompetisi berakhir',
-    'buktibayar' => 'Bukti Bayar<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)',
+    'buktibayar' => 'Bukti Bayar<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)<br>Mohon sertakan note "[Nama tim] - [Nama kompetisi]" pada saat transfer<br> ',
     'bukaedc' => 'Babak Masih Ditutup',
-    'bukaunggah' => 'Unggah Karya Masih Ditutup',
+    'bukaunggah' => 'Unggah karya telah ditutup',
+  	'bukaunggah2' => 'Unggah karya telah ditutup',
  	 'max' => 'Maks 3mb',
-      'erorrp' => 'Anda tidak di izinkan masuk ke Halaman ini!',
   	'mosir1' => 'Dewan ini percaya bahwa
  kendaraan listrik secara
  signifikan berkontribusi pada
@@ -353,7 +346,7 @@ dalam pembangunan sosial dan ekonomi di masa depan.
  kompensasi kepada
  negara-negara yang paling
  dirugikan oleh perubahan iklim',
-  	'mosir3' => ' Sebagai pemerintah Indonesia,
+  	'mosir21' => ' Sebagai pemerintah Indonesia,
  Dewan ini seharusnya
  memprioritaskan
  pengembangan Pembangkit
@@ -362,14 +355,15 @@ dalam pembangunan sosial dan ekonomi di masa depan.
  momentum hijau global dan
  mengurangi emisi gas rumah
  kaca',
-  	'mosir4' => ' Dewan ini menyatakan bahwa
+  	'mosir22' => ' Dewan ini menyatakan bahwa
  penggunaan gas sebagai bahan
  bakar alternatif dalam transisi
  energi dapat merugikan masa
  depan energi di Indonesia',
+    	'mosir23' => ' Dewan ini mewajibkan partai politik untuk memasukkan inovasi energi terbarukan sebagai komponen inti dari program partai politik, guna mencapai pertumbuhan global yang berkelanjutan',
   	'moosi' => 'Mosi',
-  'mosir6' => 'Dewan ini melarang produksi dan penjualan plastik sekali pakai di mana plastik sekali pakai dapat memengaruhi perubahan iklim',
-    	'mosir7' => 'Dewan ini, sebagai
+  'mosir5' => 'Dewan ini melarang produksi dan penjualan plastik sekali pakai di mana plastik sekali pakai dapat memengaruhi perubahan iklim',
+    	'mosir31' => 'Dewan ini, sebagai
  pemerintah Indonesia, akan
  secara signifikan relokasi
  dana untuk pengembangan
@@ -377,16 +371,13 @@ dalam pembangunan sosial dan ekonomi di masa depan.
  KRL, dll.) ke pendanaan
  iklim untuk energi
  terbarukan',
-      	'mosir8' => 'Dewan ini mewajibkan
- partai politik untuk
- memasukkan inovasi energi
- terbarukan sebagai
- komponen inti dari landasan
- mereka untuk mencapai
- pertumbuhan global yang
- berkelanjutan',
-     
-
+      	'mosir32' => 'Sebagai negara berkembang, dewan ini akan memprioritaskan kurikulum pendidikan berbasis energi berkelanjutan daripada pendidikan budaya',
+  'mosir7' => 'Sebagai negara berkembang, dewan ini akan memprioritaskan kurikulum pendidikan berbasis energi berkelanjutan daripada pendidikan budaya.',
+  'mosir41' => 'Sebagai aktivis lingkungan dewan ini akan memprioritaskan investasi dalam teknologi energi surya di atas bentuk energi terbarukan lainnya untuk mencapai tujuan keberlanjutan global.',
+  'mosir42' => 'Dewan ini menyesali tren lingkungan; tren yang sepenuhnya menyalahkan manusia atas kerusakan lingkungan dunia',
+  'mosir51' => 'Dewan ini percaya bahwa gerakan lingkungan harus secara signifikan memprioritaskan upaya kampanye mereka pada perubahan perilaku individu dibandingkan dengan mengubah perilaku perusahaan', 
+  'mosir52' => 'Dewan ini menyatakan bahwa diperlukan kebijakan yang komprehensif dan terstruktur dari pemerintah Republik Indonesia untuk mengawal inovasi teknologi dalam ekstraksi energi baru dan terbarukan demi tercapainya momentum hijau global dan kemakmuran bangsa',
+'mosir222' => 'Sebagai negara berkembang, dewan ini akan memprioritaskan kurikulum pendidikan berbasis energi berkelanjutan daripada pendidikan budaya',
 
      
 ]

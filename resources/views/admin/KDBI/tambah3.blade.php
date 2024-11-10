@@ -32,7 +32,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -106,8 +106,8 @@
                       <label for="juri[{{ $i }}]">Adjudicators  *data seterusnya akan otomatis</label>
                       <select name="juri[{{ $i }}]" id="juri_{{ $i }}" class="autofill" required>
                           <option selected>Pilih Adjudicators</option>
-                          <option>Al Ayubi, S.Sos., M.IP</option>
-                          <option>Prof.Dr.Wahyu Wibowo</option>
+                        <option>Lasman</option> 
+                            <option>Laila Amalia Khaeranni,S.Pd</option> 
                           <option>Purwo Besari, S.Pd.</option>
                       </select>
                   </div>
@@ -140,7 +140,7 @@
                                 <select name="team[{{ $i }}]" id="team_{{ $i }}" required>
                                     <option selected>Pilih Team</option>
                                     @foreach ($peserta as $j)
-                                        <option >{{ $j->namateam }}</option>
+                                        <option >{{ $j['team'] }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -157,7 +157,7 @@
                             </div>
         
                             <div class="input-field">
-                                <label for="nama1[{{ $i }}]">Nama Peserta 1 *otomatis dari namateam</label>
+                                <label for="nama1[{{ $i }}]">Nama Peserta 1 *otomatis dari nama team</label>
                                 <input type="text" id="nama1_{{ $i }}" name="nama1[{{ $i }}]"  required>
                             </div>
     
@@ -177,7 +177,7 @@
                               </div>
           
                               <div class="input-field">
-                                <label for="nama2[{{ $i }}]">Nama Peserta 2 *otomatis dari namateam</label>
+                                <label for="nama2[{{ $i }}]">Nama Peserta 2 *otomatis dari nama  team</label>
                                 <input type="text" id="nama2_{{ $i }}" name="nama2[{{ $i }}]"  required>
                             </div>
                             
@@ -292,11 +292,11 @@ $("body").css(
    
        namaPesertaSelect.addEventListener('change', () => {
            const selectedPesertaId = namaPesertaSelect.value;
-           const selectedPeserta = pesertaData.find(p => p.namateam == selectedPesertaId);
+           const selectedPeserta = pesertaData.find(p => p.team == selectedPesertaId);
    
            if (selectedPeserta) {
-               nama1Input.value = selectedPeserta.nama; 
-               nama2Input.value = selectedPeserta.nama1; 
+               nama1Input.value = selectedPeserta.nama1; 
+               nama2Input.value = selectedPeserta.nama2; 
            } else {
                nama1Input.value = ''; 
                nama2Input.value = '';

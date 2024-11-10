@@ -104,7 +104,7 @@
       <p class="testing1">@lang('messages.teks')
         @lang('messages.teks1')</p>
         <div class="cont">
-            <a class="gb" href="https://drive.google.com/file/d/1K1wxeFi-U8UvcoLFV-wm_NLbqRWzpAQ9/view?usp=drivesdk">@lang('messages.gb')</a>
+            <a class="gb" href="https://drive.google.com/file/d/1c-hKKz7ogZbnNX-KubDxaZFGJ_hUIJYf/view?usp=sharing">@lang('messages.gb')</a>
          </div>
 
  <!--==================== Participant ====================-->
@@ -147,10 +147,10 @@
               $today = Carbon::now();
       
         
-              $penyisihanStart = Carbon::parse('2024-06-27');
-              $penyisihanEnd = Carbon::parse('2024-12-29');
-              $semiFinalDate = Carbon::parse('2024-06-24');
-              $finalDate = Carbon::parse('2024-06-17');
+              $penyisihanStart = Carbon::createFromFormat('Y-m-d H:i:s', '2024-09-25 19:00:00', 'Asia/Jakarta');
+              $penyisihanEnd = Carbon::parse('2026-12-29');
+              $semiFinalDate = Carbon::createFromFormat('Y-m-d H:i:s', '2024-10-18 10:00:00', 'Asia/Jakarta');
+              $finalDate = Carbon::parse('2023-09-07');
           @endphp
       
 
@@ -170,7 +170,7 @@
           ">
               <img src="../../img/spc.png" alt="Card Image">
               <span class="developer">@lang('messages.penyisihan')</span>
-              <h3>@lang('messages.oopen')<br>27 @lang('messages.tgl1') 2024</h3>
+              <h3>@lang('messages.oopen')<br>25 September 2024</h3>
               <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="penyisihan"></i>
               </div>
@@ -187,7 +187,7 @@
           ">
               <img src="../../img/spc.png" alt="Card Image">
               <span class="designer">Semifinal</span>
-              <h3>@lang('messages.oopen')<br>24 September 2024</h3>
+              <h3>@lang('messages.oopen')<br>18 @lang('messages.ok1') 2024</h3>
               <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="final"></i>
               </div>
@@ -204,7 +204,7 @@
           ">
               <img src="../../img/spc.png" alt="Card Image">
               <span class="editor">Final</span>
-              <h3>@lang('messages.oopen')<br>17 @lang('messages.ok1') 2024</h3>
+              <h3>@lang('messages.oopen')<br>7 November 2024</h3>
               <div class="arrow">
                   <i class="fas fa-arrow-right card-icon" id="final"></i>
               </div>
@@ -251,11 +251,11 @@
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurispc3.jpg" alt="">
+                        <img src="../../img/jurispcc3.jpg" alt="">
                     </div>
     
                     <div class="user_content3">
-                        <h5 class="name">Dr.Tatang Mitra<br>Setia, M.Si.</h5>
+                        <h5 class="name">Agung Iswadi,<br>S.Si., M.Sc, Ph.D.</h5>
                         <p class="post">@lang('messages.jurispcposisi3')</p>
                         <p class="about">@lang('messages.jurispcbio3')</p>
                     </div>

@@ -94,8 +94,8 @@ return [
         'loginadmins' => [
             'provider' => 'loginadmins',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
-            'expire' => 600,
-            'throttle' => 600,
+            'expire' => null,
+            'throttle' => null,
         ],
     ],
 
@@ -110,6 +110,6 @@ return [
     |
     */
 
-    'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
+    'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', null),
 
 ];

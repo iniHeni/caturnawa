@@ -42,10 +42,10 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -80,10 +80,10 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('mainmenu.showedc')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
-    <a href="{{url('/admin/semifinalEDC')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
+    <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
     <a href="{{url('/admin/finalEDC')}}" id="finalLKTI" class="final"><i class="fa fa-trophy"></i> Final</a>
     
     
@@ -121,6 +121,7 @@
                                 <th scope="col">Foto Peserta 1</th>
                                 <th scope="col">Foto Peserta 2</th>
                                 <th scope="col">Logo Instansi</th>
+                                <th scope="col">Status Pembayaran</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -139,6 +140,7 @@
                                 <td><a href="{{ $data->foto }}">{{ $data->foto }}</a></td>
                                 <td><a href="{{ $data->foto1}}">{{ $data->foto1}}</a></td>
                                 <td><a href="{{ $data->logo}}">{{ $data->logo}}</a></td>
+                                <td>{{ $data->status}}</td>
                                 <td>
                                     <a href="{{ route('edc.editedcpe', $data->id) }}">Edit</a>
                                     <form action="{{ route('edc.hapusedcpe', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}"> 

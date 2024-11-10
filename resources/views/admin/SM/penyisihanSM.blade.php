@@ -43,7 +43,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -136,13 +136,13 @@ use Carbon\Carbon;
 $today = Carbon::now();
 
 
-$tambahedit = Carbon::parse('2024-05-28');
+$tambahedit = Carbon::parse('2025-05-28');
 
 @endphp
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
-                <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Penyisihan</h1>
+                  <h1 class="welcome" style="margin-bottom: 1rem; margin-top:auto">Detail Skor Penyisihan</h1>
                 <p><a class="add" href="#" style="color: white" onclick="
                     event.preventDefault();
                     @if (!$today->greaterThanOrEqualTo($tambahedit))
@@ -156,10 +156,12 @@ $tambahedit = Carbon::parse('2024-05-28');
       @foreach($penyisihann as $rank => $data)
           <a href="{{ route('sm.detailadmin', $data->namateam) }}" class="card-item"> 
               <img src="{{ asset($data->logo) }}" class="card-image" loading="lazy">
-              <h3>{{ $data->namateam }}</h3>
-              <div class="arrow">
-                  <i class="card-icon">Detail</i>
-              </div>
+              <div>
+                  <h3>{{ $data->namateam }}</h3>
+                  <div class="arrow">
+                      <i class="card-icon">Detail</i>
+                  </div>
+                </div>
           </a>
       @endforeach
   </div>

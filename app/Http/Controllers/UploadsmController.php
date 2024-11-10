@@ -21,15 +21,15 @@ class UploadsmController extends Controller
                   ->orWhere('email4', $request['email']);
         })->first();
         if (!$validemail) { 
-            return back()->withErrors(['email' => 'Email Not Registered. Please Register first.'])->withInput();
+            return back()->withErrors(['email' => 'Email is not registered.'])->withInput();
         }
-        if ($validemail->status !== 'Paid' && $validemail->status !== 'Khusus') {
+        if ($validemail->status !== 'Paid' && $validemail->status !== 'KhususUNAS') {
             return back()->withErrors(['email' => 'Email Not able to UPLOAD, Pay First. '])->withInput();
         }
         $uploadsm = $request->validate([
-            'nama' => 'required|string|max:50',
+             'nama' => 'required|string',
             'email' => 'required|email',
-            'instansi' => 'required|string|max:50',
+            'instansi' => 'required|string',
             'poster' => 'required|mimes:pdf|max:3000',
             'script' => 'required|mimes:pdf|max:3000',
             'karya' => 'required|mimes:pdf|max:3000',

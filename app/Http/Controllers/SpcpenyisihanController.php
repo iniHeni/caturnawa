@@ -15,7 +15,6 @@ class SpcpenyisihanController extends Controller
             '*',
             DB::raw('RANK() OVER (ORDER BY scorecp DESC) as rank') 
         )->get();
-        
         return view('admin/LKTI/penyisihanLKTI', compact('tambahhh'));
      }
 

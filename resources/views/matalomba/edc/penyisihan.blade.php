@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -36,7 +34,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -97,7 +95,7 @@
          <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
       </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <section id="skor">
+     <section id="skor">
          <div class="container" style="display: flex; justify-content: center;">
              <div style="width: 100%;">
                  <h1 class="judul" style="margin-top:0px; margin-bottom: 0px">Leaderboard</h1>
@@ -108,6 +106,7 @@
                                  <th >Team</th>
                                  <th>Participant</th>
                                  <th>Victory Point</th>
+                            <!-- <th>rata</th> -->
                                </tr>
                          </thead>
                          <tbody>
@@ -115,7 +114,8 @@
                           <tr>
                             <td>{{ $data['team'] }}</td>
                             <td>{{ $data['nama1'] }}<br>{{ $data['nama2'] }}</td>
-                            <td>{{ $data['total'] }}</td>
+                            <td>{{ $data['totall'] }}</td>
+                         <!-- <td>{{ $data['rata'] }}</td> -->
                         </tr>
             @endforeach
                          </tbody>
@@ -123,7 +123,7 @@
                  </div>
              </div>
          </div>
-     </section>
+     </section> 
      
      <style>
                 .table-bordered th{
@@ -182,9 +182,20 @@
                 </div>
             </a>
             @endforeach
+  			@endif
+    @if($dataa6->count() > 0)
+                      @foreach($dataa6->groupBy('sesi') as $sesi6 => $dataPerSesi6)
+                      <a href="{{ route('edc.detailday1r1', $sesi6) }}">
+                                    <div class="arrow">
+                                        <i class="card-icon1">Session {{ $sesi6 }}</i>
+                                    </div>
+                                </a>
+                                
+                                @endforeach
+                                @endif
+
   </div>
-  @endif
-  @if($dataa2->count() > 0)
+    @if($dataa2->count() > 0)
   <div class="card-item">
   <img src="../../../img/edc.png" alt="Card Image">
   <h3>Round 2</h3>
@@ -272,8 +283,9 @@
           }, 2000)
         );
       });</script>
+
 <script src="../../js/rank.js"></script>
       <script src="../../../js/nav.js"></script>
    </body>
    <script src="../../js/SM.js"></script>
-</html>
+</html> 

@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -139,7 +137,7 @@
       <p class="testing1">@lang('messages.teks')
             @lang('messages.teks1')</p>
             <div class="cont">
-                <a class="gb" href="https://drive.google.com/file/d/1vM-oYcfES7wNuqSUDnvCayOKML1Fb7tK/view?usp=drive_link">@lang('messages.gb')</a>
+                <a class="gb" href="https://drive.google.com/file/d/1UxcQHJ2KFXSRdiq5n84v_qDo9FpzCTwQ/view?usp=sharing">@lang('messages.gb')</a>
              </div>
     
       <!--==================== Peserta Lomba ====================-->
@@ -161,7 +159,9 @@
                               <h2 class="name">{{ $data->instansi }}</h2>
                               <p class="description">{{ $data->namateam }}</p>
                               <button class="button"><a href="{{route('edc.detailpeserta', $data->id) }}">@lang('messages.view')</a></button>
+
                           </div>
+                        
                       </div>
                       @endforeach
                       @endif
@@ -177,10 +177,10 @@ use Carbon\Carbon;
 $today = Carbon::now();
 
 
-$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanStart = Carbon::parse('2024-09-18');
 $penyisihanEnd = Carbon::parse('2024-12-29');
-$semiFinalDate = Carbon::parse('2024-08-20');
-$finalDate = Carbon::parse('2024-09-16');
+$semiFinalDate = Carbon::parse('2023-09-20');
+$finalDate = Carbon::parse('2023-10-16');
 @endphp
 <section id="rank">
     <h1 class="judul">@lang('messages.babak')</h1>
@@ -231,7 +231,7 @@ $finalDate = Carbon::parse('2024-09-16');
         ">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="editor">Final</span>
-                <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1') 2024</h3>
+                <h3>@lang('messages.dilaksanakan')<br>6 - 7 November 2024</h3>
                 <div class="arrow">
                     <i class="fas fa-arrow-right card-icon"></i>
                 </div>
@@ -265,14 +265,14 @@ $finalDate = Carbon::parse('2024-09-16');
                 <div class="squareBox"></div>
                 <div class="round_box"></div>
                 <div class="img_box">
-                    <img src="../../img/JuriEDC2.jpg" alt="">
+                    <img src="../../img/JuriEDC2.png" alt="">
                 </div>
 
                 <div class="user_content2">
-                    <h5 class="name">Ahmad Kushay S.H, S.Si</h5>
+                    <h5 class="name">Cecilia Tiara Liong</h5>
                     <p class="post">@lang('messages.juriposisi2')</p>
                     <p class="about">@lang('messages.juribio2')</p>
-                    <a href="https://www.linkedin.com/in/ahmad-kushay-9a57a8104/?jobid=1234" class="icon facebook">
+                    <a href="https://www.linkedin.com/in/cecilia-tiara-liong-5388b41b8/?jobid=1234" class="icon facebook">
                         <span><i class="fa-brands fa-linkedin"></i></span>
                      </a>
                 </div>

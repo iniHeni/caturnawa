@@ -40,7 +40,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -138,13 +138,13 @@ $tambah = Carbon::parse('2024-05-28');
                         <tbody>
                             @foreach ($pesertaGroup as $peserta)
                             <tr>
-                                <td rowspan="3">{{ $peserta->namapeserta }}</td>
+                                <td rowspan="4">{{ $peserta->namapeserta }}</td>
                                 <td style="text-align: left">1. Pemaparan Materi dan Presentasi Ilmiah</td>
                                 <td class="mid">{{ $peserta->scorepemaparanmateri}}</td>
                                 <td>{{ $peserta->materi}}</td>
-                                <td class="mid" rowspan="3">{{ $peserta->total}}</td>
-                                <td rowspan="3">{{ $peserta->juri}}</td>   
-                                <td rowspan="3" style="text-align: center">
+                                <td class="mid" rowspan="4">{{ $peserta->total}}</td>
+                                <td rowspan="4">{{ $peserta->juri}}</td>   
+                                <td rowspan="4" style="text-align: center">
                                     <a href="#"  onclick="
                                         event.preventDefault();
                                         @if (!$today->greaterThanOrEqualTo($tambah))
@@ -176,6 +176,11 @@ $tambah = Carbon::parse('2024-05-28');
                                 <td style="text-align: left">3. Aspek Kesesuaian dengan Tema</td>
                                 <td class="mid">{{ $peserta->scoreaspekkesesuaian}}</td>
                                 <td>{{ $peserta->kesesuaian}}</td>
+                            </tr>
+                          <tr>
+                                <td style="text-align: left">4. Keterampilan dalam Bahasa Inggris</td>
+                                <td class="mid">{{ $peserta->scoreketerampilan}}</td>
+                                <td>{{ $peserta->keterampilan}}</td>
                             </tr>
                             @endforeach
                         </tbody>

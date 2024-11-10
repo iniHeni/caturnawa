@@ -97,7 +97,67 @@ public function hapuskdbi3($id){
 }
 
  public function pesertakdbisf(){
-    $peserta = pesertakdbi::all();
+    $totalVpDay1Ronde1s1 = day1kdbi::select(
+        'team',
+        'nama1',
+        'nama2',
+        DB::raw('SUM(vp) as total')
+    )
+    ->where('ronde', '1') 
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
+        $totalVpDay1Ronde2 = day1kdbi::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('SUM(vp) as total')
+        )
+        ->where('ronde', '2') 
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+        $totalVpDay2Ronde1 = day2kdbi::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('SUM(vp) as total')
+        )
+        ->where('ronde', '1') 
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+
+    // Query untuk day2edc ronde 2 (hanya jika waktunya sudah tiba)
+    $totalVpDay2Ronde2 = day2kdbi::select(
+        'team',
+        'nama1',
+        'nama2',
+        DB::raw('SUM(vp) as total')
+    )
+    ->where('ronde', '2') 
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
+
+
+    // Gabungkan semua hasil
+    $peserta = $totalVpDay1Ronde1s1
+        ->concat($totalVpDay1Ronde2)
+        ->concat($totalVpDay2Ronde1)
+        ->concat($totalVpDay2Ronde2) 
+        ->groupBy('team')
+        ->map(function ($group) {
+            return [
+                'team' => $group[0]['team'],
+                'nama1' => $group[0]['nama1'],
+                'nama2' => $group[0]['nama2'],
+                'total' => $group->sum('total')
+            ];
+        })
+        ->sortByDesc('total')
+        ->values()
+        ->map(function ($item, $index) {
+            $item['rank'] = $index + 1; 
+            return $item;
+        })
+      ->take('20');
     
     return view('admin/KDBI/tambah3', compact('peserta'));
  }
@@ -134,46 +194,53 @@ public function hapuskdbi3($id){
  }
 
  public function gabungankdbisf(){
-    $now = Carbon::now();
 
-    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-20 20:00:00', 'Asia/Jakarta'); 
+   $now = Carbon::now();
 
-    $totalVpDay1 = day1kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-08-20 20:00:00', 'Asia/Jakarta'); 
+
+ 
+    $totalVpDay1 = day1kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as totall'), DB::raw('SUM(total) as rata'))
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
 
-$totalVpDay2 = day2kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+$totalVpDay2 = day2kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as totall'), DB::raw('SUM(total) as rata'))
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
-
-$totalVpDay3 = day3kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
-->where('ronde', '1')    
-->groupBy('team', 'nama1', 'nama2')
+$totalVpDay3 = day3kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as totall'), DB::raw('SUM(total) as rata'))
+    ->where('ronde', '1')
+    ->groupBy('team', 'nama1', 'nama2')
     ->get();
 
 $totalVpDay3r2 = collect();
 if ($now->gte($waktuTargetDay1Ronde2)) {
-$totalVpDay3 = day3kdbi::select('team', 'nama1', 'nama2', DB::raw('SUM(vp) as total'))
+$totalVpDay3r2 = day3kdbi::select('team', 'nama1', 'nama2',
+                                 DB::raw('SUM(vp) as totall'), 
+                                 DB::raw('SUM(total) as rata'))
     ->where('ronde', '2')
     ->groupBy('team', 'nama1', 'nama2')
     ->get();
 }
-$groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)
+
+$groupedByTeam = $totalVpDay1->concat($totalVpDay2)->concat($totalVpDay3)->concat($totalVpDay3r2)
     ->groupBy('team')
     ->map(function ($group) {
         return [
             'team' => $group[0]['team'],
             'nama1' => $group[0]['nama1'],
             'nama2' => $group[0]['nama2'],
-            'total' => $group->sum('total')
+            'totall' => $group->sum('totall'),
+          'rata' => $group->sum('rata') / 6
         ];
     })
-    ->sortByDesc('total')
+    ->sortByDesc('rata')
+  ->sortByDesc('totall')
     ->values()
     ->map(function ($item, $index) {
         $item['rank'] = $index + 1;
         return $item;
-    });
+    })
+  ->take('12');
     $dataa2 = $now->gte($waktuTargetDay1Ronde2) ? day3kdbi::where('ronde', '2')->get() : collect();
     return view('matalomba/kdbi/sfinal', compact('groupedByTeam', 'dataa2'));
  }

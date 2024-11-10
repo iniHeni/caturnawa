@@ -130,10 +130,10 @@
                         <td style="text-align: left">{{ $data->krit1 }}</td>
 
                         <td rowspan="6">
-                            <a href="{{ route('sm.editp', $data->id) }}">Edit</a>
-                            <form action="{{ route('sm.hapusp', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                            <a href="#">Edit</a>
+                            <form action="#" method="POST">
                                 @csrf
-                                <button  type="button" style="color: red" onclick="confirmDelete({{ $data->id }})">Hapus</button>
+                                <button  type="button" style="color: red" >Hapus</button>
                             </form>
                         </td>
                     </tr>

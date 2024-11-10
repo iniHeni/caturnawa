@@ -32,10 +32,10 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -70,7 +70,7 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('mainmenu.showedc')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -116,6 +116,7 @@
                             <option selected>{{ $edit->sesi }}</option>
                             <option>1</option> 
                             <option>2</option> 
+                           	<option>3</option> 
                         </select>
                     </div>
                     <div class="input-field">
@@ -132,8 +133,7 @@
                         <select name="room" id="room"  required >
                             <option selected>{{ $edit->room }}</option>
                             <option>1</option> 
-                            <option>2</option> 
-                            <option>3</option> 
+                            <option>2</option>  
                         </select>
                     </div>
                     <div class="input-field">
@@ -160,6 +160,7 @@
                         <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
                         <select name="nama1" id="nama1"  required >
                             <option selected>{{ $edit->nama1 }}</option> 
+                          <option selected>{{ $edit->nama2 }}</option> 
                         </select>
                     </div>
                     <div class="input-field">
@@ -180,6 +181,7 @@
                         <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
                         <select d name="nama2" id="nama2"  required >
                             <option selected>{{ $edit->nama2 }}</option> 
+                          <option selected>{{ $edit->nama1 }}</option> 
                         </select>
                     </div>
                     <div class="input-field">

@@ -33,7 +33,7 @@
    background-color: white;
  }
  
- .loader {
+   .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -115,8 +115,8 @@
                         <label for="juri">Adjudicators </label>
                         <select name="juri" id="juri"  required >
                             <option selected>{{ $edit->juri }}</option>
-                            <option>Al Ayubi, S.Sos., M.IP</option> 
-                            <option>Prof.Dr.Wahyu Wibowo</option> 
+                            <option>Insany Kausari</option> 
+                            <option>Laila Amalia Khaeranni,S.Pd</option> 
                             <option>Purwo Besari, S.Pd.</option> 
                         </select>
                     </div>
@@ -144,6 +144,7 @@
                         <label for="nama1">Nama Peserta 1  *Otomatis terisi</label>
                         <select name="nama1" id="nama1"  required >
                             <option selected>{{ $edit->nama1 }}</option> 
+                          <option selected>{{ $edit->nama2 }}</option> 
                         </select>
                     </div>
                     <div class="input-field">
@@ -164,6 +165,7 @@
                         <label for="nama2">Nama Peserta 2 *Otomatis terisi</label>
                         <select  name="nama2" id="nama2"  required >
                             <option selected>{{ $edit->nama2 }}</option> 
+                          <option selected>{{ $edit->nama1 }}</option> 
                         </select>
                     </div>
                     <div class="input-field">

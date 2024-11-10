@@ -1,5 +1,5 @@
 //Set the date we're counting down to 
-var countDownDate = new Date("August 24, 2024 00:00:00").getTime();
+var countDownDate = new Date("September 08, 2024 00:00:00").getTime();
 
 //Update the count down every 1 sec
 var x = setInterval(function(){
@@ -27,7 +27,7 @@ var x = setInterval(function(){
         clearInterval(x);
         document.getElementById("time").style.display = "none";
         document.querySelector("h1").className = "new-year";
-        document.querySelector("h1").innerHTML = "Registration for EDC and KDBI is closed<br>SMC and SPC still open! ";
+        document.querySelector("h1").innerHTML = "Registration is closed<br>Good luck for all participant and be The Winner! ";
 
 
         //firework animation

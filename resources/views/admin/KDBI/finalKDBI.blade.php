@@ -33,7 +33,7 @@
    background-color: white;
  }
  
- .loader {
+   .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -98,7 +98,7 @@
         <a href="{{url('/admin/FinalKDBI/day1') }}" class="card-item">
                 <img src="../../img/kdbi2.png" alt="Card Image">
                 <span class="developer">Day 1</span>
-                <h3>@lang('messages.dilaksanakan')<br>14 Oktober</h3>
+                <h3>@lang('messages.dilaksanakan')<br>06 November</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>
@@ -106,7 +106,7 @@
             <a href="{{url('/admin/FinalKDBI/day2') }}" class="card-item">
                 <img src="../../img/kdbi2.png" alt="Card Image">
                 <span class="designer">Day 2</span>
-                <h3>@lang('messages.dilaksanakan')<br>15 Oktober</h3>
+                <h3>@lang('messages.dilaksanakan')<br>07 November</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>

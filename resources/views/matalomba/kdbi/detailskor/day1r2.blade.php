@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -16,7 +14,7 @@
       <link rel="stylesheet" href="../../../css/back.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenudbt.css">
-
+     <link rel="stylesheet" href="../../../css/pagelomba.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       
 
@@ -34,7 +32,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -95,25 +93,23 @@
          <i class="fa fa-arrow-left"></i><span> @lang('messages.back')</span>
       </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-      <h3 style="color: white; text-align:center"></h3>
-      <h4>
-        @lang('messages.mosir'. $sesi)</h4>
-      <section id="skor">
+         <h3 style="color: white; text-align:center; margin-top: 20px">@lang('messages.moosi')</h3> 
+     <h3 style="color: white; text-align:center; margin-top: 20px">"@lang('messages.mosir2'. $sesi)"</h3>
+         <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
                   @foreach ($dataByRoom as $room => $dataa)
-                  
                   <h3 style="color: white; text-align:center">Breakout Room {{ $room }}</h3>
-                  <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px">
-                                <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
+                  <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px; padding-bottom: 50px ">
+                                <table class="table table-bordered " style="min-width: 650px; margin-bottom: 0; border-collapse: collapse; padding-bottom: 20; padding-top: 50px">
                                   <thead style="position: static; top: -1; z-index: 10;">
                                     <tr>
-                                      <th scope="col" rowspan="2">Adjudicators</th>
-                                      <th scope="col" rowspan="2">@lang('messages.instansi1')</th>
-                                      <th scope="col" rowspan="2">@lang('messages.pteam')</th>
-                                      <th scope="col" rowspan="2">@lang('messages.pname')</th>
-                                      <th scope="col"  colspan="2">Score</th>
-                                      <th scope="col" rowspan="2">Victory Point</th>
+                                      <th scope="col" rowspan="2">@lang('messages.juri')</th>
+                                              <th scope="col" rowspan="2">@lang('messages.instansi1')</th>
+                                              <th scope="col" rowspan="2">@lang('messages.pteam')</th>
+                                              <th scope="col" rowspan="2">@lang('messages.pname')</th>
+                                              <th scope="col"  colspan="2">@lang('messages.score')</th>
+                                              <th scope="col" rowspan="2">Victory Point</th>
                                   </tr>
                                   <tr>
                                       <th scope="col" colspan="1">@lang('messages.pind')</th>
@@ -123,12 +119,12 @@
                                       <tbody>
                                         @if ($dataa->isNotEmpty()) 
                                         <tr>
-                                            <td rowspan="20">{{ $dataa->first()->juri }}</td> 
+                                            <td rowspan="20" style="text-align: left;">{{ $dataa->first()->juri }}</td> 
                                           @foreach ($dataa as $data)
                                           <tr>
                                               <td>{{ $data->team}}</td>
                                               <td>{{ $data->posisi}}</td>
-                                              <td>{{ $data->nama1}}({{ $data->posisi1}})<br>{{ $data->nama2}}({{ $data->posisi2}})</td>
+                                              <td>{{ $data->nama1}}<br>({{ $data->posisi1}})<br>{{ $data->nama2}}({{ $data->posisi2}})</td>
                                               <td>{{ $data->skorindividu1}}<br>{{ $data->skorindividu2}}</td>
                                               <td>{{ $data->total}}</td>
                                               <td>{{ $data->vp}}</td>
@@ -137,12 +133,12 @@
                                           @endif
                                       </tbody>
                                   </table>
+                  </div>
                                   @endforeach
                               </div>
-                          </div>
                       </div>
                       <style>
-               .table-bordered td{
+                .table-bordered td{
         border: 2px solid #dee2e6 !important;
         text-align: center;
          vertical-align: middle;
@@ -161,7 +157,6 @@
               </style>
                   </section>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {
@@ -203,33 +198,8 @@
        </script>
       <script src="../../../js/nav.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script type="text/javascript">
-        $(function() {
-            $(this).bind("contextmenu", function(e) {
-                e.preventDefault();
-            });
-        }); 
-        </script>
-        <script type="text/JavaScript"> 
-            function killCopy(e){ return false } 
-            function reEnable(){ return true } 
-            document.onselectstart=new Function ("return false"); 
-            if (window.sidebar)
-            { 
-                document.onmousedown=killCopy; 
-                document.onclick=reEnable; 
-            } 
-        </script>
-        <script type="text/Javascript">
-        $(document).keydown(function(event){
-      if(event.keyCode==123){
-          return false;
-      }
-      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-      }
-  });
-      </script>
+ 
+
    </body>
    <script src="../../../js/SM.js"></script>
 </html>

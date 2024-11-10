@@ -14,19 +14,81 @@ use Carbon\Carbon;
 class Day5kdbiController extends Controller
 {
     public function tampilkdbi5(){
-        $groupedByRondeAndSesi = DB::table('day5kdbis')
+         $tambah= DB::table('day5kdbis')
+          ->orderBy('team')
         ->orderBy('ronde', 'asc')
-        ->get()
+        ->get();
+    $groupedByRondeAndSesi = $tambah->groupBy(['team', 'ronde']);
+          $now = Carbon::now();
+
+    // Waktu target untuk ronde 2 day4edc (disamakan dengan day2edc ronde 1)
+    $waktuTargetDay1Ronde2 = $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-05-19 15:00:00', 'Asia/Jakarta');
+
+    // Query untuk day4edc ronde 1
+    $totalVpDay1Ronde1 = day4kdbi::select(
+        'team',
+        'nama1',
+        'nama2',
+        DB::raw('MAX(vp) as totall'),
+      DB::raw('AVG(total) as rata')
+    )
+    ->where('ronde', '1')
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
+
+    // Query untuk day4edc ronde 2 (hanya jika waktunya sudah tiba)
+    $totalVpDay1Ronde2 = collect();
+    if ($now->gte($waktuTargetDay1Ronde2)) {
+        $totalVpDay1Ronde2 = day4kdbi::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('MAX(vp) as totall'),
+           DB::raw('AVG(total) as rata')
+        )
+        ->where('ronde', '2')
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+    }
+
+    // Query untuk day5edc ronde 1 (hanya jika waktunya sudah tiba)
+    $totalVpDay2Ronde1 = collect();
+    if ($now->gte($waktuTargetDay2Ronde1)) {
+        $totalVpDay2Ronde1 = day5kdbi::select(
+            'team',
+            'nama1',
+            'nama2',
+            DB::raw('MAX(vp) as totall'),
+           DB::raw('AVG(total) as rata')
+        )
+        ->where('ronde', '1')
+        ->groupBy('team', 'nama1', 'nama2')
+        ->get();
+    }
+
+    // Gabungkan semua hasil
+    $groupedByTeam = $totalVpDay1Ronde1
+        ->concat($totalVpDay1Ronde2)
+        ->concat($totalVpDay2Ronde1)
         ->groupBy('team')
         ->map(function ($group) {
-            return $group->sortBy('ronde')->values()->map(function ($item, $key) {
-                $item = (array) $item;
-               
-                return (object) $item;
-            });
+            return [
+                'team' => $group[0]['team'],
+                'nama1' => $group[0]['nama1'],
+                'nama2' => $group[0]['nama2'],
+                'totall' => $group->sum('totall'),
+              'rata' => round($group->avg('rata'), 2),
+            ];
+        })
+      ->sortByDesc('rata')
+        ->sortByDesc('totall')
+        ->values()
+        ->map(function ($item, $index) {
+            $item['rank'] = $index + 1;
+            return $item;
         });
 
-    return view('admin/KDBI/day5', compact('groupedByRondeAndSesi'));
+    return view('admin/KDBI/day5', compact('groupedByRondeAndSesi', 'groupedByTeam'));
     }
 
     public function tambahkdbi5(Request $request){
@@ -97,7 +159,14 @@ public function hapuskdbi5($id){
 }
 
  public function pesertaday2f(){
-    $peserta = pesertakdbi::all();
+       $peserta = DB::table('day4kdbis')
+    ->select(
+        'team',
+        'nama1',
+        'nama2',
+    )
+    ->groupBy('team', 'nama1', 'nama2')
+    ->get();
     
     return view('admin/KDBI/tambah5', compact('peserta'));
  }
@@ -111,7 +180,7 @@ public function hapuskdbi5($id){
         DB::raw("STRING_AGG(DISTINCT posisi, ', ') as posisi"),
         DB::raw("STRING_AGG(DISTINCT posisi1, ', ') as posisi1"),
         DB::raw("STRING_AGG(DISTINCT posisi2, ', ') as posisi2"),
-        DB::raw("STRING_AGG(DISTINCT juri, ', ') as juri"),
+        DB::raw("STRING_AGG(DISTINCT juri, '<br>') as juri"),
         DB::raw('AVG(skorindividu1) as skorindividu1'), 
         DB::raw('AVG(skorindividu2) as skorindividu2'),
         DB::raw('MAX(vp) as vp')
@@ -126,6 +195,7 @@ $final = $groupedData->map(function ($row) {
     $row->total = number_format(($row->skorindividu1 + $row->skorindividu2) / 2, 1, '.', '');
     return $row;
 })
+->sortByDesc('vp')
 ->sortByDesc('total')
 ->values()
 ->map(function ($item, $index) {
@@ -139,14 +209,15 @@ $final = $groupedData->map(function ($row) {
     $now = Carbon::now();
 
     // Waktu target untuk ronde 2 day4edc (disamakan dengan day2edc ronde 1)
-    $waktuTargetDay1Ronde2 = $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-05-19 15:00:00', 'Asia/Jakarta');
+    $waktuTargetDay1Ronde2 = $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-05-19 15:00:00', 'Asia/Jakarta');
 
     // Query untuk day4edc ronde 1
     $totalVpDay1Ronde1 = day4kdbi::select(
         'team',
         'nama1',
         'nama2',
-        DB::raw('MAX(vp) as total')
+        DB::raw('MAX(vp) as totall'),
+      DB::raw('AVG(total) as rata')
     )
     ->where('ronde', '1')
     ->groupBy('team', 'nama1', 'nama2')
@@ -159,7 +230,8 @@ $final = $groupedData->map(function ($row) {
             'team',
             'nama1',
             'nama2',
-            DB::raw('MAX(vp) as total')
+            DB::raw('MAX(vp) as totall'),
+           DB::raw('AVG(total) as rata')
         )
         ->where('ronde', '2')
         ->groupBy('team', 'nama1', 'nama2')
@@ -173,7 +245,8 @@ $final = $groupedData->map(function ($row) {
             'team',
             'nama1',
             'nama2',
-            DB::raw('MAX(vp) as total')
+            DB::raw('MAX(vp) as totall'),
+           DB::raw('AVG(total) as rata')
         )
         ->where('ronde', '1')
         ->groupBy('team', 'nama1', 'nama2')
@@ -190,10 +263,12 @@ $final = $groupedData->map(function ($row) {
                 'team' => $group[0]['team'],
                 'nama1' => $group[0]['nama1'],
                 'nama2' => $group[0]['nama2'],
-                'total' => $group->sum('total')
+                'totall' => $group->sum('totall'),
+              'rata' => round($group->avg('rata'), 1)
             ];
         })
-        ->sortByDesc('total')
+      ->sortByDesc('rata')
+        ->sortByDesc('totall')
         ->values()
         ->map(function ($item, $index) {
             $item['rank'] = $index + 1;

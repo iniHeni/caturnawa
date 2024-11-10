@@ -124,7 +124,7 @@
                           <option selected>{{ $edit->juri }}</option>
                             <option>Efriza S.I.P. M.Si</option>
                             <option>Desfara Anggreani</option>
-                        <option>Dr. Tatang Mitra Setia, M.Si</option>
+                       <option>Agung Iswadi,S.Si., M.Sc, Ph.D.</option>
                       </select>
                       </div>
                 </div>

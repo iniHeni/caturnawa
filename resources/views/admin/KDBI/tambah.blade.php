@@ -33,7 +33,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -107,8 +107,8 @@
                       <label for="juri[{{ $i }}]">Adjudicators  *data seterusnya akan otomatis</label>
                       <select name="juri[{{ $i }}]" id="juri_{{ $i }}" class="autofill" required>
                           <option selected>Pilih Adjudicators</option>
-                          <option>Al Ayubi, S.Sos., M.IP</option>
-                          <option>Prof.Dr.Wahyu Wibowo</option>
+                          <option>Al Ayubi S.IP., M.IP</option>
+                          <option>Irfan Mursyid Setyawan S.H</option>
                           <option>Purwo Besari, S.Pd.</option>
                       </select>
                   </div>
@@ -126,7 +126,7 @@
                       <label for="sesi[{{ $i }}]">Session  *data seterusnya akan otomatis</label>
                       <select name="sesi[{{ $i }}]" id="sesi_{{ $i }}" class="autofill" required>
                           <option selected>Pilih Sesi</option>
-                          @for ($j = 1; $j <= 2; $j++)
+                          @for ($j = 1; $j <= 3; $j++)
                               <option value="{{ $j }}">{{ $j }}</option>
                           @endfor
                       </select>

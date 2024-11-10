@@ -30,10 +30,10 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -70,7 +70,7 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('mainmenu.showedc')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -98,6 +98,53 @@ $today = Carbon::now();
 $tambah = Carbon::parse('2024-05-28');
 
 @endphp
+    <section id="skor">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div style="width: 100%;">
+                <h1 class="welcome" style="margin-bottom: 0px; margin-top:0px">Leaderboard</h1>
+                <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px">
+                    <table class="table table-bordered table-striped" style="min-width: 500px; margin-bottom: 0; border-collapse: collapse;">
+                        <thead style="position: sticky; top: -1; z-index: 10;">
+                            <tr>
+                                <th>Team</th>
+                                <th>Participant</th>
+                                <th>Victory Point</th>
+                              <th>Avarage</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($groupedByTeam as $data)
+                          <tr>
+                            <td>{{ $data['team'] }}</td>
+                            <td>{{ $data['nama1'] }}<br>{{ $data['nama2'] }}</td>
+                            <td>{{ $data['totall'] }}</td>
+                            <td>{{ $data['rata'] }}</td>
+                        </tr>
+            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+       .table-bordered td{
+        border: 2px solid #dee2e6 !important;
+        text-align: center;
+         vertical-align: middle;
+      }
+                 .table-bordered th {
+                     border: 2px solid #dee2e6 !important;
+                     text-align: center;
+                     vertical-align: middle;
+                     padding-block: 20px;
+                   }
+     
+                 thead th {
+                     background-color: #cecece !important;
+                 }
+     </style>
 <div id="data-container">
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
@@ -112,31 +159,32 @@ $tambah = Carbon::parse('2024-05-28');
                     @endif
                 ">Tambah Penilaian</a></p>
                 <div class="table-responsive" style="max-height: 1000px; overflow-x: auto; overflow-y: auto; position: static;">
-                    @foreach ($groupedByRondeAndSesi as $ronde => $dataSesi)
-    <h2 style="color: white; text-align:center">{{ $ronde }}</h2>
+                    @foreach ($groupedByRondeAndSesi as $team => $teamsData)
+                      <h2 style="color: white; text-align:center">{{ $team }}</h2>
+                   @foreach ($teamsData as $ronde => $dataaa)
                     <table class="table table-bordered " style="min-width: 650px; margin-bottom: 5rem; border-collapse: collapse;">
                         <thead style="position: static; top: -1; z-index: 10;">
                             <tr>
+                                <th scope="col" rowspan="2">Victory Point</th>
                                 <th scope="col" rowspan="2">Adjudicators</th>
-                                <th scope="col" rowspan="2">ronde</th>
                                 <th scope="col" rowspan="2">Position Team</th>
                                 <th scope="col" rowspan="2">Participant Name</th>
-                                <th scope="col" >Score Individu</th>
+                                <th scope="col"  >Score Individu</th>
                                 <th scope="col" rowspan="2">Score team</th>
-                                <th scope="col" rowspan="2">Victory Point</th>
                                 <th scope="col" rowspan="2">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dataSesi as $data)
+                           @if ($dataaa->isNotEmpty()) 
+                            <tr>
+                                <td rowspan="20">{{ $dataaa->first()->vp }}</td> 
+                            @foreach ($dataaa as $data)
                         <tr>
                             <td >{{ $data->juri }}</td>
-                            <td>{{ $data->ronde }}</td>
                             <td>{{ $data->posisi}}</td>
                             <td>{{ $data->nama1}}({{ $data->posisi1}})<br>{{ $data->nama2}}({{ $data->posisi2}})</td>
                             <td>{{ $data->skorindividu1}}<br>{{ $data->skorindividu2}}</td>
                             <td>{{ $data->total}}</td>
-                            <td>{{ $data->vp}}</td>
                             <td>
                                 <a href="#" onclick="
                                     event.preventDefault();
@@ -160,9 +208,11 @@ $tambah = Carbon::parse('2024-05-28');
                             </td>
                         </tr>
                     @endforeach
+                          @endif
                         </tbody>
                     </table>
                     @endforeach
+                  @endforeach
                 </div>
         </div>
         <style>

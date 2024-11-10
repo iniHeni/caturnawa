@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -31,10 +29,10 @@
    background-color: white;
  }
  
- .loader {
+   .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -191,33 +189,8 @@ text-decoration: underline;
       <script src="../../js/nav.js"></script>
       <script src="../../js/SM.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script type="text/javascript">
-        $(function() {
-            $(this).bind("contextmenu", function(e) {
-                e.preventDefault();
-            });
-        }); 
-        </script>
-        <script type="text/JavaScript"> 
-            function killCopy(e){ return false } 
-            function reEnable(){ return true } 
-            document.onselectstart=new Function ("return false"); 
-            if (window.sidebar)
-            { 
-                document.onmousedown=killCopy; 
-                document.onclick=reEnable; 
-            } 
-        </script>
-        <script type="text/Javascript">
-        $(document).keydown(function(event){
-      if(event.keyCode==123){
-          return false;
-      }
-      else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-               return false;
-      }
-  });
-      </script>
+
+
       
    </body>
 </html>

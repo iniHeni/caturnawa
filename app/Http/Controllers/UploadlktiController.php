@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\uploadlkti;
-use App\Models\orderlkti;
+use App\Models\pesertaspc;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\LktiSubmission;
 
@@ -13,19 +13,19 @@ use RealRashid\SweetAlert\Facades\Alert;
 class UploadlktiController extends Controller
 {
     public function upload(Request $request){
-        $validemail = orderlkti::where('email', $request['email'])->first();
+        $validemail = pesertaspc::where('email', $request['email'])->first();
         if (!$validemail) { 
-            return back()->withErrors(['email' => 'Email Not Registered. Please Register first.'])->withInput();
+            return back()->withErrors(['email' => 'Email is not registered'])->withInput();
         }
-        if ($validemail->status !== 'Paid' && $validemail->status !== 'Khusus') {
+        if ($validemail->status !== 'Paid' && $validemail->status !== 'KhususUNAS') {
             return back()->withErrors(['email' => 'Email Not able to UPLOAD, Pay First. '])->withInput();
         }
         $uploadlkti = $request->validate([
-            'nama' => 'required|string|max:50',
+            'nama' => 'required',
             'email' => 'required|email',
-            'instansi' => 'required|string|max:50',
-            'judul' => 'required|string|max:50',
-            'tema' => 'required|string|max:50',
+            'instansi' => 'required',
+            'judul' => 'required',
+            'tema' => 'required',
             'naskah' => 'required|mimes:pdf|max:5000',
         ]);
         

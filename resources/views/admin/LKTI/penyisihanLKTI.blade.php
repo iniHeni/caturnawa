@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -138,7 +138,7 @@ $tambah = Carbon::parse('2024-05-28');
                                 <td>{{ $data->namapeserta }}</td>
                                 <td>{{ $data->university}}</td>
                                 <td class="mid">{{ $data->scorecp}}</td>
-                                <td class="mid">{{ $data->rank}}</td>
+                                <td class="mid">{{ $no + 1}}</td>
                                 <td style="text-align: center">
                                     <a href="#" onclick="
                                         event.preventDefault();

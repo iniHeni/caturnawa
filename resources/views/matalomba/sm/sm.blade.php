@@ -34,7 +34,7 @@
           .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -96,7 +96,7 @@
       <p class="testing1">@lang('messages.teks')
       @lang('messages.teks1')</p>
       <div class="cont">
-         <a class="gb" href="https://drive.google.com/file/d/1SYn9ZbQL6y1yL3Dw0pGngWtqkG4uwlZv/view">@lang('messages.gb')</a>
+         <a class="gb" href="https://drive.google.com/file/d/1k0J4OJ_7g6vAp1Ft8hU6PqWhjo0cI2Rs/view">@lang('messages.gb')</a>
       </div>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
@@ -133,9 +133,9 @@
             @php
             use Carbon\Carbon;
             $today = Carbon::now();
-            $penyisihanStart = Carbon::parse('2024-06-01');
+            $penyisihanStart = Carbon::parse('2024-10-26');
             $penyisihanEnd = Carbon::parse('2024-12-19');
-            $finalDate = Carbon::parse('2024-06-17');
+            $finalDate = Carbon::parse('2023-11-07');
             @endphp
             <a href="#" class="card-item" onclick="
               event.preventDefault(); 

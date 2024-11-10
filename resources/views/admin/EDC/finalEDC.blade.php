@@ -34,10 +34,10 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -72,7 +72,7 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('mainmenu.showedc')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -99,7 +99,7 @@
         <a href="{{url('/admin/Final/day1') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="developer">Day 1</span>
-                <h3>@lang('messages.dilaksanakan')<br>14 Oktober</h3>
+                <h3>@lang('messages.dilaksanakan')<br>06 November</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>
@@ -107,7 +107,7 @@
             <a href="{{url('/admin/Final/day2') }}" class="card-item">
                 <img src="../../img/edc.png" alt="Card Image">
                 <span class="designer">Day 2</span>
-                <h3>@lang('messages.dilaksanakan')<br>15 Oktober</h3>
+                <h3>@lang('messages.dilaksanakan')<br>07 November</h3>
                 <div class="arrow">
                     <i class="fa fa-arrow-right card-icon"></i>
                 </div>

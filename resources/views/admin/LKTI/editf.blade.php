@@ -124,7 +124,7 @@
                           <option selected>{{ $edit->juri }}</option>
                             <option>Efriza S.I.P. M.Si</option>
                             <option>Desfara Anggreani</option>
-                        <option>Dr. Tatang Mitra Setia, M.Si</option>
+                        <option>Agung Iswadi,S.Si., M.Sc, Ph.D.</option>
                       </select>
                       </div>
                 </div>
@@ -177,6 +177,20 @@
                     </div>
                       </div>
                   </div>
+            <div class="details personal">
+                  <span class="title">4. Keterampilan dalam Bahasa Inggris</span>
+                      <div class="fields">
+                      <div class="input-field">
+                        <label for="scoreketerampilan">Score:</label>
+                        <input type="number" id="scoreaketerampilan" name="scoreketerampilan" oninput="hitungTotal()" value="{{ $edit->scoreketerampilan }}"  required>
+                       
+                    </div>
+                    <div class="input-field">
+                        <label for="keterampilan">Kualitatif:</label>
+                        <textarea type="text" id="keterampilan" name="keterampilan" required>{{ $edit->keterampilan }}</textarea>
+                    </div>
+                      </div>
+                  </div>
           <div class="details ID">
               <span class="title">Hasil Total Score</span>
                   <div class="fields">
@@ -218,8 +232,9 @@
       const scorepemaparanmateri = parseFloat(form.scorepemaparanmateri.value) || 0;
       const scorepertanyaandanjawaban = parseFloat(form.scorepertanyaandanjawaban.value) || 0;
       const scoreaspekkesesuaian = parseFloat(form.scoreaspekkesesuaian.value) || 0;
+      const scoreketerampilan = parseFloat(form.scoreketerampilan.value) || 0;
 
-      const total = scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian;
+      const total = scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian + scoreketerampilan;
       form.total.value = total;
     }
   </script>

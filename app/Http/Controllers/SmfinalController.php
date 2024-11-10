@@ -200,10 +200,10 @@ public function detailfadmin($namateam){
     )
     ->groupBy('namateam', 'peserta1', 'peserta2', 'peserta3', 'peserta4', 'peserta5') // Group by semua kolom yang dipilih
     ->orderByDesc('total')
-    ->limit(7)
+    ->limit(4)
     ->get();
 
     
-    return view('admin/sm/tambahf', compact('peserta'));
+    return view('admin/SM/tambahf', compact('peserta'));
  }
 }

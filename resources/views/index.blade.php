@@ -293,8 +293,8 @@
       @php
       use Carbon\Carbon;
       $today = Carbon::now();
-      $penyisihanStart = Carbon::parse('2024-06-02');
-      $finalDate = Carbon::parse('2024-06-02');
+      $penyisihanStart = Carbon::parse('2025-09-16');
+      $finalDate = Carbon::parse('2025-09-24');
       @endphp
       <section id="matalomba" class="container">
          <h5 class="judullomba" style="font-size: 40px;">@lang('messages.jenislomba')</h5>
@@ -327,7 +327,7 @@
                  <a href="#" class="card-icon" id="uploadBtnSPC" onclick="
                  event.preventDefault();
                  @if (!$today->greaterThanOrEqualTo($finalDate))
-                     Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaunggah')', 'info');
+                     Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaunggah2')', 'info');
                  @else
                      window.location.href = '{{url('/matalomba/UploadSPC') }}';
                  @endif

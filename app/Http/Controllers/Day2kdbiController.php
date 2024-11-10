@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\pesertakdbi;
 use App\Models\day2kdbi;
+use App\Models\day1kdbi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Collection;
@@ -98,7 +99,7 @@ public function hapuskdbi2($id){
 }
 
  public function pesertaday2(){
-    $peserta = pesertakdbi::all();
+    $peserta =  pesertakdbi::where('status', 'Paid')->orWhere('status', 'KhususUNAS')->get();
     
     return view('admin/KDBI/tambah2', compact('peserta'));
  }
@@ -120,7 +121,7 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/kdbi/detailskor/day2r1', compact('dataByRoom'));
+    return view('matalomba/kdbi/detailskor/day2r1', compact('dataByRoom', 'sesi'));
  }
  public function day2round2(){
     $dataa = day2kdbi::where('ronde', '2')->orderBy('sesi')->get();
@@ -140,6 +141,6 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/kdbi/detailskor/day2r2', compact('dataByRoom'));
+    return view('matalomba/kdbi/detailskor/day2r2', compact('dataByRoom', 'sesi'));
  }
 }

@@ -96,7 +96,7 @@ public function editedc($id) {
     return view('admin/EDC/editday1', compact('edit', 'peserta'));
 }
  public function pesertaday1(){
-    $peserta = pesertaedc::all();
+    $peserta = pesertaedc::where('status', 'Paid')->orWhere('status', 'KhususUNAS')->get();
     
     return view('admin/EDC/tambah', compact('peserta'));
  }
@@ -115,7 +115,7 @@ public function editedc($id) {
     });
     $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day1r1', compact('dataByRoom'));
+    return view('matalomba/edc/detailskor/day1r1', compact('dataByRoom', 'sesi'));
  }
  public function detailday1r2($sesi){
     $dataa = DB::table('day1edcs')
@@ -131,26 +131,29 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day1r2', compact('dataByRoom'));
+    return view('matalomba/edc/detailskor/day1r2', compact('dataByRoom', 'sesi'));
  }
  public function gabungan(){
-    $now = Carbon::now();
+  
+ $now = Carbon::now();
 
     // Waktu target untuk ronde 2 day1edc
-    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-08-19 20:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay1Ronde2 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-09-19 20:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay1Sesi2 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-09-18 20:00:00', 'Asia/Jakarta'); 
 
     // Waktu target untuk ronde 1 day2edc
-    $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 20:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay2Ronde1 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-09-19 20:00:00', 'Asia/Jakarta'); 
 
     // Waktu target untuk ronde 2 day2edc
-    $waktuTargetDay2Ronde2s2 = Carbon::createFromFormat('Y-m-d H:i:s', '2024-08-19 20:00:00', 'Asia/Jakarta'); 
+    $waktuTargetDay2Ronde2s2 = Carbon::createFromFormat('Y-m-d H:i:s', '2023-09-19 20:00:00', 'Asia/Jakarta'); 
 
-    // Query untuk day1edc ronde 1
+  // Query untuk day1edc ronde 1
     $totalVpDay1Ronde1 = day1edc::select(
         'team',
         'nama1',
         'nama2',
-        DB::raw('SUM(vp) as total')
+        DB::raw('SUM(vp) as totall'),
+        DB::raw('SUM(total) as rata')
     )
     ->where('ronde', '1') 
     ->groupBy('team', 'nama1', 'nama2')
@@ -163,7 +166,8 @@ $dataByRoom = $dataa->groupBy('room');
             'team',
             'nama1',
             'nama2',
-            DB::raw('SUM(vp) as total')
+            DB::raw('SUM(vp) as totall'),
+            DB::raw('SUM(total) as rata')
         )
         ->where('ronde', '2') 
         ->groupBy('team', 'nama1', 'nama2')
@@ -177,19 +181,20 @@ $dataByRoom = $dataa->groupBy('room');
             'team',
             'nama1',
             'nama2',
-            DB::raw('SUM(vp) as total')
+            DB::raw('SUM(vp) as totall'),
+            DB::raw('SUM(total) as rata')
         )
         ->where('ronde', '1') 
         ->groupBy('team', 'nama1', 'nama2')
         ->get();
     }
 
-    // Query untuk day2edc ronde 2 (hanya jika waktunya sudah tiba)
     $totalVpDay2Ronde2 = day2edc::select(
         'team',
         'nama1',
         'nama2',
-        DB::raw('SUM(vp) as total')
+        DB::raw('SUM(vp) as totall'),
+        DB::raw('SUM(total) as rata')
     )
     ->where('ronde', '2') 
     ->where('sesi', '1') 
@@ -202,7 +207,8 @@ $dataByRoom = $dataa->groupBy('room');
             'team',
             'nama1',
             'nama2',
-            DB::raw('SUM(vp) as total')
+            DB::raw('SUM(vp) as totall'),
+            DB::raw('SUM(total) as rata')
         )
         ->where('ronde', '2')
         ->where('sesi', '2')
@@ -211,34 +217,37 @@ $dataByRoom = $dataa->groupBy('room');
     }
 
     // Gabungkan semua hasil
-    $groupedByTeam = $totalVpDay1Ronde1
-        ->concat($totalVpDay1Ronde2)
-        ->concat($totalVpDay2Ronde1)
-        ->concat($totalVpDay2Ronde2) 
-        ->concat($totalVpDay2Ronde2s2) 
-        ->groupBy('team')
-        ->map(function ($group) {
-            return [
-                'team' => $group[0]['team'],
-                'nama1' => $group[0]['nama1'],
-                'nama2' => $group[0]['nama2'],
-                'total' => $group->sum('total')
-            ];
-        })
-        ->sortByDesc('total')
-        ->values()
-        ->map(function ($item, $index) {
-            $item['rank'] = $index + 1; 
-            return $item;
-        });
+$groupedByTeam = $totalVpDay1Ronde1
+->concat($totalVpDay1Ronde2)
+->concat($totalVpDay2Ronde1)
+->concat($totalVpDay2Ronde2) 
+->concat($totalVpDay2Ronde2s2) 
+->groupBy('team')
+->map(function ($group) {
+    return [
+        'team' => $group[0]['team'],
+        'nama1' => $group[0]['nama1'],
+        'nama2' => $group[0]['nama2'],
+        'totall' => $group->sum('totall'),
+        'rata' => $group->sum('rata') / 4
+    ];
+})
+->sortByDesc('rata')
+  ->sortByDesc('totall')
+    ->values()
+    ->map(function ($item, $index) {
+        $item['rank'] = $index + 1;
+        return $item;
+    });
 
     // Ambil data pertandingan berdasarkan ronde dan waktu (jika sudah tiba)
-    $dataa = day1edc::where('ronde', '1')->orderBy('sesi')->get();
+$dataa = day1edc::where('ronde', '1')->where('sesi', '1')->orderBy('sesi')->get();
+    $dataa6 = $now->gte($waktuTargetDay1Sesi2) ? day1edc::where('ronde', '1')->where('sesi', '2')->orderBy('sesi')->get() : collect();
     $dataa2 = $now->gte($waktuTargetDay1Ronde2) ? day1edc::where('ronde', '2')->orderBy('sesi')->get() : collect();
     $dataa3 = $now->gte($waktuTargetDay2Ronde1) ? day2edc::where('ronde', '1')->orderBy('sesi')->get() : collect();
-    $dataa4 =  day2edc::where('ronde', '2')->where('sesi', '1')->orderBy('sesi')->get();
+    $dataa4 = day2edc::where('ronde', '2')->where('sesi', '1')->orderBy('sesi')->get();
     $dataa5 = $now->gte($waktuTargetDay2Ronde2s2) ? day2edc::where('ronde', '2')->where('sesi', '2')->orderBy('sesi')->get() : collect();
 
-    return view('matalomba/edc/penyisihan', compact('groupedByTeam', 'dataa', 'dataa2', 'dataa3', 'dataa4', 'dataa5'));
+    return view('matalomba/edc/penyisihan', compact('groupedByTeam', 'dataa', 'dataa2', 'dataa3', 'dataa4', 'dataa5', 'dataa6'));
  }
     }

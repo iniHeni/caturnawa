@@ -14,9 +14,10 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../../css/navmenulomba.css">
       <link rel="stylesheet" href="../../../../css/pagelomba.css">
+      <link rel="stylesheet" href="../../../css/back.css">
 
 
-      <title>Caturnawa - SPCFinalScore</title>
+      <title>Caturnawa - SPCSemifinalScore</title>
       <style>
 #loadingDiv {
    width: 100%;
@@ -28,8 +29,7 @@
    justify-content: center;
    background-color: white;
  }
- 
-   .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../../img/mskt1.svg);
@@ -43,6 +43,7 @@
   50% { opacity: 0.2; } 
   100% { opacity: 1; } 
 }
+ 
      </style>
    </head>
    <body>
@@ -52,7 +53,7 @@
       <!--==================== Navbar ====================-->
       <header class="header" id="header">
          <nav class="nav contnav">
-         <img src="../../../../img/spcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo" ></a></h2>
+         <img src="../../../../img/spcaja.png" width="145" class="nav_logo"><h2><a href="{{url('/') }}" class="nav__logo"></a></h2>
          
          <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
@@ -61,7 +62,7 @@
 						<li><a href="../../../../locale/en" height="20"><img src="../../../../img/eng.png" /></a></li>
 					</div>
                     <li class="nav__item">
-                  <a href="{{url('matalomba/lkti/final') }}" class="nav__link">Leaderboard</a>
+                  <a href="{{url('matalomba/lkti/sfinal') }}" class="nav__link">Leaderboard</a>
                </li>
                <li class="nav__item">
                   <a href="{{url('/') }}" class="nav__link">@lang('messages.beranda')</a>
@@ -95,7 +96,7 @@
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;">
             <div style="width: 100%;">
-                <h1 class="judul" style="color: white" >Detail Final</h1>
+                <h1 class="judul" style="color: white" >Detail SemiFinal</h1>
                 <div class="table-responsive" style=" overflow-x: auto; overflow-y: auto; position: relative; border-radius: 20px">
                     <table id="tabelPenyisihan" class="table table-bordered table-striped" style="min-width: 1000px; margin-bottom: 0; border-collapse: collapse;">
                         <thead style="position: sticky; top: -1; z-index: 10;">
@@ -117,20 +118,20 @@
             
                     @php
                         $scores = [
-                            ['label' => __('messages.lktisf1'), 'score' => $item->scorepemaparanmateri, 'detail' => $item->materi],
-                            ['label' => __('messages.lktisf2'), 'score' => $item->scorepertanyaandanjawaban, 'detail' => $item->pertanyaandanjawaban],
-                            ['label' => __('messages.lktisf3'), 'score' => $item->scoreaspekkesesuaian, 'detail' => $item->kesesuaian]
+                            ['label' => __('messages.lktisf1'), 'score' => $item->scorepenyajian, 'detail' => $item->penyajian],
+                            ['label' => __('messages.lktisf2'), 'score' => $item->scoresubs, 'detail' => $item->subs],
+                            ['label' => __('messages.lktisf3'), 'score' => $item->scorekualitas, 'detail' => $item->kualitas]
                         ];
                     @endphp
             
                     @foreach ($scores as $index => $criterion)
-                        <td>{{ $index + 1 }}. {{ $criterion['label'] }}</td>
+                        <td >{{ $index + 1 }}. {{ $criterion['label'] }}</td>
                         <td class="mid">
                             @foreach (explode('! ', $criterion['score']) as $key => $score)
                                 {{ $score }} ({{ $key + 1 }})<br> 
                             @endforeach
                         </td>
-                        <td>
+                        <td style="text-align: left;">
                             @foreach (explode('! ', $criterion['detail']) as $key => $detail)
                                 {{ $detail }} ({{ $key + 1 }})<br> 
                             @endforeach
@@ -142,10 +143,10 @@
                                     {{ $totalScore }}<br> 
                                 @endforeach
                             </td>
-                            <td rowspan="3">
+                            <td rowspan="3" style="text-align: left;">
                                 @php $juriCounter = 1; @endphp 
                                 @foreach (explode('! ', $item->juri) as $juri)
-                                    {{ $juriCounter }}. {{ $juri }}<br>
+                                    {{ $juriCounter }}. {!! $juri !!}<br>
                                     @php $juriCounter++; @endphp
                                 @endforeach
                             </td>
@@ -153,6 +154,7 @@
                     </tr>
                 @endforeach
             @endforeach
+            
               </tbody>
                     </table>
                 </div>

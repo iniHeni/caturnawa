@@ -32,11 +32,13 @@ $peserta->rank = $tambah->where('namapeserta', $namapeserta)->pluck('rank')[$ind
             'scorepemaparanmateri' => 'required|integer|min:0|max:100',
             'scorepertanyaandanjawaban' => 'required|integer|min:0|max:100',
             'scoreaspekkesesuaian' => 'required|integer|min:0|max:100',
+          'scoreketerampilan' => 'required|integer|min:0|max:100',
             'materi' => 'required',
             'pertanyaandanjawaban' => 'required',
             'kesesuaian' => 'required',
+          'keterampilan' => 'required',
         ]);
-        $tambah['total'] = $tambah['scorepemaparanmateri'] + $tambah['scorepertanyaandanjawaban'] + $tambah['scoreaspekkesesuaian'];
+        $tambah['total'] = $tambah['scorepemaparanmateri'] + $tambah['scorepertanyaandanjawaban'] + $tambah['scoreaspekkesesuaian'] + $tambah['scoreketerampilan'];
         spcfinal::create($tambah);
         return redirect()->route('spc.tampilf');
 
@@ -69,12 +71,14 @@ $peserta->rank = $tambah->where('namapeserta', $namapeserta)->pluck('rank')[$ind
             'scorepemaparanmateri' => 'required|integer|min:0|max:100',
             'scorepertanyaandanjawaban' => 'required|integer|min:0|max:100',
             'scoreaspekkesesuaian' => 'required|integer|min:0|max:100',
+      		'scoreketerampilan' => 'required|integer|min:0|max:100',
             'materi' => 'required',
             'pertanyaandanjawaban' => 'required',
             'kesesuaian' => 'required',
+      		'keterampilan' => 'required',
     ]);
     $data = spcfinal::find($id);
-    $update['total'] = $update['scorepemaparanmateri'] + $update['scorepertanyaandanjawaban'] + $update['scoreaspekkesesuaian'];
+    $update['total'] = $update['scorepemaparanmateri'] + $update['scorepertanyaandanjawaban'] + $update['scoreaspekkesesuaian'] + $update['scoreketerampilan'];
     $data->update($update);
         return redirect()->route('spc.tampilf');
 }
@@ -123,10 +127,12 @@ public function final(){
                 DB::raw("string_agg(scorepemaparanmateri::text, '! ') as scorepemaparanmateri"),
                 DB::raw("string_agg(scorepertanyaandanjawaban::text, '! ') as scorepertanyaandanjawaban"),
                 DB::raw("string_agg(scoreaspekkesesuaian::text, '! ') as scoreaspekkesesuaian"),
+                DB::raw("string_agg(scoreketerampilan::text, '! ') as scoreketerampilan"),
                 DB::raw("string_agg(materi::text, '! ') as materi"),
                 DB::raw("string_agg(pertanyaandanjawaban::text, '! ') as pertanyaandanjawaban"),
                 DB::raw("string_agg(kesesuaian::text, '! ') as kesesuaian"),
-                DB::raw('SUM(scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian) as total'),
+                 DB::raw("string_agg(keterampilan::text, '! ') as keterampilan"),
+                DB::raw('SUM(scorepemaparanmateri + scorepertanyaandanjawaban + scoreaspekkesesuaian + scoreketerampilan) as total'),
                 DB::raw("string_agg(juri::text, '! ') as juri"),
                 )
         ->where('namapeserta', $namapeserta)

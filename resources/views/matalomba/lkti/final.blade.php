@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -33,10 +31,10 @@
    background-color: white;
  }
  
- .loader {
+   .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -121,14 +119,16 @@
                         </thead>
                         <tbody>
                             @foreach($final as $rank=>$data)
+                          		@if($rank != 3)
                             <tr>
 
                               <td class="mid">{{ $data->namapeserta}}</td>
                               <td class="mid">{{ $data->total}}</td>
-                              <td class="mid" style="font-size: 30px;"> 
-                                @if($rank == 0) 🥇 @elseif($rank == 1) 🥈 @elseif($rank == 2) 🥉 @else Best Paper @endif
+                              <td class="mid"> 
+                                @if($rank == 0) 🥇 @elseif($rank == 1) 🥈 @elseif($rank == 2) 🥉 @elseif($rank == 4) Best Paper @endif
                             </td> 
                             </tr>
+                          @endif
                             @endforeach
                         </tbody>
                     </table>
@@ -141,7 +141,7 @@
           <h1 class="judul">Detail Score</h1>
           <div class="card-list">
             @foreach($final->unique('namapeserta') as $data)
-                  <a href="{{ route('spc.detailf', $data->namapeserta) }}" class="card-item">
+                  <a style="display: flex;flex-direction: column;align-items: center;" href="{{ route('spc.detailf', $data->namapeserta) }}" class="card-item">
                     <img src="{{ asset($data->logo) }}" class="card-image" loading="lazy">
                       <h3>{{ $data->namapeserta }}</h3>
                       <div class="arrow">
@@ -202,33 +202,8 @@
     </script>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-     $(function() {
-         $(this).bind("contextmenu", function(e) {
-             e.preventDefault();
-         });
-     }); 
-     </script>
-     <script type="text/JavaScript"> 
-         function killCopy(e){ return false } 
-         function reEnable(){ return true } 
-         document.onselectstart=new Function ("return false"); 
-         if (window.sidebar)
-         { 
-             document.onmousedown=killCopy; 
-             document.onclick=reEnable; 
-         } 
-     </script>
-     <script type="text/Javascript">
-     $(document).keydown(function(event){
-   if(event.keyCode==123){
-       return false;
-   }
-   else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-            return false;
-   }
-});
-   </script>
+
+
    <script src="../../js/SM.js"></script>
    </body>
 </html>

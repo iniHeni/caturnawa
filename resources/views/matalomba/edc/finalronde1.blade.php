@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -16,6 +14,7 @@
       <link rel="stylesheet" href="../../../css/back.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../../css/navmenudbt.css">
+      <link rel="stylesheet" href="../../../css/pagelomba.css">
       <style>
         h1{
             color: #fff;
@@ -127,7 +126,7 @@ background-color: white;
   .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -187,7 +186,8 @@ background-color: white;
       </button>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L40,240C80,224,160,192,240,176C320,160,400,160,480,170.7C560,181,640,203,720,202.7C800,203,880,181,960,160C1040,139,1120,117,1200,138.7C1280,160,1360,224,1400,256L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
       <!--==================== Session ====================-->
-      <h3 style="color: white; text-align:center">Mosi</h3>
+     <h3 class="testing1">@lang('messages.moosi')</h3> 
+     <h3 class="testing1" style="color: white; text-align:center; margin-top: 20px">This House believes that global green momentum cannot be achieved without Bipartisan Political Commitment to renewable energy innovation.</h3>
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
@@ -210,7 +210,7 @@ background-color: white;
                         <tbody>
                           @if ($final->isNotEmpty()) 
                           <tr>
-                              <td rowspan="20">{{ $final->first()->juri }}</td> 
+                              <td rowspan="20" style="text-align: left;">{!! $final->first()->juri !!}</td> 
                             @foreach ($final as $data)
                             <tr>
                               <td>{{ $data->team}}</td>
@@ -246,7 +246,7 @@ background-color: white;
          </style>
     </section>
 <!--==================== Session ====================-->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,320L40,314.7C80,309,160,299,240,282.7C320,267,400,245,480,208C560,171,640,117,720,112C800,107,880,149,960,165.3C1040,181,1120,171,1200,154.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
       <script>function removeLoader() {
         $("#loadingDiv").fadeOut(200, () => {

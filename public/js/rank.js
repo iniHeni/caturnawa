@@ -1,53 +1,53 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const items = document.querySelectorAll(".item");
-  
-    function checkRegistrationStatus() {
-      const now = new Date();
-      const currentYear = now.getFullYear();
-  
-      items.forEach((item, index) => {
-        const dateElements = item.querySelectorAll(".num, .day");
-        let dateString = Array.from(dateElements).map(el => el.textContent).join(" ");
-  
-  
-        let phaseStart, phaseEnd;
-        if (index === 0) {
-          phaseStart = new Date(currentYear, 5, 23); 
-          phaseEnd = new Date(currentYear, 6, 28, 23, 59, 59); 
-        } else if (index === 1) {
-          phaseStart = new Date(currentYear, 6, 29); 
-          phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
-        } else if (index === 2) {
-          phaseStart = new Date(currentYear, 7, 12); 
-          phaseEnd = new Date(currentYear, 9, 30, 23, 59, 59); 
-        }
-  
-        const ticketsButtonTutup = item.querySelector(".tickets"); 
-        const ticketsButtonDaftar = item.querySelector(".daftar");
-        const ticketsButtonDaftar1 = item.querySelector(".daftar1");
-  
-        if (now >= phaseStart && now <= phaseEnd) {
-          ticketsButtonDaftar.style.display = "block"; 
-          ticketsButtonDaftar1.style.display = "block"; 
-          ticketsButtonTutup.style.display = "none";   
-          
-          ticketsButtonDaftar.addEventListener("click", function() {
-              window.location.href = "/matalomba/daftarEDC";
-          });
-          ticketsButtonDaftar1.addEventListener("click", function() {
-            window.location.href = "/matalomba/daftarunasEDC";
+  const items = document.querySelectorAll(".item");
+
+  function checkRegistrationStatus() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+
+    items.forEach((item, index) => {
+      const dateElements = item.querySelectorAll(".num, .day");
+      let dateString = Array.from(dateElements).map(el => el.textContent).join(" ");
+
+
+      let phaseStart, phaseEnd;
+      if (index === 0) {
+        phaseStart = new Date(currentYear, 5, 23); 
+        phaseEnd = new Date(currentYear, 6, 28, 23, 59, 59); 
+      } else if (index === 1) {
+        phaseStart = new Date(currentYear, 6, 29); 
+        phaseEnd = new Date(currentYear, 7, 11, 23, 59, 59); 
+      } else if (index === 2) {
+        phaseStart = new Date(currentYear, 7, 12); 
+        phaseEnd = new Date(currentYear, 8, 7, 23, 59, 59); 
+      }
+
+      const ticketsButtonTutup = item.querySelector(".tickets"); 
+      const ticketsButtonDaftar = item.querySelector(".daftar");
+      const ticketsButtonDaftar1 = item.querySelector(".daftar1");
+
+      if (now >= phaseStart && now <= phaseEnd) {
+        ticketsButtonDaftar.style.display = "block"; 
+        ticketsButtonDaftar1.style.display = "block"; 
+        ticketsButtonTutup.style.display = "none";   
+        
+        ticketsButtonDaftar.addEventListener("click", function() {
+            window.location.href = "/matalomba/daftarEDC";
         });
-        } else {
-          ticketsButtonTutup.style.display = "block";  
-          ticketsButtonDaftar.style.display = "none"; 
-          ticketsButtonDaftar1.style.display = "none"; 
-  
-          ticketsButtonTutup.href = "#"; 
-        }
+        ticketsButtonDaftar1.addEventListener("click", function() {
+          window.location.href = "/matalomba/daftarunasEDC";
       });
-    }
-  
-    checkRegistrationStatus();
-  
-    setInterval(checkRegistrationStatus, 60000); // Check every minute
-  });
+      } else {
+        ticketsButtonTutup.style.display = "block";  
+        ticketsButtonDaftar.style.display = "none"; 
+        ticketsButtonDaftar1.style.display = "none"; 
+
+        ticketsButtonTutup.href = "#"; 
+      }
+    });
+  }
+
+  checkRegistrationStatus();
+
+  setInterval(checkRegistrationStatus, 60000); // Check every minute
+});

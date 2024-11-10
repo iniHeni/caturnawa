@@ -42,7 +42,7 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
   background: center / contain no-repeat url(../../../img/mskt1.svg);
@@ -112,7 +112,7 @@ $tambahedit = Carbon::parse('2024-05-28');
     <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
             <div style="width: 100%;">
-                <div class="table-responsive" style="max-height: 1000px;  position: static;">
+                <div class="table-responsive" style="max-height: 1000px;  position: static; padding-top: 100px;">
                   <table class="table table-bordered" style="min-width: 650px; margin-bottom: 0; border-collapse: collapse;">
                     @foreach($tambah as $no=>$data)
                     <thead style="position: static; top: -1; z-index: 10;">

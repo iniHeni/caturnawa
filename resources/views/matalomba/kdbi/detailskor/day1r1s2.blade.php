@@ -96,7 +96,7 @@
       
       
                <h3 style="color: white; text-align:center; margin-top: 20px">@lang('messages.moosi')</h3> 
-               <h3 class="testing1" style="color: white; text-align:center; margin-top: 20px">"@lang('messages.mosir'. $sesi)"</h3>
+               <h3 class="testing1" style="color: white; text-align:center; margin-top: 20px">"@lang('messages.mosir2')"</h3>
       
       <section id="skor">
         <div class="container" style="display: flex; justify-content: center;height:70rem">
@@ -123,7 +123,7 @@
                                       <tbody>
                                         @if ($dataa->isNotEmpty()) 
                                         <tr>
-                                            <td rowspan="20">{{ $dataa->first()->juri }}</td> 
+                                            <td rowspan="20" style="text-align: left;">{{ $dataa->first()->juri }}</td> 
                                           @foreach ($dataa as $data)
                                           <tr>
       
@@ -164,7 +164,7 @@
                                       <tbody>
                                         @if ($dataa->isNotEmpty()) 
                                         <tr>
-                                            <td rowspan="20" style="text-align: left;">{{ $dataa->first()->juri }}</td> 
+                                            <td rowspan="20">{{ $dataa->first()->juri }}</td> 
                                           @foreach ($dataa as $data)
                                           <tr>
       
@@ -183,6 +183,7 @@
                               </div>
               				@endif
                               @endforeach 
+              <h3 class="testing1" style="color: white; text-align:center; margin-top: 20px">"@lang('messages.mosir5')"</h3>
                @foreach ($dataByRoom as $room => $dataa)
                @if ($room == 3)
                   <h3 style="color: white; text-align:center; padding: 50px 20">Breakout Room 3</h3>
@@ -294,4 +295,4 @@
 
       <script src="../../../js/SM.js"></script>
    </body>
-</html>
+</html> 

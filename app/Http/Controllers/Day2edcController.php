@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\pesertaedc;
+use App\Models\day1edc;
 use App\Models\day2edc;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -99,7 +100,7 @@ public function hapusedc2($id){
 }
 
  public function pesertaday2(){
-    $peserta = pesertaedc::all();
+    $peserta = pesertaedc::where('status', 'Paid')->orWhere('status', 'KhususUNAS')->get();
     
     return view('admin/EDC/tambah2', compact('peserta'));
  }
@@ -121,7 +122,7 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day2r1', compact('dataByRoom'));
+    return view('matalomba/edc/detailskor/day2r1', compact('dataByRoom', 'sesi'));
  }
  public function day2round2(){
     $dataa = day2edc::where('ronde', '2')->orderBy('sesi')->get();
@@ -141,6 +142,6 @@ $dataa = $dataa->map(function ($item, $key) {
 });
 $dataByRoom = $dataa->groupBy('room');
         
-    return view('matalomba/edc/detailskor/day2r2', compact('dataByRoom'));
+    return view('matalomba/edc/detailskor/day2r2', compact('dataByRoom', 'sesi'));
  }
     }

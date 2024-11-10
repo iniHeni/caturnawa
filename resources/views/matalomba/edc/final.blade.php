@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -127,7 +125,7 @@
   .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -206,7 +204,7 @@
                           <tr>
                             <td>{{ $data['team'] }}</td>
                             <td>{{ $data['nama1'] }}<br>{{ $data['nama2'] }}</td>
-                            <td>{{ $data['total'] }}</td>
+                            <td>{{ $data['totall'] }}</td>
                         </tr>
             @endforeach
                         </tbody>
@@ -244,7 +242,7 @@
 
 
       $ronde1 = Carbon::parse('2024-06-28');
-      $ronde2 = Carbon::parse('2024-4-15');   
+      $ronde2 = Carbon::parse('2023-4-15');   
       $ronde3 = Carbon::parse('2024-06-28');
   @endphp
             @if($dataa->count() > 0)

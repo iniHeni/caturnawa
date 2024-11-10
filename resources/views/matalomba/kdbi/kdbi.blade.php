@@ -2,8 +2,6 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:title" content="Caturnawa - UNAS FEST 2024">
-      <meta property="og:image" content="{{ asset('img/uf2.png') }}">  
       <!--=============== Icon Web ===============-->
       <link rel="icon"  href="../../img/uf1.png">
       <!--=============== REMIXICONS ===============-->
@@ -19,8 +17,7 @@
       <link rel="stylesheet" href="../../css/nowrap.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../../css/navmenudbt.css">
-      <link rel="stylesheet" href="../../css/pagelombaedc.css">
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <link rel="stylesheet" href="../../css/pagelombakdbi.css">
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       <title>Caturnawa - KDBI</title>
@@ -107,7 +104,7 @@
       <p class="testing1">@lang('messages.teks')
         @lang('messages.teks1')</p>
         <div class="cont">
-            <a class="gb" href="https://drive.google.com/file/d/14nrL990Y_JlewA1cydvI5dKtsC-sJz5O/view">@lang('messages.gb')</a>
+            <a class="gb" href="https://drive.google.com/file/d/1UzP90t5nr2W5vsNpiVvQ7dfsujwwIzyZ/view?usp=drive_link">@lang('messages.gb')</a>
          </div>
       <!--==================== Peserta Lomba ====================-->
       <section id="peserta">
@@ -144,103 +141,120 @@ use Carbon\Carbon;
 $today = Carbon::now();
 
 
-$penyisihanStart = Carbon::parse('2024-08-18');
+$penyisihanStart = Carbon::parse('2024-09-18');
 $penyisihanEnd = Carbon::parse('2024-12-29');
-$semiFinalDate = Carbon::parse('2024-08-20');
-$finalDate = Carbon::parse('2024-09-16');
+$semiFinalDate = Carbon::parse('2023-09-20');
+$finalDate = Carbon::parse('2023-11-16');
 @endphp
 <section id="rank">
-    <h1 class="judul">@lang('messages.babak')</h1>
-    <div class="card-list">
-            <a href="#" class="card-item" onclick="
-            event.preventDefault(); 
-            @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
-    
-                Swal.fire({
-                    title: '@lang('messages.sweet1')',
-                    text: '@lang('messages.bukaedc')',
-                    icon: 'info'
-                });
-            @else 
-     
-                window.location.href = '{{url('matalomba/kdbi/penyisihan') }}'; 
-            @endif
-        ">
-                <img src="../../img/kdbi.png" alt="Card Image">
-                <span class="developer">@lang('messages.penyisihan')</span>
-                <h3>@lang('messages.dilaksanakan')<br>18 - 19 September 2024</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="#" class="card-item" onclick="
-            event.preventDefault();
-            @if (!$today->greaterThanOrEqualTo($semiFinalDate))
-                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
-            @else
-                window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
-            @endif
-        ">
-                <img src="../../img/kdbi.png" alt="Card Image">
-                <span class="designer">Semifinal</span>
-                <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-            <a href="{{url('matalomba/kdbi/Final') }}" class="card-item" onclick="
-            event.preventDefault();
-            @if (!$today->greaterThanOrEqualTo($finalDate))
-                Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
-            @else
-                window.location.href = '{{url('matalomba/kdbi/Final') }}';
-            @endif
-        ">
-                <img src="../../img/kdbi.png" alt="Card Image">
-                <span class="editor">Final</span>
-                <h3>@lang('messages.dilaksanakan')<br>16 - 17 @lang('messages.ok1') 2024</h3>
-                <div class="arrow">
-                    <i class="fas fa-arrow-right card-icon"></i>
-                </div>
-            </a>
-        </div>
-    </section>
+<h1 class="judul">@lang('messages.babak')</h1>
+<div class="card-list">
+        <a href="#" class="card-item" onclick="
+        event.preventDefault(); 
+        @if (!$today->between($penyisihanStart, $penyisihanEnd)) 
 
+            Swal.fire({
+                title: '@lang('messages.sweet1')',
+                text: '@lang('messages.bukaedc')',
+                icon: 'info'
+            });
+        @else 
+ 
+            window.location.href = '{{url('matalomba/kdbi/penyisihan') }}'; 
+        @endif
+    ">
+            <img src="../../img/kdbi2.png" alt="Card Image">
+            <span class="developer">@lang('messages.penyisihan')</span>
+            <h3>@lang('messages.dilaksanakan')<br>18 - 19 September 2024</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($semiFinalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Semifinal') }}';
+        @endif
+    ">
+            <img src="../../img/kdbi2.png" alt="Card Image">
+            <span class="designer">Semifinal</span>
+            <h3>@lang('messages.dilaksanakan')<br>20 September 2024</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item" onclick="
+        event.preventDefault();
+        @if (!$today->greaterThanOrEqualTo($finalDate))
+            Swal.fire('@lang('messages.sweet1')', '@lang('messages.bukaedc')', 'info');
+        @else
+            window.location.href = '{{url('matalomba/kdbi/Final') }}';
+        @endif
+    ">
+            <img src="../../img/kdbi2.png" alt="Card Image">
+            <span class="editor">Final</span>
+            <h3>@lang('messages.dilaksanakan')<br>6 - 7 November 2024</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+    </div>
+</section>
+<!--==================== Juri ====================-->
 <!--==================== Juri ====================-->
 <section id="juri">
     <div class="main">
             <div class="title">@lang('messages.juri')</div>
     
             <div class="card_container">
-    
+    			<!---
                 <div class="card">
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbibaru1.jpg" alt="">
+                        <img src="../../../img/insanyy.jpg" alt="">
                     </div>
     
                     <div class="user_content1">
-                        <h5 class="name">Al Ayubi, S.Sos., M.IP</h5>
+                        <h5 class="name">Insany Khausari</h5>
                         <p class="post">@lang('messages.jurikdbiposisi1')</p>
                         <p class="about">@lang('messages.jurikdbibio1')</p>
-                       
+                      <a href="https://www.linkedin.com/in/insanykhausari/" class="icon facebook">
+                            <span><i class="fa-brands fa-linkedin"></i></span>
+                         </a>
+                        
                     </div>
                 </div>
+				--->
+              <div class="card">
+                    <div class="round_box"></div>
+                    <div class="img_box">
+                        <img src="../../../img/Fairuz.jpg" alt="">
+                    </div>
     
+                    <div class="user_content1">
+                        <h5 class="name">Fairuz Mumtaz Abafiyah Putri</h5>
+                        <p class="post">@lang('messages.jurikdbiposisi1')</p>
+                        <p class="about">@lang('messages.jurikdbibio1')</p>
+                      <a href="linkedin.com/in/fairuz-mumtaz/" class="icon facebook">
+                            <span><i class="fa-brands fa-linkedin"></i></span>
+                         </a>
+                        
+                    </div>
+                </div>
                 <div class="card">
                     <div class="squareBox"></div>
                     <div class="round_box"></div>
                     <div class="img_box">
-                        <img src="../../img/jurikdbibaru2.jpg" alt="">
+                        <img src="../../../img/leila.jpg" alt="">
                     </div>
     
                     <div class="user_content1">
-                        <h5 class="name">Prof. Dr. Wahyu Wibowo</h5>
+                        <h5 class="name">Laila Amalia Khaeranni, S.Pd</h5>
                         <p class="post">@lang('messages.jurikdbiposisi3')</p>
                         <p class="about">@lang('messages.jurikdbibio3')</p>
-                        <a href="https://menuliswahyuwibowo.wordpress.com/" class="icon facebook">
-                            <span><i class="fa-brands fa-blogger"></i></span>
-                         </a>
+                      
                     </div>
                 </div>
     
@@ -249,7 +263,6 @@ $finalDate = Carbon::parse('2024-09-16');
                     <div class="round_box"></div>
                     <div class="img_box">
                         <img src="../../img/jurikdbibaru3.jpg" alt="">
-
                     </div>
     
                     <div class="user_content2">

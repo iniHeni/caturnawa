@@ -32,10 +32,10 @@
    background-color: white;
  }
  
- .loader {
+  .loader {
   width: 40%;
   height: 40%;
-  background: center / contain no-repeat url(../img/mskt1.svg);
+  background: center / contain no-repeat url(../../../img/mskt1.svg);
 
  
   animation: blink 2s infinite; 
@@ -70,7 +70,7 @@
 <!--==================== Sidebar ====================-->
 <div id="sidebar" class="sidebar">
     <a href="#" id="menu"><img class="sidelogo" id="sidelogo" src="../../img/uf2.png" alt="Logo"></a>
-    <a href="{{url('/admin/mainmenuEDC')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
+    <a href="{{route('mainmenu.showedc')}}" id="beranda" class="beranda"><i class="fa fa-dashboard"></i> Dashboard</a>
     <a href="{{url('/admin/pesertaEDC')}}" id="finalLKTI" class="final"><i class="fa fa-user-plus"></i> Data Peserta</a>
     <a href="{{url('/admin/penyisihanEDC')}}" class="penyisihan"><i class="fa fa-users"></i> Penyisihan</a>
     <a href="{{route('edc.tampiledc3')}}" id="semifinalLKTI" class="semifinal"><i class="fa fa-list-alt"></i> SemiFinal</a>
@@ -107,7 +107,7 @@
                       <select name="juri[{{ $i }}]" id="juri_{{ $i }}" class="autofill" required>
                           <option selected>Pilih Adjudicators</option>
                           <option>Hezron Kowardi</option>
-                        <option>Ahmad Kushay</option>
+                        <option>Cecilia Tiara Liong</option>
                         <option>Mouliza Kristhopher Donna</option>
                       </select>
                   </div>
@@ -125,21 +125,21 @@
                                 <select name="team[{{ $i }}]" id="team_{{ $i }}" required>
                                     <option selected>Pilih Team</option>
                                     @foreach ($peserta as $j)
-                                        <option >{{ $j->namateam }}</option>
+                                        <option >{{ $j->team }}</option>
                                     @endforeach
                                 </select>
                             </div>
         
                             <div class="input-field">
-                                <label for="posisi[{{ $i }}]">Posisi Team</label>
-                                <select name="posisi[{{ $i }}]" id="posisi_{{ $i }}" required>
-                                    <option selected>Pilih Posisi</option>
-                                    <option value="OG">OG</option>
-                                    <option value="CG">CG</option>
-                                    <option value="OO">OO</option>
-                                    <option value="CO">CO</option>
-                                </select>
-                            </div>
+    <label for="posisi[{{ $i }}]">Posisi Team</label>
+    <select name="posisi[{{ $i }}]" id="posisi_{{ $i }}" required onchange="updatePositions('{{ $i }}')">
+        <option selected>Pilih Posisi</option>
+        <option value="OG">OG</option>
+        <option value="CG">CG</option>
+        <option value="OO">OO</option>
+        <option value="CO">CO</option>
+    </select>
+</div>
         
                             <div class="input-field">
                                 <label for="nama1[{{ $i }}]">Nama Peserta 1 *otomatis dari namateam</label>
@@ -147,19 +147,19 @@
                             </div>
     
                               <div class="input-field">
-                                  <label for="posisi1[{{ $i }}]">Posisi Peserta 1</label>
-                                  <select name="posisi1[{{ $i }}]" id="posisi1_{{ $i }}" required>
-                                      <option selected>Pilih Posisi</option>
-                                      <option value="PM">PM</option>
-                                      <option value="DPM">DPM</option>
-                                      <option value="MoG">MoG</option>
-                                      <option value="Whip Gov">Whip Gov</option>
-                                      <option value="LoO">LoO</option>
-                                      <option value="DLoO">DLoO</option>
-                                      <option value="MoO">MoO</option>
-                                      <option value="Whip Opp">Whip Opp</option>
-                                  </select>
-                              </div>
+    <label for="posisi1[{{ $i }}]">Posisi Peserta 1</label>
+    <select name="posisi1[{{ $i }}]" id="posisi1_{{ $i }}" required>
+        <option selected>Pilih Posisi</option>
+        <option value="PM">PM</option>
+        <option value="DPM">DPM</option>
+        <option value="MoG">MoG</option>
+        <option value="Whip Gov">Whip Gov</option>
+        <option value="LoO">LoO</option>
+        <option value="DLoO">DLoO</option>
+        <option value="MoO">MoO</option>
+        <option value="Whip Opp">Whip Opp</option>
+    </select>
+</div>
           
                               <div class="input-field">
                                 <label for="nama2[{{ $i }}]">Nama Peserta 2 *otomatis dari namateam</label>
@@ -167,19 +167,19 @@
                             </div>
                             
                               <div class="input-field">
-                                  <label for="posisi2[{{ $i }}]">Posisi Peserta 2</label>
-                                  <select name="posisi2[{{ $i }}]" id="posisi2_{{ $i }}" required>
-                                      <option selected>Pilih Posisi</option>
-                                      <option value="PM">PM</option>
-                                      <option value="DPM">DPM</option>
-                                      <option value="MoG">MoG</option>
-                                      <option value="Whip Gov">Whip Gov</option>
-                                      <option value="LoO">LoO</option>
-                                      <option value="DLoO">DLoO</option>
-                                      <option value="MoO">MoO</option>
-                                      <option value="Whip Opp">Whip Opp</option>
-                                  </select>
-                              </div>
+    <label for="posisi2[{{ $i }}]">Posisi Peserta 2</label>
+    <select name="posisi2[{{ $i }}]" id="posisi2_{{ $i }}" required>
+        <option selected>Pilih Posisi</option>
+        <option value="PM">PM</option>
+        <option value="DPM">DPM</option>
+        <option value="MoG">MoG</option>
+        <option value="Whip Gov">Whip Gov</option>
+        <option value="LoO">LoO</option>
+        <option value="DLoO">DLoO</option>
+        <option value="MoO">MoO</option>
+        <option value="Whip Opp">Whip Opp</option>
+    </select>
+</div>
           
                         </div>
                     </div>
@@ -228,7 +228,7 @@
         });
     });
     </script>
-
+<script src="../../../js/autoadmin.js"></script>
 <script src="../../../js/adminEDC.js"></script>
 <script>
 document.getElementById("menu").addEventListener("click", function () {
@@ -277,11 +277,11 @@ $("body").css(
    
        namaPesertaSelect.addEventListener('change', () => {
            const selectedPesertaId = namaPesertaSelect.value;
-           const selectedPeserta = pesertaData.find(p => p.namateam == selectedPesertaId);
+           const selectedPeserta = pesertaData.find(p => p.team == selectedPesertaId);
    
            if (selectedPeserta) {
-               nama1Input.value = selectedPeserta.nama; 
-               nama2Input.value = selectedPeserta.nama1; 
+               nama1Input.value = selectedPeserta.nama1; 
+               nama2Input.value = selectedPeserta.nama2; 
            } else {
                nama1Input.value = ''; 
                nama2Input.value = '';

@@ -9,11 +9,11 @@ return [
     'peserta' => 'Participant',
     'score' => 'Score',
     'round' => 'Round',
-    'juri' => 'Adjudicators',
+    'juri' => 'Adjudicator',
     // Nav End Menu
     // Home Start
     'welcome' => 'Welcome To Caturnawa<br>Register Now and Be The Winner!',
-    'buka' =>'Registration Will Closed on',
+    'buka' =>'The preliminary round of SMC was opened on',
     'unggah1' =>  'Upload',
  
     'sponsor' =>'Thankyou, To Our Sponsor',
@@ -111,31 +111,19 @@ return [
 
     // Data Juri Start
     //EDC
-    'juriposisi1' => 'Major in Psychology',
-    'juribio1' => ' He is an undergraduate psychology student at the Universitas Indonesia. He
- has a background in various leadership roles, including as President of the
- English Debating Society (EDS UI). He has interned as an Internal Recruiter at
- Monroe Consulting Group and in HR Recruitment at Akulaku Indonesia. He has a
- keen interest in human resources, social welfare, and mental health issues. He
- has experience as a Grandfinalist in the English as a Foreign Language (EFL)
- category at the 2024 World Universities Debating Championships, a Semifinalist
- in the English as a Secondary Language (ESL) category at the 2023 Australasian
- Intervarsity Debating Championships in Krabi, Thailand, and an Accredited Judge
- at the 2021 Thailand Speech and Debate International Competition.',
+    'juriposisi1' => 'Pyschology student at University of Indonesia',
+    'juribio1' => 'He is an undergraduate psychology student at the University of Indonesia. He has a background in various leadership roles, including as President of the English Debating Society (EDS UI). He has interned as an Internal Recruiter at Monroe Consulting Group and in HR Recruitment at Akulaku Indonesia. He has a keen interest in human resources, social welfare, and mental health issues. He has debate experience in the Grandfinalist in the English as Foreign Language (EFL) category at the 2024 World Universities Debating Championships, Semifinalist in the English as Secondary Language (ESL) category at the Australasian Intervarsity Debating Championships 2023 in Krabi, Thailand and was an Accredited Judge at the Thailands Speech and Debate International Competition 2021.
+',
 
-    'juriposisi2' => 'Debate Coach',
-    'juribio2' => ' He is a debate coach with degrees from Universitas Islam Indonesia and
- Institut Teknologi Bandung. His interests include research, teaching, public
- speaking, and critical thinking. These interests are primarily expressed through
- his active involvement in parliamentary debates and his experience coaching 35
- different university and high school debate teams. He has also served as a
- Breaking Adjudicator at the Malaysia Debate Open (MDO) 2016, EFL Champion
- at the Cambodia United Asian Debating Championship (UADC) 2017, Champion
-at the Java Overland Intervarsities English Debate (JOVED) 2018, 1st Runner-up
- at the Universitas National Universities Debating Championship (NUDC) 2018, and an EFL
- Grandfinalist and co-6th Best EFL Speaker at the Cape Town World Universities
- Debating Championship (WUDC) 2019.',
-
+    'juriposisi2' => 'Korean Studies student at University of Indonesia',
+    'juribio2' => 'Cecilia Tiara Liong, a Korean Studies student at the University of Indonesia, has a passion for
+Public Relations and extensive experience in the field. She has been a Public Relations Intern at
+Sunday, manage marketing materials and media monitoring, as one of the National Campaign
+Teams Board of Experts in preparation for the presidential campaign debates. As the Head of
+External Affairs at English Debating Society (EDS UI) and Social Media Manager at Indonesia
+Youth for SMEs. In the field of debating, she has achieved awards as Grand Finalist & 5th Best
+Speaker at Asian English Olympics 2023 and 1st Runner Up & 3rd Best Speaker at ALSA
+Diponegoro University 2022.',
     'juriposisi3' => 'First Research Expert at Indonesian Institute of Sciences (LIPI)',
     'juribio3' => ' She graduated from the Political Science Study Program at the Universitas Indonesia with Cum Laude honors (GPA: 3.86). She was a researcher at the
  Center for Political Studies- Institute of Indonesia and graduated as the best
@@ -151,13 +139,16 @@ at the Java Overland Intervarsities English Debate (JOVED) 2018, 1st Runner-up
     // EDC
 
     //KDBI
-    //KDBI
-    'jurikdbiposisi1' => 'Climate Justice Associate & Project Manager at Indonesia Cerah | Global
-NGO',
-    'jurikdbibio1' => 'Experienced as a program manager, policy analyst, and campaigner with 7 years working history
-in civil society organizations (CSOs) focusing on energy and natural resources management issues.
-Holds a master degree in political science with expertise in writing, research, content production,
-and event organizing.',
+    'jurikdbiposisi1' => 'Law student at Universitas Pembangunan Nasional “Veteran” Jakarta',
+    'jurikdbibio1' => 'Fairuz Mumtaz Abafiyah Putri is a Law student at Universitas Pembangunan Nasional
+“Veteran” Jakarta with extensive experience and dedication in the world of debate and
+adjudication. She has expertise in critical analysis, public communication, and team
+leadership, which is proven through various national achievements as a debate participant
+and Adjudicator. As a Core Adjudicator Panelist and Invited Adjudicator in leading
+competitions, she has been trusted to judge the quality of debates in events such as LDBI
+Festival and National Debate Competitions. On the other hand, her experience as a coach
+strengthens ability to guide the team to achieve. Results-oriented, professional, and
+committed in developing a culture of debate in higher education.',
 
     'jurikdbiposisi2' => 'Learning Support Assistant at <br> PT Bank Mandiri (Persero) Tbk.',
     'jurikdbibio2' => 'Purwo Besari graduated from Education Management at the State University of Jakarta 
@@ -169,16 +160,11 @@ winner of Bakti Nusa 9 2019, and 1st place winner of National Education Debate
 Competition 2018.
 ',
 
-    'jurikdbiposisi3' => 'Lecturers at Universitas Nasional',
-    'jurikdbibio3' => 'Prof. Dr. Wahyu Wibowo is a doctoral graduate of Philosophy at Gadjah Mada University. 
-He is currently active as a lecturer at Universitas Nasional, Jakarta, in the subjects of 
-Philosophy of Language, Philosophy of Science, creative writing, writing skills, and 
-journalism (he has been a lecturer since 1986 and also teaches at the S1, S2, and S3 levels). 
-He is listed as an Indonesian writer of the Class of 2000, the best lecturer of the Faculty of 
-Language and Literature UNAS (2004 & 2008), obtained Journalist Certification as a 
-Principal Journalist from the Press Council (No.092-WU/DP//2011, May 2011), Junior 
-lecturer, Kopertis Region III Jakarta (2008-current), senior editor of Solusi Investasi 
-magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
+    'jurikdbiposisi3' => 'RESEARCHERHISTORIA.ID PT. MERAHCIPTA MEDIA',
+    'jurikdbibio3' => 'Laila Amalia Khaerani is an outstanding debate participant and judge from Cirebon, born on April 21
+ 2001. He has an outstanding record in various national debate competitions, consistently
+ won and received the Best Speaker award. Laila has also been a debate judge
+ for national competitions, so he has extensive experience in the field of debate".',
     //KDBI
 
     // SM
@@ -201,10 +187,9 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
      'jurispcposisi2' => 'Social Activist | Entrepreneur',
      'jurispcbio2' => 'Desfara Anggreani is a social activist and young entrepreneur who is currently studying 51 Nursing at the National University since 2021. In addition, she is also taking an Information Systems course at the National University of Singapore. Desfara is known as a student who is skilled in public speaking, which has led her to various achievements in debate competitions and international conferences. Desfara achievements cover a wide range of fields, including winning 1st place in the SDGs project at the International Youth Experience 2024, 2nd place in National Scientific Writing at UNAS FEST 2023, as well as several other championships in public speaking, essay writing, and English Olympiad. Her activity in organizations has nurtured her attention to social issues, which was later manifested through the establishment of Rumah Belajar, a tutoring center that she leads. Desfaras professional experience is diverse. She is the founder of Runut Waktu, an initiative that focuses on social issues in education, health, and the environment. Desfara is also the CEO of The Eternals Indonesia, a local perfume brand. In addition, she has been a mentor at Twinkling Stars, a partner at World Inspiration Indonesia, and held various important positions in organizations such as Get Wellness Soon, Indonesia Millennial Connect, and ASEAN Youth Organization. Desfara diverse experiences and achievements demonstrate her strong commitment to social issues, education, and leadership. With this background, Desfara Anggreani positions herself as an inspiring young figure who has the potential to make significant contributions to social and economic development in the future.',
  
-     'jurispcposisi3' => 'Lecture at Universitas Nasional',
-     'jurispcbio3' => 'Dr. Tatang Mitra Setia, M.Si. is one of the Lecturers at the National University. He is an alumnus of S1 at the National University and S2-S3 at the University of Indonesia, has conducted research collaborations with various institutions from the government and outside the government.in the last 5 years published 18 Scientific Journals and published 6 Books
-         Dr. Tatang Mitra Setia, M.Si. serves as the head lecturer of the Faculty of Biology and Agriculture of the Master of Biology Study Program.
-         ',
+     'jurispcposisi3' => 'Consultant at Aquatera, Ltd.',
+     'jurispcbio3' => 'Agung is a materials engineer and renewable energy enthusiast with research interests focused on biofouling and corrosion of marine renewable energy infrastructures. He is a Research Fellow at CSERM Universitas Nasional (UNAS) and has been involved in various projects funded by the Global Challenge Research Fund - UKRI, British Council Newton Fund, and DfID, UK. Agung served as the Project Manager for the GCRF Blue Communities Project – Indonesia Case Study (2017-2019) at the Takabonerate Biosphere Reserve, Selayar Islands, including marine renewable energy development. In 2014, he was a Visiting Fellow at Robert Gordon University, UK, conducting a feasibility study on marine energy in Indonesia, funded by the British Council. He currently works part-time as a Consultant for Aquatera, Ltd, focusing on Energy Transition, Renewable Energy, and Blue Energy for Blue Economy in Indonesia, while supporting the Mentari – Prosperity Fund Programme, particularly its Blue Energy initiative.
+',
 
      'jurispcposisi4' => 'Student at Nasional University',
      'jurispcbio4' => 'Im a bachelor student in the faculty of Health Sciences. I learn a lot from people, especially how connections are created
@@ -245,6 +230,7 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
      'lktisf1' => 'Presentation of Scientific Paper Works',
      'lktisf2' => 'Substance of Scientific Paper Works',
      'lktisf3' => 'Quality Scientific Paper Works',
+  'lktisf4' => 'Skills in English',
 
      'lktif1' => 'Material Exhibition and Scientific Presentation',
      'lktif2' => 'Questions and Answers',
@@ -275,55 +261,58 @@ magazine (2000-current), founder of UNAS Betawi Study Center (2004).',
      'sweet3' =>  'Semifinal Results Not Yet Released!',
      'sweet4' =>  'Final Results Not Yet Released!',
      'note' =>  'Notes',
-     'julii' =>  'September 14',
+     'julii' =>  'October 26',
      'bidang' =>  'Manifestation of Achievements',
      'back' =>  'Back',
      'pteam' =>  'Team Position',
      'pname' =>  'Participant Name',
      'pind' =>  'Individual',
      'ok1' =>  'October',
-     'instansi1' => 'Institution',
+     'instansi1' => 'Team Name',
      'rata' =>  'Avarage Team Score',
      'unass' =>  'Register (UNAS Student)',
      'oopen' => 'Opened On',
      'keterangan' => 'this position will not change until the competition ends.',
-     'buktibayar' => 'Proof of payment<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)',
-    'bukaunggah' => 'Upload Works Still Closed',
+     'buktibayar' => 'Proof of payment<br> Bank BCA: 2941108361 (NABILA DEA FIKRIANI)<br>Visa: 4889506025839857 (ACHMAD MAULANA ALAWI)<br>Please include a note  "[Team name] - [Competition name]" when making the payment transfer<br> ',
+    'bukaunggah' => 'Upload Works is close',
+  'bukaunggah2' => 'Upload Works is close',
   'bukaedc' => 'The Round Is Still Closed',
   'max' => 'Max 3mb',
-  'erorrp' => 'You are not allowed to enter here',
   'mosir1' => 'This house believes that electric
-  vehicles significantly contribute to
-  Indonesia energy transition
-  commitment to reduce emissions in
-  the transport sector.',
-   'mosir2' => 'This house believes that countries
-  with high carbon emissions should be
-  required to compensatenations most
-  affected by climate change',
-   'mosir3' => 'As an Indonesia Government, this
-  house should prioritize the
-  development of Geothermal Power
-  Plants(PLTP) to achieve global green
-  momentum and reduce greenhouse
-  gas emissions.',
-   'mosir4' => ' This house declares that the use of
-  gas as an alternative fuel in the
-  energy transition could harm the
-  future of Indonesia energy',
-   'mosir6' => 'The council prohibits the production and sale of single-use plastics where single-use plastics can affect climate change',
-    'mosir7' => ' This house, as the Indonesian
-  government, will significantly
-  reallocate funds for the
-  development of public
-  transportation (LRT,KRL, etc.)
-  to climate finance for renewable
-  energy.',
-    'mosir8' => 'This house would mandate
-  political parties to include
-  renewable energy innovationas
-  a core component of their
-  platform to achieve sustainable
-  global growth',
+ vehicles significantly contribute to
+ Indonesia energy transition
+ commitment to reduce emissions in
+ the transport sector.',
+  'mosir2' => 'This house believes that countries
+ with high carbon emissions should be
+ required to compensatenations most
+ affected by climate change',
+  'mosir21' => 'As an Indonesia Government, this
+ house should prioritize the
+ development of Geothermal Power
+ Plants(PLTP) to achieve global green
+ momentum and reduce greenhouse
+ gas emissions.',
+  'mosir22' => ' This house declares that the use of
+gas as an alternative fuel in the
+ energy transition could harm the
+ future of Indonesia energy',
+  'mosir23' => 'The council requires political parties to include renewable energy innovation as a core component of their programs, in order to achieve sustainable global growth',
+  'mosir5' => 'The council prohibits the production and sale of single-use plastics where single-use plastics can affect climate change',
+   'mosir31' => ' This house, as the Indonesian
+ government, will significantly
+ reallocate funds for the
+ development of public
+ transportation (LRT,KRL, etc.)
+ to climate finance for renewable
+ energy.',
+  'mosir32' => 'As a developing country, the council will prioritize sustainable energy-based education curricula over cultural education',
+   'mosir6' => 'As a developing nation, this house should prioritize a sustainable energy-focused curriculum over cultural studies/education.',
+    	'moosi' => 'Motion',
+  		'mosir41' => 'As an environmental activist, this house would prioritise investments in solar energy technologies over other forms of renewable energy to achieve global sustainability goals.',
+  		'mosir42' => 'This house regrets the environmental trend that completely blames humans for environmental damage in the world',
+ 	'mosir51' => 'This house believes that the environmental movement should significantly prioritize their campaigning efforts on changing the behavior of individuals rather than changing the behavior of companies',
+    'mosir52' => 'This council stated that a comprehensive and structured policy from the government of the Republic of Indonesia is needed to oversee technological innovation in the extraction of new and renewable energy in order to achieve global green momentum and the nations prosperity',
+  'mosir222' => 'As a developing country, the council will prioritize sustainable energy-based education curricula over cultural education',
      ]
 ?>
